@@ -75,6 +75,10 @@ Turning training off is worth doing, but it is a narrow setting. In both tools:
 
 So the setting changes what a company does with your text later. It does not make the text private. The rule in "What never to paste" below still applies with training turned off.
 
+Check your understanding below.
+
+{{widget opt-out-check}}
+
 ## Chats That Leave No History
 
 Both tools offer a mode for a single conversation you don't want kept:

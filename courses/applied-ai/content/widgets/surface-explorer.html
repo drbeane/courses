@@ -1,0 +1,109 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .sx-picks{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.wx .sx-picks label{display:grid;gap:0.3rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx select{font:500 0.95rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.5rem;width:100%}
+.wx .sx-table{width:100%;border-collapse:collapse;table-layout:fixed;margin:0;font:400 0.92rem/1.45 var(--display)}
+.wx .sx-table th,.wx .sx-table td{padding:0.55rem 0.6rem;border:0;border-top:1px solid var(--rule);text-align:left;vertical-align:top;background:none}
+.wx .sx-table thead th{border-top:0;font-size:1rem;color:var(--c)}
+.wx .sx-table tbody th{width:7.5rem;font-size:0.8rem;font-weight:700;color:var(--muted)}
+.wx .sx-table td.sx-same{color:var(--muted)}
+@media (max-width:520px){.wx .sx-picks{grid-template-columns:1fr}.wx .sx-table tbody th{width:5.2rem}.wx .sx-table{font-size:0.86rem}}
+@media print{.wx .sx-picks{display:none}}
+</style>
+<div class="wx" data-widget="surface-explorer">
+  <div class="wx-head"><b>Try It: Compare Two Surfaces</b><span>Choose any two surfaces and compare what the AI can see and change.</span></div>
+  <div class="wx-body">
+    <div class="sx-picks">
+      <label>First surface<select class="sx-a"></select></label>
+      <label>Second surface<select class="sx-b"></select></label>
+    </div>
+    <table class="sx-table">
+      <thead><tr><td></td><th scope="col" class="sx-ha"></th><th scope="col" class="sx-hb"></th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="wx-out sx-out" aria-live="polite"></p>
+    <p class="wx-fine">These are typical descriptions. What a product can see and change depends on the product and on the access you give it, so check before you hand over work.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // "reach" counts how far the AI can act outside the conversation, from 0 (not at all) upward.
+  const SURFACES = [
+    { name: 'Chat assistant', eg: 'Claude, ChatGPT, Copilot Chat', reach: 0,
+      how: 'You type or talk in a browser or an app.',
+      see: 'Your messages, and whatever you paste or attach.',
+      change: 'Nothing outside the conversation.' },
+    { name: 'Embedded copilot', eg: 'Copilot in Outlook', reach: 1,
+      how: 'A button or panel inside an application you already use.',
+      see: 'The email, document, or spreadsheet open in that application.',
+      change: 'That email or document, usually after you accept its suggestion.' },
+    { name: 'Coding assistant', eg: 'Claude Code in VS Code', reach: 2,
+      how: 'A panel or terminal inside a development environment.',
+      see: 'The code in the project, the terminal, and test results.',
+      change: 'Files in the project. It can also run commands and tests.' },
+    { name: 'Local agent', eg: 'Claude Cowork', reach: 2,
+      how: 'A task box in a desktop app.',
+      see: 'The files in a folder you chose on your computer.',
+      change: 'It creates, edits, and saves files in that folder.' },
+    { name: 'Cloud or background agent', eg: 'Scheduled tasks', reach: 3,
+      how: 'You hand off a task or set a schedule, and it starts without you.',
+      see: 'The files and services you connected for the task.',
+      change: 'Whatever those connections allow, while you are away.' },
+    { name: 'Browser or computer-use agent', eg: 'Claude in Chrome', reach: 3,
+      how: 'An extension or tool that operates a browser for you.',
+      see: 'The pages it opens, including sites you are signed in to.',
+      change: 'It clicks, types, and submits forms on those pages.' },
+    { name: 'Always-on agent', eg: 'Meta Muse', reach: 4,
+      how: 'You message it, and it also checks in with you on its own.',
+      see: 'Its own cloud computer, and the accounts you connect to it.',
+      change: 'It keeps working for days and acts through those accounts.' },
+    { name: 'API and agent platforms', eg: 'The Claude API', reach: 2,
+      how: 'A program you write sends text to the model.',
+      see: 'Only what your program sends it.',
+      change: 'Only what your program lets it, through the tools you give it.' },
+  ];
+  const ROWS = [['how', 'How you reach it'], ['see', 'What it can see'], ['change', 'What it can change'], ['eg', 'Example']];
+
+  const $ = (c) => root.querySelector(c);
+  const a = $('.sx-a'), b = $('.sx-b');
+  for (const sel of [a, b]) sel.innerHTML = SURFACES.map((s, i) => `<option value="${i}">${s.name}</option>`).join('');
+  a.value = 0; b.value = 3;
+
+  function show() {
+    const x = SURFACES[+a.value], y = SURFACES[+b.value];
+    $('.sx-ha').textContent = x.name;
+    $('.sx-hb').textContent = y.name;
+    $('.sx-table tbody').innerHTML = ROWS.map(([k, label]) => `<tr><th scope="row">${label}</th><td>${x[k]}</td><td${x === y ? ' class="sx-same"' : ''}>${y[k]}</td></tr>`).join('');
+    const more = x.reach === y.reach ? null : x.reach > y.reach ? x : y;
+    $('.sx-out').innerHTML = x === y
+      ? '<b>Same surface</b>Choose a different surface on one side to compare.'
+      : more
+        ? `<b>More reach: ${more.name}</b>This surface can do more on its own than the other one, so you can hand it more work, and you need to supervise it more closely.`
+        : '<b>Similar reach, different places</b>These two can act about as far on their own. They differ in where they work and what they are connected to.';
+  }
+  a.onchange = b.onchange = show;
+  show();
+})();
+</script>

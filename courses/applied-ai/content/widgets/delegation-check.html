@@ -1,0 +1,127 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .dg-qs{display:grid;gap:0.7rem}
+.wx .dg-q{display:grid;gap:0.35rem}
+.wx .dg-q p{margin:0;font-weight:600}
+.wx .dg-scale{margin:0;padding:0;list-style:none;display:grid;gap:0.25rem}
+.wx .dg-scale li{margin:0;display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:0.3rem 0.8rem;padding:0.4rem 0.6rem;border:1px solid var(--rule);border-radius:6px}
+.wx .dg-scale li b{font-weight:600}
+.wx .dg-scale li span{color:var(--muted)}
+.wx .dg-scale li.dg-off{opacity:0.45;border-style:dashed}
+.wx .dg-scale li.dg-at{border-color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff)}
+.wx .dg-scale li em{grid-column:1/-1;font-style:normal;font-size:0.8rem;font-weight:700;color:var(--c)}
+@media (max-width:520px){.wx .dg-scale li{grid-template-columns:1fr}}
+@media print{.wx .dg-tasks{display:none}}
+</style>
+<div class="wx" data-widget="delegation-check">
+  <div class="wx-head"><b>Try It: Should You Delegate This?</b><span>Pick a task, answer the questions, and see how much of it to hand over.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Task</p>
+      <div class="wx-row dg-tasks" role="group" aria-label="Task"></div>
+    </div>
+    <div class="dg-qs"></div>
+    <p class="wx-out dg-out" aria-live="polite"></p>
+    <div>
+      <p class="wx-label">How to split the work</p>
+      <ol class="dg-scale"></ol>
+    </div>
+    <p class="wx-fine">The example tasks start with the answers from the table above. Change any answer to see what it does to the result. This is a simple rule of thumb, and real decisions take more judgment. It never suggests "AI does it alone", which suits repeated work you have already seen the tool do well.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const QS = [
+    ['Is this a task AI does well?', ['Yes', 'Partly', 'No']],
+    ['What would a wrong answer cost?', ['Little', 'Some', 'A lot']],
+    ['Can I check the result?', ['Yes', 'Partly', 'No']],
+    ['Is anyone else\'s private data involved?', ['No', 'Yes']],
+    ['What is the task for?', ['Getting it done', 'My own learning or judgment']],
+  ];
+  // Each task has a starting answer for every question, by position in that question's list.
+  const TASKS = [
+    ['Brainstorm names for a study group', [0, 0, 0, 0, 0]],
+    ['Explain a concept from today\'s lecture', [0, 1, 1, 0, 0]],
+    ['Summarize a classmate\'s paper for peer review', [0, 1, 0, 1, 1]],
+    ['Work out the right dose of a medication', [2, 2, 2, 0, 0]],
+    ['Write the reflection essay for this course', [0, 1, 0, 0, 1]],
+    ['A task of your own', null],
+  ];
+  const SCALE = [
+    ['You do it; AI reviews', 'You write it and ask for the weakest points'],
+    ['You and AI work together', 'You talk it through and write as you go'],
+    ['AI drafts; you revise', 'AI writes a first version, which you rework'],
+    ['AI does it; you check', 'AI does the work and you check the result'],
+    ['AI does it alone', 'It runs without your involvement'],
+  ];
+
+  // The furthest row of SCALE that is reasonable (0 means none), with a headline and a reason.
+  function verdict([good, cost, check, data, why]) {
+    if (data === 1) return { lv: 0, stop: true, head: 'Keep it out of the tool', text: 'The data isn\'t yours to share with a vendor. Do the task yourself, or take out the private details and answer the questions again.' };
+    if (why === 1) return { lv: 1, head: 'Do it yourself', text: 'The task exists so that you learn or give your own judgment, and a tool that does it removes the purpose. At most, ask AI to review what you wrote.' };
+    if (cost === 2 && check === 2) return { lv: 0, stop: true, head: 'Don\'t rely on AI for this', text: 'A costly mistake that you couldn\'t detect is where AI use goes most wrong. Ask someone qualified.' };
+    if (good === 2) return { lv: 1, head: 'Do it yourself', text: 'The tool is poorly suited to this task. It can still comment on work you did.' };
+    if (cost === 2) return check === 0
+      ? { lv: 2, head: 'Stay closely involved', text: 'A mistake would be costly. Keep the work in your own hands and check every part that matters.' }
+      : { lv: 1, head: 'Do it yourself', text: 'A mistake would be costly and you can only partly check the result. Use AI to review your work, not to produce it.' };
+    if (check === 2) return cost === 1
+      ? { lv: 1, head: 'Do it yourself', text: 'You couldn\'t tell a good answer from a bad one, and a bad one has a cost. Find a way to check before you hand over more.' }
+      : { lv: 3, head: 'Delegate, and treat the result as a suggestion', text: 'Little is at stake, but you can\'t judge the result, so don\'t pass it on as fact.' };
+    if (good === 1) return { lv: 3, head: 'Let AI draft, then rework it', text: 'AI does only part of this well, so expect to revise what comes back.' };
+    if (cost === 0 && check === 0) return { lv: 4, head: 'Delegate freely', text: 'AI does this well, little is at stake, and you can judge the result yourself.' };
+    return { lv: 4, head: 'Delegate, then check', text: `AI does this well. ${cost === 1 ? 'A wrong answer has a cost' : 'Little is at stake'}, ${check === 1 ? 'and you can only partly check the result, so confirm it against a source you trust' : 'and you can check the result, so do'}.` };
+  }
+
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  let ans = QS.map(() => null);
+
+  $('.dg-tasks').innerHTML = TASKS.map((t, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(t[0])}</button>`).join('');
+  $('.dg-qs').innerHTML = QS.map(([q, opts], i) =>
+    `<div class="dg-q"><p id="dg-q${i}">${i + 1}. ${esc(q)}</p><div class="wx-row" role="group" aria-labelledby="dg-q${i}">${opts.map((o, j) => `<button type="button" class="wx-chip dg-a" data-q="${i}" data-a="${j}">${esc(o)}</button>`).join('')}</div></div>`).join('');
+  const tasks = [...root.querySelectorAll('.dg-tasks button')];
+  const opts = [...root.querySelectorAll('.dg-a')];
+
+  function show() {
+    opts.forEach((b) => b.setAttribute('aria-pressed', ans[+b.dataset.q] === +b.dataset.a ? 'true' : 'false'));
+    const left = ans.filter((a) => a === null).length;
+    const v = left ? null : verdict(ans);
+    const out = $('.dg-out');
+    out.className = `wx-out dg-out${v ? (v.stop ? ' wx-stop' : '') : ' wx-wait'}`;
+    out.innerHTML = v ? `<b>${esc(v.head)}</b>${esc(v.text)}` : `Answer ${left === QS.length ? 'the five questions' : `${left} more question${left > 1 ? 's' : ''}`} to see a suggestion.`;
+    $('.dg-scale').innerHTML = SCALE.map(([name, about], i) => {
+      const at = v && v.lv === i + 1, off = v && i + 1 > v.lv;
+      return `<li class="${at ? 'dg-at' : off ? 'dg-off' : ''}"><b>${esc(name)}</b><span>${esc(about)}</span>${at ? '<em>Go no further than this</em>' : ''}</li>`;
+    }).join('');
+  }
+
+  tasks.forEach((b, i) => { b.onclick = () => {
+    tasks.forEach((t) => t.setAttribute('aria-pressed', t === b ? 'true' : 'false'));
+    ans = TASKS[i][1] ? [...TASKS[i][1]] : QS.map(() => null);
+    show();
+  }; });
+  opts.forEach((b) => { b.onclick = () => { ans[+b.dataset.q] = +b.dataset.a; show(); }; });
+  tasks[0].click();
+})();
+</script>

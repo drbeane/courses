@@ -71,3 +71,13 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - 01-01 adds a fifth case where AI clearly helped (AlphaFold) beside the four 2026 cases.
 - The planned outline now has a Type column for all 76 lessons.
 - New claims that need sources are listed at the end of `06 - Verification Checklist.md`.
+
+## 2026-11-15: Week 1 widgets for Applied AI
+
+- Five new widgets in `courses/applied-ai/content/widgets/`, each placed in a Week 1 lesson:
+  `reliability-sort` (T2), `surface-explorer` (T3), `delegation-check` (T4), `model-picker` (T5)
+  and `opt-out-check` (T6). T2 keeps its `next-token` widget as well.
+- Each lesson gained one sentence and one `{{widget ...}}` line, in the draft and in `content/`.
+- The numbers in `model-picker` are made up to show the pattern, and the widget says so. Its
+  effort levels (Low, Medium, High, Max) were not checked against Claude's menu.
+- The surface descriptions in `surface-explorer` are new text, not taken from the lesson.

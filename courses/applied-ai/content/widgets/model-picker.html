@@ -1,0 +1,110 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .mp-meters{display:grid;gap:0.5rem}
+.wx .mp-meter{display:grid;grid-template-columns:minmax(0,9.5rem) minmax(0,1fr) minmax(0,8.5rem);gap:0.7rem;align-items:center}
+.wx .mp-meter .mp-name{font-weight:600}
+.wx .mp-meter .mp-track{height:0.8rem;border-radius:3px;background:var(--wash)}
+.wx .mp-meter .mp-fill{display:block;height:100%;min-width:2px;border-radius:3px;background:var(--c);transition:width 0.25s}
+.wx .mp-meter .mp-val{text-align:right;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.wx .mp-meter{grid-template-columns:1fr auto}.wx .mp-meter .mp-track{grid-column:1/-1;grid-row:2}}
+@media (prefers-reduced-motion:reduce){.wx .mp-meter .mp-fill{transition:none}}
+</style>
+<div class="wx" data-widget="model-picker">
+  <div class="wx-head"><b>Try It: Pick a Model and Effort Level</b><span>See what each choice costs in time and allowance, and what it buys.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Task</p>
+      <div class="wx-row mp-task" role="group" aria-label="Task"></div>
+    </div>
+    <div>
+      <p class="wx-label">Model</p>
+      <div class="wx-row mp-tier" role="group" aria-label="Model"></div>
+    </div>
+    <div>
+      <p class="wx-label">Effort</p>
+      <div class="wx-row mp-effort" role="group" aria-label="Effort"></div>
+    </div>
+    <div class="mp-meters" aria-live="polite"></div>
+    <p class="wx-out mp-out" aria-live="polite"></p>
+    <p class="wx-fine">Every number here is made up to show the pattern. Real times, usage, and results depend on the model, the prompt, and your plan, and the effort levels a tool offers vary by model. To see your real usage in Claude, open Settings, then Usage.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // A task has a difficulty, a base time in seconds, and a base share of the five-hour limit in percent.
+  const TASKS = [
+    { name: 'Make an email sound friendlier', hard: 0, secs: 2, use: 0.05 },
+    { name: 'Turn a 30-page reading into a study guide', hard: 1, secs: 8, use: 0.6 },
+    { name: 'Find the flaw in a budget that doesn\'t add up', hard: 3, secs: 4, use: 0.15 },
+  ];
+  const TIERS = [
+    { name: 'Small (Haiku)', slow: 1, cost: 1 },
+    { name: 'Middle (Sonnet)', slow: 2, cost: 3 },
+    { name: 'Large (Opus)', slow: 4, cost: 8 },
+    { name: 'Top (Fable)', slow: 7, cost: 15 },
+  ];
+  const EFFORTS = [
+    { name: 'Low', slow: 1, cost: 1 },
+    { name: 'Medium', slow: 1.6, cost: 1.5 },
+    { name: 'High', slow: 3, cost: 2.5 },
+    { name: 'Max', slow: 6, cost: 4 },
+  ];
+  // The chance of a correct answer rises with model size and effort, and falls with difficulty.
+  const chance = (t, m, e) => Math.min(99, Math.round(100 / (1 + Math.exp(-(1.6 * (m + e * 0.5 - TASKS[t].hard) + 3)))));
+
+  const $ = (c) => root.querySelector(c);
+  const pick = { task: 2, tier: 1, effort: 1 };
+  const groups = { task: TASKS, tier: TIERS, effort: EFFORTS };
+  for (const [key, list] of Object.entries(groups)) {
+    $(`.mp-${key}`).innerHTML = list.map((x, i) => `<button type="button" class="wx-chip" data-i="${i}">${x.name}</button>`).join('');
+    root.querySelectorAll(`.mp-${key} button`).forEach((b, i) => { b.onclick = () => { pick[key] = i; show(); }; });
+  }
+
+  const meter = (name, pct, val) => `<div class="mp-meter"><span class="mp-name">${name}</span><span class="mp-track"><span class="mp-fill" style="width:${Math.max(1, Math.min(100, pct))}%"></span></span><span class="mp-val">${val}</span></div>`;
+
+  function show() {
+    for (const key of Object.keys(groups)) root.querySelectorAll(`.mp-${key} button`).forEach((b, i) => b.setAttribute('aria-pressed', pick[key] === i ? 'true' : 'false'));
+    const { task: t, tier: m, effort: e } = pick;
+    const secs = TASKS[t].secs * TIERS[m].slow * EFFORTS[e].slow;
+    const use = TASKS[t].use * TIERS[m].cost * EFFORTS[e].cost;
+    const ok = chance(t, m, e);
+    const time = secs < 60 ? `${Math.round(secs)} seconds` : `${(secs / 60).toFixed(1).replace('.0', '')} minutes`;
+    const runs = Math.floor(100 / use);
+    $('.mp-meters').innerHTML =
+      meter('Time to answer', (secs / 180) * 100, time) +
+      meter('Five-hour limit used', (use / 40) * 100, use < 0.1 ? 'under 0.1%' : `${use.toFixed(1)}%`) +
+      meter('Chance it is right', ok, `${ok}%`);
+    // Too much: one step down in model or effort would be right almost as often.
+    const spare = ok >= 95 && ((m > 0 && ok - chance(t, m - 1, e) <= 1) || (e > 0 && ok - chance(t, m, e - 1) <= 1));
+    const out = $('.mp-out');
+    out.className = `wx-out mp-out${ok < 80 ? ' wx-stop' : ''}`;
+    out.innerHTML = ok < 80
+      ? `<b>Likely to come back with a mistake</b>About ${100 - ok} runs in 100 would get this wrong. Move up in model or effort, and check the answer either way.`
+      : spare
+        ? `<b>More than the task needs</b>A smaller model or less effort would do as well, sooner, and you could make only about ${runs.toLocaleString('en-US')} runs like this one before reaching the limit.`
+        : `<b>A sensible choice</b>It should get this right about ${ok} times in 100, and you could make about ${runs.toLocaleString('en-US')} runs like this one before reaching the limit.`;
+  }
+  show();
+})();
+</script>

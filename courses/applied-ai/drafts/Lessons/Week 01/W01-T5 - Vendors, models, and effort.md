@@ -92,6 +92,10 @@ Three tasks show how this plays out:
 | Turn a 30-page reading into a study guide | Middle model, default effort | Long input, but the job is summarizing |
 | Find the flaw in a budget where the totals don't add up | Large model or higher effort | Several steps, and one early mistake ruins the answer |
 
+Try the three tasks below with different models and effort levels. For each one, look for the smallest choice that still gets the task right.
+
+{{widget model-picker}}
+
 Choosing a model and an effort level is a skill you'll use all term.
 
 ## Which Model Am I Using?
