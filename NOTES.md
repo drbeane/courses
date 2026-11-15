@@ -40,3 +40,13 @@ its old repo: `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`.
   on the site, and 22 are marked Optional. In the planned outline this is 55 core and 21 optional,
   because some v1 lessons are due to be merged or replaced.
 - The Lessons and Assessments pages explain the difference.
+
+## 2026-11-15: Sample rewritten lesson in AI Ethics (02-04)
+
+- Lesson 02-04, Facial Recognition in Policing: Wrongful Arrests, is rewritten in the new structure
+  as a sample for review: prose instead of bullets, a section on the case for the system, "Where
+  People Disagree", and "Check Your Understanding" with folded answers (`:::answer Answer`).
+- The glossary is built from each lesson's Key Terms section, so the new template keeps a short
+  Key Terms list. A lesson's type is recorded in the outline, not in the lesson file.
+- Five claims in the rewrite need sources. They are listed at the end of
+  `drafts/Course Docs/06 - Verification Checklist.md`.

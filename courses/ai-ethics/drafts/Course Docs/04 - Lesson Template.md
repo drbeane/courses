@@ -8,7 +8,6 @@ Lessons do not all share one structure (decided 2026-11-15). Every lesson has th
 # MM-LL — Lesson Title
 
 **Module:** N — Module Title
-**Type:** System in the world | Idea | How it works | Rules | Case study | Lab
 **Estimated time:** XX minutes
 **Content note:** (only if the lesson discusses sexual abuse, suicide, violence, etc.)
 
@@ -19,11 +18,16 @@ Lessons do not all share one structure (decided 2026-11-15). Every lesson has th
 ## Check your understanding
 Three or four quick questions with answers.
 
+## Key terms
+A short list, written "**Term:** definition". The site glossary is built from this section.
+
 ## Sources
 One reading marked **Core**; the rest optional. Dated sources. Legal or policy facts carry an "as of" date. Items marked ⚠ need re-verification before each offering.
 ```
 
-- Define each key term in bold where it first appears. Terms are collected in the site glossary; there is no Key terms section.
+- Define each key term in bold where it first appears, and repeat it in the short Key terms list, which feeds the site glossary.
+- Write each answer under Check your understanding as a folded block: `:::answer Answer`, the answer, then `:::`.
+- A lesson's type is recorded in the course outline, not in the lesson file, so it does not show on the page.
 - Link to related lessons and assessments in the text where they are relevant; there is no Connections section.
 - Most lessons end the body with **Your turn**: one prompt, either a discussion question or a short task, not both.
 

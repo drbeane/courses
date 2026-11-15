@@ -226,3 +226,14 @@ Check each item, update the lesson, then remove the ⚠ or record the date it wa
 | 01 - Current Cases and News (2025-2026).md | 245 | ### U.S. federal preemption push (December 2025 →) ⚠ | ☐ |
 | 01 - Current Cases and News (2025-2026).md | 252 | ### Colorado AI Act replaced (May 2026) ⚠ | ☐ |
 | 01 - Current Cases and News (2025-2026).md | 317 | Sources:** Contemporary coverage (The Register, Fortune), July 2025. ⚠ Add the primary posts. | ☐ |
+
+
+## Added with the 02-04 rewrite (2026-11-15)
+
+These claims in the rewritten 02-04 were written from general knowledge and have no source in the lesson yet. Find a source for each, or cut it.
+
+- ⚠ NIST testing: the best algorithms miss the right person in well under 1 percent of searches on good-quality mugshots. Add the NIST report.
+- ⚠ Police agencies credit the tool with identifying suspects in violent crimes and victims in child-exploitation cases. Add an independent source.
+- ⚠ Boston banned police use in 2020.
+- ⚠ Elizabethton, Tennessee, is about a thousand miles from Fargo.
+- ⚠ Eyewitness identification has a long record of wrongful convictions. Add a source (for example, Innocence Project figures).
