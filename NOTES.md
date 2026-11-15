@@ -1,7 +1,8 @@
 # Notes
 
-Log of site edits. Add an entry whenever you change the site. Each course's earlier history is in
-its old repo: `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`.
+Log of site edits. Add an entry whenever you change the site. The courses came from three
+repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
+merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
 ## 2026-11-15: Combined the three course sites
 
