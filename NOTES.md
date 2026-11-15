@@ -51,3 +51,14 @@ merge on 15 November 2026. Their history was not carried over, so this log start
   Key Terms list. A lesson's type is recorded in the outline, not in the lesson file.
 - Five claims in the rewrite need sources. They are listed at the end of
   `drafts/Course Docs/06 - Verification Checklist.md`.
+
+## 2026-11-15: New and Updated tags and the changes page, Math for AI
+
+- New engine setting: `"tag": "new"` or `"updated"` on a topic or a demo in `course.json` shows that
+  label in the lesson or demo list and on the lesson's page. No other course uses it, and their
+  pages are unchanged.
+- A course with `content/changes.md` gets a "What changed" page at `/changes/`. It is not in the top
+  navigation. Math for AI links to it from the intro on the Lessons page.
+- Math for AI marks 5 lessons and 4 demos New and 21 lessons Updated, for the November 2026
+  revision. Lessons that were only corrected are not marked. To retire the tags, remove `tag` from
+  `course.json`.

@@ -9,8 +9,9 @@
   "math": true,
   "demoHelper": true,
   "text": {
-    "lessons": "The full text for each topic, grouped by week. Each week ends with its lab. Most lessons link to a Colab notebook that holds the code from the lesson.",
+    "lessons": "The full text for each topic, grouped by week. Each week ends with its lab. Most lessons link to a Colab notebook that holds the code from the lesson. Lessons marked New or Updated were added or revised in November 2026. <a href=\"/changes/\">See what changed</a>.",
     "slides": "One deck per topic. Use the arrow keys to move through a deck, press F for full screen, and press Esc to come back to this page.",
+    "changes": "What the November 2026 revision of the course added and corrected. On the Lessons and Demos pages, these items are marked New or Updated.",
     "resources": "The Colab notebooks, videos, and outside references that go with each week. Everything is free.",
     "labKicker": "lab"
   },
@@ -39,8 +40,8 @@
       "topic": "Introduction to Python",
       "assignment": "Lab 1",
       "topics": [
-        "Introduction to artificial intelligence",
-        "Introduction to machine learning",
+        { "title": "Introduction to artificial intelligence", "tag": "updated" },
+        { "title": "Introduction to machine learning", "tag": "updated" },
         "Supervised learning",
         "Google Colab",
         "Google Colab interface",
@@ -51,7 +52,7 @@
         "For loops",
         "Loops and sums",
         "Conditional statements",
-        "Defining functions"
+        { "title": "Defining functions", "tag": "updated" }
       ]
     },
     {
@@ -63,11 +64,11 @@
         "Importing packages",
         "The math package",
         "NumPy arrays",
-        "Array aggregations",
+        { "title": "Array aggregations", "tag": "updated" },
         "Array comparisons",
         "The where function",
-        "Two-dimensional arrays",
-        "One-hot encoding"
+        { "title": "Two-dimensional arrays", "tag": "updated" },
+        { "title": "One-hot encoding", "tag": "updated" }
       ]
     },
     {
@@ -78,12 +79,12 @@
       "topics": [
         "Introduction to linear algebra",
         "Vectors",
-        "Matrices and matrix operations",
-        "Vector length and similarity",
+        { "title": "Matrices and matrix operations", "tag": "updated" },
+        { "title": "Vector length and similarity", "tag": "new" },
         "Inverse matrices",
         "Linear regression",
         "Systems of linear equations",
-        "Eigenvalues and eigenvectors"
+        { "title": "Eigenvalues and eigenvectors", "tag": "updated" }
       ]
     },
     {
@@ -94,12 +95,12 @@
       "topics": [
         "Introduction to calculus",
         "The derivative",
-        "Differentiation formulas",
+        { "title": "Differentiation formulas", "tag": "updated" },
         "Introduction to SymPy",
         "Calculating derivatives with SymPy",
         "Finding roots of expressions",
         "Higher-order derivatives",
-        "Local extrema"
+        { "title": "Local extrema", "tag": "updated" }
       ]
     },
     {
@@ -114,11 +115,11 @@
         "Gradient ascent and descent",
         "Gradient ascent and descent examples",
         "Implementation of gradient ascent and descent",
-        "Training a model with gradient descent",
+        { "title": "Training a model with gradient descent", "tag": "new" },
         "Artificial neurons",
-        "Neural networks",
-        "Calculating the output of a neural network",
-        "Backpropagation"
+        { "title": "Neural networks", "tag": "updated" },
+        { "title": "Calculating the output of a neural network", "tag": "updated" },
+        { "title": "Backpropagation", "tag": "updated" }
       ]
     },
     {
@@ -132,10 +133,10 @@
         "Measures of variability",
         "Measures of position",
         "Plotting: Scatter plots",
-        "Measures of relationship",
-        "Principal component analysis",
+        { "title": "Measures of relationship", "tag": "updated" },
+        { "title": "Principal component analysis", "tag": "updated" },
         "Coefficient of determination",
-        "Evaluating models"
+        { "title": "Evaluating models", "tag": "new" }
       ]
     },
     {
@@ -145,13 +146,13 @@
       "assignment": "Lab 7",
       "topics": [
         "Random number generation",
-        "Random number generation in NumPy",
+        { "title": "Random number generation in NumPy", "tag": "updated" },
         "Plotting: Bar charts",
         "Introduction to probability",
         "Random variables",
         "Discrete random variables",
         "Expected value and variance",
-        "Monte Carlo sampling"
+        { "title": "Monte Carlo sampling", "tag": "updated" }
       ]
     },
     {
@@ -162,14 +163,14 @@
       "topics": [
         "Continuous random variables",
         "Plotting: Histograms",
-        "The normal distribution",
+        { "title": "The normal distribution", "tag": "updated" },
         "The uniform distribution",
         "The exponential distribution",
-        "Naive Bayes classification",
-        "Logistic regression",
-        "Training a logistic regression model",
-        "Language models",
-        "Attention"
+        { "title": "Naive Bayes classification", "tag": "updated" },
+        { "title": "Logistic regression", "tag": "updated" },
+        { "title": "Training a logistic regression model", "tag": "updated" },
+        { "title": "Language models", "tag": "new" },
+        { "title": "Attention", "tag": "new" }
       ]
     }
   ],
@@ -201,6 +202,7 @@
     },
     {
       "slug": "vector-similarity",
+      "tag": "new",
       "name": "Vector similarity explorer",
       "weeks": [
         3
@@ -237,6 +239,7 @@
     },
     {
       "slug": "softmax-temperature",
+      "tag": "new",
       "name": "Softmax and temperature",
       "weeks": [
         5,
@@ -291,6 +294,7 @@
     },
     {
       "slug": "attention-explorer",
+      "tag": "new",
       "name": "Attention explorer",
       "weeks": [
         8
@@ -302,6 +306,7 @@
     },
     {
       "slug": "bigram-generator",
+      "tag": "new",
       "name": "Bigram text generator",
       "weeks": [
         8

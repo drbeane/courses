@@ -11,6 +11,8 @@ const root = path.join(import.meta.dirname, '..');
 const dist = path.join(root, 'dist');
 const site = JSON.parse(fs.readFileSync(path.join(root, 'site.json'), 'utf8'));
 
+// Labels for a topic or demo with "tag" set in course.json.
+const STATUS = { new: 'New', updated: 'Updated' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const pad = (n) => String(n).padStart(2, '0');
 const slug = (s) => s.replace(/<[^>]+>/g, '').toLowerCase().replace(/&[a-z]+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -70,13 +72,14 @@ function buildCourse(base) {
   const hasAssess = has('content/assessments.md');
 
   // Every topic in order, with what has been posted for it. A topic is a title, or an object with
-  // a title and optionally "lab", "optional" and "assess". A week with an "assignment" also gets a lab page.
+  // a title and optionally "lab", "optional", "assess" and "tag". A week with an "assignment" also gets a lab page.
+  // "tag" is "new" or "updated", and shows that label beside the lesson. A demo can carry one too.
   // With "lessonNumbers", lesson L of week NN has the course number NN-LL.
   const items = course.weeks.flatMap((wk) => {
     const make = (key, t, label, n) => {
       const id = `w${pad(wk.n)}-${key}`;
       return {
-        id, wk, label, title: t.title ?? t, num: n ? `${pad(wk.n)}-${pad(n)}` : '', assess: t.assess || [], optional: !!t.optional,
+        id, wk, label, title: t.title ?? t, num: n ? `${pad(wk.n)}-${pad(n)}` : '', assess: t.assess || [], optional: !!t.optional, tag: STATUS[t.tag] ? t.tag : '',
         lesson: has(`content/lessons/${id}.md`), slides: has(`content/slides/${id}.md`),
       };
     };
@@ -84,8 +87,9 @@ function buildCourse(base) {
     if (wk.assignment) list.push(make('lab', wk.assignment, 'Lab'));
     return list;
   });
+  const statusTag = (x) => (STATUS[x.tag] ? `<span class="tag ${x.tag}">${STATUS[x.tag]}</span>` : '');
   const byNum = new Map(items.map((s) => [s.num, s]));
-  const kicker = (s) => `Week ${s.wk.n}, ${s.label === 'Lab' ? text.labKicker || 'Lab' : s.label}${s.optional ? ', Optional' : ''}`;
+  const kicker = (s) => `Week ${s.wk.n}, ${s.label === 'Lab' ? text.labKicker || 'Lab' : s.label}${s.optional ? ', Optional' : ''}${s.tag ? `, ${STATUS[s.tag]}` : ''}`;
   // The posted demos that list this lesson under "lessons" in course.json.
   const demosFor = (s) => course.demos.filter((d) => (d.lessons || []).includes(s.id) && has(`content/demos/${d.slug}.html`));
 
@@ -206,7 +210,7 @@ function buildCourse(base) {
 
   const tocNav = (toc) =>
     `<nav class="toc" aria-label="On this page"><p>${T('On This Page', 'On this page')}</p><ol>${toc.map((t) => `<li><a href="#${t.id}">${t.text}</a></li>`).join('')}</ol></nav>`;
-  const tags = (s) => s.assess.map((a) => `<a class="tag" href="/assessments/#${a.toLowerCase()}">${a}</a>`).join('') + (s.optional ? '<span class="tag opt">Optional</span>' : '');
+  const tags = (s) => s.assess.map((a) => `<a class="tag" href="/assessments/#${a.toLowerCase()}">${a}</a>`).join('') + (s.optional ? '<span class="tag opt">Optional</span>' : '') + statusTag(s);
 
   // ---------- Home ----------
   function home() {
@@ -341,7 +345,7 @@ ${diagramScript(slides)}</body>
       const posted = has(`content/demos/${d.slug}.html`);
       const wk = course.weeks.find((w) => w.n === d.weeks[0]);
       return `<li class="demo s${wk.stage}">
-  <h2>${posted ? `<a href="/demos/${d.slug}/">${esc(d.name)}</a>` : esc(d.name)}</h2>
+  <h2>${posted ? `<a href="/demos/${d.slug}/">${esc(d.name)}</a>` : esc(d.name)}${statusTag(d)}</h2>
   <p>${esc(d.about)}</p>
   <p class="about">${demoWeeks(d)}${posted ? '' : '<span class="soon">Not posted yet</span>'}</p>
 </li>`;
@@ -373,7 +377,8 @@ ${goes.length ? `<p class="goes s${wk.stage}">Goes with ${goes.map((s) => `<a hr
     });
   }
 
-  // ---------- Assessments and Resources ----------
+  // ---------- Assessments, Resources and Changes ----------
+  // A course with content/changes.md gets a page at /changes/ that lists what a revision changed.
   function doc({ file, title, section, cls }) {
     const { html, toc } = render(read(file), section);
     return page({
@@ -435,6 +440,7 @@ ${terms.length ? `<dl class="gloss">\n${list}\n</dl>` : '<p class="empty">No ter
   out('demos/index.html', demos());
   if (hasAssess) out('assessments/index.html', doc({ file: 'content/assessments.md', title: 'Assessments', section: 'assessments', cls: 'assess' }));
   if (has('content/resources.md')) out('resources/index.html', doc({ file: 'content/resources.md', title: 'Resources', section: 'resources', cls: 'res' }));
+  if (has('content/changes.md')) out('changes/index.html', doc({ file: 'content/changes.md', title: T('What Changed', 'What changed'), section: 'changes', cls: 'changes' }));
   out('glossary/index.html', glossary());
   for (const s of items) {
     if (s.lesson) out(`lessons/${s.id}/index.html`, lesson(s));

@@ -21,6 +21,7 @@ Live site: https://drbeane.vercel.app/
     - `lessons/wNN-tN.md` and `slides/wNN-tN.md`: a topic appears as posted once its file exists.
     - `demos/<slug>.html`, `widgets/<name>.html`, `images/`.
     - `resources.md`, and `assessments.md` where a course has one.
+    - `changes.md` (optional): becomes a "What changed" page at `/changes/`. Its intro is `text.changes`.
   - `style.css` (optional): rules this course adds to the shared styles.
 - `tools/sync.mjs`: copies a course's drafts into its `content/`.
 - `tools/serve.mjs`: serves the built site locally.
@@ -40,6 +41,7 @@ Live site: https://drbeane.vercel.app/
 | `text` | Intro text for the Lessons, Slides, Resources and Assessments pages, and `labKicker`. |
 | `colors` | Stage colors. Without it, the shared seven colors are used. |
 | `optional` (on a topic) | Marks the lesson "Optional" in the lesson list and on its page. |
+| `tag` (on a topic or a demo) | `"new"` or `"updated"` shows that label in the lesson or demo list, and on the lesson's page. |
 | `topicLabel` | The word before a topic's number. The default is "Topic". |
 | `lessonNumbers` | Numbers lessons `NN-LL` and links those numbers, and "A1" style assessment numbers, in text. |
 | `math` | Turns `$...$` and `$$...$$` into typeset math. |

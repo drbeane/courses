@@ -67,6 +67,9 @@ main { max-width: 63rem; margin: 0 auto; padding: 0 1.5rem 5rem; }
 .sess .nm > span { color: var(--muted); }
 .tag { display: inline-block; margin-left: 0.5rem; padding: 0 0.4rem; font-size: 0.8rem; font-weight: 600; line-height: 1.5; color: var(--c); border: 1px solid var(--c); border-radius: 3px; text-decoration: none; }
 .tag:hover { background: var(--c); color: #fff; }
+.tag.new, .tag.new:hover, .sess .nm > .tag.new { background: var(--c); color: #fff; }
+.tag.updated, .tag.updated:hover, .sess .nm > .tag.updated { background: none; color: var(--c); }
+.demo h2 .tag { vertical-align: middle; }
 .tag.opt, .tag.opt:hover { color: var(--muted); border-color: var(--rule); background: none; font-weight: 500; }
 .soon { color: var(--muted); font-size: 0.85rem; white-space: nowrap; }
 .about { grid-column: 2; margin: 0.4rem 0 0; color: var(--muted); font-size: 0.92rem; }
