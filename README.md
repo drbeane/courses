@@ -39,6 +39,7 @@ Live site: https://drbeane.vercel.app/
 | `description`, `stagesNote` | Text on the course's home page. |
 | `text` | Intro text for the Lessons, Slides, Resources and Assessments pages, and `labKicker`. |
 | `colors` | Stage colors. Without it, the shared seven colors are used. |
+| `optional` (on a topic) | Marks the lesson "Optional" in the lesson list and on its page. |
 | `topicLabel` | The word before a topic's number. The default is "Topic". |
 | `lessonNumbers` | Numbers lessons `NN-LL` and links those numbers, and "A1" style assessment numbers, in text. |
 | `math` | Turns `$...$` and `$$...$$` into typeset math. |

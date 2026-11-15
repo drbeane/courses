@@ -2,6 +2,8 @@
 
 The assessments replace the COSC-643 pattern of weekly forum posts, annotated bibliographies and a build-an-AI final project. The goal is to make every student show evidence of a common baseline: ethical reasoning, rights analysis, societal-impact evidence, failure investigation and a defended deployment decision.
 
+**Core and optional lessons:** The course assigns the core lessons. Lessons marked Optional on the Lessons page are further reading and case studies. An assessment may still send you to one: for example, the credit union scenario in A2 draws on the optional lessons on lending and on insurance and housing.
+
 **Workload target:** about 8–10 hours per week including lessons. New tasks replace old ones; nothing here is in addition to the old forum and bibliography load.
 
 ---

@@ -31,3 +31,12 @@ its old repo: `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`.
   (an "In this lesson" line, Check your understanding, Sources) and six lesson types: System in the
   world, Idea, How it works, Rules, Case study and Lab. This was pushed to the old `cosc-443` repo
   after the merge and is restored here. No lesson has been rewritten yet, so the site is unchanged.
+
+## 2026-11-15: Optional lessons in AI Ethics
+
+- New engine setting: `"optional": true` on a topic in `course.json` adds an Optional label in the
+  lesson list and on the lesson's page. No other course uses it, and their pages are unchanged.
+- AI Ethics keeps all 76 lessons as a learning resource. The course assigns 54 of the lessons now
+  on the site, and 22 are marked Optional. In the planned outline this is 55 core and 21 optional,
+  because some v1 lessons are due to be merged or replaced.
+- The Lessons and Assessments pages explain the difference.

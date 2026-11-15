@@ -9,7 +9,7 @@
   "lessonNumbers": true,
   "draftLayout": "modules",
   "text": {
-    "lessons": "The full text of each lesson, grouped by week. Labs are marked, and a tag such as A2 links to the assessment a lesson supports.",
+    "lessons": "The full text of each lesson, grouped by week. The course assigns the lessons that are not marked Optional; the optional lessons are further reading and case studies. Labs are marked, and a tag such as A2 links to the assessment a lesson supports.",
     "slides": "Slide decks for the lessons, as they are posted. Use the arrow keys to move through a deck, press F for full screen, and press Esc to come back to this page.",
     "resources": "Frameworks, standards, incident trackers and media used across the course. The Lessons column shows where each one comes up.",
     "assessments": "The six graded components of the course, with what each asks for, when it is due, and how it is graded."
@@ -44,7 +44,7 @@
         { "title": "Duties, Rights, and Human Dignity" },
         { "title": "Decency, Character, and Care" },
         { "title": "Justice, Fairness, and Distribution" },
-        { "title": "Principles and Frameworks for AI Ethics" },
+        { "title": "Principles and Frameworks for AI Ethics", "optional": true },
         { "title": "Stakeholders and Sociotechnical Systems" },
         { "title": "Law, Policy, Standards, and Ethics: Building a Defensible Argument", "assess": [ "A1" ] }
       ]
@@ -55,14 +55,14 @@
       "topic": "Surveillance, Biometrics, and Privacy",
       "topics": [
         { "title": "Privacy as Contextual Integrity" },
-        { "title": "The Surveillance Economy and Data Brokers" },
+        { "title": "The Surveillance Economy and Data Brokers", "optional": true },
         { "title": "How Facial Recognition Works—and Fails" },
         { "title": "Facial Recognition in Policing: Wrongful Arrests" },
         { "title": "Live Facial Recognition in Public Space" },
-        { "title": "Scraped Faces: Clearview AI and Biometric Privacy Law" },
+        { "title": "Scraped Faces: Clearview AI and Biometric Privacy Law", "optional": true },
         { "title": "Always-On Assistants: Voice, Screen, and Memory" },
         { "title": "Smart Glasses and Bystander Privacy" },
-        { "title": "Inference and Profiling: What AI Can Guess About You" },
+        { "title": "Inference and Profiling: What AI Can Guess About You", "optional": true },
         { "title": "Privacy-Protective Design and Governance", "assess": [ "A2" ] }
       ]
     },
@@ -74,11 +74,11 @@
         { "title": "Where Bias Comes From" },
         { "title": "Measuring Fairness: Metrics and Trade-offs" },
         { "title": "Hiring Algorithms: From Résumé Screens to Mobley v. Workday" },
-        { "title": "AI Interviews, Personality Inference, and Disability" },
-        { "title": "Lending and Credit: Fair Lending Law Meets Machine Learning" },
-        { "title": "Insurance, Housing, and Tenant Screening" },
+        { "title": "AI Interviews, Personality Inference, and Disability", "optional": true },
+        { "title": "Lending and Credit: Fair Lending Law Meets Machine Learning", "optional": true },
+        { "title": "Insurance, Housing, and Tenant Screening", "optional": true },
         { "title": "Criminal Justice: Pretrial and Sentencing Risk Assessment" },
-        { "title": "Predictive Policing and Feedback Loops" },
+        { "title": "Predictive Policing and Feedback Loops", "optional": true },
         { "title": "Explanation, Contestability, and Appeal" },
         { "title": "Consequential Decision Review", "lab": true, "assess": [ "A2" ] }
       ]
@@ -93,10 +93,10 @@
         { "title": "Deepfakes: Capabilities and Harms" },
         { "title": "Non-Consensual Intimate Imagery and the Grok Case" },
         { "title": "Law and Platform Duties for Synthetic Sexual Imagery" },
-        { "title": "Elections, Fraud, and the Liar's Dividend" },
-        { "title": "Provenance, Watermarking, and Content Credentials" },
+        { "title": "Elections, Fraud, and the Liar's Dividend", "optional": true },
+        { "title": "Provenance, Watermarking, and Content Credentials", "optional": true },
         { "title": "Companions, Minors, and Emotional Reliance" },
-        { "title": "Creative Rights, Copyright, and Training Data" },
+        { "title": "Creative Rights, Copyright, and Training Data", "optional": true },
         { "title": "Generated-Information Verification", "lab": true, "assess": [ "A4" ] }
       ]
     },
@@ -110,8 +110,8 @@
         { "title": "Who Captures the Gains?" },
         { "title": "Algorithmic Management and Bossware" },
         { "title": "Monitoring Productivity, Emotion, and Keystrokes" },
-        { "title": "Gig Platforms and Automated Control" },
-        { "title": "The Hidden Workforce: Data Labelers and Content Moderators" },
+        { "title": "Gig Platforms and Automated Control", "optional": true },
+        { "title": "The Hidden Workforce: Data Labelers and Content Moderators", "optional": true },
         { "title": "Automation Bias and Professional Responsibility" },
         { "title": "Worker Voice, Bargaining, and Policy Responses", "assess": [ "A3" ] }
       ]
@@ -124,10 +124,10 @@
         { "title": "The Physical Footprint of AI" },
         { "title": "Energy and Emissions: Training, Inference, and Scale" },
         { "title": "Water, Land, and Local Communities" },
-        { "title": "Measuring and Disclosing Environmental Costs" },
+        { "title": "Measuring and Disclosing Environmental Costs", "optional": true },
         { "title": "Efficiency, Rebound, and AI for Climate" },
-        { "title": "Compute Concentration and Global Divides" },
-        { "title": "Non-Human Interests and the World Lens" },
+        { "title": "Compute Concentration and Global Divides", "optional": true },
+        { "title": "Non-Human Interests and the World Lens", "optional": true },
         { "title": "Case Workshop: The Data Center Next Door", "lab": true, "assess": [ "A3" ] }
       ]
     },
@@ -139,11 +139,11 @@
         { "title": "What \"Open\" Means: Weights, Code, Data, and Licenses" },
         { "title": "The Case for Open-Weight Models" },
         { "title": "The Case for Closed Weights and Staged Access" },
-        { "title": "Open vs. Closed in Practice: Policy, Geopolitics, and Distillation" },
+        { "title": "Open vs. Closed in Practice: Policy, Geopolitics, and Distillation", "optional": true },
         { "title": "Agents and Delegated Authority" },
         { "title": "Prompt Injection and Agent Security" },
-        { "title": "Case Study: The Hugging Face Breach" },
-        { "title": "AI-Assisted Reverse Engineering and Software Licensing" },
+        { "title": "Case Study: The Hugging Face Breach", "optional": true },
+        { "title": "AI-Assisted Reverse Engineering and Software Licensing", "optional": true },
         { "title": "Dual Use, Cyber Capability, and Frontier Risk" },
         { "title": "Agent Authority Exercise", "lab": true, "assess": [ "A4" ] }
       ]
@@ -155,11 +155,11 @@
       "topics": [
         { "title": "Risk-Based Regulation: The EU AI Act" },
         { "title": "The United States: Agencies, States, and Preemption" },
-        { "title": "Global Governance: UK, China, and International Efforts" },
+        { "title": "Global Governance: UK, China, and International Efforts", "optional": true },
         { "title": "NIST AI RMF and ISO/IEC 42001 in Practice" },
         { "title": "Who Is Accountable When AI Fails?" },
-        { "title": "Documentation: Model Cards, Datasheets, and Impact Assessments" },
-        { "title": "Procurement and Vendor Due Diligence" },
+        { "title": "Documentation: Model Cards, Datasheets, and Impact Assessments", "optional": true },
+        { "title": "Procurement and Vendor Due Diligence", "optional": true },
         { "title": "Monitoring, Incidents, and Redress" },
         { "title": "Making the Call: Deploy, Restrict, or Don't Deploy", "assess": [ "A5" ] },
         { "title": "Portfolio Defense and Course Synthesis", "assess": [ "A5", "A6" ] }

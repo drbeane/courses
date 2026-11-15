@@ -1,10 +1,12 @@
-# AI, Ethics, and Society — Course Outline (Draft v1)
+# *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* *(Optional)* AI, Ethics, and Society — Course Outline (Draft v1)
 
 76 lessons in 8 modules. The week numbers assume an 8-week term.
 
 **Planned outline (2026-11-15).** This outline adds one lesson per module where the system clearly helps, paid for by merging overlapping lessons, so the count stays at 76. Rows marked **New** or **Merged** are not written yet. The lesson files and the site still follow the v1 numbering until the lessons are rewritten; "v1" notes give the old number where it changed.
 
 Stages: Foundations (Week 1), AI and the Individual (Weeks 2–4), AI and Society (Weeks 5–6), Power and Governance (Weeks 7–8). Lesson files are named `MM-LL - Title.md` inside each module folder.
+
+**Core and optional (2026-11-15).** The site is a learning resource first, so all 76 lessons stay. The course assigns the 55 core lessons; the 21 marked *(Optional)* are further reading and case studies. On the site, the v1 lessons that correspond to the optional ones carry an Optional label.
 
 Legend: **[Lab]** marks an applied exercise. **[A#]** marks the lesson that launches or supports an assessment (see `03 - Assessments.md`).
 

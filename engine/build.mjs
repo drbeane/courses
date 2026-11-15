@@ -70,13 +70,13 @@ function buildCourse(base) {
   const hasAssess = has('content/assessments.md');
 
   // Every topic in order, with what has been posted for it. A topic is a title, or an object with
-  // a title and optionally "lab" and "assess". A week with an "assignment" also gets a lab page.
+  // a title and optionally "lab", "optional" and "assess". A week with an "assignment" also gets a lab page.
   // With "lessonNumbers", lesson L of week NN has the course number NN-LL.
   const items = course.weeks.flatMap((wk) => {
     const make = (key, t, label, n) => {
       const id = `w${pad(wk.n)}-${key}`;
       return {
-        id, wk, label, title: t.title ?? t, num: n ? `${pad(wk.n)}-${pad(n)}` : '', assess: t.assess || [],
+        id, wk, label, title: t.title ?? t, num: n ? `${pad(wk.n)}-${pad(n)}` : '', assess: t.assess || [], optional: !!t.optional,
         lesson: has(`content/lessons/${id}.md`), slides: has(`content/slides/${id}.md`),
       };
     };
@@ -85,7 +85,7 @@ function buildCourse(base) {
     return list;
   });
   const byNum = new Map(items.map((s) => [s.num, s]));
-  const kicker = (s) => `Week ${s.wk.n}, ${s.label === 'Lab' ? text.labKicker || 'Lab' : s.label}`;
+  const kicker = (s) => `Week ${s.wk.n}, ${s.label === 'Lab' ? text.labKicker || 'Lab' : s.label}${s.optional ? ', Optional' : ''}`;
   // The posted demos that list this lesson under "lessons" in course.json.
   const demosFor = (s) => course.demos.filter((d) => (d.lessons || []).includes(s.id) && has(`content/demos/${d.slug}.html`));
 
@@ -206,7 +206,7 @@ function buildCourse(base) {
 
   const tocNav = (toc) =>
     `<nav class="toc" aria-label="On this page"><p>${T('On This Page', 'On this page')}</p><ol>${toc.map((t) => `<li><a href="#${t.id}">${t.text}</a></li>`).join('')}</ol></nav>`;
-  const tags = (s) => s.assess.map((a) => `<a class="tag" href="/assessments/#${a.toLowerCase()}">${a}</a>`).join('');
+  const tags = (s) => s.assess.map((a) => `<a class="tag" href="/assessments/#${a.toLowerCase()}">${a}</a>`).join('') + (s.optional ? '<span class="tag opt">Optional</span>' : '');
 
   // ---------- Home ----------
   function home() {

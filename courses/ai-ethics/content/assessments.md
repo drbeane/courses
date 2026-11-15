@@ -1,3 +1,5 @@
+**Core and optional lessons:** The course assigns the core lessons. Lessons marked Optional on the Lessons page are further reading and case studies. An assessment may still send you to one: for example, the credit union scenario in A2 draws on the optional lessons on lending and on insurance and housing.
+
 **Workload target:** about 8–10 hours per week including lessons.
 
 ---
