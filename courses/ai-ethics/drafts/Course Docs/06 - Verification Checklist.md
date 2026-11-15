@@ -237,3 +237,12 @@ These claims in the rewritten 02-04 were written from general knowledge and have
 - ⚠ Boston banned police use in 2020.
 - ⚠ Elizabethton, Tennessee, is about a thousand miles from Fargo.
 - ⚠ Eyewitness identification has a long record of wrongful convictions. Add a source (for example, Innocence Project figures).
+
+
+## Added with the Module 1 rewrite (2026-11-15)
+
+New claims in the rewritten Module 1 lessons that were written from general knowledge. Everything else in those lessons comes from the v1 text and its sources.
+
+- ⚠ 01-01, AlphaFold: accuracy close to laboratory methods in 2020; predicted structures for more than 200 million proteins released free in 2022; used in work on malaria vaccines, antibiotic resistance and plastic-degrading enzymes; two of its creators shared the 2024 Nobel Prize in Chemistry. Check against the Nobel press release and the AlphaFold database announcement, and confirm the press release link.
+- ⚠ 01-03: the "200 alerts, one false" figure is labeled in the text as invented for illustration. Replace it with the real Croydon alert count if one is published.
+- ⚠ 01-08: the medical imaging example is generic and has no source. Add one or keep it clearly hypothetical.

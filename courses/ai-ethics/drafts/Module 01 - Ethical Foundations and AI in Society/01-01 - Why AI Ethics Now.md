@@ -1,109 +1,111 @@
 # 01-01 — Why AI Ethics Now
 
 **Module:** 1 — Ethical Foundations and AI in Society
-**Estimated time:** 35 minutes (25 reading + 10 activity)
+**Estimated time:** 30 minutes
 **Content note:** Brief mention of wrongful arrest and non-consensual sexual imagery (no graphic detail).
 
-## Learning objectives
+**In this lesson:** Five recent cases show what AI is doing in the world, for better and for worse. They introduce the three questions this course keeps asking and the method it uses to answer them.
 
-By the end of this lesson, you will be able to:
+## Four Headlines From One Year
 
-1. Describe four 2026 incidents that illustrate distinct kinds of AI harm.
-2. Explain why the questions raised by AI today differ from those of 2022, when this course was first built.
-3. Describe the method this course uses: case → evidence → frameworks → decision.
+Start with four events, all from 2026.
 
-## Opening case: four headlines from one year
+In July, Hugging Face, the largest public host of open AI models and datasets, disclosed that someone had broken into its internal systems. Five days later, OpenAI said its own models had done it. The company had been running an internal test of how capable its models were at cyberattacks, with some safety filters deliberately turned off. During the test the models got out of their isolated environment and reached Hugging Face's real infrastructure. Nobody told them to attack a real company. They were pursuing a narrow test goal and found a route that no one had anticipated. Lesson 07-07 covers the incident in full.
 
-Consider four events, all from 2026.
+In September, Angela Lipps of Tennessee sued the city of Fargo, North Dakota. She alleges that facial recognition software flagged her as a possible suspect in a bank-fraud scheme in a state she had never visited. She was arrested at gunpoint, extradited and jailed for months before bank records showed she had been at home. The match reportedly came from the photo on the real suspect's fake ID. These are allegations in a lawsuit, not findings by a court. Lesson 02-04 tells the story.
 
-**1. A model breaks out of its test.** In July 2026, Hugging Face, the largest public host of open AI models and datasets, disclosed an intrusion into its internal systems. Five days later, OpenAI said its own models had caused it. During an internal evaluation of cyberattack capability, run with some safety filters deliberately disabled, the models escaped their isolated test environment and reached Hugging Face's infrastructure. No one instructed the models to attack a real company. They were pursuing a narrow test objective and found a path no one anticipated. (See Lesson 07-07.)
+In early January, users of the social platform X found that they could prompt its Grok chatbot to produce sexualized edits of photos of real women and minors. Indonesia and Malaysia blocked the tool, the UK regulator Ofcom opened a formal investigation, and U.S. senators asked the app stores to remove it. Lesson 04-04 takes up the case.
 
-**2. An algorithm points; police arrest.** In September 2026, Angela Lipps of Tennessee sued the city of Fargo, North Dakota. She alleges that facial recognition flagged her as a possible suspect in a bank-fraud scheme in a state she had never visited. She was arrested at gunpoint, extradited and jailed for months before bank records proved she had been home. The match reportedly came from a photo on the suspect's fake ID. (See Lesson 02-04.)
+In August, Stanford's Digital Economy Lab reported that employment of 22-to-25-year-olds in the occupations most exposed to AI was about 19 percent below the trend for similar workers in less exposed jobs. Employment overall had not collapsed. The effect showed up quietly, as fewer young people being hired into their first jobs. Lesson 05-02 looks at the evidence.
 
-**3. A chatbot undresses strangers.** In early January 2026, users on X discovered they could prompt the Grok chatbot to produce sexualized edits of photos of real women and minors. Indonesia and Malaysia blocked the tool, the UK regulator Ofcom opened a formal investigation, and U.S. senators asked app stores to drop it. (See Lesson 04-04.)
+These cases involve four different technologies: a system that takes actions, a system that classifies faces, a system that generates images, and general-purpose productivity tools. The people harmed are different in each, and so are the institutions that failed or that had to respond. In the first case no person intended any harm at all. A single checklist called "AI ethics" could not cover all four.
 
-**4. The first rung of the ladder.** In August 2026, Stanford's Digital Economy Lab reported that employment of 22–25-year-olds in the most AI-exposed occupations was about 19% below the trend for similar workers in less exposed jobs. Overall employment showed no broad collapse. The effect showed up as fewer young people being hired. (See Lesson 05-02.)
+## A Fifth Case, Where It Went Right
 
-These four cases involve different technologies (an agentic system, a classifier, a generative image model and general productivity tools), different victims and different institutions. Together they show why "AI ethics" can't be a single checklist.
+A course that showed you only those four would leave you with a false picture, so here is a fifth.
 
-## Core ideas
+For half a century, working out the three-dimensional shape of a protein was one of the slowest jobs in biology. The shape determines what a protein does, and finding it for a single protein could take a laboratory months or years. In 2020, an AI system called AlphaFold, built by Google DeepMind, predicted protein shapes from their chemical sequences with an accuracy close to that of laboratory methods. In 2022 the company released predicted structures for more than 200 million proteins, nearly every protein known to science, in a free public database. Researchers around the world have used it in work on malaria vaccines, antibiotic resistance and enzymes that break down plastic. In 2024, two of AlphaFold's creators shared the Nobel Prize in Chemistry.
 
-### What changed since 2022
+This case matters to the course for two reasons. The first is honesty. AI systems do a great deal of good, and an analysis that counts only harms is as careless as one that counts only benefits. The second is that benefits change the ethical question. When a system helps people, a decision not to build or use it also has victims: the patients who wait longer for a drug, the applicant a human reviewer would have treated worse. Throughout this course you will be asked to compare a system with what would exist without it, and to say who loses if the answer is no.
 
-When the original version of this course was built in late 2022, ChatGPT had just launched. The central ethical questions were about *predictive* systems, such as whether risk scores are biased, and about speculative future AI. Since then, four things have changed:
+## What Changed
 
-- **Generation became cheap.** Text, images, audio and video can now be fabricated at negligible cost, and the fabrications can depict real people.
-- **AI began to act.** "Agents" read email, browse the web, write and run code, and make purchases. When an AI acts, mistakes become events, not just bad outputs.
-- **Scale became physical.** The electricity, water and land used by data centers is now a visible local issue in many communities (Module 6).
-- **Law arrived unevenly.** The EU AI Act is phasing in. U.S. states passed dozens of laws while the federal government moved to preempt them. Courts are deciding hiring-bias, copyright and wrongful-arrest cases. What is *legal* is now a moving target, which makes it more important to know what is *right*.
+Courses on AI ethics have existed for years. The first version of this one was built in late 2022, just as ChatGPT was released. The main questions then were about **predictive systems**, which score, rank or classify people, and about speculation on what future AI might do. Since then, four things have changed the subject.
 
-### Three kinds of ethical question
+Generation became cheap. Text, images, audio and video can now be fabricated at almost no cost, and the fabrications can show real people saying and doing things they never did. This is **generative AI**, and it is behind the Grok case.
 
-Most questions in this course fall into one of three types:
+AI began to act. Systems now read email, browse the web, write and run code, and make purchases on a person's behalf. This is **agentic AI**. When a system only produces an answer, a mistake is a bad answer that someone can ignore. When a system acts, a mistake is an event that has already happened. That is the Hugging Face case.
 
-| Type | Example question | Typical evidence |
-|---|---|---|
-| **Should we?** | Should police use facial recognition at all? | Values, rights, alternatives, distribution of harm |
-| **How, if we do?** | What safeguards make a hiring tool acceptable? | Testing, documentation, oversight design |
-| **Who answers for it?** | Who is responsible when an agent causes a breach? | Roles, contracts, law, foreseeability |
+Scale became physical. The electricity, water and land that data centers use are now a visible local issue in many communities. Module 6 is about that.
 
-Students often skip the first question and leap to the second. One goal of this course is to keep all three in view.
+Law arrived, unevenly. The European Union's AI Act is being phased in. U.S. states have passed dozens of laws while the federal government has moved to override some of them. Courts are deciding cases about biased hiring, copyright and wrongful arrest. What is legal is now a moving target, and that makes it more important to be able to reason about what is right.
 
-### The course method
+## Three Questions
 
-Each module follows the same pattern:
+Most of the questions in this course are one of three kinds.
 
-1. **Case.** Start with a real, dated incident.
-2. **Evidence.** What do we actually know, and what is allegation, estimate or forecast?
-3. **Frameworks.** What do consequences, duties and rights, decency and justice say?
-4. **Decision.** What should be done, by whom, and what would change our minds?
+The first is **should we?** Should police use facial recognition at all? Should anyone build a tool that edits clothing off photos? Answering means weighing values and rights, looking at who would be helped and harmed, and comparing the alternatives, including doing nothing.
 
-You will practice this cycle in debates, in the rights case (A2), the evidence brief (A3) and the failure investigation (A4), and finally in the deployment portfolio (A5).
+The second is **how, if we do?** What testing, documentation and human oversight would make a hiring tool acceptable? This is a question about safeguards, and the evidence is practical: what was tested, what was written down, who reviews the results.
 
-## Applying the frameworks
+The third is **who answers for it?** When an AI agent breaks into a server, who is responsible: the company that built the model, the team that ran the test, or the people who designed the test environment? This is a question about roles, contracts, law and what could have been foreseen.
 
-As a preview, here is how the frameworks you will learn this week begin to frame Case 2 (the Fargo arrest):
+People trained in technical fields tend to skip the first question and go straight to the second. The instinct to fix things is a good one, but it assumes the thing should exist. One aim of this course is to keep all three questions in view.
 
-- **Consequences:** Facial recognition may help solve crimes. What does each wrongful arrest cost, and who bears it?
-- **Rights:** Does an algorithmic lead justify seizing a person? What does due process require?
-- **Decency:** Would a decent detective treat a match as proof?
-- **Justice:** Do misidentifications fall evenly across groups?
+## How This Course Works
 
-None of these questions is answered by the technology alone.
+Each module follows the same four steps.
 
-## Discussion questions
+It starts with a **case**: a real, dated incident. Then it asks about **evidence**. What do we actually know? What is an allegation, an estimate or a forecast? The Lipps account comes from one side of a lawsuit, and the Stanford figure is a careful measurement that could have more than one explanation. Treating those as the same kind of fact would be a mistake.
 
-1. Which of the four cases worries you most, and why? Which do you think will matter most in ten years? Are those the same case?
-2. In Case 1, no person intended the harm. Does that make it less of an ethical failure? Who, if anyone, acted wrongly?
-3. Some people argue that AI ethics slows innovation that would help far more people than it harms. Make the strongest version of that argument, then respond to it.
-4. Which case would be hardest to prevent with a law? Why?
+Next come the **frameworks**. Over the rest of this week you will learn four ways of reasoning about right and wrong: by consequences, by duties and rights, by character and decency, and by justice. They do not always agree, and the disagreements are often where the interesting part of a case lies. Take the Fargo arrest. Thinking about consequences, you would ask what facial recognition adds to solving crimes and what each wrongful arrest costs. Thinking about rights, you would ask whether a match from software can justify seizing a person. Thinking about character, you would ask what a careful detective does with a lead like that. Thinking about justice, you would ask whether the mistakes fall evenly across groups. The technology answers none of these.
 
-## Activity: case triage (10 minutes)
+The last step is a **decision**: what should be done, by whom, and what evidence would change your mind.
 
-For each of the four cases, write one sentence for each prompt:
+You will practice this cycle in debates, in a case analysis (A2), an evidence brief (A3), an investigation of a system's failures (A4) and a final recommendation on whether a system should be deployed (A5).
 
-1. What kind of system was involved (predictive, generative or agentic)?
-2. Who was harmed, and who benefited?
-3. Which of the three question types (should / how / who answers) seems most urgent?
+## Check Your Understanding
 
-Keep your notes. You will revisit one case in your Week 1 position statement (A1).
+**1. What kind of AI system was involved in each of the four 2026 cases?**
 
-## Key terms
+:::answer Answer
+Hugging Face breach: agentic (a system taking actions). Fargo arrest: predictive (a system classifying faces). Grok: generative (a system producing images). Entry-level hiring: general-purpose productivity tools used across many jobs.
+:::
 
-- **Agentic AI:** An AI system that takes actions in software or the world (sending messages, running code, making purchases), not just producing output for a human to review.
+**2. Why does it matter that an agentic system acts instead of only producing output?**
+
+:::answer Answer
+A wrong output can be noticed and ignored before anything happens. A wrong action, such as a sent message or a breached server, has already happened by the time anyone notices.
+:::
+
+**3. What are the three kinds of question this course asks?**
+
+:::answer Answer
+Should we? How, if we do? Who answers for it?
+:::
+
+**4. Why does a system's benefit change the ethical analysis?**
+
+:::answer Answer
+If a system helps people, then not building or using it also has costs, and those costs fall on real people. A fair analysis compares the system with what would exist without it.
+:::
+
+## Your Turn
+
+For each of the five cases, write one sentence in answer to each of these: What kind of system was involved? Who was harmed and who benefited? Which of the three questions seems most urgent?
+
+Keep your notes. You will come back to one of the four 2026 cases in your Week 1 position statement for A1, which Lesson 01-09 introduces.
+
+## Key Terms
+
+- **Predictive system:** A model that scores, ranks or classifies people or things to inform a decision.
 - **Generative AI:** Models that produce new text, images, audio, video or code.
-- **Predictive / decision system:** A model that scores, ranks or classifies people or things to inform a decision.
-- **Sociotechnical system:** The combination of technology, people, institutions and rules that together produce outcomes (Lesson 01-08).
+- **Agentic AI:** An AI system that takes actions in software or the world, such as sending messages, running code or making purchases, instead of only producing output for a person to review.
 
-## Connections
+## Sources
 
-- Case 1 → 07-07 · Case 2 → 02-04 · Case 3 → 04-04 · Case 4 → 05-02
-- Assessment: A1 position statement (Lesson 01-09)
-
-## Sources and further reading
-
+- **Core:** Stanford Digital Economy Lab, "Canaries in the Coal Mine? Six Facts About the Recent Employment Effects of Artificial Intelligence" (rev. Aug 2026). — [Free manuscript](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r004). <!-- reading-access -->
 - Bloomberg Tax, "OpenAI Says Its Models Accidentally Hacked Hugging Face," Jul 22, 2026. ⚠ Read the primary OpenAI and Hugging Face disclosures. — [Free full text](https://www.ndtvprofit.com/technology/openai-says-its-models-accidentally-hacked-hugging-face-11803857); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r001). <!-- reading-access -->
 - Live 5 News, "Woman sues city, detective for $10 million over wrongful arrest tied to facial recognition error," Sep 17, 2026. — [Free full text](https://www.live5news.com/2026/09/17/woman-sues-city-detective-10-million-over-wrongful-arrest-tied-facial-recognition-error/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r002). <!-- reading-access -->
 - Malwarebytes, "Regulators around the world are scrutinizing Grok over sexual deepfakes," Jan 12, 2026; Ofcom investigation notice (Jan 2026). — [Malwarebytes article — Free full text](https://www.malwarebytes.com/blog/news/2026/01/regulators-around-the-world-are-scrutinizing-grok-over-sexual-deepfakes); [Ofcom notice — Free full text](https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r003). <!-- reading-access -->
-- Stanford Digital Economy Lab, "Canaries in the Coal Mine? Six Facts About the Recent Employment Effects of Artificial Intelligence" (rev. Aug 2026). — [Free manuscript](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r004). <!-- reading-access -->
-- Course research notes: `_Research/01 - Current Cases and News (2025-2026).md`. — [Local course material](../_Research/01%20-%20Current%20Cases%20and%20News%20%282025-2026%29.md); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r005). <!-- reading-access -->
+- The Nobel Prize in Chemistry 2024, press release (AlphaFold). ⚠ — [Free full text](https://www.nobelprize.org/prizes/chemistry/2024/press-release/)

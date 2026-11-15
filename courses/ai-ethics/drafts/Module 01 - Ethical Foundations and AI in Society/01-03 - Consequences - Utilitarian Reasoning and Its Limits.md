@@ -3,111 +3,121 @@
 **Module:** 1 — Ethical Foundations and AI in Society
 **Estimated time:** 35 minutes
 
-## Learning objectives
+**In this lesson:** The most common way to argue about technology is to add up the good and the harm. This lesson shows how to do that carefully, why it is persuasive, and four ways it goes wrong.
 
-By the end of this lesson, you will be able to:
+## 470,000 Faces, One False Alert
 
-1. Explain consequentialist and utilitarian reasoning and why it appeals to engineers and policymakers.
-2. Apply a structured cost–benefit analysis to an AI deployment.
-3. Identify four common failure modes of consequentialist reasoning about AI.
+London's Metropolitan Police ran a six-month pilot of fixed live facial recognition cameras in the Croydon area. By the force's own figures, more than 470,000 people passed the cameras. The system produced one false alert, and the deployment contributed to more than 170 arrests. Across London, the force credits live facial recognition with more than 2,000 arrests since early 2024, and says the pilot reduced violence against women and girls.
 
-## Opening case: the live facial recognition numbers
+Read as a tally, this looks like an easy case. On one side are many arrests and less violent crime. On the other is a single false alert, which did not even lead to an arrest. If right and wrong are a matter of results, the cameras should stay.
 
-London's Metropolitan Police report that during a six-month pilot of fixed live facial recognition cameras in Croydon, more than 470,000 people passed the cameras. The system produced one false alert, and the deployment contributed to more than 170 arrests. Across London, the Met credits live facial recognition with more than 2,000 arrests since early 2024 and says the pilot reduced violence against women and girls.
+Hold on to that conclusion. By the end of the lesson you should be able to say what it counts, and what it leaves out.
 
-A consequentialist reads these numbers as strong evidence. The benefits are many arrests and less violent crime. The costs are one false alert, which didn't even lead to an arrest. On those figures, the case looks easy.
+## The Idea in One Sentence
 
-Hold onto that conclusion. By the end of the lesson, you should be able to say what it leaves out.
+**Consequentialism** is the view that an action is right if it produces the best overall results among the options available. Nothing else matters in the end: not the intentions behind the action, and not whether it broke a rule.
 
-## Core ideas
+The best-known version is **utilitarianism**. It says the best result is the one with the greatest total well-being, counting everyone affected and counting each of them equally. Its founders disagreed about what well-being is. Jeremy Bentham thought it was pleasure and the absence of pain. John Stuart Mill argued that some pleasures are worth more than others. Many modern versions count the satisfaction of people's preferences. The structure is the same in each: work out who is affected, estimate how much better or worse off each option leaves them, and choose the option with the highest total.
 
-### Consequentialism in one sentence
+## Why It Persuades
 
-An action is right if it produces the best overall consequences among the available alternatives.
+Consequentialism is the natural ethics of engineering and public policy, and for good reasons.
 
-**Utilitarianism** is the best-known form. It defines "best" as the greatest total well-being (Bentham's pleasure and pain, Mill's higher and lower pleasures, or modern preference satisfaction), counting everyone affected equally.
+It matches how technical people already think. Define an objective, measure it, improve it. Risk management is built on the same logic: expected harm is the chance of something going wrong multiplied by how bad it would be.
 
-### Why it appeals in technology
+It takes results seriously. A rule that sounds principled but leaves everyone worse off is hard to defend, and consequentialism explains why.
 
-- It matches how engineers optimize: define an objective, then maximize it.
-- It supports policy cost–benefit analysis and risk management ("expected harm = probability × severity").
-- It takes outcomes seriously. A rule that sounds principled but makes everyone worse off is hard to defend.
-- It is impartial. A stranger's harm counts as much as a shareholder's.
+It is impartial. A stranger's suffering counts exactly as much as a shareholder's or your own. That is a demanding standard, and a morally serious one.
 
-### A structured consequentialist analysis
+It also makes you count benefits. Someone who objects to the Croydon cameras has to reckon with the people who were not assaulted because an offender was caught. Any ethical argument that will not look at that side of the ledger is incomplete.
 
-1. **List the alternatives,** including not deploying and lower-tech options.
-2. **Identify everyone affected,** including people who aren't users.
-3. **Estimate benefits and harms for each group,** with probabilities.
-4. **Aggregate,** while noting assumptions.
-5. **Test sensitivity.** Which assumptions, if wrong, would reverse the conclusion?
+## Doing the Analysis Properly
 
-### Four failure modes
+A careful consequentialist analysis has five steps, and the quality of the conclusion depends on doing all of them.
 
-**1. Measuring what is easy, not what matters.** Arrests are counted; chilling effects on lawful protest are not. Engagement is counted; loneliness is not. The things that are hard to measure tend to drop out of the calculation, and AI systems that optimize measurable proxies amplify this ("Goodhart's law": when a measure becomes a target, it ceases to be a good measure).
+1. **List the alternatives.** Include not deploying the system at all and lower-tech options. A system is never good or bad in the abstract, only better or worse than something else.
+2. **Identify everyone affected.** That includes people who are not users and never chose to be involved.
+3. **Estimate the benefits and harms for each group**, with a sense of how likely each is.
+4. **Add them up**, and write down the assumptions you made in order to do so.
+5. **Test the result.** Ask which assumptions, if they turned out to be wrong, would reverse your conclusion.
 
-**2. Aggregation hides distribution.** A total of "+1,000 units of welfare" can conceal concentrated harm. If the one false alert, or the next ten, fall on the same neighborhood, the average looks fine while that community bears the cost. Justice-based ethics (Lesson 01-06) addresses this directly.
+The first version of the Croydon tally skipped most of this. It compared the cameras with nothing, counted two groups, and tested no assumptions.
 
-**3. The denominator problem.** "One false alert in 470,000 scans" sounds tiny, but the right question may be *false alerts per alert*. If the system produced, say, 200 alerts and one was false, the rate among people stopped is 1 in 200. More fundamentally, scanning 470,000 people to find a few hundred is itself a consequence. Every passerby's face was processed. Base rates matter (see Lesson 02-03).
+## Four Ways It Goes Wrong
 
-**4. Rights as side constraints.** Some acts seem wrong even when they maximize welfare: punishing an innocent person to calm a riot, or harvesting one patient's organs to save five. Most people think rights limit what can be done in the name of aggregate good. Deontology (Lesson 01-04) gives that intuition a theory.
+**It measures what is easy instead of what matters.** Arrests are counted. Whether people stay away from a lawful protest because the cameras are there is not counted, because nobody knows how to count it. Things that are hard to measure tend to drop out of the sum, as though they weighed nothing. AI systems make this worse, because they are built to optimize a number. **Goodhart's law** describes the result: when a measure becomes a target, it stops being a good measure. A system rewarded for engagement will find ways to raise engagement, whether or not anyone's life is better.
 
-### Uncertainty and long-run consequences
+**The total hides who pays.** A net gain of a thousand units of well-being can conceal a severe harm to a few people. If the one false alert, or the next ten, fall on residents of the same neighborhood, the average still looks excellent while one community carries the cost. Consequentialism in its simple form has no objection to this, so long as the total is higher. Lesson 01-06, on justice, takes up the problem directly.
 
-AI debates often involve speculative, high-stakes outcomes: mass unemployment, catastrophic misuse, extinction-level risk. Consequentialists disagree about how to weigh low-probability, high-severity outcomes.
+**The answer depends on what you divide by.** "One false alert in 470,000 scans" sounds tiny. But most of those 470,000 people were never going to trigger an alert. A more telling figure might be false alerts as a share of all alerts. If the system raised 200 alerts and one was false, then for the people actually stopped the error rate is 1 in 200. That number is made up to show the point, and the real one may be better or worse. The **base rate**, meaning how common the thing you are looking for is among the people tested, shapes every such figure, and Module 2 returns to it. There is also a deeper point. Scanning 470,000 faces to find a few hundred people is itself a result. Every one of those passers-by had their face processed by a police system.
 
-- **Expected-value reasoning** multiplies a tiny probability by an enormous cost and may yield a dominant number.
-- **Critics** reply that the probabilities are often invented, and that this "Pascal's mugging" lets any speculative story override present, measurable harms.
+**Some things seem wrong whatever the total.** Suppose a town could stop a riot by convicting a man the authorities know is innocent. Or suppose a surgeon could save five patients by taking the organs of one healthy visitor. In each case the sum favors the act, and almost everyone thinks the act is wrong. Most people believe that rights set limits on what may be done to a person for the sake of the greater good. Consequentialism has trouble explaining that belief. Lesson 01-04 presents the theory that takes it as the starting point.
 
-This course asks you to label claims as **measured, estimated, forecast or speculative** (see Lesson 05-01), and to be explicit about how you weigh each.
+## When the Numbers Are Guesses
 
-### Rule consequentialism
+Debates about AI often involve outcomes that are very large and very uncertain: mass unemployment, catastrophic misuse, even human extinction. Consequentialists disagree about how to handle them.
 
-One refinement asks which *rules* produce the best consequences if generally followed, rather than evaluating each act separately. A rule like "never arrest solely on a facial recognition match" may produce better outcomes overall even if, in a particular case, breaking it would have caught a criminal faster. Several police departments, including West Fargo, ND, and Detroit under its 2024 settlement, have adopted exactly this rule.
+One approach multiplies the tiny probability by the enormous cost and treats the product like any other number. The trouble is that a large enough imagined cost will outweigh everything else, however unlikely it is. Critics point out that the probabilities in these arguments are often invented, and that this style of reasoning lets any dramatic story about the future override harms that are present and measured. The same move can be made about benefits: a promised cure for every disease can be used to excuse almost any cost today.
 
-## Applying the frameworks
+This course asks for a discipline in response. Label each claim as measured, estimated, forecast or speculative, and say openly how much weight you are giving to each kind. A forecast is not worthless, but it should not be written down as if it were a measurement.
 
-Return to the Croydon numbers and complete the five-step analysis:
+## Rules That Produce Good Results
 
-- **Alternatives:** officer patrols, targeted deployments with warrants, no facial recognition.
-- **Affected groups:** people on watchlists; passersby; crime victims; protesters; communities with more deployments.
-- **Unmeasured costs:** loss of anonymity in public; possible deterrence of lawful assembly; mission creep.
-- **Distribution:** Where are cameras placed? Who is on the watchlists?
-- **Sensitivity:** Would the conclusion change if false alerts were concentrated in one group, or if watchlists expanded to minor offenses?
+One refinement answers some of these objections. **Rule consequentialism** does not judge each act by its results. It asks which rules would produce the best results if people generally followed them, and then says to follow those rules.
 
-## Discussion questions
+Take the rule "never arrest someone on a facial recognition match alone." In a particular case, breaking it might catch a criminal sooner. But a police force that follows it will arrest far fewer innocent people, and the public will have more reason to trust it. Over time the rule wins, even counting only results. Several police departments have adopted exactly this rule, including West Fargo, North Dakota, and Detroit under a 2024 legal settlement.
 
-1. Is "1 false alert in 470,000 scans" the right way to describe the system's error? Propose a better metric and explain why.
-2. Suppose a hiring AI increases total hires and productivity but rejects qualified disabled applicants at twice the usual rate. What does a strict utilitarian say? What do you say?
-3. Is it legitimate to justify current AI deployments by appeal to large but uncertain future benefits, such as cures for disease? Where do you draw the line?
-4. Name one AI system you use whose designers almost certainly optimized a proxy. What does the proxy miss?
+This version keeps the focus on outcomes while explaining why a decent society binds itself with rules it does not break case by case.
 
-## Activity: sensitivity test (15 minutes)
+## Back to Croydon
 
-Pick any AI deployment from Lesson 01-01. Write a three-row table:
+Now run the five steps on the opening case.
 
-| Assumption | If true → conclusion | If false → conclusion |
-|---|---|---|
+The alternatives include officers on patrol, cameras used only for specific operations approved in advance, and no facial recognition at all. The people affected include those on police watchlists, everyone who walks past, victims of crime, people attending protests, and the communities where cameras are placed more often. The costs nobody measured include the loss of anonymity in public, the possibility that people avoid lawful gatherings, and the gradual widening of what the system is used for. On distribution, you would want to know where the cameras go and who is on the watchlists. And for the test: would the conclusion change if false alerts fell mostly on one group, or if the watchlists grew to include minor offenses?
 
-Identify the single assumption your conclusion depends on most.
+None of this shows that the cameras are wrong. The arrests are real and so are the victims who were spared. It shows that "one false alert in 470,000" was the beginning of an analysis and was presented as the end of one.
 
-## Key terms
+## Check Your Understanding
 
-- **Consequentialism:** Rightness depends only on outcomes.
-- **Utilitarianism:** Maximize total well-being, counting all equally.
-- **Goodhart's law:** A measure that becomes a target ceases to be a good measure.
+**1. What does utilitarianism say makes an action right?**
+
+:::answer Answer
+It produces the greatest total well-being among the available options, counting everyone affected equally.
+:::
+
+**2. What is Goodhart's law, and why does it matter for AI systems?**
+
+:::answer Answer
+When a measure becomes a target, it stops being a good measure. AI systems are built to optimize a measurable number, so they can drive that number up without achieving what it was meant to stand for.
+:::
+
+**3. Why can "1 false alert in 470,000 scans" be misleading?**
+
+:::answer Answer
+Most people scanned would never trigger an alert, so dividing by all scans makes the error rate look small. The rate among people actually flagged may be much higher. The figure also leaves out that scanning everyone is itself a cost.
+:::
+
+**4. How does rule consequentialism differ from judging each act by its results?**
+
+:::answer Answer
+It asks which rules would lead to the best results if generally followed, and says to follow those rules, even when breaking one would give a better result in a single case.
+:::
+
+## Your Turn
+
+Pick one of the cases from Lesson 01-01 and state your conclusion about it in a sentence. Then list three assumptions that conclusion depends on. For each one, write what you would conclude if the assumption were true and what you would conclude if it were false. Which single assumption matters most?
+
+## Key Terms
+
+- **Consequentialism:** The view that the rightness of an action depends only on its results.
+- **Utilitarianism:** The view that the right action produces the greatest total well-being, counting everyone equally.
+- **Goodhart's law:** When a measure becomes a target, it stops being a good measure.
 - **Base rate:** How common the thing you are trying to detect is in the population being tested.
-- **Rule consequentialism:** Follow the rules whose general adoption produces the best outcomes.
+- **Rule consequentialism:** The view that we should follow the rules whose general adoption produces the best results.
 
-## Connections
+## Sources
 
-- Base rates and error metrics → 02-03, 03-02
-- Distribution → 01-06 · Rights as constraints → 01-04
-- Labeling evidence → 05-01, A3
-
-## Sources and further reading
-
-- Mill, J.S. *Utilitarianism* (1863), Chapter 2 (excerpts). — [Free full text](https://www.gutenberg.org/ebooks/11224); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r010). <!-- reading-access -->
+- **Core:** Mill, J.S. *Utilitarianism* (1863), Chapter 2 (excerpts). — [Free full text](https://www.gutenberg.org/ebooks/11224); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r010). <!-- reading-access -->
 - Computer Weekly, "Met pushes ahead with major facial recognition expansion," Jun 24, 2026 (Croydon figures). — [Free full text](https://computerweekly.com/news/366645018/Met-pushes-ahead-with-major-facial-recognition-expansion); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r011). <!-- reading-access -->
 - Strathern, M. "Improving ratings: audit in the British University system" (1997), the source of the common phrasing of Goodhart's law. — [Abstract / record](https://doi.org/10.1017/S1062798700002660); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r012). <!-- reading-access -->
 - Kahneman, D. *Thinking, Fast and Slow* (2011), chapter on base-rate neglect. — [Paid / library](https://academic.macmillan.com/academictrade/9780374533557/thinkingfastandslow/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r013). <!-- reading-access -->

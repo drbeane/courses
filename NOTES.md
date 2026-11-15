@@ -62,3 +62,12 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - Math for AI marks 5 lessons and 4 demos New and 21 lessons Updated, for the November 2026
   revision. Lessons that were only corrected are not marked. To retire the tags, remove `tag` from
   `course.json`.
+
+## 2026-11-15: AI Ethics Module 1 rewritten
+
+- All nine Module 1 lessons (01-01 to 01-09) are rewritten in the new structure: prose, headings
+  that name the idea, "Check Your Understanding" with folded answers, one "Your Turn" prompt, a
+  short Key Terms list and a Core reading. Lesson titles and numbers are unchanged.
+- 01-01 adds a fifth case where AI clearly helped (AlphaFold) beside the four 2026 cases.
+- The planned outline now has a Type column for all 76 lessons.
+- New claims that need sources are listed at the end of `06 - Verification Checklist.md`.

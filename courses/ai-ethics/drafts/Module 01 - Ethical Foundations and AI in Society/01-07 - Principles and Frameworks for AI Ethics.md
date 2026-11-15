@@ -1,115 +1,133 @@
 # 01-07 — Principles and Frameworks for AI Ethics
 
 **Module:** 1 — Ethical Foundations and AI in Society
-**Estimated time:** 35 minutes
+**Estimated time:** 30 minutes
 
-## Learning objectives
+**In this lesson:** Companies and governments have published dozens of lists of AI ethics principles. This lesson covers the five principles most of them share, where the lists came from, and why a principle that everyone signs does not, by itself, change what anyone does.
 
-By the end of this lesson, you will be able to:
+## Everyone Has Principles
 
-1. Explain the five unified principles of AI ethics (beneficence, non-maleficence, autonomy, justice, explicability).
-2. Trace the history of AI principles from Asilomar (2017) through intergovernmental frameworks.
-3. Critique principles-based ethics and explain the gap between principles and practice.
+By 2019, researchers had counted more than 80 published sets of AI ethics principles from companies, governments and non-profit groups. The lists were strikingly alike. Almost all of them endorsed transparency, fairness, avoiding harm, responsibility and privacy.
 
-## Opening case: everyone has principles
+In the years that followed, many of the same organizations released products that critics said broke those principles. Several cut or closed their responsible-AI teams during the technology layoffs of 2023.
 
-By 2019, researchers had counted more than 80 sets of published AI ethics principles from companies, governments and NGOs (Jobin, Ienca & Vayena, *Nature Machine Intelligence*, 2019). Almost all endorsed transparency, fairness, non-maleficence, responsibility and privacy.
+That raises the question for this lesson. If nearly everyone agrees on the principles and practice still goes its own way, what are the principles for?
 
-In the following years, many of the same organizations shipped products that critics said violated those principles. Several cut or disbanded their responsible-AI teams during the 2023 layoffs.
+## From Declarations to Law
 
-What good are principles if nearly everyone signs them and practice diverges?
+The lists appeared in a rush between 2017 and 2021, and the order in which they came tells a story.
 
-## Core ideas
-
-### A short history
-
-| Year | Framework | Notes |
+| Year | Framework | What it is |
 |---|---|---|
-| 2017 | **Asilomar AI Principles** (Future of Life Institute) | 23 principles on research, ethics and long-term risk, including human control and avoiding an arms race in lethal autonomous weapons |
-| 2018 | **Montréal Declaration for Responsible AI** | Developed through public consultation; 10 principles, including well-being, autonomy, democratic participation and sustainable development |
-| 2018 | **Partnership on AI tenets** | Industry and civil-society coalition |
-| 2019 | **EU High-Level Expert Group, Ethics Guidelines for Trustworthy AI** | Seven requirements; precursor to the EU AI Act |
-| 2019 | **OECD AI Principles** (updated 2024) | Adopted by 40+ countries; basis for G20 principles |
-| 2021 | **UNESCO Recommendation on the Ethics of AI** | Adopted by 193 member states |
-| 2023 | **NIST AI RMF** | Shifts from principles to a risk-management process (Lesson 08-04) |
-| 2024 | **Council of Europe Framework Convention** | First legally binding international AI treaty (Lesson 08-03) |
+| 2017 | Asilomar AI Principles | 23 principles from a conference of researchers, covering research, ethics and long-term risk |
+| 2018 | Montréal Declaration for Responsible AI | 10 principles developed through public consultation |
+| 2018 | Partnership on AI tenets | Commitments by a coalition of companies and civil-society groups |
+| 2019 | EU Ethics Guidelines for Trustworthy AI | Seven requirements from an expert group; a forerunner of the EU AI Act |
+| 2019 | OECD AI Principles (updated 2024) | Adopted by more than 40 countries |
+| 2021 | UNESCO Recommendation on the Ethics of AI | Adopted by 193 member states |
+| 2023 | NIST AI Risk Management Framework | A process for managing risk, more than a list of values |
+| 2024 | Council of Europe Framework Convention | The first legally binding international treaty on AI |
 
-The trend is from **voluntary principles → risk-management frameworks → binding law**.
+Read down the table and the direction is clear. The early entries are voluntary statements by researchers and companies. The middle ones are agreements among governments that still bind no one. The last two are a working process and a treaty. The field has moved from voluntary principles, to frameworks for managing risk, to binding law. Module 8 covers the frameworks and laws in detail.
 
-### The five unified principles
+## The Five Principles
 
-Floridi and Cowls (2019) analyzed six major principle sets and found they converge on five principles. The first four come from bioethics, and the fifth is new to AI:
+With so many lists, it helps that they converge. In 2019 Luciano Floridi and Josh Cowls compared six of the most prominent sets and found that they came down to five principles. Four are borrowed from medical ethics, where they have guided doctors and researchers for decades. The fifth is new.
 
-1. **Beneficence:** Promote well-being, preserve dignity and sustain the planet. AI should do good, not merely avoid harm.
-2. **Non-maleficence:** Do no harm, covering privacy, security and "capability caution" (care about dangerous capabilities).
-3. **Autonomy:** Preserve human decision-making power, including deciding *which* decisions to delegate to AI. Floridi calls this "meta-autonomy."
-4. **Justice:** Promote fairness, prevent discrimination and share benefits widely.
-5. **Explicability:** Make AI intelligible (how does it work?) and accountable (who is responsible for how it works?). This principle *enables* the other four, because we can't assess beneficence or justice in a system we can't understand or hold anyone accountable for.
+**Beneficence** means doing good: promoting well-being, preserving dignity and sustaining the planet. It is listed first for a reason. The point of AI is to benefit people, and a system that merely avoids harm while helping no one has not met this principle.
 
-These five principles were central in COSC-643 and remain the course's shared vocabulary.
+**Non-maleficence** means doing no harm. It covers privacy, security and caution about building capabilities that are dangerous.
 
-### Critiques of principles-based ethics
+**Autonomy** means preserving people's power to decide for themselves. That includes the power to decide which decisions to hand over to a machine, and to take them back. Floridi calls this higher-level choice **meta-autonomy**.
 
-- **Too abstract:** "Be fair" doesn't say which fairness metric to use (03-02).
-- **Conflicting:** Explicability may reduce accuracy, and privacy may conflict with bias auditing, which needs demographic data.
-- **Ethics washing:** Principles can serve as public relations that delay regulation (Wagner, 2018).
-- **No enforcement:** Voluntary principles carry no penalties.
-- **Narrow authorship:** Most early principles came from North America and Europe, so non-Western values and Global South priorities were underrepresented.
-- **Mittelstadt's argument (2019):** Unlike medicine, AI lacks common aims, professional history, proven methods for translating principles into practice, and robust legal and professional accountability. So principles alone won't produce ethical AI.
+**Justice** means promoting fairness, preventing discrimination and sharing the benefits widely. Lesson 01-06 covered what that involves.
 
-### From principles to practice
+**Explicability** is the new one. It has two parts: the system should be intelligible, so that people can understand how it works, and it should be accountable, so that someone answers for how it works. Floridi and Cowls argue that this principle makes the other four possible. You cannot judge whether a system does good or treats people fairly if you cannot understand it and there is nobody to hold responsible.
 
-What actually moves practice?
+These five are the shared vocabulary of this course. When a later lesson asks whether a hiring tool respects autonomy or whether an agent's behavior is explicable, it is using these terms.
 
-| Mechanism | Example |
-|---|---|
-| Law with enforcement | TAKE IT DOWN Act removal duties (04-05); EU AI Act fines |
-| Litigation | *Mobley v. Workday* (03-03); copyright settlements (04-09) |
-| Procurement requirements | Public agencies requiring impact assessments (08-07) |
-| Standards and audits | ISO/IEC 42001 certification (08-04) |
-| Documentation norms | Model cards, system cards (08-06) |
-| Worker and professional pressure | Employee letters; union contracts (05-09) |
-| Incident disclosure | Public post-mortems such as the Hugging Face disclosure (07-07) |
+## Why They Persuade
 
-Principles still matter. They state shared goals, provide criteria for judging practice, and give employees and the public language for raising concerns.
+Principles are easy to mock, but they do real work.
 
-## Applying the frameworks
+They give people with different moral views common ground. A consequentialist and a believer in rights will justify non-maleficence differently, and both can sign it.
 
-Map each principle to a 2026 case:
+They are a yardstick. Once an organization has said in public that it values explicability, anyone can ask it to show how a particular product meets that standard.
 
-| Principle | Case | Question |
-|---|---|---|
-| Beneficence | Live facial recognition in London | Do the crime reductions justify it? |
-| Non-maleficence | Grok image generation | Was misuse foreseeable, and were safeguards adequate? |
-| Autonomy | AI hiring screens | Can applicants opt for human review? |
-| Justice | Entry-level hiring decline | Who bears the transition costs? |
-| Explicability | Hugging Face breach | Can anyone explain why the models did what they did? |
+And they give employees and the public words for raising a concern. "This violates our own stated commitment to autonomy" is a stronger objection inside a company than "this feels wrong."
 
-## Discussion questions
+## What Principles Cannot Do
 
-1. Asilomar Principle 16 says humans should choose how and whether to delegate decisions to AI. Is that principle being followed in today's agentic systems?
-2. Which of the five principles do companies find easiest to claim and hardest to demonstrate? Why?
-3. Is "ethics washing" a fair charge? Give an example where principles made a real difference, and one where they did not.
-4. Should there be a sixth principle? Candidates often proposed include sustainability, solidarity and human control. Make the case for one.
+The criticisms are serious, and you should be able to state them.
 
-## Activity: principle-to-practice translation (15 minutes)
+Principles are abstract. "Be fair" does not tell you which of the conflicting meanings of fairness to adopt.
 
-Choose one principle. Write three concrete, checkable requirements that a deployer of a customer-service chatbot would have to meet to demonstrate it. For example, for explicability: "Users are told at the start of each conversation that they are talking to an AI."
+They conflict with one another. Making a model more explicable can make it less accurate. Protecting privacy can obstruct a bias audit, because the audit needs data on people's race and sex.
 
-## Key terms
+They can serve as public relations. The charge of **ethics washing** is that organizations publish principles to appear responsible and to argue that regulation is unnecessary, while changing nothing of substance.
 
-- **Beneficence / non-maleficence / autonomy / justice / explicability:** The five unified principles.
-- **Meta-autonomy:** The power to decide which decisions to delegate.
+They carry no penalty. A voluntary principle that is broken costs the organization nothing.
+
+They were written by a narrow group. Most early lists came from North America and Europe, and the priorities of the rest of the world were poorly represented.
+
+The deepest criticism is Brent Mittelstadt's. Principles work in medicine, he argues, because medicine has things that AI lacks: a shared aim in the patient's good, a long professional history, tested ways of turning principles into practice, and legal and professional bodies that can end a career. AI development has no shared aim of that kind and no equivalent of losing your license. Borrowing medicine's principles without its institutions will not produce the same result.
+
+## What Actually Changes Practice
+
+If principles alone do not move organizations, what does? The honest answer is a set of mechanisms with consequences attached.
+
+Law with enforcement is the most direct: a statute that requires platforms to remove non-consensual intimate images, or the fines in the EU AI Act. Lawsuits do similar work after the fact, as in the hiring-discrimination and copyright cases covered in Modules 3 and 4. Purchasing rules matter, because a public agency that will not buy a system without an impact assessment gets impact assessments. So do standards and audits, such as certification of an organization's AI management, and documentation norms such as model cards, which describe what a model is for and where it fails. Pressure from workers and professions counts too, through open letters and union contracts. And public disclosure of incidents, such as the reports published after the Hugging Face breach, lets everyone learn from one organization's failure.
+
+Notice what each of these has in common with the principles. A law against discriminatory hiring is the justice principle with an enforcement mechanism. A model card is explicability with a template. The principles say what the goal is, and the mechanisms are what make anyone pursue it.
+
+## Five Principles, Five Cases
+
+To see the principles in use, match each to a case you have met this week. Beneficence is the question behind London's facial recognition cameras: do the reductions in crime justify them? Non-maleficence is the question in the Grok case: was the misuse foreseeable, and were the safeguards adequate? Autonomy arises with AI hiring screens: can an applicant choose to be reviewed by a person? Justice is at stake in the decline in entry-level hiring: who bears the cost of the transition? And explicability is the hard question about the Hugging Face breach: can anyone explain why the models did what they did, and who answers for it?
+
+In each case the principle tells you what to ask. It does not tell you the answer.
+
+## Check Your Understanding
+
+**1. Name the five principles.**
+
+:::answer Answer
+Beneficence, non-maleficence, autonomy, justice and explicability.
+:::
+
+**2. Why is explicability said to make the other four possible?**
+
+:::answer Answer
+You cannot assess whether a system does good, avoids harm, respects autonomy or is fair unless you can understand how it works and someone is accountable for it.
+:::
+
+**3. What is ethics washing?**
+
+:::answer Answer
+Using the language of ethics, such as published principles, to appear responsible or to avoid regulation without making substantive changes.
+:::
+
+**4. Why does Mittelstadt think principles work better in medicine than in AI?**
+
+:::answer Answer
+Medicine has a shared aim, a long professional history, proven ways of turning principles into practice, and legal and professional accountability. AI development lacks these.
+:::
+
+## Your Turn
+
+Choose one of the five principles. Write three concrete requirements that a company deploying a customer-service chatbot would have to meet to show it honors that principle. Each must be something an outsider could check. For explicability, one might be: "Users are told at the start of every conversation that they are talking to an AI."
+
+## Key Terms
+
+- **Beneficence:** The principle that AI should do good and promote well-being.
+- **Non-maleficence:** The principle that AI should not cause harm.
+- **Autonomy:** The principle that people should keep the power to decide for themselves.
+- **Explicability:** The principle that AI should be intelligible and that someone should be accountable for it.
+- **Meta-autonomy:** The power to decide which decisions to delegate to a machine.
 - **Ethics washing:** Using ethics language to avoid substantive change or regulation.
 
-## Connections
+## Sources
 
-- Explicability → 03-09, 08-06 · Non-maleficence and capability caution → 07-09
-- A1 debates are graded partly on use of principles.
-
-## Sources and further reading
-
-- Floridi, L. & Cowls, J. "A Unified Framework of Five Principles for AI in Society," *Harvard Data Science Review* 1(1), 2019. — [Free full text](https://hdsr.mitpress.mit.edu/pub/l0jsh9d1); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r026). <!-- reading-access -->
+- **Core:** Floridi, L. & Cowls, J. "A Unified Framework of Five Principles for AI in Society," *Harvard Data Science Review* 1(1), 2019. — [Free full text](https://hdsr.mitpress.mit.edu/pub/l0jsh9d1); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r026). <!-- reading-access -->
 - Jobin, A., Ienca, M. & Vayena, E. "The global landscape of AI ethics guidelines," *Nature Machine Intelligence* 1, 2019. — [Free manuscript](https://arxiv.org/abs/1906.11668); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r027). <!-- reading-access -->
 - Mittelstadt, B. "Principles alone cannot guarantee ethical AI," *Nature Machine Intelligence* 1, 2019. — [Free manuscript](https://arxiv.org/abs/1906.06668); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r028). <!-- reading-access -->
 - Future of Life Institute, Asilomar AI Principles (2017); Montréal Declaration (2018); OECD AI Principles (2019, rev. 2024); UNESCO Recommendation (2021). — [Asilomar principles — Free full text](https://futureoflife.org/open-letter/ai-principles/); [Montréal declaration — Free full text](https://montrealdeclaration-responsibleai.com/the-declaration/); [OECD principles — Free full text](https://www.oecd.org/en/topics/ai-principles.html); [UNESCO recommendation — Free full text](https://www.unesco.org/en/legal-affairs/recommendation-ethics-artificial-intelligence); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r029). <!-- reading-access -->
