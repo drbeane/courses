@@ -1,0 +1,119 @@
+# 01-02 — What Kind of System? Predictive, Generative, and Agentic AI
+
+**Module:** 1 — Ethical Foundations and AI in Society
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Distinguish predictive, generative and agentic AI systems by what they output and how they are used.
+2. Explain how each system type shapes its typical harms and the ways those harms can be checked.
+3. Classify a real system, recognizing that many products combine all three.
+
+## Opening case: one company, three systems
+
+Imagine a mid-size bank (a hypothetical, but a typical configuration in 2026) that uses:
+
+- a **credit model** that scores loan applicants from 300 to 850,
+- a **customer-service chatbot** that answers questions and drafts letters, and
+- an **operations agent** that reads incoming documents, updates account records and schedules follow-up calls.
+
+All three are "AI." Each can go wrong in a different way, and each needs a different kind of oversight.
+
+## Core ideas
+
+### Predictive (decision) systems
+
+A predictive system maps an input (an application, a face, a criminal record) to a score, label or ranking. Examples include credit scoring, résumé screening, recidivism risk tools, fraud detection and face matching.
+
+**Characteristic harms:**
+
+- **Error asymmetry:** False positives and false negatives fall on different people, with different costs.
+- **Disparate impact:** Error rates or outcomes differ across groups (Module 3).
+- **Opacity:** The person affected often cannot see the score or why it was given.
+- **Automation bias:** Humans defer to the score even when it is wrong (Lesson 05-08).
+
+**How we check them:** These systems have a defined task, so you can measure accuracy and error rates by group, at least in principle. Evaluation is hard, but well understood.
+
+### Generative systems
+
+A generative system produces new content, such as text, images, audio, video or code, from a prompt. Examples include chat assistants, image generators, voice cloning and coding assistants.
+
+**Characteristic harms:**
+
+- **Fabrication:** Fluent, confident output that is false (Lesson 04-01).
+- **Synthetic depiction of real people:** Deepfakes and non-consensual imagery (Lessons 04-03 to 04-05).
+- **Rights in training data and outputs:** Copyright and likeness (Lesson 04-09).
+- **Unsafe assistance:** Help with harmful tasks.
+- **Influence at scale:** Persuasion and companionship (Lesson 04-08).
+
+**How we check them:** The output space is effectively infinite, and "correct" is often undefined. Evaluation relies on benchmarks, red-teaming and sampling, none of which prove safety (Lab 04-10).
+
+### Agentic systems
+
+An agentic system uses a model, usually a generative one, to plan and take actions through tools: browsing, sending email, running code, moving money or calling other systems. Examples include coding agents, email assistants with send permission and automated security testers.
+
+**Characteristic harms:**
+
+- **Actions, not just outputs:** A wrong answer can be ignored, but a wrong action (a deleted database, a sent message, a breached server) has already happened.
+- **Manipulation through inputs:** Content the agent reads can contain instructions (prompt injection, Lesson 07-06).
+- **Specification gaming:** The agent achieves the literal goal by unintended means, as in the Hugging Face breach (Lesson 07-07).
+- **Diffuse responsibility:** Developer, deployer, user and the authors of the data the agent read all share responsibility (Lesson 08-05).
+
+**How we check them:** Evaluate the whole system, including permissions, logging, approval gates and sandboxing, not just the model.
+
+### Why the distinction matters ethically
+
+| Question | Predictive | Generative | Agentic |
+|---|---|---|---|
+| Who is usually harmed? | The person being scored | Third parties depicted or misinformed; users | Anyone the agent's actions touch |
+| When does harm happen? | When a decision is made on the score | When content is published or relied on | When the action executes |
+| Main human safeguard | Review of decisions; appeal | Verification before reliance | Permission limits and approval |
+| Typical law | Anti-discrimination, consumer credit, due process | Defamation, copyright, NCII, consumer protection | Computer misuse, contract, product liability (unsettled) |
+
+### Real products blend types
+
+A modern hiring platform might generate job descriptions (generative), rank applicants (predictive) and schedule interviews automatically (agentic). When you analyze a system, **classify each component**, because each needs its own safeguards.
+
+### What about "frontier" or "general-purpose" AI?
+
+"General-purpose AI" (GPAI) refers to models usable for many tasks; the term appears in the EU AI Act. "Frontier" refers to the most capable models at a given time. These describe capability and generality, not type. A frontier model can be deployed as a chatbot, a scorer or an agent.
+
+## Applying the frameworks
+
+- **Explicability**, one of the five principles (Lesson 01-07), applies most directly to predictive systems, where an affected person can ask "why me?"
+- **Non-maleficence** for agentic systems requires anticipating actions, not just outputs.
+- **Autonomy** is threatened differently by each type: by being judged without recourse (predictive), by being deceived (generative), or by having things done in one's name (agentic).
+
+## Discussion questions
+
+1. Is a chatbot that recommends whether you should get a loan a predictive or a generative system? Does the answer change its ethical obligations?
+2. Agents are often sold as "just automation." Is there a meaningful ethical difference between a traditional script that sends emails and an AI agent that decides which emails to send?
+3. Which system type do you personally rely on most? Which would you least want making decisions about you?
+
+## Activity: system classification (15 minutes)
+
+For each product, identify the predictive, generative and agentic components and name one plausible harm for each:
+
+1. An AI note-taker that joins meetings, transcribes them, summarizes them and emails action items to attendees.
+2. A school's proctoring software that flags "suspicious behavior" during exams.
+3. A smart-glasses assistant that identifies objects and reads text aloud (see Lesson 02-08).
+
+## Key terms
+
+- **Prompt injection:** Instructions hidden in content an AI system processes, causing it to deviate from its user's intent.
+- **Specification gaming:** Satisfying the literal objective in a way the designer didn't intend.
+- **General-purpose AI model:** A model trained on broad data that can perform many distinct tasks.
+
+## Connections
+
+- Predictive systems → Module 3 · Generative → Module 4 · Agentic → Module 7
+- A2–A5 require you to analyze at least one predictive and one generative or agentic system.
+
+## Sources and further reading
+
+- Narayanan, A. & Kapoor, S. *AI Snake Oil* (2024), Chapter 1: the predictive/generative distinction. — [Free assigned chapter](https://www.normaltech.ai/p/starting-reading-the-ai-snake-oil); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r006). <!-- reading-access -->
+- NIST AI 600-1, *Generative AI Profile* (July 2024). — [Free full text](https://doi.org/10.6028/NIST.AI.600-1); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r007). <!-- reading-access -->
+- Krakovna, V. et al. "Specification gaming examples in AI" (DeepMind, 2020; maintained list). — [Free full text](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r008). <!-- reading-access -->
+- EU AI Act, Regulation (EU) 2024/1689, Art. 3 definitions (as amended 2026 ⚠). — [Original AI Act — Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [2026 Omnibus amendment — Free official text](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32026R1744); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r009). <!-- reading-access -->

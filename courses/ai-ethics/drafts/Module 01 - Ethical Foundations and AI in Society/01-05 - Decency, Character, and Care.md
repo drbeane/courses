@@ -1,0 +1,132 @@
+# 01-05 — Decency, Character, and Care
+
+**Module:** 1 — Ethical Foundations and AI in Society
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Explain Todd May's account of decency and how it differs from "moral sainthood."
+2. Describe virtue ethics and care ethics and what each adds to rule- and outcome-based reasoning.
+3. Apply the four decency lenses (self, others/community, non-humans, world) used throughout this course.
+
+## Opening case: the detective's choice
+
+According to the lawsuit in *Lipps v. City of Fargo*, the facial recognition result was only a lead. The detective allegedly knew the suspect lived in Tennessee, had never been to North Dakota, didn't match the suspect's description and had no unexplained money. He pursued charges anyway. Meanwhile, the neighboring West Fargo department had a policy forbidding arrests based solely on a match.
+
+The software didn't decide to arrest Angela Lipps; people did. Consequences and rules matter. So does the question: *what kind of professional would do this, and what kind would not?*
+
+## Core ideas
+
+### Todd May's decency
+
+In *A Decent Life: Morality for the Rest of Us* (2019), philosopher Todd May argues that most moral theories demand too much. Strict utilitarianism implies we should give away almost everything to those in need, and strict Kantianism forbids even small kindness-preserving lies. May proposes an achievable standard: **decency**.
+
+A decent person:
+
+- doesn't treat others merely as instruments,
+- gives reasonable weight to others' interests, especially when the cost to oneself is modest,
+- doesn't take advantage of others' vulnerability,
+- recognizes that moral life involves trade-offs, without demanding sainthood, and
+- considers the effects of their actions beyond their immediate circle.
+
+May's decency is intentionally modest. It doesn't ask AI practitioners to solve all the world's problems. It asks them not to cause avoidable harm, to take others' interests seriously, and to refuse to participate in what they recognize as wrong.
+
+### The four decency lenses (carried over from COSC-643)
+
+This course uses May's widening circle of concern as an organizing tool:
+
+| Lens | Question | Example |
+|---|---|---|
+| **Self** | What does this do to my integrity, my skills, my well-being? | An engineer asked to build bossware (05-04); a user's reliance on a companion bot (04-08) |
+| **Others / community** | Who is affected, especially the vulnerable? | Applicants screened by a hiring tool; a neighborhood with heavy surveillance |
+| **Non-humans** | What about animals, ecosystems and other beings? | Habitat lost to data-center siting; AI in animal agriculture (06-07) |
+| **World** | What happens at the scale of society, the planet and future generations? | Concentration of power; climate; information ecosystems |
+
+Every module in the course will ask you to apply at least two lenses.
+
+### Virtue ethics
+
+Virtue ethics, originating with Aristotle, asks *what a good person would do* and *what character traits make for a good life*. Virtues are stable dispositions, such as honesty, courage, justice and practical wisdom (*phronesis*), developed through practice.
+
+Shannon Vallor's *Technology and the Virtues* (2016) proposes "technomoral virtues" for an age of powerful technology:
+
+- honesty,
+- self-control,
+- humility,
+- justice,
+- courage,
+- empathy,
+- care,
+- civility,
+- flexibility,
+- perspective, and
+- magnanimity.
+
+**Why virtue matters for AI professionals:**
+
+- Rules can't anticipate every case. Practical wisdom fills the gaps.
+- Organizations shape character through incentives. A team rewarded only for shipping fast trains impatience with safety review.
+- Courage is needed to raise concerns, refuse unsafe work or blow the whistle.
+
+### Care ethics
+
+Care ethics (Carol Gilligan, Nel Noddings, Joan Tronto) holds that morality grows from relationships of care and dependency rather than from abstract, impartial principles. It emphasizes:
+
+- attentiveness to particular people's needs,
+- responsibility within relationships,
+- the moral importance of vulnerability and dependency, and
+- the often invisible labor of caring.
+
+**Care ethics and AI:**
+
+- **Companion and therapy bots:** Can a system that simulates care, but cannot care, meet dependency needs ethically? (04-08)
+- **Elder-care robots:** Do they supplement human care or replace it to cut costs?
+- **Hidden care work:** Content moderators absorb trauma so that others don't see it (05-07).
+
+### Strengths and weaknesses
+
+| Approach | Strength | Weakness |
+|---|---|---|
+| Decency | Achievable, intuitive, widens concern | Vague at the edges; "reasonable weight" is contestable |
+| Virtue | Handles novel cases; focuses on professionals and culture | Doesn't give crisp decision procedures; virtues can conflict |
+| Care | Centers vulnerability and relationships | Can neglect strangers and structural issues |
+
+## Applying the frameworks
+
+The Fargo case, three ways:
+
+- **Decency:** Taking advantage of a system's apparent authority to close a case, at enormous cost to an innocent person, is not decent.
+- **Virtue:** The detective needed humility about the tool and the courage to slow down; the department lacked practical wisdom in policy.
+- **Care:** Lipps was a caregiver (she was babysitting when arrested) and was reportedly denied her medication and dentures. Care ethics directs attention to the person, not the case file.
+
+## Discussion questions
+
+1. Is decency too low a bar for professionals who build systems affecting millions of people? Should we expect more from them than from ordinary citizens?
+2. Which technomoral virtue do you think is most lacking in today's AI industry? Which is most present?
+3. Can an AI system be "caring"? If users benefit from feeling cared for, does it matter that the system doesn't care?
+4. Apply the non-human lens to a technology you use daily. What do you notice?
+
+## Activity: lens practice (15 minutes)
+
+Choose one case from 01-01. Write two to three sentences for **each** of the four lenses. Then mark the lens you think the company or agency involved most neglected.
+
+## Key terms
+
+- **Decency (May):** A modest, achievable moral standard of not using others and giving reasonable weight to their interests.
+- **Virtue ethics:** Ethics centered on character and practical wisdom.
+- **Phronesis:** Practical wisdom, the ability to act well in particular situations.
+- **Care ethics:** Ethics grounded in relationships, attentiveness and responsiveness to need.
+
+## Connections
+
+- Lenses reused in every module. Non-human lens → 06-07 · Care → 04-08, 05-07 · Professional virtue → 05-08
+- The A1 position statement must apply at least two frameworks.
+
+## Sources and further reading
+
+- May, T. *A Decent Life: Morality for the Rest of Us* (University of Chicago Press, 2019), Chapters 1–3. — [Paid / library](https://press.uchicago.edu/ucp/books/book/chicago/D/bo34250692); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r018). <!-- reading-access -->
+- Vallor, S. *Technology and the Virtues* (Oxford, 2016), Chapter 6. — [Paid / library](https://academic.oup.com/book/25951); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r019). <!-- reading-access -->
+- Tronto, J. *Moral Boundaries* (1993), Chapter 4 ("An Ethic of Care"). — [Paid / library](https://doi.org/10.4324/9781003070672-8); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r020). <!-- reading-access -->
+- Live 5 News, *Lipps v. City of Fargo* coverage, Sep 17, 2026 (allegations, not findings). — [Free full text](https://www.live5news.com/2026/09/17/woman-sues-city-detective-10-million-over-wrongful-arrest-tied-facial-recognition-error/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r021). <!-- reading-access -->

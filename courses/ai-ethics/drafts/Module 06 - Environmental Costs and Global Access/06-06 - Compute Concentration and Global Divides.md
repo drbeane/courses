@@ -1,0 +1,122 @@
+# 06-06 — Compute Concentration and Global Divides
+
+**Module:** 6 — Environmental Costs and Global Access
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Describe the global distribution of AI compute, talent and investment.
+2. Analyze how language and cultural representation in AI systems affect global access and fairness.
+3. Evaluate "sovereign AI" initiatives and other strategies to reduce dependency.
+
+## Opening case: who has the chips?
+
+By 2025, a handful of countries and companies controlled the vast majority of the world's AI compute:
+
+- The U.S. and China host the large majority of AI-capable data-center capacity.
+- U.S. export controls (2022 onward) restrict China's access to advanced AI chips.
+- The January 2025 "AI Diffusion" rule would have tiered nearly every country's access to U.S. chips. It was rescinded in May 2025 and replaced with country-by-country deals (e.g., large chip agreements with the UAE and Saudi Arabia) ⚠.
+
+An Oxford study (Lehdonvirta et al., 2024) found that only about 30 countries host public-cloud GPU compute regions at all. Much of Africa, Latin America and South Asia has little or none.
+
+Meanwhile, the world's roughly 7,000 languages are unevenly served. Most AI training data is in English and a few dozen other languages.
+
+## Core ideas
+
+### Concentration on multiple dimensions
+
+| Dimension | Concentration |
+|---|---|
+| **Chips** | NVIDIA dominates accelerators; TSMC manufactures most advanced chips; ASML is the sole EUV lithography supplier |
+| **Compute** | U.S. hyperscalers and Chinese clouds |
+| **Frontier models** | A few U.S. labs and several Chinese labs |
+| **Talent** | Concentrated in the U.S., China, the UK and a few hubs; "brain drain" from the Global South |
+| **Data** | Large platforms; English-dominant web |
+| **Investment** | U.S. private AI investment far exceeds other countries' (Stanford AI Index) |
+
+### Language and representation
+
+- **Performance gaps:** LLMs perform significantly worse in low-resource languages (e.g., Yoruba, Amharic, Quechua) in accuracy, safety and cultural knowledge.
+- **Safety gaps:** Safety filters trained mostly in English can be bypassed in other languages. Yong et al. (2023) showed low-resource-language jailbreaks.
+- **Tokenization costs:** Some languages require more tokens per word, so users pay more and get shorter context for the same content (Petrov et al., 2023).
+- **Cultural default:** Models often reflect U.S. or Western norms, values and examples.
+
+**Efforts:**
+
+- Masakhane (an African NLP community),
+- AI4Bharat (India),
+- SEA-LION (Southeast Asia),
+- BLOOM (multilingual open model, 2022),
+- Aya (Cohere for AI, 101 languages),
+- national LLM projects.
+
+### Extraction concerns
+
+Critics describe "data colonialism" (Couldry & Mejias, 2019):
+
+- data and labor extracted from the Global South (annotation, 05-07; mineral mining, 06-01),
+- with value captured in the Global North, and
+- local communities bearing environmental costs (data centers in Chile and Uruguay, 06-03).
+
+### Sovereign AI and alternatives
+
+Countries pursue "sovereign AI" to reduce dependency:
+
+- national compute investments (France, India's IndiaAI Mission, Japan, the UAE, Saudi Arabia),
+- national or regional models (e.g., Mistral in France, Falcon in the UAE, Sarvam in India),
+- **open-weight models** (Module 7) that can be run locally, often cited as essential for countries without frontier labs,
+- public compute for researchers (the U.S. NAIRR pilot; the EU's "AI Factories" and "Gigafactories"), and
+- regional cooperation (e.g., the African Union Continental AI Strategy, 2024).
+
+**Debates:**
+
+- Sovereign AI can mean independence, but also state control and surveillance.
+- Small countries can't match frontier investment. Is dependency inevitable?
+- Open models reduce dependency on providers but not on chips.
+
+## Applying the frameworks
+
+- **Global justice:** Who benefits from AI, and who is excluded or exploited?
+- **Capabilities approach:** Access to AI tools in one's own language expands real freedoms.
+- **Structural injustice:** Historical patterns of extraction recur.
+- **Decency, world lens:** A world split into AI haves and have-nots.
+
+## Discussion questions
+
+1. Is it unjust that AI works best in English? Whose responsibility is it to fix?
+2. Should AI chip exports be governed by national security, global equity, or both? How should these be balanced?
+3. Are open-weight models the best path to global AI access? What are the risks?
+4. Is "sovereign AI" a legitimate goal, or a cover for state control?
+
+## Activity: language test (15 minutes)
+
+If you speak a language other than English (or work with a classmate who does), ask an AI assistant the same three factual questions in English and in that language. Compare:
+
+1. accuracy,
+2. cultural relevance, and
+3. response length.
+
+If not, read and summarize one study on multilingual AI performance gaps.
+
+## Key terms
+
+- **Compute:** Computational resources for AI, especially accelerators.
+- **Export controls:** Government restrictions on exporting technology.
+- **Low-resource language:** A language with limited digital training data.
+- **Sovereign AI:** National AI capability independent of foreign providers.
+- **Data colonialism:** Extraction of data and value echoing colonial patterns.
+
+## Connections
+
+- Gains concentration → 05-03 · Hidden labor → 05-07 · Open weights and geopolitics → 07-02, 07-04 · Global governance → 08-03
+
+## Sources and further reading
+
+- Lehdonvirta, V., Wú, B. & Hawkins, Z. "Compute North vs. Compute South," Oxford Internet Institute (2024). — [Free manuscript](https://ora.ox.ac.uk/objects/uuid%3A6306c118-58ca-49ba-b7a0-4ee7b9423d5a/files/ssx61dp632); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r273). <!-- reading-access -->
+- Stanford HAI, *AI Index Report* (2025 or 2026 edition), chapters on investment and policy. — [Free full text](https://hai.stanford.edu/ai-index); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r274). <!-- reading-access -->
+- Yong, Z.-X., Menghini, C. & Bach, S. "Low-Resource Languages Jailbreak GPT-4," arXiv:2310.02446 (2023). — [Free manuscript](https://arxiv.org/abs/2310.02446); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r275). <!-- reading-access -->
+- Petrov, A. et al. "Language Model Tokenizers Introduce Unfairness Between Languages," *NeurIPS 2023*. — [Free manuscript](https://arxiv.org/abs/2305.15425); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r276). <!-- reading-access -->
+- Couldry, N. & Mejias, U. *The Costs of Connection* (2019). — [Paid / library](https://doi.org/10.1515/9781503609754); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r277). <!-- reading-access -->
+- African Union, *Continental Artificial Intelligence Strategy* (2024). — [Free full text](https://au.int/sites/default/files/documents/44004-doc-EN-_Continental_AI_Strategy_July_2024.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r278). <!-- reading-access -->

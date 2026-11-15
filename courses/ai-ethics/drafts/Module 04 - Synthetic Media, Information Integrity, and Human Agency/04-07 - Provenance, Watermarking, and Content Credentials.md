@@ -1,0 +1,132 @@
+# 04-07 — Provenance, Watermarking, and Content Credentials
+
+**Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Distinguish detection, watermarking and provenance (content credentials) as responses to synthetic media.
+2. Evaluate the technical limits of each approach.
+3. Analyze EU Article 50 transparency obligations and their likely effectiveness.
+
+## Opening case: the label that fell off
+
+When the EU AI Act's Article 50 transparency obligations took effect on **August 2, 2026**, providers of generative systems became obligated to mark outputs in a machine-readable, detectable way, and deployers of deepfakes to disclose them. Under the 2026 Omnibus agreement, systems already on the market got until **December 2, 2026** to comply with marking.
+
+Many generated images already carry provenance metadata, such as C2PA content credentials attached by Adobe, OpenAI and others. When an image is screenshotted, re-encoded or uploaded to many social platforms, that metadata is often **stripped**. A label that falls off at the first share is a weak defense.
+
+## Core ideas
+
+### Three approaches
+
+| Approach | What it does | Example |
+|---|---|---|
+| **Detection** | Classifiers analyze content to estimate whether it's synthetic | Academic and commercial deepfake detectors |
+| **Watermarking** | Embeds an invisible signal in content at generation time | Google DeepMind SynthID (images, audio, video, text); Meta Video Seal |
+| **Provenance / content credentials** | Attaches cryptographically signed metadata recording origin and edit history | C2PA standard (Adobe, Microsoft, Google, OpenAI, BBC, Sony and others); "Content Credentials" icon |
+
+### Detection: an arms race
+
+- Detectors are trained on known generators and **generalize poorly** to new ones.
+- Generators can be optimized to evade detectors.
+- False positives can label real content as fake, which harms people (e.g., students falsely accused of AI-written essays by text detectors).
+- **Text detection is especially unreliable.** OpenAI withdrew its AI text classifier in 2023 for low accuracy, and studies found detectors biased against non-native English writers (Liang et al., 2023).
+
+**Lesson:** Detection can help investigators but shouldn't be the sole basis for consequential judgments.
+
+### Watermarking: promising, partial
+
+**Strengths:**
+
+- Embedded at generation, so it doesn't rely on guessing.
+- Can survive some transformations, such as compression and cropping.
+
+**Limits:**
+
+- Works only for content from **cooperating providers**. Open-weight models (07-02) can be run without watermarks.
+- Can be removed or forged by determined adversaries (research has repeatedly demonstrated attacks).
+- Text watermarks degrade with paraphrasing.
+- **No universal detector:** Each provider's watermark requires its own checker.
+
+### Provenance: proving what's real
+
+C2PA flips the question. Instead of proving content is *fake*, it lets creators prove content is *authentic*, by signing it at capture (some cameras from Leica, Sony and Nikon; some phones) and recording edits.
+
+**Strengths:**
+
+- Supports trust in journalism and evidence.
+- An open standard.
+- Records the edit chain.
+
+**Limits:**
+
+- Metadata stripping by platforms and screenshots.
+- Adoption gaps. Most content has no credentials, and absence proves nothing.
+- Privacy. Credentials can reveal creator identity and location, so they need privacy-preserving options.
+- Trust in signers: who certifies the certifiers?
+
+### Policy landscape (as of October 2026 ⚠)
+
+- **EU AI Act Art. 50:**
+  - Providers must ensure synthetic outputs are marked in machine-readable form and detectable.
+  - Deployers must disclose deepfakes and AI-generated text published to inform the public, with exceptions for artistic or satirical works, which require only limited disclosure.
+  - Users must be informed when interacting with AI.
+  - A Code of Practice on marking and labeling is being developed.
+- **China (2025):** Measures for Labeling AI-Generated Content took effect Sept 1, 2025, requiring explicit and implicit labels.
+- **U.S.:** No federal mandate. California's AI Transparency Act (SB 942, 2024) requires large generative AI providers to offer free detection tools and embed latent disclosures ⚠ (check the effective date, which was delayed). U.S. executive-branch interest in provenance shifted after 2025.
+- **Platforms:** Meta, YouTube and TikTok label content as "AI info" or "made with AI" based on C2PA, watermarks or self-disclosure. Coverage is inconsistent.
+
+### A layered approach
+
+No single tool works alone. A realistic strategy combines:
+
+1. **Provenance at capture** for high-value authentic content (news, evidence).
+2. **Watermarking** by major generators.
+3. **Platform preservation and display** of credentials.
+4. **Detection** as an investigative aid, not a verdict.
+5. **Verification practices** and media literacy (04-02).
+6. **Law** targeting harmful *uses* (04-05) rather than relying on labels alone.
+
+## Applying the frameworks
+
+- **Explicability and autonomy:** People have an interest in knowing what they're seeing.
+- **Consequences:** Labels may reduce some deception but create false confidence ("no label = real").
+- **Justice:** False positives from detectors fall on students and non-native speakers.
+- **World lens:** Provenance infrastructure could protect journalism, or become a gatekeeping system controlling what counts as "authentic."
+
+## Discussion questions
+
+1. Should social platforms be legally required to preserve and display content credentials?
+2. Is it fair to use AI-text detectors in academic integrity cases? What standard of evidence should apply?
+3. Could a world where authentic content must be "signed" disadvantage citizen journalists, activists or people in authoritarian countries?
+4. Open-weight models can't be forced to watermark. Does that make watermarking mandates pointless?
+
+## Activity: provenance lab (15 minutes)
+
+1. Download an image from a news organization that uses content credentials, or from an AI generator that attaches them.
+2. Check it at **contentcredentials.org/verify**.
+3. Take a screenshot of the same image and check again.
+4. Upload it to a social platform, download it, and check again.
+
+Record what survives at each step.
+
+## Key terms
+
+- **Watermark:** An embedded signal identifying content as generated by a particular system.
+- **C2PA / Content Credentials:** An open standard for signed provenance metadata.
+- **Metadata stripping:** Removal of embedded data when content is re-saved or uploaded.
+- **Detector:** A classifier estimating whether content is synthetic.
+
+## Connections
+
+- Deepfakes → 04-03 · Elections → 04-06 · Open weights → 07-02 · EU AI Act → 08-01
+
+## Sources and further reading
+
+- C2PA Technical Specification (current version, c2pa.org). — [Free full text](https://spec.c2pa.org/specifications/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r176). <!-- reading-access -->
+- Google DeepMind, "SynthID" documentation; Dathathri, S. et al. "Scalable watermarking for identifying large language model outputs," *Nature* 634 (2024). — [SynthID documentation — Free full text](https://deepmind.google/models/synthid/); [Dathathri et al. paper — Free full text](https://www.nature.com/articles/s41586-024-08025-4); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r177). <!-- reading-access -->
+- Liang, W. et al. "GPT detectors are biased against non-native English writers," *Patterns* 4(7), 2023. — [Free manuscript](https://arxiv.org/abs/2304.02819); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r178). <!-- reading-access -->
+- EU AI Act Art. 50; Gibson Dunn on Omnibus timing (May 2026). ⚠ — [AI Act Article 50 — Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [Gibson Dunn timing commentary — Free full text](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r179). <!-- reading-access -->
+- Partnership on AI, *Responsible Practices for Synthetic Media* (2023). — [Free full text](https://partnershiponai.org/wp-content/uploads/2023/02/PAI_synthetic_media_framework.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r180). <!-- reading-access -->

@@ -1,0 +1,243 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{opacity:0.45;cursor:not-allowed}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-text{margin:0;min-height:4.6rem;padding:0.7rem 0.85rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.12rem/1.9 var(--text)}
+.wx .wx-tok{background:color-mix(in srgb,var(--c) 13%,#fff);border-radius:3px;padding:0.1em 0.2em;margin-left:0.12em}
+.wx .wx-tok.wx-new{box-shadow:inset 0 -2px 0 var(--c)}
+.wx .wx-cursor{display:inline-block;width:0.45rem;height:1.05rem;margin-left:0.2em;background:var(--c);vertical-align:-0.12em;animation:wx-blink 1s steps(1) infinite}
+@keyframes wx-blink{50%{opacity:0}}
+.wx .wx-end{font:400 0.8rem var(--display);color:var(--muted);margin-left:0.4em}
+.wx .wx-bars{display:grid;gap:0.2rem}
+.wx .wx-bar{display:grid;grid-template-columns:minmax(0,7.5rem) minmax(0,1fr) 2.8rem;gap:0.6rem;align-items:center;width:100%;text-align:left;border-color:transparent;background:none;padding:0.28rem 0.4rem}
+.wx button.wx-bar:hover{border-color:var(--rule);background:var(--wash)}
+.wx .wx-bar .wx-name{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wx .wx-bar .wx-track{height:0.8rem;border-radius:3px;background:var(--wash)}
+.wx .wx-bar .wx-fill{display:block;height:100%;min-width:2px;border-radius:3px;background:var(--c);transition:width 0.25s}
+.wx .wx-bar .wx-pct{text-align:right;font-variant-numeric:tabular-nums}
+.wx .wx-bar.wx-picked{background:color-mix(in srgb,var(--c) 11%,#fff)}
+.wx div.wx-bar{color:var(--muted);box-sizing:border-box;border:1px solid transparent}
+.wx div.wx-bar .wx-name{font-weight:400;font-style:italic}
+.wx div.wx-bar .wx-fill{background:#b9c0cd}
+.wx .wx-status{margin:0;min-height:1.4em;color:var(--muted);font-size:0.9rem}
+.wx .wx-runs{margin:0;padding:0;list-style:none;display:grid;gap:0.3rem;font:400 1rem/1.45 var(--text)}
+.wx .wx-runs li{margin:0;padding-left:0.7rem;border-left:2px solid var(--rule)}
+.wx .wx-runs li span{color:var(--muted)}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-fine a{color:var(--c)}
+@media (prefers-reduced-motion:reduce){.wx .wx-cursor{animation:none}.wx .wx-bar .wx-fill{transition:none}}
+@media print{.wx .wx-row,.wx .wx-status{display:none}}
+</style>
+<div class="wx" data-widget="next-token">
+  <div class="wx-head"><b>Try It: Predict the Next Token</b><span>Build a sentence the way a model does, one token at a time.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Start with</p>
+      <div class="wx-row wx-starts" role="group" aria-label="Starting text"></div>
+    </div>
+    <p class="wx-text" aria-live="polite"></p>
+    <div class="wx-row">
+      <button type="button" class="wx-primary wx-step">Pick next token</button>
+      <button type="button" class="wx-finish">Finish the sentence</button>
+      <button type="button" class="wx-reset">Start over</button>
+    </div>
+    <p class="wx-status" aria-live="polite"></p>
+    <div>
+      <p class="wx-label">Most likely next tokens</p>
+      <div class="wx-bars"></div>
+    </div>
+    <div class="wx-history" hidden>
+      <p class="wx-label">Your finished sentences</p>
+      <ol class="wx-runs"></ol>
+    </div>
+    <p class="wx-fine">"Pick next token" draws one of the listed tokens at random, weighted by its probability, so a 97% token wins almost every time and a 9% token wins now and then. You can also click a token to choose it yourself. The numbers are made up, each token here is a whole word, and the draw only uses the tokens shown. A real model scores about 100,000 tokens at every step. The <a href="/demos/next-token-sampler/">Next-Token Sampler</a> demo adds temperature and other settings.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const END = null;
+  // Each node lists candidate next tokens as [text, percent, next node]. Whatever is left of 100% is "every other token".
+  const MODELS = [
+    { prompt: 'The capital of France is', tree: {
+      start: [[' Paris', 97, 'p1'], [' a', 1, 'a1'], [' located', 1, 'loc']],
+      p1: [['.', 55, END], [',', 33, 'p2'], [' and', 10, 'p3']],
+      p2: [[' a', 38, 'p2a'], [' which', 27, 'p2w'], [' the', 22, 'p2t']],
+      p2a: [[' city', 74, 'city'], [' place', 9, 'city'], [' metropolis', 6, 'city']],
+      city: [[' known', 41, 'kn'], [' famous', 24, 'kn'], [' on', 18, 'on']],
+      kn: [[' for', 96, 'for']],
+      for: [[' its', 58, 'its'], [' the', 31, 'the']],
+      its: [[' museums', 22, 'end'], [' art', 19, 'end'], [' food', 17, 'end'], [' cafés', 12, 'end'], [' history', 11, 'end']],
+      the: [[' Eiffel', 62, 'eif'], [' Louvre', 21, 'end'], [' Seine', 8, 'end']],
+      eif: [[' Tower', 99, 'end']],
+      on: [[' the', 97, 'onthe']],
+      onthe: [[' Seine', 91, 'end'], [' river', 5, 'end']],
+      p2w: [[' is', 88, 'wis']],
+      wis: [[' known', 44, 'kn'], [' famous', 27, 'kn'], [' also', 14, 'also']],
+      also: [[' its', 49, 'big'], [' the', 38, 'big']],
+      big: [[' largest', 86, 'bigc'], [' biggest', 9, 'bigc']],
+      bigc: [[' city', 97, 'end']],
+      p2t: [[' largest', 46, 'lc'], [' City', 31, 'col']],
+      lc: [[' city', 95, 'inf']],
+      inf: [[' in', 83, 'inf2'], ['.', 11, END]],
+      inf2: [[' France', 78, 'end'], [' the', 15, 'cty']],
+      cty: [[' country', 93, 'end']],
+      col: [[' of', 98, 'col2']],
+      col2: [[' Light', 87, 'end'], [' Lights', 9, 'end'], [' Love', 3, 'end']],
+      p3: [[' it', 90, 'it']],
+      it: [[' is', 92, 'wis']],
+      a1: [[' city', 61, 'city'], [' beautiful', 19, 'beaut'], [' place', 7, 'city']],
+      beaut: [[' city', 91, 'city']],
+      loc: [[' in', 72, 'locin'], [' on', 21, 'on']],
+      locin: [[' the', 64, 'locthe'], [' northern', 22, 'nf']],
+      locthe: [[' north', 71, 'north']],
+      north: [[' of', 88, 'off']],
+      off: [[' France', 62, 'end'], [' the', 33, 'cty']],
+      nf: [[' France', 93, 'end']],
+      end: [['.', 93, END]],
+    } },
+    { prompt: 'My favorite thing about autumn is', tree: {
+      start: [[' the', 31, 'the'], [' how', 14, 'how'], [' watching', 9, 'watch'], [' that', 8, 'that'], [' when', 5, 'when'], [' wearing', 4, 'wear']],
+      the: [[' leaves', 18, 'leaves'], [' colors', 16, 'colors'], [' weather', 13, 'end'], [' smell', 11, 'smell'], [' way', 10, 'way'], [' food', 6, 'end']],
+      leaves: [['.', 41, END], [' changing', 33, 'chg'], [' turning', 15, 'turn']],
+      chg: [[' color', 72, 'end'], [' colors', 21, 'end']],
+      turn: [[' red', 38, 'red'], [' orange', 24, 'end'], [' gold', 21, 'end']],
+      red: [[' and', 63, 'redand'], ['.', 29, END]],
+      redand: [[' gold', 47, 'end'], [' orange', 36, 'end'], [' yellow', 12, 'end']],
+      colors: [['.', 48, END], [' of', 37, 'cof']],
+      cof: [[' the', 91, 'cofthe']],
+      cofthe: [[' leaves', 77, 'end'], [' trees', 19, 'end']],
+      smell: [[' of', 93, 'smof']],
+      smof: [[' woodsmoke', 21, 'end'], [' rain', 17, 'end'], [' fallen', 16, 'fallen'], [' cinnamon', 12, 'end'], [' pumpkin', 10, 'pump']],
+      fallen: [[' leaves', 96, 'end']],
+      pump: [[' spice', 58, 'end'], [' pie', 37, 'end']],
+      way: [[' the', 86, 'waythe']],
+      waythe: [[' air', 37, 'air'], [' leaves', 34, 'lv'], [' light', 17, 'light']],
+      air: [[' smells', 52, 'end'], [' feels', 29, 'end'], [' cools', 8, 'end']],
+      lv: [[' change', 44, 'end'], [' crunch', 29, 'crunch'], [' fall', 17, 'end']],
+      crunch: [[' under', 61, 'under'], ['.', 33, END]],
+      under: [[' my', 84, 'my']],
+      my: [[' feet', 71, 'end'], [' boots', 22, 'end'], [' shoes', 5, 'end']],
+      light: [[' changes', 46, 'end'], [' turns', 31, 'golden']],
+      golden: [[' golden', 83, 'end'], [' soft', 11, 'end']],
+      how: [[' the', 62, 'waythe'], [' cool', 11, 'cool'], [' everything', 9, 'every']],
+      cool: [[' the', 48, 'cthe'], [' it', 44, 'cit']],
+      cthe: [[' mornings', 41, 'are'], [' air', 36, 'cis'], [' evenings', 17, 'are']],
+      are: [[' are', 63, 'end'], [' get', 31, 'end']],
+      cis: [[' is', 52, 'end'], [' gets', 31, 'end'], [' feels', 14, 'end']],
+      cit: [[' gets', 57, 'end'], [' is', 28, 'end'], [' feels', 12, 'end']],
+      every: [[' slows', 34, 'down'], [' smells', 22, 'like'], [' turns', 19, 'tg'], [' feels', 15, 'feels']],
+      down: [[' down', 97, 'end']],
+      like: [[' like', 88, 'smof']],
+      tg: [[' orange', 42, 'end'], [' golden', 31, 'end'], [' red', 14, 'red']],
+      feels: [[' cozy', 44, 'end'], [' calmer', 21, 'end'], [' new', 12, 'end']],
+      watch: [[' the', 78, 'wthe'], [' football', 12, 'end']],
+      wthe: [[' leaves', 81, 'wl'], [' trees', 9, 'wl'], [' colors', 6, 'wcol']],
+      wl: [[' change', 48, 'wchange'], [' fall', 31, 'end'], [' turn', 16, 'turn']],
+      wchange: [[' color', 61, 'end'], ['.', 22, END], [' colors', 13, 'end']],
+      wcol: [[' change', 87, 'end']],
+      that: [[' the', 41, 'thatthe'], [' it', 33, 'thatit'], [' everything', 12, 'every']],
+      thatthe: [[' air', 38, 'air2'], [' leaves', 31, 'lv3'], [' weather', 19, 'wx']],
+      air2: [[' gets', 44, 'crisp'], [' turns', 27, 'crisp'], [' feels', 21, 'crisp']],
+      crisp: [[' crisp', 52, 'end'], [' cooler', 31, 'end'], [' cold', 9, 'end']],
+      lv3: [[' change', 51, 'wchange'], [' turn', 29, 'turn']],
+      wx: [[' cools', 47, 'down2'], [' finally', 38, 'fin']],
+      fin: [[' cools', 81, 'down2']],
+      down2: [[' down', 71, 'end'], ['.', 24, END]],
+      thatit: [[' gets', 38, 'crisp'], [' is', 22, 'itis'], [' finally', 17, 'itfin'], [' means', 11, 'means']],
+      itis: [[' finally', 47, 'itfin2'], [' sweater', 29, 'swe'], [' cool', 12, 'end']],
+      itfin2: [[' sweater', 42, 'swe'], [' cool', 33, 'end'], [' cold', 11, 'end']],
+      swe: [[' weather', 81, 'end'], [' season', 16, 'end']],
+      itfin: [[' gets', 48, 'crisp'], [' feels', 27, 'crisp'], [' cools', 18, 'down2']],
+      means: [[' sweaters', 28, 'end'], [' football', 21, 'end'], [' Halloween', 19, 'hal'], [' soup', 9, 'end']],
+      hal: [[' is', 61, 'near'], ['.', 31, END]],
+      near: [[' near', 38, 'end'], [' coming', 33, 'end'], [' close', 21, 'end']],
+      when: [[' the', 83, 'thatthe']],
+      wear: [[' sweaters', 51, 'end'], [' a', 21, 'weara'], [' flannel', 11, 'end'], [' boots', 8, 'end']],
+      weara: [[' sweater', 52, 'end'], [' jacket', 23, 'end'], [' scarf', 14, 'end'], [' hoodie', 7, 'end']],
+      end: [['.', 91, END]],
+    } },
+  ];
+
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const history = MODELS.map(() => []);
+  let at = 0, node = 'start', toks = [], timer = null;
+
+  const cands = () => MODELS[at].tree[node];
+  function draw() {
+    const c = cands();
+    let r = Math.random() * c.reduce((a, x) => a + x[1], 0);
+    for (const x of c) { r -= x[1]; if (r <= 0) return x; }
+    return c[c.length - 1];
+  }
+
+  function show(status) {
+    const done = node === END;
+    $('.wx-text').innerHTML = esc(MODELS[at].prompt) +
+      toks.map((x, i) => `<span class="wx-tok${i === toks.length - 1 && !done ? ' wx-new' : ''}">${esc(x[0].trim())}</span>`).join('') +
+      (done ? '<span class="wx-end">End of sentence</span>' : '<span class="wx-cursor" aria-hidden="true"></span>');
+    if (done) {
+      $('.wx-bars').innerHTML = '';
+    } else {
+      const c = cands(), other = 100 - c.reduce((a, x) => a + x[1], 0);
+      $('.wx-bars').innerHTML = c.map((x, i) =>
+        `<button type="button" class="wx-bar" data-i="${i}" title="Choose this token"><span class="wx-name">${esc(x[0].trim())}</span><span class="wx-track"><span class="wx-fill" style="width:${x[1]}%"></span></span><span class="wx-pct">${x[1]}%</span></button>`).join('') +
+        (other > 0 ? `<div class="wx-bar"><span class="wx-name">every other token</span><span class="wx-track"><span class="wx-fill" style="width:${other}%"></span></span><span class="wx-pct">${other}%</span></div>` : '');
+      root.querySelectorAll('button.wx-bar').forEach((b) => { b.onclick = () => { stop(); pick(cands()[+b.dataset.i], 'You chose'); }; });
+    }
+    $('.wx-step').disabled = done || timer !== null;
+    $('.wx-finish').disabled = done || timer !== null;
+    $('.wx-status').textContent = status || '';
+    const h = history[at];
+    $('.wx-history').hidden = !h.length;
+    $('.wx-runs').innerHTML = h.map((s) => `<li><span>${esc(MODELS[at].prompt)}</span>${esc(s)}</li>`).join('');
+  }
+
+  function pick(x, how) {
+    toks.push(x);
+    node = x[2];
+    let status = `${how} "${x[0].trim()}", which had a ${x[1]}% chance.`;
+    if (node === END) {
+      const h = history[at];
+      h.unshift(toks.map((t) => t[0]).join(''));
+      if (h.length > 5) h.pop();
+      status += h.length > 1 ? ' Compare it with your earlier sentences below.' : ' Start over to see whether the next run matches.';
+    }
+    show(status);
+  }
+
+  function stop() { if (timer !== null) { clearTimeout(timer); timer = null; } }
+  function reset(i) { stop(); at = i; node = 'start'; toks = []; show(''); }
+  function finish() {
+    if (node === END) { timer = null; show($('.wx-status').textContent); return; }
+    timer = 0;
+    pick(draw(), 'The model picked');
+    if (node === END) { timer = null; show($('.wx-status').textContent); }
+    else if (still) finish();
+    else timer = setTimeout(finish, 320);
+  }
+
+  $('.wx-starts').innerHTML = MODELS.map((m, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(m.prompt)}</button>`).join('');
+  const chips = [...root.querySelectorAll('.wx-chip')];
+  const choose = (i) => { chips.forEach((c, j) => c.setAttribute('aria-pressed', i === j ? 'true' : 'false')); reset(i); };
+  chips.forEach((c, i) => { c.onclick = () => choose(i); });
+  $('.wx-step').onclick = () => pick(draw(), 'The model picked');
+  $('.wx-finish').onclick = finish;
+  $('.wx-reset').onclick = () => reset(at);
+  choose(0);
+})();
+</script>

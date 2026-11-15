@@ -1,0 +1,82 @@
+---
+marp: true
+title: "Week 14: Choosing Tools for an Organization"
+paginate: true
+---
+
+# Choosing Tools for an Organization
+### Week 14
+COSC-300/500 Applied AI Essentials
+
+---
+
+## You've Used the Whole Landscape
+
+Chat · embedded copilots · local agents · scheduled and browser agents · coding assistants · APIs · always-on agents
+
+Now: **how does an organization choose?**
+
+---
+
+## What an IT Office Weighs
+
+- **Capability**: what surfaces and features
+- **Cost**: per seat, per task, per token
+- **Usage limits**: will people run out?
+- **Data terms**: training, retention, location
+- **Support and admin**: SSO, controls, audit logs
+- **Fit** and **lock-in**
+
+---
+
+## Decide the Order First
+
+No tool wins on every factor.
+
+- A small nonprofit may put **cost** first
+- A hospital puts **data terms** first
+
+Set the priorities before anyone looks at a product.
+
+---
+
+## The Limits of Benchmarks
+
+- Benchmarks measure **someone else's** task
+- Scores change monthly
+- Vendors pick the benchmarks they win
+- **Your own test set** (week 12) beats a leaderboard
+
+They narrow the field. They can't make the decision.
+
+---
+
+## Run a Pilot
+
+1. Two or three **real tasks**
+2. Write down what good looks like
+3. A few staff try each tool for two or three weeks
+4. Record quality, time, limits reached, what went wrong
+5. Compare against your priorities
+
+A few weeks is cheaper than a year's contract for the wrong tool.
+
+<!-- Show the dated one-page comparison as a worked example. -->
+
+---
+
+## Copilot in Microsoft 365
+
+- How most graduates will **first** meet AI at work
+- Strong where the work already lives: email, documents, meetings
+- What it can do depends heavily on **which license** the organization buys
+
+---
+
+## Questions for Your First Week at a Job
+
+- Which AI tools are **approved**?
+- What **data** may I put into them?
+- Which **license** do we have?
+- Do I need to **say** when I've used AI?
+- **Who do I ask?**

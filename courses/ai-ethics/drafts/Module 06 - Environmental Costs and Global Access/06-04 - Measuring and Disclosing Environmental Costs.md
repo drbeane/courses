@@ -1,0 +1,110 @@
+# 06-04 — Measuring and Disclosing Environmental Costs
+
+**Module:** 6 — Environmental Costs and Global Access
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Explain location-based vs. market-based carbon accounting, and Scope 1, 2 and 3 emissions.
+2. Evaluate corporate environmental disclosures for completeness and comparability.
+3. Describe emerging disclosure requirements and standards for AI's environmental impact.
+
+## Opening case: two numbers for the same emissions
+
+A tech company's sustainability report can show two very different figures for the electricity it uses:
+
+- **Location-based:** emissions based on the average carbon intensity of the grids where its data centers actually draw power.
+- **Market-based:** emissions after accounting for renewable energy certificates (RECs) and power purchase agreements (PPAs) the company has bought, which may be generated elsewhere or at other times.
+
+A 2024 *Guardian* analysis of company reports estimated that in-house data-center emissions for Google, Microsoft, Meta and Apple in 2020–2022 were about **662% higher (roughly 7.6×)** on a location basis than the market-based figures the companies emphasized ⚠ (check the methodology). Both numbers comply with the Greenhouse Gas Protocol. Which one tells the truth?
+
+## Core ideas
+
+### Scopes of emissions (GHG Protocol)
+
+| Scope | Covers | AI example |
+|---|---|---|
+| **Scope 1** | Direct emissions from owned sources | Onsite gas turbines; diesel backup generators |
+| **Scope 2** | Indirect emissions from purchased electricity | Grid power for data centers |
+| **Scope 3** | All other value-chain emissions | Chip manufacturing; construction; employee travel; customer use |
+
+For AI companies, **Scope 3** (embodied emissions in hardware and buildings) can be very large and is the hardest to measure.
+
+### Location-based vs. market-based
+
+| | Location-based | Market-based |
+|---|---|---|
+| Reflects | The physical grid mix where power is used | Contractual clean-energy purchases |
+| Strength | Physical reality | Rewards clean-energy investment |
+| Weakness | Doesn't credit purchases that add clean power | Unbundled RECs may not add new clean power; time and place mismatch |
+
+**24/7 carbon-free energy (CFE):** Google and Microsoft have set goals to match consumption with clean energy **every hour, on the same grid**. This is more rigorous than annual matching. Google reported about 66% hourly CFE globally in 2024 ⚠, and the figure varies widely by region.
+
+### What disclosures typically omit
+
+- AI-specific energy, separated from other cloud workloads.
+- Per-model training and inference footprints (some labs disclose training footprints; few disclose inference).
+- Water at the facility level.
+- Scope 3 hardware emissions.
+- Total query volumes (06-02).
+- Third-party verification.
+
+### Standards and requirements (as of October 2026 ⚠)
+
+- **EU Energy Efficiency Directive (recast 2023):** Data centers of 500 kW or more must report energy, water, renewable share and PUE annually to an EU database (from 2024).
+- **EU AI Act:** GPAI model providers must document energy consumption of training (Annex XI). The Commission may develop standards for energy-efficient AI. Codes of practice cover some environmental reporting.
+- **California SB 253 (2023):** Requires large companies doing business in California to disclose Scope 1–2 (from 2026) and Scope 3 (from 2027) emissions ⚠ (litigation and implementation status).
+- **U.S. SEC climate rule (2024):** Stayed, and the SEC voted to stop defending it in 2025.
+- **Voluntary efforts:** Hugging Face AI Energy Score; ML CO₂ Impact calculator; CodeCarbon; Mistral's 2025 lifecycle analysis of its Large 2 model, an early full-lifecycle disclosure by a model developer.
+
+### Evaluating a disclosure: questions to ask
+
+1. Is it location-based, market-based, or both?
+2. Does it include Scope 3?
+3. Is AI separated from other workloads?
+4. Is water reported by facility and watershed?
+5. Is it the median, the mean or the total?
+6. Is it independently verified?
+7. Is the methodology published and comparable?
+8. What's the trend in absolute terms, not only intensity?
+
+## Applying the frameworks
+
+- **Explicability:** Applies to environmental impact too. People can't judge what isn't disclosed.
+- **Honesty (virtue):** Choosing the most flattering legitimate metric is lawful but may mislead.
+- **Justice:** Communities near data centers need facility-level data to participate meaningfully.
+
+## Discussion questions
+
+1. Should companies be required to report location-based emissions prominently? Why might market-based reporting still be valuable?
+2. Is a per-prompt metric (06-02) more or less useful than total emissions for public accountability?
+3. Should AI model releases come with standardized energy disclosures, like appliance energy labels?
+4. Who should verify AI companies' environmental claims?
+
+## Activity: disclosure audit (15 minutes)
+
+Choose one major AI or cloud company's most recent sustainability report. Answer the eight questions above. Grade its AI-relevant transparency A–F and justify the grade in three sentences.
+
+## Key terms
+
+- **Scope 1 / 2 / 3:** Direct / purchased energy / value chain emissions.
+- **Location-based / market-based:** Grid-average vs. contract-adjusted emissions accounting.
+- **REC / PPA:** Renewable energy certificate / power purchase agreement.
+- **24/7 CFE:** Hourly matching of consumption with carbon-free energy on the same grid.
+- **PUE:** Power usage effectiveness (total facility energy ÷ IT energy).
+
+## Connections
+
+- Energy → 06-02 · Water → 06-03 · Documentation → 08-06
+- A3 evidence labeling
+
+## Sources and further reading
+
+- Greenhouse Gas Protocol, *Scope 2 Guidance* (2015; revision under consultation 2025–2026 ⚠). — [Free full text](https://ghgprotocol.org/sites/default/files/GHG%20Protocol%20Scope%202%20Guidance.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r262). <!-- reading-access -->
+- *The Guardian*, "Data center emissions probably 662% higher than big tech claims," Sept 2024. — [Free full text](https://www.theguardian.com/technology/2024/sep/15/data-center-gas-emissions-tech); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r263). <!-- reading-access -->
+- Google, *2025 Environmental Report* (24/7 CFE data). — [Free full text](https://www.sustainability.google/google-2025-environmental-report/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r264). <!-- reading-access -->
+- Mistral AI, "Our contribution to a global environmental standard for AI" (July 2025). — [Free full text](https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r265). <!-- reading-access -->
+- Luccioni, S. et al. "Light bulbs have energy ratings — so why can't AI chatbots?" *Nature* 632 (2024). — [Paid / library](https://www.nature.com/articles/d41586-024-02680-3); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r266). <!-- reading-access -->
+- EU Delegated Regulation 2024/1364 on data center reporting. — [Free official text](https://eur-lex.europa.eu/eli/reg_del/2024/1364/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r267). <!-- reading-access -->

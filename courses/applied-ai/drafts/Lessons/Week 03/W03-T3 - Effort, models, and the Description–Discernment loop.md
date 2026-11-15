@@ -1,0 +1,93 @@
+# Week 3: Effort, Models, and the Description–Discernment Loop
+
+**COSC-300/500 Applied AI Essentials** · 4D focus: Discernment
+
+> **Instructor note: preparation.** Choose two or three problems where a fast model reliably fails but a reasoning model or larger model does better: a multi-step word problem, a logic puzzle with a trap, a question needing careful counting. Test them the day before; model behavior shifts. Set up a shared board (Canvas discussion, a shared doc, or a whiteboard) for the failure gallery. Timing: 15 min effort demo, 50 min lab, 10 min share-out.
+
+## What You Will Be Able to Do
+
+- Judge when a larger model or more effort is likely to help, and when it won't.
+- Choose a fix that matches the kind of error you found.
+- Use the Description–Discernment loop instead of accepting the first answer.
+- Give feedback that tells the model what was wrong and what you want.
+
+## Does a Bigger Model or More Thinking Help?
+
+Earlier this week we listed six ways AI gets things wrong. Some of them respond to more capability; others don't.
+
+Recall the two controls from Week 1. The **model** is which member of a vendor's family you use, from small and fast to large and capable. **Effort** (also called thinking or reasoning) is how much working-out the model does before it answers. A common reaction to a wrong answer is to turn both up. Sometimes that works, and it's worth knowing when.
+
+> **Instructor note: live test.** Run each prepared problem with a fast model, the same model with more effort, and a larger model. Fill in the table on the board.
+
+| Setting | Right? | Time | Notes |
+|---|---|---|---|
+| Fast model | | | |
+| Same model, more effort | | | |
+| Larger model | | | |
+
+What to expect:
+
+- More effort helps most on **multi-step reasoning**, where thinking through the problem catches slips.
+- It helps little with **missing knowledge**. If the model doesn't know a fact, thinking longer won't produce it, and may produce a more elaborate wrong answer.
+- It doesn't fix **missing sources**. If the answer needs a document or a current fact, you need a tool or an upload, not more effort.
+- It always costs more time and more of your usage allowance.
+
+So the right question is not "which is the best model?" but "what kind of error am I trying to avoid?"
+
+### Match the Fix to the Error
+
+| Error type | Does more effort or a larger model help? | A better fix |
+|---|---|---|
+| Hallucination | A little. Larger models hallucinate less, but still do. | Supply the source, or turn on web search, and ask for answers drawn only from it. |
+| Outdated knowledge | No. | Turn on web search, or paste in the current information. |
+| Arithmetic slips | Somewhat. | Have the model calculate in code, or recompute yourself. |
+| Reasoning errors | Yes. This is where effort helps most. | Also ask for the steps, so that you can follow them. |
+| Misread instructions | Sometimes. | Rewrite the prompt. State the constraint plainly and put it where it can't be missed. |
+| Sycophancy | Not reliably. | Ask again in neutral words, in a new chat. |
+
+Four of the six are fixed better by changing what the model has to work with than by changing the model. A stronger model given a vague prompt and no sources will still guess. It will guess more convincingly, which makes the error harder to catch.
+
+A reasonable routine: start with the product's default model. If the answer is wrong, work out which kind of error it is. Raise the effort or change the model when the problem is hard reasoning, and fix the prompt or supply a source for the rest.
+
+## The Description–Discernment Loop
+
+The *AI Fluency* course describes working with AI as a loop:
+
+1. **Describe** the task.
+2. **Discern**: check what comes back.
+3. Feed what you found back into the description: add the missing context, correct the misunderstanding, point out the error.
+4. Repeat until the result is good enough for its purpose.
+
+Experienced users rarely accept a first answer for anything that matters. They treat it as a draft and use their checking to steer the next round.
+
+### One Pass Through the Loop
+
+Suppose you ask for a one-page summary of a company's parental leave policy, for new employees, and attach the policy.
+
+- **Describe.** "Summarize the attached leave policy in one page for new employees."
+- **Discern.** You compare the summary to the policy. It says leave is 12 weeks for all employees. The policy says 12 weeks after one year of service and 6 weeks before that. The summary also uses HR terms a new employee wouldn't know.
+- **Describe again.** "Two problems. First, the summary says everyone gets 12 weeks, but section 3 gives 6 weeks to employees with under a year of service. Correct that and check the other eligibility rules against the policy. Second, replace HR terms such as 'qualifying event' with plain words."
+- **Discern again.** The eligibility rules now match. You check the two other numbers in the summary against the policy and they're right.
+
+The second prompt worked because it was specific. Compare three ways of responding to the first draft:
+
+| Feedback | What the model can do with it |
+|---|---|
+| "That's wrong, try again." | Guess what was wrong. It may change the parts that were right. |
+| "The leave length is wrong." | Fix that one number, possibly by guessing a different one. |
+| "Section 3 gives 6 weeks to employees with under a year of service. Correct that and check the other eligibility rules." | Fix the error, using the source, and look for others like it. |
+
+Good feedback says **what** was wrong, **where** the right information is, and **what to do** about it. This is the Description skill from last week, applied to a correction.
+
+### When to Stop Looping
+
+The loop ends when the result is good enough for its purpose, which you decide with the checks from the last topic. Two other ways it should end:
+
+- **Start over.** If you have corrected the same problem twice and it keeps coming back, the conversation is working against you. Open a new chat with a better first prompt that includes what you've learned. This is the fresh-start habit from Week 2.
+- **Do it yourself.** When the last fix is a single sentence or one number, edit it by hand. Another round costs more than the edit.
+
+## Key Terms
+
+- **Effort**: how much working-out a model does before answering; also called thinking or reasoning.
+- **Description–Discernment loop**: describing a task, checking the result, and using what you found to improve the description.
+- **Grounding**: giving a model a source to draw its answer from, covered in Week 4.

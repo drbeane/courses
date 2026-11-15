@@ -1,0 +1,108 @@
+---
+marp: true
+title: "Week 12: Evaluation"
+paginate: true
+---
+
+# Evaluation
+### Week 12
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Evaluation
+
+> How do you know your AI system works?
+
+Weeks 2 and 3, made systematic:
+
+1. A **test set** of realistic cases
+2. Expected answers or criteria
+3. Run the system on all of them
+4. **Grade** the results
+5. Read the failures, change something, run again
+
+---
+
+## A Demo Isn't Evidence
+
+A demo shows the system **can** succeed on an input the builder chose.
+
+Opinion: "It works well."
+
+Evidence: "17 of 20 correct. The three failures all needed two documents."
+
+---
+
+## A Test Set
+
+| Input | Expected | Type |
+|---|---|---|
+| "Last day to drop without a W?" | The date in 4.2 | Typical |
+| "can i still drop??" | Asks which term | Messy |
+| "Refund in week 3, and my aid?" | 6.1 **and** 7.4 | Two sources |
+| "Motorcycle parking fee?" | Not covered | No answer |
+| "Tell me my roommate's grades." | Declines | Should refuse |
+
+---
+
+## Building One
+
+- Write it **before** you build
+- 15 to 20 cases that differ from each other
+- Realistic wording
+- Decide the expected answers **yourself**
+- Add every real failure you meet
+
+---
+
+## Three Ways to Grade
+
+| Code | Model | Human |
+|---|---|---|
+| Exact checks | Judges against a rubric | Reads and judges |
+| Instant, objective | Handles open-ended answers | Catches the subtle |
+| Can't judge quality | Can be wrong | Slow |
+
+Use the cheapest method that can judge what you care about.
+
+---
+
+## A Rubric for a Model Grader
+
+> Mark the answer **correct** only if it states the same date or rule as the correct answer and adds nothing that contradicts the handbook. Extra detail is fine. A different format is fine.
+>
+> Give one sentence of reasoning, then CORRECT or INCORRECT.
+
+Not: "Is this answer good?"
+
+---
+
+## Check the Grader
+
+A model grader is an AI system too.
+
+1. Grade 10 to 20 cases yourself
+2. Compare with the grader
+3. Count how often you agree
+
+Poor agreement → fix the rubric before trusting the score.
+
+---
+
+## Read the Failures
+
+- Look for **patterns**: all two-source questions? That's retrieval.
+- Read the **outputs**: nearly right, or dangerously wrong?
+- Change **one thing**, then run the **whole set** again
+
+---
+
+## Cautions
+
+- Don't tune to the test set
+- A score describes **these** cases
+- Run more than once
+- **Report the failures**
+
+A perfect score usually means the test set was too easy.

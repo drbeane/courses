@@ -1,0 +1,123 @@
+# 02-10 — Privacy-Protective Design and Governance
+
+**Module:** 2 — Surveillance, Biometrics, and Privacy
+**Estimated time:** 45 minutes (includes A2 launch)
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Apply privacy-by-design principles to an AI system.
+2. Explain the strengths and limits of privacy-enhancing technologies (PETs): differential privacy, federated learning, on-device processing and synthetic data.
+3. Conduct a basic data protection impact assessment (DPIA).
+
+## Opening case: two ways to build the same feature
+
+Two hypothetical companies build an AI feature that summarizes a user's phone notifications.
+
+- **Company A** sends every notification to its cloud, stores them for 18 months, uses them to improve its models, and lets contractors review samples for quality.
+- **Company B** processes notifications on the phone using a small model. Only if the user asks for a complex summary does it send an encrypted request to a server that doesn't retain data. It never uses user data for training without explicit opt-in.
+
+Both ship the "same" feature. Their privacy impacts differ by orders of magnitude. Privacy is largely a **design choice**.
+
+## Core ideas
+
+### Privacy by design (Cavoukian's seven principles)
+
+1. Proactive, not reactive.
+2. Privacy as the default setting.
+3. Privacy embedded into design.
+4. Full functionality (positive-sum, not zero-sum).
+5. End-to-end security across the lifecycle.
+6. Visibility and transparency.
+7. Respect for user privacy.
+
+GDPR Article 25 makes "data protection by design and by default" a legal obligation.
+
+### Concrete design levers
+
+| Lever | Question to ask |
+|---|---|
+| **Minimize** | Do we need this data at all? At this precision? |
+| **Localize** | Can processing happen on-device? |
+| **Limit retention** | Can we delete it after use? |
+| **Separate** | Can identity be split from content? |
+| **Restrict purpose** | Is reuse for training or ads off by default? |
+| **Control access** | Who inside the company can see it, and is access logged? |
+| **Inform** | Do users understand, at the moment it matters? |
+| **Empower** | Can users see, export, correct and delete it, including inferences and memory? |
+
+### Privacy-enhancing technologies
+
+| PET | What it does | Limits |
+|---|---|---|
+| **Differential privacy (DP)** | Adds calibrated noise so outputs reveal little about any individual (used by the U.S. Census 2020, Apple, Google) | Accuracy cost, especially for small groups. The privacy budget (ε) choice is a value judgment. The Census use was controversial for small-area accuracy. |
+| **Federated learning** | Trains models across devices without centralizing raw data | Model updates can leak information. Adds complexity. Doesn't protect against inference by the final model. |
+| **On-device inference** | Runs models locally | Limited by device power. Models are getting more capable on-device. |
+| **Secure enclaves / confidential computing** | Processes data in hardware-isolated environments | Relies on hardware trust; side-channel attacks |
+| **Homomorphic encryption** | Computes on encrypted data | Very slow for most AI workloads |
+| **Synthetic data** | Generates artificial data resembling real data | Can memorize and leak real records. May not preserve rare patterns or fairness properties. |
+
+**Important:** PETs protect data in specific ways. None makes an inappropriate *use* appropriate. A perfectly differentially private model that infers sexual orientation still raises the ethical problems of Lesson 02-09.
+
+### Memorization and LLMs
+
+Large language models can memorize and regurgitate training data, including personal information. Carlini et al. (2021, 2023) extracted verbatim training examples, including names, phone numbers and email addresses, from GPT-2 and later models. Mitigations include deduplication, filtering PII from training data, DP training and output filters. None is complete.
+
+### Data protection impact assessment (DPIA)
+
+GDPR Article 35 requires a DPIA for processing "likely to result in a high risk." Many AI uses qualify. A DPIA has four core steps:
+
+1. **Describe** the processing: data, purposes, flows, retention.
+2. **Assess** necessity and proportionality: Is it needed? Is there a less invasive way?
+3. **Identify and assess risks** to individuals' rights and freedoms.
+4. **Identify measures** to address the risks, and the residual risk.
+
+The EU AI Act adds a **fundamental rights impact assessment (FRIA)** for certain deployers of high-risk systems (08-06). In the U.S., some state privacy laws, such as Colorado's and California's, require similar risk assessments for high-risk processing ⚠.
+
+## Applying the frameworks
+
+- **Beneficence:** Positive-sum design, with full functionality *and* privacy, is often possible.
+- **Non-maleficence:** Minimization reduces breach harms.
+- **Autonomy:** Defaults matter more than options, because most people never change settings.
+- **Virtue:** Privacy by design is an institutional habit, not a one-time review.
+
+## Discussion questions
+
+1. If on-device processing is more private, why don't all companies do it? What are the legitimate reasons and the self-interested ones?
+2. Differential privacy reduces accuracy most for small populations. When is that trade-off acceptable?
+3. Should training an AI model on user data require opt-in consent? What would happen to AI development if it did?
+4. Is a DPIA meaningful if it's written by the company that wants to deploy the system?
+
+## Activity and A2 launch (25 minutes)
+
+**A2: Rights, data and governance case.** Due at the end of Week 3. See `03 - Assessments.md`.
+
+Start now. For your chosen A2 scenario (city facial recognition, employer résumé screening or credit-union ML underwriting):
+
+1. Draw a data-flow diagram using the five contextual-integrity parameters (02-01) for each major flow.
+2. Complete DPIA steps 1–2: description, necessity and proportionality.
+3. List three design levers from the table above that would most reduce risk.
+
+You will add the fairness analysis after Module 3.
+
+## Key terms
+
+- **Privacy by design / by default:** Building privacy into systems from the start and making the most private option the default.
+- **Differential privacy:** A mathematical guarantee limiting what outputs reveal about individuals.
+- **Federated learning:** Distributed training without centralizing raw data.
+- **Memorization:** A model reproducing training data verbatim.
+- **DPIA / FRIA:** Data protection / fundamental rights impact assessment.
+
+## Connections
+
+- Documentation and impact assessments → 08-06 · Procurement → 08-07
+- A2 (launched here)
+
+## Sources and further reading
+
+- Cavoukian, A. "Privacy by Design: The 7 Foundational Principles" (2009). — [Free full text](https://www.sfu.ca/~palys/Cavoukian-2011-PrivacyByDesign-7FoundationalPrinciples.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r089). <!-- reading-access -->
+- Dwork, C. & Roth, A. *The Algorithmic Foundations of Differential Privacy* (2014), Chapter 1 (intro only). — [Free manuscript](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r090). <!-- reading-access -->
+- Carlini, N. et al. "Extracting Training Data from Large Language Models," *USENIX Security 2021*. — [Free manuscript](https://arxiv.org/abs/2012.07805); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r091). <!-- reading-access -->
+- UK ICO, "Guidance on AI and Data Protection" and DPIA template. — [Free full text](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/guidance-on-ai-and-data-protection/?search=DPIA); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r092). <!-- reading-access -->
+- boyd, d. & Sarathy, J. "Differential Perspectives: Epistemic Disconnects Surrounding the U.S. Census Bureau's Use of Differential Privacy," *HDSR* (2022). — [Free manuscript](https://privacytools.seas.harvard.edu/sites/g/files/omnuum6656/files/privacytools/files/ssrn-id4077426.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r093). <!-- reading-access -->

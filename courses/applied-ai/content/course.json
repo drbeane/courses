@@ -1,0 +1,48 @@
+{
+  "title": "Applied AI Essentials",
+  "code": "COSC 300 and COSC 500",
+  "term": "Spring 2027",
+  "school": "Maryville University",
+  "meets": "Tuesdays and Thursdays, 8:00 to 9:15",
+  "description": "Learn to use modern AI tools for real work: research, writing, analysis, coding, and automation.",
+  "stagesNote": "The weeks are grouped by how much the AI does on its own, from chat to agents that work while you are away.",
+  "text": {
+    "lessons": "The full text for each topic, grouped by week. Each week ends with its lab and assignment. Read a topic before class or use it to review afterward.",
+    "slides": "The decks presented in class, one per topic. Use the arrow keys to move through a deck press F for full screen, and press Esc to come back to this page.",
+    "resources": "Videos, short courses, articles, and standards that go with each week. Everything is free unless it says otherwise.",
+    "labKicker": "Lab and Assignment"
+  },
+  "stages": [
+    { "n": 1, "name": "Chat With an AI" },
+    { "n": 2, "name": "Ground It in Sources and Files" },
+    { "n": 3, "name": "Let It Act on Your Computer" },
+    { "n": 4, "name": "Have It Build Software" },
+    { "n": 5, "name": "Build With It Directly" },
+    { "n": 6, "name": "Agents That Work While You're Away" },
+    { "n": 7, "name": "Put It All Together" }
+  ],
+  "weeks": [
+    { "n": 1, "stage": 1, "topic": "How AI Systems Work", "focus": "Delegation", "assignment": "Three-Vendor Comparison", "topics": ["About This Course", "What a Large Language Model Is", "The Surfaces Map", "The 4D Framework", "Vendors, Models, and Effort", "Privacy Settings"] },
+    { "n": 2, "stage": 1, "topic": "Prompting and Context", "focus": "Description", "assignment": "Prompt Revision Log", "topics": ["Writing Strong Prompts", "Tokens and the Context Window", "Memory, Custom Instructions, and Voice", "Testing and Revising Prompts"] },
+    { "n": 3, "stage": 1, "topic": "Evaluating AI Output", "focus": "Discernment", "assignment": "Fact-Check and Failure Report", "topics": ["Why AI Output Is Wrong", "Verification Habits", "Effort, Models, and the Description–Discernment Loop"] },
+    { "n": 4, "stage": 2, "topic": "Research and Grounded Knowledge Work", "focus": "Discernment", "assignment": "Research Brief With Citation Audit", "topics": ["AI as a Writing Partner", "Projects", "Research Agents", "Grounded Notebooks and How Tools Find Sources"] },
+    { "n": 5, "stage": 2, "topic": "Documents, Data, and Media", "focus": "Description", "assignment": "Data-to-Deliverable Package", "topics": ["Structured Files", "Data Analysis With Code Execution", "Creating Files, Multimodal Input, and Generative Media", "AI Inside an Application"] },
+    { "n": 6, "stage": 3, "topic": "Local Agents", "focus": "Delegation", "assignment": "Folder-Scale Delegation Task", "topics": ["From Chat to Agent", "The Task Brief", "Autonomy Controls and Usage"] },
+    { "n": 7, "stage": 3, "topic": "Instruction Files and Skills", "focus": "Description", "assignment": "Write and Test a Skill", "topics": ["Standing Instructions", "Skills", "Plugins and Where Skills Work"] },
+    { "n": 8, "stage": 3, "topic": "Connectors, Browser Agents, and Agent Security", "focus": "Diligence", "assignment": "Midterm Project: Agent Workflow", "topics": ["Connectors", "Browser Agents and Scheduled Tasks", "Prompt Injection and Defenses"] },
+    { "n": 9, "stage": 4, "topic": "Coding With AI I", "focus": "Delegation", "assignment": "First App From a Spec", "topics": ["From Chat Window to Coding Assistant", "The Development Environment and Claude Code", "Comparing Coding Assistants"] },
+    { "n": 10, "stage": 4, "topic": "Coding With AI II", "focus": "Discernment", "assignment": "Spec-Driven Build With Tests", "topics": ["Specifications and Tests", "Reviewing AI-Written Code", "Debugging, Changing Code, and Sub-Agents", "The Capstone Project"] },
+    { "n": 11, "stage": 5, "topic": "AI Engineering I", "focus": "Description", "assignment": "First API Program With Tool Use", "topics": ["From Chat to API", "A First API Program and What It Costs", "Tool Use", "Workflows and Agents"] },
+    { "n": 12, "stage": 5, "topic": "AI Engineering II", "focus": "Discernment", "assignment": "Mini RAG App or MCP Server With an Eval", "topics": ["Retrieval-Augmented Generation", "Evaluation", "MCP From the Inside"] },
+    { "n": 13, "stage": 6, "topic": "Always-On Assistants", "focus": "Diligence", "assignment": "Always-On Agent Field Test", "topics": ["Always-On Agents", "Setting Up an Always-On Agent Safely", "Always-On Risks and When It Is Worth It"] },
+    { "n": 14, "stage": 7, "topic": "AI in Organizations", "focus": "Diligence", "assignment": "Capstone Draft and Peer Review", "topics": ["Choosing Tools for an Organization", "Data Governance and Local Models", "Bias, Reliability, and Accountability", "Workforce Effects and AI-Use Policy"] },
+    { "n": 15, "stage": 7, "topic": "Capstone and Synthesis", "focus": "All four", "assignment": "Capstone Final", "topics": ["Capstone Presentations", "Course Synthesis"] }
+  ],
+  "demos": [
+    { "slug": "next-token-sampler", "name": "Next-Token Sampler", "weeks": [1], "about": "Watch a model pick one token at a time, and see why the same prompt gives different answers on different runs." },
+    { "slug": "context-window", "name": "Context Window Budget", "weeks": [2, 9], "about": "Fill a context window with instructions, files, and conversation, and see what gets crowded out." },
+    { "slug": "prompt-injection", "name": "Prompt Injection Sandbox", "weeks": [8], "about": "Hide instructions in a document and see when an agent follows them and which safeguards stop it." },
+    { "slug": "tool-use-tracer", "name": "Tool-Use Tracer", "weeks": [11], "about": "Step through one tool call, from the model's request to the program's reply and back." },
+    { "slug": "rag-explorer", "name": "Retrieval and Evaluation Explorer", "weeks": [12], "about": "Change how documents are chunked and retrieved, then score the answers against a test set." }
+  ]
+}

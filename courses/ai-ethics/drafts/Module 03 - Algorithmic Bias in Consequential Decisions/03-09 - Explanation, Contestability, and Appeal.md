@@ -1,0 +1,121 @@
+# 03-09 — Explanation, Contestability, and Appeal
+
+**Module:** 3 — Algorithmic Bias in Consequential Decisions
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Distinguish kinds of explanation (global, local, counterfactual, process) and which stakeholders need which.
+2. Explain why "human in the loop" often fails as a safeguard, and what makes human review meaningful.
+3. Design a contestability process for an automated decision.
+
+## Opening case: the robodebt scheme (Australia, 2016–2019)
+
+From 2016, Australia's government ran an automated debt-recovery program, later known as "Robodebt." It averaged people's annual income (from tax data) across fortnights to infer that they had been overpaid welfare benefits, then issued debt notices. The method was flawed, because many recipients' income was irregular. The **burden shifted to recipients** to disprove debts, often years later, without records.
+
+About 470,000 debts were wrongly issued. A 2019 court case established that the averaging method was unlawful. The government settled a class action for A$1.8 billion (including repaid and written-off debts) in 2020. A Royal Commission (2023) called it "a crude and cruel mechanism, neither fair nor legal," and documented suicides linked to the debt notices.
+
+Robodebt was not sophisticated AI. It failed because automated decisions were issued at scale **without meaningful explanation, human review or accessible contest**.
+
+*(Content note: the Royal Commission report discusses deaths by suicide.)*
+
+## Core ideas
+
+### Who needs what explanation?
+
+| Stakeholder | Needs | Example |
+|---|---|---|
+| **Affected person** | Why this decision about me? What can I do? | "Your application was denied mainly because of X. If Y changed, the outcome might differ. You can appeal by Z." |
+| **Operator** | When should I trust or override the output? | Confidence levels; known failure modes |
+| **Auditor / regulator** | How does the system behave overall? Is it lawful? | Global feature importance; subgroup performance; documentation |
+| **Developer** | Why did the model make this error? | Debugging tools; attribution methods |
+| **Public** | Should this system exist? | Purpose, governance, impact assessments |
+
+### Types of explanation
+
+- **Global:** How the model works overall (feature importances, decision rules).
+- **Local:** Why this particular output (SHAP, LIME).
+- **Counterfactual:** What minimal change would alter the outcome (Wachter, Mittelstadt & Russell, 2017). It is actionable and doesn't require revealing the model, but it can suggest unrealistic changes.
+- **Process:** Who designed the system, what data it used, how it was validated, and who is accountable. Often the most useful for contestation.
+
+**Interpretable by design:** Cynthia Rudin (2019) argues that for high-stakes decisions, we should use inherently interpretable models (e.g., sparse scoring systems), rather than explaining black boxes after the fact. In many tabular problems, interpretable models perform about as well.
+
+### Legal rights to explanation (as of October 2026 ⚠)
+
+- **GDPR Art. 22 and Arts. 13–15:** Limits solely automated decisions with legal or similarly significant effects, and gives rights to "meaningful information about the logic involved." In *Dun & Bradstreet Austria* (Feb 2025), the CJEU held this requires explaining the procedure and principles actually applied, in an intelligible way.
+- **EU AI Act Art. 86:** A right to an explanation of individual decisions made with high-risk AI systems (with phased application).
+- **U.S.:** Sector-specific rules include adverse action notices in credit (ECOA, FCRA; 03-05) and some state laws on automated decisions (e.g., California's ADMT regulations under the CCPA, finalized in 2025 ⚠).
+
+### Human in the loop: necessary, not sufficient
+
+"A human reviews every decision" is often offered as the solution. Research shows human review frequently fails:
+
+- **Automation bias:** Reviewers rubber-stamp outputs (05-08).
+- **Time pressure:** Reviewers handle hundreds of cases an hour.
+- **Lack of information:** Reviewers see the score but not the reasons.
+- **Lack of authority:** Overriding requires justification, while following doesn't.
+- **Selective override:** Overrides can *add* bias (03-07, Kentucky).
+
+Ben Green (2022) reviewed 41 policies requiring human oversight and found little evidence that people can perform the oversight roles assigned to them. He recommends that institutions justify *why* an algorithm is used at all, and evaluate whether human oversight actually works.
+
+**Meaningful human review requires:**
+
+- information beyond the score,
+- the time to consider it,
+- the authority to override without penalty,
+- training, including on the system's known failure modes, and
+- tracking overrides and outcomes.
+
+### Contestability
+
+Contestability means affected people can **challenge** decisions effectively (Lyons et al., 2021). A contestable system provides:
+
+1. **Notice** that an automated system was involved.
+2. **Explanation** sufficient to identify errors.
+3. **A channel** to contest, accessible and free.
+4. **A human decision-maker** with authority to change the outcome.
+5. **A timeline** for response.
+6. **Correction** of the underlying data and model, not just the individual case.
+7. **No burden reversal:** The system shouldn't force people to disprove its conclusions (the Robodebt lesson).
+
+## Applying the frameworks
+
+- **Explicability:** Explanation is the precondition for accountability.
+- **Procedural justice:** Fair process includes the ability to be heard.
+- **Autonomy:** Actionable explanations let people change their circumstances.
+- **Care:** Robodebt notices reached people in precarious situations. A caring process would have anticipated their vulnerability.
+
+## Discussion questions
+
+1. Should high-stakes decisions be prohibited from using models that can't be explained? Or is accuracy sometimes more important than explicability?
+2. Robodebt involved simple automation, not ML. What does this say about where the ethical risk lies?
+3. Design an experiment to test whether human reviewers in a loan-approval system are actually exercising judgment.
+4. Is a counterfactual explanation ("you'd be approved if you earned $5,000 more") helpful or insulting?
+
+## Activity: contestability checklist (15 minutes)
+
+Apply the seven contestability elements to one system you analyzed this week (hiring, lending, tenant screening or risk assessment). For each, rate: present / partial / absent. Identify the most critical gap.
+
+## Key terms
+
+- **Local / global / counterfactual / process explanation:** See above.
+- **Interpretable model:** A model whose logic humans can directly understand.
+- **Human in the loop:** Human review of automated outputs.
+- **Contestability:** The capacity to challenge and change decisions.
+- **Burden reversal:** Requiring affected people to disprove an automated conclusion.
+
+## Connections
+
+- Adverse action → 03-05 · Automation bias → 05-08 · EU AI Act rights → 08-01 · Redress → 08-08
+- A2 recommendation; A5 dossier redress section
+
+## Sources and further reading
+
+- Royal Commission into the Robodebt Scheme, *Report* (July 2023), Executive Summary. — [Free full text](https://www.royalcommission.gov.au/robodebt/report); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r137). <!-- reading-access -->
+- Wachter, S., Mittelstadt, B. & Russell, C. "Counterfactual Explanations without Opening the Black Box," *Harvard Journal of Law & Technology* 31 (2018). — [Free manuscript](https://arxiv.org/abs/1711.00399); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r138). <!-- reading-access -->
+- Rudin, C. "Stop explaining black box machine learning models for high stakes decisions…," *Nature Machine Intelligence* 1 (2019). — [Free manuscript](https://arxiv.org/abs/1811.10154); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r139). <!-- reading-access -->
+- Green, B. "The flaws of policies requiring human oversight of government algorithms," *Computer Law & Security Review* 45 (2022). — [Free manuscript](https://arxiv.org/abs/2109.05067); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r140). <!-- reading-access -->
+- CJEU, Case C-203/22, *Dun & Bradstreet Austria* (Feb 27, 2025). — [Free official text](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=celex%3A62022CJ0203); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r141). <!-- reading-access -->
+- Lyons, H., Velloso, E. & Miller, T. "Conceptualising Contestability," *CSCW 2021*. — [Free manuscript](https://arxiv.org/abs/2103.01774); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r142). <!-- reading-access -->

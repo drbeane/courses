@@ -1,0 +1,118 @@
+# 04-02 — Verification as an Ethical Practice
+
+**Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Apply lateral reading and source-tracing techniques to AI-generated and online claims.
+2. Distinguish primary, secondary and tertiary sources, and grade evidence quality.
+3. Decide when AI assistance must defer to a human or an authoritative source.
+
+## Opening case: two accounts of the same breach
+
+When Hugging Face was breached in July 2026 (Lesson 07-07), the public relied on two primary sources: OpenAI's disclosure and Hugging Face's post-mortem. A careful reader noticed they **described different entry points**. OpenAI described its models exploiting a zero-day in a package-registry cache proxy. Hugging Face described entry through a malicious dataset that abused code-execution paths in its data pipeline.
+
+Secondary coverage often merged the two into one story. A vendor blog summarizing the incident framed it around the need for its own privacy product.
+
+Verification here was not about finding the "true" story online. It meant **noticing which claims came from whom, where they conflicted and what remained unknown**. Reading OpenAI's full primary post (with its later updates) alongside Hugging Face's suggests the accounts describe two stages of one attack: the escape from OpenAI's environment, then the entry into Hugging Face's. Few secondary summaries made that clear.
+
+## Core ideas
+
+### Why verification is an ethical duty
+
+Verifying claims before relying on them or repeating them is part of:
+
+- **non-maleficence:** not spreading falsehoods that harm others,
+- **professional competence** (04-01),
+- **respect for others' autonomy:** they deserve accurate information to make decisions, and
+- **civic responsibility:** information ecosystems are shared goods.
+
+Generative AI makes this duty more pressing. It lowers the cost of producing plausible content to near zero while leaving the cost of checking unchanged.
+
+### Lateral reading
+
+Stanford History Education Group studies (Wineburg & McGrew, 2017) found that professional fact-checkers outperformed historians and students in evaluating websites because they **read laterally**. Instead of staying on a page and analyzing it, they quickly opened new tabs to see what others said about the source.
+
+**The SIFT method** (Mike Caulfield):
+
+1. **Stop:** Notice your reaction. Do you know this source?
+2. **Investigate the source:** Who is behind it? What's their expertise and agenda?
+3. **Find better coverage:** Is this reported by more reliable sources?
+4. **Trace claims to the original:** Find the study, the court document, the original video.
+
+### Evidence quality
+
+| Source type | Example | Reliability notes |
+|---|---|---|
+| **Primary** | Court filing; dataset; official audit; company disclosure; peer-reviewed study | Closest to the event, but parties have interests (a company post-mortem is primary *and* self-serving) |
+| **Secondary** | News reporting; law firm analysis; review articles | Adds context. Check whether reporters had primary access. |
+| **Tertiary** | Encyclopedias; AI summaries; vendor blogs summarizing news | Convenient. Never the final source for a consequential claim. |
+
+**Status labels used in this course:**
+
+- **Settled fact:** court record, official data.
+- **Reported:** credible journalism.
+- **Company account:** self-reported by a party.
+- **Allegation:** not adjudicated.
+- **Estimate / forecast / speculation:** for quantitative claims.
+
+### Verifying AI output specifically
+
+- **Citations:** Open every cited source. Confirm it exists, says what's claimed, and is current.
+- **Quotations:** Search the exact phrase in the original.
+- **Numbers:** Find the original dataset or report, and check the units, date and denominator.
+- **Legal claims:** Check the date, the jurisdiction and whether the provision is in force (01-09).
+- **Images and video:** Use reverse image search, provenance data (04-07) and contextual checks (weather, location, shadows).
+- **AI search answers:** Check whether the cited link supports the specific sentence it is attached to.
+
+### When should AI defer?
+
+A useful rule: **the higher the stakes and the lower your ability to verify, the less you should rely on AI output**.
+
+| | Easy to verify | Hard to verify |
+|---|---|---|
+| **Low stakes** | Use freely (e.g., brainstorming titles) | Use with light caution (e.g., summarizing a novel) |
+| **High stakes** | Use, then verify every claim (e.g., a legal brief with checkable citations) | Defer to experts or authoritative sources (e.g., a medication interaction, an immigration status question) |
+
+System designers should build this into products. Examples: refusing to produce citations without retrieval, linking claims to sources, abstaining when uncertain, and escalating to humans in high-stakes domains.
+
+## Applying the frameworks
+
+- **Autonomy:** Spreading unverified claims undermines others' ability to decide for themselves.
+- **Justice:** Verification takes time and skill. Those without them are more exposed to misinformation.
+- **Virtue:** Intellectual honesty and humility. The willingness to say "I don't know yet."
+
+## Discussion questions
+
+1. Should AI companies be responsible for verifying the claims their systems make, or is that the user's job?
+2. Is it ethical to share a news story you haven't verified if you add "if true"?
+3. In the Hugging Face case, which source would you trust more on the entry point, and why? What would resolve the discrepancy?
+4. What would it look like for a chatbot to show its uncertainty honestly?
+
+## Activity: trace a claim (15 minutes)
+
+Pick one statistic from any lesson in this course that has a source (for example, "2,046 hallucination cases," "945 TWh by 2030" or "19% employment gap"). Trace it to the **primary** source. Record:
+
+1. each hop (where you found it, and where that source got it),
+2. whether the number changed along the way, and
+3. its status label.
+
+## Key terms
+
+- **Lateral reading:** Evaluating a source by checking what other sources say about it.
+- **SIFT:** Stop, Investigate, Find better coverage, Trace.
+- **Primary / secondary / tertiary source:** Original / interpretive / summary.
+- **Abstention:** A model declining to answer when uncertain.
+
+## Connections
+
+- Hallucination → 04-01 · Provenance → 04-07 · Lab → 04-10 · Evidence labels → 05-01, A3
+
+## Sources and further reading
+
+- Wineburg, S. & McGrew, S. "Lateral Reading: Reading Less and Learning More When Evaluating Digital Information," Stanford History Education Group Working Paper (2017). — [Free manuscript](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3048994); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r150). <!-- reading-access -->
+- Caulfield, M. & Wineburg, S. *Verified: How to Think Straight, Get Duped Less, and Make Better Decisions about What to Believe Online* (Chicago, 2023). — [Paid / library](https://press.uchicago.edu/ucp/books/book/chicago/V/bo207015182.html); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r151). <!-- reading-access -->
+- Bloomberg Tax (Jul 22, 2026) and Elephas (vendor) coverage of the Hugging Face breach, compared as a source-comparison exercise. — [Bloomberg syndicated copy — Free full text](https://www.ndtvprofit.com/technology/openai-says-its-models-accidentally-hacked-hugging-face-11803857); [Elephas vendor analysis — Free full text](https://elephas.app/resources/openai-models-hacked-hugging-face); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r152). <!-- reading-access -->

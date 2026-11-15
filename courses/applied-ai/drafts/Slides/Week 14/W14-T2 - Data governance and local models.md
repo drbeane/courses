@@ -1,0 +1,87 @@
+---
+marp: true
+title: "Week 14: Data Governance and Local Models"
+paginate: true
+---
+
+# Data Governance and Local Models
+### Week 14
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Data Governance
+
+The rules for an organization's data: who may see it, where it may go, how long it's kept.
+
+Pasting into a chat sends data to a vendor.
+
+Week 1's privacy settings, for everyone the organization is responsible to.
+
+---
+
+## Consumer vs Enterprise Terms
+
+| | Consumer | Enterprise / education |
+|---|---|---|
+| Training on your data | Often on by default | Usually off by contract |
+| Retention | Vendor's policy | Negotiated |
+| Admin controls | None | SSO, permissions, audit |
+| Regulated data | Not appropriate | Possible, with agreements |
+
+---
+
+## Regulated Data
+
+- **FERPA**: student education records
+- **HIPAA**: health information
+- Client and contract confidentiality
+
+The account type decides what's allowed, not the tool's quality.
+
+---
+
+## Sorting Data by Sensitivity
+
+| Level | Examples | Where it may go |
+|---|---|---|
+| Public | Web pages, the catalog | Any tool |
+| Internal | Meeting notes, drafts | The organization's account |
+| Confidential | Customer lists, contracts | Approved enterprise tools |
+| Regulated | Student and health records | A specific agreement, or nowhere |
+
+Unsure? Treat it as the higher level and ask.
+
+---
+
+## Shadow AI
+
+Work pasted into a personal account in another tab.
+
+- Common, and done for an ordinary reason
+- A **ban increases it**: same use, consumer terms, nobody can see it
+- Better: an approved tool that's good enough, and clear data rules
+
+---
+
+## Demo: A Model on a Laptop
+
+- A small open model running locally
+- Nothing leaves the machine
+- Trade-offs: smaller, slower, you maintain it
+- When privacy or cost outweighs capability
+
+<!-- Turn off Wi-Fi and run it again to make the point. -->
+
+---
+
+## Cloud or Local?
+
+| | Cloud | Local |
+|---|---|---|
+| Data | Goes to the vendor | Stays on the machine |
+| Capability | Strongest | Smaller, weaker on hard tasks |
+| Cost | Per seat or token | Hardware |
+| Upkeep | Vendor's | Yours |
+
+Local removes one risk. It still hallucinates, and it can still be prompt-injected.

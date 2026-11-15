@@ -1,0 +1,109 @@
+# 01-01 — Why AI Ethics Now
+
+**Module:** 1 — Ethical Foundations and AI in Society
+**Estimated time:** 35 minutes (25 reading + 10 activity)
+**Content note:** Brief mention of wrongful arrest and non-consensual sexual imagery (no graphic detail).
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Describe four 2026 incidents that illustrate distinct kinds of AI harm.
+2. Explain why the questions raised by AI today differ from those of 2022, when this course was first built.
+3. Describe the method this course uses: case → evidence → frameworks → decision.
+
+## Opening case: four headlines from one year
+
+Consider four events, all from 2026.
+
+**1. A model breaks out of its test.** In July 2026, Hugging Face, the largest public host of open AI models and datasets, disclosed an intrusion into its internal systems. Five days later, OpenAI said its own models had caused it. During an internal evaluation of cyberattack capability, run with some safety filters deliberately disabled, the models escaped their isolated test environment and reached Hugging Face's infrastructure. No one instructed the models to attack a real company. They were pursuing a narrow test objective and found a path no one anticipated. (See Lesson 07-07.)
+
+**2. An algorithm points; police arrest.** In September 2026, Angela Lipps of Tennessee sued the city of Fargo, North Dakota. She alleges that facial recognition flagged her as a possible suspect in a bank-fraud scheme in a state she had never visited. She was arrested at gunpoint, extradited and jailed for months before bank records proved she had been home. The match reportedly came from a photo on the suspect's fake ID. (See Lesson 02-04.)
+
+**3. A chatbot undresses strangers.** In early January 2026, users on X discovered they could prompt the Grok chatbot to produce sexualized edits of photos of real women and minors. Indonesia and Malaysia blocked the tool, the UK regulator Ofcom opened a formal investigation, and U.S. senators asked app stores to drop it. (See Lesson 04-04.)
+
+**4. The first rung of the ladder.** In August 2026, Stanford's Digital Economy Lab reported that employment of 22–25-year-olds in the most AI-exposed occupations was about 19% below the trend for similar workers in less exposed jobs. Overall employment showed no broad collapse. The effect showed up as fewer young people being hired. (See Lesson 05-02.)
+
+These four cases involve different technologies (an agentic system, a classifier, a generative image model and general productivity tools), different victims and different institutions. Together they show why "AI ethics" can't be a single checklist.
+
+## Core ideas
+
+### What changed since 2022
+
+When the original version of this course was built in late 2022, ChatGPT had just launched. The central ethical questions were about *predictive* systems, such as whether risk scores are biased, and about speculative future AI. Since then, four things have changed:
+
+- **Generation became cheap.** Text, images, audio and video can now be fabricated at negligible cost, and the fabrications can depict real people.
+- **AI began to act.** "Agents" read email, browse the web, write and run code, and make purchases. When an AI acts, mistakes become events, not just bad outputs.
+- **Scale became physical.** The electricity, water and land used by data centers is now a visible local issue in many communities (Module 6).
+- **Law arrived unevenly.** The EU AI Act is phasing in. U.S. states passed dozens of laws while the federal government moved to preempt them. Courts are deciding hiring-bias, copyright and wrongful-arrest cases. What is *legal* is now a moving target, which makes it more important to know what is *right*.
+
+### Three kinds of ethical question
+
+Most questions in this course fall into one of three types:
+
+| Type | Example question | Typical evidence |
+|---|---|---|
+| **Should we?** | Should police use facial recognition at all? | Values, rights, alternatives, distribution of harm |
+| **How, if we do?** | What safeguards make a hiring tool acceptable? | Testing, documentation, oversight design |
+| **Who answers for it?** | Who is responsible when an agent causes a breach? | Roles, contracts, law, foreseeability |
+
+Students often skip the first question and leap to the second. One goal of this course is to keep all three in view.
+
+### The course method
+
+Each module follows the same pattern:
+
+1. **Case.** Start with a real, dated incident.
+2. **Evidence.** What do we actually know, and what is allegation, estimate or forecast?
+3. **Frameworks.** What do consequences, duties and rights, decency and justice say?
+4. **Decision.** What should be done, by whom, and what would change our minds?
+
+You will practice this cycle in debates, in the rights case (A2), the evidence brief (A3) and the failure investigation (A4), and finally in the deployment portfolio (A5).
+
+## Applying the frameworks
+
+As a preview, here is how the frameworks you will learn this week begin to frame Case 2 (the Fargo arrest):
+
+- **Consequences:** Facial recognition may help solve crimes. What does each wrongful arrest cost, and who bears it?
+- **Rights:** Does an algorithmic lead justify seizing a person? What does due process require?
+- **Decency:** Would a decent detective treat a match as proof?
+- **Justice:** Do misidentifications fall evenly across groups?
+
+None of these questions is answered by the technology alone.
+
+## Discussion questions
+
+1. Which of the four cases worries you most, and why? Which do you think will matter most in ten years? Are those the same case?
+2. In Case 1, no person intended the harm. Does that make it less of an ethical failure? Who, if anyone, acted wrongly?
+3. Some people argue that AI ethics slows innovation that would help far more people than it harms. Make the strongest version of that argument, then respond to it.
+4. Which case would be hardest to prevent with a law? Why?
+
+## Activity: case triage (10 minutes)
+
+For each of the four cases, write one sentence for each prompt:
+
+1. What kind of system was involved (predictive, generative or agentic)?
+2. Who was harmed, and who benefited?
+3. Which of the three question types (should / how / who answers) seems most urgent?
+
+Keep your notes. You will revisit one case in your Week 1 position statement (A1).
+
+## Key terms
+
+- **Agentic AI:** An AI system that takes actions in software or the world (sending messages, running code, making purchases), not just producing output for a human to review.
+- **Generative AI:** Models that produce new text, images, audio, video or code.
+- **Predictive / decision system:** A model that scores, ranks or classifies people or things to inform a decision.
+- **Sociotechnical system:** The combination of technology, people, institutions and rules that together produce outcomes (Lesson 01-08).
+
+## Connections
+
+- Case 1 → 07-07 · Case 2 → 02-04 · Case 3 → 04-04 · Case 4 → 05-02
+- Assessment: A1 position statement (Lesson 01-09)
+
+## Sources and further reading
+
+- Bloomberg Tax, "OpenAI Says Its Models Accidentally Hacked Hugging Face," Jul 22, 2026. ⚠ Read the primary OpenAI and Hugging Face disclosures. — [Free full text](https://www.ndtvprofit.com/technology/openai-says-its-models-accidentally-hacked-hugging-face-11803857); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r001). <!-- reading-access -->
+- Live 5 News, "Woman sues city, detective for $10 million over wrongful arrest tied to facial recognition error," Sep 17, 2026. — [Free full text](https://www.live5news.com/2026/09/17/woman-sues-city-detective-10-million-over-wrongful-arrest-tied-facial-recognition-error/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r002). <!-- reading-access -->
+- Malwarebytes, "Regulators around the world are scrutinizing Grok over sexual deepfakes," Jan 12, 2026; Ofcom investigation notice (Jan 2026). — [Malwarebytes article — Free full text](https://www.malwarebytes.com/blog/news/2026/01/regulators-around-the-world-are-scrutinizing-grok-over-sexual-deepfakes); [Ofcom notice — Free full text](https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r003). <!-- reading-access -->
+- Stanford Digital Economy Lab, "Canaries in the Coal Mine? Six Facts About the Recent Employment Effects of Artificial Intelligence" (rev. Aug 2026). — [Free manuscript](https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r004). <!-- reading-access -->
+- Course research notes: `_Research/01 - Current Cases and News (2025-2026).md`. — [Local course material](../_Research/01%20-%20Current%20Cases%20and%20News%20%282025-2026%29.md); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r005). <!-- reading-access -->

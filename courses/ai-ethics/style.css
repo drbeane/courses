@@ -1,0 +1,6 @@
+/* AI, Ethics, and Society: rules this course adds to the shared site styles. */
+/* Page blocks share one 56rem column, centered in the page. Lesson, Assessments and Resources
+   pages use the full width for their contents list and text. */
+.hero, .stages, .head, .weeks, .demos, .gloss, .empty { max-width: 56rem; margin-left: auto; margin-right: auto; }
+.head:has(+ .cols), .dhead { max-width: none; }
+.head > p { max-width: 40rem; }

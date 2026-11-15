@@ -1,0 +1,135 @@
+# 02-04 — Facial Recognition in Policing: Wrongful Arrests
+
+**Module:** 2 — Surveillance, Biometrics, and Privacy
+**Estimated time:** 40 minutes
+**Content note:** Wrongful arrest and detention.
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Describe documented U.S. wrongful arrests linked to facial recognition, and their common pattern.
+2. Explain how automation bias and investigative shortcuts turn a "lead" into an arrest.
+3. Evaluate policy safeguards: corroboration requirements, disclosure, training, audits and bans.
+
+## Opening case: Angela Lipps (Tennessee / North Dakota, 2025–2026)
+
+*The following are allegations in a civil complaint filed in September 2026 (Lipps v. City of Fargo et al.), as reported by Live 5 News. They have not been adjudicated.*
+
+- **April–May 2025:** A series of bank-fraud thefts occurred in the Fargo area.
+- **The lead:** A West Fargo police analyst and a North Dakota state intelligence center ran facial recognition and identified Angela Lipps, of Elizabethton, Tennessee, as a possible lead.
+- **The investigation:** Detective Lucas Heck allegedly pursued charges despite knowing that Lipps:
+  - lived in Tennessee,
+  - had never been to North Dakota,
+  - didn't match the suspect's description, and
+  - had no unexplained funds.
+- **The image:** The suit alleges he didn't disclose that the match came from the photo on the suspect's fake ID rather than surveillance footage.
+- **July 2025:** Lipps was arrested at gunpoint in Tennessee while babysitting, extradited and held in Cass County Jail on a $100,000 bond. She alleges she was denied her dentures and medication for extended periods.
+- **Release:** She was freed after her attorney produced bank records showing she was in Tennessee during the thefts. Charges were dropped on December 24, 2025. She says she was released with little money and no winter coat.
+- **Policies:** The Fargo Police Department had no facial recognition policy, training or supervision at the time. West Fargo limits the tool to trained officers and **bars arrests based solely on a match**.
+- **Aftermath:** Fargo's police chief acknowledged "investigative errors" in March 2026 and resigned later that month. He said new policies and training have since been adopted.
+- **The suit:** Lipps seeks $10 million on five claims: unlawful seizure, due-process violations, a civil-rights claim against the city over policy and training, false arrest and imprisonment, and malicious prosecution.
+
+## Core ideas
+
+### A recurring pattern
+
+Lipps is not the first. Publicly reported U.S. cases include:
+
+| Person | Place / year | Outcome |
+|---|---|---|
+| Robert Williams | Detroit, 2020 | Arrested in front of family for watch theft; the 2024 settlement changed Detroit's policy |
+| Michael Oliver | Detroit, 2019 | Charged with larceny; dismissed |
+| Nijeer Parks | Woodbridge, NJ, 2019 | Jailed 10 days; the match came from a fake ID photo |
+| Randal Reid | Georgia / Louisiana, 2022 | Jailed about a week for thefts in a state he'd never visited |
+| Porcha Woodruff | Detroit, 2023 | Arrested while eight months pregnant |
+| Angela Lipps | Tennessee / ND, 2025 | Alleged; see above |
+
+The ACLU counts more than a dozen such cases. The true number is unknown, because defendants often aren't told facial recognition was used. Most publicly known victims have been Black. Lipps's case shows the pattern isn't limited to one group.
+
+**Common elements:**
+
+1. A low-quality or inappropriate probe image (a surveillance still, a fake ID photo).
+2. A candidate returned from a large database.
+3. Insufficient independent corroboration: a photo lineup built *around* the match, or none.
+4. Ignoring exculpatory facts (alibi, location, physical mismatch).
+5. No disclosure to the defense.
+
+### Automation bias and confirmation
+
+**Automation bias** is the tendency to over-trust automated outputs. In policing:
+
+- A "match" feels objective, scientific and authoritative.
+- Investigators then seek evidence that confirms it (**confirmation bias**).
+- Photo lineups that include the algorithm's pick are contaminated: the person was chosen because they look like the suspect, so witnesses will likely pick them too.
+
+The vendor's disclaimer ("investigative lead only, not probable cause") is often the only safeguard, and it can't enforce itself.
+
+### Safeguards and their limits
+
+| Safeguard | Example | Limitation |
+|---|---|---|
+| **Corroboration requirement** | Detroit settlement (2024): no arrest based solely on FR or an FR-derived lineup | Depends on the quality of the "independent" evidence |
+| **Disclosure to defendants** | Some states (e.g., New Jersey case law, 2023) require disclosure of FR use | Not universal |
+| **Training and certification** | West Fargo: trained officers only | Training doesn't eliminate bias |
+| **Image-quality rules** | Banning sketches, celebrity look-alikes and edited photos | Hard to audit |
+| **Audit of past cases** | Detroit's audit of cases since 2017 | Retrospective |
+| **Statutory frameworks** | Montana and Utah (warrant or approval requirements); Maryland's 2024 law | Patchwork |
+| **Bans or moratoria** | San Francisco (2019), Boston and others | Some bans later relaxed; federal agencies unaffected |
+
+### What is the right policy?
+
+**Positions span a spectrum:**
+
+- **Ban:** The risks to liberty and equality are inherent. Some cities did this.
+- **Strict framework:** Allow it for serious crimes, with warrants, corroboration, disclosure and audits.
+- **Permissive with guidance:** Treat it as just another lead and rely on existing investigative standards.
+
+The Lipps case is a test of the third position. It relied on ordinary investigative standards, and they failed.
+
+## Applying the frameworks
+
+- **Rights and due process:** Probable cause requires more than resemblance. Was Lipps's Fourth Amendment right violated? (That's the legal question in her suit.)
+- **Decency and care:** She was a caregiver, arrested at gunpoint, and reportedly denied medication.
+- **Justice:** Who absorbs the cost of false matches? Overwhelmingly, people with little power to fight back. Lipps was freed because her attorney produced bank records. How many people have no attorney?
+- **Virtue:** West Fargo's rule embodies institutional humility. Fargo's lack of a rule did not.
+
+## Discussion questions
+
+1. The vendor says its product generates leads only. Do vendors bear any responsibility for wrongful arrests? (See also 08-05.)
+2. Should defendants have an absolute right to know facial recognition was used, and to obtain the algorithm's details? What are the counterarguments?
+3. Does a policy like "no arrest based solely on facial recognition" go far enough?
+4. Prepare for the Week 2 debate: list the three strongest arguments **for** police facial recognition with safeguards.
+
+## Activity: policy drafting (20 minutes)
+
+Draft a one-page facial recognition policy for a mid-size police department. Include:
+
+1. permitted uses,
+2. prohibited probe images,
+3. corroboration requirements before arrest,
+4. disclosure,
+5. audit and reporting, and
+6. consequences for violations.
+
+Then identify which element would have most likely prevented the Lipps arrest.
+
+## Key terms
+
+- **Investigative lead:** Information that justifies further investigation but not arrest.
+- **Probable cause:** The constitutional standard for arrest; a reasonable belief based on facts.
+- **Automation bias / confirmation bias:** Over-trusting automation / seeking confirming evidence.
+- **Exculpatory evidence:** Evidence tending to show innocence.
+
+## Connections
+
+- Technical errors → 02-03 · Live use → 02-05 · Automation bias in professions → 05-08 · Accountability chain → 01-08, 08-05
+- A1 Week 2 debate; A2 scenario 1
+
+## Sources and further reading
+
+- Live 5 News, "Woman sues city, detective for $10 million over wrongful arrest tied to facial recognition error," Sep 17, 2026. ⚠ Follow the case for responses and rulings. — [Free full text](https://www.live5news.com/2026/09/17/woman-sues-city-detective-10-million-over-wrongful-arrest-tied-facial-recognition-error/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r055). <!-- reading-access -->
+- ACLU, "More than a dozen wrongful arrests due to police reliance on facial recognition technology." — [Free full text](https://www.aclu.org/news/privacy-technology/more-than-a-dozen-wrongful-arrests-due-to-police-reliance-on-facial-recognition-technology); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r056). <!-- reading-access -->
+- *Williams v. City of Detroit* settlement (June 2024), ACLU summary. — [Free full text](https://assets.aclu.org/live/uploads/2024/06/Final-Order-of-Dismissal-and-Settlement-Agreement.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r057). <!-- reading-access -->
+- Hill, K. *Your Face Belongs to Us* (2023), Chapters 1 and 16. — [Paid / library](https://www.penguinrandomhouse.com/books/691288/your-face-belongs-to-us-by-kashmir-hill/9780593448571/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r058). <!-- reading-access -->
+- *State v. Arteaga*, 476 N.J. Super. 36 (App. Div. 2023), on disclosure of facial recognition to the defense. — [Free full text](https://law.justia.com/cases/new-jersey/appellate-division-published/2023/a-3078-21.html); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r059). <!-- reading-access -->

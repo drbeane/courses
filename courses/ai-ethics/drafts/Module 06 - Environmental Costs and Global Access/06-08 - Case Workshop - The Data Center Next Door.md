@@ -1,0 +1,115 @@
+# 06-08 — Case Workshop: The Data Center Next Door
+
+**Module:** 6 — Environmental Costs and Global Access
+**Estimated time:** 75 minutes
+**Type:** Case workshop (supports A3)
+
+## Learning objectives
+
+By the end of this workshop, you will be able to:
+
+1. Conduct a structured community-impact analysis of a proposed AI data center.
+2. Separate measured, estimated, forecast and speculative claims in a contested local decision.
+3. Produce a recommendation that considers distribution across affected groups.
+
+## Scenario: "Project Juniper" (composite, fictional)
+
+**Halsey County** (population 48,000) is in a semi-arid region with a declining aquifer. Its median household income is below the state median. A developer working under the code name "Project Juniper," widely believed to represent a major cloud provider, proposes a **300 MW AI data-center campus** on 600 acres of former farmland, 2 miles from the town of Merritt.
+
+**The developer's claims:**
+
+- $4 billion capital investment.
+- 1,500 construction jobs over 3 years; **75 permanent jobs**.
+- $18 million per year in property taxes **after** a 15-year, 70% tax abatement.
+- "Closed-loop cooling with minimal water use after initial fill."
+- "100% renewable energy," via power purchase agreements.
+- $2 million to a community fund.
+
+**Other information:**
+
+- **The utility:** Serving the campus requires a new substation and transmission upgrades estimated at $300 million. Cost allocation is under negotiation, and residential customers might bear part. The utility plans to meet near-term demand partly with a new gas-fired plant.
+- **Water:** The county water district says closed-loop systems in summer heat may require supplemental evaporative cooling. The developer hasn't released projections.
+- **Generators:** Backup diesel generators totaling about 300 MW would be tested monthly.
+- **Process:** County commissioners signed an NDA with the developer 8 months before the public hearing.
+- **Residents:** Merritt residents (about 30% Hispanic) report learning about the project from a news leak.
+- **Community positions:**
+  - The local school district supports the project because of the eventual tax revenue.
+  - A farmers' cooperative opposes it over water.
+  - A building-trades union supports it.
+  - A wildlife group notes the site borders a migratory bird corridor.
+
+## Tasks
+
+### Part 1 — Claims inventory (20 min)
+
+List at least 10 claims (from the developer, the utility, residents and advocates). For each:
+
+| Claim | Source | Label (M/E/F/S) | Evidence available | What would verify it |
+|---|---|---|---|---|
+
+### Part 2 — Distribution analysis (20 min)
+
+For at least six groups, list the benefits, the burdens, their timing (now vs. later) and their power to influence the decision:
+
+- Merritt residents,
+- county taxpayers broadly,
+- farmers,
+- construction workers,
+- utility customers statewide,
+- the cloud provider's customers worldwide,
+- future residents, and
+- local wildlife.
+
+Use the justice dimensions from 01-06.
+
+### Part 3 — Process critique (10 min)
+
+Evaluate the decision process using Arnstein's ladder (01-08) and procedural justice. What would a fair process have looked like?
+
+### Part 4 — Recommendation (20 min)
+
+As a consultant to the county commission, recommend one of:
+
+- **approve,**
+- **approve with conditions,**
+- **defer pending information,** or
+- **deny.**
+
+If conditions, specify at least five enforceable conditions, for example on water reporting and caps, grid-cost allocation, generator limits, local hiring, clawbacks if job or tax promises aren't met, habitat buffers and public disclosure.
+
+State the **evidence that would change your recommendation**.
+
+### Part 5 — Reflection (5 min)
+
+Which ethical framework most shaped your recommendation? Which stakeholder's interests were hardest to weigh?
+
+## Instructor notes
+
+- **Key issues students should find:**
+  - The "100% renewable" claim is likely market-based (06-04).
+  - The new gas plant is attributable to the load.
+  - Tax revenue is mostly deferred 15 years by the abatement.
+  - There are few permanent jobs.
+  - Water use is unverified in summer.
+  - Grid-upgrade cost allocation is unresolved.
+  - The NDA undermines procedural justice.
+  - The bird corridor is a non-human interest.
+- **Strong answers** distinguish what the community could demand (enforceable conditions, clawbacks) from what it can't control (global AI demand).
+- Either "approve with strong conditions" or "defer" is defensible. "Deny" is defensible with good reasoning about water risk and the abatement.
+- Link to real cases: San Marcos TX (2026), Memphis/Southaven (2024–2026), Tucson's Project Blue (2025), Chile and Uruguay (06-03).
+
+## Key terms
+
+- **Tax abatement:** A temporary reduction of property taxes offered to attract investment.
+- **Clawback:** A contract term requiring repayment of incentives if promises aren't met.
+- **Cost allocation:** How the costs of grid upgrades are divided among customers.
+- **Code name / NDA:** Confidentiality practices common in data-center siting.
+
+## Connections
+
+- Water and communities → 06-03 · Measurement → 06-04 · Non-human lens → 06-07 · Stakeholders → 01-08
+- **A3 option (b)** uses this scenario structure with real data.
+
+## Sources
+
+- Scenario is fictional, built from patterns in: Data Center Frontier (Mar 2026); SELC on xAI turbines (Feb 2026); UNU-INWEH (Jun 2026); Perkins Coie siting guidance (Mar 2026).

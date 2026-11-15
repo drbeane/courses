@@ -1,0 +1,121 @@
+<style>
+.dx .sm-row { display: grid; grid-template-columns: 4.2rem minmax(6rem, 1fr) 3.2rem minmax(0, 2fr) 3.6rem 3.6rem; gap: 10px; align-items: center; font-size: 14px; padding: 4px 0; }
+.dx .sm-row .track { position: relative; height: 18px; background: var(--wash); border-radius: 3px; }
+.dx .sm-row .prob { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 3px; transition: width 0.15s; }
+.dx .sm-row .obs { position: absolute; top: -3px; bottom: -3px; width: 3px; margin-left: -1px; background: var(--ink); border-radius: 2px; }
+.dx .sm-head { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.dx .sm-row .r { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.dx .sm-prompt { padding: 10px 12px; background: var(--wash); border-radius: 6px; font: 400 15px/1.5 var(--mono); }
+.dx .sm-prompt b { color: var(--accent); }
+.dx .sm-last { font: 400 14px/1.7 var(--mono); min-height: 1.7em; overflow-wrap: anywhere; }
+@media (max-width: 640px) { .dx .sm-row { grid-template-columns: 3.6rem minmax(4rem, 1fr) 2.8rem minmax(0, 1.4fr) 3.2rem; } .dx .sm-row > :nth-child(6) { display: none; } }
+</style>
+<div class="wrap">
+  <p class="lede">A model that predicts a category ends by turning one score per option into probabilities with the softmax function. The temperature decides how strongly the top score wins. Change the scores and the temperature, then sample.</p>
+
+  <section class="panel" aria-labelledby="sm-h1">
+    <h2 id="sm-h1">Scores and probabilities</h2>
+    <div class="sm-prompt">The cat sat on the <b id="sm-pick">___</b></div>
+    <div class="ctl">
+      <label for="sm-t">Temperature, T <output id="sm-tOut"></output></label>
+      <input type="range" id="sm-t" min="0.1" max="4" step="0.05" value="1">
+      <small id="sm-tHint"></small>
+    </div>
+    <div class="row" role="group" aria-label="Temperatures">
+      <button class="chip" data-t="0.1">T = 0.1</button><button class="chip" data-t="0.5">T = 0.5</button><button class="chip" data-t="1">T = 1</button><button class="chip" data-t="2">T = 2</button><button class="chip" data-t="4">T = 4</button>
+    </div>
+    <div>
+      <div class="sm-row sm-head"><span>Word</span><span>Score</span><span></span><span>Probability</span><span class="r">Prob.</span><span class="r">Sampled</span></div>
+      <div id="sm-rows"></div>
+    </div>
+    <div class="key">
+      <span><i class="sw" style="background:var(--accent)"></i>Probability from softmax</span>
+      <span><i class="sw" style="background:var(--ink)"></i>Share of samples so far</span>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="sm-h2">
+      <h2 id="sm-h2">Sample the next word</h2>
+      <div class="row">
+        <button class="primary" data-n="1">Sample 1 word</button>
+        <button data-n="100">Sample 100</button>
+        <button data-n="10000">Sample 10,000</button>
+        <button id="sm-clear">Clear samples</button>
+      </div>
+      <p class="sm-last" id="sm-last" aria-live="polite"></p>
+      <div class="stats">
+        <div class="stat"><b id="sm-n"></b><span>samples</span></div>
+        <div class="stat"><b id="sm-top"></b><span>share that chose the top word</span></div>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="sm-h3">
+      <h2 id="sm-h3">The calculation</h2>
+      <div class="formula" id="sm-formula" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="sm-h4">
+    <h2 id="sm-h4">What to notice</h2>
+    <ol>
+      <li>The probabilities always sum to 1, and every one of them is above 0. Softmax never rules an option out completely.</li>
+      <li>At T = 1 this is the ordinary softmax function. Lower the temperature and the top word takes nearly all of the probability. At T = 0.1 the model gives the same answer almost every time.</li>
+      <li>Raise the temperature and the bars even out. At T = 4 unlikely words such as "moon" are chosen often. This is why a high temperature makes a language model more varied and more error-prone.</li>
+      <li>The order of the words never changes with temperature. Only the gaps between them do.</li>
+      <li>Add 2 to every score and the probabilities do not move. Softmax depends on the differences between scores, not on their size.</li>
+      <li>Sample 100 words and the shares only roughly match the probabilities. Sample 10,000 and they match closely. This is the Monte Carlo idea from Week 7.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  const WORDS = ['mat', 'sofa', 'floor', 'roof', 'moon'];
+  let z = [3.0, 2.2, 1.6, 0.4, -1.0], T = 1, counts, n, last;
+
+  function softmax(scores, t) {
+    const m = Math.max(...scores), ex = scores.map((s) => Math.exp((s - m) / t)), sum = ex.reduce((a, b) => a + b, 0);
+    return ex.map((e) => e / sum);
+  }
+  function clear() { counts = WORDS.map(() => 0); n = 0; last = []; }
+  function sample(times) {
+    const p = softmax(z, T);
+    for (let k = 0; k < times; k++) {
+      let r = Math.random(), i = 0;
+      while (i < p.length - 1 && r >= p[i]) { r -= p[i]; i++; }
+      counts[i]++; n++; last.push(WORDS[i]); if (last.length > 14) last.shift();
+    }
+    render();
+  }
+  function render() {
+    const p = softmax(z, T), top = p.indexOf(Math.max(...p));
+    $('sm-tOut').textContent = num(T, 2);
+    $('sm-tHint').textContent = T < 0.95 ? 'Below 1: probability moves toward the top score.' : T > 1.05 ? 'Above 1: the probabilities flatten out.' : 'T = 1 is the ordinary softmax function.';
+    WORDS.forEach((w, i) => {
+      $('sm-z' + i).value = z[i]; $('sm-zo' + i).textContent = num(z[i], 1);
+      $('sm-p' + i).style.width = (p[i] * 100).toFixed(2) + '%';
+      const o = $('sm-o' + i); o.hidden = n === 0; o.style.left = (n ? counts[i] / n * 100 : 0).toFixed(2) + '%';
+      $('sm-pv' + i).textContent = num(p[i], 4);
+      $('sm-cv' + i).textContent = n ? num(counts[i] / n, 4) : '—';
+    });
+    $('sm-pick').textContent = last.length ? last[last.length - 1] : '___';
+    $('sm-last').textContent = n ? `Most recent: ${last.join(', ')}` : 'No samples yet.';
+    $('sm-n').textContent = n.toLocaleString('en-US');
+    $('sm-top').textContent = n ? num(counts[top] / n, 4) : '—';
+    const ex = z.map((s) => Math.exp(s / T)), sum = ex.reduce((a, b) => a + b, 0);
+    const big = sum > 1e9 || sum < 1e-6;
+    $('sm-formula').textContent = `p(word) = e^(score / T) / sum\n\n` + WORDS.map((w, i) =>
+      `${w.padEnd(6)} e^(${num(z[i], 1)} / ${num(T, 2)}) = ${big ? ex[i].toExponential(2) : num(ex[i], 3)}`).join('\n') +
+      `\nsum    ${big ? sum.toExponential(2) : num(sum, 3)}\n\np(${WORDS[top]}) = ${big ? ex[top].toExponential(2) : num(ex[top], 3)} / ${big ? sum.toExponential(2) : num(sum, 3)} = ${num(p[top], 4)}`;
+    document.querySelectorAll('.dx button[data-t]').forEach((c) => c.setAttribute('aria-pressed', Math.abs(+c.dataset.t - T) < 0.001 ? 'true' : 'false'));
+  }
+  $('sm-rows').innerHTML = WORDS.map((w, i) => `<div class="sm-row"><label for="sm-z${i}">${w}</label><input type="range" id="sm-z${i}" min="-3" max="6" step="0.1" aria-label="Score for ${w}"><output id="sm-zo${i}" class="mono"></output><span class="track"><span class="prob" id="sm-p${i}"></span><span class="obs" id="sm-o${i}"></span></span><span class="r" id="sm-pv${i}"></span><span class="r" id="sm-cv${i}"></span></div>`).join('');
+  WORDS.forEach((w, i) => { $('sm-z' + i).oninput = (ev) => { z[i] = +ev.target.value; clear(); render(); }; });
+  $('sm-t').oninput = (ev) => { T = +ev.target.value; clear(); render(); };
+  document.querySelectorAll('.dx button[data-t]').forEach((c) => { c.onclick = () => { T = +c.dataset.t; $('sm-t').value = T; clear(); render(); }; });
+  document.querySelectorAll('.dx button[data-n]').forEach((b) => { b.onclick = () => sample(+b.dataset.n); });
+  $('sm-clear').onclick = () => { clear(); render(); };
+  clear(); render();
+})();
+</script>

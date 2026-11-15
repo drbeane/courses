@@ -1,0 +1,149 @@
+<style>
+.dx canvas.plot.fit { height: 420px; cursor: crosshair; }
+.dx .check { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.dx .stat.best b { color: var(--ok); }
+@media (max-width: 520px) { .dx canvas.plot.fit { height: 320px; } }
+</style>
+<div class="wrap">
+  <p class="lede">Linear regression picks the line with the smallest sum of squared errors. Try to find that line by hand, then compare your line with the best one.</p>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="lf-h1">
+      <h2 id="lf-h1">Data and your line</h2>
+      <canvas class="plot fit" id="lf-plot" role="img" aria-label="Scatter plot with a fitted line and its errors"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--ink)"></i>Observations</span>
+        <span><i class="sw" style="background:var(--accent)"></i>Your line and its errors</span>
+        <span><i class="sw" style="background:var(--ok)"></i>Best line (when shown)</span>
+      </div>
+      <p class="hint">Drag a point to move it. Click an empty spot to add a point.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="lf-h2">
+      <h2 id="lf-h2">The model</h2>
+      <div class="formula" id="lf-formula" aria-live="polite"></div>
+      <div class="ctl">
+        <label for="lf-b0">Intercept, β̂₀ <output id="lf-b0Out"></output></label>
+        <input type="range" id="lf-b0" min="-5" max="12" step="0.05">
+      </div>
+      <div class="ctl">
+        <label for="lf-b1">Slope, β̂₁ <output id="lf-b1Out"></output></label>
+        <input type="range" id="lf-b1" min="-2" max="3" step="0.01">
+      </div>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="lf-sq" checked> Draw each squared error as a square</label>
+      </div>
+      <div class="row">
+        <label class="check"><input type="checkbox" id="lf-best"> Show the best line</label>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="lf-sse"></b><span>SSE of your line</span></div>
+        <div class="stat best"><b id="lf-sseBest"></b><span>smallest possible SSE</span></div>
+        <div class="stat"><b id="lf-r2"></b><span>r² of your line</span></div>
+      </div>
+      <p class="say" id="lf-say" aria-live="polite"></p>
+      <div class="row">
+        <button class="primary" id="lf-jump">Move my line to the best fit</button>
+        <button id="lf-undo">Remove last point</button>
+        <button id="lf-new">New data</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="lf-h3">
+    <h2 id="lf-h3">What to notice</h2>
+    <ol>
+      <li>Each error is the vertical gap between a point and the line: the true value minus the prediction. SSE squares every gap and adds them up.</li>
+      <li>The total area of the squares is the SSE. One far-off point makes one large square, which is why a single outlier can pull the best line toward it. Drag a point far away to see it.</li>
+      <li>Changing the slope alone rarely reaches the minimum. The slope and intercept have to be tuned together, which is what the formula for the best coefficients does in one step.</li>
+      <li>r² compares your SSE with the SSE of a flat line at the mean of y. A value near 1 means the line explains most of the variation. A negative value means your line is worse than the flat line.</li>
+      <li>The best line always passes through the point (mean of x, mean of y).</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  let pts, b0 = 6, b1 = -0.3, P, drag = -1, moved = false;
+
+  function newData(seed) {
+    const rnd = DX.rng(seed), slope = 0.35 + rnd() * 0.6, icpt = 0.5 + rnd() * 3;
+    pts = [];
+    for (let i = 0; i < 9; i++) {
+      const x = 0.8 + i * 1.02 + (rnd() - 0.5) * 0.6;
+      const y = icpt + slope * x + (rnd() + rnd() + rnd() - 1.5) * 1.6;
+      pts.push([+x.toFixed(2), +Math.max(0.3, Math.min(9.7, y)).toFixed(2)]);
+    }
+  }
+  function best() {
+    const n = pts.length, mx = pts.reduce((s, p) => s + p[0], 0) / n, my = pts.reduce((s, p) => s + p[1], 0) / n;
+    let sxx = 0, sxy = 0, sst = 0;
+    for (const [x, y] of pts) { sxx += (x - mx) ** 2; sxy += (x - mx) * (y - my); sst += (y - my) ** 2; }
+    const m = sxx > 1e-9 ? sxy / sxx : 0;
+    return { b0: my - m * mx, b1: m, mx, my, sst };
+  }
+  const sse = (i, s) => pts.reduce((t, [x, y]) => t + (y - (i + s * x)) ** 2, 0);
+
+  function draw() {
+    P = DX.plot($('lf-plot'), { xmin: 0, xmax: 10, ymin: 0, ymax: 10, equal: true });
+    P.axes({ xstep: 1, ystep: 1 });
+    const col = P.col, bf = best(), ok = '#17804a';
+    P.clip(() => {
+      for (const [x, y] of pts) {
+        const yh = b0 + b1 * x, e = y - yh;
+        if ($('lf-sq').checked) P.rect(x, yh, x + Math.abs(e), y, DX.tint(col.accent, 0.18), DX.tint(col.accent, 0.5));
+        P.seg(x, y, x, yh, col.accent, 2);
+      }
+      if ($('lf-best').checked) P.seg(-20, bf.b0 - 20 * bf.b1, 30, bf.b0 + 30 * bf.b1, ok, 2, [6, 4]);
+      P.seg(-20, b0 - 20 * b1, 30, b0 + 30 * b1, col.accent, 2.5);
+      if ($('lf-best').checked) P.dot(bf.mx, bf.my, ok, 5, true);
+      for (const [x, y] of pts) P.dot(x, y, col.ink, 5);
+    });
+  }
+  function render() {
+    $('lf-b0').value = b0; $('lf-b1').value = b1;
+    $('lf-b0Out').textContent = num(b0, 2); $('lf-b1Out').textContent = num(b1, 2);
+    const bf = best(), mine = sse(b0, b1), least = sse(bf.b0, bf.b1);
+    $('lf-formula').textContent = `ŷ = β̂₀ + β̂₁·x = ${num(b0, 2)} ${b1 < 0 ? '−' : '+'} ${num(Math.abs(b1), 2)}·x\nSSE = Σ (yᵢ − ŷᵢ)²`;
+    $('lf-sse').textContent = num(mine, 2);
+    $('lf-sseBest').textContent = num(least, 2);
+    $('lf-r2').textContent = bf.sst > 1e-9 ? num(1 - mine / bf.sst, 3) : '—';
+    const gap = mine - least;
+    $('lf-say').textContent = gap < 0.005 * Math.max(1, least)
+      ? `Your line is the best fit: ŷ = ${num(bf.b0, 2)} ${bf.b1 < 0 ? '−' : '+'} ${num(Math.abs(bf.b1), 2)}·x. No other line has a smaller SSE.`
+      : gap < 0.15 * Math.max(1, least)
+        ? `Close. Your SSE is ${num(gap, 2)} above the minimum. Try small changes to both sliders.`
+        : `Your SSE is ${num(gap, 2)} above the minimum. Move the sliders to shrink the squares.`;
+    $('lf-undo').disabled = pts.length <= 2;
+    draw();
+  }
+
+  const cv = $('lf-plot');
+  const clamp = (v) => Math.max(0.1, Math.min(9.9, Math.round(v * 20) / 20));
+  cv.addEventListener('pointerdown', (ev) => {
+    const p = P.at(ev);
+    drag = -1; moved = false;
+    let near = 0.45;
+    pts.forEach((q, i) => { const d = Math.hypot(q[0] - p.x, q[1] - p.y); if (d < near) { near = d; drag = i; } });
+    if (drag < 0 && p.x > 0 && p.x < 10 && p.y > 0 && p.y < 10 && pts.length < 30) { pts.push([clamp(p.x), clamp(p.y)]); drag = pts.length - 1; }
+    cv.setPointerCapture(ev.pointerId);
+    render();
+  });
+  cv.addEventListener('pointermove', (ev) => {
+    if (drag < 0) return;
+    const p = P.at(ev);
+    pts[drag] = [clamp(p.x), clamp(p.y)]; render();
+  });
+  cv.addEventListener('pointerup', () => { drag = -1; });
+  $('lf-b0').oninput = (ev) => { b0 = +ev.target.value; render(); };
+  $('lf-b1').oninput = (ev) => { b1 = +ev.target.value; render(); };
+  $('lf-sq').onchange = draw; $('lf-best').onchange = draw;
+  $('lf-jump').onclick = () => { const bf = best(); b0 = bf.b0; b1 = bf.b1; $('lf-best').checked = true; render(); };
+  $('lf-undo').onclick = () => { if (pts.length > 2) { pts.pop(); render(); } };
+  let seed = 7;
+  $('lf-new').onclick = () => { seed += 1; newData(seed); render(); };
+  DX.onResize(draw);
+  newData(seed); render();
+})();
+</script>

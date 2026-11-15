@@ -1,0 +1,112 @@
+# 04-06 — Elections, Fraud, and the Liar's Dividend
+
+**Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Analyze documented uses of AI in elections and political communication.
+2. Explain the "liar's dividend" and why it may be a larger harm than any single deepfake.
+3. Evaluate policy responses: disclosure rules, bans near elections and platform policies.
+
+## Opening case: "save your vote for November"
+
+Two days before New Hampshire's January 2024 presidential primary, thousands of voters received a robocall in what sounded like President Biden's voice, telling them not to vote in the primary: "Your vote makes a difference in November, not this Tuesday."
+
+The voice was AI-generated. A political consultant, Steve Kramer, said he commissioned it to demonstrate the danger of AI. Consequences:
+
+- **The FCC** ruled in February 2024 that AI-generated voices count as "artificial" under the Telephone Consumer Protection Act, making such robocalls illegal without consent, and fined Kramer **$6 million**.
+- **The telecom carrier** that transmitted the calls (Lingo Telecom) agreed to a $1 million settlement.
+- **The state case:** Kramer was **acquitted** of state voter-suppression and impersonation charges by a New Hampshire jury in June 2025.
+
+## Core ideas
+
+### What actually happened in the 2024 "year of elections"
+
+More than 60 countries held national elections in 2024. Predictions of a deepfake-driven "information apocalypse" were widespread. The record was more mixed:
+
+- **Documented incidents:**
+  - deepfake audio in Slovakia's 2023 election (a fake recording of a candidate discussing vote rigging, released during the pre-election silence period),
+  - AI-cloned voices and avatars in India (including resurrected deceased politicians, used with party consent),
+  - deepfake videos in Indonesia,
+  - the U.S. robocall, and
+  - foreign influence operations using AI-generated content (reported by OpenAI, Meta and Microsoft threat reports).
+- **Assessments:** Several post-election analyses (e.g., the Alan Turing Institute's CETaS, and Knight Institute work) found **little evidence that deepfakes changed outcomes**. AI was used mostly to make cheap content, memes and translations rather than decisive fakes.
+- **Caution:** Absence of evidence of impact isn't evidence of no impact. Measurement is hard, and the technology improved sharply between 2024 and 2026.
+
+### The liar's dividend
+
+Legal scholars Bobby Chesney and Danielle Citron (2019) coined the term **"liar's dividend"**: as people learn that convincing fakes exist, **real evidence becomes deniable**. A politician caught on a genuine recording can claim "it's a deepfake."
+
+Examples:
+
+- Politicians and public figures in several countries have dismissed authentic recordings as AI fabrications.
+- In court, defendants have argued that video evidence might be fabricated, and courts are developing authentication standards for AI-era evidence (e.g., proposed changes to U.S. Federal Rule of Evidence 901, debated 2024–2026 ⚠).
+
+The liar's dividend may be a larger long-term harm than any single deepfake, because it **erodes the shared factual basis for democratic accountability**.
+
+### Persuasion at scale
+
+Beyond deepfakes, generative AI enables:
+
+- **Personalized political messaging:** A 2024–2025 wave of studies found that LLM-generated arguments can shift opinions on policy issues by measurable amounts, sometimes comparable to human-written arguments (e.g., Hackenburg & Margetts; Costello, Pennycook & Rand on conspiracy belief reduction, *Science* 2024).
+- **Synthetic grassroots support ("astroturfing"):** Many fake accounts posting plausible content.
+- **Chatbot election misinformation:** Studies in 2024 found chatbots giving wrong information about voting procedures (AI Democracy Projects).
+
+The Costello et al. finding cuts both ways: AI dialogue *reduced* conspiracy beliefs durably. Persuasive AI isn't inherently malign. Its ethics depend on **truthfulness, transparency and consent**.
+
+### Policy responses (as of October 2026 ⚠)
+
+| Approach | Examples |
+|---|---|
+| **Disclosure in political ads** | Many U.S. states require AI disclaimers in political ads. Google and Meta require disclosure for AI-altered political ads. |
+| **Pre-election bans on deceptive deepfakes** | Several states prohibit materially deceptive deepfakes of candidates within a window before elections. Some have faced First Amendment challenges: California's AB 2839 was enjoined in 2024 and later struck down, and AB 2655 was struck down in 2025 ⚠. |
+| **Robocall rules** | FCC TCPA ruling (2024) |
+| **EU** | DSA election-integrity guidelines (2024); AI Act Art. 50 deepfake disclosure (Aug 2026) |
+| **Industry accords** | Munich "Tech Accord to Combat Deceptive Use of AI in 2024 Elections" (voluntary; limited follow-through, per later reviews) |
+
+**The First Amendment problem (U.S.):** Political speech receives the highest protection, false statements are not categorically unprotected (*U.S. v. Alvarez*, 2012), and satire is protected. Narrowly tailored rules targeting deception about *how, when and where to vote*, or requiring disclosure, are more likely to survive than bans on content.
+
+## Applying the frameworks
+
+- **Autonomy:** Deception about voting undermines self-government at its root.
+- **Consequences:** The evidence on actual electoral impact is uncertain. How much should policy rely on speculative harms?
+- **Rights:** Free expression vs. the integrity of elections.
+- **Decency, world lens:** The liar's dividend damages public trust, a shared good.
+
+## Discussion questions
+
+1. The NH consultant said he made the robocall to warn about AI. Does that intent matter ethically?
+2. Should political campaigns be allowed to use AI-generated images or voices of their *own* candidate (e.g., translations into other languages)? Of opponents, clearly labeled as parody?
+3. Is the liar's dividend a reason to restrict deepfake technology, or a reason to invest in provenance (04-07) and media literacy?
+4. If studies show AI dialogue can reduce belief in conspiracy theories, should governments deploy it? Who decides what counts as a conspiracy theory?
+
+## Activity: evidence check (15 minutes)
+
+Find one claim, from 2024–2026 news, that AI "swung" or "threatened" an election. Using SIFT (04-02):
+
+1. trace it to primary evidence,
+2. assign a status label, and
+3. assess what evidence would be needed to show actual impact on votes.
+
+## Key terms
+
+- **Liar's dividend:** The ability to dismiss real evidence as fake because fakes exist.
+- **Astroturfing:** Simulating grassroots support.
+- **TCPA:** Telephone Consumer Protection Act (U.S.).
+- **Materially deceptive media:** A legal term in some state laws for deepfakes likely to mislead voters.
+
+## Connections
+
+- Deepfake capabilities → 04-03 · Provenance → 04-07 · Verification → 04-02
+
+## Sources and further reading
+
+- FCC, Declaratory Ruling on AI-generated voices under the TCPA (Feb 8, 2024); Kramer forfeiture order (Sept 2024). — [FCC declaratory ruling — Free official text](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf); [Kramer forfeiture order — Free official text](https://docs.fcc.gov/public/attachments/FCC-24-104A1.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r170). <!-- reading-access -->
+- Associated Press, "Consultant acquitted in New Hampshire AI robocall case," June 2025. — [Free full text](https://www.wbur.org/news/2025/06/16/biden-ai-robocall-new-hampshire-steven-kramer-not-guilty); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r171). <!-- reading-access -->
+- Chesney, R. & Citron, D. "Deep Fakes: A Looming Challenge…," *California Law Review* 107 (2019), section on the liar's dividend. — [Free manuscript](https://downloads.regulations.gov/CFPB-2021-0004-0016/attachment_8.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r172). <!-- reading-access -->
+- Alan Turing Institute CETaS, *AI-Enabled Influence Operations: Threat Analysis of the 2024 UK and European Elections* (2024). — [Free full text](https://cetas.turing.ac.uk/sites/default/files/2024-09/cetas_briefing_paper_-_ai-enabled_influence_operations_-_threat_analysis_of_the_2024_uk_and_european_elections.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r173). <!-- reading-access -->
+- Costello, T., Pennycook, G. & Rand, D. "Durably reducing conspiracy beliefs through dialogues with AI," *Science* 385 (2024). — [Free manuscript](https://marketing.wharton.upenn.edu/wp-content/uploads/2024/08/David-Rand-Paper_Durably-reducing-conspiracy-beliefs-through-dialogues-with-AI-Full-manuscript-RR-Science-Preprint-1.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r174). <!-- reading-access -->
+- *Kohls v. Bonta* (E.D. Cal.), rulings on California election deepfake laws (2024–2025). ⚠ — [Free full text](https://clearinghouse.net/case/46692/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r175). <!-- reading-access -->

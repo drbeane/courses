@@ -1,0 +1,87 @@
+---
+marp: true
+title: "Week 3: Effort, Models, and the Description–Discernment Loop"
+paginate: true
+---
+
+# Effort, Models, and the Description–Discernment Loop
+### Week 3
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Does a Bigger Model Help?
+
+Live test: problems where the fast model fails.
+
+| Setting | Right? | Time | Notes |
+|---|---|---|---|
+| Fast model | | | |
+| Same model, more effort | | | |
+| Larger model | | | |
+
+<!-- Use a multi-step word problem and a logic puzzle with a trap. -->
+
+---
+
+## What to Expect
+
+- More effort helps most on **multi-step reasoning**
+- It helps little with **missing knowledge**
+- It doesn't fix **missing sources**: you still need a tool or a document
+- It costs more usage
+
+---
+
+## Match the Fix to the Error
+
+| Error | More effort helps? | Better fix |
+|---|---|---|
+| Hallucination | A little | Supply the source |
+| Outdated knowledge | No | Web search |
+| Arithmetic | Somewhat | Calculate in code |
+| Reasoning | **Yes** | Ask for the steps |
+| Misread instructions | Sometimes | Rewrite the prompt |
+| Sycophancy | Not reliably | Ask neutrally, new chat |
+
+<!-- Four of six are fixed by changing what the model has to work with, not the model. -->
+
+---
+
+## The Description–Discernment Loop
+
+1. **Describe** the task
+2. **Discern**: check the output
+3. Feed what you found back into the description
+4. Repeat
+
+Don't accept the first answer.
+
+---
+
+## One Pass Through the Loop
+
+- **Describe**: "Summarize the leave policy for new employees."
+- **Discern**: it says 12 weeks for everyone. The policy says 6 weeks in the first year.
+- **Describe again**: name the error, point to section 3, ask it to check the other rules
+- **Discern again**: the numbers now match
+
+---
+
+## Feedback That Works
+
+| Feedback | Result |
+|---|---|
+| "That's wrong, try again." | It guesses what was wrong |
+| "The leave length is wrong." | It may guess a new number |
+| "Section 3 gives 6 weeks under a year. Fix that and check the other rules." | It fixes this and looks for more |
+
+Say **what** was wrong, **where** the right information is, and **what to do**.
+
+---
+
+## When to Stop
+
+- Good enough for its purpose
+- Same problem twice → **start a new chat** with a better prompt
+- One sentence left to fix → **edit it yourself**

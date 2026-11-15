@@ -1,0 +1,93 @@
+---
+marp: true
+title: "Week 6: The Task Brief"
+paginate: true
+---
+
+# The Task Brief
+### Week 6
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Why an Agent Needs a Brief
+
+- It works for a **long time** before you see anything
+- It **acts**: a misunderstanding renames 200 files
+- It makes **many small decisions** on its own
+
+Brief it like a capable contractor who has never worked with you.
+
+---
+
+## The Task Brief
+
+- **Goal**: what done looks like
+- **Inputs**: which files, which sources
+- **Constraints**: what not to touch, format, length
+- **Acceptance criteria**: how you'll judge it
+
+A good brief is the difference between a useful result and an hour of cleanup.
+
+---
+
+## Goal and Inputs
+
+**Goal**: the end result **and the reason**
+> One combined spreadsheet of 2025 expenses, so I can total them by category for my tax return.
+
+**Inputs**: what to use, and what to leave out
+> The twelve CSV files in `statements/`. Ignore `old/`.
+
+---
+
+## Constraints
+
+- What not to touch
+- Where to put results, and how to name them
+- Format and length
+- **What to do when unsure**: ask, or choose and record it
+
+---
+
+## Acceptance Criteria
+
+| Vague | Checkable |
+|---|---|
+| "Well organized" | "Every file is in exactly one course subfolder. None remain in the top folder." |
+| "Accurate" | "Every figure appears in a source file, and the report names the file." |
+
+Could someone else look at the result and say yes or no?
+
+<!-- The part people leave out most. With criteria, the agent can check its own work before reporting. -->
+
+---
+
+## Weak and Strong
+
+> Organize my downloads folder.
+
+> **Goal.** Find any course file in under a minute.
+> **Inputs.** The top level. Leave `personal/` alone.
+> **Constraints.** Delete nothing. One subfolder per course. If unsure, use `unsorted/`.
+> **Acceptance.** Same file count before and after. `index.md` lists every file.
+
+---
+
+## How Much to Specify?
+
+- Too little: the agent guesses, and guesses wrong
+- Too much: you've done the work yourself
+- **Specify outcomes and constraints, not every step**
+
+Ask for a plan first. Ask what's unclear.
+
+---
+
+## When Not to Delegate
+
+- You can't check the result
+- The data is sensitive
+- Mistakes would be costly and hard to undo
+- The point is for you to do it
+- The brief would take longer than the task

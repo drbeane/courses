@@ -1,0 +1,65 @@
+/* Math for AI: rules this course adds to the shared site styles. */
+:root { --mono: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--s2); outline-offset: 3px; border-radius: 2px; }
+main { max-width: 76rem; }
+.foot { max-width: 76rem; }
+
+/* Demo pages. These rules are shared by every demo: panels, controls, buttons, and readouts.
+   A demo adds its own rules in its file, all scoped under .dx. */
+.dx { --accent: var(--c); --accent-soft: color-mix(in srgb, var(--c) 11%, #fff); --ok: #17804a; --bad: #c22f2f; --warn: #a86400; color: var(--ink); font: 400 15px/1.5 var(--display); }
+.dx [hidden] { display: none !important; }
+.dx .wrap { display: grid; gap: 20px; }
+.dx .lede { margin: 0 0 0.5rem; font: 400 1.15rem/1.5 var(--text); max-width: 52rem; }
+.dx .panel { display: grid; gap: 14px; align-content: start; min-width: 0; padding: 18px; background: var(--paper); border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 6px; }
+.dx .panel h2 { margin: 0; font-size: 19px; font-weight: 600; }
+.dx .panel p { margin: 0; }
+.dx .duo { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.dx .ctls { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+.dx .ctl { display: grid; gap: 4px; }
+.dx .ctl label { display: flex; justify-content: space-between; gap: 8px; font-weight: 600; font-size: 14px; }
+.dx .ctl output, .dx .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.dx .ctl output { color: var(--accent); }
+.dx .ctl small, .dx .hint { color: var(--muted); font-size: 12.5px; }
+.dx input[type=range] { width: 100%; accent-color: var(--accent); }
+.dx select, .dx input[type=number] { font: inherit; font-size: 14px; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); color: var(--ink); }
+.dx .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.dx button { font: inherit; font-size: 14px; font-weight: 500; padding: 7px 12px; border: 1px solid var(--rule); border-radius: 7px; background: var(--paper); color: var(--ink); cursor: pointer; }
+.dx button:hover { border-color: var(--accent); }
+.dx button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.dx button.chip { font-size: 13px; padding: 4px 10px; border-radius: 999px; }
+.dx button.chip[aria-pressed=true] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.dx button:disabled { opacity: 0.45; cursor: not-allowed; }
+.dx button:focus-visible, .dx input:focus-visible, .dx select:focus-visible, .dx canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.dx canvas.plot { display: block; width: 100%; height: 340px; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); touch-action: none; }
+.dx canvas.plot.short { height: 200px; }
+.dx .stats { display: flex; flex-wrap: wrap; gap: 12px 28px; }
+.dx .stat b { display: block; font-size: 24px; font-weight: 750; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.dx .stat span { color: var(--muted); font-size: 13px; }
+.dx .formula { padding: 10px 12px; background: var(--wash); border-radius: 6px; font: 400 14px/1.6 var(--mono); overflow-x: auto; white-space: pre; }
+.dx .say { min-height: 3em; padding: 10px 12px; background: var(--accent-soft); border-radius: 6px; }
+.dx .key { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); }
+.dx .sw { display: inline-block; width: 12px; height: 10px; margin-right: 5px; border-radius: 2px; vertical-align: middle; }
+.dx .notice ol { display: grid; gap: 6px; margin: 0; padding-left: 20px; max-width: 75ch; }
+.dx .fine { margin: 0; max-width: 80ch; font-size: 12.5px; color: var(--muted); }
+.dx .fine a, .dx .notice a { color: var(--accent); }
+.dx .tablewrap { overflow-x: auto; }
+.dx table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.dx th, .dx td { padding: 6px 8px; border-bottom: 1px solid var(--rule); text-align: left; }
+.dx th { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.dx td.r, .dx th.r { text-align: right; font-family: var(--mono); font-variant-numeric: tabular-nums; }
+@media (max-width: 860px) { .dx .duo { grid-template-columns: minmax(0, 1fr); } }
+
+/* Code */
+.prose code { font-family: var(--mono); font-size: 0.85em; background: var(--wash); padding: 0.1em 0.35em; border-radius: 3px; }
+.prose pre { margin: 0 0 1.25rem; padding: 0.9rem 1.1rem; background: var(--wash); border-left: 3px solid var(--rule); border-radius: 4px; overflow-x: auto; font: 400 0.9rem/1.55 var(--mono); }
+.prose pre code { font-size: inherit; background: none; padding: 0; }
+
+/* Centering. On each page the content shares one centered column, so a wide window has equal
+   space on both sides. Text inside the column stays left-aligned. Demo pages and the Resources
+   page use the full width. */
+.hero, .head, .stages, .weeks, .demos, .gloss, main > p { max-width: 56rem; margin-inline: auto; }
+.head p { max-width: 40rem; }
+.head.dhead, .head:has(+ .cols) { max-width: none; }
+.lesson { max-width: 60rem; margin-inline: auto; }
+/* The top bar's contents line up with the page area below it, however wide the window is. */
+.top { padding-inline: max(1.5rem, calc((100% - 76rem) / 2 + 1.5rem)); }

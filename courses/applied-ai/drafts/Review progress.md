@@ -1,0 +1,111 @@
+# Lesson and slide review progress
+
+Tracks the review of every lesson and deck after all 15 weeks were posted (started 2026-11-13). If work stops partway, resume at the first row marked "to do".
+
+## How the review works
+For each topic, in order:
+1. Read the lesson draft and its deck in `drafts/`.
+2. If the lesson is thin (a section that only lists points, a term used without explanation, no worked example), expand it in the draft. Expand the deck to match.
+3. Run `node tools/sync.mjs drafts`, then `git checkout content/resources.md` if only its line endings changed.
+4. Run `node build.mjs`, restore the Dropbox ignore stream on `dist`, commit, and push after every few topics.
+5. Update the table below and add a line to `NOTES.md`.
+
+Week 1 was already expanded before this review, so it is checked last.
+
+## Where it stands
+Last updated 2026-11-13. **The review is complete.** Every session has a status below. Lab pages were left as written apart from small fixes. The helper `tools/publish.sh "message"` syncs, builds, commits and pushes. Note: the site draws a ```mermaid code block as a diagram. Mark Mermaid source that should stay as code ```text.
+
+## Things to review
+Items the lesson review left open, because they depend on a product, a price or a decision that couldn't be checked at the time. Mark each one **done** when it has been reviewed, and note what changed.
+
+| # | What to review | Where | Status | Notes |
+|---|---|---|---|---|
+| 1 | Memory, custom instructions and temporary chat: the lesson describes them without menu paths, and the steps callout is generic. Check against the current Claude and ChatGPT settings, and decide whether to add exact steps. | W02-T3 lesson and deck | open | |
+| 2 | Context window sizes ("hundreds of thousands of tokens, and for some models a million or more"). Check against the vendors' model pages. | W02-T2 lesson and deck | open | |
+| 3 | Notebook features (citations to passages, refusals, study materials) and the NotebookLM product name. Check against the current product. | W04-T4 lesson and deck | open | |
+| 4 | The claim that published tests found a meaningful share of AI citations unsupported. It names no study. Add a source or reword. | W04-T3 lesson | open | |
+| 5 | Generative media: the statement that Claude does not generate raster images, and the note on U.S. copyright for AI-generated work. | W05-T3 lesson and deck | open | |
+| 6 | Hand-off wording: whether a handed-off task runs on the vendor's servers or needs the computer left on, for the tools used in class. | W08-T2 lesson | open | |
+| 7 | Claude Code commands and shortcuts (`/context`, `/usage`, `/compact`, `/plan`, Shift+Tab), and the list of coding assistant products used as examples. | W09-T2 lesson and deck; W09-T3 lesson | open | |
+| 8 | The sample API program uses Anthropic's Python library and a placeholder model ID. Replace once the API access route is settled (Bedrock or direct). | W11-T2 lesson and deck; W11-T1 response example | open | |
+| 9 | Example token rates ($3 and $15 per million) and the $486 monthly estimate. Replace with the current price list for the model in use and redo the sum. | W11-T2 lesson and deck | open | |
+| 10 | The example MCP server code is illustrative. Check it against the current MCP SDK, including the resource address format. | W12-T3 lesson and deck | open | |
+| 11 | Facts about Meta Muse, OpenAI dots and OpenClaw. The review added none, and the existing ones still come from third-party reports. Verify on the vendors' own pages. | W13-T1, W13-T2, W13-T3 lessons and decks | open | |
+| 12 | Workforce effects: the section says the size and speed are uncertain and cites no statistics. Decide whether to add sourced figures. It has no instructor note. | W14-T4 lesson | open | |
+| 13 | Accountability examples (a customer's claim against a company, a lawyer sanctioned for invented citations, vendors' terms of service). Stated in general terms with no source. Add sources or keep general. | W14-T3 lesson | open | |
+| 14 | Lab pages were left as written. Read them against the expanded topics, for terms the topics now use and for cross-references. | All 15 lab pages | open | |
+| 15 | Live site: only a handful of pages were opened after the review. Look through the rest, especially slides with wide tables or code. | Lessons and Slides pages | open | |
+
+## Status
+Statuses: **to do**, **expanded** (lesson and deck rewritten longer), **fine** (reviewed, no change needed).
+
+| Session | Status | Notes |
+|---|---|---|
+| W02-T1 Writing strong prompts | expanded | Added the coworker test, a technique per problem, a worked example of few-shot, outdated advice |
+| W02-T2 Tokens and the context window | expanded | Added token estimates, how history is resent each turn, signs of a degraded chat, handoff summary |
+| W02-T3 Memory, custom instructions, and voice | expanded | Added an example of instructions, two kinds of memory, costs of memory, voice table |
+| W02-T4 Testing and revising prompts | expanded | Was 174 words. Added test set design, checks, the revision loop, a worked log, when to stop |
+| W02-Lab Prompt revision log | expanded | Small additions: the three weak prompts, test set guidance, reflection questions. Deck unchanged |
+| W03-T1 Why AI output is wrong | expanded | Added an example per error type, why fluent is not correct, when hallucination is likely, leading and neutral questions |
+| W03-T2 Verification habits | expanded | Was 172 words. Added how much to check, a section per habit, check-to-error table, what to do when you can't verify |
+| W03-T3 Effort, models, and the Description–Discernment loop | expanded | Added fix-to-error table, a worked pass through the loop, feedback examples, when to stop |
+| W03-Lab Fact-check and failure report | fine | |
+| W04-T1 AI as a writing partner | expanded | Added a table of stages, feedback techniques, keeping your voice, a disclosure example |
+| W04-T2 Projects | expanded | Added the parts table, how to write project instructions, choosing files, testing the project |
+| W04-T3 Research agents | expanded | Added search vs research, writing a request, failure table, audit steps |
+| W04-T4 Grounded notebooks and how tools find sources | expanded | Added grounding, what a notebook gives you, embeddings, retrieval failures and fixes |
+| W04-Lab Research brief with citation audit | fine |  |
+| W05-T1 Structured files | expanded | Added a section per format with examples, common CSV problems, choosing a format |
+| W05-T2 Data analysis with code execution | expanded | Added how code execution works, a table of hidden decisions, a four-step workflow, a sample verification log |
+| W05-T3 Creating files, multimodal input, and generative media | expanded | Added describing a file, where image reading slips, describing an image, deepfakes and bias |
+| W05-T4 AI inside an application | expanded | Was 223 words. Added tasks by app, what it can't see, choice examples, checking before sending |
+| W05-Lab Data-to-deliverable package | fine |  |
+| W06-T1 From chat to agent | expanded | Added a step-by-step trace of the loop, how agent mistakes differ, the manager's role |
+| W06-T2 The task brief | expanded | Was 167 words. Added a section per part, checkable criteria, weak and strong briefs, when not to delegate |
+| W06-T3 Autonomy controls and usage | expanded | Added a settings table, what to look for in a plan, approval fatigue, reviewing the result, cost drivers |
+| W06-Lab Folder-scale delegation task | fine | Fixed one reference to the brief's four parts |
+| W07-T1 Standing instructions | expanded | Added a full example instruction file, how to write rules that get followed, testing and revising |
+| W07-T2 Skills | expanded | Added staged loading, good and bad descriptions, writing the steps, skill vs instruction file, testing |
+| W07-T3 Plugins and where skills work | expanded | Added plugin contents, why organizations use them, read before you install, where to run a skill |
+| W07-Lab Write and test a skill | fine |  |
+| W08-T1 Connectors | expanded | Added what MCP standardizes, how tools are chosen, connecting steps, scope, tidying connections |
+| W08-T2 Browser agents and scheduled tasks | expanded | Added how a browser agent works, connector vs browser table, supervising, briefs for unattended runs, silent failures |
+| W08-T3 Prompt injection and defenses | expanded | Added where injections hide, jailbreak vs injection, a worked workflow check, signs of trouble |
+| W08-Lab Midterm project: agent workflow | fine |  |
+| W09-T1 From chat window to coding assistant | expanded | Added plain definitions of project terms, why chat coding breaks down, the loop in a project, your role |
+| W09-T2 The development environment and Claude Code | expanded | Added reading a diff, small commits table, a project instruction file, a working rhythm |
+| W09-T3 Comparing coding assistants | expanded | Added forms of coding assistant, quality vs cost, how to compare fairly, why comparisons date |
+| W09-Lab First app from a spec | fine |  |
+| W10-T1 Specifications and tests | expanded | Added what a spec contains, testable requirements, a readable test and its output, regressions |
+| W10-T2 Reviewing AI-written code | expanded | Added a review routine, a diff of a silent test edit, questions per pattern, a sample review log |
+| W10-T3 Debugging, changing code, and sub-agents | expanded | Added symptom vs cause, a good bug report, changing requirements, sub-agent trade-offs |
+| W10-T4 The capstone project | expanded | Added choosing and sizing a task, measurable success, a short example proposal |
+| W10-Lab Spec-driven build with tests | fine |  |
+| W11-T1 From chat to API | expanded | Added what an API is, chat app vs API, the parts of a response |
+| W11-T2 A first API program and what it costs | expanded | Added a readable first program, system prompt examples, the conversation loop, a worked cost example, key safety |
+| W11-T3 Tool use | expanded | Added a message-by-message trace, program control and tool errors, good and bad tool descriptions |
+| W11-T4 Workflows and agents | expanded | Was 223 words. Added what agents are from the inside, a pattern per section, choosing the simplest design |
+| W11-Lab First API program with tool use | fine |  |
+| W12-T1 Retrieval-augmented generation | expanded | Added indexing vs answering, one question traced end to end, retrieval vs generation failure, when RAG is needed |
+| W12-T2 Evaluation | expanded | Was 210 words. Added a sample test set, three grading methods, a grader rubric, reading failures, cautions |
+| W12-T3 MCP from the inside | expanded | Added host, client and server, a fuller example server, design guidance, which half failed |
+| W12-Lab Mini RAG app or MCP server with an eval | fine |  |
+| W13-T1 Always-on agents | expanded | Added triggers and check-ins, what these agents suit, how supervision changes. No new product facts |
+| W13-T2 Setting up an always-on agent safely | expanded | Was 254 words. Added the reason for each rule, a permission record, a multi-day brief, shutting down |
+| W13-T3 Always-on risks and when it is worth it | expanded | Added the attention risk, a monitoring table, five questions and worked verdicts |
+| W13-Lab Always-on agent field test | fine |  |
+| W14-T1 Choosing tools for an organization | expanded | Added a factor table, setting priorities, running a pilot, questions for a new job |
+| W14-T2 Data governance and local models | expanded | Added what governance is, data levels, shadow AI, cloud vs local table |
+| W14-T3 Bias, reliability, and accountability | expanded | Was 253 words. Added sections on bias, reliability at scale, accountability, oversight arrangements, automation bias |
+| W14-T4 Workforce effects and AI-use policy | expanded | Added tasks vs jobs table, advice for early career, sample policy wording, testing a draft |
+| W14-Lab Capstone draft and peer review | fine |  |
+| W15-T1 Capstone presentations | expanded | Added a plan for the eight minutes, demo precautions, answering questions, listening with the four Ds |
+| W15-T2 Course synthesis | expanded | Added the seven stages, the shared mechanism, a 4D progression table, questions for a new tool, a closing section |
+| W15-Lab Capstone final | fine |  |
+| W01-T1 About this course | fine | Course overview, grading and policy. No change |
+| W01-T2 What a large language model is | expanded | Added a prediction example, where knowledge lives, what an LLM is not, where to expect reliability |
+| W01-T3 The surfaces map | fine |  |
+| W01-T4 The 4D framework | expanded | Was 172 words. Added a skills table, worked delegation decisions, degrees of delegation, why a framework |
+| W01-T5 Vendors, models, and effort | fine | Expanded before this review |
+| W01-T6 Privacy settings | fine | Expanded before this review |
+| W01-Lab Three-vendor comparison | fine |  |

@@ -1,0 +1,142 @@
+<style>
+.dx textarea { width: 100%; min-height: 6.5rem; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; font: 400 14px/1.6 var(--mono); color: var(--ink); background: var(--paper); resize: vertical; }
+.dx .bg-out { padding: 12px; border: 1px dashed var(--rule); border-radius: 6px; min-height: 4.5rem; line-height: 2.1; }
+.dx .bg-tok { display: inline-block; margin: 0 3px 0 0; padding: 0 6px; border-radius: 4px; background: var(--accent-soft); font: 400 14px/1.7 var(--mono); }
+.dx .bg-tok small { display: block; margin-top: -4px; font-size: 10.5px; line-height: 1.3; color: var(--muted); text-align: center; }
+.dx .bg-tok.first { background: var(--wash); }
+.dx .bg-bar { display: grid; grid-template-columns: 5rem 1fr 4.6rem; gap: 10px; align-items: center; font-size: 14px; padding: 2px 0; }
+.dx .bg-bar .track { height: 14px; background: var(--wash); border-radius: 3px; }
+.dx .bg-bar .fill { display: block; height: 100%; background: var(--accent); border-radius: 3px; }
+.dx .bg-bar .mono { text-align: right; }
+</style>
+<div class="wrap">
+  <p class="lede">A bigram model predicts the next word from the current word alone. It is trained by counting which words follow which. Edit the training text, look at what the model has learned, and let it write.</p>
+
+  <section class="panel" aria-labelledby="bg-h1">
+    <h2 id="bg-h1">Training text</h2>
+    <textarea id="bg-text" aria-label="Training text" spellcheck="false"></textarea>
+    <div class="row">
+      <button id="bg-reset">Restore the lesson's text</button>
+      <button id="bg-rhyme">Try a longer text</button>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="bg-ntok"></b><span>tokens in the text</span></div>
+      <div class="stat"><b id="bg-nvoc"></b><span>distinct tokens (vocabulary)</span></div>
+      <div class="stat"><b id="bg-npar"></b><span>entries in the probability table</span></div>
+    </div>
+    <p class="hint">Words are split at spaces, and each period counts as a token. Capital letters are changed to lowercase.</p>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="bg-h2">
+      <h2 id="bg-h2">Generate text</h2>
+      <div class="ctls">
+        <div class="ctl">
+          <label for="bg-t">Temperature <output id="bg-tOut"></output></label>
+          <input type="range" id="bg-t" min="0.1" max="3" step="0.05" value="1">
+        </div>
+        <div class="ctl">
+          <label for="bg-start">First token</label>
+          <select id="bg-start"></select>
+        </div>
+      </div>
+      <div class="row">
+        <button class="primary" id="bg-step">Add one token</button>
+        <button id="bg-run">Add 15 tokens</button>
+        <button id="bg-clear">Start over</button>
+      </div>
+      <div class="bg-out" id="bg-out" aria-live="polite"></div>
+      <p class="hint">The small number under each token is the probability the model gave it at temperature 1.</p>
+      <div class="stats">
+        <div class="stat"><b id="bg-ce"></b><span>cross-entropy of this text</span></div>
+        <div class="stat"><b id="bg-pp"></b><span>perplexity</span></div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="bg-h3">
+      <h2 id="bg-h3">What can come next</h2>
+      <p id="bg-after"></p>
+      <div id="bg-bars"></div>
+      <p class="hint" id="bg-counts"></p>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="bg-h4">
+    <h2 id="bg-h4">What to notice</h2>
+    <ol>
+      <li>The model is nothing more than a table of proportions. "Training" it means counting pairs of neighboring tokens and dividing each count by its row total.</li>
+      <li>Every pair of neighboring words in the output appeared somewhere in the training text, so short stretches look sensible. Longer stretches drift, because the model remembers only one token.</li>
+      <li>Where a token is always followed by the same token, the probability is 1 and the model has no choice. Where several tokens can follow, the output branches.</li>
+      <li>Lower the temperature and the model keeps choosing the most common continuation, so it repeats itself. Raise it and rare continuations appear more often.</li>
+      <li>Perplexity is the number of equally likely options the model was, on average, choosing among. Text built from forced choices has a perplexity near 1.</li>
+      <li>A large language model runs this same loop: get a probability for every token, sample one, add it, repeat. It differs in how the probabilities are calculated, and in using thousands of earlier tokens to do it.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  const LESSON = 'the cat sat on the mat . the dog sat on the rug . the cat saw the dog . the dog saw the cat .';
+  const LONGER = 'the quick fox ran to the river . the slow dog ran to the house . the fox saw the dog near the river . the dog saw the fox near the house . a quick dog ran near the fox . a slow fox sat near the river . the river ran to the sea . the dog sat near the house .';
+  let vocab, index, counts, probs, T = 1, out;
+
+  function train() {
+    const tokens = $('bg-text').value.toLowerCase().replace(/\./g, ' . ').split(/\s+/).filter(Boolean);
+    vocab = [...new Set(tokens)].sort();
+    index = new Map(vocab.map((w, i) => [w, i]));
+    counts = vocab.map(() => vocab.map(() => 0));
+    for (let i = 0; i < tokens.length - 1; i++) counts[index.get(tokens[i])][index.get(tokens[i + 1])]++;
+    probs = counts.map((row) => { const s = row.reduce((a, b) => a + b, 0); return row.map((c) => (s ? c / s : 0)); });
+    $('bg-ntok').textContent = tokens.length; $('bg-nvoc').textContent = vocab.length;
+    $('bg-npar').textContent = (vocab.length * vocab.length).toLocaleString('en-US');
+    const sel = $('bg-start'), keep = sel.value;
+    sel.innerHTML = vocab.filter((w) => w !== '.').map((w) => `<option>${w.replace(/</g, '&lt;')}</option>`).join('');
+    sel.value = vocab.includes(keep) ? keep : (vocab.includes('the') ? 'the' : sel.options[0] ? sel.options[0].value : '');
+    restart();
+  }
+  function restart() { out = $('bg-start').value ? [{ w: $('bg-start').value, p: null }] : []; render(); }
+  // The row of probabilities for a token, reshaped by the temperature.
+  function heated(row) {
+    const e = row.map((p) => (p > 0 ? Math.pow(p, 1 / T) : 0)), s = e.reduce((a, b) => a + b, 0);
+    return s ? e.map((v) => v / s) : e;
+  }
+  function step() {
+    if (!out.length) return false;
+    const row = probs[index.get(out[out.length - 1].w)], h = heated(row);
+    if (!h.some((v) => v > 0)) return false;
+    let r = Math.random(), i = 0;
+    while (i < h.length - 1 && r >= h[i]) { r -= h[i]; i++; }
+    out.push({ w: vocab[i], p: row[i] });
+    return true;
+  }
+  function render() {
+    $('bg-tOut').textContent = num(T, 2);
+    $('bg-out').innerHTML = out.map((t, k) => `<span class="bg-tok${k ? '' : ' first'}">${t.w.replace(/</g, '&lt;')}<small>${t.p === null ? 'start' : num(t.p, 2)}</small></span>`).join('');
+    const ps = out.slice(1).map((t) => t.p);
+    if (ps.length) {
+      const ce = -ps.reduce((s, p) => s + Math.log(p), 0) / ps.length;
+      $('bg-ce').textContent = num(ce, 4); $('bg-pp').textContent = num(Math.exp(ce), 3);
+    } else { $('bg-ce').textContent = '—'; $('bg-pp').textContent = '—'; }
+    const cur = out.length ? out[out.length - 1].w : null;
+    if (cur === null) { $('bg-after').textContent = 'Enter some training text.'; $('bg-bars').innerHTML = ''; $('bg-counts').textContent = ''; return; }
+    const row = probs[index.get(cur)], h = heated(row), cnt = counts[index.get(cur)], total = cnt.reduce((a, b) => a + b, 0);
+    const opts = vocab.map((w, i) => ({ w, p: row[i], h: h[i], c: cnt[i] })).filter((o) => o.c > 0).sort((a, b) => b.c - a.c);
+    $('bg-after').innerHTML = opts.length ? `After <b class="mono">${cur.replace(/</g, '&lt;')}</b>, the model can choose from ${opts.length} token${opts.length > 1 ? 's' : ''}.`
+      : `Nothing ever follows <b class="mono">${cur.replace(/</g, '&lt;')}</b> in the training text, so the model has to stop.`;
+    $('bg-bars').innerHTML = opts.map((o) => `<div class="bg-bar"><span class="mono">${o.w.replace(/</g, '&lt;')}</span><span class="track"><span class="fill" style="width:${(o.h * 100).toFixed(1)}%"></span></span><span class="mono">${num(o.h, 3)}</span></div>`).join('');
+    $('bg-counts').textContent = opts.length ? `In the training text, "${cur}" is followed by another token ${total} time${total === 1 ? '' : 's'}: ${opts.map((o) => `${o.w} ${o.c}`).join(', ')}.${Math.abs(T - 1) > 0.01 ? ' The bars show the probabilities after the temperature is applied.' : ''}` : '';
+    $('bg-step').disabled = !opts.length; $('bg-run').disabled = !opts.length;
+  }
+  $('bg-text').value = LESSON;
+  $('bg-text').oninput = train;
+  $('bg-reset').onclick = () => { $('bg-text').value = LESSON; train(); };
+  $('bg-rhyme').onclick = () => { $('bg-text').value = LONGER; train(); };
+  $('bg-t').oninput = (ev) => { T = +ev.target.value; render(); };
+  $('bg-start').onchange = restart;
+  $('bg-step').onclick = () => { step(); render(); };
+  $('bg-run').onclick = () => { for (let k = 0; k < 15; k++) if (!step()) break; render(); };
+  $('bg-clear').onclick = restart;
+  train();
+})();
+</script>

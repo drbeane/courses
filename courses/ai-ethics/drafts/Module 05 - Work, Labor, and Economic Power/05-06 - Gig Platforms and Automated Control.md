@@ -1,0 +1,119 @@
+# 05-06 — Gig Platforms and Automated Control
+
+**Module:** 5 — Work, Labor, and Economic Power
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Describe how gig platforms use algorithms to assign work, set pay and deactivate workers.
+2. Analyze "algorithmic wage discrimination" and opaque pay-setting.
+3. Evaluate the EU Platform Work Directive and other responses.
+
+## Opening case: deactivated by email
+
+In 2021, the Amsterdam District Court ruled in cases brought by UK and Portuguese drivers against Uber and Ola, supported by the App Drivers & Couriers Union and Worker Info Exchange. Drivers had been "deactivated" (fired) based on automated fraud-detection systems, sometimes with little or no human involvement or explanation. Uber had flagged some drivers for "fraudulent activity" based on location data, and the drivers couldn't learn what they had supposedly done.
+
+The court ordered Uber to reinstate some drivers and provide information about the automated decisions, finding violations of GDPR Article 22 (solely automated decisions). The Amsterdam Court of Appeal strengthened these rulings in **April 2023**, requiring more transparency about the logic of automated decisions, including the factors in Ola's "fraud probability score" and Uber's batched matching.
+
+## Core ideas
+
+### How platforms manage by algorithm
+
+| Function | Mechanism | Worker experience |
+|---|---|---|
+| **Assignment** | Matching algorithms assign rides, deliveries or tasks | Can't see why some get better jobs |
+| **Pay** | Dynamic pricing; per-task pay set algorithmically; "quests" and bonuses | Unpredictable earnings; pay varies person to person for similar work |
+| **Rating** | Customer ratings drive access to work | Customer bias becomes employment bias |
+| **Discipline** | Automated deactivation for low ratings, low acceptance rates or fraud flags | Loss of livelihood without explanation or appeal |
+| **Identity checks** | Facial verification selfies | Failures for darker-skinned workers; Uber Eats driver Pa Edrissa Manjang's UK race discrimination claim settled in 2024 |
+
+### Algorithmic wage discrimination
+
+Legal scholar Veena Dubal (2023) describes "algorithmic wage discrimination": platforms use granular data to **pay different workers different amounts for the same work**, based on predictions of what each will accept. Workers describe it as a gamble. The same trip pays differently, and incentives shift unpredictably.
+
+**Ethical concerns:**
+
+- violates the norm of equal pay for equal work,
+- exploits information asymmetry, and
+- makes earnings unpredictable, which undermines financial planning.
+
+Platforms counter that dynamic pay balances supply and demand and gives workers flexibility.
+
+### Classification: employee or contractor?
+
+Many protections (minimum wage, unemployment insurance, anti-discrimination law, collective bargaining) depend on employee status. Platforms classify workers as independent contractors.
+
+**Key developments:**
+
+- **UK Supreme Court, *Uber v. Aslam* (2021):** Uber drivers are "workers," entitled to minimum wage and holiday pay.
+- **California:** AB5 (2019) set an employee presumption. Prop 22 (2020) exempted app-based drivers, and the California Supreme Court upheld it in 2024.
+- **U.S. federal:** The Department of Labor's 2024 independent-contractor rule was not being enforced as of 2025 ⚠.
+- **EU Platform Work Directive (2024/2831):** A **rebuttable presumption of employment** when facts indicate control. Transposition is due by December 2026.
+
+### The EU Platform Work Directive: algorithmic management provisions
+
+Applies to all platform workers, including genuine contractors:
+
+- **Transparency** about automated monitoring and decision systems.
+- **Prohibitions** on processing data on emotional or psychological states, private conversations, off-duty data, and data to predict collective organizing.
+- **Human oversight** of automated decisions, with regular evaluation.
+- **Right to explanation and review** of significant decisions, with a human contact.
+- **Restriction, suspension or termination** of accounts must be decided by a human.
+- **Consultation** with worker representatives on introducing or changing algorithmic systems.
+
+It's the most comprehensive algorithmic-management law to date ⚠ (track transposition in 2026).
+
+### Worker responses
+
+- **Data access requests:** Worker Info Exchange uses GDPR access rights to obtain data and challenge decisions.
+- **Collective action:** App-based workers' associations and strikes (e.g., coordinated delivery strikes).
+- **Counter-tools:** Apps aggregating worker data to reveal pay patterns (e.g., the "Driver's Seat" cooperative).
+- **Municipal laws:** NYC's minimum pay rate for app-based delivery workers (2023) and New York and Seattle pay standards.
+
+## Applying the frameworks
+
+- **Justice:** Unequal pay for equal work; customer bias via ratings.
+- **Procedural justice:** Deactivation without explanation or appeal violates basic fairness.
+- **Autonomy:** The "flexibility" offered is constrained by opaque algorithmic incentives.
+- **Decency:** Would a decent company terminate a worker's livelihood by automated email?
+
+## Discussion questions
+
+1. Should platforms be prohibited from paying different workers different amounts for the same task?
+2. Should all account deactivations require human review? What would it cost platforms, and is that cost justified?
+3. Customer ratings reflect customer bias. Should platforms be allowed to use them for discipline?
+4. Is gig work's flexibility a real benefit that regulation might destroy?
+
+## Activity: design a deactivation policy (15 minutes)
+
+As a platform's head of trust and safety, write a deactivation policy specifying:
+
+1. which behaviors justify deactivation,
+2. what role automation plays (flagging only? decisions?),
+3. notice and explanation,
+4. the appeal process and timeline, and
+5. interim pay during appeals.
+
+Compare it with the EU Directive's requirements.
+
+## Key terms
+
+- **Deactivation:** Removal of a gig worker's access to a platform.
+- **Algorithmic wage discrimination:** Personalized pay for the same work, based on predictions.
+- **Misclassification:** Treating employees as independent contractors.
+- **Rebuttable presumption:** A legal assumption that holds unless disproven.
+
+## Connections
+
+- Algorithmic management → 05-04 · Contestability → 03-09 · Policy and bargaining → 05-09
+
+## Sources and further reading
+
+- Amsterdam Court of Appeal, *Uber* and *Ola* judgments (April 4, 2023); Worker Info Exchange summaries. — [Free full text](https://www.workerinfoexchange.org/post/historic-digital-rights-win-for-wie-and-the-adcu-over-uber-and-ola-at-amsterdam-court-of-appeal); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r221). <!-- reading-access -->
+- Dubal, V. "On Algorithmic Wage Discrimination," *Columbia Law Review* 123 (2023). — [Free full text](https://www.columbialawreview.org/content/on-algorithmic-wage-discrimination/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r222). <!-- reading-access -->
+- *Uber BV v. Aslam* [2021] UKSC 5. — [Free official text](https://supremecourt.uk/uploads/uksc_2019_0029_judgment_19c9de2253.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r223). <!-- reading-access -->
+- Directive (EU) 2024/2831 on improving working conditions in platform work. — [Free official text](https://eur-lex.europa.eu/eli/dir/2024/2831/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r224). <!-- reading-access -->
+- Rosenblat, A. *Uberland* (2018). — [Paid / library](https://www.ucpress.edu/books/uberland/hardcover); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r225). <!-- reading-access -->
+- Gray, M. & Suri, S. *Ghost Work* (2019). — [Paid / library](https://ghostwork.info/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r226). <!-- reading-access -->

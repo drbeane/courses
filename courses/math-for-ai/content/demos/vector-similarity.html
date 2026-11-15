@@ -1,0 +1,124 @@
+<style>
+.dx canvas.plot.vs { height: 420px; cursor: grab; }
+.dx .ca { color: var(--ink); } .dx .cb { color: var(--accent); }
+.dx .simrow { display: grid; grid-template-columns: 4.5rem 1fr 3.6rem; gap: 10px; align-items: center; font-size: 14px; }
+.dx .simrow .track { height: 14px; background: var(--wash); border-radius: 3px; }
+.dx .simrow .fill { height: 100%; background: var(--accent); border-radius: 3px; }
+.dx .simrow.self .fill { background: var(--muted); }
+@media (max-width: 520px) { .dx canvas.plot.vs { height: 320px; } }
+</style>
+<div class="wrap">
+  <p class="lede">Cosine similarity measures whether two vectors point the same way, ignoring how long they are. Drag the tips of the two arrows and watch the measurements change.</p>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="vs-h1">
+      <h2 id="vs-h1">Two vectors</h2>
+      <canvas class="plot vs" id="vs-plot" role="img" aria-label="Two vectors drawn from the origin"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--ink)"></i>Vector a</span>
+        <span><i class="sw" style="background:var(--accent)"></i>Vector b</span>
+        <span>Dashed line: the distance between them</span>
+      </div>
+      <div class="row" role="group" aria-label="Arrangements" id="vs-presets"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="vs-h2">
+      <h2 id="vs-h2">Measurements</h2>
+      <div class="ctls">
+        <div class="ctl"><label for="vs-a1" class="ca">a₁ <output id="vs-a1Out"></output></label><input type="range" id="vs-a1" min="-4" max="4" step="0.1"></div>
+        <div class="ctl"><label for="vs-a2" class="ca">a₂ <output id="vs-a2Out"></output></label><input type="range" id="vs-a2" min="-4" max="4" step="0.1"></div>
+        <div class="ctl"><label for="vs-b1" class="cb">b₁ <output id="vs-b1Out"></output></label><input type="range" id="vs-b1" min="-4" max="4" step="0.1"></div>
+        <div class="ctl"><label for="vs-b2" class="cb">b₂ <output id="vs-b2Out"></output></label><input type="range" id="vs-b2" min="-4" max="4" step="0.1"></div>
+      </div>
+      <div class="formula" id="vs-formula" aria-live="polite"></div>
+      <div class="stats">
+        <div class="stat"><b id="vs-cos"></b><span>cosine similarity</span></div>
+        <div class="stat"><b id="vs-ang"></b><span>angle between them</span></div>
+        <div class="stat"><b id="vs-dist"></b><span>distance</span></div>
+      </div>
+      <p class="say" id="vs-say" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section class="panel" aria-labelledby="vs-h3">
+    <h2 id="vs-h3">Nearest words</h2>
+    <p>These five words have the made-up, four-number embeddings from the lesson. Choose a word to rank the others by cosine similarity with it.</p>
+    <div class="row" role="group" aria-label="Words" id="vs-words"></div>
+    <div id="vs-sims" aria-live="polite"></div>
+    <div class="formula" id="vs-emb"></div>
+  </section>
+
+  <section class="panel notice" aria-labelledby="vs-h4">
+    <h2 id="vs-h4">What to notice</h2>
+    <ol>
+      <li>Stretch one vector without turning it. Its length and the dot product both grow, and the distance changes, but the cosine similarity stays the same. Cosine similarity depends only on direction.</li>
+      <li>Make the vectors perpendicular. The dot product and the cosine similarity are both 0, whatever the lengths are.</li>
+      <li>Point the vectors in opposite directions. The cosine similarity is −1, the lowest value possible.</li>
+      <li>Two vectors can be far apart and still have a cosine similarity of 1, if one is a longer copy of the other. Distance and cosine similarity answer different questions.</li>
+      <li>In the word list, the animals are close to one another and far from the vehicles. Nothing in the calculation knows what the words mean. The grouping comes entirely from the numbers in the embeddings.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  const PRESETS = [['Same direction', [2, 1], [3.6, 1.8]], ['Perpendicular', [2, 1], [-1.5, 3]], ['Opposite', [2, 1], [-3, -1.5]], ['Close together', [3, 2], [2.4, 2.8]]];
+  const WORDS = ['cat', 'kitten', 'dog', 'car', 'truck'];
+  const E = [[0.9, 0.8, 0.1, 0.0], [0.8, 0.9, 0.2, 0.1], [0.7, 0.6, 0.3, 0.1], [0.1, 0.0, 0.9, 0.8], [0.0, 0.1, 0.8, 0.9]];
+  let a = [3, 1], b = [1, 3], P, grab = null, query = 1;
+  const dot = (u, v) => u.reduce((s, x, i) => s + x * v[i], 0);
+  const len = (u) => Math.sqrt(dot(u, u));
+  const cosine = (u, v) => (len(u) && len(v) ? dot(u, v) / (len(u) * len(v)) : NaN);
+
+  function draw() {
+    P = DX.plot($('vs-plot'), { xmin: -4.5, xmax: 4.5, ymin: -4.5, ymax: 4.5, equal: true, margin: { l: 30, r: 8, t: 8, b: 22 } });
+    P.axes({ xstep: 1, ystep: 1 });
+    P.clip(() => {
+      P.seg(a[0], a[1], b[0], b[1], P.col.muted, 1.5, [5, 4]);
+      P.arrow(0, 0, a[0], a[1], P.col.ink, 3); P.arrow(0, 0, b[0], b[1], P.col.accent, 3);
+      P.dot(a[0], a[1], P.col.ink, 6); P.dot(b[0], b[1], P.col.accent, 6);
+      P.label('a', a[0], a[1], P.col.ink); P.label('b', b[0], b[1], P.col.accent);
+    });
+  }
+  function render() {
+    [['a1', a[0]], ['a2', a[1]], ['b1', b[0]], ['b2', b[1]]].forEach(([k, v]) => { $('vs-' + k).value = v; $('vs-' + k + 'Out').textContent = num(v, 1); });
+    const d = dot(a, b), la = len(a), lb = len(b), c = cosine(a, b), dist = len([a[0] - b[0], a[1] - b[1]]);
+    $('vs-formula').textContent =
+      `a · b  = ${num(a[0], 1)}·${num(b[0], 1)} + ${num(a[1], 1)}·${num(b[1], 1)} = ${num(d, 2)}\n` +
+      `‖a‖    = ${num(la, 3)}\n‖b‖    = ${num(lb, 3)}\n` +
+      `cosine = ${num(d, 2)} / (${num(la, 3)} · ${num(lb, 3)}) = ${isNaN(c) ? 'undefined' : num(c, 4)}`;
+    $('vs-cos').textContent = isNaN(c) ? '—' : num(c, 3);
+    $('vs-ang').textContent = isNaN(c) ? '—' : num(Math.acos(Math.max(-1, Math.min(1, c))) * 180 / Math.PI, 1) + '°';
+    $('vs-dist').textContent = num(dist, 3);
+    $('vs-say').textContent = isNaN(c) ? 'A vector of length 0 has no direction, so cosine similarity is undefined.'
+      : c > 0.999 ? 'The vectors point in the same direction. Their cosine similarity is 1, even if their lengths differ.'
+      : c < -0.999 ? 'The vectors point in opposite directions. Their cosine similarity is −1.'
+      : Math.abs(c) < 0.02 ? 'The vectors are perpendicular. Neither one points along the other at all, and the dot product is 0.'
+      : c > 0 ? `The vectors point in broadly similar directions, ${num(Math.acos(c) * 180 / Math.PI, 0)}° apart.`
+      : `The vectors point in broadly opposing directions, ${num(Math.acos(c) * 180 / Math.PI, 0)}° apart.`;
+    draw();
+  }
+  function renderWords() {
+    const q = E[query], rows = WORDS.map((w, i) => ({ w, i, s: cosine(E[i], q) })).sort((x, y) => y.s - x.s);
+    $('vs-sims').innerHTML = rows.map((r) => `<div class="simrow${r.i === query ? ' self' : ''}"><span>${r.w}</span><span class="track"><span class="fill" style="display:block;width:${Math.max(0, r.s) * 100}%"></span></span><span class="mono">${num(r.s, 4)}</span></div>`).join('');
+    $('vs-emb').textContent = WORDS.map((w, i) => `${w.padEnd(7)} [${E[i].map((v) => v.toFixed(1)).join(', ')}]`).join('\n');
+    document.querySelectorAll('#vs-words .chip').forEach((c, k) => c.setAttribute('aria-pressed', k === query ? 'true' : 'false'));
+  }
+  $('vs-presets').innerHTML = PRESETS.map((p, k) => `<button class="chip" data-k="${k}">${p[0]}</button>`).join('');
+  document.querySelectorAll('#vs-presets .chip').forEach((c) => { c.onclick = () => { const p = PRESETS[+c.dataset.k]; a = p[1].slice(); b = p[2].slice(); render(); }; });
+  $('vs-words').innerHTML = WORDS.map((w, k) => `<button class="chip" data-k="${k}">${w}</button>`).join('');
+  document.querySelectorAll('#vs-words .chip').forEach((c) => { c.onclick = () => { query = +c.dataset.k; renderWords(); }; });
+  $('vs-a1').oninput = (ev) => { a[0] = +ev.target.value; render(); }; $('vs-a2').oninput = (ev) => { a[1] = +ev.target.value; render(); };
+  $('vs-b1').oninput = (ev) => { b[0] = +ev.target.value; render(); }; $('vs-b2').oninput = (ev) => { b[1] = +ev.target.value; render(); };
+  const cv = $('vs-plot'), snap = (v) => Math.max(-4, Math.min(4, Math.round(v * 10) / 10));
+  cv.addEventListener('pointerdown', (ev) => {
+    const p = P.at(ev), da = Math.hypot(p.x - a[0], p.y - a[1]), db = Math.hypot(p.x - b[0], p.y - b[1]);
+    grab = da <= db ? a : b; grab[0] = snap(p.x); grab[1] = snap(p.y); cv.setPointerCapture(ev.pointerId); render();
+  });
+  cv.addEventListener('pointermove', (ev) => { if (!grab) return; const p = P.at(ev); grab[0] = snap(p.x); grab[1] = snap(p.y); render(); });
+  cv.addEventListener('pointerup', () => { grab = null; });
+  DX.onResize(draw);
+  render(); renderWords();
+})();
+</script>

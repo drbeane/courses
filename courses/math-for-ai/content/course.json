@@ -1,0 +1,315 @@
+{
+  "title": "Math for AI",
+  "code": "MATH 309 and MATH 509",
+  "school": "Maryville University",
+  "description": "A survey of the mathematics behind machine learning and AI (linear algebra, calculus, statistics and probability), with each idea implemented in Python.",
+  "stagesNote": "The weeks are grouped by subject. The first two build the Python needed for the rest.",
+  "colors": ["#0f7b8a","#1f6fc4","#7b45c7","#d4374f"],
+  "sentenceCase": true,
+  "math": true,
+  "demoHelper": true,
+  "text": {
+    "lessons": "The full text for each topic, grouped by week. Each week ends with its lab. Most lessons link to a Colab notebook that holds the code from the lesson.",
+    "slides": "One deck per topic. Use the arrow keys to move through a deck, press F for full screen, and press Esc to come back to this page.",
+    "resources": "The Colab notebooks, videos, and outside references that go with each week. Everything is free.",
+    "labKicker": "lab"
+  },
+  "stages": [
+    {
+      "n": 1,
+      "name": "Python"
+    },
+    {
+      "n": 2,
+      "name": "Linear algebra"
+    },
+    {
+      "n": 3,
+      "name": "Calculus and optimization"
+    },
+    {
+      "n": 4,
+      "name": "Statistics and probability"
+    }
+  ],
+  "weeks": [
+    {
+      "n": 1,
+      "stage": 1,
+      "topic": "Introduction to Python",
+      "assignment": "Lab 1",
+      "topics": [
+        "Introduction to artificial intelligence",
+        "Introduction to machine learning",
+        "Supervised learning",
+        "Google Colab",
+        "Google Colab interface",
+        "Values, expressions, and statements",
+        "Arithmetic operations in Python",
+        "Variables",
+        "Lists and tuples",
+        "For loops",
+        "Loops and sums",
+        "Conditional statements",
+        "Defining functions"
+      ]
+    },
+    {
+      "n": 2,
+      "stage": 1,
+      "topic": "The NumPy package",
+      "assignment": "Lab 2",
+      "topics": [
+        "Importing packages",
+        "The math package",
+        "NumPy arrays",
+        "Array aggregations",
+        "Array comparisons",
+        "The where function",
+        "Two-dimensional arrays",
+        "One-hot encoding"
+      ]
+    },
+    {
+      "n": 3,
+      "stage": 2,
+      "topic": "Introduction to linear algebra",
+      "assignment": "Lab 3",
+      "topics": [
+        "Introduction to linear algebra",
+        "Vectors",
+        "Matrices and matrix operations",
+        "Vector length and similarity",
+        "Inverse matrices",
+        "Linear regression",
+        "Systems of linear equations",
+        "Eigenvalues and eigenvectors"
+      ]
+    },
+    {
+      "n": 4,
+      "stage": 3,
+      "topic": "Introduction to calculus",
+      "assignment": "Lab 4",
+      "topics": [
+        "Introduction to calculus",
+        "The derivative",
+        "Differentiation formulas",
+        "Introduction to SymPy",
+        "Calculating derivatives with SymPy",
+        "Finding roots of expressions",
+        "Higher-order derivatives",
+        "Local extrema"
+      ]
+    },
+    {
+      "n": 5,
+      "stage": 3,
+      "topic": "Optimization and gradient descent",
+      "assignment": "Lab 5",
+      "topics": [
+        "Partial derivatives",
+        "The gradient",
+        "Introduction to optimization",
+        "Gradient ascent and descent",
+        "Gradient ascent and descent examples",
+        "Implementation of gradient ascent and descent",
+        "Training a model with gradient descent",
+        "Artificial neurons",
+        "Neural networks",
+        "Calculating the output of a neural network",
+        "Backpropagation"
+      ]
+    },
+    {
+      "n": 6,
+      "stage": 4,
+      "topic": "Introduction to statistics",
+      "assignment": "Lab 6",
+      "topics": [
+        "Introduction to statistics",
+        "Measures of central tendency",
+        "Measures of variability",
+        "Measures of position",
+        "Plotting: Scatter plots",
+        "Measures of relationship",
+        "Principal component analysis",
+        "Coefficient of determination",
+        "Evaluating models"
+      ]
+    },
+    {
+      "n": 7,
+      "stage": 4,
+      "topic": "Introduction to probability theory",
+      "assignment": "Lab 7",
+      "topics": [
+        "Random number generation",
+        "Random number generation in NumPy",
+        "Plotting: Bar charts",
+        "Introduction to probability",
+        "Random variables",
+        "Discrete random variables",
+        "Expected value and variance",
+        "Monte Carlo sampling"
+      ]
+    },
+    {
+      "n": 8,
+      "stage": 4,
+      "topic": "Continuous random variables and probabilistic models",
+      "assignment": "Lab 8",
+      "topics": [
+        "Continuous random variables",
+        "Plotting: Histograms",
+        "The normal distribution",
+        "The uniform distribution",
+        "The exponential distribution",
+        "Naive Bayes classification",
+        "Logistic regression",
+        "Training a logistic regression model",
+        "Language models",
+        "Attention"
+      ]
+    }
+  ],
+  "demos": [
+    {
+      "slug": "loop-sum-tracer",
+      "name": "Loop and sum tracer",
+      "weeks": [
+        1
+      ],
+      "lessons": [
+        "w01-t10",
+        "w01-t11"
+      ],
+      "about": "Step through a for loop one line at a time and watch a sigma-notation sum build up term by term."
+    },
+    {
+      "slug": "matrix-transformation",
+      "name": "Matrix transformation explorer",
+      "weeks": [
+        3
+      ],
+      "lessons": [
+        "w03-t3",
+        "w03-t5",
+        "w03-t8"
+      ],
+      "about": "Change a 2 × 2 matrix and see how it moves the plane, what its determinant measures, and which directions are eigenvectors."
+    },
+    {
+      "slug": "vector-similarity",
+      "name": "Vector similarity explorer",
+      "weeks": [
+        3
+      ],
+      "lessons": [
+        "w03-t4"
+      ],
+      "about": "Drag two vectors to see their lengths, dot product, distance, and cosine similarity, then find the nearest words in a small set of embeddings."
+    },
+    {
+      "slug": "line-fitting",
+      "name": "Line-fitting lab",
+      "weeks": [
+        3,
+        6
+      ],
+      "lessons": [
+        "w03-t6",
+        "w06-t8"
+      ],
+      "about": "Fit a line to data by hand, see the squared errors as squares, and compare your line with the least-squares line."
+    },
+    {
+      "slug": "derivative-explorer",
+      "name": "Derivative explorer",
+      "weeks": [
+        4
+      ],
+      "lessons": [
+        "w04-t2",
+        "w04-t8"
+      ],
+      "about": "Watch a secant line turn into a tangent line as two points move together, and read the derivative as a slope."
+    },
+    {
+      "slug": "softmax-temperature",
+      "name": "Softmax and temperature",
+      "weeks": [
+        5,
+        8
+      ],
+      "lessons": [
+        "w05-t10",
+        "w08-t9"
+      ],
+      "about": "Turn scores into probabilities, change the temperature, and sample the next word to see how the setting changes what is chosen."
+    },
+    {
+      "slug": "gradient-descent",
+      "name": "Gradient descent stepper",
+      "weeks": [
+        5
+      ],
+      "lessons": [
+        "w05-t4",
+        "w05-t5",
+        "w05-t6"
+      ],
+      "about": "Take gradient descent one step at a time on functions of one and two inputs, and see what the learning rate does."
+    },
+    {
+      "slug": "dice-simulator",
+      "name": "Dice and probability simulator",
+      "weeks": [
+        7
+      ],
+      "lessons": [
+        "w07-t3",
+        "w07-t4",
+        "w07-t7",
+        "w07-t8"
+      ],
+      "about": "Run a random experiment thousands of times and watch the observed shares settle onto the probabilities."
+    },
+    {
+      "slug": "distribution-explorer",
+      "name": "Distribution explorer",
+      "weeks": [
+        8
+      ],
+      "lessons": [
+        "w08-t1",
+        "w08-t3",
+        "w08-t4",
+        "w08-t5"
+      ],
+      "about": "Shade an interval under a normal, uniform, or exponential density curve and read the probability as an area."
+    },
+    {
+      "slug": "attention-explorer",
+      "name": "Attention explorer",
+      "weeks": [
+        8
+      ],
+      "lessons": [
+        "w08-t10"
+      ],
+      "about": "Move token vectors around and watch the attention scores, weights, and blended output change."
+    },
+    {
+      "slug": "bigram-generator",
+      "name": "Bigram text generator",
+      "weeks": [
+        8
+      ],
+      "lessons": [
+        "w08-t9"
+      ],
+      "about": "Train a tiny language model by counting word pairs, then generate text one word at a time and read its perplexity."
+    }
+  ]
+}

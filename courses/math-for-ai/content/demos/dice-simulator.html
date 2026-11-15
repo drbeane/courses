@@ -1,0 +1,149 @@
+<style>
+.dx .seed { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 14px; }
+.dx .seed input[type=number] { width: 6.5rem; }
+.dx .last { font: 400 14px/1.6 var(--mono); overflow-wrap: anywhere; min-height: 1.6em; }
+</style>
+<div class="wrap">
+  <p class="lede">A probability says what share of the time an outcome happens in the long run. Run an experiment a few times and the results are lumpy. Run it thousands of times and the shares settle onto the probabilities.</p>
+
+  <section class="panel" aria-labelledby="ds-h0">
+    <h2 id="ds-h0">Choose an experiment</h2>
+    <div class="row" role="group" aria-label="Experiments" id="ds-presets"></div>
+    <p id="ds-about"></p>
+    <div class="row">
+      <button class="primary" data-n="1">Run 1 time</button>
+      <button data-n="10">Run 10 times</button>
+      <button data-n="100">Run 100 times</button>
+      <button data-n="10000">Run 10,000 times</button>
+      <button id="ds-reset">Clear</button>
+    </div>
+    <div class="seed">
+      <label><input type="checkbox" id="ds-useSeed"> Use a seed</label>
+      <input type="number" id="ds-seed" value="1" min="0" max="99999" aria-label="Seed">
+      <span class="hint">With a seed, clearing and running again gives exactly the same results.</span>
+    </div>
+    <p class="last" id="ds-last" aria-live="polite"></p>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="ds-h1">
+      <h2 id="ds-h1">Share of trials for each outcome</h2>
+      <canvas class="plot" id="ds-plot" role="img" aria-label="Bar chart of observed proportions against probabilities"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--accent)"></i>Observed proportion</span>
+        <span><i class="sw" style="background:var(--ink)"></i>Probability</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="ds-h2">
+      <h2 id="ds-h2">Results</h2>
+      <div class="stats">
+        <div class="stat"><b id="ds-n"></b><span>trials</span></div>
+        <div class="stat"><b id="ds-mean"></b><span>sample mean</span></div>
+        <div class="stat"><b id="ds-ev"></b><span>expected value</span></div>
+      </div>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="r">Outcome</th><th class="r">Count</th><th class="r">Proportion</th><th class="r">Probability</th></tr></thead>
+          <tbody id="ds-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel" aria-labelledby="ds-h3">
+    <h2 id="ds-h3">Sample mean as the trials add up</h2>
+    <canvas class="plot short" id="ds-plot2" role="img" aria-label="Running sample mean against the number of trials"></canvas>
+    <p class="hint">The horizontal axis counts trials on a scale where each step is ten times the last. The dashed line is the expected value.</p>
+  </section>
+
+  <section class="panel notice" aria-labelledby="ds-h4">
+    <h2 id="ds-h4">What to notice</h2>
+    <ol>
+      <li>After 10 trials the bars rarely match the probabilities. That is normal. Probability describes the long run and says little about any short run.</li>
+      <li>After 10,000 trials each proportion sits close to its probability. Estimating a probability by running many trials is the idea behind Monte Carlo sampling.</li>
+      <li>The sample mean wanders at first, then closes in on the expected value. The expected value is the long-run average, even when it is a number you can never roll, such as 3.5.</li>
+      <li>For two dice, 7 is the most likely sum because six of the 36 equally likely pairs add up to it. Only one pair gives 2, and only one gives 12.</li>
+      <li>In the game of chance, the rare 50 and 100 payouts move the sample mean a lot when they land. It takes many more trials to settle than a single die does.</li>
+      <li>Turn on the seed, clear, and run again. The "random" results repeat exactly, because the computer builds them from the seed with a fixed recipe.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  const die = (rnd) => 1 + Math.floor(rnd() * 6);
+  const EXPS = [
+    { name: 'One die', about: 'Roll one fair six-sided die and record the number.', values: [1, 2, 3, 4, 5, 6], probs: Array(6).fill(1 / 6), draw: (rnd) => die(rnd) },
+    { name: 'Sum of two dice', about: 'Roll two fair dice and record their sum.', values: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], probs: [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1].map((c) => c / 36), draw: (rnd) => die(rnd) + die(rnd) },
+    { name: 'Game of chance', about: 'The game from the Week 7 lessons. Each play pays 0, 1, 5, 10, 50, or 100, with probabilities 0.40, 0.25, 0.20, 0.10, 0.04, and 0.01.', values: [0, 1, 5, 10, 50, 100], probs: [0.40, 0.25, 0.20, 0.10, 0.04, 0.01],
+      draw(rnd) { let r = rnd(), i = 0; while (i < 5 && r >= this.probs[i]) { r -= this.probs[i]; i++; } return this.values[i]; } },
+  ];
+  let ex = EXPS[0], counts, n, total, means, last, rnd;
+
+  function clear() {
+    counts = ex.values.map(() => 0); n = 0; total = 0; means = []; last = [];
+    rnd = $('ds-useSeed').checked ? DX.rng(+$('ds-seed').value || 0) : Math.random;
+    render();
+  }
+  function run(times) {
+    for (let t = 0; t < times; t++) {
+      const v = ex.draw(rnd);
+      counts[ex.values.indexOf(v)]++; n++; total += v;
+      if (n <= 300 || n % Math.ceil(n / 150) === 0) means.push([n, total / n]);
+      last.push(v); if (last.length > 24) last.shift();
+    }
+    if (!means.length || means[means.length - 1][0] !== n) means.push([n, total / n]);
+    render();
+  }
+  const ev = () => ex.values.reduce((s, v, i) => s + v * ex.probs[i], 0);
+
+  function draw() {
+    const K = ex.values.length, props = counts.map((c) => (n ? c / n : 0));
+    const top = Math.max(...ex.probs, ...props) * 1.15;
+    const P = DX.plot($('ds-plot'), { xmin: 0, xmax: K, ymin: 0, ymax: top, margin: { l: 46 } });
+    P.axes({ xlabels: false, xgrid: false, xstep: K * 2 });
+    const ctx = P.ctx;
+    ctx.font = '13px ' + getComputedStyle($('ds-plot')).fontFamily; ctx.textAlign = 'center'; ctx.textBaseline = 'top'; ctx.fillStyle = P.col.muted;
+    ex.values.forEach((v, i) => {
+      ctx.fillStyle = P.col.muted; ctx.fillText(String(v), P.X(i + 0.5), P.h - P.m.b + 6);
+      if (props[i] > 0) P.rect(i + 0.18, 0, i + 0.82, props[i], DX.tint(P.col.accent, 0.75));
+      P.seg(i + 0.08, ex.probs[i], i + 0.92, ex.probs[i], P.col.ink, 2.5);
+    });
+    P.seg(0, 0, K, 0, P.col.muted, 1);
+
+    const e = ev(), lo = Math.min(...ex.values), hi = Math.max(...ex.values);
+    let ylo = e - (e - lo) * 0.5, yhi = e + (hi - e) * 0.2;
+    if (ex === EXPS[2]) { ylo = 0; yhi = 14; }
+    const xmax = Math.max(2, Math.ceil(Math.log10(Math.max(n, 100))));
+    const Q = DX.plot($('ds-plot2'), { xmin: 0, xmax, ymin: ylo, ymax: yhi, margin: { l: 46, r: 28 } });
+    Q.axes({ xstep: 1, xfmt: (x) => Math.round(Math.pow(10, x)).toLocaleString('en-US') });
+    Q.seg(0, e, xmax, e, Q.col.ink, 1.5, [6, 4]);
+    Q.clip(() => {
+      const pts = means.map(([k, m]) => [Math.log10(k), m]);
+      Q.path(pts, Q.col.accent, 2);
+      if (pts.length) Q.dot(pts[pts.length - 1][0], pts[pts.length - 1][1], Q.col.accent, 4);
+    });
+  }
+  function render() {
+    $('ds-about').textContent = ex.about;
+    $('ds-n').textContent = n.toLocaleString('en-US');
+    $('ds-mean').textContent = n ? num(total / n, 3) : '—';
+    $('ds-ev').textContent = num(ev(), 3);
+    $('ds-last').textContent = n ? `Most recent results: ${last.join(', ')}` : 'No trials yet.';
+    $('ds-rows').innerHTML = ex.values.map((v, i) =>
+      `<tr><td class="r">${v}</td><td class="r">${counts[i].toLocaleString('en-US')}</td><td class="r">${n ? num(counts[i] / n, 4) : '—'}</td><td class="r">${num(ex.probs[i], 4)}</td></tr>`).join('');
+    document.querySelectorAll('#ds-presets .chip').forEach((c, k) => c.setAttribute('aria-pressed', EXPS[k] === ex ? 'true' : 'false'));
+    draw();
+  }
+
+  $('ds-presets').innerHTML = EXPS.map((e, k) => `<button class="chip" data-k="${k}">${e.name}</button>`).join('');
+  document.querySelectorAll('#ds-presets .chip').forEach((c) => { c.onclick = () => { ex = EXPS[+c.dataset.k]; clear(); }; });
+  document.querySelectorAll('.dx button[data-n]').forEach((b) => { b.onclick = () => run(+b.dataset.n); });
+  $('ds-reset').onclick = clear;
+  $('ds-useSeed').onchange = clear; $('ds-seed').onchange = clear;
+  DX.onResize(draw);
+  clear();
+})();
+</script>

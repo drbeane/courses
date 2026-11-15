@@ -1,0 +1,124 @@
+# 02-01 — Privacy as Contextual Integrity
+
+**Module:** 2 — Surveillance, Biometrics, and Privacy
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Explain why the public/private distinction fails as a guide to privacy in an AI world.
+2. Apply Nissenbaum's contextual integrity framework to analyze an information flow.
+3. Distinguish the main harms of surveillance: chilling, discrimination, manipulation and loss of control.
+
+## Opening case: "but it was public"
+
+Every photo Clearview AI scraped to build its face database of billions of images was, in some sense, public. Each sat on a public website: a news article, a social media profile, a company staff page. People posted them knowing strangers might look.
+
+Few of those people expected their faces to be converted into biometric templates, indexed and made searchable by police in seconds. Clearview argued its collection was legal and protected by the First Amendment. Regulators in the UK, France, Italy, Greece and the Netherlands disagreed and fined the company or ordered it to delete data.
+
+If "public" were the test, Clearview would have done nothing wrong. Most people's intuition says otherwise. Why?
+
+## Core ideas
+
+### Why public vs. private fails
+
+The traditional idea treats information as either private (protected) or public (fair game). AI breaks this in three ways:
+
+1. **Aggregation:** Scattered public facts, combined, reveal what no single fact does, such as your routine, associates and beliefs.
+2. **Inference:** Models derive new, sensitive information from innocuous data, such as health from purchases or sexual orientation from social connections (Lesson 02-09).
+3. **Scale and persistence:** Seeing someone on the street is different from a system that recognizes everyone, everywhere, forever.
+
+### Contextual integrity
+
+Philosopher Helen Nissenbaum (*Privacy in Context*, 2010) proposes that privacy is about **appropriate flows of information**. Every social context, such as medicine, friendship, employment or commerce, has norms governing how information moves. Privacy is violated when a flow breaks those norms.
+
+Each information flow has five parameters:
+
+| Parameter | Question |
+|---|---|
+| **Sender** | Who is sharing the information? |
+| **Recipient** | Who receives it? |
+| **Subject** | Whom is it about? |
+| **Information type** | What kind of information? |
+| **Transmission principle** | Under what conditions: consent, confidentiality, payment, legal requirement, reciprocity? |
+
+**Example:** You tell your doctor about symptoms (sender = you, recipient = doctor, subject = you, type = health, principle = confidentiality). If your doctor shares that with your employer, the recipient and transmission principle change, and the flow violates medical norms. The information stays the same; the context makes it a violation.
+
+**Applied to Clearview:**
+
+| | Original flow | New flow |
+|---|---|---|
+| Sender | You | Clearview's scraper |
+| Recipient | Visitors to your profile | Police and (earlier) private clients |
+| Information type | A photo for social presentation | A biometric identifier |
+| Transmission principle | Social sharing; platform norms | Covert collection; sale |
+
+Every parameter changed. That is why "it was public" misses the point.
+
+### Harms of surveillance
+
+Surveillance harms go beyond embarrassment:
+
+- **Chilling effects:** People avoid lawful activity (protests, religious services, clinics, support groups) when they know they're watched. Studies after the 2013 Snowden revelations found measurable declines in Wikipedia views of terrorism-related articles (Penney, 2016).
+- **Discrimination:** Surveillance is unevenly distributed, and its errors fall unevenly (Lesson 02-03).
+- **Manipulation:** Detailed profiles enable targeted persuasion that exploits weaknesses.
+- **Power asymmetry:** The watcher knows more about the watched than the reverse, enabling control.
+- **Loss of practical obscurity:** Information that was technically available but hard to find becomes instantly retrievable.
+- **Security risk:** Every database is a breach waiting to happen.
+
+### The "nothing to hide" argument
+
+"If you've done nothing wrong, you have nothing to fear." Responses, following Daniel Solove:
+
+- Privacy protects more than wrongdoing. It protects medical conditions, identities, relationships and political views.
+- People don't decide what counts as "wrong." Laws and enforcement priorities change.
+- Errors happen. Angela Lipps had done nothing wrong (Lesson 02-04).
+- Surveillance alters behavior even among the innocent.
+- The argument makes privacy an individual cost. Privacy is also a **collective** good that supports democracy and free association.
+
+### Privacy as a collective good
+
+When one person shares their DNA with a genealogy site, their relatives are exposed too. When enough people's data trains a model, the model can make inferences about people who never shared anything. Privacy increasingly behaves like a public good that individual consent can't protect (Viljoen, 2021).
+
+## Applying the frameworks
+
+- **Deontology:** Covert biometric collection treats people merely as means (01-04).
+- **Consequentialism:** Weigh investigative benefits against chilling effects and breach risk, remembering that the latter are hard to measure (01-03).
+- **Justice:** Who is most surveilled? Historically, poor, minority and immigrant communities.
+- **Decency, world lens:** What kind of public life results when anonymity in public disappears?
+
+## Discussion questions
+
+1. Use the five parameters to analyze a flow you consider *acceptable* that involves AI, such as a fitness app sharing step counts with you. What makes it acceptable?
+2. Is a person's face "information"? What changes when it is converted to a template?
+3. Respond to "nothing to hide" in your own words, without using any argument from this lesson.
+4. Should privacy be protected mainly by individual consent or by collective rules? What are the trade-offs?
+
+## Activity: flow analysis (15 minutes)
+
+Pick one of these flows and fill in the five parameters for the original context and the new one. Is the change a violation? Why?
+
+1. Your voice assistant recordings are reviewed by contractors to improve accuracy.
+2. Your school's learning platform shares engagement data with a predictive "at-risk" model.
+3. A dating app's photos are used to train an image generator.
+
+## Key terms
+
+- **Contextual integrity:** Privacy as appropriate information flow relative to contextual norms.
+- **Transmission principle:** The condition under which information flows (consent, confidentiality, etc.).
+- **Practical obscurity:** The protection that comes from information being hard to find.
+- **Chilling effect:** Self-censorship or avoidance of lawful activity caused by surveillance.
+
+## Connections
+
+- Clearview in depth → 02-06 · Inference → 02-09 · Privacy as a collective good → 02-10
+- A2 data-flow diagram uses these parameters.
+
+## Sources and further reading
+
+- Nissenbaum, H. *Privacy in Context* (Stanford, 2010), Chapters 7–8; or Nissenbaum, "Privacy as Contextual Integrity," *Washington Law Review* 79 (2004). — [2004 article (assigned alternative) — Free full text](https://digitalcommons.law.uw.edu/wlr/vol79/iss1/10/); [Book publisher — Paid / library](https://www.sup.org/books/sociology/privacy-context); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r040). <!-- reading-access -->
+- Solove, D. "'I've Got Nothing to Hide' and Other Misunderstandings of Privacy," *San Diego Law Review* 44 (2007). — [Free manuscript](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=998565); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r041). <!-- reading-access -->
+- Penney, J. "Chilling Effects: Online Surveillance and Wikipedia Use," *Berkeley Technology Law Journal* 31 (2016). — [Free manuscript](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2769645); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r042). <!-- reading-access -->
+- Viljoen, S. "A Relational Theory of Data Governance," *Yale Law Journal* 131 (2021). — [Free full text](https://yalelawjournal.org/pdf/131.2_Viljoen_1n12myx5.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r043). <!-- reading-access -->
+- Dutch Data Protection Authority, Clearview AI decision (2024). — [Free full text](https://autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r044). <!-- reading-access -->

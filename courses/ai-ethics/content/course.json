@@ -1,0 +1,170 @@
+{
+  "title": "AI, Ethics, and Society",
+  "code": "COSC 443",
+  "school": "Maryville University",
+  "description": "How AI reshapes rights, institutions, work, the environment and public life, and how to make defensible decisions about building, buying and deploying it.",
+  "stagesNote": "The course starts with ethical frameworks, then applies them to harms to individuals, to effects on society, and finally to the institutions that govern AI.",
+  "colors": ["#0f7b8a","#1f6fc4","#7b45c7","#d4374f"],
+  "topicLabel": "Lesson",
+  "lessonNumbers": true,
+  "draftLayout": "modules",
+  "text": {
+    "lessons": "The full text of each lesson, grouped by week. Labs are marked, and a tag such as A2 links to the assessment a lesson supports.",
+    "slides": "Slide decks for the lessons, as they are posted. Use the arrow keys to move through a deck, press F for full screen, and press Esc to come back to this page.",
+    "resources": "Frameworks, standards, incident trackers and media used across the course. The Lessons column shows where each one comes up.",
+    "assessments": "The six graded components of the course, with what each asks for, when it is due, and how it is graded."
+  },
+  "stages": [
+    {
+      "n": 1,
+      "name": "Foundations"
+    },
+    {
+      "n": 2,
+      "name": "AI and the Individual"
+    },
+    {
+      "n": 3,
+      "name": "AI and Society"
+    },
+    {
+      "n": 4,
+      "name": "Power and Governance"
+    }
+  ],
+  "weeks": [
+    {
+      "n": 1,
+      "stage": 1,
+      "topic": "Ethical Foundations and AI in Society",
+      "topics": [
+        { "title": "Why AI Ethics Now" },
+        { "title": "What Kind of System? Predictive, Generative, and Agentic AI" },
+        { "title": "Consequences: Utilitarian Reasoning and Its Limits" },
+        { "title": "Duties, Rights, and Human Dignity" },
+        { "title": "Decency, Character, and Care" },
+        { "title": "Justice, Fairness, and Distribution" },
+        { "title": "Principles and Frameworks for AI Ethics" },
+        { "title": "Stakeholders and Sociotechnical Systems" },
+        { "title": "Law, Policy, Standards, and Ethics: Building a Defensible Argument", "assess": [ "A1" ] }
+      ]
+    },
+    {
+      "n": 2,
+      "stage": 2,
+      "topic": "Surveillance, Biometrics, and Privacy",
+      "topics": [
+        { "title": "Privacy as Contextual Integrity" },
+        { "title": "The Surveillance Economy and Data Brokers" },
+        { "title": "How Facial Recognition Works—and Fails" },
+        { "title": "Facial Recognition in Policing: Wrongful Arrests" },
+        { "title": "Live Facial Recognition in Public Space" },
+        { "title": "Scraped Faces: Clearview AI and Biometric Privacy Law" },
+        { "title": "Always-On Assistants: Voice, Screen, and Memory" },
+        { "title": "Smart Glasses and Bystander Privacy" },
+        { "title": "Inference and Profiling: What AI Can Guess About You" },
+        { "title": "Privacy-Protective Design and Governance", "assess": [ "A2" ] }
+      ]
+    },
+    {
+      "n": 3,
+      "stage": 2,
+      "topic": "Algorithmic Bias in Consequential Decisions",
+      "topics": [
+        { "title": "Where Bias Comes From" },
+        { "title": "Measuring Fairness: Metrics and Trade-offs" },
+        { "title": "Hiring Algorithms: From Résumé Screens to Mobley v. Workday" },
+        { "title": "AI Interviews, Personality Inference, and Disability" },
+        { "title": "Lending and Credit: Fair Lending Law Meets Machine Learning" },
+        { "title": "Insurance, Housing, and Tenant Screening" },
+        { "title": "Criminal Justice: Pretrial and Sentencing Risk Assessment" },
+        { "title": "Predictive Policing and Feedback Loops" },
+        { "title": "Explanation, Contestability, and Appeal" },
+        { "title": "Consequential Decision Review", "lab": true, "assess": [ "A2" ] }
+      ]
+    },
+    {
+      "n": 4,
+      "stage": 2,
+      "topic": "Synthetic Media, Information Integrity, and Human Agency",
+      "topics": [
+        { "title": "Confidently Wrong: Hallucination and Its Consequences" },
+        { "title": "Verification as an Ethical Practice" },
+        { "title": "Deepfakes: Capabilities and Harms" },
+        { "title": "Non-Consensual Intimate Imagery and the Grok Case" },
+        { "title": "Law and Platform Duties for Synthetic Sexual Imagery" },
+        { "title": "Elections, Fraud, and the Liar's Dividend" },
+        { "title": "Provenance, Watermarking, and Content Credentials" },
+        { "title": "Companions, Minors, and Emotional Reliance" },
+        { "title": "Creative Rights, Copyright, and Training Data" },
+        { "title": "Generated-Information Verification", "lab": true, "assess": [ "A4" ] }
+      ]
+    },
+    {
+      "n": 5,
+      "stage": 3,
+      "topic": "Work, Labor, and Economic Power",
+      "topics": [
+        { "title": "Exposure Is Not Displacement: Reading Labor Evidence" },
+        { "title": "Entry-Level Work and the Missing Rung" },
+        { "title": "Who Captures the Gains?" },
+        { "title": "Algorithmic Management and Bossware" },
+        { "title": "Monitoring Productivity, Emotion, and Keystrokes" },
+        { "title": "Gig Platforms and Automated Control" },
+        { "title": "The Hidden Workforce: Data Labelers and Content Moderators" },
+        { "title": "Automation Bias and Professional Responsibility" },
+        { "title": "Worker Voice, Bargaining, and Policy Responses", "assess": [ "A3" ] }
+      ]
+    },
+    {
+      "n": 6,
+      "stage": 3,
+      "topic": "Environmental Costs and Global Access",
+      "topics": [
+        { "title": "The Physical Footprint of AI" },
+        { "title": "Energy and Emissions: Training, Inference, and Scale" },
+        { "title": "Water, Land, and Local Communities" },
+        { "title": "Measuring and Disclosing Environmental Costs" },
+        { "title": "Efficiency, Rebound, and AI for Climate" },
+        { "title": "Compute Concentration and Global Divides" },
+        { "title": "Non-Human Interests and the World Lens" },
+        { "title": "Case Workshop: The Data Center Next Door", "lab": true, "assess": [ "A3" ] }
+      ]
+    },
+    {
+      "n": 7,
+      "stage": 4,
+      "topic": "Open Weights, Agents, and AI Security",
+      "topics": [
+        { "title": "What \"Open\" Means: Weights, Code, Data, and Licenses" },
+        { "title": "The Case for Open-Weight Models" },
+        { "title": "The Case for Closed Weights and Staged Access" },
+        { "title": "Open vs. Closed in Practice: Policy, Geopolitics, and Distillation" },
+        { "title": "Agents and Delegated Authority" },
+        { "title": "Prompt Injection and Agent Security" },
+        { "title": "Case Study: The Hugging Face Breach" },
+        { "title": "AI-Assisted Reverse Engineering and Software Licensing" },
+        { "title": "Dual Use, Cyber Capability, and Frontier Risk" },
+        { "title": "Agent Authority Exercise", "lab": true, "assess": [ "A4" ] }
+      ]
+    },
+    {
+      "n": 8,
+      "stage": 4,
+      "topic": "Governance, Accountability, and Responsible Deployment",
+      "topics": [
+        { "title": "Risk-Based Regulation: The EU AI Act" },
+        { "title": "The United States: Agencies, States, and Preemption" },
+        { "title": "Global Governance: UK, China, and International Efforts" },
+        { "title": "NIST AI RMF and ISO/IEC 42001 in Practice" },
+        { "title": "Who Is Accountable When AI Fails?" },
+        { "title": "Documentation: Model Cards, Datasheets, and Impact Assessments" },
+        { "title": "Procurement and Vendor Due Diligence" },
+        { "title": "Monitoring, Incidents, and Redress" },
+        { "title": "Making the Call: Deploy, Restrict, or Don't Deploy", "assess": [ "A5" ] },
+        { "title": "Portfolio Defense and Course Synthesis", "assess": [ "A5", "A6" ] }
+      ]
+    }
+  ],
+  "demos": []
+}

@@ -1,0 +1,142 @@
+# 08-02 — The United States: Agencies, States, and Preemption
+
+**Module:** 8 — Governance, Accountability, and Responsible Deployment
+**Estimated time:** 40 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Describe the U.S. approach to AI governance: existing laws, agency enforcement, state legislation and executive action.
+2. Analyze the 2025–2026 conflict between state AI laws and federal preemption efforts.
+3. Explain how a practitioner should navigate U.S. AI obligations amid uncertainty.
+
+*Everything in this lesson is changing quickly. Dates are as of October 2026. ⚠ Verify before teaching.*
+
+## Opening case: the Colorado story, in full
+
+1. **May 2024:** Colorado enacts **SB 24-205**, the first comprehensive U.S. state AI law, modeled partly on the EU approach. Developers and deployers of "high-risk" AI used in consequential decisions (employment, lending, housing, health, education, insurance, legal services) must use reasonable care to avoid algorithmic discrimination, conduct impact assessments, provide notices and allow appeals. Governor Polis signs it "with reservations."
+2. **August 2025:** A special session delays the effective date to **June 30, 2026**.
+3. **December 11, 2025:** President Trump signs an executive order, "Ensuring a National Policy Framework for Artificial Intelligence," directing:
+   - a DOJ **AI Litigation Task Force** to challenge state AI laws,
+   - the Commerce Department to identify "onerous" state laws, naming Colorado as an example, and
+   - agencies to consider conditioning federal funds, including **BEAD** broadband non-deployment funds, on states' AI laws.
+4. **January 9, 2026:** The Attorney General establishes the Task Force.
+5. **April 2026:** A federal court **stays enforcement** of Colorado's law in a challenge that DOJ and xAI joined.
+6. **May 14, 2026:** Colorado enacts a narrower replacement, **SB 26-189**, effective **January 1, 2027**.
+   - **Dropped:** the "high-risk AI" framework, risk-management programs, impact assessments, annual reviews and algorithmic-discrimination disclosures.
+   - **Retained or new:** For "automated decision-making technology" that materially influences consequential decisions, deployers must keep records for three years, give notice, give a plain-language explanation within 30 days of an adverse decision, allow correction of inaccurate data, and offer meaningful human review "to the extent commercially reasonable."
+
+**Discussion prompt:** Which of the original law's protections matter most, and which of the replacement's are most likely to work in practice?
+
+## Core ideas
+
+### Existing law applies to AI
+
+The U.S. has no comprehensive federal AI statute, but many existing laws apply regardless of technology:
+
+| Area | Laws | AI relevance |
+|---|---|---|
+| Civil rights | Title VII, ADEA, ADA, Fair Housing Act, ECOA | Hiring, housing, lending (Module 3) |
+| Consumer protection | FTC Act §5 (unfair or deceptive practices) | Deceptive AI claims; unfair data practices; TAKE IT DOWN enforcement (04-05) |
+| Credit | FCRA, ECOA/Reg B | Adverse action notices (03-05) |
+| Privacy | COPPA, HIPAA, state privacy laws, BIPA | Children's data; health; biometrics (Module 2) |
+| Product liability | State tort law | Defective AI products (litigation emerging) |
+| Copyright | Copyright Act | Training and outputs (04-09) |
+| Communications | TCPA | AI voice robocalls (04-06) |
+
+### Federal enforcement: shifting priorities
+
+- **2023–2024:** Agencies (the FTC, EEOC, CFPB and DOJ Civil Rights) issued a joint statement (April 2023) that existing laws apply to AI. The FTC brought "Operation AI Comply" cases against deceptive AI claims. President Biden's Executive Order 14110 (October 2023) directed safety testing and reporting.
+- **2025–2026:**
+  - EO 14110 was revoked (January 2025).
+  - The **America's AI Action Plan** (July 2025) emphasized innovation, infrastructure, open models and removing regulatory barriers.
+  - Agencies withdrew some AI guidance, such as the EEOC's AI technical assistance.
+  - An executive order directed agencies to deprioritize disparate-impact enforcement.
+  - The CFPB's capacity was sharply reduced.
+  - The FTC continued some AI enforcement: deceptive claims, TAKE IT DOWN, and its companion-chatbot 6(b) inquiry (04-08).
+- **Congress:** A proposed 10-year moratorium on state AI laws was stripped from the 2025 budget bill by a 99–1 Senate vote. Preemption proposals continued in 2026. Enacted federal AI-specific laws include the TAKE IT DOWN Act (2025).
+
+### The states
+
+States passed hundreds of AI-related laws. Notable categories:
+
+| Type | Examples |
+|---|---|
+| Comprehensive or high-risk | Colorado (replaced 2026); Texas TRAIGA (effective Jan 1, 2026; narrower, mostly government use and prohibited intents) |
+| Frontier model transparency | **California SB 53** (Transparency in Frontier AI Act, effective Jan 1, 2026): large developers publish safety frameworks, report critical incidents, and protect whistleblowers. New York RAISE Act (2025) ⚠ |
+| Employment | NYC Local Law 144; Illinois HB 3773; California CRD regulations (03-03) |
+| Deepfakes and elections | Most states (04-05, 04-06) |
+| Companion chatbots | California SB 243; New York (04-08) |
+| Privacy (including ADMT) | California CCPA regulations; about 20 state comprehensive privacy laws |
+
+Governors in **California, Colorado and New York** said they would continue enforcing their AI laws despite the executive order, and state legislators of both parties said they would keep legislating.
+
+### The preemption question
+
+**Arguments for federal preemption:**
+
+- A patchwork of 50 state laws burdens interstate commerce and innovation.
+- AI is national and strategic (competition with China).
+- States may impose conflicting requirements.
+
+**Arguments against:**
+
+- States are "laboratories of democracy." They act when Congress doesn't.
+- Without federal law, preemption leaves a regulatory vacuum.
+- Federalism and states' traditional role in consumer protection and civil rights.
+- Conditioning unrelated funds (broadband) on AI policy raises constitutional questions (the Spending Clause, anti-commandeering).
+
+**Legal status:** An executive order can't itself preempt state law. Preemption generally requires an act of Congress or valid agency regulation. DOJ challenges rely on arguments like the dormant Commerce Clause and the First Amendment. Courts are deciding these questions, and Supreme Court review is possible ⚠.
+
+### Navigating as a practitioner
+
+1. **Comply with technology-neutral law**, which applies regardless of AI-specific rules.
+2. **Track the strictest applicable jurisdiction**, often California, New York, Illinois, or the EU for global firms.
+3. **Use voluntary frameworks** (NIST AI RMF, 08-04) to build defensible practices.
+4. **Document decisions**, because good records protect you under any regime.
+5. **Expect change.** Build governance that adapts.
+
+## Applying the frameworks
+
+- **Law ≠ ethics (01-09):** Shifting legal requirements don't change what is right.
+- **Procedural justice:** Who should decide AI rules, and at what level of government?
+- **Consequences:** Is a patchwork worse than a vacuum? For whom?
+
+## Discussion questions
+
+1. Should AI be regulated primarily at the federal or state level? What would you include in a federal AI law?
+2. Is it appropriate to condition broadband funding on states' AI policies?
+3. Colorado replaced its law after litigation and federal pressure. Was that prudent or a capitulation?
+4. If federal agencies deprioritize disparate-impact enforcement, what should companies do?
+
+## Activity: obligations map (20 minutes)
+
+For your A5 use case, list:
+
+1. federal laws that apply,
+2. state or local laws in at least two states where you'd deploy, and
+3. voluntary frameworks you'd adopt.
+
+Date every entry and cite sources. Mark items whose status is uncertain.
+
+## Key terms
+
+- **Preemption:** Federal law displacing state law.
+- **Dormant Commerce Clause:** The constitutional limit on state laws that unduly burden interstate commerce.
+- **Executive order:** A presidential directive to the executive branch (not legislation).
+- **Laboratories of democracy:** States experimenting with policy.
+
+## Connections
+
+- Colorado → 01-09 · Hiring law → 03-03 · Deepfake law → 04-05 · NIST RMF → 08-04 · Global comparison → 08-03
+
+## Sources and further reading
+
+- Paul Hastings, "President Trump Signs Executive Order Challenging State AI Laws," Dec 2025. — [Free full text](https://www.paulhastings.com/insights/client-alerts/president-trump-signs-executive-order-challenging-state-ai-laws); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r346). <!-- reading-access -->
+- Manatt, "Trump Executive Order Targets State AI Laws — Raising Questions and Risks," Dec 2025. — [Free full text](https://www.manatt.com/insights/newsletters/client-alert/trump-executive-order-targets-state-ai-laws-raising-questions-and-risks); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r347). <!-- reading-access -->
+- Womble Bond Dickinson, "Federal AI Preemption Takes Center Stage: Key Deadlines," 2026. — [Free full text](https://www.womblebonddickinson.com/us/insights/federal-government/102lxoh/federal-ai-preemption-takes-center-stage-key-deadlines); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r348). <!-- reading-access -->
+- Illinois Lawyer Now, "The Colorado AI Act everyone was preparing for no longer exists…," Jun 2026. — [Free full text](https://www.businessattorneychicago.com/the-colorado-ai-act-everyone-was-preparing-for-no-longer-exists-here-is-what-actually-takes-effect-and-why-illinois-businesses-should-still-pay-attention/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r349). <!-- reading-access -->
+- Ropes & Gray, "Colorado Scales Back AI Law…," May 2026. — [Free full text](https://www.ropesgray.com/en/insights/alerts/2026/05/colorado-scales-back-ai-law-with-targeted-implications-for-health-care); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r350). <!-- reading-access -->
+- California SB 53 (2025), Transparency in Frontier Artificial Intelligence Act. — [Free official text](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB53); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r351). <!-- reading-access -->
+- The White House, *America's AI Action Plan* (July 2025). — [Free manuscript](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r352). <!-- reading-access -->

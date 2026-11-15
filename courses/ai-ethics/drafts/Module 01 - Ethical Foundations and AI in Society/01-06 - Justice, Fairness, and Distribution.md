@@ -1,0 +1,108 @@
+# 01-06 — Justice, Fairness, and Distribution
+
+**Module:** 1 — Ethical Foundations and AI in Society
+**Estimated time:** 35 minutes
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Distinguish distributive, procedural, corrective and relational justice.
+2. Apply Rawls's veil of ignorance and difference principle to an AI deployment.
+3. Analyze how power shapes who designs AI, who benefits and who bears risk.
+
+## Opening case: who pays for the data center?
+
+A hyperscale data center is proposed in a rural county (a composite of several 2025–2026 cases; see Lesson 06-08). The company promises jobs and tax revenue, and the county offers a large tax abatement. Residents worry about the water supply in a drought-prone region, higher electricity rates and noise. Most of the data center's users live elsewhere, and so do most of its shareholders.
+
+Even if total benefits exceed total costs, there is a question consequentialism handles poorly: **is the distribution fair?**
+
+## Core ideas
+
+### Four dimensions of justice
+
+| Dimension | Question | AI example |
+|---|---|---|
+| **Distributive** | Who gets which benefits and burdens? | Do productivity gains go to workers or owners? (05-03) |
+| **Procedural** | Was the decision process fair? | Did the community have a voice in siting? Can an applicant appeal? |
+| **Corrective** | Are wrongs remedied? | Compensation for a wrongful arrest; removal of deepfakes |
+| **Relational** | Are people treated as equals in social relationships? | Does surveillance mark some groups as inherently suspect? |
+
+### Rawls: justice as fairness
+
+John Rawls (*A Theory of Justice*, 1971) asked what principles people would choose behind a **veil of ignorance**, not knowing their race, sex, class, abilities or position in society. He argued they would choose:
+
+1. **Equal basic liberties** for all, and
+2. social and economic inequalities only if they (a) attach to positions open to all under fair equality of opportunity and (b) benefit the least-advantaged members of society (the **difference principle**).
+
+**The veil applied to AI:** Would you accept a hiring algorithm if you didn't know whether you would be a 25-year-old Stanford graduate or a 55-year-old applicant with a disability and a résumé gap? Would you accept live facial recognition if you didn't know whether you would live in the neighborhood where cameras are installed?
+
+### Other views of justice
+
+- **Libertarian (Nozick):** Justice is about just acquisition and voluntary transfer. If data was obtained with consent and markets are free, the resulting distribution is just. Critics say this ignores background inequality and coerced consent.
+- **Capabilities (Sen, Nussbaum):** Justice is about what people are actually able to do and be: health, education, political participation, affiliation. AI should be judged by whether it expands or shrinks people's real capabilities.
+- **Structural injustice (Iris Marion Young):** Harms can arise from many people acting within normal rules, with no single wrongdoer. Everyone who participates in a structure shares responsibility to change it. This is especially relevant for AI supply chains (05-07, 06-01).
+
+### Fairness is not one thing
+
+"Fair" can mean:
+
+- treating everyone the same (formal equality),
+- treating relevantly similar people the same,
+- producing similar outcomes across groups,
+- giving more to those with greater need, or
+- giving people what they deserve.
+
+These conflict. Module 3 shows that different statistical fairness definitions **cannot all be satisfied at once** (Lesson 03-02). Choosing among them is an ethical choice, not a technical one.
+
+### Power
+
+Justice also concerns **who decides**. AI development is concentrated: a handful of firms control frontier models, cloud compute and much of the relevant data (06-06). Affected communities rarely sit at the design table. Questions to ask:
+
+- Who chose to deploy this system, and could affected people refuse?
+- Who can audit it?
+- Who profits, and who carries the risk if it fails?
+- Whose knowledge counts as evidence?
+
+## Applying the frameworks
+
+The data center case:
+
+- **Distributive:** Benefits (cloud services, profits) flow outward, while burdens (water, noise, rates) stay local.
+- **Procedural:** Were residents informed before the abatement vote? Were nondisclosure agreements used? (Several real 2025 projects were negotiated under NDAs.)
+- **Rawls:** Would you agree to the deal if you didn't know whether you'd be a shareholder or a well-dependent farmer?
+- **Capabilities:** Does the project expand residents' capabilities (jobs, tax-funded schools) or diminish them (water security)?
+
+## Discussion questions
+
+1. Use the veil of ignorance to evaluate one AI system you use. Would you still endorse it if you didn't know your social position?
+2. Is it unjust that the benefits of frontier AI accrue mostly to wealthy countries, even if poorer countries are not made worse off?
+3. A lender's AI approves more loans overall, including more loans for minority applicants, but approval *gaps* between groups widen. Is that a just outcome? Argue both sides.
+4. Iris Marion Young says we all share responsibility for structural injustice. What would it mean for an AI user, not a developer, to take that responsibility seriously?
+
+## Activity: justice audit (15 minutes)
+
+For the data center case, or any AI system, fill in one row for each dimension:
+
+| Dimension | Who gains | Who loses | Was the process fair? | Remedy if harmed? |
+|---|---|---|---|---|
+
+## Key terms
+
+- **Distributive / procedural / corrective / relational justice:** See table above.
+- **Veil of ignorance:** Choosing principles without knowing one's place in society.
+- **Difference principle:** Inequalities are just only if they benefit the least advantaged.
+- **Capabilities approach:** Justice measured by people's real freedoms to be and do.
+- **Structural injustice:** Injustice produced by normal social processes rather than individual wrongdoing.
+
+## Connections
+
+- Fairness metrics → 03-02 · Gains from automation → 05-03 · Siting → 06-03, 06-08 · Compute concentration → 06-06
+- The A3 evidence brief requires a distributional analysis.
+
+## Sources and further reading
+
+- Rawls, J. *A Theory of Justice* (1971; rev. 1999), §§3–4, 11–13, 24 (excerpts). — [Paid / library](https://www.jstor.org/stable/j.ctvkjb25m); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r022). <!-- reading-access -->
+- Young, I.M. *Responsibility for Justice* (Oxford, 2011), Chapter 2. — [Paid / library](https://academic.oup.com/book/4381); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r023). <!-- reading-access -->
+- Nussbaum, M. *Creating Capabilities* (Harvard, 2011), Chapter 2. — [Paid / library](https://doi.org/10.4159/harvard.9780674061200); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r024). <!-- reading-access -->
+- Gabriel, I. "Toward a Theory of Justice for Artificial Intelligence," *Daedalus* 151(2), 2022. — [Free full text](https://www.amacad.org/sites/default/files/publication/downloads/Daedalus_Sp22_15_Gabriel.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r025). <!-- reading-access -->

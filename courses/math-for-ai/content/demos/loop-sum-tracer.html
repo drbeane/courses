@@ -1,0 +1,154 @@
+<style>
+.dx .code { margin: 0; padding: 6px 0; background: var(--wash); border-radius: 6px; font: 400 14px/1.9 var(--mono); overflow-x: auto; }
+.dx .code div { padding: 0 12px; white-space: pre; border-left: 4px solid transparent; }
+.dx .code div.on { background: var(--accent-soft); border-left-color: var(--accent); font-weight: 600; }
+.dx .sigma { display: flex; align-items: center; gap: 10px; font: 400 22px/1 var(--text); }
+.dx .sigma .big { display: grid; justify-items: center; font-size: 13px; line-height: 1.2; font-family: var(--mono); }
+.dx .sigma .big b { font: 400 40px/0.9 var(--text); }
+.dx .vars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.dx .var { padding: 8px 10px; border: 1px solid var(--rule); border-radius: 6px; }
+.dx .var span { display: block; font: 400 12.5px var(--mono); color: var(--muted); }
+.dx .var b { font: 600 22px/1.3 var(--mono); }
+.dx .var.changed { border-color: var(--accent); background: var(--accent-soft); }
+.dx .expand { font: 400 15px/1.7 var(--mono); overflow-wrap: anywhere; }
+.dx .expand .new { color: var(--accent); font-weight: 600; }
+.dx .out { padding: 8px 12px; background: var(--ink); color: #fff; border-radius: 6px; font: 400 14px/1.5 var(--mono); min-height: 2.3em; }
+.dx th.name { text-transform: none; letter-spacing: 0; font-size: 13px; }
+</style>
+<div class="wrap">
+  <p class="lede">A sum written with a sigma is a loop in disguise. Step through the loop one line at a time and watch the running total grow by one term per pass.</p>
+
+  <section class="panel" aria-labelledby="lt-h1">
+    <h2 id="lt-h1">Choose a sum</h2>
+    <div class="row" role="group" aria-label="Sums" id="lt-presets"></div>
+    <div class="ctls">
+      <div class="ctl">
+        <label for="lt-n">Upper limit, N <output id="lt-nOut">5</output></label>
+        <input type="range" id="lt-n" min="1" max="12" step="1" value="5">
+        <small>The sum runs from i = 1 to i = N.</small>
+      </div>
+    </div>
+    <div class="sigma" aria-live="polite">
+      <span class="big"><span id="lt-top">5</span><b>Σ</b><span>i = 1</span></span>
+      <span id="lt-term">i²</span>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="lt-h2">
+      <h2 id="lt-h2">The loop</h2>
+      <div class="code" id="lt-code" aria-label="Python code"></div>
+      <div class="row">
+        <button class="primary" id="lt-step">Run next line</button>
+        <button id="lt-pass">Finish this pass</button>
+        <button id="lt-all">Run to the end</button>
+        <button id="lt-reset">Start over</button>
+      </div>
+      <p class="say" id="lt-say" aria-live="polite"></p>
+      <div class="out" id="lt-out" aria-label="Program output"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="lt-h3">
+      <h2 id="lt-h3">Variables</h2>
+      <div class="vars">
+        <div class="var" id="lt-vi"><span>i</span><b>—</b></div>
+        <div class="var" id="lt-vt"><span>new_term</span><b>—</b></div>
+        <div class="var" id="lt-vs"><span>total</span><b>—</b></div>
+      </div>
+      <h2>The sum so far</h2>
+      <p class="expand" id="lt-expand">&nbsp;</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="r">Pass</th><th class="r name">i</th><th class="r name">new_term</th><th class="r name">total</th></tr></thead>
+          <tbody id="lt-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="lt-h4">
+    <h2 id="lt-h4">What to notice</h2>
+    <ol>
+      <li><span class="mono">total</span> is set to 0 once, before the loop. If that line were inside the loop, the total would reset on every pass.</li>
+      <li><span class="mono">range(1, N + 1)</span> stops one short of its second value. To include N, the code has to ask for N + 1.</li>
+      <li>The loop body runs N times. Each pass does two things: it works out one term, then adds it to the total.</li>
+      <li>The lower and upper limits on the sigma match the two values in <span class="mono">range</span>. The expression to the right of the sigma matches the line that sets <span class="mono">new_term</span>.</li>
+      <li>For consecutive integers and for squares there is a shortcut formula. Compare it with the loop's answer once the loop ends.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const SUMS = [
+    { name: 'Consecutive integers', math: 'i', code: 'i', f: (i) => i, closed: (n) => [`N(N + 1) / 2`, n * (n + 1) / 2] },
+    { name: 'Squares', math: 'i²', code: 'i ** 2', f: (i) => i * i, closed: (n) => [`N(N + 1)(2N + 1) / 6`, n * (n + 1) * (2 * n + 1) / 6] },
+    { name: 'Odd numbers', math: '(2i − 1)', code: '2 * i - 1', f: (i) => 2 * i - 1, closed: (n) => [`N²`, n * n] },
+    { name: 'Powers of 2', math: '2ⁱ', code: '2 ** i', f: (i) => Math.pow(2, i), closed: (n) => [`2ᴺ⁺¹ − 2`, Math.pow(2, n + 1) - 2] },
+    { name: 'Halves', math: '(1 / 2ⁱ)', code: '1 / 2 ** i', f: (i) => 1 / Math.pow(2, i), closed: (n) => [`1 − 1 / 2ᴺ`, 1 - 1 / Math.pow(2, n)] },
+  ];
+  let sum = SUMS[1], N = 5, st;
+  const show = (v) => (Number.isInteger(v) ? String(v) : String(+v.toFixed(6)));
+
+  function lines() {
+    return ['total = 0', `for i in range(1, ${N + 1}):`, `    new_term = ${sum.code}`, '    total += new_term', 'print(total)'];
+  }
+  function reset() {
+    st = { pc: 0, i: null, term: null, total: null, rows: [], changed: '', done: false, out: '', say: 'Press "Run next line" to begin. The highlighted line is the one that runs next.' };
+    render();
+  }
+  // Runs the highlighted line and moves the highlight to the line that runs after it.
+  function step() {
+    if (st.done) return;
+    st.changed = '';
+    if (st.pc === 0) {
+      st.total = 0; st.changed = 'vs'; st.pc = 1;
+      st.say = 'total starts at 0. Nothing has been added yet.';
+    } else if (st.pc === 1) {
+      const next = st.i === null ? 1 : st.i + 1;
+      if (next <= N) {
+        st.i = next; st.changed = 'vi'; st.pc = 2;
+        st.say = `range(1, ${N + 1}) hands out its next value, so i becomes ${next}. This is pass ${next} of ${N}.`;
+      } else {
+        st.pc = 4;
+        st.say = `range(1, ${N + 1}) has no values left after ${N}, so the loop ends and the program moves on.`;
+      }
+    } else if (st.pc === 2) {
+      st.term = sum.f(st.i); st.changed = 'vt'; st.pc = 3;
+      st.say = `With i = ${st.i}, the term ${sum.code} works out to ${show(st.term)}.`;
+    } else if (st.pc === 3) {
+      const before = st.total;
+      st.total += st.term; st.changed = 'vs'; st.pc = 1;
+      st.rows.push({ i: st.i, term: st.term, total: st.total });
+      st.say = `total goes from ${show(before)} to ${show(before)} + ${show(st.term)} = ${show(st.total)}. The loop goes back to the top.`;
+    } else {
+      st.done = true; st.out = show(st.total);
+      const [formula, value] = sum.closed(N);
+      st.say = `The program prints ${show(st.total)}. The shortcut formula ${formula} gives ${show(value)} for N = ${N}.`;
+    }
+    render();
+  }
+  function render() {
+    $('lt-nOut').textContent = N; $('lt-top').textContent = N; $('lt-term').textContent = sum.math;
+    $('lt-code').innerHTML = lines().map((l, k) => `<div class="${!st.done && k === st.pc ? 'on' : ''}">${l.replace(/</g, '&lt;')}</div>`).join('');
+    const set = (id, v) => { $(id).querySelector('b').textContent = v === null ? '—' : show(v); $(id).classList.toggle('changed', st.changed === id.slice(3)); };
+    set('lt-vi', st.i); set('lt-vt', st.term); set('lt-vs', st.total);
+    $('lt-say').textContent = st.say;
+    $('lt-out').textContent = st.out;
+    $('lt-rows').innerHTML = st.rows.map((r, k) => `<tr><td class="r">${k + 1}</td><td class="r">${r.i}</td><td class="r">${show(r.term)}</td><td class="r">${show(r.total)}</td></tr>`).join('');
+    const terms = st.rows.map((r, k) => (k === st.rows.length - 1 && st.changed === 'vs' ? `<span class="new">${show(r.term)}</span>` : show(r.term)));
+    $('lt-expand').innerHTML = terms.length ? `${terms.join(' + ')} = ${show(st.total)}` : '&nbsp;';
+    ['lt-step', 'lt-pass', 'lt-all'].forEach((id) => { $(id).disabled = st.done; });
+    document.querySelectorAll('#lt-presets .chip').forEach((c, k) => c.setAttribute('aria-pressed', SUMS[k] === sum ? 'true' : 'false'));
+  }
+
+  $('lt-presets').innerHTML = SUMS.map((s, k) => `<button class="chip" data-k="${k}">${s.name}</button>`).join('');
+  document.querySelectorAll('#lt-presets .chip').forEach((c) => { c.onclick = () => { sum = SUMS[+c.dataset.k]; reset(); }; });
+  $('lt-n').oninput = (e) => { N = +e.target.value; reset(); };
+  $('lt-step').onclick = step;
+  $('lt-pass').onclick = () => { do step(); while (!st.done && st.pc !== 1); };
+  $('lt-all').onclick = () => { while (!st.done) step(); };
+  $('lt-reset').onclick = reset;
+  reset();
+})();
+</script>

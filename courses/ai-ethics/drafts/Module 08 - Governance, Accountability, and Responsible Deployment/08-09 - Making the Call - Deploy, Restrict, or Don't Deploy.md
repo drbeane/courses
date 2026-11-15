@@ -1,0 +1,115 @@
+# 08-09 — Making the Call: Deploy, Restrict, or Don't Deploy
+
+**Module:** 8 — Governance, Accountability, and Responsible Deployment
+**Estimated time:** 50 minutes (includes A5 work session)
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Integrate evidence, ethical analysis and governance requirements into a deployment decision.
+2. Distinguish deploy, restricted deploy and do-not-deploy recommendations, with conditions.
+3. Complete the A5 decision dossier.
+
+## Opening case: three real decisions
+
+1. **Restricted deploy:** In 2020, Amazon, IBM and Microsoft paused or ended sales of facial recognition to U.S. police. IBM exited general-purpose facial recognition. Microsoft said it wouldn't sell to police until a federal law governed the technology.
+2. **Don't deploy:** In 2018, Amazon scrapped its experimental recruiting model after finding it penalized women (03-03).
+3. **Deploy with conditions, then retreat:** In 2020, the UK used an algorithm to assign A-level grades. After public outcry about downgrades for students from historically lower-performing schools, the government reverted to teacher-assessed grades within days.
+
+Each was a judgment under uncertainty, made by weighing evidence, values and alternatives. This lesson gives you a structure for making such judgments.
+
+## Core ideas
+
+### The decision is not binary
+
+| Recommendation | When appropriate | Example |
+|---|---|---|
+| **Deploy** | Benefits clearly exceed risks; safeguards adequate; residual risk accepted by accountable owners; affected people have recourse | Spam filtering; well-validated decision support with strong oversight |
+| **Restricted deploy** | Benefits are real but risks are concentrated in specific uses, users or contexts | Limit to certain use cases; require human review; pilot with monitoring; exclude vulnerable groups; time-limited |
+| **Do not deploy** | Risks can't be adequately mitigated; evidence is insufficient; a less harmful alternative exists; the use is prohibited or violates rights | An emotion-recognition hiring tool; an unvalidated risk score |
+| **Defer** | Key information is missing and obtainable | Await an independent audit, consultation or legal clarity |
+
+### The decision structure
+
+Your A5 dossier follows this structure (from `03 - Assessments.md`):
+
+1. **Purpose and alternatives.** What problem? What's the non-AI or lower-automation alternative? *Is AI needed at all?* (the solutionism trap, 01-08)
+2. **Context.** System, data, vendor, affected population, stakeholder map (01-08). **Missing information stated honestly.**
+3. **Harms and benefits.** Ranked, with mechanism, affected groups, evidence label and uncertainty for each.
+4. **Evaluation.** Protocol and results, including at least one failure example and what changed because of it (A4).
+5. **Safeguards.** Each tied to a specific risk, with an **owner**, residual limitations and monitoring triggers (08-08).
+6. **Rights and obligations.** Data handling; a dated legal analysis (08-01, 08-02); a path to human review and redress.
+7. **Recommendation.** Deploy / restrict / don't deploy / defer, with assumptions and **conditions for reconsideration**.
+
+### Weighing: frameworks as a checklist, not an algorithm
+
+Use the Module 1 frameworks to stress-test your recommendation:
+
+- **Consequences:** Have you counted unmeasured harms and distribution (01-03)?
+- **Rights:** Does the system violate anyone's rights, even if the total benefit is positive (01-04)?
+- **Decency:** Have you given reasonable weight to those with least power (01-05)? Applied all four lenses?
+- **Justice:** Would you accept it behind the veil of ignorance (01-06)? Was the process fair?
+- **Five principles (01-07):** beneficence, non-maleficence, autonomy, justice, explicability.
+
+If frameworks conflict, **say so** and explain how you resolved the conflict.
+
+### Common decision errors
+
+- **Sunk-cost reasoning:** "We've already paid for it."
+- **Inevitability:** "If we don't, a competitor will."
+- **Moving the burden:** "Users can opt out."
+- **Over-trusting safeguards:** Human review that won't work in practice (03-09).
+- **Demo bias:** Impressive demos substituting for evidence.
+- **Ignoring the do-nothing option.**
+- **Treating "legal" as "acceptable"** (01-09).
+
+### Conditions for reconsideration
+
+A good recommendation states what would change it:
+
+- "Reconsider if independent audit finds impact ratios below 0.8."
+- "Reconsider deployment if the vendor provides disaggregated validation on our population."
+- "Reconsider after the EU high-risk obligations take effect and harmonized standards are published."
+
+This makes the decision **falsifiable** and **revisable**.
+
+### Grading note
+
+**A well-reasoned do-not-deploy recommendation can earn full marks.** A technically impressive deployment with unsupported safety claims cannot. The course rewards **judgment and evidence**, not enthusiasm or software sophistication.
+
+## Applying the frameworks
+
+This lesson *is* the application. The whole course converges here.
+
+## Discussion questions
+
+1. Is "restricted deploy" ever a way to avoid a hard "no"? How do you tell a genuine restriction from a cosmetic one?
+2. Should affected communities have a veto over deployments that primarily affect them?
+3. Microsoft conditioned police facial recognition sales on federal legislation. Is it legitimate for a company to make its ethics contingent on law?
+4. What's the hardest deployment decision you've seen in this course? What would you have decided?
+
+## A5 work session (30 minutes)
+
+1. Draft your **recommendation** (one paragraph) and **conditions for reconsideration** (three bullets).
+2. Check your dossier against the seven required sections. Mark any that are thin.
+3. List the **two weakest claims** in your evidence. Your peer reviewer will look for these (A6).
+4. Prepare your **10-minute defense** outline: purpose, key evidence, top risks, safeguards, recommendation, what would change your mind.
+
+## Key terms
+
+- **Restricted deployment:** Limited use with conditions.
+- **Residual risk:** Risk remaining after safeguards.
+- **Conditions for reconsideration:** Evidence that would change a decision.
+- **Solutionism:** Assuming technology is the answer (01-08).
+
+## Connections
+
+- Every module · Assessments A5 and A6 · Defense in 08-10
+
+## Sources and further reading
+
+- Microsoft, "Facial recognition: It's time for action" (Brad Smith, 2018) and the June 2020 policing statement; IBM CEO letter to Congress (June 8, 2020). — [Microsoft 2018 statement — Free full text](https://blogs.microsoft.com/on-the-issues/2018/12/06/facial-recognition-its-time-for-action/); [IBM letter in government filing — Free archived full text](https://downloads.regulations.gov/BIS-2020-0021-0005/attachment_1.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r386). <!-- reading-access -->
+- Ofqual, *Awarding GCSE, AS, A level, advanced extension awards and extended project qualifications in summer 2020: interim report* (Aug 2020). — [Free full text](https://www.gov.uk/government/publications/awarding-gcse-as-a-levels-in-summer-2020-interim-report); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r387). <!-- reading-access -->
+- Raji, I.D. et al. "The Fallacy of AI Functionality," *FAccT 2022*, on whether systems work at all. — [Free manuscript](https://arxiv.org/abs/2206.09511); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r388). <!-- reading-access -->
+- Barocas, S. et al. "When Not to Design, Build, or Deploy," *FAT\* 2020* tutorial; Baumer, E. & Silberman, M.S. "When the Implication Is Not to Design (Technology)," *CHI 2011*. — [Barocas et al. session — Free full text](https://when-not-to-build.github.io/); [Baumer and Silberman paper — Free manuscript](https://ics.uci.edu/~djp3/classes/2011_01_INF134/papers/impl9-rev.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r389). <!-- reading-access -->

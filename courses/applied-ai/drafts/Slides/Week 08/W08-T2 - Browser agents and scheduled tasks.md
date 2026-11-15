@@ -1,0 +1,109 @@
+---
+marp: true
+title: "Week 8: Browser Agents and Scheduled Tasks"
+paginate: true
+---
+
+# Browser Agents and Scheduled Tasks
+### Week 8
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Browser and Computer-Use Agents
+
+- The agent **operates a browser**: clicks, types, reads pages
+- Useful for sites with no connector
+- Example: Claude in Chrome
+
+<!-- Demo: a research or form-filling task on a test site. -->
+
+---
+
+## How It Works
+
+1. Look at the page
+2. Decide on **one** action
+3. Carry it out
+4. Look again, and repeat
+
+Every click is a full step of the loop. Thirty seconds for you is minutes for the agent.
+
+---
+
+## Connector or Browser Agent?
+
+| | Connector | Browser agent |
+|---|---|---|
+| Speed | Fast | Slow |
+| Reliability | High | Lower |
+| Works where | Where one exists | Almost any site |
+
+Use a connector when one exists.
+
+---
+
+## Where Browser Agents Fail
+
+- Slow and literal
+- Confused by pop-ups, logins, changing layouts
+- **Reads untrusted content**: every web page is input
+- Can click the wrong thing
+- Works in your signed-in browser
+
+Watch it the first few times.
+
+---
+
+## Supervising a Browser Agent
+
+- Keep approvals on for submit, send, pay
+- Enter passwords and payment details **yourself**
+- Limit the sites it can visit
+- Brief it: "stop before submitting so I can check"
+
+---
+
+## Background and Scheduled Tasks
+
+- **Hand off** a task and walk away
+- **Schedule** a task to run every morning or week
+- Review what it did when you return
+
+Delegation now includes **time**.
+
+---
+
+## What You Lose
+
+You can't:
+
+- read the plan before each run
+- approve actions as they come up
+- interrupt
+
+So the brief has to carry more.
+
+---
+
+## A Brief for a Run You Won't See
+
+- Say what to do when something is **missing**
+- Keep it to **reading and saving**
+- Ask for a **log** at the end of each run
+- **Date** the output
+
+Run it by hand twice before you schedule it.
+
+---
+
+## Reviewing Work Done While You Were Away
+
+- What ran, and when?
+- What did it change?
+- Did anything fail silently?
+- Would you notice a bad run?
+
+"No events today" can mean the calendar couldn't be reached.
+
+<!-- Show yesterday's scheduled task and how you'd check it. -->

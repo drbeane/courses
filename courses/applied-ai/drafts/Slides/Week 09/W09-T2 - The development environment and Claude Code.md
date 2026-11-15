@@ -1,0 +1,126 @@
+---
+marp: true
+title: "Week 9: The Development Environment and Claude Code"
+paginate: true
+---
+
+# The Development Environment and Claude Code
+### Week 9
+COSC-300/500 Applied AI Essentials
+
+---
+
+## The Tour
+
+| Tool | What it does |
+|---|---|
+| **VS Code** | The editor: files, terminal, extensions |
+| **Terminal** | Run commands |
+| **Git** | Track every change; undo any of them |
+| **GitHub** | Store and share the repository online |
+
+Git is on your computer. GitHub is a website.
+
+---
+
+## Git in Four Moves
+
+- **commit**: save a snapshot with a message
+- **diff**: see exactly what changed
+- **revert**: undo a change
+- **push**: send it to GitHub
+
+**Small commits are your safety net.**
+
+---
+
+## Reading a Diff
+
+```diff
+ function total(expenses) {
+-  return expenses.length;
++  return expenses.reduce((sum, e) => sum + e.amount, 0);
+ }
+```
+
+Minus: removed. Plus: added.
+
+One line, inside `total`. A count became a sum.
+
+<!-- Students don't need to follow the code. Ask what they can tell without it. -->
+
+---
+
+## Questions to Ask of a Diff
+
+- Is it the **size** I expected?
+- Is it in the **places** I expected?
+- Was anything **deleted**?
+- What should I ask about?
+
+"Explain this change in plain language."
+
+---
+
+## Small Commits
+
+| | One big commit | One per working step |
+|---|---|---|
+| Something breaks | Which change? | The last one |
+| Undo | Lose everything | Go back one |
+| Review | Hundreds of lines | Readable |
+
+Broken, and the fix isn't obvious? **Go back** and try again.
+
+---
+
+## Claude Code in VS Code
+
+- Plan mode: `Shift+Tab` or `/plan`
+- Permission modes: ask, accept edits, auto
+- Instruction file: `CLAUDE.md` (or `AGENTS.md`)
+- `/context`: what's filling the context window
+- `/usage`: what you've used against your plan
+
+<!-- Verify current shortcuts and command names in the installed version before class. -->
+
+---
+
+## An Instruction File for a Project
+
+```markdown
+# Budget tracker
+## Technology
+- Plain HTML, CSS, JavaScript. No frameworks.
+## How to run
+Open `index.html` in a browser.
+## Rules
+- One feature at a time, then stop.
+- Don't add dependencies without asking.
+- I'm not a programmer. Explain each change.
+```
+
+---
+
+## `/context` Is a Lesson in Itself
+
+Run it on a fresh session:
+
+- System prompt and tools use tokens **before you type**
+- Instruction files and connectors have a **standing cost**
+- Compaction (`/compact`) discards detail
+
+Week 2's context window, made visible.
+
+---
+
+## A Working Rhythm
+
+1. **Describe** one feature
+2. **Plan**: read and edit
+3. **Build**
+4. **Run** it yourself
+5. **Read the diff**
+6. **Commit**
+
+Then the next feature.

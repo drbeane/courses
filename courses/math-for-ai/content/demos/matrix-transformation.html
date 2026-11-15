@@ -1,0 +1,150 @@
+<style>
+.dx .mgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.dx canvas.plot.sq { height: 440px; cursor: crosshair; }
+.dx .c1 { color: #a86400; } .dx .c2 { color: #17804a; }
+@media (max-width: 520px) { .dx canvas.plot.sq { height: 320px; } }
+</style>
+<div class="wrap">
+  <p class="lede">A 2 × 2 matrix A moves every point x of the plane to a new point Ax. Change the four entries and watch the whole grid move. Drag the dark arrow to pick the point x.</p>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="mt-h1">
+      <h2 id="mt-h1">The plane after the transformation</h2>
+      <canvas class="plot sq" id="mt-plot" role="img" aria-label="Grid of the plane transformed by the matrix"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--accent)"></i>Transformed grid and the point Ax</span>
+        <span><i class="sw" style="background:var(--ink)"></i>The point x</span>
+        <span><i class="sw" style="background:#a86400"></i>First column of A</span>
+        <span><i class="sw" style="background:#17804a"></i>Second column of A</span>
+        <span>Dashed lines: eigenvector directions</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="mt-h2">
+      <h2 id="mt-h2">The matrix A</h2>
+      <div class="row" role="group" aria-label="Example matrices" id="mt-presets"></div>
+      <div class="mgrid">
+        <div class="ctl"><label for="mt-a" class="c1">a (row 1, column 1) <output id="mt-aOut"></output></label><input type="range" id="mt-a" min="-3" max="3" step="0.1"></div>
+        <div class="ctl"><label for="mt-b" class="c2">b (row 1, column 2) <output id="mt-bOut"></output></label><input type="range" id="mt-b" min="-3" max="3" step="0.1"></div>
+        <div class="ctl"><label for="mt-c" class="c1">c (row 2, column 1) <output id="mt-cOut"></output></label><input type="range" id="mt-c" min="-3" max="3" step="0.1"></div>
+        <div class="ctl"><label for="mt-d" class="c2">d (row 2, column 2) <output id="mt-dOut"></output></label><input type="range" id="mt-d" min="-3" max="3" step="0.1"></div>
+      </div>
+      <h2>The point x</h2>
+      <div class="mgrid">
+        <div class="ctl"><label for="mt-x1">x₁ <output id="mt-x1Out"></output></label><input type="range" id="mt-x1" min="-3" max="3" step="0.1"></div>
+        <div class="ctl"><label for="mt-x2">x₂ <output id="mt-x2Out"></output></label><input type="range" id="mt-x2" min="-3" max="3" step="0.1"></div>
+      </div>
+      <div class="formula" id="mt-formula" aria-live="polite"></div>
+      <div class="stats">
+        <div class="stat"><b id="mt-det"></b><span>determinant</span></div>
+        <div class="stat"><b id="mt-eig"></b><span>eigenvalues</span></div>
+      </div>
+      <p class="say" id="mt-say" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="mt-h3">
+    <h2 id="mt-h3">What to notice</h2>
+    <ol>
+      <li>The two columns of A are where the points (1, 0) and (0, 1) land. Once you know those two arrows, you know where every point goes.</li>
+      <li>Straight grid lines stay straight and evenly spaced, and the origin never moves. That is what makes the transformation linear.</li>
+      <li>The shaded shape is the image of the unit square. Its area is the size of the determinant. A negative determinant means the plane has been flipped over.</li>
+      <li>Choose "Singular". The determinant is 0, the whole plane collapses onto one line, and different points land on the same spot. Nothing can undo that, so the matrix has no inverse.</li>
+      <li>Drag x onto a dashed line. Ax then lies on the same line as x: the matrix only stretches it, by the eigenvalue. That is the equation Ax = λx.</li>
+      <li>Choose "Rotate 45°". Every point turns, so no direction is kept, and the matrix has no real eigenvalues.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num, C1 = '#a86400', C2 = '#17804a';
+  const r = Math.SQRT1_2;
+  const PRESETS = [
+    ['Identity', 1, 0, 0, 1], ['Stretch', 2, 0, 0, 0.5], ['Shear', 1, 1, 0, 1], ['Rotate 45°', r, -r, r, r],
+    ['Reflect', 0, 1, 1, 0], ['Symmetric', 2, 1, 1, 2], ['Singular', 1, 2, 0.5, 1],
+  ];
+  let A = { a: 2, b: 1, c: 1, d: 2 }, x = [1, 0.5], P, dragging = false;
+
+  function eigen() {
+    const { a, b, c, d } = A, tr = a + d, det = a * d - b * c, disc = tr * tr - 4 * det;
+    if (disc < -1e-9) return { det, complex: true, re: tr / 2, im: Math.sqrt(-disc) / 2 };
+    const s = Math.sqrt(Math.max(0, disc)), vals = [(tr + s) / 2, (tr - s) / 2];
+    if (Math.abs(b) < 1e-9 && Math.abs(c) < 1e-9 && Math.abs(a - d) < 1e-9) return { det, vals, every: true, vecs: [] };
+    const vecs = vals.map((l) => (Math.abs(b) > 1e-9 ? [b, l - a] : Math.abs(c) > 1e-9 ? [l - d, c] : Math.abs(l - a) < 1e-9 ? [1, 0] : [0, 1]));
+    return { det, vals, vecs, repeated: s < 1e-9 };
+  }
+  const T = (p) => [A.a * p[0] + A.b * p[1], A.c * p[0] + A.d * p[1]];
+
+  function draw() {
+    P = DX.plot($('mt-plot'), { xmin: -4, xmax: 4, ymin: -4, ymax: 4, equal: true, margin: { l: 30, r: 8, t: 8, b: 22 } });
+    P.axes({ xstep: 1, ystep: 1 });
+    const col = P.col, soft = DX.tint(col.accent, 0.35), e = eigen();
+    P.clip(() => {
+      for (let k = -8; k <= 8; k++) {
+        P.path([T([k, -9]), T([k, 9])], soft, 1);
+        P.path([T([-9, k]), T([9, k])], soft, 1);
+      }
+      P.poly([[0, 0], [1, 0], [1, 1], [0, 1]], null, col.muted, 1);
+      P.poly([[0, 0], T([1, 0]), T([1, 1]), T([0, 1])], DX.tint(col.accent, 0.22), col.accent, 1.5);
+      if (e.vecs) e.vecs.forEach((v, i) => {
+        if (i === 1 && e.repeated) return;
+        const n = Math.hypot(v[0], v[1]) || 1, u = [v[0] / n * 12, v[1] / n * 12];
+        P.seg(-u[0], -u[1], u[0], u[1], col.ink, 1.2, [5, 5]);
+      });
+      P.arrow(0, 0, A.a, A.c, C1); P.arrow(0, 0, A.b, A.d, C2);
+      const y = T(x);
+      P.arrow(0, 0, y[0], y[1], col.accent, 3); P.arrow(0, 0, x[0], x[1], col.ink, 3);
+      P.label('Ax', y[0], y[1], col.accent); P.label('x', x[0], x[1], col.ink);
+    });
+  }
+
+  function render() {
+    for (const k of ['a', 'b', 'c', 'd']) { $('mt-' + k).value = A[k]; $('mt-' + k + 'Out').textContent = num(A[k], 1); }
+    $('mt-x1').value = x[0]; $('mt-x2').value = x[1];
+    $('mt-x1Out').textContent = num(x[0], 1); $('mt-x2Out').textContent = num(x[1], 1);
+    const y = T(x), e = eigen(), f = (v) => num(v, 1).padStart(5);
+    $('mt-formula').textContent =
+      `Ax = [${f(A.a)} ${f(A.b)}] [${f(x[0])}]  =  [${num(A.a, 1)}·${num(x[0], 1)} + ${num(A.b, 1)}·${num(x[1], 1)}]  =  [${num(y[0], 2).padStart(6)}]\n` +
+      `     [${f(A.c)} ${f(A.d)}] [${f(x[1])}]     [${num(A.c, 1)}·${num(x[0], 1)} + ${num(A.d, 1)}·${num(x[1], 1)}]     [${num(y[1], 2).padStart(6)}]`;
+    $('mt-det').textContent = num(e.det, 2);
+    $('mt-eig').textContent = e.complex ? `${num(e.re, 2)} ± ${num(e.im, 2)}i` : e.repeated || e.every ? num(e.vals[0], 2) : `${num(e.vals[0], 2)}, ${num(e.vals[1], 2)}`;
+    let say;
+    if (Math.abs(e.det) < 1e-9) say = 'The determinant is 0. The plane is squashed onto a line (or a single point), so A is singular and has no inverse.';
+    else say = `Areas are multiplied by ${num(Math.abs(e.det), 2)}${e.det < 0 ? ', and the plane is flipped over because the determinant is negative' : ''}.`;
+    if (e.complex) say += ' The eigenvalues are not real numbers, so no direction keeps its line.';
+    else if (e.every) say += ` Every direction is an eigenvector, with eigenvalue ${num(e.vals[0], 2)}.`;
+    else {
+      const cross = x[0] * y[1] - x[1] * y[0], len = Math.hypot(x[0], x[1]);
+      if (len > 0.05 && Math.abs(cross) < 0.06 * len * Math.max(1, Math.hypot(y[0], y[1]))) {
+        const lam = (x[0] * y[0] + x[1] * y[1]) / (len * len);
+        say += ` Right now x sits on an eigenvector direction: Ax is ${num(lam, 2)} times x.`;
+      }
+    }
+    $('mt-say').textContent = say;
+    document.querySelectorAll('#mt-presets .chip').forEach((c, k) => {
+      const p = PRESETS[k];
+      c.setAttribute('aria-pressed', ['a', 'b', 'c', 'd'].every((n, j) => Math.abs(A[n] - p[j + 1]) < 0.051) ? 'true' : 'false');
+    });
+    draw();
+  }
+
+  $('mt-presets').innerHTML = PRESETS.map((p, k) => `<button class="chip" data-k="${k}">${p[0]}</button>`).join('');
+  document.querySelectorAll('#mt-presets .chip').forEach((c) => {
+    c.onclick = () => { const p = PRESETS[+c.dataset.k]; A = { a: p[1], b: p[2], c: p[3], d: p[4] }; render(); };
+  });
+  for (const k of ['a', 'b', 'c', 'd']) $('mt-' + k).oninput = (ev) => { A[k] = +ev.target.value; render(); };
+  $('mt-x1').oninput = (ev) => { x[0] = +ev.target.value; render(); };
+  $('mt-x2').oninput = (ev) => { x[1] = +ev.target.value; render(); };
+  const cv = $('mt-plot');
+  const move = (ev) => {
+    const p = P.at(ev), snap = (v) => Math.max(-3, Math.min(3, Math.round(v * 10) / 10));
+    x = [snap(p.x), snap(p.y)]; render();
+  };
+  cv.addEventListener('pointerdown', (ev) => { dragging = true; cv.setPointerCapture(ev.pointerId); move(ev); });
+  cv.addEventListener('pointermove', (ev) => { if (dragging) move(ev); });
+  cv.addEventListener('pointerup', () => { dragging = false; });
+  DX.onResize(draw);
+  render();
+})();
+</script>

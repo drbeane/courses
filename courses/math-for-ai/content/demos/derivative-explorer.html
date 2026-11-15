@@ -1,0 +1,135 @@
+<style>
+.dx .sec { color: #a86400; }
+.dx th.name { text-transform: none; letter-spacing: 0; font-size: 13px; }
+</style>
+<div class="wrap">
+  <p class="lede">The derivative at a point is the slope of the tangent line there. A secant line through two nearby points estimates that slope, and the estimate improves as the points move together.</p>
+
+  <section class="panel" aria-labelledby="de-h0">
+    <h2 id="de-h0">Choose a function</h2>
+    <div class="row" role="group" aria-label="Functions" id="de-presets"></div>
+    <div class="ctls">
+      <div class="ctl">
+        <label for="de-x"><span>Point, <span id="de-var">x</span>₀</span> <output id="de-xOut"></output></label>
+        <input type="range" id="de-x" step="0.01">
+      </div>
+      <div class="ctl">
+        <label for="de-h">Gap between the two points, h <output id="de-hOut"></output></label>
+        <input type="range" id="de-h" min="-3" max="0.3" step="0.01" value="0">
+        <small>Slide left to bring the second point closer.</small>
+      </div>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="de-h1">
+      <h2 id="de-h1">The function, with its secant and tangent lines</h2>
+      <canvas class="plot" id="de-plot" role="img" aria-label="Graph of the function with a secant line and a tangent line"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--ink)"></i>f</span>
+        <span><i class="sw" style="background:#a86400"></i>Secant line through the two points</span>
+        <span><i class="sw" style="background:var(--accent)"></i>Tangent line at the point</span>
+      </div>
+      <h2>The derivative</h2>
+      <canvas class="plot short" id="de-plot2" role="img" aria-label="Graph of the derivative"></canvas>
+      <p class="hint">The height of this graph at each point is the slope of the graph above it.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="de-h2">
+      <h2 id="de-h2">Slopes at this point</h2>
+      <div class="formula" id="de-formula" aria-live="polite"></div>
+      <div class="stats">
+        <div class="stat"><b id="de-sec" class="sec"></b><span>secant slope</span></div>
+        <div class="stat"><b id="de-tan"></b><span>derivative (tangent slope)</span></div>
+        <div class="stat"><b id="de-err"></b><span>difference</span></div>
+      </div>
+      <p class="say" id="de-say" aria-live="polite"></p>
+      <h2>Shrinking the gap</h2>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th class="r name">h</th><th class="r">Secant slope</th><th class="r">Off by</th></tr></thead>
+          <tbody id="de-rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="de-h3">
+    <h2 id="de-h3">What to notice</h2>
+    <ol>
+      <li>The secant slope is rise over run between two points on the graph: (f(x₀ + h) − f(x₀)) / h. As h shrinks, the secant line turns into the tangent line and its slope settles on one number. That number is the derivative.</li>
+      <li>You cannot set h to 0, because the formula would divide by zero. The derivative is the limit: the value the slopes approach.</li>
+      <li>Where the function is rising, the derivative is positive. Where it is falling, the derivative is negative. The steeper the graph, the farther the derivative is from 0.</li>
+      <li>At a peak or a valley the tangent line is flat and the derivative is 0. These are the critical points. Find them on "x³ − 3x" and check where the derivative graph crosses the axis.</li>
+      <li>For the ball, the derivative of height is velocity. It is positive on the way up, 0 at the top, and negative on the way down.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num, SEC = '#a86400';
+  const FUNCS = [
+    { name: 'x²', v: 'x', text: 'f(x) = x²', dtext: "f′(x) = 2x", f: (x) => x * x, d: (x) => 2 * x, x: [-3, 3], y: [-1, 9], x0: 1 },
+    { name: 'x³ − 3x', v: 'x', text: 'f(x) = x³ − 3x', dtext: "f′(x) = 3x² − 3", f: (x) => x ** 3 - 3 * x, d: (x) => 3 * x * x - 3, x: [-2.5, 2.5], y: [-5, 5], x0: -1.6 },
+    { name: 'sin x', v: 'x', text: 'f(x) = sin x', dtext: "f′(x) = cos x", f: Math.sin, d: Math.cos, x: [-6.3, 6.3], y: [-1.6, 1.6], x0: 0.8 },
+    { name: 'eˣ', v: 'x', text: 'f(x) = eˣ', dtext: "f′(x) = eˣ", f: Math.exp, d: Math.exp, x: [-3, 2.4], y: [-1, 11], x0: 1 },
+    { name: 'Height of a ball', v: 't', text: 'h(t) = 128t − 16t²   (feet, t in seconds)', dtext: "h′(t) = 128 − 32t   (feet per second)", f: (t) => 128 * t - 16 * t * t, d: (t) => 128 - 32 * t, x: [0, 8], y: [-20, 280], x0: 2 },
+  ];
+  let fn = FUNCS[1], x0 = fn.x0, h = 1;
+
+  function draw() {
+    const P = DX.plot($('de-plot'), { xmin: fn.x[0], xmax: fn.x[1], ymin: fn.y[0], ymax: fn.y[1] });
+    P.axes();
+    const col = P.col, y0 = fn.f(x0), x1 = x0 + h, y1 = fn.f(x1), ms = (y1 - y0) / h, mt = fn.d(x0), far = (fn.x[1] - fn.x[0]) * 2;
+    P.curve(fn.f, col.ink, 2.5);
+    P.clip(() => {
+      P.seg(x0 - far, y0 - far * ms, x0 + far, y0 + far * ms, SEC, 2, [6, 4]);
+      P.seg(x0 - far, y0 - far * mt, x0 + far, y0 + far * mt, col.accent, 2.5);
+      P.dot(x1, y1, SEC, 5, true);
+      P.dot(x0, y0, col.accent, 6);
+    });
+    // The derivative graph, with its range taken from the values it reaches on this interval.
+    let lo = 0, hi = 0;
+    for (let i = 0; i <= 200; i++) { const v = fn.d(fn.x[0] + (fn.x[1] - fn.x[0]) * i / 200); lo = Math.min(lo, v); hi = Math.max(hi, v); }
+    const pad = (hi - lo) * 0.12 || 1;
+    const Q = DX.plot($('de-plot2'), { xmin: fn.x[0], xmax: fn.x[1], ymin: lo - pad, ymax: hi + pad });
+    Q.axes();
+    Q.curve(fn.d, col.accent, 2.5);
+    Q.clip(() => { Q.seg(x0, 0, x0, mt, col.accent, 1.5, [4, 3]); Q.dot(x0, mt, col.accent, 6); });
+  }
+
+  function render() {
+    const v = fn.v, y0 = fn.f(x0), ms = (fn.f(x0 + h) - y0) / h, mt = fn.d(x0);
+    $('de-var').textContent = v;
+    $('de-xOut').textContent = num(x0, 2); $('de-hOut').textContent = h < 0.01 ? h.toFixed(4) : num(h, 2);
+    $('de-formula').textContent = `${fn.text}\n${fn.dtext}\n\nsecant slope = (f(${num(x0, 2)} + ${h < 0.01 ? h.toFixed(4) : num(h, 2)}) − f(${num(x0, 2)})) / ${h < 0.01 ? h.toFixed(4) : num(h, 2)}`;
+    $('de-sec').textContent = num(ms, 3); $('de-tan').textContent = num(mt, 3); $('de-err').textContent = num(Math.abs(ms - mt), 4);
+    const scale = Math.max(...[0, 0.25, 0.5, 0.75, 1].map((t) => Math.abs(fn.d(fn.x[0] + (fn.x[1] - fn.x[0]) * t)))) || 1;
+    const what = fn.v === 't' ? 'The ball is' : 'The function is';
+    $('de-say').textContent = Math.abs(mt) < 0.02 * scale
+      ? `At ${v} = ${num(x0, 2)} the tangent line is nearly flat. This is at or very near a critical point, where the derivative is 0.`
+      : mt > 0
+        ? `${what} ${fn.v === 't' ? 'rising' : 'increasing'} at ${v} = ${num(x0, 2)}: the derivative is positive. A small step to the right raises the value by about ${num(mt, 2)} times the step.`
+        : `${what} ${fn.v === 't' ? 'falling' : 'decreasing'} at ${v} = ${num(x0, 2)}: the derivative is negative. A small step to the right lowers the value by about ${num(-mt, 2)} times the step.`;
+    $('de-rows').innerHTML = [1, 0.5, 0.1, 0.01, 0.001].map((k) => {
+      const s = (fn.f(x0 + k) - y0) / k;
+      return `<tr><td class="r">${k}</td><td class="r">${num(s, 4)}</td><td class="r">${num(Math.abs(s - mt), 4)}</td></tr>`;
+    }).join('') + `<tr><td class="r">limit</td><td class="r"><b>${num(mt, 4)}</b></td><td class="r">0</td></tr>`;
+    document.querySelectorAll('#de-presets .chip').forEach((c, k) => c.setAttribute('aria-pressed', FUNCS[k] === fn ? 'true' : 'false'));
+    draw();
+  }
+  function choose(f) {
+    fn = f; x0 = f.x0;
+    const s = $('de-x'); s.min = f.x[0] + (f.x[1] - f.x[0]) * 0.04; s.max = f.x[1] - (f.x[1] - f.x[0]) * 0.04; s.value = x0;
+    render();
+  }
+  $('de-presets').innerHTML = FUNCS.map((f, k) => `<button class="chip" data-k="${k}">${f.name}</button>`).join('');
+  document.querySelectorAll('#de-presets .chip').forEach((c) => { c.onclick = () => choose(FUNCS[+c.dataset.k]); });
+  $('de-x').oninput = (ev) => { x0 = +ev.target.value; render(); };
+  // The gap slider works on a log scale, so it can reach very small values of h.
+  $('de-h').oninput = (ev) => { h = Math.pow(10, +ev.target.value); render(); };
+  DX.onResize(draw);
+  choose(fn);
+})();
+</script>

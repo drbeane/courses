@@ -1,0 +1,117 @@
+---
+marp: true
+title: "Week 15: Course Synthesis"
+paginate: true
+---
+
+# Course Synthesis
+### Week 15
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Back to Week 1: The Surfaces Map
+
+| Surface | Where we used it |
+|---|---|
+| Chat | Weeks 1–5 |
+| Embedded copilot | Weeks 5, 14 |
+| Coding assistant | Weeks 9–10 |
+| Local agent | Weeks 6–9 |
+| Cloud / scheduled | Weeks 8, 13 |
+| Browser agent | Week 8 |
+| Always-on | Week 13 |
+| API | Weeks 11–12 |
+
+---
+
+## Seven Stages
+
+1. Chat With an AI
+2. Ground It in Sources and Files
+3. Let It Act on Your Computer
+4. Have It Build Software
+5. Build With It Directly
+6. Agents That Work While You're Away
+7. Put It All Together
+
+Each stage: **more autonomy** for the tool, **more oversight** from you.
+
+---
+
+## One Mechanism Underneath
+
+- A **model** that predicts text
+- A **context window**
+- **Tools**, and a **harness** that runs them
+- **Instructions** that persist
+- **Retrieval**
+
+Every product is an arrangement of these five.
+
+---
+
+## The 4D Framework, Revisited
+
+- **Delegation**: you learned what to hand off, and what not to
+- **Description**: prompts → briefs → instruction files → skills → specs
+- **Discernment**: fact-checks → citation audits → code review → evaluation sets
+- **Diligence**: privacy → permissions → injection → policy
+
+None of the early forms was replaced.
+
+---
+
+## Habits That Ran Through Every Week
+
+- One fluent answer proves nothing
+- Check where the risk is
+- Plan before acting, and read the plan
+- Small steps you can undo
+- The least access the task needs
+- You're responsible for what goes out under your name
+
+---
+
+## What Changed in the Tools This Term?
+
+- New models?
+- New features, new limits, new prices?
+- Anything we taught that's already out of date?
+
+<!-- Prepare a short list of real changes from the semester. -->
+
+---
+
+## How Do You Keep Up?
+
+- Watch **surfaces and capabilities**, not product names
+- Keep a **test set** for the work you care about; rerun it on new tools
+- Read vendor changelogs, not just headlines
+- Keep the habits: **brief, review, verify, limit access**
+
+---
+
+## A Tool You've Never Seen
+
+1. What kind of **surface**?
+2. What can it **see**?
+3. What can it **do**? Can it be undone?
+4. What **persists** between uses?
+5. Where does my **data** go?
+6. How will I know when it's **wrong**?
+7. What does it **cost**?
+
+Then run your own test set.
+
+---
+
+## What Stays Yours
+
+What the tools **can** do keeps growing.
+
+What you **want** them to do is still your decision.
+
+That's Delegation: the first skill in the course, and the one you'll use most.
+
+<!-- Lead into the final journal entry: what will you never delegate, and why? -->

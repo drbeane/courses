@@ -1,0 +1,118 @@
+<style>
+.dx canvas.plot.at { height: 420px; cursor: grab; }
+.dx .at-bar { display: grid; grid-template-columns: 5rem 3.6rem 1fr 3.8rem; gap: 10px; align-items: center; font-size: 14px; padding: 3px 0; }
+.dx .at-bar .track { height: 16px; background: var(--wash); border-radius: 3px; }
+.dx .at-bar .fill { display: block; height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.12s; }
+.dx .at-bar .mono { text-align: right; }
+.dx .at-bar.q > :first-child { font-weight: 700; color: var(--accent); }
+.dx .at-head { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.dx table.at-mat td, .dx table.at-mat th { text-align: center; font-family: var(--mono); font-size: 13px; }
+.dx table.at-mat th { text-transform: none; letter-spacing: 0; font-size: 13px; }
+.dx table.at-mat tr.q th:first-child { color: var(--accent); font-weight: 700; }
+@media (max-width: 520px) { .dx canvas.plot.at { height: 320px; } }
+</style>
+<div class="wrap">
+  <p class="lede">Attention gives each token a new vector: a weighted average of all the token vectors, with the most weight on the tokens whose vectors point the same way as its own. Choose a token, drag the vectors, and watch the weights follow.</p>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="at-h1">
+      <h2 id="at-h1">Token vectors</h2>
+      <canvas class="plot at" id="at-plot" role="img" aria-label="Token vectors and the attention output"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--accent)"></i>The token being updated</span>
+        <span><i class="sw" style="background:var(--muted)"></i>Other tokens</span>
+        <span><i class="sw" style="background:var(--ink)"></i>Its new vector (the output)</span>
+      </div>
+      <p class="hint">Drag the tip of any arrow. Real embeddings have hundreds of numbers each. These have two so they can be drawn.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="at-h2">
+      <h2 id="at-h2">Attention for one token</h2>
+      <div class="row" role="group" aria-label="Token to update" id="at-tokens"></div>
+      <div class="ctl">
+        <label for="at-s">Divide the scores by <output id="at-sOut"></output></label>
+        <input type="range" id="at-s" min="0.25" max="6" step="0.05" value="1">
+        <small>A real model divides by a constant so the scores do not grow too large. It works like a temperature.</small>
+      </div>
+      <div>
+        <div class="at-bar at-head"><span>Token</span><span class="mono">Score</span><span>Weight</span><span></span></div>
+        <div id="at-bars" aria-live="polite"></div>
+      </div>
+      <div class="formula" id="at-formula" aria-live="polite"></div>
+      <p class="say" id="at-say" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section class="panel" aria-labelledby="at-h3">
+    <h2 id="at-h3">Weights for every token at once</h2>
+    <p>Each row holds the weights one token gives to every token. Each row sums to 1. The whole table comes from one matrix product, followed by a softmax of each row.</p>
+    <div class="tablewrap"><table class="at-mat" id="at-mat"></table></div>
+  </section>
+
+  <section class="panel notice" aria-labelledby="at-h4">
+    <h2 id="at-h4">What to notice</h2>
+    <ol>
+      <li>The score between two tokens is the dot product of their vectors. It is large when the vectors are long and point the same way, near 0 when they are perpendicular, and negative when they point in opposite directions.</li>
+      <li>Softmax turns the scores into weights that are positive and sum to 1. The output is the average of the vectors, each counted according to its weight, so it always lies among them.</li>
+      <li>Choose "it". Its vector points nearly the same way as the vector for "trophy", so it gives "trophy" a large weight and its new vector moves toward it. Now drag "it" toward "suitcase" and watch the weights switch.</li>
+      <li>A token usually gives a large weight to itself, because a vector always points the same way as itself.</li>
+      <li>Divide the scores by a large number and the weights even out, so every token gets a plain average of all the vectors. Divide by a small number and each token attends to a single token.</li>
+      <li>Nothing here was learned. In a real model, the vectors are multiplied by weight matrices before the dot products are taken, and training adjusts those matrices so that the useful tokens get the high scores.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  const TOKENS = ['the', 'trophy', 'suitcase', 'it'];
+  let X = [[0.4, -0.5], [2.2, 1.0], [-1.2, 2.0], [1.7, 1.2]], q = 3, scale = 1, P, grab = -1;
+  const dot = (u, v) => u[0] * v[0] + u[1] * v[1];
+  function softmax(s) { const m = Math.max(...s), e = s.map((v) => Math.exp(v - m)), t = e.reduce((a, b) => a + b, 0); return e.map((v) => v / t); }
+  const scoresFor = (i) => X.map((x) => dot(x, X[i]) / scale);
+  const blend = (w) => [w.reduce((s, wi, i) => s + wi * X[i][0], 0), w.reduce((s, wi, i) => s + wi * X[i][1], 0)];
+
+  function draw() {
+    P = DX.plot($('at-plot'), { xmin: -3.2, xmax: 3.2, ymin: -3.2, ymax: 3.2, equal: true, margin: { l: 30, r: 8, t: 8, b: 22 } });
+    P.axes({ xstep: 1, ystep: 1 });
+    const w = softmax(scoresFor(q)), o = blend(w);
+    P.clip(() => {
+      X.forEach((x, i) => { if (i !== q) P.seg(x[0], x[1], o[0], o[1], DX.tint(P.col.accent, 0.15 + 0.85 * w[i]), 1 + 5 * w[i]); });
+      X.forEach((x, i) => { const c = i === q ? P.col.accent : P.col.muted; P.arrow(0, 0, x[0], x[1], c, i === q ? 3 : 2.2); P.dot(x[0], x[1], c, 5.5); });
+      P.arrow(0, 0, o[0], o[1], P.col.ink, 3); P.dot(o[0], o[1], P.col.ink, 6, true);
+      X.forEach((x, i) => P.label(TOKENS[i], x[0], x[1], i === q ? P.col.accent : P.col.muted));
+      P.label('output', o[0], o[1], P.col.ink, 'left', 9, 12);
+    });
+  }
+  function render() {
+    const s = scoresFor(q), w = softmax(s), o = blend(w);
+    $('at-sOut').textContent = num(scale, 2);
+    $('at-bars').innerHTML = TOKENS.map((t, i) => `<div class="at-bar${i === q ? ' q' : ''}"><span>${t}</span><span class="mono">${num(s[i], 2)}</span><span class="track"><span class="fill" style="width:${(w[i] * 100).toFixed(1)}%"></span></span><span class="mono">${num(w[i], 3)}</span></div>`).join('');
+    $('at-formula').textContent = `scores  = dot product of each vector with "${TOKENS[q]}"${Math.abs(scale - 1) > 0.001 ? `, divided by ${num(scale, 2)}` : ''}\nweights = softmax(scores)\noutput  = ` +
+      TOKENS.map((t, i) => `${num(w[i], 3)}·[${num(X[i][0], 1)}, ${num(X[i][1], 1)}]`).join('\n        + ') + `\n        = [${num(o[0], 3)}, ${num(o[1], 3)}]`;
+    const order = w.map((v, i) => i).sort((a, b) => w[b] - w[a]), top = order[0], second = order[1];
+    $('at-say').textContent = w[top] > 0.9 ? `"${TOKENS[q]}" attends almost entirely to ${top === q ? 'itself' : `"${TOKENS[top]}"`}. Its new vector is nearly a copy of that one.`
+      : w[top] - w[order[3]] < 0.08 ? `The weights are nearly equal, so the new vector for "${TOKENS[q]}" is close to a plain average of all four vectors.`
+      : `"${TOKENS[q]}" attends most to ${top === q ? 'itself' : `"${TOKENS[top]}"`} (${Math.round(w[top] * 100)}%) and then to ${second === q ? 'itself' : `"${TOKENS[second]}"`} (${Math.round(w[second] * 100)}%).`;
+    const tint = DX.tint;
+    const acc = getComputedStyle($('at-plot')).getPropertyValue('--c').trim();
+    $('at-mat').innerHTML = `<thead><tr><th></th>${TOKENS.map((t) => `<th>${t}</th>`).join('')}</tr></thead><tbody>` +
+      TOKENS.map((t, i) => { const wi = softmax(scoresFor(i)); return `<tr class="${i === q ? 'q' : ''}"><th>${t}</th>${wi.map((v) => `<td style="background:${tint(acc, 0.75 * v)}">${num(v, 3)}</td>`).join('')}</tr>`; }).join('') + '</tbody>';
+    document.querySelectorAll('#at-tokens .chip').forEach((c, k) => c.setAttribute('aria-pressed', k === q ? 'true' : 'false'));
+    draw();
+  }
+  $('at-tokens').innerHTML = TOKENS.map((t, k) => `<button class="chip" data-k="${k}">${t}</button>`).join('');
+  document.querySelectorAll('#at-tokens .chip').forEach((c) => { c.onclick = () => { q = +c.dataset.k; render(); }; });
+  $('at-s').oninput = (ev) => { scale = +ev.target.value; render(); };
+  const cv = $('at-plot'), snap = (v) => Math.max(-3, Math.min(3, Math.round(v * 10) / 10));
+  cv.addEventListener('pointerdown', (ev) => {
+    const p = P.at(ev); let best = 0.6; grab = -1;
+    X.forEach((x, i) => { const d = Math.hypot(x[0] - p.x, x[1] - p.y); if (d < best) { best = d; grab = i; } });
+    if (grab >= 0) cv.setPointerCapture(ev.pointerId);
+  });
+  cv.addEventListener('pointermove', (ev) => { if (grab < 0) return; const p = P.at(ev); X[grab] = [snap(p.x), snap(p.y)]; render(); });
+  cv.addEventListener('pointerup', () => { grab = -1; });
+  DX.onResize(draw);
+  render();
+})();
+</script>

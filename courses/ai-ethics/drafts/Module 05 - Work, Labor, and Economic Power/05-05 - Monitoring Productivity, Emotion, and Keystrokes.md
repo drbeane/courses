@@ -1,0 +1,120 @@
+# 05-05 — Monitoring Productivity, Emotion, and Keystrokes
+
+**Module:** 5 — Work, Labor, and Economic Power
+**Estimated time:** 40 minutes (includes debate prep)
+
+## Learning objectives
+
+By the end of this lesson, you will be able to:
+
+1. Compare legal frameworks for workplace monitoring in the U.S., EU and UK.
+2. Evaluate pending "bossware" legislation and its likely effects.
+3. Construct arguments for the Week 5 debate on remote-work monitoring.
+
+## Opening case: the bills on the table (2025–2026)
+
+Several U.S. states have considered bills to restrict AI-enabled workplace surveillance and automated employment decisions:
+
+- **New York:** A Senate bill would restrict electronic monitoring and automated decision tools at work. It would require notice, limit monitoring to legitimate purposes, prohibit certain uses (e.g., monitoring off-duty conduct, inferring protected characteristics) and require human review of discipline decisions ⚠.
+- **Massachusetts:** The FAIR Act and related bills would limit electronic monitoring and require impact assessments. Tech industry groups urged caution, arguing the bills were overly broad ⚠.
+- **California:** AB 1331 (workplace surveillance) and SB 7 ("No Robo Bosses Act," on automated decision systems) were debated in 2025. SB 7 was vetoed in October 2025 ⚠.
+- **United Kingdom:** The government consulted in 2025–2026 on requiring employers to consult workers before deploying monitoring technology, as part of the Employment Rights reforms ⚠.
+
+## Core ideas
+
+### U.S. law: largely permissive
+
+- **No comprehensive federal law** limits private-employer monitoring.
+- **The Electronic Communications Privacy Act (1986)** has broad business-use and consent exceptions. Employers can typically monitor work devices and accounts.
+- **State notice laws:** Connecticut, Delaware and New York (2022) require employers to notify employees of electronic monitoring.
+- **California's CCPA** extended to employee data in 2023, giving workers rights to know, delete and correct. Regulations on automated decision-making technology (ADMT) and risk assessments were finalized in 2025, with phased compliance ⚠.
+- **Labor law:** The National Labor Relations Act protects concerted activity. Surveillance that chills organizing can be unlawful.
+- **Disability and anti-discrimination law:** These apply to monitoring outcomes (e.g., productivity metrics that penalize disability-related breaks).
+- **Illinois BIPA:** Biometric time clocks generated major litigation (02-06).
+
+### EU law: proportionality and prohibitions
+
+- **GDPR:** Monitoring requires a lawful basis. Consent is rarely valid in employment because of the power imbalance. Data minimization, purpose limitation and DPIAs apply.
+- **EU AI Act:**
+  - **Prohibits emotion recognition in the workplace**, except for medical or safety reasons (Art. 5(1)(f), from Feb 2025).
+  - Classifies AI for recruitment, task allocation, monitoring and evaluating workers, and termination decisions as **high-risk** (Annex III).
+  - Deployers must inform workers' representatives before using high-risk AI at work.
+- **The Platform Work Directive (2024)** covers algorithmic management for platform workers (05-06).
+- **National law:** Germany's works councils have co-determination rights over monitoring technology (§87 BetrVG). France's CNIL has enforced limits (Amazon, 05-04).
+
+### Emotion and sentiment monitoring
+
+Vendors offer tools that claim to detect:
+
+- frustration or empathy in call-center voices (real-time coaching),
+- "engagement" from webcam facial analysis, or
+- burnout or disengagement from message sentiment.
+
+**Problems:**
+
+- **Weak validity** for inferring internal states (02-09, Barrett et al.).
+- **Cultural and neurodivergent bias.**
+- **Emotional labor:** Requiring workers to *perform* emotions for an algorithm.
+- **Privacy** of inner life.
+
+The EU's prohibition reflects a judgment that these harms outweigh the claimed benefits in employment.
+
+### Designing ethical monitoring
+
+If monitoring is used, principles include:
+
+1. **Legitimate, specific purpose** (security, safety, legal compliance), documented in advance.
+2. **Least intrusive means.** Aggregate team metrics before individual ones, and outcomes before activity.
+3. **Notice and transparency** about what is collected and why.
+4. **Worker consultation** and, where applicable, bargaining.
+5. **No monitoring** of off-duty time, personal devices, protected activity or emotions.
+6. **Human review** of any consequential decision.
+7. **Data minimization, retention limits** and access controls.
+8. **Workers' rights** to access and contest their data.
+
+## Applying the frameworks
+
+| Framework | Toward allowing monitoring | Toward restricting it |
+|---|---|---|
+| Consequences | Productivity; security | Stress; turnover; gaming; distrust |
+| Rights | Employer property rights in devices | Privacy; dignity; association |
+| Justice | Fair evaluation by objective data | Low-wage workers bear the most surveillance |
+| Decency | Accountability to colleagues | Treating adults as suspects |
+
+## Discussion questions
+
+1. Should U.S. federal law adopt EU-style restrictions on workplace emotion recognition?
+2. Does notice make monitoring ethical? What if workers have no realistic alternative job?
+3. Should worker consultation be legally required before deploying monitoring tools?
+4. Is there a meaningful difference between monitoring a remote worker's screen and a supervisor walking past an office desk?
+
+## Activity: Week 5 debate preparation (20 minutes)
+
+**Resolution:** *Employers may monitor remote workers' keystrokes and screens if they disclose it in advance.*
+
+Prepare your assigned side:
+
+1. your opening (300 words max, two or more sources),
+2. the opposing side's strongest point, and
+3. a "what would change my mind" statement.
+
+## Key terms
+
+- **ECPA:** Electronic Communications Privacy Act (U.S.).
+- **Co-determination:** Worker representatives' legal right to participate in workplace decisions (Germany).
+- **Emotional labor:** The effort of displaying required emotions at work.
+- **ADMT:** Automated decision-making technology (California regulatory term).
+
+## Connections
+
+- Bossware → 05-04 · Emotion inference → 02-09 · EU high-risk employment AI → 08-01 · Policy → 05-09
+- A1 Week 5 debate; A3 option (c)
+
+## Sources and further reading
+
+- NY Senate / Bloomberg Law, "AI and 'Bossware' Targeted by NY Workplace Restrictions Bill," 2026. ⚠ — [Free full text](https://www.nysenate.gov/newsroom/in-the-news/2023/brad-hoylman-sigal/bloomberg-law-ai-and-bossware-targeted-ny-workplace); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r215). <!-- reading-access -->
+- Bloomberg Government, "Tech Groups Urge Caution on Massachusetts AI, 'Bossware' Bills," 2026. ⚠ — [Paid / library](https://news.bloomberglaw.com/artificial-intelligence/tech-groups-urge-caution-on-massachusetts-ai-bossware-bills); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r216). <!-- reading-access -->
+- TechTarget, "Lawmakers seek to restrict 'bossware'," 2026. — [Free full text](https://www.techtarget.com/enterprise-software/news/366546873/Lawmakers-seek-to-restrict-bossware); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r217). <!-- reading-access -->
+- Neura Market, "UK consults on bossware worker consultation requirement," 2026. ⚠ — Citation needs clarification; [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r218). <!-- reading-access -->
+- EU AI Act Art. 5(1)(f), Art. 26(7), Annex III(4). — [Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r219). <!-- reading-access -->
+- Ajunwa, I. *The Quantified Worker* (Cambridge, 2023), Chapters 6–8. — [Paid / library](https://www.cambridge.org/core/books/the-quantified-worker/CDA274EFF118E3AB6E583424D95DF40D); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r220). <!-- reading-access -->

@@ -1,0 +1,175 @@
+<style>
+.dx .stat.samp b { color: #a86400; }
+</style>
+<div class="wrap">
+  <p class="lede">For a continuous random variable, probability is area under the density curve. Set the shape of a distribution, choose an interval, and read the probability as the shaded area.</p>
+
+  <section class="panel" aria-labelledby="dx-h0">
+    <h2 id="dx-h0">Choose a distribution</h2>
+    <div class="row" role="group" aria-label="Distributions" id="dx-presets"></div>
+    <div class="ctls" id="dx-params"></div>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="dx-h1">
+      <h2 id="dx-h1">Density curve</h2>
+      <canvas class="plot" id="dx-plot" role="img" aria-label="Probability density function with the chosen interval shaded"></canvas>
+      <div class="key">
+        <span><i class="sw" style="background:var(--ink)"></i>Density, f(x)</span>
+        <span><i class="sw" style="background:var(--accent)"></i>Area for the interval</span>
+        <span><i class="sw" style="background:#a86400"></i>Histogram of samples (when drawn)</span>
+      </div>
+      <div class="ctls">
+        <div class="ctl"><label for="dx-lo">Lower end of the interval <output id="dx-loOut"></output></label><input type="range" id="dx-lo" step="0.05"></div>
+        <div class="ctl"><label for="dx-hi">Upper end of the interval <output id="dx-hiOut"></output></label><input type="range" id="dx-hi" step="0.05"></div>
+      </div>
+      <div class="row" role="group" aria-label="Intervals">
+        <button class="chip" data-k="1">Within 1 standard deviation</button>
+        <button class="chip" data-k="2">Within 2</button>
+        <button class="chip" data-k="3">Within 3</button>
+        <button class="chip" data-k="below">Below the mean</button>
+        <button class="chip" data-k="all">Everything</button>
+      </div>
+      <p class="hint">Slide an end all the way out to remove that bound.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="dx-h2">
+      <h2 id="dx-h2">Probability of the interval</h2>
+      <div class="formula" id="dx-formula" aria-live="polite"></div>
+      <div class="stats">
+        <div class="stat"><b id="dx-p"></b><span>probability (shaded area)</span></div>
+        <div class="stat"><b id="dx-mean"></b><span>expected value</span></div>
+        <div class="stat"><b id="dx-sd"></b><span>standard deviation</span></div>
+      </div>
+      <h2>Check it by sampling</h2>
+      <div class="row">
+        <button class="primary" id="dx-draw">Draw 1,000 samples</button>
+        <button id="dx-clear">Clear samples</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="dx-ns"></b><span>samples</span></div>
+        <div class="stat samp"><b id="dx-ps"></b><span>share inside the interval</span></div>
+        <div class="stat samp"><b id="dx-ms"></b><span>sample mean</span></div>
+      </div>
+      <p class="say" id="dx-say" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="dx-h3">
+    <h2 id="dx-h3">What to notice</h2>
+    <ol>
+      <li>The height of the curve is not a probability. A narrow uniform distribution has a density above 1. Only areas are probabilities, and the total area is always 1.</li>
+      <li>Shrink the interval to a single point and the area goes to 0. A continuous random variable has probability 0 of equaling any one exact value.</li>
+      <li>For any normal distribution, about 68% of the area lies within 1 standard deviation of the mean, about 95% within 2, and about 99.7% within 3. Change μ and σ and press those buttons again: the percentages do not move.</li>
+      <li>Changing μ slides the normal curve without changing its shape. Raising σ spreads it out and lowers the peak, because the area has to stay 1.</li>
+      <li>The exponential distribution is lopsided. More than half of its area lies below the mean, so "below the mean" is about 63%, not 50%.</li>
+      <li>The share of samples that fall in the interval estimates the area. Draw more samples and the estimate tightens, which is Monte Carlo sampling again.</li>
+    </ol>
+    <p class="fine">Normal probabilities here use a standard numerical approximation that is accurate to about six decimal places.</p>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num, SAMP = '#a86400';
+  // Error function, Abramowitz and Stegun 7.1.26.
+  const erf = (x) => {
+    const s = x < 0 ? -1 : 1, t = 1 / (1 + 0.3275911 * Math.abs(x));
+    return s * (1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x));
+  };
+  const DISTS = [
+    { name: 'Normal', x: [-8, 8], params: [['μ', 'Mean, μ', -3, 3, 0.1, 0], ['σ', 'Standard deviation, σ', 0.4, 3, 0.05, 1]],
+      label: (q) => `X ~ N(μ = ${num(q[0], 1)}, σ² = ${num(q[1] * q[1], 2)})`,
+      pdf: (x, q) => Math.exp(-0.5 * ((x - q[0]) / q[1]) ** 2) / (q[1] * Math.sqrt(2 * Math.PI)),
+      cdf: (x, q) => 0.5 * (1 + erf((x - q[0]) / (q[1] * Math.SQRT2))),
+      mean: (q) => q[0], sd: (q) => q[1], peak: (q) => 1 / (q[1] * Math.sqrt(2 * Math.PI)),
+      sample: (q) => q[0] + q[1] * Math.sqrt(-2 * Math.log(1 - Math.random())) * Math.cos(2 * Math.PI * Math.random()) },
+    { name: 'Uniform', x: [-1, 11], params: [['a', 'Lower limit, a', 0, 6, 0.1, 2], ['w', 'Width, b − a', 0.5, 5, 0.1, 4]],
+      label: (q) => `X ~ UNIF(a = ${num(q[0], 1)}, b = ${num(q[0] + q[1], 1)})`,
+      pdf: (x, q) => (x >= q[0] && x <= q[0] + q[1] ? 1 / q[1] : 0),
+      cdf: (x, q) => Math.max(0, Math.min(1, (x - q[0]) / q[1])),
+      mean: (q) => q[0] + q[1] / 2, sd: (q) => q[1] / Math.sqrt(12), peak: (q) => 1 / q[1],
+      sample: (q) => q[0] + q[1] * Math.random() },
+    { name: 'Exponential', x: [-1, 12], params: [['λ', 'Rate, λ', 0.2, 2, 0.05, 0.5]],
+      label: (q) => `X ~ EXP(λ = ${num(q[0], 2)})`,
+      pdf: (x, q) => (x >= 0 ? q[0] * Math.exp(-q[0] * x) : 0),
+      cdf: (x, q) => (x >= 0 ? 1 - Math.exp(-q[0] * x) : 0),
+      mean: (q) => 1 / q[0], sd: (q) => 1 / q[0], peak: (q) => q[0],
+      sample: (q) => -Math.log(1 - Math.random()) / q[0] },
+  ];
+  let D = DISTS[0], q, lo, hi, samples = [];
+  const open = () => ({ lo: lo <= D.x[0] + 1e-9, hi: hi >= D.x[1] - 1e-9 });
+  const prob = () => { const o = open(); return (o.hi ? 1 : D.cdf(hi, q)) - (o.lo ? 0 : D.cdf(lo, q)); };
+  const inside = (v) => { const o = open(); return (o.lo || v > lo) && (o.hi || v < hi); };
+
+  function draw() {
+    const top = Math.max(D.peak(q) * 1.18, 0.25);
+    const P = DX.plot($('dx-plot'), { xmin: D.x[0], xmax: D.x[1], ymin: 0, ymax: top, margin: { l: 46 } });
+    P.axes();
+    const col = P.col, f = (x) => D.pdf(x, q);
+    if (samples.length) {
+      const bins = 48, bw = (D.x[1] - D.x[0]) / bins, c = Array(bins).fill(0);
+      for (const v of samples) { const k = Math.floor((v - D.x[0]) / bw); if (k >= 0 && k < bins) c[k]++; }
+      P.clip(() => c.forEach((cnt, k) => { if (cnt) P.rect(D.x[0] + k * bw, 0, D.x[0] + (k + 1) * bw, cnt / (samples.length * bw), DX.tint(SAMP, 0.28), DX.tint(SAMP, 0.6)); }));
+    }
+    P.area(f, lo, hi, DX.tint(col.accent, 0.45));
+    // The uniform density jumps, so draw it piece by piece to keep its vertical edges sharp.
+    if (D.name === 'Uniform') {
+      const a = q[0], b = q[0] + q[1], y = 1 / q[1];
+      P.path([[D.x[0], 0], [a, 0], [a, y], [b, y], [b, 0], [D.x[1], 0]], col.ink, 2.5);
+    } else if (D.name === 'Exponential') {
+      P.path([[D.x[0], 0], [0, 0], [0, q[0]]], col.ink, 2.5); P.curve(f, col.ink, 2.5, 0, D.x[1]);
+    } else P.curve(f, col.ink, 2.5);
+    P.clip(() => {
+      P.seg(lo, 0, lo, f(lo), col.accent, 2); P.seg(hi, 0, hi, f(hi), col.accent, 2);
+      P.seg(D.mean(q), 0, D.mean(q), top, col.muted, 1, [4, 4]);
+    });
+    P.label('mean', D.mean(q), top, col.muted, 'left', 6, 12);
+  }
+  function render() {
+    D.params.forEach((p, i) => { $('dx-q' + i).value = q[i]; $('dx-q' + i + 'Out').textContent = num(q[i], 2); });
+    $('dx-lo').value = lo; $('dx-hi').value = hi;
+    const o = open(), L = o.lo ? '−∞' : num(lo, 2), U = o.hi ? '∞' : num(hi, 2), p = prob();
+    $('dx-loOut').textContent = o.lo ? 'no lower bound' : num(lo, 2);
+    $('dx-hiOut').textContent = o.hi ? 'no upper bound' : num(hi, 2);
+    const event = o.lo && o.hi ? 'P[−∞ < X < ∞]' : o.lo ? `P[X < ${U}]` : o.hi ? `P[X > ${L}]` : `P[${L} < X < ${U}]`;
+    $('dx-formula').textContent = `${D.label(q)}\n\n${event} = area under f(x) from ${L} to ${U}\n${' '.repeat(event.length)} = ${num(p, 4)}`;
+    $('dx-p').textContent = num(p, 4);
+    $('dx-mean').textContent = num(D.mean(q), 3); $('dx-sd').textContent = num(D.sd(q), 3);
+    const ns = samples.length, hits = samples.filter(inside).length;
+    $('dx-ns').textContent = ns.toLocaleString('en-US');
+    $('dx-ps').textContent = ns ? num(hits / ns, 4) : '—';
+    $('dx-ms').textContent = ns ? num(samples.reduce((s, v) => s + v, 0) / ns, 3) : '—';
+    $('dx-say').textContent = ns
+      ? `${hits.toLocaleString('en-US')} of ${ns.toLocaleString('en-US')} samples landed in the interval, a share of ${num(hits / ns, 4)}. The exact probability is ${num(p, 4)}, a gap of ${num(Math.abs(hits / ns - p), 4)}.`
+      : 'Draw samples to estimate the same probability by simulation.';
+    document.querySelectorAll('#dx-presets .chip').forEach((c, k) => c.setAttribute('aria-pressed', DISTS[k] === D ? 'true' : 'false'));
+    draw();
+  }
+  function choose(d) {
+    D = d; q = d.params.map((p) => p[5]); samples = [];
+    $('dx-params').innerHTML = d.params.map((p, i) =>
+      `<div class="ctl"><label for="dx-q${i}">${p[1]} <output id="dx-q${i}Out"></output></label><input type="range" id="dx-q${i}" min="${p[2]}" max="${p[3]}" step="${p[4]}"></div>`).join('');
+    d.params.forEach((p, i) => { $('dx-q' + i).oninput = (ev) => { q[i] = +ev.target.value; samples = []; render(); }; });
+    for (const id of ['dx-lo', 'dx-hi']) { $(id).min = d.x[0]; $(id).max = d.x[1]; }
+    setInterval_(1);
+  }
+  // Sets the interval to the mean plus or minus k standard deviations, kept inside the plot.
+  function setInterval_(k) {
+    const m = D.mean(q), s = D.sd(q), fit = (v) => Math.max(D.x[0], Math.min(D.x[1], Math.round(v * 20) / 20));
+    if (k === 'all') { lo = D.x[0]; hi = D.x[1]; }
+    else if (k === 'below') { lo = D.x[0]; hi = fit(m); }
+    else { lo = fit(m - k * s); hi = fit(m + k * s); }
+    render();
+  }
+  $('dx-presets').innerHTML = DISTS.map((d, k) => `<button class="chip" data-d="${k}">${d.name}</button>`).join('');
+  document.querySelectorAll('#dx-presets .chip').forEach((c) => { c.onclick = () => choose(DISTS[+c.dataset.d]); });
+  document.querySelectorAll('.dx button[data-k]').forEach((b) => { b.onclick = () => setInterval_(isNaN(+b.dataset.k) ? b.dataset.k : +b.dataset.k); });
+  $('dx-lo').oninput = (ev) => { lo = +ev.target.value; if (lo > hi) hi = lo; render(); };
+  $('dx-hi').oninput = (ev) => { hi = +ev.target.value; if (hi < lo) lo = hi; render(); };
+  $('dx-draw').onclick = () => { for (let i = 0; i < 1000; i++) samples.push(D.sample(q)); render(); };
+  $('dx-clear').onclick = () => { samples = []; render(); };
+  DX.onResize(draw);
+  choose(D);
+})();
+</script>

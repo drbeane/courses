@@ -1,0 +1,191 @@
+<style>
+.dx canvas.plot.gd { height: 400px; cursor: crosshair; }
+.dx .stat.warn b { color: var(--bad); }
+@media (max-width: 520px) { .dx canvas.plot.gd { height: 300px; } }
+</style>
+<div class="wrap">
+  <p class="lede">Gradient descent finds a low point of a function by repeating one small move: step against the gradient. The learning rate sets how far each step goes. Click the plot to choose a starting point, then step.</p>
+
+  <section class="panel" aria-labelledby="gd-h0">
+    <h2 id="gd-h0">Choose a function</h2>
+    <div class="row" role="group" aria-label="Functions" id="gd-presets"></div>
+    <div class="ctls">
+      <div class="ctl">
+        <label for="gd-a">Learning rate, α <output id="gd-aOut"></output></label>
+        <input type="range" id="gd-a" min="0.01" max="1.2" step="0.01">
+        <small id="gd-aHint"></small>
+      </div>
+      <div class="ctl">
+        <label>Direction</label>
+        <div class="row" role="group" aria-label="Direction">
+          <button class="chip" id="gd-down" aria-pressed="true">Descent (find a minimum)</button>
+          <button class="chip" id="gd-up" aria-pressed="false">Ascent (find a maximum)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="duo">
+    <section class="panel" aria-labelledby="gd-h1">
+      <h2 id="gd-h1">The path so far</h2>
+      <canvas class="plot gd" id="gd-plot" role="img" aria-label="Plot of the function with the path taken by the algorithm"></canvas>
+      <p class="hint" id="gd-plotHint"></p>
+      <div class="row">
+        <button class="primary" id="gd-step">Take one step</button>
+        <button id="gd-run">Take 20 steps</button>
+        <button id="gd-reset">Back to the start</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="gd-h2">
+      <h2 id="gd-h2">The next update</h2>
+      <div class="formula" id="gd-formula" aria-live="polite"></div>
+      <div class="stats">
+        <div class="stat"><b id="gd-k"></b><span>steps taken</span></div>
+        <div class="stat" id="gd-fStat"><b id="gd-f"></b><span>value of f</span></div>
+        <div class="stat"><b id="gd-g"></b><span>size of the gradient</span></div>
+      </div>
+      <p class="say" id="gd-say" aria-live="polite"></p>
+      <h2>Value of f after each step</h2>
+      <canvas class="plot short" id="gd-plot2" role="img" aria-label="Value of the function after each step"></canvas>
+    </section>
+  </div>
+
+  <section class="panel notice" aria-labelledby="gd-h3">
+    <h2 id="gd-h3">What to notice</h2>
+    <ol>
+      <li>Each step is the learning rate times the gradient. Far from the bottom the gradient is large and the steps are long. Near the bottom the gradient shrinks toward 0, so the steps shrink too, even though α never changes.</li>
+      <li>On "One valley", try α = 0.1, then 0.9, then 1.1. A small rate crawls. A large rate jumps across the valley and bounces. Past α = 1 every jump lands farther away than the last, and the values blow up.</li>
+      <li>On "Two valleys", start on the right side, then on the left. The algorithm rolls into whichever valley is nearer. It finds a local minimum, with no way to know whether a deeper one exists.</li>
+      <li>On "Narrow valley", the gradient points across the valley much more than along it. With α near 0.2 the path zigzags from wall to wall and makes slow progress along the floor.</li>
+      <li>Start exactly on a flat spot, such as the top of a hill, and the gradient is 0. The algorithm does not move at all.</li>
+      <li>Switch to ascent and the same rule climbs instead: the only change is the sign in the update.</li>
+    </ol>
+  </section>
+</div>
+<script>
+(function () {
+  const $ = (id) => document.getElementById(id);
+  const num = DX.num;
+  const FUNCS = [
+    { name: 'One valley', text: 'f(x) = x²', f: (p) => p[0] ** 2, g: (p) => [2 * p[0]], x: [-4, 4], y: [-1.5, 16], start: [3.5], a: 0.1 },
+    { name: 'Two valleys', text: 'f(x) = x⁴/8 − x² + 0.3x', f: (p) => p[0] ** 4 / 8 - p[0] ** 2 + 0.3 * p[0], g: (p) => [p[0] ** 3 / 2 - 2 * p[0] + 0.3], x: [-3.6, 3.6], y: [-3.5, 6], start: [3.3], a: 0.1 },
+    { name: 'Hills and valleys', text: 'f(x) = sin(1.5x) − 0.05x²', f: (p) => Math.sin(1.5 * p[0]) - 0.05 * p[0] ** 2, g: (p) => [1.5 * Math.cos(1.5 * p[0]) - 0.1 * p[0]], x: [-5, 5], y: [-2.6, 1.6], start: [-0.4], a: 0.2 },
+    { name: 'Round bowl (2 inputs)', text: 'f(x, y) = x² + y²', f: (p) => p[0] ** 2 + p[1] ** 2, g: (p) => [2 * p[0], 2 * p[1]], x: [-3, 3], y: [-3, 3], start: [2.5, 2], a: 0.1 },
+    { name: 'Narrow valley (2 inputs)', text: 'f(x, y) = x²/2 + 4y²', f: (p) => p[0] ** 2 / 2 + 4 * p[1] ** 2, g: (p) => [p[0], 8 * p[1]], x: [-3, 3], y: [-2, 2], start: [-2.6, 1.2], a: 0.2 },
+    { name: 'Two valleys (2 inputs)', text: 'f(x, y) = x⁴/4 − x² + 0.3x + y²', f: (p) => p[0] ** 4 / 4 - p[0] ** 2 + 0.3 * p[0] + p[1] ** 2, g: (p) => [p[0] ** 3 - 2 * p[0] + 0.3, 2 * p[1]], x: [-2.4, 2.4], y: [-2, 2], start: [0.1, 1.6], a: 0.15 },
+  ];
+  let fn = FUNCS[0], alpha = fn.a, sign = -1, path, start, P;
+  const two = () => fn.start.length === 2;
+  const cur = () => path[path.length - 1];
+  const blown = () => cur().some((v) => !isFinite(v) || Math.abs(v) > 1e6);
+  const vec = (p, d = 3) => (p.length === 1 ? num(p[0], d) : `(${num(p[0], d)}, ${num(p[1], d)})`);
+
+  function step() {
+    if (blown()) return;
+    const p = cur(), g = fn.g(p);
+    path.push(p.map((v, i) => v + sign * alpha * g[i]));
+  }
+
+  function drawMain() {
+    const col = P_colors();
+    if (!two()) {
+      P = DX.plot($('gd-plot'), { xmin: fn.x[0], xmax: fn.x[1], ymin: fn.y[0], ymax: fn.y[1] });
+      P.axes();
+      P.curve((x) => fn.f([x]), col.ink, 2.5);
+      P.clip(() => {
+        const pts = path.filter((p) => isFinite(p[0])).map((p) => [p[0], fn.f(p)]);
+        P.path(pts, col.accent, 1.5);
+        pts.forEach((q, i) => P.dot(q[0], q[1], col.accent, i === pts.length - 1 ? 6 : 3.5, i === 0));
+      });
+      return;
+    }
+    P = DX.plot($('gd-plot'), { xmin: fn.x[0], xmax: fn.x[1], ymin: fn.y[0], ymax: fn.y[1], equal: true });
+    // Shade the surface by height: the lower the value, the darker the band.
+    const cell = 5, ctx = P.ctx, w = P.w - P.m.l - P.m.r, hgt = P.h - P.m.t - P.m.b;
+    const vals = [];
+    let lo = Infinity, hi = -Infinity;
+    for (let j = 0; j * cell < hgt; j++) for (let i = 0; i * cell < w; i++) {
+      const x = P.xmin + (i * cell + cell / 2) / w * (P.xmax - P.xmin), y = P.ymax - (j * cell + cell / 2) / hgt * (P.ymax - P.ymin);
+      const v = fn.f([x, y]); vals.push(v); lo = Math.min(lo, v); hi = Math.max(hi, v);
+    }
+    let k = 0;
+    for (let j = 0; j * cell < hgt; j++) for (let i = 0; i * cell < w; i++) {
+      const t = Math.sqrt((vals[k++] - lo) / (hi - lo || 1)), band = Math.floor(t * 14) / 14;
+      ctx.fillStyle = DX.tint(col.accent, 0.62 * (1 - band) + 0.03);
+      ctx.fillRect(P.m.l + i * cell, P.m.t + j * cell, Math.min(cell, w - i * cell), Math.min(cell, hgt - j * cell));
+    }
+    P.axes({ xgrid: false });
+    P.clip(() => {
+      const pts = path.filter((p) => p.every(isFinite));
+      P.path(pts, col.ink, 1.8);
+      pts.forEach((q, i) => P.dot(q[0], q[1], col.ink, i === pts.length - 1 ? 6 : 3.5, i === 0));
+    });
+  }
+  function P_colors() {
+    const cs = getComputedStyle($('gd-plot'));
+    return { ink: cs.getPropertyValue('--ink').trim(), accent: cs.getPropertyValue('--c').trim() };
+  }
+  function drawLoss() {
+    const vals = path.map((p) => fn.f(p)).filter(isFinite);
+    let lo = Math.min(...vals), hi = Math.max(...vals);
+    if (hi - lo < 1e-9) { hi += 1; lo -= 1; }
+    hi = Math.min(hi, lo + 1e4);
+    const pad = (hi - lo) * 0.1;
+    const Q = DX.plot($('gd-plot2'), { xmin: 0, xmax: Math.max(20, path.length - 1), ymin: lo - pad, ymax: hi + pad, margin: { l: 52 } });
+    Q.axes();
+    Q.clip(() => {
+      Q.path(vals.map((v, i) => [i, v]), Q.col.accent, 2);
+      vals.forEach((v, i) => Q.dot(i, v, Q.col.accent, 3));
+    });
+  }
+
+  function render() {
+    const p = cur(), g = fn.g(p), gsize = Math.hypot(...g), op = sign < 0 ? '−' : '+', name = two() ? '(x, y)' : 'x';
+    $('gd-aOut').textContent = num(alpha, 2);
+    $('gd-aHint').textContent = 'Each step moves by α times the gradient.';
+    $('gd-plotHint').textContent = two()
+      ? 'Darker bands are lower. Each dot is one step. Click anywhere to restart from that point.'
+      : 'Each dot is one step. Click anywhere to restart from that x value.';
+    const dead = blown();
+    $('gd-formula').textContent = dead
+      ? `${fn.text}\n\nThe values have grown past one million.\nThe algorithm has diverged.`
+      : `${fn.text}\n\n${name} ← ${name} ${op} α · ∇f${name === 'x' ? '(x)' : '(x, y)'}\n${' '.repeat(name.length)} = ${vec(p)} ${op} ${num(alpha, 2)} · ${vec(g)}\n${' '.repeat(name.length)} = ${vec(p.map((v, i) => v + sign * alpha * g[i]))}`;
+    $('gd-k').textContent = path.length - 1;
+    $('gd-f').textContent = dead ? 'diverged' : num(fn.f(p), 4);
+    $('gd-fStat').classList.toggle('warn', dead);
+    $('gd-g').textContent = dead ? '—' : num(gsize, 4);
+    const vals = path.map((q) => fn.f(q)), n = vals.length, goal = sign < 0 ? 'minimum' : 'maximum';
+    let say;
+    if (dead) say = 'Each step overshot by more than the one before, so the point flew away. Lower the learning rate and go back to the start.';
+    else if (n === 1) say = gsize < 1e-9 ? 'The gradient here is exactly 0, so a step would not move the point. Click another starting point.' : `Ready at ${name} = ${vec(p)}. The gradient there is ${vec(g)}.`;
+    else if (gsize < 1e-3) say = `The gradient is nearly 0, so the steps have all but stopped. The algorithm has settled at a local ${goal} near ${name} = ${vec(p, 2)}.`;
+    else if (sign * (vals[n - 1] - vals[n - 2]) < 0) say = `The last step made f ${sign < 0 ? 'larger' : 'smaller'}, which is the wrong way. The step was too long and jumped past the ${goal}.`;
+    else say = `The last step changed f from ${num(vals[n - 2], 3)} to ${num(vals[n - 1], 3)}. Keep stepping.`;
+    $('gd-say').textContent = say;
+    $('gd-step').disabled = dead; $('gd-run').disabled = dead;
+    $('gd-down').setAttribute('aria-pressed', sign < 0 ? 'true' : 'false');
+    $('gd-up').setAttribute('aria-pressed', sign > 0 ? 'true' : 'false');
+    document.querySelectorAll('#gd-presets .chip').forEach((c, k) => c.setAttribute('aria-pressed', FUNCS[k] === fn ? 'true' : 'false'));
+    drawMain(); drawLoss();
+  }
+  function restart(from) { start = from || start; path = [start.slice()]; render(); }
+  function choose(f) { fn = f; alpha = f.a; $('gd-a').value = alpha; restart(f.start.slice()); }
+
+  $('gd-presets').innerHTML = FUNCS.map((f, k) => `<button class="chip" data-k="${k}">${f.name}</button>`).join('');
+  document.querySelectorAll('#gd-presets .chip').forEach((c) => { c.onclick = () => choose(FUNCS[+c.dataset.k]); });
+  $('gd-a').oninput = (ev) => { alpha = +ev.target.value; render(); };
+  $('gd-down').onclick = () => { sign = -1; restart(); };
+  $('gd-up').onclick = () => { sign = 1; restart(); };
+  $('gd-step').onclick = () => { step(); render(); };
+  $('gd-run').onclick = () => { for (let i = 0; i < 20; i++) step(); render(); };
+  $('gd-reset').onclick = () => restart();
+  $('gd-plot').addEventListener('pointerdown', (ev) => {
+    const p = P.at(ev), r2 = (v) => Math.round(v * 100) / 100;
+    if (p.x < P.xmin || p.x > P.xmax) return;
+    restart(two() ? [r2(p.x), r2(p.y)] : [r2(p.x)]);
+  });
+  DX.onResize(() => { drawMain(); drawLoss(); });
+  choose(fn);
+})();
+</script>
