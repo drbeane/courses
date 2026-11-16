@@ -12,7 +12,7 @@ const dist = path.join(root, 'dist');
 const site = JSON.parse(fs.readFileSync(path.join(root, 'site.json'), 'utf8'));
 
 // Labels for a topic or demo with "tag" set in course.json.
-const STATUS = { new: 'New', updated: 'Updated' };
+const STATUS = { new: 'New', updated: 'Updated', draft: 'Draft' };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 const pad = (n) => String(n).padStart(2, '0');
 const slug = (s) => s.replace(/<[^>]+>/g, '').toLowerCase().replace(/&[a-z]+;/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -31,26 +31,34 @@ function write(base, p, html) {
   fs.writeFileSync(file, html.replaceAll('@ROOT@', '/'));
 }
 
-// The frame around every page: top bar, main area, footer.
-function shell({ title, head = '', brand, nav = '', foot, body, scripts = '' }) {
+// The reader's text size (small, standard or large) is set by the control in the lower right
+// corner, which is engine/page.js. It is kept in the browser and applied here, before the page is
+// drawn, so the page doesn't jump.
+const TEXT_SIZE = `<script>try { const t = localStorage.getItem('text-size'); if (t) document.documentElement.dataset.text = t; } catch (e) {}</script>`;
+
+// The frame around every page: top bar, main area, footer. A course's pages also get a search box
+// in the top bar, which searches that course only (engine/page.js and /<course>/search.json).
+function shell({ title, head = '', brand, nav = '', search = '', foot, body, scripts = '', mainClass = '' }) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
+${TEXT_SIZE}
 ${FONTS}
 <link rel="stylesheet" href="/assets/site.css">${head}
 </head>
 <body>
 <header class="top">
   ${brand}
-  <nav aria-label="Sections">${nav}</nav>
+  <nav aria-label="Sections">${nav}</nav>${search}
 </header>
-<main>
+<main${mainClass ? ` class="${mainClass}"` : ''}>
 ${body}
 </main>
 <footer class="foot">${foot}</footer>
+<script src="/assets/page.js" defer></script>
 ${scripts}</body>
 </html>
 `;
@@ -93,19 +101,34 @@ function buildCourse(base) {
   // The posted demos that list this lesson under "lessons" in course.json.
   const demosFor = (s) => course.demos.filter((d) => (d.lessons || []).includes(s.id) && has(`content/demos/${d.slug}.html`));
 
-  const NAV = [['lessons', 'Lessons'], ...(hasAssess ? [['assessments', 'Assessments']] : []), ['slides', 'Slides'], ['demos', 'Demos'], ['resources', 'Resources'], ['glossary', 'Glossary']];
+  // Projects and the Appendix are optional. A course lists them in "projects" and "appendix" in
+  // course.json, each entry with a slug, a name and "about", and writes each page in
+  // content/projects/<slug>.md or content/appendix/<slug>.md. Projects get a place in the top bar.
+  // The Appendix sits outside the course's structure, so it is linked only from the footer.
+  const projects = (course.projects || []).filter((p) => has(`content/projects/${p.slug}.md`));
+  const appendix = (course.appendix || []).filter((p) => has(`content/appendix/${p.slug}.md`));
+  const NAV = [['lessons', 'Lessons'], ...(hasAssess ? [['assessments', 'Assessments']] : []), ['slides', 'Slides'], ['demos', 'Demos'], ...(projects.length ? [['projects', 'Projects']] : []), ['resources', 'Resources'], ['glossary', 'Glossary']];
   // A course with its own stage colors lists them in "colors"; otherwise the shared ones are used.
   const COLORS = course.colors ? `\n<style>:root { ${course.colors.map((c, i) => `--s${i + 1}: ${c};`).join(' ')} }</style>` : '';
   const STYLE = has('style.css') ? '\n<link rel="stylesheet" href="/style.css">' : '';
 
-  function page({ title, section, body }) {
+  const SEARCH = `
+  <div class="search" role="search" data-index="/${base}/search.json">
+    <label class="vh" for="q">${T('Search This Course', 'Search this course')}</label>
+    <input id="q" type="search" placeholder="Search lessons" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="false" aria-controls="q-list" aria-autocomplete="list">
+    <ul id="q-list" class="q-list" role="listbox" hidden></ul>
+  </div>`;
+
+  function page({ title, section, body, mainClass }) {
     return shell({
       title: title ? `${title} | ${course.title}` : course.title,
       head: `${body.includes('class="katex') ? KATEX_CSS : ''}${COLORS}${STYLE}`,
       brand: `<a class="brand" href="/">${esc(course.title)}</a>`,
       nav: NAV.map(([s, label]) => `<a href="/${s}/"${s === section ? ' aria-current="page"' : ''}>${label}</a>`).join(''),
-      foot: `${[course.code, course.school, course.term].filter(Boolean).map(esc).join(', ')} <a class="all" href="@ROOT@">All courses</a>`,
+      search: SEARCH,
+      foot: `${[course.code, course.school, course.term].filter(Boolean).map(esc).join(', ')} <a class="all" href="@ROOT@">All courses</a>${appendix.length ? `<a class="all" href="/appendix/">Appendix</a>` : ''}`,
       body,
+      mainClass,
       scripts: `<script>addEventListener('beforeprint', () => document.querySelectorAll('details.callout').forEach((d) => { d.open = true; }));</script>\n${diagramScript(body)}`,
     });
   }
@@ -271,7 +294,8 @@ ${blocks}
       facts = block.trim().split('\n').filter((line) => !/^\*\*Module:/.test(line));
       return '';
     });
-    const { html, toc } = render(md, s.id);
+    const { html: raw, toc } = render(md, s.id);
+    const html = linkKeyTerms(raw);
     const posted = items.filter((x) => x.lesson);
     const at = posted.indexOf(s);
     const prev = posted[at - 1], next = posted[at + 1];
@@ -280,6 +304,7 @@ ${blocks}
     return page({
       title: s.title,
       section: 'lessons',
+      mainClass: 'reading',
       body: `<article class="lesson s${s.wk.stage}">
   <header class="lhead">
     <p class="wk">${kicker(s)}</p>
@@ -412,20 +437,115 @@ ${goes.length ? `<p class="goes s${wk.stage}">Goes with ${goes.map((s) => `<a hr
     return [...terms.values()].sort((a, b) => a.term.localeCompare(b.term, 'en', { sensitivity: 'base', numeric: true }));
   }
 
+  // A course can add a longer description of any term in content/glossary.md, under a "## Term"
+  // heading that matches the term as the lesson writes it. Text before the first heading is a note
+  // for whoever edits the file, and is not shown.
+  const fullDescriptions = new Map();
+  if (has('content/glossary.md')) {
+    for (const part of read('content/glossary.md').split(/^## /m).slice(1)) {
+      const nl = part.indexOf('\n');
+      fullDescriptions.set(part.slice(0, nl).trim().toLowerCase(), part.slice(nl + 1).trim());
+    }
+  }
+  const glossTerms = glossaryTerms();
+  const glossIds = new Set(glossTerms.map((t) => slug(t.term)));
+
   function glossary() {
-    const terms = glossaryTerms();
+    const terms = glossTerms;
     const list = terms.map((t) => {
       const from = t.from.map((s) => `<a href="/lessons/${s.id}/">${course.lessonNumbers ? s.num : `Week ${s.wk.n}`}: ${esc(s.title)}</a>`).join(', ');
       const def = marked.parseInline(t.def.replace(/^[a-z]/, (c) => c.toUpperCase()));
-      return `<div class="term" id="${slug(t.term)}"><dt>${marked.parseInline(t.term)}</dt><dd>${def} <span class="from">${from}</span></dd></div>`;
+      const full = fullDescriptions.get(t.term.toLowerCase());
+      return `<div class="term" id="${slug(t.term)}"><dt>${marked.parseInline(t.term)}</dt><dd><p class="def">${def}</p>${full ? `<div class="full">${mdToHtml(full, `glossary ${t.term}`)}</div>` : ''}<span class="from">${from}</span></dd></div>`;
     }).join('\n');
     return page({
       title: 'Glossary',
       section: 'glossary',
       body: `<div class="head"><h1>Glossary</h1>
-<p>The key terms from each posted lesson, in alphabetical order. Each term links to the lesson that introduces it.</p></div>
+<p>The key terms from each posted lesson, in alphabetical order.${fullDescriptions.size ? ' Many have a longer description under the short definition.' : ''} Each term links to the lesson that introduces it.</p></div>
 ${terms.length ? `<dl class="gloss">\n${list}\n</dl>` : '<p class="empty">No terms yet. They appear here as lessons are posted.</p>'}`,
     });
+  }
+
+  // In a lesson's Key Terms section, each term links to its entry on the Glossary page.
+  function linkKeyTerms(html) {
+    return html.replace(/(<h2 id="key-terms">[\s\S]*?)(?=<h2 |$(?![\s\S]))/, (section) =>
+      section.replace(/<(li|p)><strong>(.+?)<\/strong>/g, (m, tag, term) => {
+        const id = slug(term.replace(/:$/, ''));
+        return glossIds.has(id) ? `<${tag}><a class="gl" href="/glossary/#${id}"><strong>${term}</strong></a>` : m;
+      }));
+  }
+
+  // ---------- Projects and Appendix ----------
+  function listPage({ section, title, intro, entries, cls }) {
+    const list = entries.map((p) => {
+      const wk = p.weeks && course.weeks.find((w) => w.n === p.weeks[0]);
+      return `<li class="demo${wk ? ` s${wk.stage}` : ''}">
+  <h2><a href="/${section}/${p.slug}/">${esc(p.name)}</a>${statusTag(p)}</h2>
+  <p>${esc(p.about)}</p>${p.weeks ? `\n  <p class="about">Draws on ${demoWeeks(p)}</p>` : ''}
+</li>`;
+    }).join('\n');
+    return page({
+      title,
+      section,
+      body: `<div class="head"><h1>${title}</h1>
+<p>${esc(intro)}</p></div>
+<ul class="demos ${cls}">\n${list}\n</ul>`,
+    });
+  }
+  function entryPage({ section, title, p }) {
+    const md = read(`content/${section}/${p.slug}.md`).replace(/^# .*\n+/, '');
+    const { html, toc } = render(md, `${section} ${p.slug}`);
+    const wk = p.weeks && course.weeks.find((w) => w.n === p.weeks[0]);
+    return page({
+      title: p.name,
+      section,
+      mainClass: 'reading',
+      body: `<article class="lesson${wk ? ` s${wk.stage}` : ''}">
+  <header class="lhead">
+    <p class="wk"><a href="/${section}/">${title}</a>${p.tag && STATUS[p.tag] ? `, ${STATUS[p.tag]}` : ''}</p>
+    <h1>${esc(p.name)}</h1>
+  </header>
+  <div class="cols">
+    ${toc.length ? tocNav(toc) : '<span></span>'}
+    <div class="prose">${html}</div>
+  </div>
+</article>`,
+    });
+  }
+
+  // ---------- Search index ----------
+  // One entry per posted lesson, project and appendix page, with its headings and its text as plain
+  // words. engine/page.js loads it the first time a reader uses the search box.
+  const plain = (md) => md
+    .replace(/^>\s*\*\*Instructor note[\s\S]*?(?:\n\n|$)/gm, '')
+    .replace(/^\{\{widget [^}]*\}\}$/gm, '')
+    .replace(/```mermaid[\s\S]*?```/g, '')
+    .replace(/^:::.*$/gm, '')
+    .replace(/^\s*(?:[-*+]|\d+\.) +/gm, '')
+    .replace(/^\|?[\s|:-]+\|?$/gm, '')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[#*_`>|]+/g, ' ')
+    .replace(/-{3,}/g, ' ')
+    .replace(/\$+/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  function searchIndex() {
+    // Headings are kept with their ids, so a result can open the page at the matching section.
+    const decode = (s) => s.replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+    const entry = (url, title, where, md) => {
+      const n = mathErrors.length; // already reported when the page itself was built
+      const heads = render(md, `search ${url}`).toc.map((t) => [t.id, decode(t.text)]);
+      mathErrors.length = n;
+      return { u: `/${base}${url}`, t: title, w: where, h: heads, x: plain(md.replace(/^# .*\n+/, '')) };
+    };
+    return JSON.stringify([
+      ...items.filter((s) => s.lesson).map((s) => entry(`/lessons/${s.id}/`, s.title, `Week ${s.wk.n}, ${s.label}`, read(`content/lessons/${s.id}.md`))),
+      ...projects.map((p) => entry(`/projects/${p.slug}/`, p.name, 'Project', read(`content/projects/${p.slug}.md`))),
+      ...appendix.map((p) => entry(`/appendix/${p.slug}/`, p.name, 'Appendix', read(`content/appendix/${p.slug}.md`))),
+    ]);
   }
 
   // ---------- Write the course ----------
@@ -442,6 +562,15 @@ ${terms.length ? `<dl class="gloss">\n${list}\n</dl>` : '<p class="empty">No ter
   if (has('content/resources.md')) out('resources/index.html', doc({ file: 'content/resources.md', title: 'Resources', section: 'resources', cls: 'res' }));
   if (has('content/changes.md')) out('changes/index.html', doc({ file: 'content/changes.md', title: T('What Changed', 'What changed'), section: 'changes', cls: 'changes' }));
   out('glossary/index.html', glossary());
+  if (projects.length) {
+    out('projects/index.html', listPage({ section: 'projects', title: 'Projects', intro: text.projects || '', entries: projects, cls: 'projects' }));
+    for (const p of projects) out(`projects/${p.slug}/index.html`, entryPage({ section: 'projects', title: 'Projects', p }));
+  }
+  if (appendix.length) {
+    out('appendix/index.html', listPage({ section: 'appendix', title: 'Appendix', intro: text.appendix || '', entries: appendix, cls: 'appendix' }));
+    for (const p of appendix) out(`appendix/${p.slug}/index.html`, entryPage({ section: 'appendix', title: 'Appendix', p }));
+  }
+  fs.writeFileSync(path.join(dist, base, 'search.json'), searchIndex());
   for (const s of items) {
     if (s.lesson) out(`lessons/${s.id}/index.html`, lesson(s));
     if (s.slides) out(`slides/${s.id}/index.html`, deck(s));
@@ -451,7 +580,10 @@ ${terms.length ? `<dl class="gloss">\n${list}\n</dl>` : '<p class="empty">No ter
     if (has(src)) out(`demos/${d.slug}/index.html`, demoPage(d, read(src)));
   }
   if (mathErrors.length) console.warn(`${base}: ${mathErrors.length} equations could not be read:\n  ${mathErrors.join('\n  ')}`);
-  console.log(`${base}: Built ${items.filter((s) => s.lesson).length} lessons and ${items.filter((s) => s.slides).length} decks.`);
+  const unmatched = [...fullDescriptions.keys()].filter((k) => !glossTerms.some((t) => t.term.toLowerCase() === k));
+  if (unmatched.length) console.warn(`${base}: content/glossary.md has descriptions for terms no lesson defines: ${unmatched.join(', ')}`);
+  const extra = [[projects.length, 'project'], [appendix.length, 'appendix page'], [fullDescriptions.size, 'glossary description']].filter(([n]) => n).map(([n, w]) => `, ${n} ${w}${n === 1 ? '' : 's'}`).join('');
+  console.log(`${base}: Built ${items.filter((s) => s.lesson).length} lessons and ${items.filter((s) => s.slides).length} decks${extra}.`);
   return course;
 }
 

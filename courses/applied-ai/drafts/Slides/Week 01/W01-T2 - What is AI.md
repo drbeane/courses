@@ -1,0 +1,65 @@
+---
+marp: true
+title: "Week 1: What Is AI?"
+paginate: true
+---
+
+# What Is AI?
+### Week 1
+COSC-300/500 Applied AI Essentials
+
+---
+
+## A Working Definition
+
+**Artificial intelligence**: computer systems that do tasks we would call intelligent if a person did them.
+
+- Understanding language, recognizing images, predicting, planning
+- The boundary keeps moving: once a task is routine, people stop calling it AI
+
+<!-- Chess in 1997 was front-page AI. Today it's a free app. -->
+
+---
+
+## Two Ways to Build It
+
+| Rules written by people | Learned from data |
+|---|---|
+| Predictable, easy to audit | Handles messy input: speech, photos, writing |
+| Brittle when something new comes up | Needs lots of data, harder to explain |
+| Tax software, fraud rules | Speech recognition, recommendations, chat assistants |
+
+---
+
+## Nested Terms
+
+- **AI**: the whole field
+  - **Machine learning**: learns from data
+    - **Deep learning**: large neural networks
+      - **Generative AI**: creates new text, images, audio, code
+
+A spam filter *classifies*. A chat assistant *creates*.
+
+---
+
+## AI You Already Use
+
+- Recommendations in feeds and stores
+- Maps and traffic predictions
+- Phone cameras and photo search
+- Speech recognition and captions
+- Fraud alerts and autocomplete
+
+Most of it is narrow. Chat assistants are unusually general.
+
+---
+
+## What "AI" Doesn't Tell You
+
+Ask instead:
+
+1. What does it actually do? Classify, predict, recommend, or generate?
+2. What was it built on? Whose data, how current?
+3. What happens when it's wrong?
+
+Optional reading: **The History of AI**, in the Appendix.

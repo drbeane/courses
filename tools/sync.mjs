@@ -146,4 +146,18 @@ for (const [from, to, clean] of plan.docs) {
   const file = path.join(src, from);
   if (fs.existsSync(file)) fs.writeFileSync(path.join(out, to), clean(fs.readFileSync(file, 'utf8')));
 }
-console.log(`Synced ${plan.lessons.length} lessons and ${plan.slides.length} decks into`, out);
+// In either layout: drafts/Projects/<slug>.md and drafts/Appendix/<slug>.md become those pages,
+// and drafts/Glossary.md holds the glossary's longer descriptions. Instructor notes are removed.
+let extra = 0;
+for (const folder of ['Projects', 'Appendix']) {
+  const from = path.join(src, folder);
+  if (!fs.existsSync(from)) continue;
+  const to = path.join(out, folder.toLowerCase());
+  fs.mkdirSync(to, { recursive: true });
+  for (const f of fs.readdirSync(from).filter((f) => f.endsWith('.md'))) {
+    fs.writeFileSync(path.join(to, f), plan.cleanLesson(fs.readFileSync(path.join(from, f), 'utf8')));
+    extra++;
+  }
+}
+if (fs.existsSync(path.join(src, 'Glossary.md'))) fs.writeFileSync(path.join(out, 'glossary.md'), fs.readFileSync(path.join(src, 'Glossary.md'), 'utf8'));
+console.log(`Synced ${plan.lessons.length} lessons, ${plan.slides.length} decks and ${extra} project and appendix pages into`, out);

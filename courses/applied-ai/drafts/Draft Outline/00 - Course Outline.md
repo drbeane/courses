@@ -37,7 +37,7 @@ Two ideas give the course its shape.
 | Week | Topic | Surfaces | Capabilities | 4D emphasis | Assignment |
 |---|---|---|---|---|---|
 | 1 | How AI systems work and how they are delivered | Chat assistant, map of all eight surfaces | Model selection and effort levels | Delegation | Three-vendor comparison |
-| 2 | Prompting and context | Chat assistant | Memory and custom instructions, Voice | Description | Prompt revision log |
+| 2 | Prompting and context | Chat assistant | Markdown and handoffs, Usage limits, Memory and custom instructions, Voice and dictation | Description | Prompt revision log |
 | 3 | Evaluating AI output | Chat assistant | Model selection and effort levels | Discernment | Fact-check and failure report |
 | 4 | Research and grounded knowledge work | Chat assistant | Projects and project memory, Research agent, Grounded notebook | Discernment | Research brief with citation audit |
 | 5 | Documents, data, and media | Chat assistant, Embedded copilot | Generative media, Data analysis with code execution, File and document creation, Multimodal input | Description | Data-to-deliverable package |

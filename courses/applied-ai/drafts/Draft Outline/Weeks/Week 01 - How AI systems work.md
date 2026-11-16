@@ -14,16 +14,18 @@ Students will be able to:
 
 ## Topics
 1. About this course
-2. What a large language model is
-3. The surfaces map
-4. The 4D framework
-5. Vendors, models, and effort
-6. Privacy settings
+2. What is AI?
+3. What a large language model is
+4. The surfaces map
+5. The 4D framework
+6. Vendors, models, and effort
+7. Privacy settings
 - Lab and assignment: Three-vendor comparison
 
 ## Class time (two 75-minute meetings)
 - 10 min: Course overview, the AI-use and disclosure policy, the AI use journal.
-- 35 min: How an LLM works. Next-token prediction, sampling, training in brief, why answers vary. Live demo: same prompt run three times.
+- 10 min: What is AI? The field, its main approaches, and where generative AI fits. The History of AI appendix page is optional reading.
+- 25 min: How an LLM works. Next-token prediction, sampling, training in brief, why answers vary. Live demo: same prompt run three times.
 - 20 min: The surfaces map. A tour of all eight surfaces with a 2-minute demo of each that is available, showing where the course will go.
 - 10 min: The 4D framework. Delegation as the first decision: what should you hand to AI at all?
 - 15 min: Vendors and models. Anthropic, OpenAI, Google, Microsoft, Meta, open-weight models. Model tiers and effort or "thinking" settings.

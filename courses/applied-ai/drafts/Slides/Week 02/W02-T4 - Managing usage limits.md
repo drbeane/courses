@@ -1,0 +1,62 @@
+---
+marp: true
+title: "Week 2: Managing Usage Limits"
+paginate: true
+---
+
+# Managing Usage Limits
+### Week 2
+COSC-300/500 Applied AI Essentials
+
+---
+
+## Why There Are Limits
+
+- A flat monthly price, but every message costs computing time
+- The limit is a budget of **tokens**, not a count of messages
+- A late message in a long chat costs far more than an early one
+
+---
+
+## Claude's Two Limits
+
+| Limit | How it works |
+|---|---|
+| **Session** | About five hours from your first message |
+| **Weekly** | A total for the week, across all models |
+
+Chat, the desktop app, your phone, and agent tools share one allowance.
+
+<!-- Recheck against the Help Center the week you teach. -->
+
+---
+
+## Check It
+
+**Settings → Usage**
+
+Watch it for a few weeks. Ordinary chat rarely hits the limit. Long research, big files, and agents do.
+
+---
+
+## What Uses It Up
+
+- Long chats
+- Large files, reread every turn
+- Research and web search
+- Bigger models and more thinking
+- Agent work
+- Rework from vague prompts
+
+---
+
+## Make It Go Further
+
+- Start new chats, with a handoff file
+- Attach only what the task needs
+- Match the model to the task
+- Edit instead of arguing
+- Ask for several things at once
+- Turn off tools you don't need
+
+Never share an account to get more usage.

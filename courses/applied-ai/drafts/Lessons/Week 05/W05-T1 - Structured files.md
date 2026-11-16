@@ -32,7 +32,7 @@ These formats matter for three reasons:
 
 ## Markdown
 
-Markdown is a way to mark up a document's structure with ordinary characters. You have been reading it all term: chat tools write their replies in Markdown and display the result, which is where the headings, bullets, and bold text in a reply come from. This course's lessons and slides are Markdown files.
+You met Markdown in Week 2, in [Markdown and Handoffs](/lessons/w02-t3/), as a format for AI output and for handoff files. A quick reminder of the symbols:
 
 ```markdown
 # A heading
@@ -41,27 +41,14 @@ Markdown is a way to mark up a document's structure with ordinary characters. Yo
 A paragraph with **bold** and *italic* text, and a [link](https://example.com).
 
 - a bullet
-- another bullet
-
 1. a numbered step
-2. the next step
 
 | Name | Year |
 |---|---|
 | Ada | 2027 |
 ```
 
-The symbols to know:
-
-| You type | You get |
-|---|---|
-| `# ` at the start of a line | A heading. More `#` signs make smaller headings. |
-| `- ` at the start of a line | A bullet |
-| `1. ` at the start of a line | A numbered item |
-| `**text**` | Bold |
-| `*text*` | Italic |
-| `[words](address)` | A link |
-| Lines of cells separated by pipes | A table |
+Markdown is the right choice for documents, notes, and instructions: anything a person will read. It is a poor choice for data that a program or a spreadsheet will use, which is where the next three formats come in.
 
 Markdown matters for prompts too. Headings and bullets in a long prompt help a model see its parts, in the way tags did in Week 2.
 

@@ -10,7 +10,9 @@
     "lessons": "The full text for each topic, grouped by week. Each week ends with its lab and assignment. Read a topic before class or use it to review afterward.",
     "slides": "The decks presented in class, one per topic. Use the arrow keys to move through a deck press F for full screen, and press Esc to come back to this page.",
     "resources": "Videos, short courses, articles, and standards that go with each week. Everything is free unless it says otherwise.",
-    "labKicker": "Lab and Assignment"
+    "labKicker": "Lab and Assignment",
+    "projects": "Longer projects that put several weeks of the course to work on something you will keep using. Each page says what the project involves and what you need to have covered first.",
+    "appendix": "Material outside the weekly outline, for background and further reading. Nothing here is assigned."
   },
   "stages": [
     { "n": 1, "name": "Chat With an AI" },
@@ -22,8 +24,8 @@
     { "n": 7, "name": "Put It All Together" }
   ],
   "weeks": [
-    { "n": 1, "stage": 1, "topic": "How AI Systems Work", "focus": "Delegation", "assignment": "Three-Vendor Comparison", "topics": ["About This Course", "What a Large Language Model Is", "The Surfaces Map", "The 4D Framework", "Vendors, Models, and Effort", "Privacy Settings"] },
-    { "n": 2, "stage": 1, "topic": "Prompting and Context", "focus": "Description", "assignment": "Prompt Revision Log", "topics": ["Writing Strong Prompts", "Tokens and the Context Window", "Memory, Custom Instructions, and Voice", "Testing and Revising Prompts"] },
+    { "n": 1, "stage": 1, "topic": "How AI Systems Work", "focus": "Delegation", "assignment": "Three-Vendor Comparison", "topics": ["About This Course", "What Is AI?", "What a Large Language Model Is", "The Surfaces Map", "The 4D Framework", "Vendors, Models, and Effort", "Privacy Settings"] },
+    { "n": 2, "stage": 1, "topic": "Prompting and Context", "focus": "Description", "assignment": "Prompt Revision Log", "topics": ["Writing Strong Prompts", "Tokens and the Context Window", "Markdown and Handoffs", "Managing Usage Limits", "Memory and Custom Instructions", "Voice Mode and Dictation", "Testing and Revising Prompts"] },
     { "n": 3, "stage": 1, "topic": "Evaluating AI Output", "focus": "Discernment", "assignment": "Fact-Check and Failure Report", "topics": ["Why AI Output Is Wrong", "Verification Habits", "Effort, Models, and the Description–Discernment Loop"] },
     { "n": 4, "stage": 2, "topic": "Research and Grounded Knowledge Work", "focus": "Discernment", "assignment": "Research Brief With Citation Audit", "topics": ["AI as a Writing Partner", "Projects", "Research Agents", "Grounded Notebooks and How Tools Find Sources"] },
     { "n": 5, "stage": 2, "topic": "Documents, Data, and Media", "focus": "Description", "assignment": "Data-to-Deliverable Package", "topics": ["Structured Files", "Data Analysis With Code Execution", "Creating Files, Multimodal Input, and Generative Media", "AI Inside an Application"] },
@@ -37,6 +39,12 @@
     { "n": 13, "stage": 6, "topic": "Always-On Assistants", "focus": "Diligence", "assignment": "Always-On Agent Field Test", "topics": ["Always-On Agents", "Setting Up an Always-On Agent Safely", "Always-On Risks and When It Is Worth It"] },
     { "n": 14, "stage": 7, "topic": "AI in Organizations", "focus": "Diligence", "assignment": "Capstone Draft and Peer Review", "topics": ["Choosing Tools for an Organization", "Data Governance and Local Models", "Bias, Reliability, and Accountability", "Workforce Effects and AI-Use Policy"] },
     { "n": 15, "stage": 7, "topic": "Capstone and Synthesis", "focus": "All four", "assignment": "Capstone Final", "topics": ["Capstone Presentations", "Course Synthesis"] }
+  ],
+  "projects": [
+    { "slug": "personal-assistant", "name": "Build a Personal Assistant", "weeks": [4, 8], "tag": "draft", "about": "Set up a Claude project that knows how you work and can reach your task list and notes through connectors such as Todoist and Notion." }
+  ],
+  "appendix": [
+    { "slug": "history-of-ai", "name": "The History of AI", "about": "From the first ideas about thinking machines to today's large language models: the main approaches, the booms and winters, and the breakthroughs behind modern AI." }
   ],
   "demos": [
     { "slug": "next-token-sampler", "name": "Next-Token Sampler", "weeks": [1], "about": "Watch a model pick one token at a time, and see why the same prompt gives different answers on different runs." },

@@ -1,19 +1,18 @@
-# Week 2: Memory, Custom Instructions, and Voice
+# Week 2: Memory and Custom Instructions
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Description
 
-> **Instructor note: preparation.** Have your own Claude memory and preferences settings ready to show (review them first for anything you'd rather not project). Prepare a quick voice-mode demo. Check where the memory, preferences, and temporary-chat controls sit in Claude and ChatGPT this week; the settings pages are reorganized often and plans differ in which memory features they include. Timing: 15 min memory and instructions, 10 min voice, 40 min lab, 10 min share-out.
+> **Instructor note: preparation.** Have your own Claude memory and preferences settings ready to show (review them first for anything you'd rather not project). Check where the memory, preferences, and temporary-chat controls sit in Claude and ChatGPT this week; the settings pages are reorganized often and plans differ in which memory features they include. Timing: 15 min.
 
 ## What You Will Be Able to Do
 
 - Write custom instructions that improve most of your chats.
 - Explain how memory gets into a conversation, and review what a tool has stored about you.
 - Decide what belongs in standing context and what doesn't.
-- Judge when voice is better than typing.
 
 ## Standing Context
 
-The last topic showed that a new chat starts empty and that everything in the context shapes the response. Two features put context there **every time**, without your retyping it:
+The topic on the context window showed that a new chat starts empty and that everything in the context shapes the response. Two features put context there **every time**, without your retyping it:
 
 - **Custom instructions** (called preferences in some products): something you write once about who you are and how you want responses.
 - **Memory**: information the tool saves from your past conversations and brings into new ones.
@@ -36,7 +35,7 @@ Notice what that example does:
 - It states **format preferences** that apply to almost any question.
 - It includes a **behavior** the student wants every time: ask when unsure, and flag numbers to verify.
 
-Instructions like these apply the lessons of the first topic once, so you don't have to repeat them in every prompt.
+Instructions like these apply the lessons of the first topic this week once, so you don't have to repeat them in every prompt.
 
 Things to avoid in custom instructions:
 
@@ -99,28 +98,6 @@ A fourth option is simply to tell the tool, "Forget that" or "Remember that I pr
 Making a habit of this is part of responsible use. The tool's picture of you shapes every answer it gives.
 
 > **Instructor note: demo.** Show your own memory page, edit one item, and show how to turn memory off. If a student finds something surprising in their own memory, that's a good moment to discuss what they've been sharing.
-
-## Voice
-
-Voice mode lets you talk instead of type, and hear the reply read aloud.
-
-| Voice works well for | Typing works better for |
-|---|---|
-| Thinking out loud about an idea that isn't formed yet | Precise instructions with several constraints |
-| Practicing an explanation, a presentation, or an interview answer | Long prompts with pasted material |
-| Being quizzed before an exam | Anything with code, numbers, or names that must be exact |
-| Language practice | Results you need to copy, review, or cite |
-| Times when your hands or eyes are busy | Private topics in a public place |
-
-Voice changes the conversation in a few ways. Spoken prompts tend to be longer and looser, which is often good: people give more context when they talk than when they type. Replies are usually shorter and more conversational, and a table or a list doesn't translate to speech. Speech recognition also makes mistakes, especially with names and technical terms, so check the transcript before relying on what was said.
-
-A useful pattern is to **talk first and type second**. Spend five minutes describing a messy idea out loud, then ask for a written summary of what you said and continue in text.
-
-Test your judgment on a few situations below.
-
-{{widget voice-or-type}}
-
-> **Instructor note: demo.** Ask Claude by voice to quiz you on this week's terms. Keep it to two or three minutes.
 
 ## Key Terms
 

@@ -56,10 +56,10 @@ main { max-width: 76rem; }
 
 /* Centering. On each page the content shares one centered column, so a wide window has equal
    space on both sides. Text inside the column stays left-aligned. Demo pages and the Resources
-   page use the full width. */
+   page use the full width. Lesson pages use the shared layout in engine/site.css, which centers
+   the reading column. */
 .hero, .head, .stages, .weeks, .demos, .gloss, main > p { max-width: 56rem; margin-inline: auto; }
 .head p { max-width: 40rem; }
 .head.dhead, .head:has(+ .cols) { max-width: none; }
-.lesson { max-width: 60rem; margin-inline: auto; }
 /* The top bar's contents line up with the page area below it, however wide the window is. */
 .top { padding-inline: max(1.5rem, calc((100% - 76rem) / 2 + 1.5rem)); }

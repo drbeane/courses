@@ -198,3 +198,39 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 ## 2026-11-15 — AI Ethics: verification pass on rewrite claims
 - Checked the claims added in the rewrite. Corrected 01-01, 02-04, 02-08, 03-06, 03-07, 03-08, 04-07, 05-06, 05-07, 06-03, 06-05, 06-06, 07-04 and 07-09; added sources across Modules 1-8.
 - Verification Checklist: the rewrite sections are replaced by one status list. Still open: 01-03, 01-08 and 07-08.
+
+## 2026-11-15: Applied AI Weeks 1–2 restructured; search, text size, layout, glossary, projects and appendix
+
+Content (Applied AI):
+- New Week 1, Topic 2, What Is AI? The old Topics 2 to 6 are now 3 to 7.
+- Week 2 now has seven topics: Writing Strong Prompts; Tokens and the Context Window; Markdown and
+  Handoffs (new); Managing Usage Limits (new); Memory and Custom Instructions (voice removed);
+  Voice Mode and Dictation (new); Testing and Revising Prompts. Each new topic has a deck and a
+  widget (`what-is-ai`, `handoff-check`, `usage-saver`).
+- Week 5, Topic 1 keeps a short Markdown recap that links to Week 2, Topic 3.
+- New Projects section with a draft page, Build a Personal Assistant. New Appendix, linked from the
+  footer, with The History of AI.
+- Planning list: `drafts/Draft Outline/04 - Planning Notes.md`.
+
+Engine (all three courses):
+- Lesson layout: the reading column is centered on the page on wide screens, with the contents list
+  in the left margin. Below 79rem the contents list and column sit side by side, centered as a pair.
+  Lesson pages use a wider main area (`main.reading`, 86rem). Math for AI's `.lesson` width rule
+  was removed so it uses the shared layout.
+- New sizes:
+  - Lesson text column: 42rem (672px) → 48.5rem (776px), about 15% wider.
+  - Lesson text: 1.16rem (18.6px) → 1.06rem (17px).
+  - Lesson h2: 1.75rem (28px) → 1.5rem (24px). Lesson h3: 1.2rem (19.2px) → 1.1rem (17.6px).
+  - Lesson page title: clamp(2.2rem, 5vw, 3.6rem), at most 57.6px → clamp(1.9rem, 4vw, 2.85rem),
+    at most 45.6px.
+- Text size control in the lower right of every page (`engine/page.js`): small (93.75%), standard,
+  large (112.5%). It scales the whole page and is remembered in the reader's browser.
+- Search box in each course's top bar. It searches that course's lessons, projects and appendix
+  pages, from `/<course>/search.json`, which the build writes. Results open at the matching
+  section. "/" focuses the box; arrow keys and Enter pick a result.
+- Glossary: `content/glossary.md` can hold a longer description for any term under a `## Term`
+  heading. `tools/sync.mjs` copies it from `drafts/Glossary.md`. Applied AI has descriptions for
+  the Week 1 and 2 terms. Terms in each lesson's Key Terms section link to the glossary.
+- `course.json` settings: `projects` and `appendix` (slug, name, about, optional weeks and tag),
+  with pages in `content/projects/` and `content/appendix/`, synced from `drafts/Projects/` and
+  `drafts/Appendix/`. New tag value: `"draft"`.
