@@ -44,6 +44,10 @@ Before you run anything, write down what a good output must do. Without that, yo
 
 Checks like these are specific enough that two people would agree on whether an output passes. "Sounds professional" is not.
 
+Practice telling the two kinds apart below.
+
+{{widget check-sort}}
+
 ## The Revision Loop
 
 1. **Run** the current version on all the test inputs.
@@ -69,6 +73,10 @@ Two parts of this loop are easy to skip and shouldn't be.
 | v4 | Added: "If a decision changes during the meeting, report only the final outcome and note that it changed." | The one remaining failure | All five pass all four checks. |
 
 Each row has one change, a reason tied to something seen in the outputs, and a result on all five inputs. Your log this week will look like this.
+
+Step through the same log below. Watch which cells each change fixes, then try the detour to see a change that breaks inputs that already passed.
+
+{{widget revision-loop}}
 
 Because output varies, run an input two or three times when a result is borderline. A prompt that passes four runs in five is different from one that passes every time, and for a task you'll repeat a hundred times, that difference matters.
 

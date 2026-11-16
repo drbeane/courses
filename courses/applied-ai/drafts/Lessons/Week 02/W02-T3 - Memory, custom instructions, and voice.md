@@ -72,6 +72,10 @@ Memory is useful. You don't have to reintroduce yourself, and a tool that knows 
 | Constraints that always apply ("I use a Mac", "I write in British English") | Health, financial, or legal details you wouldn't want to resurface |
 | Long-running projects you return to often | Information about other people |
 
+Try sorting some examples below.
+
+{{widget memory-sort}}
+
 ### Know What's Stored About You
 
 Open your memory settings and read what's there. This is worth doing a few times a term.
@@ -111,6 +115,10 @@ Voice mode lets you talk instead of type, and hear the reply read aloud.
 Voice changes the conversation in a few ways. Spoken prompts tend to be longer and looser, which is often good: people give more context when they talk than when they type. Replies are usually shorter and more conversational, and a table or a list doesn't translate to speech. Speech recognition also makes mistakes, especially with names and technical terms, so check the transcript before relying on what was said.
 
 A useful pattern is to **talk first and type second**. Spend five minutes describing a messy idea out loud, then ask for a written summary of what you said and continue in text.
+
+Test your judgment on a few situations below.
+
+{{widget voice-or-type}}
 
 > **Instructor note: demo.** Ask Claude by voice to quiz you on this week's terms. Keep it to two or three minutes.
 

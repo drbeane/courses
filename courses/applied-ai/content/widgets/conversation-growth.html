@@ -1,0 +1,133 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .cg-cols{display:flex;align-items:flex-end;gap:3px;height:9rem;padding:0.4rem 0.4rem 0;border:1px solid var(--rule);border-radius:6px;background:var(--wash);overflow:hidden}
+.wx .cg-cols span{flex:1 1 0;max-width:1.6rem;min-height:2px;border-radius:2px 2px 0 0;background:color-mix(in srgb,var(--c) 45%,#fff);transition:height 0.25s}
+.wx .cg-cols span.cg-now{background:var(--c)}
+.wx .cg-cols span.cg-fresh{background:var(--muted)}
+.wx .cg-cols p{margin:auto;color:var(--muted);font-size:0.9rem}
+.wx .cg-bar{display:flex;height:1.1rem;border-radius:4px;overflow:hidden;background:var(--wash)}
+.wx .cg-bar span{display:block;height:100%;min-width:0;transition:width 0.25s}
+.wx .cg-key{margin:0.45rem 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:0.3rem 1rem;font-size:0.85rem}
+.wx .cg-key li{margin:0;display:flex;align-items:center;gap:0.35rem}
+.wx .cg-key i{display:inline-block;width:0.8rem;height:0.8rem;border-radius:2px}
+.wx .cg-sys{background:var(--muted)}
+.wx .cg-file{background:color-mix(in srgb,var(--c) 45%,#fff)}
+.wx .cg-hist{background:var(--c)}
+.wx .cg-new{background:#d08a00}
+.wx .cg-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:0.5rem}
+.wx .cg-stats div{padding:0.5rem 0.7rem;border:1px solid var(--rule);border-radius:6px}
+.wx .cg-stats b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.wx .cg-stats span{color:var(--muted);font-size:0.82rem}
+@media (prefers-reduced-motion:reduce){.wx .cg-cols span,.wx .cg-bar span{transition:none}}
+</style>
+<div class="wx" data-widget="conversation-growth">
+  <div class="wx-head"><b>Try It: Watch a Conversation Grow</b><span>Send messages and see how much the model rereads on every turn.</span></div>
+  <div class="wx-body">
+    <div class="wx-row">
+      <button type="button" class="wx-primary cg-send">Send a message</button>
+      <button type="button" class="cg-ten">Send ten</button>
+      <button type="button" class="cg-fresh">Start fresh with a summary</button>
+      <button type="button" class="cg-reset">Reset</button>
+    </div>
+    <div class="wx-row">
+      <button type="button" class="wx-chip cg-attach" aria-pressed="true">Attach a 10-page paper at the start</button>
+    </div>
+    <div>
+      <p class="wx-label">Tokens the model reads on each turn</p>
+      <div class="cg-cols" aria-hidden="true"></div>
+    </div>
+    <div>
+      <p class="wx-label">What it reads on this turn</p>
+      <div class="cg-bar" aria-hidden="true"></div>
+      <ul class="cg-key">
+        <li><i class="cg-sys"></i>System prompt</li>
+        <li><i class="cg-file"></i>Attached file</li>
+        <li><i class="cg-hist"></i>Earlier messages and replies</li>
+        <li><i class="cg-new"></i>Your new message</li>
+      </ul>
+    </div>
+    <div class="cg-stats" aria-live="polite"></div>
+    <p class="wx-out cg-out" aria-live="polite"></p>
+    <p class="wx-fine">The sizes are round numbers chosen to show the pattern: a 3,000-token system prompt, a 6,500-token paper, 60-token messages, 500-token replies, and a 400-token handoff summary. Real products vary, and some compress long histories without telling you.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const SYS = 3000, FILE = 6500, MSG = 60, REPLY = 500, SUMMARY = 400, MAX_COLS = 40;
+  const $ = (c) => root.querySelector(c);
+  const fmt = (n) => Math.round(n).toLocaleString('en-US');
+  let attach = true, turns = [], typed = 0;
+  // hist counts the exchanges in the current chat; fromSummary marks a chat that began from a handoff summary.
+  let hist = 0, fromSummary = false, total = 0;
+
+  // Tokens read on the next turn of the current chat.
+  const parts = () => ({ sys: SYS, file: attach && !fromSummary ? FILE : 0, hist: hist * (MSG + REPLY) + (fromSummary ? SUMMARY : 0), msg: MSG });
+
+  function send() {
+    const p = parts();
+    const read = p.sys + p.file + p.hist + p.msg;
+    total += read;
+    turns.push({ read, fresh: false });
+    hist++; typed += MSG;
+    show(p);
+  }
+
+  function show(p = parts()) {
+    const shown = turns.slice(-MAX_COLS);
+    const top = Math.max(1, ...shown.map((t) => t.read));
+    $('.cg-cols').innerHTML = shown.length
+      ? shown.map((t, i) => `<span class="${t.fresh ? 'cg-fresh' : i === shown.length - 1 ? 'cg-now' : ''}" style="height:${(t.read / top) * 100}%"></span>`).join('')
+      : '<p>Send a message to start.</p>';
+    const now = p.sys + p.file + p.hist + p.msg;
+    $('.cg-bar').innerHTML = [['sys', p.sys], ['file', p.file], ['hist', p.hist], ['new', p.msg]]
+      .map(([k, v]) => `<span class="cg-${k}" style="width:${(v / now) * 100}%"></span>`).join('');
+    const last = turns.length ? turns[turns.length - 1].read : 0;
+    $('.cg-stats').innerHTML =
+      `<div><b>${hist}</b><span>messages sent in this chat</span></div>` +
+      `<div><b>${fmt(last)}</b><span>tokens read on the last turn</span></div>` +
+      `<div><b>${fmt(total)}</b><span>tokens read in all, counting every turn</span></div>`;
+    const out = $('.cg-out');
+    out.className = 'wx-out cg-out' + (hist ? '' : ' wx-wait');
+    out.innerHTML = !hist
+      ? (fromSummary ? 'A new chat with only the handoff summary in it. Send a message to continue.' : 'The bar above shows what the model reads on your first message: the system prompt, the file if you attached one, and your message.')
+      : `<b>You typed about ${fmt(typed)} tokens. The model has read ${fmt(total)}.</b>` +
+        (fromSummary ? 'This chat started from a short summary instead of the full history and the paper, so it grows from a much smaller base.'
+          : hist < 5 ? 'Each turn sends the whole conversation again, so each column is taller than the one before.'
+          : `Message ${hist + 1} will carry the ${hist} exchanges before it${attach ? ', and the paper again' : ''}. Try starting fresh with a summary.`);
+    $('.cg-attach').setAttribute('aria-pressed', attach ? 'true' : 'false');
+    $('.cg-attach').disabled = hist > 0 || fromSummary;
+  }
+
+  $('.cg-send').onclick = send;
+  $('.cg-ten').onclick = () => { for (let i = 0; i < 10; i++) send(); };
+  $('.cg-fresh').onclick = () => {
+    if (!hist) return;
+    turns.push({ read: 0, fresh: true });
+    hist = 0; fromSummary = true; show();
+  };
+  $('.cg-reset').onclick = () => { turns = []; hist = 0; total = 0; typed = 0; fromSummary = false; show(); };
+  $('.cg-attach').onclick = () => { attach = !attach; show(); };
+  show();
+})();
+</script>

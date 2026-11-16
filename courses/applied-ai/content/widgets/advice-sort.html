@@ -1,0 +1,107 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .qz-count{margin:0;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .qz-item{margin:0.3rem 0 0.8rem;padding:0.7rem 0.85rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.08rem/1.5 var(--text)}
+.wx .qz-answers button{font-weight:600;padding:0.5rem 1rem}
+.wx .qz-answers button[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.wx .qz-answers button.qz-ans{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c)}
+.wx .qz-answers button.qz-ans::after{content:" ✓"}
+.wx .qz-fb{margin:0.8rem 0 0;min-height:2.9em}
+.wx .qz-fb.qz-ok,.wx .qz-fb.qz-no{padding-left:0.7rem;border-left:3px solid var(--c)}
+.wx .qz-fb.qz-no{border-left-color:#b3261e}
+.wx .qz-next{margin-top:0.6rem}
+.wx .qz-score{margin:0 0 0.6rem;font-size:1.05rem;font-weight:700}
+@media print{.wx .qz-answers,.wx .qz-next{display:none}}
+</style>
+<div class="wx" data-widget="advice-sort">
+  <div class="wx-head"><b>Try It: Still Useful or Outdated?</b><span>Sort prompting habits into ones that help current models and ones that no longer do.</span></div>
+  <div class="wx-body">
+    <div class="qz-play">
+      <p class="qz-count" aria-live="polite"></p>
+      <p class="qz-item"></p>
+      <div class="wx-row qz-answers" role="group" aria-label="Your answer"></div>
+      <p class="qz-fb" aria-live="polite"></p>
+      <button type="button" class="wx-primary qz-next" hidden>Next</button>
+    </div>
+    <div class="qz-done" hidden>
+      <p class="qz-score" aria-live="polite"></p>
+      <button type="button" class="qz-again">Try again</button>
+    </div>
+    <p class="wx-fine">These describe current models. Advice that worked on older ones keeps circulating online long after the models change.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const LABELS = ["Still helps","No longer helps"];
+  // Each item is [the request, the index of the right label, why].
+  const ITEMS = [
+    ["\"Take a deep breath before you answer.\"",1,"Magic phrases came from tests on older models and do little on current ones. Clear content beats clever wording."],
+    ["\"Here are two flashcards I like. Write ten more in the same style.\"",0,"Examples are the most powerful technique on the list. The model picks up their format, length and tone."],
+    ["\"IMPORTANT!!! NEVER USE BULLET POINTS. NEVER USE BULLET POINTS.\"",1,"Shouting or repeating can make a current model apply the rule too rigidly and neglect your other instructions. Say it once, in a normal sentence, with the reason."],
+    ["\"Write in plain paragraphs without bullets, because I'll read this aloud to my study group.\"",0,"This is the same rule as the shouted one, stated calmly with a reason. The reason tells the model what else to avoid."],
+    ["\"cover letter marketing entry-level professional\"",1,"This is a search query. Models respond better to full sentences that explain the situation."],
+    ["\"I'll tip you $200 for a perfect answer.\"",1,"Offers to tip are another magic phrase from older models. They do not improve current answers."],
+    ["\"This goes to a client who has no technical background.\"",0,"Naming the audience removes a guess about what the reader knows."],
+    ["Spending an hour on one prompt that covers every possible case before sending anything.",1,"You do not need the perfect first prompt. Reading the first output and replying with a correction is often faster."],
+    ["\"Before you write anything, ask me up to five questions.\"",0,"Letting the model ask turns a one-shot prompt into a short interview and often surfaces a requirement you missed."],
+  ];
+  const $ = (c) => root.querySelector(c);
+  $('.qz-answers').innerHTML = LABELS.map((l, i) => `<button type="button" data-i="${i}">${l.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</button>`).join('');
+  const btns = [...root.querySelectorAll('.qz-answers button')];
+  let at = 0, right = 0, answered = false;
+
+  function show() {
+    const done = at >= ITEMS.length;
+    $('.qz-play').hidden = done;
+    $('.qz-done').hidden = !done;
+    if (done) { $('.qz-score').textContent = `You got ${right} of ${ITEMS.length}.`; return; }
+    answered = false;
+    $('.qz-count').textContent = `${at + 1} of ${ITEMS.length}`;
+    $('.qz-item').textContent = ITEMS[at][0];
+    $('.qz-fb').textContent = '';
+    $('.qz-fb').className = 'qz-fb';
+    btns.forEach((b) => { b.disabled = false; b.removeAttribute('aria-pressed'); b.classList.remove('qz-ans'); });
+    $('.qz-next').hidden = true;
+  }
+
+  function answer(i) {
+    if (answered) return;
+    answered = true;
+    const [, ans, why] = ITEMS[at];
+    const ok = i === ans;
+    if (ok) right++;
+    btns.forEach((b, j) => { b.disabled = true; if (j === ans) b.classList.add('qz-ans'); if (j === i) b.setAttribute('aria-pressed', 'true'); });
+    $('.qz-fb').textContent = `${ok ? 'Right.' : `Not quite. The answer is "${LABELS[ans]}".`} ${why}`;
+    $('.qz-fb').classList.add(ok ? 'qz-ok' : 'qz-no');
+    $('.qz-next').textContent = at === ITEMS.length - 1 ? 'See your score' : 'Next';
+    $('.qz-next').hidden = false;
+    $('.qz-next').focus();
+  }
+
+  btns.forEach((b, i) => { b.onclick = () => answer(i); });
+  $('.qz-next').onclick = () => { at++; show(); if (at < ITEMS.length) btns[0].focus(); else $('.qz-again').focus(); };
+  $('.qz-again').onclick = () => { at = 0; right = 0; show(); btns[0].focus(); };
+  show();
+})();
+</script>

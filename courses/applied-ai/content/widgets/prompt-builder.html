@@ -1,0 +1,93 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .pb-prompt{margin:0;padding:0.75rem 0.9rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.05rem/1.55 var(--text)}
+.wx .pb-prompt mark{background:color-mix(in srgb,var(--c) 13%,#fff);color:inherit;border-radius:3px;padding:0 0.1em}
+.wx .pb-list{margin:0;padding:0;list-style:none;display:grid;gap:0.3rem}
+.wx .pb-list li{margin:0;display:grid;grid-template-columns:minmax(0,7.5rem) minmax(0,1fr);gap:0.2rem 0.8rem;padding:0.4rem 0.6rem;border:1px solid var(--rule);border-radius:6px}
+.wx .pb-list li b{font-weight:600}
+.wx .pb-list li.pb-open{border-color:#b3261e;border-style:dashed}
+.wx .pb-list li.pb-open b{color:#b3261e}
+.wx .pb-list li.pb-done span{color:var(--muted)}
+@media (max-width:520px){.wx .pb-list li{grid-template-columns:1fr}}
+</style>
+<div class="wx" data-widget="prompt-builder">
+  <div class="wx-head"><b>Try It: Build the Prompt</b><span>Add the five parts one at a time and watch the guesses disappear.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Parts to include</p>
+      <div class="wx-row pb-parts" role="group" aria-label="Parts to include"></div>
+    </div>
+    <div>
+      <p class="wx-label">Your prompt</p>
+      <p class="pb-prompt" aria-live="polite"></p>
+    </div>
+    <p class="wx-out pb-out" aria-live="polite"></p>
+    <div>
+      <p class="wx-label">What the model knows, and what it must guess</p>
+      <ul class="pb-list"></ul>
+    </div>
+    <div class="wx-row"><button type="button" class="pb-all">Add all five</button><button type="button" class="pb-none">Start over</button></div>
+    <p class="wx-fine">The context sentence is invented for this example; in a real prompt you would describe your own situation. Not every prompt needs all five parts. A quick question needs none of them.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // Each part is [name, the sentence it adds, what the model guesses without it, what it knows with it].
+  const PARTS = [
+    ['Goal', 'I need to decide whether to recommend funding a pilot program like this one.', 'What the summary is for, so it covers whatever seems interesting.', 'The summary supports a funding decision.'],
+    ['Context', 'Our department has never run a peer-tutoring program, and the article describes one at another university.', 'What you already know, so it explains things you know and skips things you don\'t.', 'You are new to this kind of program.'],
+    ['Constraints', 'Lead with the cost and the strength of the evidence, and flag any claim the article makes without support.', 'What matters most and what to be skeptical about.', 'Cost and evidence come first, and weak claims get flagged.'],
+    ['Audience', 'Write it for a busy department chair.', 'Who will read it, so it picks a neutral, general tone.', 'The reader is senior and short on time.'],
+    ['Output format', 'Use five bullets and stay under 120 words.', 'How long it should be and what shape it takes.', 'Five bullets, under 120 words.'],
+  ];
+  const BASE = 'Summarize this article.';
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const on = PARTS.map(() => false);
+
+  $('.pb-parts').innerHTML = PARTS.map((p, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(p[0])}</button>`).join('');
+  const chips = [...root.querySelectorAll('.pb-parts button')];
+
+  function show() {
+    chips.forEach((b, i) => b.setAttribute('aria-pressed', on[i] ? 'true' : 'false'));
+    $('.pb-prompt').innerHTML = [esc(BASE), ...PARTS.filter((_, i) => on[i]).map((p) => `<mark>${esc(p[1])}</mark>`)].join(' ');
+    $('.pb-list').innerHTML = PARTS.map(([name, , guess, knows], i) => on[i]
+      ? `<li class="pb-done"><b>${esc(name)}</b><span>Known: ${esc(knows)}</span></li>`
+      : `<li class="pb-open"><b>${esc(name)}</b><span>Guessing: ${esc(guess)}</span></li>`).join('');
+    const n = on.filter(Boolean).length;
+    const out = $('.pb-out');
+    out.className = `wx-out pb-out${n < 3 ? ' wx-stop' : ''}`;
+    out.innerHTML = n === 0
+      ? '<b>Five guesses left</b>The model will still write a summary, but a generic one: medium length, neutral tone, covering whatever seems most interesting.'
+      : n === PARTS.length
+        ? '<b>No guesses left</b>Every sentence you added removed one guess. The prompt is longer, but nothing in it is there for its own sake.'
+        : `<b>${['', 'Four', 'Three', 'Two', 'One'][n]} guess${n === 4 ? '' : 'es'} left</b>Each part you add replaces a guess with something you decided. Try the parts in a different order: each one removes a different guess.`;
+  }
+
+  chips.forEach((b, i) => { b.onclick = () => { on[i] = !on[i]; show(); }; });
+  $('.pb-all').onclick = () => { on.fill(true); show(); };
+  $('.pb-none').onclick = () => { on.fill(false); show(); };
+  show();
+})();
+</script>

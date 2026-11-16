@@ -1,0 +1,92 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx textarea{box-sizing:border-box;width:100%;min-height:7rem;padding:0.6rem 0.75rem;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);font:400 0.95rem/1.5 var(--text);resize:vertical}
+.wx textarea:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx .te-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:0.5rem}
+.wx .te-stats div{padding:0.5rem 0.7rem;border:1px solid var(--rule);border-radius:6px}
+.wx .te-stats b{display:block;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.wx .te-stats span{color:var(--muted);font-size:0.82rem}
+</style>
+<div class="wx" data-widget="token-estimator">
+  <div class="wx-head"><b>Try It: Estimate the Tokens</b><span>Paste or type some text and see roughly how many tokens it uses.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Start from a sample</p>
+      <div class="wx-row te-samples" role="group" aria-label="Samples"></div>
+    </div>
+    <div>
+      <label class="wx-label" for="te-text-input" style="display:block">Your text</label>
+      <textarea class="te-text" id="te-text-input" spellcheck="false"></textarea>
+    </div>
+    <div class="te-stats" aria-live="polite"></div>
+    <p class="wx-out te-out" aria-live="polite"></p>
+    <p class="wx-fine">This uses the rule of thumb from the table above: a token is about three-quarters of a word. Each model family splits text differently, and code, tables, and languages other than English usually take more tokens than the rule predicts. Nothing you type here leaves your browser.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const WINDOW = 200000;
+  const SAMPLES = [
+    ['A short question', 'What is the difference between a stock and a bond, in plain language?'],
+    ['A paragraph', 'Photosynthesis is the process plants use to turn light into chemical energy. Inside the leaf, chlorophyll absorbs sunlight, and the plant uses that energy to combine carbon dioxide from the air with water from the soil. The result is glucose, which the plant uses for growth, and oxygen, which it releases. Nearly all the oxygen we breathe comes from this process, carried out by plants, algae, and some bacteria over hundreds of millions of years.'],
+    ['Some code', 'def average(scores):\n    if not scores:\n        return 0.0\n    return sum(scores) / len(scores)\n\nprint(average([88, 92, 79]))'],
+    ['Clear', ''],
+  ];
+  const $ = (c) => root.querySelector(c);
+  const fmt = (n) => Math.round(n).toLocaleString('en-US');
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const box = $('.te-text');
+
+  $('.te-samples').innerHTML = SAMPLES.map((s, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(s[0])}</button>`).join('');
+  const chips = [...root.querySelectorAll('.te-samples button')];
+
+  function show() {
+    const text = box.value;
+    const words = (text.match(/\S+/g) || []).length;
+    const tokens = Math.ceil(words / 0.75);
+    const codeish = /[{}();=<>\[\]]|^\s{4}/m.test(text);
+    $('.te-stats').innerHTML =
+      `<div><b>${fmt(words)}</b><span>words</span></div>` +
+      `<div><b>${fmt(tokens)}</b><span>tokens, about</span></div>` +
+      `<div><b>${words ? (words / 500).toFixed(words < 500 ? 2 : 1) : 0}</b><span>single-spaced pages</span></div>`;
+    const out = $('.te-out');
+    out.className = 'wx-out te-out' + (words ? '' : ' wx-wait');
+    out.innerHTML = !words
+      ? 'Type or paste something to see an estimate.'
+      : `<b>${tokens >= WINDOW ? 'More than a 200,000-token context window holds' : `About ${(tokens / WINDOW * 100).toFixed(tokens / WINDOW < 0.001 ? 3 : tokens / WINDOW < 0.1 ? 2 : 1)}% of a 200,000-token context window`}</b>` +
+        (codeish ? 'This looks like code or contains many symbols, so the real count is probably higher than this estimate.'
+          : tokens >= WINDOW ? 'It would not fit in one conversation on such a model.'
+          : `It would fit about ${fmt(Math.floor(WINDOW / tokens))} times, before counting the system prompt, the history, and the reply.`);
+  }
+
+  chips.forEach((b, i) => { b.onclick = () => {
+    box.value = SAMPLES[i][1];
+    chips.forEach((c) => c.setAttribute('aria-pressed', c === b && i < SAMPLES.length - 1 ? 'true' : 'false'));
+    show();
+    if (i === SAMPLES.length - 1) box.focus();
+  }; });
+  box.oninput = () => { chips.forEach((c) => c.setAttribute('aria-pressed', 'false')); show(); };
+  chips[1].click();
+})();
+</script>

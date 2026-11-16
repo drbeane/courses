@@ -1,0 +1,115 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .rl-change{margin:0;padding:0.6rem 0.8rem;border:1px dashed var(--rule);border-radius:6px;font:400 1rem/1.5 var(--text)}
+.wx .rl-grid{width:100%;border-collapse:collapse;font-size:0.88rem}
+.wx .rl-grid th,.wx .rl-grid td{padding:0.35rem 0.45rem;border:1px solid var(--rule);text-align:center;vertical-align:middle}
+.wx .rl-grid th{font-weight:600;background:var(--wash)}
+.wx .rl-grid th[scope=row]{text-align:left}
+.wx .rl-grid td{font-weight:700;font-size:1rem}
+.wx .rl-grid td.rl-p{color:var(--c)}
+.wx .rl-grid td.rl-f{color:#b3261e;background:color-mix(in srgb,#b3261e 7%,#fff)}
+.wx .rl-grid td.rl-fixed{box-shadow:inset 0 0 0 2px var(--c)}
+.wx .rl-grid td.rl-broke{box-shadow:inset 0 0 0 2px #b3261e}
+.wx .rl-key{margin:0;color:var(--muted);font-size:0.84rem}
+.wx .rl-notes{margin:0;padding-left:1.2rem}
+.wx .rl-notes li{margin:0.15rem 0}
+.wx .rl-wrap{overflow-x:auto}
+</style>
+<div class="wx" data-widget="revision-loop">
+  <div class="wx-head"><b>Try It: Step Through the Revision Log</b><span>See each version of the meeting-notes prompt run against all five inputs and four checks.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Version</p>
+      <div class="wx-row rl-vers" role="group" aria-label="Version"></div>
+    </div>
+    <div>
+      <p class="wx-label">What changed</p>
+      <p class="rl-change" aria-live="polite"></p>
+    </div>
+    <div class="rl-wrap"><table class="rl-grid"></table></div>
+    <p class="rl-key">✓ passes, ✗ fails. A cell outlined in the course color was fixed by this change; one outlined in red was broken by it.</p>
+    <p class="wx-out rl-out" aria-live="polite"></p>
+    <div>
+      <p class="wx-label">What the outputs got wrong</p>
+      <ul class="rl-notes"></ul>
+    </div>
+    <p class="wx-fine">Versions 1 to 4 follow the worked example in this lesson. The detour version is made up to show a common trap: a change that fixes one input and quietly breaks others, which you would miss if you reran only the input you were fixing.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const INPUTS = ['Typical notes 1', 'Typical notes 2', 'Long and messy', 'Short and thin', 'Decision reversed'];
+  const CHECKS = ['Every decision, none reversed', 'Owner for every action item', 'Under 150 words', 'Nothing not in the notes'];
+  // Each version: label, the change, the version it is compared with, results (one string per input, 1 = pass), and notes on failures.
+  const VERS = [
+    { name: 'v1', change: '"Summarize these meeting notes."', prev: null,
+      r: ['1011', '1001', '0001', '1010', '0011'],
+      notes: ['Lengths range from 60 to 400 words.', 'Action items are buried in paragraphs, with no owners.', 'The thin input got a padded summary with details that were never said.', 'The long notes lost a decision in the tangent about parking.'] },
+    { name: 'v2', change: 'Added the audience and format: "for team members who missed the meeting. Sections: Decisions, Action items, Open questions."', prev: 0,
+      r: ['1111', '1011', '1011', '1010', '0111'],
+      notes: ['All five now have the three sections and stay under 150 words.', 'Where the notes name no owner, the model invents one.', 'The reversed decision is listed as final.', 'The thin input is still padded.'] },
+    { name: 'v3', change: 'Added: "If the notes don\'t say who owns an item or nothing was decided, say so. Don\'t fill in gaps."', prev: 1,
+      r: ['1111', '1111', '1111', '1111', '0111'],
+      notes: ['The thin input now reads "No decisions recorded."', 'Owners are correct or marked "no owner stated".', 'The reversed decision is still listed as final.'] },
+    { name: 'v4', change: 'Added: "If a decision changes during the meeting, report only the final outcome and note that it changed."', prev: 2,
+      r: ['1111', '1111', '1111', '1111', '1111'],
+      notes: ['All five inputs pass all four checks.'] },
+    { name: 'Detour: v3 as "Be concise"', change: 'Instead of the real v3, suppose you had added only: "Be concise."', prev: 1,
+      r: ['0111', '0011', '1011', '1011', '0111'],
+      notes: ['The thin input is no longer padded, which is the failure you were aiming at.', 'But both typical summaries now drop a decision to save space.', 'Invented owners and the reversed decision are still there.'] },
+  ];
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  let at = 0;
+
+  $('.rl-vers').innerHTML = VERS.map((v, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(v.name)}</button>`).join('');
+  const chips = [...root.querySelectorAll('.rl-vers button')];
+  const head = `<thead><tr><th scope="col">Input</th>${CHECKS.map((c) => `<th scope="col">${esc(c)}</th>`).join('')}</tr></thead>`;
+
+  function show() {
+    const v = VERS[at], p = v.prev === null ? null : VERS[v.prev];
+    chips.forEach((b, i) => b.setAttribute('aria-pressed', i === at ? 'true' : 'false'));
+    $('.rl-change').textContent = v.change;
+    let pass = 0, fixed = 0, broke = 0;
+    const rows = INPUTS.map((name, i) => `<tr><th scope="row">${esc(name)}</th>${[...v.r[i]].map((c, j) => {
+      const ok = c === '1', was = p ? p.r[i][j] === '1' : ok;
+      if (ok) pass++;
+      const cls = (ok ? 'rl-p' : 'rl-f') + (ok && !was ? ' rl-fixed' : '') + (!ok && was ? ' rl-broke' : '');
+      if (ok && !was) fixed++; if (!ok && was) broke++;
+      return `<td class="${cls}" aria-label="${ok ? 'Passes' : 'Fails'}">${ok ? '✓' : '✗'}</td>`;
+    }).join('')}</tr>`).join('');
+    $('.rl-grid').innerHTML = head + `<tbody>${rows}</tbody>`;
+    const total = INPUTS.length * CHECKS.length;
+    const out = $('.rl-out');
+    out.className = 'wx-out rl-out' + (broke ? ' wx-stop' : '');
+    out.innerHTML = `<b>${pass} of ${total} checks pass</b>` + (p
+      ? `Compared with ${esc(p.name)}: ${fixed} fixed, ${broke} broken.` + (broke ? ' A change that breaks inputs that already passed is why you rerun all of them.' : pass === total ? ' You can stop here.' : '')
+      : 'This is the starting point. Choose the next version to see what one change does.');
+    $('.rl-notes').innerHTML = v.notes.map((n) => `<li>${esc(n)}</li>`).join('');
+  }
+
+  chips.forEach((b, i) => { b.onclick = () => { at = i; show(); }; });
+  show();
+})();
+</script>

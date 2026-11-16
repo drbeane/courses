@@ -72,6 +72,19 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - The planned outline now has a Type column for all 76 lessons.
 - New claims that need sources are listed at the end of `06 - Verification Checklist.md`.
 
+## 2026-11-15: Week 2 widgets for Applied AI
+
+- Nine new widgets in `courses/applied-ai/content/widgets/`, placed in the Week 2 lessons:
+  `prompt-builder`, `fix-output` and `advice-sort` (T1); `token-estimator` and
+  `conversation-growth` (T2); `memory-sort` and `voice-or-type` (T3); `check-sort` and
+  `revision-loop` (T4).
+- Each placement adds one lead-in sentence and one `{{widget ...}}` line, in the draft and in `content/`.
+- The five quiz widgets (`fix-output`, `advice-sort`, `memory-sort`, `voice-or-type`, `check-sort`)
+  reuse the markup and script of `reliability-sort` with new items.
+- The token counts in `conversation-growth` and `token-estimator` are round numbers or the
+  three-quarters-of-a-word rule, and both widgets say so. The context sentence in `prompt-builder`
+  and the "Be concise" detour in `revision-loop` are invented for the example.
+
 ## 2026-11-15: Week 1 widgets for Applied AI
 
 - Five new widgets in `courses/applied-ai/content/widgets/`, each placed in a Week 1 lesson:
