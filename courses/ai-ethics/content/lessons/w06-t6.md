@@ -110,7 +110,7 @@ If not, read and summarize one study on multilingual AI performance gaps.
 
 ## Connections
 
-- Gains concentration → 05-03 · Hidden labor → 05-07 · Open weights and geopolitics → 07-02, 07-04 · Global governance → 08-03
+- Gains concentration → 05-04 · Hidden labor → 05-07 · Open weights and geopolitics → 07-02, 07-04 · Global governance → 08-03
 
 ## Sources and further reading
 

@@ -275,3 +275,13 @@ Module 4 now follows the planned outline. The v1 rows above for 04-04 (Grok) and
 - ⚠ 04-01: Moffatt asked the chatbot in 2022 (added detail).
 - ⚠ 04-03: the Arup employee made fifteen transfers; the Baltimore-area athletic director was charged (v1 said "created").
 - ⚠ 04-05: AI translation of campaign speeches in India; Costello et al. effect size (about 20 percent reduction in belief, lasting at least two months).
+
+
+## Added with the Module 5 rewrite (2026-11-15)
+
+Module 5 now follows the planned outline. 05-03 is new; v1 05-03 (who captures the gains) is now 05-04; v1 05-04 (algorithmic management) and 05-05 (monitoring) are merged into 05-05. The v1 rows above for those files now refer to the new numbers.
+
+- ⚠ 05-03 is new. Verify: Brynjolfsson, Li and Raymond (more than 5,000 agents; 14 percent average and 34 percent for novices; new agents with the tool matching six-month agents after two months; customers more polite; lower quitting; gains partly retained during outages). Noy and Zhang (about 40 percent less time, about 18 percent higher quality). Peng et al. (about 56 percent faster) and confirm the link. Dell'Acqua et al. (gains largest for weaker consultants; worse performance outside the frontier). METR (about 19 percent slower). Bastani et al. (Turkish high school students; worse exam results after an unrestricted tutor; a hint-based tutor avoided most of the harm) and confirm the link.
+- ⚠ 05-06: the claim that surveys consistently find flexibility is what gig workers value most needs a source.
+- ⚠ 05-07: the claim that some data-work companies described their work as "impact sourcing" needs a source.
+- ⚠ 05-09: the video game performers' 2025 agreement.

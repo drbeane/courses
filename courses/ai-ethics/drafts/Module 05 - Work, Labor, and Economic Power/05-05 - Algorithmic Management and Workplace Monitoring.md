@@ -1,0 +1,139 @@
+# 05-05 — Algorithmic Management and Workplace Monitoring
+
+**Module:** 5 — Work, Labor, and Economic Power
+**Estimated time:** 45 minutes (includes debate preparation)
+
+**In this lesson:** Software now assigns work, measures it and sometimes disciplines workers for it, and monitoring tools record what remote workers type and see. This lesson looks at what these systems do, the good reasons employers give for them, their effects on workers, how the law differs across countries, and how monitoring could be designed responsibly. It prepares you for the Week 5 debate.
+
+## Time Off Task
+
+For years, Amazon's fulfillment centers have used systems that track each worker's productivity in real time, including how many items they scan and their "Time Off Task," the minutes when their scanner is idle. Reporting since 2019 has described workers receiving warnings, and in some cases being fired, on the basis of these metrics, and workers skipping bathroom breaks to keep their idle time down.
+
+In January 2024, France's data protection authority, the CNIL, fined Amazon's French logistics company €32 million. It found that tracking scanner inactivity minute by minute was "excessively intrusive" and that some of the measures were unlawful under the GDPR. Several U.S. states, including California in 2021, New York in 2022, and Washington and Minnesota, passed laws requiring warehouse employers to disclose their quotas and banning quotas that prevent workers from taking breaks. Amazon has said its systems are not used to fire workers without human review and that it has changed how it uses Time Off Task.
+
+## Management by Software
+
+**Algorithmic management** is the use of software and data to do what human managers traditionally did. It has three main functions. It **directs** work: assigning tasks, setting schedules, planning routes, setting the pace. It **evaluates** work: productivity scores, customer ratings, activity tracking. And it **disciplines**: automated warnings, changes in pay, recommendations to fire.
+
+It began in gig work and warehouses and has spread to call centers, retail, hospital scheduling, trucking, hotels and offices.
+
+For office and remote workers, the most visible form is employee-monitoring software, sometimes called **bossware**. It can record keystrokes and mouse movements, take screenshots or recordings of the screen, capture webcam images, log which applications and websites are used, read email and chat messages, track location, and combine all of it into a productivity score. AI adds new layers: analyzing the sentiment of messages, predicting which employees are likely to quit, and summarizing each employee's activity for managers. Surveys in 2025 and 2026 suggest such monitoring is common and growing.
+
+## Why Employers Use It
+
+The reasons employers give deserve to be taken seriously.
+
+Coordination at scale is hard. A warehouse moving hundreds of thousands of items a day, or a delivery company routing thousands of drivers, cannot be run by intuition. Software that assigns tasks and routes efficiently can lower costs and prices, and can reduce wasted effort.
+
+Metrics can be fairer than managers. A human supervisor may play favorites, or judge people by how they look or whether they socialize after work. A clear, consistently applied metric can protect workers from that kind of bias.
+
+Some monitoring protects workers. Systems that detect fatigue in truck drivers can prevent crashes. Safety alerts in warehouses can prevent injuries.
+
+Security and compliance require it in some settings. Banks and hospitals must prevent data leaks and keep records.
+
+And remote work made it harder for managers to know who was doing what.
+
+Some algorithmic tools plainly help workers: scheduling software that gives fair advance notice of shifts, transparent assignment of tasks, safety alerts. The question is how to get those benefits without the harms.
+
+## What It Does to Workers
+
+Research and workers' testimony describe several harms.
+
+Work intensifies. When software sets the pace, recovery time shrinks, and studies of warehouse work have found higher rates of injury.
+
+Autonomy shrinks. Workers lose the chance to use their own judgment.
+
+Evaluation becomes opaque. Workers often do not know how they are measured or why a decision was made about them.
+
+Stress rises. Constant monitoring is associated with stress and lower job satisfaction.
+
+People learn to perform for the metric. As Goodhart's law from Lesson 01-03 predicts, workers find ways to look busy, such as devices that jiggle a mouse to fake activity, instead of working better.
+
+Power becomes lopsided. The employer knows almost everything about the worker; the worker knows almost nothing about the system.
+
+And organizing can be chilled. Monitoring can detect and discourage union activity. In 2022 the general counsel of the U.S. National Labor Relations Board warned employers about this, though the board's priorities have since shifted.
+
+## Reading Emotions at Work
+
+Some vendors sell tools that claim to detect emotions at work: frustration or empathy in a call-center agent's voice, "engagement" from a webcam, burnout from the tone of messages.
+
+These tools have the weaknesses described in Lesson 02-09. The science of inferring inner states from faces and voices is weak. The tools can be biased against people from different cultures and against neurodivergent people. They require workers to perform emotions for a machine, a form of **emotional labor**. And they intrude on a person's inner life. The EU AI Act prohibits emotion recognition in the workplace, except for medical or safety reasons.
+
+## How the Law Differs
+
+As of October 2026, the law differs sharply across countries.
+
+In the United States, the law is largely permissive. No federal law broadly limits monitoring by private employers. The main federal law on electronic communications, from 1986, has broad exceptions for business use and consent. A few states, including Connecticut, Delaware and New York, require employers to tell workers about electronic monitoring. California extended its privacy law to employees in 2023, giving them rights to know about, correct and delete data, and finalized rules on automated decision-making in 2025. Labor law protects workers' right to act together, so surveillance that chills organizing can be unlawful. Anti-discrimination and disability laws apply to the results of monitoring, for example to productivity metrics that penalize breaks a disability requires. Several states have debated broader "bossware" bills; California's governor vetoed one on automated workplace decisions in 2025.
+
+In the European Union, the starting point is proportionality. Under the GDPR, monitoring needs a lawful basis, and consent is rarely valid in employment because of the imbalance of power. Data must be minimized and limited to its purpose. The AI Act prohibits emotion recognition at work, classifies AI used to hire, assign tasks to, monitor, evaluate or fire workers as high-risk, and requires employers to inform workers' representatives before using it. In Germany, works councils have a legal right to co-decide on monitoring technology.
+
+In the United Kingdom, the government consulted in 2025 and 2026 on requiring employers to consult workers before introducing monitoring technology.
+
+*Legal status is as of October 2026 and should be checked before teaching.*
+
+## Designing Monitoring Responsibly
+
+If monitoring is used, a set of principles can keep it proportionate. Document a legitimate, specific purpose in advance, such as security, safety or legal compliance. Use the least intrusive means: measure teams before individuals and outcomes before activity. Tell workers what is collected and why. Consult workers, and bargain where there is a union. Do not monitor off-duty time, personal devices, protected activity such as organizing, or emotions. Have a person with real discretion review any consequential decision. Collect as little data as possible, keep it no longer than needed and control who can see it. And give workers the right to see and contest their own data.
+
+## Where People Disagree
+
+The Week 5 debate resolution is: *Employers may monitor remote workers' keystrokes and screens if they disclose it in advance.*
+
+Supporters argue that employers own the devices and pay for the time, that disclosure lets workers know the terms and choose their jobs accordingly, and that monitoring screens remotely is not so different from a supervisor walking past a desk in an office.
+
+Opponents argue that disclosure is not consent when workers have no realistic alternative job, that keystroke logging measures activity instead of real work and invites gaming, and that a supervisor walking by sees a moment, while software records everything, forever.
+
+A second disagreement concerns fairness. Are algorithmic metrics fairer than human managers? They can be more consistent. They can also embed bias, ignore context and leave workers with no one to explain themselves to.
+
+## Check Your Understanding
+
+**1. What are the three functions of algorithmic management?**
+
+:::answer Answer
+Directing work, evaluating it and disciplining workers.
+:::
+
+**2. Give two legitimate reasons employers use algorithmic management or monitoring.**
+
+:::answer Answer
+Any two of these: coordinating work at scale; metrics can be fairer than favoritism; safety, such as fatigue detection; security and legal compliance; accountability in remote work.
+:::
+
+**3. Why did the CNIL fine Amazon's French logistics company?**
+
+:::answer Answer
+It found that tracking scanner inactivity minute by minute was excessively intrusive and that some measures were unlawful under the GDPR.
+:::
+
+**4. How does the EU AI Act treat emotion recognition and AI used to manage workers?**
+
+:::answer Answer
+It prohibits emotion recognition in the workplace except for medical or safety reasons, and classifies AI used to hire, assign, monitor, evaluate or fire workers as high-risk.
+:::
+
+## Your Turn: Week 5 Debate Preparation
+
+Your side of the Week 5 debate in A1 is assigned on the course site. Prepare an opening post of up to 300 words with at least two sources, a short statement of the strongest argument the other side will make, and a "what would change my mind" statement of up to 100 words.
+
+Then judge each of these practices proportionate, disproportionate, or "it depends," with a sentence of explanation: GPS tracking of delivery drivers during shifts; GPS tracking of drivers' personal phones after hours; keystroke logging of remote accountants; AI analysis of customer-service calls for coaching; AI analysis of employees' chat messages to predict who will quit; and webcam snapshots of remote workers every ten minutes.
+
+The productivity-monitoring option in A3 builds on this lesson.
+
+## Key Terms
+
+- **Algorithmic management:** Using software and data to direct, evaluate and discipline workers.
+- **Bossware:** Software for monitoring employees, especially remote and office workers.
+- **Work intensification:** An increase in the pace and effort demanded of workers.
+- **Emotional labor:** The effort of displaying required emotions at work.
+- **Proportionality:** Matching how intrusive a measure is to the importance of its purpose.
+- **Co-determination:** The legal right of worker representatives to share in workplace decisions, as in Germany.
+
+## Sources
+
+- **Core:** Kellogg, K., Valentine, M. & Christin, A. "Algorithms at Work," *Academy of Management Annals* 14(1), 2020. — [Free manuscript](https://mvalentine.github.io/pdfs/algorithms-at-work.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r211). <!-- reading-access -->
+- CNIL, Deliberation SAN-2023-021 regarding Amazon France Logistique (Dec 27, 2023; announced Jan 2024). — [Free official text](https://www.legifrance.gouv.fr/cnil/id/CNILTEXT000048989272); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r210). <!-- reading-access -->
+- California AB 701 (2021), Warehouse Worker Protection Act. — [Free official text](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB701); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r212). <!-- reading-access -->
+- Ajunwa, I. *The Quantified Worker* (Cambridge, 2023), Chapters 6–8. — [Paid / library](https://www.cambridge.org/core/books/the-quantified-worker/CDA274EFF118E3AB6E583424D95DF40D); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r220). <!-- reading-access -->
+- EU AI Act Art. 5(1)(f), Art. 26(7), Annex III(4). — [Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r219). <!-- reading-access -->
+- TechTarget, "Lawmakers seek to restrict 'bossware'," 2026. — [Free full text](https://www.techtarget.com/enterprise-software/news/366546873/Lawmakers-seek-to-restrict-bossware); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r217). <!-- reading-access -->
+- Strategic Organizing Center, reports on Amazon warehouse injuries (2021–2024). — [Free full text](https://thesoc.org/campaigns/health-and-safety-at-amazon/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r213). <!-- reading-access -->

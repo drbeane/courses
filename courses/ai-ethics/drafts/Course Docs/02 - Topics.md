@@ -2,7 +2,7 @@
 
 This file shows where each topic is taught, so coverage gaps and overlaps are easy to see.
 
-**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 4, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
+**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 5, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
 
 ---
 
@@ -15,8 +15,8 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 | **Algorithmic bias in hiring** | 03-03, 03-04, 03-10 | 03-01, 03-02, 08-02, 08-07 |
 | **Algorithmic bias in lending** | 03-05 | 03-02, 08-02 |
 | **Algorithmic bias in criminal justice** | 03-06, 03-07 | 02-04, 03-02 |
-| **Labor displacement** | 05-01, 05-02, 05-03, 05-09 | 01-01, 06-06 |
-| **AI worker monitoring** | 05-04, 05-05, 05-06 | 02-02, 05-09 |
+| **Labor displacement** | 05-01, 05-02, 05-03, 05-04, 05-09 | 01-01, 06-06 |
+| **AI worker monitoring** | 05-05, 05-06 | 02-02, 05-09 |
 | **Environmental costs of large models** | 06-01 to 06-05, 06-08 | 06-07, 07-02 |
 | **Data privacy with always-on AI assistants** | 02-07 | 02-01, 02-09, 02-10, 07-05 |
 | **Closed-weight vs. open-weight models** | 07-01, 07-02, 07-03, 07-04 | 07-07, 07-09, 06-06 |
@@ -45,7 +45,7 @@ These threads run through the course. Each lesson's "Connections" section points
 2. **Five principles:** beneficence, non-maleficence, autonomy, justice, explicability (01-07).
 3. **Law ≠ ethics:** legal status is dated and jurisdiction-specific (01-09, every module's law lesson).
 4. **Who bears the error?** Every system makes mistakes; ethics asks who absorbs them (02-03, 03-02, 04-01).
-5. **Power and concentration:** who builds, who decides, who can refuse (01-06, 05-03, 06-06, 07-02).
+5. **Power and concentration:** who builds, who decides, who can refuse (01-06, 05-04, 06-06, 07-02).
 6. **Evidence discipline:** separate measurement, estimate, forecast and speculation (04-02, 05-01, 06-04, 07-09).
 7. **Compared to what?** Judge a system against the human or non-AI baseline it replaces, and count the cost of not deploying. Each of Modules 2–7 has one planned lesson on a system that clearly helps (assistive sensing, algorithms that outperform human judgment, helpful synthetic media, AI assistance for workers, AI for climate and science, AI for defenders), and 08-09 makes the cost of not deploying part of the decision. 03-08 sets out the comparison in detail.
 
@@ -57,10 +57,11 @@ These threads run through the course. Each lesson's "Connections" section points
 | Adverse action notices | 03-05 |
 | Age assurance | 04-08 |
 | Agents, delegated authority | 07-05, 07-10 |
-| Algorithmic management | 05-04, 05-06 |
+| Algorithmic management | 05-05, 05-06 |
+| AI assistance and worker productivity | 05-03 |
 | Automation bias | 05-08, 02-04 |
 | Biometric privacy law (BIPA) | 02-06 |
-| Bossware | 05-04, 05-05 |
+| Bossware | 05-05 |
 | C2PA / content credentials | 04-06 |
 | Calibration (fairness metric) | 03-02, 03-06 |
 | Clearview AI | 02-06 |

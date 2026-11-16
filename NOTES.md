@@ -120,3 +120,16 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - `course.json`, the Topics index, Resources, the design notes and lesson references in 07-09 and
   08-01 to 08-03 are updated for the new numbers. New claims to verify are at the end of
   `06 - Verification Checklist.md`.
+
+## 2026-11-15: AI Ethics Module 5 rewritten
+
+- All nine Module 5 lessons are rewritten in the new lesson structure, and Module 5 now follows the
+  planned outline.
+- 05-03 is new: "What AI Assistance Does for Workers: Productivity and Skill," on the field
+  evidence that AI raises productivity most for less experienced workers, the jagged frontier,
+  and whether people learn or come to depend on the tools.
+- "Who Captures the Gains?" moves from 05-03 to 05-04.
+- 05-05 is now "Algorithmic Management and Workplace Monitoring," which merges the v1 lessons on
+  algorithmic management and on monitoring, and holds the Week 5 debate preparation.
+- `course.json`, the Topics index and lesson references in 06-06, 07-01 and 07-02 are updated for
+  the new numbers. New claims to verify are at the end of `06 - Verification Checklist.md`.

@@ -77,7 +77,7 @@ Under OSAID, many popular "open" models, including Llama with its custom license
 
 Openness affects:
 
-- **who can use AI**, and who controls it (concentration, 05-03, 06-06),
+- **who can use AI**, and who controls it (concentration, 05-04, 06-06),
 - **who can study it**, which enables safety research, bias audits and transparency,
 - **who can modify it**, including removing safety features (07-03), and
 - **whether release is reversible**. Once weights are public, they can't be recalled.

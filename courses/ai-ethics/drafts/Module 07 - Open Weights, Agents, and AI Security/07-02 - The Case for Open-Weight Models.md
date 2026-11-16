@@ -24,7 +24,7 @@ So the team used **GLM 5.2**, an open-weight model, hosted on its own infrastruc
 ### Argument 1: Innovation and competition
 
 - Open weights lower barriers for startups, researchers and smaller companies.
-- They prevent a few firms from controlling a general-purpose technology (05-03).
+- They prevent a few firms from controlling a general-purpose technology (05-04).
 - They enable fine-tuning for specialized domains (medicine, law, low-resource languages).
 - **Historical analogy:** Open-source software (Linux, Apache, Python) underpins most of the internet and is widely seen as having increased both innovation and security.
 
