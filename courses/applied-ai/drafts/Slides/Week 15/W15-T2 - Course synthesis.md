@@ -10,7 +10,7 @@ COSC-300/500 Applied AI Essentials
 
 ---
 
-## Back to Week 1: The Surfaces Map
+## Back to Week 1: AI Surfaces
 
 | Surface | Where we used it |
 |---|---|

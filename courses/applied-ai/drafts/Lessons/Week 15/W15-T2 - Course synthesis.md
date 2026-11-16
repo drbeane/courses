@@ -9,9 +9,9 @@
 - Approach an AI tool you've never seen with a set of questions.
 - Plan how you'll keep up as the tools change.
 
-## The Surfaces Map, Revisited
+## AI Surfaces, Revisited
 
-In week 1 you saw a map of eight surfaces. You've now used every one.
+In week 1 you saw a map of AI surfaces. You've now used every one.
 
 | Surface | Where we used it |
 |---|---|
@@ -40,7 +40,7 @@ At each stage the tool was given more: more of your material, more ability to ac
 
 ### One Mechanism Underneath
 
-The eight surfaces look different and rest on the same few ideas:
+The surfaces look different and rest on the same few ideas:
 
 - A **model** that predicts text (Week 1).
 - A **context window** holding everything it can see (Week 2).
