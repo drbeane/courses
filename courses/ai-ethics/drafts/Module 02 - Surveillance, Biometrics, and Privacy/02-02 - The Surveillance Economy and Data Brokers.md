@@ -3,119 +3,130 @@
 **Module:** 2 — Surveillance, Biometrics, and Privacy
 **Estimated time:** 35 minutes
 
-## Learning objectives
+**In this lesson:** Most personal data is collected by ordinary apps and sold through a market few people ever see. This lesson follows that data from your phone to its buyers, explains what the market pays for, and looks at why the "notice and consent" approach to protecting people has not worked.
 
-By the end of this lesson, you will be able to:
+## Where Your Location Goes
 
-1. Describe how data is collected, combined and sold across the commercial data ecosystem.
-2. Explain why AI raises the value of personal data and changes its risks.
-3. Evaluate notice-and-consent as a governance model.
+In 2024 the U.S. Federal Trade Commission took action against a group of companies that most people have never heard of: X-Mode (later Outlogic), InMarket, Kochava, Mobilewalla and Gravy Analytics. The agency alleged that they collected precise location data from phone apps and sold it in ways that could reveal visits to medical clinics, places of worship, domestic-violence shelters and military bases. Under the orders that resulted, several of the firms are barred from selling sensitive location data.
 
-## Opening case: where your location goes
+The people being tracked had no relationship with these companies. Their data came from weather apps, games and prayer apps. It was gathered by small pieces of third-party code inside those apps and through the automated auctions that place advertisements.
 
-In 2024, the U.S. Federal Trade Commission (FTC) took action against several data brokers, including X-Mode/Outlogic, InMarket, Kochava, Mobilewalla and Gravy Analytics. It alleged that they collected precise location data from phone apps and sold it in ways that could reveal visits to medical clinics, places of worship, domestic-violence shelters and military bases. Under the resulting orders, several firms are banned from selling sensitive location data.
+A person who opened a prayer app to check the times for daily prayers did not imagine that a record of where they worshipped was for sale. This lesson explains how that came about.
 
-None of the people tracked had a relationship with these brokers. Their data came from weather apps, games and prayer apps, often through software development kits (SDKs) embedded in the apps and through real-time advertising auctions.
+## How the Data Travels
 
-## Core ideas
+A **data broker** is a company that collects and sells personal data about people it has no direct relationship with. Brokers sit in the middle of a supply chain with four stages.
 
-### The data supply chain
+Data is collected at the source: apps, websites, connected devices, cars and shops. Brokers and advertising companies combine it with public records and with data copied from the web. They match the pieces to individual people and sort those people into categories. Then they sell access to advertisers, insurers, landlords, employers, political campaigns and government agencies. Increasingly, the last stage is an AI model that is trained on the data or uses it to make decisions.
 
-```
-Apps / websites / devices / cars / stores
-        ↓   (SDKs, cookies, pixels, sensors, purchases)
-Ad-tech and data brokers   ← public records, scraped data
-        ↓   (combine, match identities, infer segments)
-Buyers: advertisers, insurers, landlords, employers, political campaigns, government agencies
-        ↓
-AI models trained on, or making decisions with, the data
-```
+Four mechanisms make the chain work. The first is the **SDK**, or software development kit: code written by a third party that an app developer includes to add a feature or earn revenue. An SDK can collect data for its own maker, whatever the app itself is for. The second is **real-time bidding**. Each time an advertisement loads, an automated auction sends information about the viewer to many potential advertisers, and the ones that lose the auction may keep what they received. The third is identity resolution, which matches data from different devices and sources to a single person. The fourth is inferred segments: labels such as "expectant parent," "financially vulnerable" or "likely diabetic" that a broker attaches to people on the basis of their behavior.
 
-Key mechanisms:
+## What the Market Pays For
 
-- **SDKs:** Code from third parties inside apps that can collect data independently of the app's own purpose.
-- **Real-time bidding (RTB):** Every ad load can broadcast data about the user to many bidders, and losing bidders may retain it.
-- **Identity resolution:** Matching data across devices and sources into a single profile.
-- **Inferred segments:** "Expectant parent," "financially vulnerable," "likely diabetic."
+It would be a mistake to treat this system as nothing but a threat. It pays for much of what people use online.
 
-### What AI changes
+Advertising supported by data is the reason search engines, maps, email, news sites and social platforms can be offered without charge. For a person with little money, a free service funded by advertising may be the only kind available. Small businesses use the same tools to reach likely customers at a cost they can afford, which once required a large advertising budget. The same data that follows people around also helps detect fraud, since a bank that knows your usual habits can spot a transaction that does not fit. Location data has been used to plan transit routes and to track the spread of disease.
 
-- **The value of data increases:** More data generally improves models, and companies treat user data as training fuel.
-- **Inference gets cheaper:** Models can predict sensitive traits from proxies (Lesson 02-09).
-- **Unstructured data becomes legible:** Voice, images, video and free text, once hard to analyze, are now searchable and summarizable.
-- **Terms of service change retroactively:** In 2023–2025, many platforms updated their terms to permit AI training on user content, often with opt-outs that were hard to find.
-- **Government use expands:** Agencies can buy data from brokers that would otherwise require a warrant, the so-called "data broker loophole."
+Any proposal to restrict the data economy has to say what happens to these things. Some of them could survive with far less data. Others would need a different way to pay for themselves, and people would have to bear that cost.
 
-### Shoshana Zuboff's "surveillance capitalism"
+## What AI Changes
 
-Zuboff (2019) argues that firms like Google and Facebook discovered that behavioral data, beyond what is needed to serve users, could predict and shape behavior. They then sold those predictions. Her key claims:
+The data economy is older than modern AI. AI has changed it in five ways.
 
-- Human experience becomes raw material for prediction products.
-- The goal is not merely to know but to modify behavior.
-- It is a new form of power, operating outside traditional consent or democratic oversight.
+Data is worth more, because more data generally makes for better models, and companies have come to see the content their users create as training material.
 
-**Critiques:** Some economists argue Zuboff overstates how well targeted advertising works. Others say the problem is ordinary market power rather than a new economic logic. Both critiques still accept that the data practices are extensive.
+Inference is cheaper. A model can predict sensitive traits from data that looks harmless, as Lesson 02-09 describes.
 
-### Notice and consent: why it struggles
+Unstructured data has become usable. Voice recordings, photos, video and free text were once expensive to analyze. Now they can be searched and summarized automatically.
 
-U.S. privacy law has traditionally relied on telling people what happens and letting them choose. Problems:
+Terms have changed after the fact. Between 2023 and 2025, many platforms updated their terms of service to allow AI training on content their users had already uploaded, often with an opt-out that was hard to find.
 
-- Reading every privacy policy you encounter would take an estimated 76 workdays a year (McDonald & Cranor, 2008, and the number has grown since).
-- Choices are often all-or-nothing.
-- "Dark patterns" steer people toward sharing.
-- Data flows to parties users never heard of.
-- Future AI uses can't be described in advance.
+And government use has grown. Agencies can buy from brokers information that they would need a warrant to collect directly. Critics call this the data broker loophole.
 
-### Alternatives and reforms
+## Surveillance Capitalism, and Its Critics
 
-| Approach | Example |
-|---|---|
-| **Data minimization** (collect only what's necessary) | GDPR Art. 5; Maryland Online Data Privacy Act (2024), among the strictest U.S. state laws |
-| **Purpose limitation** | GDPR; no reuse for incompatible purposes |
-| **Sensitive-data bans** | FTC orders on location data; state laws on health data (e.g., Washington My Health My Data Act, 2023) |
-| **Broker registries and deletion** | California Delete Act: one-stop deletion request from all registered brokers (DROP platform, launched in 2026) ⚠ |
-| **Restrictions on government purchase** | Proposed Fourth Amendment Is Not For Sale Act (passed the House in 2024; not enacted ⚠) |
-| **Duty of loyalty** | Proposals that firms must not use data against users' interests |
+The scholar Shoshana Zuboff has argued that all this adds up to a new economic system, which she calls surveillance capitalism. In her account, companies such as Google and Facebook discovered that the behavioral data they collected, beyond what they needed to provide their services, could be used to predict what people would do. They sold those predictions. The aim then shifted from knowing people's behavior to shaping it. The result, she argues, is a new kind of power that operates outside consent and democratic control.
 
-## Applying the frameworks
+Not everyone accepts this. Some economists think Zuboff overstates how well targeted advertising works, and that much of the industry's claimed precision is salesmanship. Others argue that the real problem is ordinary market power held by a few large firms, with no new economic logic required to explain it. Notice, though, that both criticisms accept the basic facts. They agree that the collection is vast and disagree about how much it achieves.
 
-- **Contextual integrity (02-01):** A prayer app's location data sold to a broker violates the norms of religious practice.
-- **Justice:** Inferred "financially vulnerable" segments can be used to target predatory loans.
-- **Autonomy:** Behavioral manipulation undermines self-determination.
-- **Decency, others lens:** Selling shelter-visit data endangers people at their most vulnerable.
+## Why Notice and Consent Struggles
 
-## Discussion questions
+Privacy law in the United States has mostly relied on one idea: tell people what will happen to their data and let them choose. It has not worked well, for reasons that are now well documented.
 
-1. Should government agencies be allowed to buy data they would need a warrant to collect directly? Why or why not?
-2. Is it ethical for a platform to change its terms to allow AI training on content uploaded years earlier? What would a decent company do?
-3. Is targeted advertising itself unethical, or only some forms? Where is the line?
-4. If you were designing a free app, how would you fund it without selling user data?
+One study from 2008 estimated that reading every privacy policy a person encountered in a year would take about 76 working days. There are more policies now. The choice on offer is usually all or nothing: accept the terms or do not use the service. Interfaces are often designed to push people toward sharing, a practice known as a **dark pattern**. Data moves on to companies the user has never heard of, such as the brokers in the opening case. And nobody can describe in advance uses that have not been invented yet.
 
-## Activity: trace an app (15 minutes)
+This connects to Lesson 01-04. Consent that is uninformed and has no real alternative does little moral work.
 
-Choose an app on your phone. Using its privacy policy and, if available, its App Store "privacy nutrition label" or Google Play "data safety" section:
+## What Is Replacing It
 
-1. List the data types collected.
-2. List the third parties named or implied.
-3. Find whether user content may be used for AI training.
-4. Rate how well the policy would let an average user understand the actual flows (1–5).
+Because of these problems, newer laws put duties on companies and rely less on choices by individuals.
 
-## Key terms
+| Approach | What it requires | Example |
+|---|---|---|
+| Data minimization | Collect only what the stated purpose needs | The EU's GDPR; Maryland's 2024 privacy law |
+| Purpose limitation | Do not reuse data for an unrelated purpose | GDPR |
+| Bans on sensitive data sales | Some data may not be sold at all | The FTC's location-data orders; Washington State's 2023 health-data law |
+| Broker registries and deletion | Brokers register, and people can demand deletion from all of them at once | California's Delete Act and its deletion platform, launched in 2026 |
+| Limits on government purchase | Agencies may not buy what they would need a warrant to collect | A bill that passed the U.S. House in 2024 and was not enacted |
+| Duty of loyalty | A company may not use data against its own users' interests | Proposed, not yet law |
+
+*Legal status is as of October 2026.*
+
+**Data minimization** is the most important of these. Data that was never collected cannot be sold, stolen or misused.
+
+## Where People Disagree
+
+The central disagreement is about how much to restrict the trade.
+
+One side holds that the market in personal data is harmful in itself. It moves information out of the context it was shared in, it cannot be made consensual in any meaningful sense, and its worst uses fall on people at vulnerable moments. A label such as "financially vulnerable" exists so that someone can sell to people in that condition, and the products sold are often high-cost loans. Selling records of visits to a shelter puts people in danger. On this view the trade in sensitive data should be banned outright and the rest cut back sharply.
+
+The other side points to what advertising pays for. They argue that most uses of data are mundane, that the harms come from specific abuses that can be banned one by one, and that broad restrictions would mainly hurt small businesses and people who rely on free services. Some add that strict rules favor the largest companies, which collect plenty of data directly from their own users and have no need of brokers.
+
+There is a similar split over government purchases. If the police need a warrant to track a phone, buying the same information from a broker looks like an evasion of the law. Agencies reply that they are only buying what any company can buy.
+
+Contextual integrity, from Lesson 02-01, gives a way to sort the cases. A shop using your purchase history to recommend products stays roughly within the context. A prayer app's location data reaching a broker and then a buyer does not.
+
+## Check Your Understanding
+
+**1. What is a data broker?**
+
+:::answer Answer
+A company that collects and sells personal data about people it has no direct relationship with.
+:::
+
+**2. How can an app leak data that the app itself does not need?**
+
+:::answer Answer
+Through SDKs, which are third-party code inside the app that can collect data for their own makers, and through real-time bidding, which sends data about the user to many advertisers each time an ad loads.
+:::
+
+**3. Give two reasons notice and consent fails to protect people.**
+
+:::answer Answer
+Any two of these: nobody has time to read the policies; the choice is usually all or nothing; dark patterns push people to share; data flows to parties the user never heard of; future uses cannot be described in advance.
+:::
+
+**4. Why is data minimization considered especially effective?**
+
+:::answer Answer
+Data that is never collected cannot be sold, breached or misused, so it protects people without depending on their choices.
+:::
+
+## Your Turn
+
+Choose an app on your phone. Using its privacy policy and the privacy summary in your app store, find out what types of data it collects, which third parties are named or implied, and whether your content may be used to train AI. Then answer two questions. On a scale of 1 to 5, how well would the policy let an ordinary user understand where their data goes? And what would the app have to charge, or give up, if it collected only what it needs to work?
+
+## Key Terms
 
 - **Data broker:** A company that collects and sells personal data about people with whom it has no direct relationship.
-- **SDK:** Software development kit; third-party code embedded in apps.
-- **Real-time bidding:** The automated auction for ad placements that broadcasts user data.
-- **Data minimization:** Collecting only data necessary for a stated purpose.
-- **Dark pattern:** An interface designed to manipulate user choices.
+- **SDK:** Software development kit; third-party code embedded in an app.
+- **Real-time bidding:** The automated auction for advertising space, which broadcasts data about the viewer to bidders.
+- **Data minimization:** Collecting only the data necessary for a stated purpose.
+- **Dark pattern:** An interface designed to steer users into choices they would not otherwise make.
 
-## Connections
+## Sources
 
-- Inference → 02-09 · Training data and consent → 04-09 · Governance design → 02-10
-- A2 data-flow diagram
-
-## Sources and further reading
-
-- FTC, actions against X-Mode/Outlogic (Jan 2024), InMarket (Jan 2024), Kochava (ongoing), Mobilewalla and Gravy Analytics (Dec 2024). — [X-Mode / Outlogic — Free full text](https://www.ftc.gov/legal-library/browse/cases-proceedings/2123038-x-mode-social-inc); [InMarket — Free full text](https://www.ftc.gov/legal-library/browse/cases-proceedings/2023088-inmarket-media-llc); [Kochava — Free full text](https://www.ftc.gov/legal-library/browse/cases-proceedings/ftc-v-kochava-inc); [Mobilewalla order — Free full text](https://www.ftc.gov/system/files/ftc_gov/pdf/Mobilewalla-D%26O.pdf); [Gravy / Venntel case documents — Free full text](https://www.ftc.gov/system/files/ftc_gov/pdf/212_3035_-_gravy_analytics_final_consent_package_without_signatures.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r045). <!-- reading-access -->
+- **Core:** FTC, actions against X-Mode/Outlogic (Jan 2024), InMarket (Jan 2024), Kochava (ongoing), Mobilewalla and Gravy Analytics (Dec 2024). — [X-Mode / Outlogic — Free full text](https://www.ftc.gov/legal-library/browse/cases-proceedings/2123038-x-mode-social-inc); [InMarket — Free full text](https://www.ftc.gov/legal-library/browse/cases-proceedings/2023088-inmarket-media-llc); [Kochava — Free full text](https://www.ftc.gov/legal-library/browse/cases-proceedings/ftc-v-kochava-inc); [Mobilewalla order — Free full text](https://www.ftc.gov/system/files/ftc_gov/pdf/Mobilewalla-D%26O.pdf); [Gravy / Venntel case documents — Free full text](https://www.ftc.gov/system/files/ftc_gov/pdf/212_3035_-_gravy_analytics_final_consent_package_without_signatures.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r045). <!-- reading-access -->
 - Zuboff, S. *The Age of Surveillance Capitalism* (2019), Introduction and Chapter 3. — [Paid / library](https://www.hachettebookgroup.com/titles/shoshana-zuboff/the-age-of-surveillance-capitalism/9781610395700/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r046). <!-- reading-access -->
 - McDonald, A. & Cranor, L. "The Cost of Reading Privacy Policies," *I/S* 4(3), 2008. — [Free manuscript](https://cyberlaw.stanford.edu/content/files/pubs/readingpolicycost-authordraft.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r047). <!-- reading-access -->
 - California Privacy Protection Agency, Delete Act / DROP information. ⚠ Verify the launch status. — [Free online tool](https://consumer.drop.privacy.ca.gov/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r048). <!-- reading-access -->

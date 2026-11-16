@@ -3,124 +3,137 @@
 **Module:** 2 — Surveillance, Biometrics, and Privacy
 **Estimated time:** 40 minutes
 
-## Learning objectives
+**In this lesson:** To judge facial recognition you need to know what it actually does. This lesson walks through how a face becomes a match, the two kinds of error, why a very accurate system can still be wrong half the time it raises an alert, and what the evidence says about bias.
 
-By the end of this lesson, you will be able to:
+## The Wrong Question
 
-1. Explain the facial recognition pipeline and the difference between verification (1:1) and identification (1:N).
-2. Interpret false match and false non-match rates, thresholds and base rates.
-3. Explain the sources of demographic differences in accuracy, and why "accuracy has improved" doesn't end the ethical debate.
+In the Fargo case, which Lesson 02-04 tells in full, the facial recognition search reportedly did not use an image of the thief at the bank. It used the photo on the fake identification card the thief had presented. Whatever the software's accuracy, it had been asked a question it could not answer well: who looks like the person in this picture? It returned a candidate, and the candidate was the wrong person.
 
-## Opening case: a match from a fake ID
+A system can work exactly as designed and still produce a harmful result if the people using it do not understand what it does. So this lesson starts with the mechanism.
 
-In the Fargo case (Lesson 02-04), the facial recognition search reportedly used the photo on a suspect's fake identification card, not images of the actual person at the bank. Whatever the algorithm's accuracy, it was asked a question it couldn't answer well: who looks like the person in this photo? It returned a candidate, and the candidate was the wrong person.
+## From a Face to a Number
 
-To evaluate facial recognition ethically, you need to understand what the system actually does.
+Facial recognition proceeds in five steps. The system first detects where the faces are in an image. It aligns each face, adjusting for the angle of the head and the size of the image. A neural network then converts the face into a list of numbers called a **template** (also called an embedding). The system compares two templates and computes how similar they are. Finally it makes a decision: it checks the similarity score against a cutoff called the **threshold**, and either declares a match or returns a ranked list of the most similar candidates.
 
-## Core ideas
+Two points follow that matter for everything else. The system never recognizes a person the way you recognize a friend. It measures how close two lists of numbers are. And the output is always a degree of similarity. "Match" is a label that someone decided to attach above a certain score.
 
-### The pipeline
+## Two Different Jobs
 
-1. **Detection:** Find faces in an image.
-2. **Alignment:** Normalize pose and scale.
-3. **Feature extraction:** A neural network converts the face into a numeric vector (an *embedding* or *template*).
-4. **Comparison:** Compute the similarity between templates.
-5. **Decision:** Compare the similarity to a **threshold** and declare a match or return a ranked list of candidates.
+Facial recognition is used for two tasks that sound alike and are very different.
 
-### Verification vs. identification
+**Verification** answers the question "Is this person who they claim to be?" The system compares one face with one stored template. Unlocking your phone with your face is verification, and so is an automated passport gate. The person is usually cooperating, facing the camera in decent light, and there is exactly one comparison to make.
 
-| | Verification (1:1) | Identification (1:N) |
-|---|---|---|
-| Question | Is this person who they claim to be? | Who is this person? |
-| Example | Phone unlock; airport e-gate | Police search against a mugshot database; live watchlist scanning |
-| Comparison | One template against one stored template | One template against N stored templates |
-| Error risk | Lower; the person usually cooperates | Grows with N; many people look alike at scale |
+**Identification** answers the question "Who is this?" The system compares one face against a whole database, which might hold millions of templates. A police search of a mugshot database is identification. So is a camera scanning a crowd for people on a watchlist.
 
-Most ethical controversy concerns **identification**, especially when the probe image is low quality and the database is large.
+Verification has a lower risk of error. Identification gets harder as the database grows, because among millions of people there will be many who happen to look alike. Most of the ethical controversy is about identification, especially when the image being searched, called the **probe image**, is of poor quality and the database, called the **gallery**, is very large. Those were the conditions in Fargo.
 
-### Error types and thresholds
+## Two Kinds of Mistake
 
-- **False match (false positive):** The system says two different people match. *Harm:* a wrongful stop or arrest.
-- **False non-match (false negative):** The system fails to match the same person. *Harm:* a missed identification, or being locked out of your own account.
+A facial recognition system can be wrong in two ways.
 
-Raising the threshold reduces false matches but increases false non-matches, and lowering it does the reverse. **Choosing the threshold is a value judgment** about which error is worse and for whom.
+A **false match**, or false positive, is when the system says two different people are the same. In policing, the harm is a wrongful stop or arrest.
 
-Investigative 1:N searches often return a **candidate list** (for example, the top 10) rather than a single match. Then a human picks one, which reintroduces human bias and automation bias.
+A **false non-match**, or false negative, is when the system fails to match two images of the same person. The harm is a missed identification, or being locked out of your own account.
 
-### Base rates
+The threshold trades one against the other. Raise it, and the system demands more similarity before declaring a match, so false matches fall and false non-matches rise. Lower it, and the reverse happens. No setting eliminates both.
 
-Suppose a live facial recognition camera scans 100,000 people, 10 of whom are on a watchlist. Say the system has a 99% true-match rate and a 0.01% false-match rate per person scanned.
+This means that choosing the threshold is a value judgment. It is a decision about which mistake is worse and who should bear it. A phone maker and a police department should reasonably choose differently. Yet the choice is often made by a vendor and never discussed in public.
 
-- True alerts: about 10 × 0.99 ≈ 10
-- False alerts: about 99,990 × 0.0001 ≈ 10
+In police investigations there is a further step. An identification search often returns a list of candidates, perhaps the ten most similar faces. A person then chooses among them. That brings human judgment back in, with all its biases, including the tendency to trust whatever the machine has put at the top of the list.
 
-**Half of all alerts would be false**, even with excellent per-scan accuracy, because the people sought are rare. This is the base-rate problem from Lesson 01-03. When London's Met reports "one false alert in 470,000 faces," that number is the per-scan rate. Ask also: of all alerts, how many were wrong? (In the Croydon pilot, the Met's reported figures, one false alert against more than 170 arrests, suggest a low share, but these are police-reported statistics.)
+## Why Rare Targets Make False Alarms
 
-### Demographic differences
+This section has some arithmetic. It is worth working through, because it corrects an error that nearly everyone makes.
 
-- **Gender Shades (2018):** Commercial *gender classification* systems (not identification) had error rates up to about 35% for darker-skinned women vs. under 1% for lighter-skinned men.
-- **NIST FRVT demographic study (2019):** Across 189 algorithms, many had higher false-positive rates for West and East African and East Asian faces, by factors of 10 to 100 in some algorithms, and for women and older adults. Some algorithms, notably several developed in China, showed less disparity on East Asian faces. **Variation between vendors was enormous.**
-- **Since then:** Top algorithms in NIST's ongoing evaluations have become far more accurate, and the demographic differences among the best performers are much smaller. Many deployed systems are not the top performers, though, and real-world image quality is worse than in benchmark images.
+Imagine a live camera that scans 100,000 people as they pass. Ten of them are on a police watchlist. Suppose the system is very good. It correctly flags 99 percent of the watchlisted people who pass, and it wrongly flags only 0.01 percent of everyone else, which is one person in ten thousand.
 
-**Sources of differences:**
+How many true alerts will there be? Ten people on the list, 99 percent caught: about 10.
 
-- unbalanced training data,
-- camera and lighting defaults calibrated for lighter skin,
-- the quality of probe images, and
-- database composition. If a group is overrepresented in mugshot databases, its members are more likely to be falsely matched, because there are more of them to match against.
+How many false alerts? There are 99,990 people who are not on the list, and one in ten thousand is flagged: about 10.
 
-### Why accuracy alone doesn't settle it
+So half of all the alerts are false, from a system that is wrong about only one innocent person in ten thousand. The system is not at fault here. The people being sought are extremely rare, so even a tiny error rate, applied to a huge number of innocent people, produces as many false alarms as true ones. This is the base-rate problem from Lesson 01-03.
 
-Even a perfect system raises questions:
+It also explains why the same system can be described in ways that sound completely different. "One false alert in 470,000 faces scanned," as London's police reported for their Croydon pilot, is the rate per person scanned. The other question to ask is what share of the alerts were wrong. For Croydon, the police figures of one false alert against more than 170 arrests suggest that share was low. Remember, though, that these are the police's own numbers and have not been independently checked.
 
-- **Mission creep:** A tool adopted for violent crime gets used for shoplifting or protests.
-- **Chilling effects:** It ends anonymity in public (02-01).
-- **Automation bias:** Officers treat matches as proof (02-04).
-- **Unequal deployment:** Who gets watched is a policy choice.
-- **Database ethics:** Who is in the gallery, and how did they get there (mugshots, licenses, scraped images)?
+## What It Does Well
 
-A perfectly accurate system that tracks everyone may be *more* dangerous to liberty than an inaccurate one.
+Before turning to bias, it is fair to say how good the technology has become. The U.S. National Institute of Standards and Technology (NIST) runs continuing tests of facial recognition algorithms from vendors around the world. The best algorithms in those tests have improved enormously over the past decade and are now extremely accurate on good-quality images.
 
-## Applying the frameworks
+That accuracy has uses most people welcome. It lets you unlock a phone or pass through an airport gate in seconds. It lets a bank confirm that the person opening an account matches their identity document. It has been used to identify victims in child-exploitation material and to find missing people. And compared with what it replaces, it can be an improvement: eyewitnesses are known to be unreliable, and people checking faces against a list of photographs tire quickly and make mistakes.
 
-- **Consequences:** The threshold is a utilitarian trade-off, but whose errors are counted?
-- **Justice:** Unequal error rates and unequal deployment compound each other.
-- **Explicability:** Can a defendant learn that facial recognition was used? In many U.S. cases, defendants weren't told.
+So the problem is not that facial recognition does not work. In most of the cases this module covers, the trouble comes from where and how it is used.
 
-## Discussion questions
+## Does It Work Equally Well for Everyone?
 
-1. Who should choose the threshold for a police facial recognition system: the vendor, the police, a legislature or the courts?
-2. If the best algorithms now have small demographic differences, is the bias concern solved? What remains?
-3. Explain the base-rate problem to a city council member in three sentences.
-4. Is facial *verification* (unlocking your phone) ethically different from *identification*? Why?
+The evidence on bias comes in three stages.
 
-## Activity: base-rate calculation (15 minutes)
+In 2018 the Gender Shades study tested commercial systems that classify a face as male or female. This is a different task from identification, but a revealing one. Error rates were as high as about 35 percent for darker-skinned women and under 1 percent for lighter-skinned men.
 
-A stadium uses live facial recognition on 60,000 attendees to find 5 people with outstanding warrants. The vendor claims a 98% true-match rate and a 0.05% false-match rate.
+In 2019 NIST studied 189 identification and verification algorithms. Many produced false matches more often for West African, East African and East Asian faces, in some cases 10 to 100 times more often, and more often for women and for older adults. Some algorithms, including several developed in China, showed less disparity on East Asian faces. The differences between vendors were enormous.
 
-1. How many true alerts should you expect? How many false?
-2. What fraction of alerts are false?
-3. How many innocent people might security stop, and what should the policy be when an alert fires?
+Since then, the best algorithms have become far more accurate, and among those top performers the differences between demographic groups are much smaller. Two cautions apply. Many systems in actual use are not the top performers. And images in the real world are far worse than the images used in tests.
 
-*(Answer key: about 4.9 true and about 30 false, so about 86% of alerts are false.)*
+The differences have several sources. Training data has often contained too few images of some groups. Cameras and their default settings have historically been tuned for lighter skin. Poor probe images make everything worse. And the make-up of the gallery matters: if one group is over-represented in a mugshot database, its members are more likely to be falsely matched simply because there are more of them to be matched against.
 
-## Key terms
+## Why Accuracy Does Not Settle the Question
 
-- **Template / embedding:** Numeric representation of a face.
-- **Verification (1:1) / identification (1:N):** Confirming a claimed identity vs. finding an unknown one.
-- **False match / false non-match:** False positive / false negative.
-- **Threshold:** The similarity cutoff for declaring a match.
-- **Probe image / gallery:** The image searched / the database searched against.
+Suppose facial recognition became perfect, with no errors and no differences between groups. Would the ethical questions go away?
 
-## Connections
+They would not, and seeing why is the main point of this lesson. A tool adopted to solve violent crimes tends to be extended to shoplifting and then to protests. The end of anonymity in public affects how freely people move, gather and speak. Officers may treat a match as proof and stop investigating. Decisions about which neighborhoods get the cameras are policy choices that accuracy has nothing to say about. And the gallery raises its own question: who is in it, and how did their photos get there? Some galleries are built from mugshots, some from driver's license photos, some from images copied off the web.
 
-- Base rates → 01-03, 03-02 · Wrongful arrests → 02-04 · Live use → 02-05 · Databases → 02-06
-- A2 scenario 1 (city facial recognition)
+Accuracy answers the question "how, if we do?" It leaves the question "should we?" where it was. A perfectly accurate system that can track anyone, anywhere, may be more dangerous to liberty than an unreliable one, because it would actually work.
 
-## Sources and further reading
+## Check Your Understanding
 
+**1. What is the difference between verification and identification?**
+
+:::answer Answer
+Verification compares one face with one stored template to confirm a claimed identity. Identification compares one face against a whole database to find out who someone is. Identification is more error-prone, and more so as the database grows.
+:::
+
+**2. What happens when you raise the threshold?**
+
+:::answer Answer
+False matches decrease and false non-matches increase. Choosing the threshold is a judgment about which error is worse.
+:::
+
+**3. A camera scans 100,000 people, 10 of them on a watchlist, with a 99 percent true-match rate and a 0.01 percent false-match rate. Roughly what share of alerts are false?**
+
+:::answer Answer
+About half. There are roughly 10 true alerts and roughly 10 false ones, because the people sought are so rare.
+:::
+
+**4. If the best algorithms now show small demographic differences, why is bias still a concern?**
+
+:::answer Answer
+Many deployed systems are not the best ones, real-world images are worse than test images, some groups are over-represented in galleries, and where the technology is deployed is itself unequal.
+:::
+
+## Your Turn
+
+A stadium uses live facial recognition on 60,000 people attending an event, to find 5 people with outstanding warrants. The vendor says the system correctly flags 98 percent of the people it is looking for and wrongly flags 0.05 percent of everyone else.
+
+Work out how many true alerts and how many false alerts to expect, and what fraction of alerts are false. Then write two or three sentences on what the stadium's policy should be when an alert fires.
+
+:::answer Check your arithmetic
+About 4.9 true alerts and about 30 false alerts, so roughly 86 percent of alerts are false.
+:::
+
+## Key Terms
+
+- **Template:** The list of numbers that represents a face; also called an embedding.
+- **Verification:** Confirming that a person is who they claim to be, by comparing one face with one stored template.
+- **Identification:** Finding out who an unknown person is, by comparing one face against a database.
+- **False match:** A false positive: the system says two different people are the same.
+- **False non-match:** A false negative: the system fails to match two images of the same person.
+- **Threshold:** The similarity score above which the system declares a match.
+- **Probe image:** The image being searched.
+- **Gallery:** The database of images searched against.
+
+## Sources
+
+- **Core:** Grother, P., Ngan, M. & Hanaoka, K. *NISTIR 8280: Face Recognition Vendor Test Part 3: Demographic Effects* (Dec 2019), executive summary. — [Free full text](https://www.nist.gov/publications/face-recognition-vendor-test-part-3-demographic-effects); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r051). <!-- reading-access -->
 - Buolamwini, J. & Gebru, T. "Gender Shades," *FAT\* 2018*. — [Free full text](https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r050). <!-- reading-access -->
-- Grother, P., Ngan, M. & Hanaoka, K. *NISTIR 8280: Face Recognition Vendor Test Part 3: Demographic Effects* (Dec 2019). — [Free full text](https://www.nist.gov/publications/face-recognition-vendor-test-part-3-demographic-effects); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r051). <!-- reading-access -->
 - NIST Face Recognition Technology Evaluation (FRTE), ongoing results. ⚠ Check current leaderboards. — [Free online tool](https://pages.nist.gov/frvt/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r052). <!-- reading-access -->
 - Garvie, C. et al. *The Perpetual Line-Up* (Georgetown Center on Privacy & Technology, 2016). — [Free full text](https://www.perpetuallineup.org/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r053). <!-- reading-access -->
 - Garvie, C. *Garbage In, Garbage Out: Face Recognition on Flawed Data* (Georgetown CPT, 2019), on probe images including sketches and celebrity look-alikes. — [Free full text](https://www.flawedfacedata.com/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r054). <!-- reading-access -->

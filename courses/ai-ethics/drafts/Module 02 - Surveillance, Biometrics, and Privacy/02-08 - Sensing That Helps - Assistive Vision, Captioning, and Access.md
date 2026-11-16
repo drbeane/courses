@@ -1,0 +1,113 @@
+# 02-08 — Sensing That Helps: Assistive Vision, Captioning, and Access
+
+**Module:** 2 — Surveillance, Biometrics, and Privacy
+**Estimated time:** 35 minutes
+
+**In this lesson:** The cameras and microphones that this module has treated as threats are, for many blind and deaf people, a way into the world. This lesson looks at what assistive sensing does, who gains, what it costs the people around them, and what strict privacy rules would take away.
+
+## Reading the Room
+
+Picture a blind woman standing in a supermarket aisle. Twenty years ago her options were to ask a stranger, wait for a staff member, or memorize where things were and hope nothing had moved. Today she holds up her phone, or simply looks at the shelf through a pair of camera glasses, and asks: "Which of these is the low-sodium soup?" A voice in her ear reads the labels and tells her it is the can on the left. On the way out it reads the expiry date on a carton of milk, the total on the card reader, and a handwritten sign saying the side door is closed.
+
+None of this is futuristic. Since about 2017, a series of tools has made it ordinary. Microsoft's Seeing AI app reads text and describes scenes from a phone camera. Be My Eyes, which began in 2015 by connecting blind users with sighted volunteers over video, added an AI assistant in 2023 that describes photos in detail and answers questions about them. Since 2024 the same service has been available through camera glasses, so a user can keep both hands free for a cane or a guide dog. Similar tools exist for people who are deaf or hard of hearing. Phones now caption speech in real time, and some glasses display captions of the conversation in front of the wearer.
+
+The technology is the same technology this module has been worried about: cameras that are always ready, microphones that are always listening, images sent to a company's servers, and AI that describes whatever it sees, including other people.
+
+*Some details in this lesson, including product launch dates, should be checked against current sources before teaching.*
+
+## Who Gains
+
+The numbers are large. The World Health Organization estimates that at least 2.2 billion people have some form of vision impairment, and that about 1.5 billion people live with some degree of hearing loss. Not all of them need these tools, but tens of millions could use them.
+
+For a blind user, the gain is independence in small things that add up to a great deal: reading mail without waiting for someone, choosing clothes that match, finding the right bus, knowing what the person across the table is holding up. Many blind users describe the most important gain as not having to ask. Asking a stranger for help is often fine, but doing it twenty times a day is tiring, and it puts a person at the mercy of whoever happens to be nearby.
+
+For a deaf or hard-of-hearing user, live captions turn a meeting, a lecture, a doctor's appointment or a family dinner from something to be endured into something they can take part in. Captions also help people with auditory processing difficulties and people learning a language.
+
+For employers, schools and public services, these tools make access possible at a lower cost than a human interpreter or describer for every situation. That matters, because the alternative is often not a human interpreter. It is no access at all.
+
+## Why It Is the Same Technology
+
+The difficulty is that assistive sensing cannot be separated from the features that worried us in Lesson 02-07.
+
+To describe a scene, the device has to capture it, and the scene usually contains other people. To caption a conversation, it has to listen to everyone in it. The most capable descriptions come from large models running in the cloud, so the images and audio of those other people are sent to a company's servers. And some of the most valued features are about people. A blind user may very much want to know whether a friend has just walked into the room, or who is smiling at them, or whether the person speaking looks annoyed. Those features require analyzing faces.
+
+So the same device that is a lifeline for its wearer is, from the point of view of the stranger in the café, a camera they did not agree to. Both descriptions are accurate.
+
+## What It Costs Others
+
+The costs fall on bystanders, and they are the costs that Lesson 02-07 described: being recorded without consent, having images of yourself sent to a company, the possibility that the data is kept or used for training, and, if face recognition is involved, being identified.
+
+Some of these costs are small in practice. A description of a supermarket shelf rarely includes a person. A caption of a conversation captures words the speaker was already saying to the user. But some are not small. A blind user's device in a doctor's waiting room, a courtroom or a support group captures people at sensitive moments. And a feature that recognizes friends by their faces can, with a different database, recognize anyone.
+
+There are also costs to users themselves, which are easy to overlook. AI descriptions are sometimes wrong, and a blind user may not be able to tell. A description that confidently misreads a medicine label is dangerous, which is the problem of fabrication that Module 4 covers. A user who comes to depend on a service is at the mercy of the company that runs it: its prices, its privacy policy and whether it continues to exist. And the user's own data, including images of their home, their mail and their medication, flows to the same servers.
+
+## What Privacy Rules Would Cost
+
+This is the part of the lesson that most privacy discussions skip. Several of the protections proposed in Lesson 02-07 would hurt disabled users directly.
+
+A ban on camera glasses in a hospital, a school or a workplace would bar a blind person's most useful tool from exactly the places where they most need to read signs and documents. A rule that recording must stop unless everyone present consents would make live captioning impossible in most meetings. A ban on face recognition in consumer devices would remove a feature that blind users have asked for: knowing who is in front of them. Even a hardware-enforced recording light can be a problem, since it draws attention to a person who may already be singled out in public.
+
+Disability law in many countries requires reasonable accommodation, and these tools are increasingly how accommodation is provided. A privacy rule that ignores this does not just inconvenience someone. It can exclude them.
+
+This is the "compared to what?" question from Lesson 01-01. The alternative to an assistive camera is not a world without cameras. It is a blind person who cannot read the sign.
+
+## Where People Disagree
+
+Disability advocates and privacy advocates often find themselves on opposite sides of this question, even though both are defending people with little power.
+
+One view gives priority to access. It holds that disabled people's independence is a matter of rights and equal participation, that the privacy cost to bystanders is usually small, and that rules should therefore restrict uses, such as storing or selling bystander data, without restricting devices. On this view, a blanket ban on camera glasses is a form of discrimination, however well meant.
+
+Another view gives priority to bystanders. It points out that a device cannot tell whether the person wearing it is blind, that an exemption for assistive use would be easy to claim and hard to check, and that once identification of strangers is normal for one group, it will spread to everyone. On this view, face recognition of strangers should be off-limits for all users, and other protections should be designed so that they do not depend on who is wearing the device.
+
+Most proposals try to separate what the device does from who uses it. Describing scenes and reading text could be allowed everywhere, with images processed and then discarded rather than kept. Captioning could be allowed with the transcript kept only on the user's device. Recognizing people could be limited to those who have enrolled themselves, such as friends who agree to be recognized, and never extended to strangers. These approaches do not settle every case, but they show that the choice is not simply between access and privacy.
+
+## What Good Design Looks Like Here
+
+The design levers from Lesson 02-07 apply directly. On-device processing keeps bystanders' images from leaving the device. Deleting images after describing them prevents a record from building up. Excluding assistive data from model training, unless the user explicitly agrees, protects both users and bystanders. Recognizing only people who have chosen to be recognized gives blind users what they most want without turning every pair of glasses into a search engine for faces.
+
+There is one more principle that this case adds. The people who use assistive technology should be involved in designing the rules for it. Lesson 01-08 described the gap between a system's users and the people affected by it. Here the users are themselves a group with little power, and rules written without them have repeatedly missed what they need.
+
+## Check Your Understanding
+
+**1. Why can assistive sensing not simply be separated from the always-on devices in Lesson 02-07?**
+
+:::answer Answer
+It uses the same capabilities: cameras and microphones that capture everyone nearby, processing in the cloud, and AI that describes or identifies people. The difference is in who uses it and why.
+:::
+
+**2. Name two privacy protections that would harm blind or deaf users.**
+
+:::answer Answer
+Any two of these: bans on camera glasses in hospitals, schools or workplaces; rules requiring all-party consent before recording, which would block live captions; bans on face recognition that remove recognizing friends; conspicuous recording lights that draw attention to the user.
+:::
+
+**3. What risks do assistive tools pose to their own users?**
+
+:::answer Answer
+Descriptions can be wrong in ways the user cannot detect, users become dependent on a company's service and policies, and the user's own private images, such as mail and medication, are sent to the company's servers.
+:::
+
+**4. How can rules protect bystanders without excluding disabled users?**
+
+:::answer Answer
+By restricting uses instead of devices: processing on the device, deleting images after use, not using the data for training, and limiting recognition to people who have agreed to be recognized.
+:::
+
+## Your Turn
+
+Return to the campus policy you wrote in Lesson 02-07. Read it as a blind student who relies on camera glasses and as a deaf student who relies on live captions. Rewrite one part of it so that it protects bystanders without excluding either student, and explain in two sentences what changed.
+
+## Key Terms
+
+- **Assistive technology:** A device or service that helps a person with a disability carry out tasks they would otherwise find difficult or impossible.
+- **Scene description:** AI that describes the contents of an image or camera view in words.
+- **Live captioning:** Real-time conversion of speech to text.
+- **Reasonable accommodation:** A legal duty, in many countries, to adjust rules or practices so that disabled people can participate.
+
+## Sources
+
+- **Core:** Be My Eyes, "Be My AI" overview and announcements (2023–2024). ⚠ Verify dates and current features. — [Free full text](https://www.bemyeyes.com/)
+- World Health Organization, *World Report on Vision* (2019). ⚠ — [Free full text](https://www.who.int/publications/i/item/9789241516570)
+- World Health Organization, *World Report on Hearing* (2021). ⚠ — [Free full text](https://www.who.int/publications/i/item/9789240020481)
+- Microsoft, Seeing AI. ⚠ — [Free full text](https://www.seeingai.com/)
+- Denning, T. et al. "In Situ with Bystanders of Augmented Reality Glasses," *CHI 2014*. — [Free manuscript](https://tamaradenning.net/files/papers/denning-chi2014-pn2112.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r082). <!-- reading-access -->

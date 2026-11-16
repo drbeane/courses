@@ -3,125 +3,128 @@
 **Module:** 2 — Surveillance, Biometrics, and Privacy
 **Estimated time:** 35 minutes
 
-## Learning objectives
+**In this lesson:** Clearview AI built a search engine for faces from billions of photos copied off the web. This case study follows what happened, what failed, who answered for it, and what changed, including the laws that turned out to matter most.
 
-By the end of this lesson, you will be able to:
+## The Company That Searched the Internet for Your Face
 
-1. Summarize the Clearview AI case and the international regulatory response.
-2. Explain the structure and impact of the Illinois Biometric Information Privacy Act (BIPA) and similar laws.
-3. Evaluate the argument that collecting public images is protected speech or legitimate research.
+Clearview AI was founded in 2017. Its product is simple to use. You upload a photo of someone, and Clearview returns other photos of the same face from across the web, each with a link to the page where it appears. Those pages often reveal a name, a workplace, friends and much more.
 
-## Opening case: the company that "searched the internet for your face"
+To make this possible, the company copied billions of images from social media, news sites and other public web pages, and converted every face into a template that could be searched.
 
-Clearview AI, founded in 2017, built a face search engine by scraping billions of images from social media, news sites and other public web pages. A user uploads a photo, and Clearview returns other photos of that face with links to where they appear. This often reveals a name, workplace, friends and more.
+## Timeline
 
-- **Exposure:** The *New York Times* revealed Clearview in January 2020 (Kashmir Hill). Thousands of police agencies had used it, many through free trials and often without supervisors' knowledge.
-- **2022 ACLU settlement (Illinois):** Clearview agreed not to sell its database to most private companies in the U.S. nationwide, and not to Illinois state or local agencies for five years.
-- **Regulators abroad:** The UK ICO, France's CNIL, Italy's Garante, Greece's DPA and the Dutch Autoriteit Persoonsgegevens (a €30.5M fine in 2024) found GDPR violations and ordered deletion of residents' data. Clearview contested several decisions and has largely not paid.
-- **UK:** In 2023 the First-tier Tribunal overturned the ICO's £7.5M fine on jurisdictional grounds. In **October 2025**, the Upper Tribunal reversed that ruling, holding that UK data-protection law does reach Clearview's scraping of UK residents' images, and sent the case back to decide the merits. Clearview was granted permission to appeal to the Court of Appeal in December 2025 ⚠.
-- **2025 class settlement:** A U.S. multidistrict class settlement gave affected people a percentage stake in the company in place of cash, a novel remedy criticized for tying victims' compensation to the company's commercial success ⚠.
+**2017 to 2019: quiet growth.** Clearview offered free trials to police officers. Use spread officer to officer, often without supervisors knowing. By the time it became public, thousands of agencies had used it.
 
-## Core ideas
+**January 2020: exposure.** The *New York Times* reporter Kashmir Hill revealed the company and how it had built its database. The reaction was immediate. Several platforms sent demands that it stop copying their images, and lawsuits followed.
 
-### Why biometrics are special
+**2021 to 2024: regulators abroad.** Data protection authorities in the United Kingdom, France, Italy, Greece and the Netherlands found that Clearview had broken European data protection law. They ordered it to delete their residents' data and imposed fines, including €30.5 million from the Dutch authority in 2024. Clearview contested several of the decisions and has largely not paid.
 
-Biometric identifiers (face geometry, fingerprints, iris and voiceprints) are special because:
+**May 2022: the Illinois settlement.** A lawsuit brought by the American Civil Liberties Union under Illinois law ended in a settlement. Clearview agreed not to sell access to its database to most private companies anywhere in the United States, and not to Illinois government agencies for five years.
 
-- **They are permanent.** You can change a password, not your face.
-- **They are hard to hide.** Your face is exposed every time you go outside.
-- **They are linkable.** A face links online and offline identities.
-- **They can be collected covertly** at a distance.
-- **They are sensitive.** Faces can reveal or be used to infer other traits.
+**2023 to 2025: the UK appeal.** In 2023 a tribunal overturned the UK regulator's £7.5 million fine, holding that UK law did not reach Clearview's activities. In October 2025 a higher tribunal reversed that decision, holding that UK data protection law does apply to the copying of UK residents' images, and sent the case back to be decided on its merits. Clearview was given permission to appeal further in December 2025.
 
-### Illinois BIPA (2008)
+**2025: the class settlement.** A combined U.S. class action ended in an unusual settlement. In place of cash, the people affected received a stake in the company itself. Critics pointed out that this ties the victims' compensation to the commercial success of the business that harmed them.
 
-BIPA requires private entities to:
+*The status of the UK appeal and the class settlement should be checked before relying on them.*
 
-1. inform people in writing that biometric data is being collected, why, and for how long,
-2. obtain **written release** (consent),
-3. publish a retention and destruction policy,
-4. not sell or profit from biometric data, and
-5. protect the data with reasonable care.
+## Why Faces Are Different
 
-Critically, BIPA gives individuals a **private right of action**, with $1,000 in damages per negligent violation and $5,000 per intentional or reckless violation.
+To see why regulators treated this so seriously, consider what makes faces different from other personal data.
 
-**Impact:**
+A face is permanent. You can change a password or a phone number, but not your face. A face is hard to hide, since it is exposed every time you go outside. It links identities: one face connects your online accounts with the person on the street. It can be captured at a distance without your knowledge. And it can reveal or suggest other things about you. Faces, fingerprints, iris patterns and voiceprints together are called **biometric identifiers**, and a facial template is often called a **faceprint**.
 
-- **Facebook (2021):** a $650M settlement over face-tagging suggestions.
-- **Google, TikTok, Snapchat:** settlements in the tens to hundreds of millions.
-- **Clearview (2022):** the ACLU settlement above.
-- ***Cothron v. White Castle* (Ill. 2023):** The court held that each scan was a separate violation, implying potentially enormous liability. The legislature amended BIPA in 2024 to limit damages to one recovery per person per collection method.
+Lesson 02-01 explained why the photos being public did not settle anything. A photo posted for friends and a faceprint in a police search tool are different flows of information.
 
-**Other U.S. laws:**
+## What Clearview Said in Its Defense
 
-- **Texas CUBI:** No private right of action, but Texas AG settlements include Meta for $1.4B (2024) and Google for $1.375B (2025, privacy claims including biometrics).
-- **Washington:** a biometric law, plus the My Health My Data Act.
-- **Comprehensive state privacy laws:** Many treat biometric data as "sensitive data" requiring opt-in consent.
+Clearview made four arguments, and they deserve a fair hearing.
 
-### GDPR approach
+The first was free speech. Collecting and analyzing information that is publicly available, it argued, is protected expression under the U.S. Constitution. An Illinois court rejected this argument as a reason to dismiss the case in 2021, but the question has not been finally settled.
 
-Under GDPR, biometric data processed to uniquely identify a person is **special category data** (Art. 9). Processing it is prohibited unless an exception applies, such as explicit consent or substantial public interest under law. Scraping public photos to build a face search engine meets no exception, which is why EU regulators ordered deletion. The EU AI Act separately **prohibits** untargeted scraping of facial images from the internet or CCTV to create or expand facial recognition databases (Art. 5(1)(e), in force since Feb 2025).
+The second was public safety. The company says its tool has helped solve crimes, including child-exploitation cases in which victims were identified, and it was used to identify people who took part in the January 6, 2021, attack on the U.S. Capitol. These benefits are real, and investigators who have used the tool speak highly of it.
 
-### Clearview's defenses
+The third was an analogy: Clearview is "Google for faces." Search engines index public pages, and nobody thinks that is wrong.
 
-1. **First Amendment:** Collecting and analyzing public information is speech. (Clearview hired Floyd Abrams to make this argument. An Illinois court rejected its dismissal motion in 2021.)
-2. **Public safety:** It helps solve crimes, including child-exploitation cases, and identified suspects in the January 6 Capitol riot.
-3. **Search-engine analogy:** "We're Google for faces."
-4. **No new harm:** The images were already public.
+The fourth was that it caused no new harm, because the images were already public.
 
-### Counterarguments
+The replies are also strong. Converting a photo into a faceprint is a new act, not just looking. Search engines index pages that people chose to publish; they do not make people's bodies searchable. Investigators could get most of the public-safety benefit from a tool run under public rules, without a private, unregulated database. And the harm is the capability itself. Anyone with access can identify a stranger from a single photo, including a stalker or an abuser.
 
-- Converting images to faceprints is a new act, not mere viewing (contextual integrity, 02-01).
-- Search engines index pages people publish. They don't make bodies searchable.
-- Public-safety benefits don't require private, unregulated databases.
-- The harm is the capability itself: anyone with access can identify strangers on the street, including stalkers and abusers.
+## What Failed
 
-### The capability has spread
+Several things failed at once, and it is worth separating them.
 
-Other face search engines (PimEyes, FaceCheck.ID) are available to the public for a fee. In 2024, two Harvard students demonstrated Meta Ray-Ban glasses streaming to a face search engine, identifying strangers in real time (Lesson 02-08). The question is no longer whether this can be built, but who may use it and how.
+The law was not ready. In most U.S. states, nothing prevented what Clearview did. The behavior was legal in much of the country and illegal in the European Union, which is the gap between law and ethics that Lesson 01-09 described.
 
-## Applying the frameworks
+Oversight inside police agencies failed. Officers used the tool on free trials without approval, rules or records. Many departments did not know their own officers were using it.
 
-- **Deontology:** Converting someone's face into a searchable identifier without consent treats them merely as a means.
-- **Consequences:** Investigative benefits vs. stalking, harassment and the loss of anonymity.
-- **Justice:** Remedies (equity in the company, unpaid fines) may not match the harm.
-- **Law ≠ ethics:** Legal in much of the U.S.; illegal in the EU and Illinois.
+The platforms' protections failed. Their terms of service prohibited this kind of copying, but terms cannot stop someone determined to ignore them.
 
-## Discussion questions
+And remedies failed. Fines that are not paid, and a settlement paid in company stock, leave the people affected without much in the way of correction. Lesson 01-06 called that corrective justice.
 
-1. Should collecting publicly posted images to build a face search engine be legal? Should using one be?
-2. BIPA's private right of action has produced large settlements. Is litigation a good way to regulate technology?
-3. Should journalists and researchers have exemptions for face search? Under what conditions?
-4. Would you use PimEyes on yourself to see where your face appears? On someone else? What's the difference?
+## Who Answered for It
 
-## Activity: comparative law table (15 minutes)
+The answer is uneven. The company faced fines in Europe that it largely contested, a settlement in Illinois that limited its market, and a class settlement that cost it equity rather than cash. No individual at the company has been held personally responsible. The police agencies that used the tool without oversight mostly faced criticism, not sanctions. The people whose faces are in the database, which likely includes you, were never asked and have received little.
 
-Complete the table for a company wanting to offer face search to retail stores:
+## What Changed: The Laws That Worked
 
-| Jurisdiction | Allowed? | Conditions | Penalty risk |
-|---|---|---|---|
-| Illinois | | | |
-| Texas | | | |
-| EU | | | |
-| A state with no biometric law | | | |
+The most important lesson of the Clearview case is which laws actually had teeth.
 
-Include an "as of" date and one source for each row.
+**Illinois's Biometric Information Privacy Act**, passed in 2008, requires private companies to tell people in writing that their biometric data is being collected, why, and for how long; to get their written consent; to publish a policy on how long the data is kept and when it is destroyed; not to sell or profit from it; and to protect it with reasonable care. What makes the law powerful is that it gives individuals a **private right of action**, the right to sue directly, with damages of $1,000 for each negligent violation and $5,000 for each intentional or reckless one.
 
-## Key terms
+That right to sue produced large results. Facebook paid $650 million in 2021 to settle claims about its photo-tagging suggestions, and Google, TikTok and Snapchat settled similar claims. In 2023 the Illinois Supreme Court held that each scan was a separate violation, which implied enormous liability. In 2024 the legislature amended the law to limit recovery to one per person for each method of collection.
 
-- **Biometric identifier:** A biological or behavioral characteristic used to identify someone.
-- **Faceprint:** A facial template.
-- **Private right of action:** The ability of individuals to sue directly for violations.
-- **Special category data (GDPR):** Sensitive data, including biometrics used for identification.
+Other states have taken different routes. Texas has a biometric law with no private right to sue, but its attorney general has used it to win large settlements, including $1.4 billion from Meta in 2024. Washington has a biometric law and a separate law protecting health data. Many newer state privacy laws treat biometric data as sensitive and require people to opt in.
 
-## Connections
+In Europe, biometric data used to identify someone is a **special category** under the GDPR. Processing it is prohibited unless a specific exception applies, such as explicit consent or a substantial public interest set out in law. Clearview met none of them, which is why European regulators ordered deletion. The EU AI Act went further: since February 2025 it has prohibited building or expanding facial recognition databases by untargeted copying of facial images from the internet or from security cameras.
 
-- Contextual integrity → 02-01 · Smart glasses → 02-08 · EU AI Act prohibitions → 08-01
-- A2 authority memo
+## What Has Not Changed
 
-## Sources and further reading
+The capability has spread. Other face search engines, such as PimEyes, are available to anyone who pays a fee. In 2024, two Harvard students connected a pair of camera glasses to a face search engine and public records, and identified strangers on the subway in real time. They did not release the tool. Lesson 02-07 returns to that demonstration.
 
-- Hill, K. *Your Face Belongs to Us: A Secretive Startup's Quest to End Privacy as We Know It* (2023). — [Paid / library](https://www.penguinrandomhouse.com/books/691288/your-face-belongs-to-us-by-kashmir-hill/9780593448571/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r066). <!-- reading-access -->
+The question is no longer whether such a tool can be built. It is who may use it, and under what rules.
+
+## Check Your Understanding
+
+**1. What makes biometric identifiers different from other personal data?**
+
+:::answer Answer
+They are permanent, hard to hide, link online and offline identities, can be captured covertly at a distance, and can reveal other traits.
+:::
+
+**2. Why has Illinois's biometric privacy law had more effect than most privacy laws?**
+
+:::answer Answer
+It gives individuals a private right of action, the right to sue directly, with set damages for each violation. That produced large settlements.
+:::
+
+**3. Under the GDPR, why was Clearview's processing unlawful?**
+
+:::answer Answer
+Biometric data used to identify a person is special category data, which may not be processed unless a specific exception applies, such as explicit consent. Copying public photos to build a face search engine met none of the exceptions.
+:::
+
+**4. Name two things that failed in the Clearview case besides the company's own conduct.**
+
+:::answer Answer
+Any two of these: most U.S. law did not prohibit it; police agencies had no oversight of officers' use; platforms' terms of service could not stop the copying; fines went unpaid and the settlement gave stock in place of cash.
+:::
+
+## Your Turn
+
+A company wants to offer face search to retail stores, so staff can identify known shoplifters. For each of these four places, say whether it would be allowed, under what conditions, and what penalty the company would risk: Illinois, Texas, the European Union, and a U.S. state with no biometric law. Give an "as of" date and one source for each.
+
+Then answer one question in a paragraph: should the law treat this use differently from police use? Why?
+
+## Key Terms
+
+- **Biometric identifier:** A biological or behavioral characteristic used to identify a person, such as a face, fingerprint or voice.
+- **Faceprint:** A template made from a face.
+- **Private right of action:** The right of individuals to sue directly for a violation of a law.
+- **Special category data:** Under the GDPR, sensitive data, including biometric data used for identification, that may be processed only under specific exceptions.
+
+## Sources
+
+- **Core:** Hill, K. *Your Face Belongs to Us: A Secretive Startup's Quest to End Privacy as We Know It* (2023), Chapters 1 and 16. — [Paid / library](https://www.penguinrandomhouse.com/books/691288/your-face-belongs-to-us-by-kashmir-hill/9780593448571/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r066). <!-- reading-access -->
 - ACLU v. Clearview AI settlement (May 2022). — [Free full text](https://www.aclu.org/cases/aclu-v-clearview-ai); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r067). <!-- reading-access -->
 - Dutch DPA (Autoriteit Persoonsgegevens), Clearview decision (Sept 2024). — [Free full text](https://autoriteitpersoonsgegevens.nl/en/current/dutch-dpa-imposes-a-fine-on-clearview-because-of-illegal-data-collection-for-facial-recognition); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r068). <!-- reading-access -->
 - Illinois BIPA, 740 ILCS 14; SB 2979 amendment (2024). — [Free official text](https://www.ilga.gov/Legislation/publicacts/view/103-0769); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r069). <!-- reading-access -->

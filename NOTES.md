@@ -81,3 +81,14 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - The numbers in `model-picker` are made up to show the pattern, and the widget says so. Its
   effort levels (Low, Medium, High, Max) were not checked against Claude's menu.
 - The surface descriptions in `surface-explorer` are new text, not taken from the lesson.
+
+## 2026-11-15: AI Ethics Module 2 rewritten
+
+- All ten Module 2 lessons are rewritten in the new lesson structure, and Module 2 now follows the
+  planned outline.
+- 02-07 is now "Always-On Devices: Assistants, Glasses, and Bystanders," which merges the v1
+  lessons on always-on assistants and smart glasses.
+- 02-08 is new: "Sensing That Helps: Assistive Vision, Captioning, and Access," on blind and deaf
+  users of the same sensing technology and what privacy rules would cost them.
+- The lesson count is unchanged (10), so no other lesson numbers moved. `course.json` and the
+  Topics index are updated. New claims to verify are at the end of `06 - Verification Checklist.md`.

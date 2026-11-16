@@ -60,8 +60,8 @@
         { "title": "Facial Recognition in Policing: Wrongful Arrests" },
         { "title": "Live Facial Recognition in Public Space" },
         { "title": "Scraped Faces: Clearview AI and Biometric Privacy Law", "optional": true },
-        { "title": "Always-On Assistants: Voice, Screen, and Memory" },
-        { "title": "Smart Glasses and Bystander Privacy" },
+        { "title": "Always-On Devices: Assistants, Glasses, and Bystanders" },
+        { "title": "Sensing That Helps: Assistive Vision, Captioning, and Access" },
         { "title": "Inference and Profiling: What AI Can Guess About You", "optional": true },
         { "title": "Privacy-Protective Design and Governance", "assess": [ "A2" ] }
       ]

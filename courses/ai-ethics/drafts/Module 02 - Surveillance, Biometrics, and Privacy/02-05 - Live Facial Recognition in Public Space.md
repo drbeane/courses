@@ -1,130 +1,139 @@
 # 02-05 — Live Facial Recognition in Public Space
 
 **Module:** 2 — Surveillance, Biometrics, and Privacy
-**Estimated time:** 40 minutes (includes debate prep)
+**Estimated time:** 40 minutes (includes debate preparation)
 
-## Learning objectives
+**In this lesson:** Live facial recognition scans everyone who walks past a camera, looking for people on a watchlist. This lesson looks at London's expansion of it, the case for and against, how different countries regulate it, and what evidence would settle the argument. It prepares you for the Week 2 debate.
 
-By the end of this lesson, you will be able to:
+## London's Fixed Cameras
 
-1. Distinguish retrospective facial recognition from live facial recognition (LFR), and explain why LFR raises distinct concerns.
-2. Compare legal approaches to LFR in the UK, the EU and the U.S.
-3. Construct arguments on both sides of the Week 2 debate resolution.
+In June 2026, London's Metropolitan Police announced that it would mount live facial recognition cameras permanently on street fixtures in the West End and Soho by the end of the year, and extend their use across the city from 2027.
 
-## Opening case: London's fixed cameras (2026)
+The system works like this. Before each deployment, the police compile a watchlist of people they are looking for, and they delete it within 24 hours. Every face that passes the cameras is compared with that list. Officers monitor the alerts remotely and can move the cameras to new locations. Faces that do not match are, according to the force, deleted at once.
 
-In June 2026, the Metropolitan Police announced that it would install static live facial recognition cameras on street fixtures in the West End and Soho by the end of 2026, with citywide use from 2027.
+The force pointed to the results of a six-month pilot in Croydon. More than 470,000 people passed the cameras. The system produced one false alert. The deployment contributed to more than 170 arrests, and the force reported a significant fall in violence against women and girls in the area.
 
-- **Operation:** Watchlists are compiled less than 24 hours before each deployment and deleted afterward. Officers monitor the cameras remotely and can relocate them to new hotspots.
-- **Pilot results:** The Met reported one false alert among more than 470,000 people who passed the Croydon pilot cameras over six months, more than 170 arrests, and a significant fall in violence against women and girls.
-- **Legal footing:** LFR in England runs under the Met's own policy, data-protection law and common-law policing powers, not a dedicated statute. An April 2026 judicial review found the Met's policy compliant with human rights law. The May 2026 King's Speech promised a statutory framework and an independent regulator through the Police Reform Bill.
-- **Opposition:** Big Brother Watch said police were "rushing ahead" under their own rules. Eleven civil-society groups, including Liberty, Justice and the Open Rights Group, called for strict minimum protections.
+The legal footing was thinner than the technology. In England, live facial recognition runs under the police's own policy, data protection law and the general common-law powers of the police. There is no statute written for it. A court review in April 2026 found the Met's policy compatible with human rights law. In May 2026 the government promised legislation, including a statutory framework and an independent regulator. Civil liberties groups, including Big Brother Watch, Liberty and the Open Rights Group, said the police were expanding first and waiting for the law afterward, and called for strict minimum protections.
 
-## Core ideas
+## Live Is Different From After the Fact
 
-### Retrospective vs. live
+Lesson 02-04 was about retrospective facial recognition: after a crime, the police search a database using a photo of the suspect. Live facial recognition reverses the direction.
 
-| | Retrospective FR | Live FR |
+| | Retrospective | Live |
 |---|---|---|
-| When | After an event, on stored images | In real time, on camera feeds |
-| Whom it scans | The probe image of a suspect | **Everyone** who passes |
+| When it runs | After an event, on stored images | In real time, on camera feeds |
+| Whose face is searched | The suspect's | Everyone who passes |
 | Typical use | Identify an unknown suspect | Find people on a watchlist |
-| Main risk | A wrongful lead (02-04) | Mass biometric processing; chilling of public life |
+| Main risk | A wrongful lead | Processing everyone's face; changing public life |
 
-With LFR, **the innocent public is the input**. Every passerby's face is detected, templated and compared, even if the template is deleted immediately when there is no match.
+The key difference is in the second row. With live recognition, the general public is the input. Every passer-by's face is detected, turned into a template and compared with the list, even if the template is deleted a fraction of a second later. A person walking to work has their biometric data processed by the police without being suspected of anything.
 
-### Who is on the watchlist?
+## The Case for It
 
-The ethics of LFR depend heavily on watchlist composition:
+The arguments for live facial recognition with safeguards are strong, and you should be able to make them well, because half of you will be assigned to.
 
-- people wanted for serious violent crimes?
-- people with outstanding warrants for minor offenses?
-- missing or vulnerable people?
-- people with bail conditions?
-- "persons of interest" without charges?
-- protesters?
+It finds people the police are actively looking for, including people wanted for violent crimes, faster and with fewer officers than any other method. Croydon's reported results, many arrests and a fall in violence against women and girls, are the kind of benefit that ethics has to count. The victims of those crimes are real people.
 
-Watchlists tend to expand over time (mission creep). A system justified for finding murder suspects can quietly become one for finding fare evaders.
+It may be fairer than what it replaces. A stop based on an officer's judgment of who looks suspicious has a long record of bias. A system that stops only people whose face matches a specific, named person on a list takes some of that judgment away.
 
-### Legal approaches compared (as of October 2026 ⚠)
+It can be narrowly designed. A watchlist can be limited to serious offenses and deleted after each deployment. Faces that do not match can be discarded at once.
+
+And public space has never been perfectly private. Britain already has very dense camera coverage. Supporters argue that matching faces against a short list adds little to what those cameras already capture.
+
+## The Case Against It
+
+The arguments against are equally serious.
+
+It turns public space into a checkpoint. Being able to walk down a street without being identified is part of what makes a society free, and live recognition ends it for everyone the cameras see.
+
+It chills lawful activity. As Lesson 02-01 described, people avoid protests, places of worship and clinics when they believe they are being watched.
+
+The infrastructure is hard to remove once it is installed, and easy to expand. That is **mission creep**: the gradual widening of a tool beyond its original purpose. It shows up most clearly in the watchlist. A system justified for finding murder suspects can quietly come to include people with outstanding warrants for minor offenses, people with bail conditions, "persons of interest" who have not been charged, or protesters.
+
+The evidence comes mostly from the police. Did violence fall because of the cameras, or for some other reason? Did crime simply move to the next street? Without independent evaluation, nobody knows.
+
+Deployment is a policy choice. Which neighborhoods get the cameras, and which do not, decides whose faces are scanned most.
+
+And the expansion is happening before the law. Critics argue that a power this broad should be granted by a legislature, not adopted by the police and reviewed afterward.
+
+## How the Law Differs
+
+Countries have taken very different approaches. The table describes the position as of October 2026, and this area changes quickly.
 
 | Jurisdiction | Approach |
 |---|---|
-| **EU (AI Act Art. 5)** | "Real-time" remote biometric identification in publicly accessible spaces for law enforcement is **prohibited** except in narrow cases: targeted searches for victims of serious crimes, prevention of specific imminent threats, and locating suspects of listed serious offenses. Each use requires prior judicial or independent authorization. Prohibitions have applied since Feb 2, 2025. Member states must legislate to permit the exceptions. |
-| **England & Wales** | Policy-based, governed by the 2020 *Bridges v. South Wales Police* ruling (the Court of Appeal found SWP's use unlawful for too-broad discretion and an inadequate equality assessment), College of Policing guidance and data-protection law. A statutory framework is promised (2026). |
-| **Scotland** | Police Scotland has not deployed LFR. A statutory framework is reported to be at least two years away. |
-| **U.S. federal** | No federal statute. Agency use is governed by policy. |
-| **U.S. states and cities** | Patchwork. Some cities ban FR (San Francisco, Boston, Portland, OR, which also bans private use in public places). Some states require warrants (Montana, Utah). Many have no rules. |
-| **Private LFR** | Retailers in the UK (e.g., Facewatch) and in the U.S. use LFR against shoplifters. In 2023 the FTC banned Rite Aid from using FR surveillance for five years after false matches. |
+| European Union | The AI Act prohibits real-time remote biometric identification by police in publicly accessible spaces, with narrow exceptions: searching for victims of serious crimes, preventing a specific and imminent threat, and locating suspects in listed serious offenses. Each use needs prior authorization by a judge or independent authority, and a member state must pass its own law to allow the exceptions. The prohibition has applied since February 2, 2025. |
+| England and Wales | Governed by policy, court decisions and data protection law. In 2020 the Court of Appeal found one police force's use unlawful because officers had too much discretion and the force had not properly assessed equality effects. A statutory framework has been promised. |
+| United States, federal | No federal statute. Agencies follow their own policies. |
+| United States, states and cities | A patchwork. Some cities ban police use, including San Francisco and Boston; Portland, Oregon, also bans private use in public places. Some states require a warrant. Many have no rules. |
+| Private use | Some shops in the UK and the U.S. use live recognition to spot known shoplifters. In 2023 the U.S. Federal Trade Commission banned the pharmacy chain Rite Aid from using facial recognition for five years after its system wrongly flagged customers. |
 
-### Arguments for LFR (with safeguards)
+The contrast between the EU and England is striking. Both are European democracies bound by the same human rights convention, and they have reached nearly opposite answers to the same question.
 
-- Finds dangerous people faster, with fewer officers.
-- Reported results include arrests and reduced violence (Croydon).
-- Less discriminatory than human "stop and search," which relies on officers' judgment.
-- Watchlists can be narrow, and non-matches can be deleted instantly.
-- Public spaces have never been perfectly private, since CCTV is already everywhere in the UK.
+## What Good Evidence Would Look Like
 
-### Arguments against
+Much of the disagreement comes down to evidence, and it is worth knowing what would actually settle a claim like "live facial recognition reduced violence."
 
-- **Normalization:** Converts public space into a checkpoint where everyone is identified.
-- **Chilling:** Deters protest, worship and other lawful activity (02-01).
-- **Irreversibility:** Infrastructure, once installed, is easy to expand and hard to remove.
-- **Evidence quality:** Police-reported statistics without independent evaluation. Did crime fall *because* of LFR?
-- **Unequal deployment:** Which neighborhoods get cameras?
-- **Rule of law:** Major expansion is happening before legislation.
+An independent evaluation, not one by the police. A comparison with similar areas that did not have the cameras, so that you can tell what would have happened anyway. Data on everyone stopped after an alert, not only those arrested. A breakdown of alerts and false alerts by demographic group. And data on displacement, to see whether crime simply moved elsewhere.
 
-### What would good evidence look like?
+Very little of this exists for any deployment so far. That cuts both ways. The benefits are not proven, and neither are many of the feared harms. When you argue either side in the debate, be honest about which of your claims are measured and which are expected.
 
-To assess claims like "LFR reduced violence":
+## Where People Disagree
 
-- an independent evaluation, not police self-reporting,
-- comparison areas without LFR (a counterfactual),
-- data on stops and interventions after alerts, not only arrests,
-- demographic breakdowns of alerts and false alerts, and
-- data on displacement (did crime simply move?).
+Lay the frameworks side by side and you can see why this debate does not resolve easily.
 
-## Applying the frameworks
+Looking at consequences, there are arrests and a reported drop in violence on one side, and chilling, mission creep and the risk of a breach on the other. The first group is easier to count, which, as Lesson 01-03 warned, does not make it weigh more.
 
-| Framework | Toward permitting | Toward prohibiting |
-|---|---|---|
-| Consequences | Arrests; violence reduction | Chilling; mission creep; breach risk |
-| Rights | Victims' rights to safety | Privacy; assembly; presumption of innocence |
-| Justice | Fewer biased human stops | Deployment concentrated in some areas |
-| Decency, world lens | Safer streets | Loss of anonymity as a social good |
+Looking at rights, victims have a claim to safety, and the police have a duty to protect them. Passers-by have rights to privacy, to assemble and to be presumed innocent.
 
-## Discussion questions
+Looking at justice, replacing biased human stops could make policing fairer. Concentrating cameras in some neighborhoods could make it less fair.
 
-1. The EU prohibits real-time police LFR with narrow exceptions. The UK is expanding it. Which approach better balances safety and liberty?
-2. Is LFR by a private retailer more or less acceptable than LFR by police?
-3. Would you feel differently about a camera in Soho than one outside a mosque, a union hall or an abortion clinic? What does that tell you about the right policy?
-4. What evidence would change your mind about LFR?
+And looking at the widest of the four lenses from Lesson 01-05, safer streets are a public good, and so is the ability to be anonymous in a crowd.
 
-## Activity: Week 2 debate preparation (20 minutes)
+Your own judgment may depend on details. A camera in a busy shopping district may feel different from one outside a mosque, a union hall or a clinic. If it does, that difference is telling you something about what the right policy should be.
 
-**Resolution:** *Police should be permitted to use live facial recognition in public spaces under a statutory framework.*
+## Check Your Understanding
 
-Your side is assigned (see the course site). Prepare:
+**1. What is the main ethical difference between live and retrospective facial recognition?**
 
-1. your opening post (300 words max, two or more sources),
-2. the strongest argument the other side will make, and
-3. a "what would change my mind" statement (100 words).
+:::answer Answer
+Live recognition scans every passer-by and compares them with a watchlist, so the general public is the input. Retrospective recognition searches one suspect's image after an event.
+:::
 
-## Key terms
+**2. What is mission creep, and where does it show up most clearly in live facial recognition?**
 
-- **Live facial recognition (LFR):** Real-time scanning of faces in camera feeds against a watchlist.
-- **Watchlist:** The list of people the system tries to find.
-- **Remote biometric identification (EU):** Identification at a distance without the person's active involvement.
-- **Mission creep:** Gradual expansion of a tool beyond its original purpose.
+:::answer Answer
+The gradual expansion of a tool beyond its original purpose. It shows up most clearly in the watchlist, which can grow from serious offenders to minor offenses, people not charged, or protesters.
+:::
 
-## Connections
+**3. How does the EU's approach differ from England's?**
 
-- Technical basis → 02-03 · EU prohibited practices → 08-01 · Chilling effects → 02-01
-- A1 Week 2 debate
+:::answer Answer
+The EU prohibits real-time police use in public spaces except in narrow cases, each needing prior authorization by a judge or independent authority. England allows it under police policy and court decisions, with a statute promised but not yet passed.
+:::
 
-## Sources and further reading
+**4. Name three things an independent evaluation of a live facial recognition deployment should include.**
 
-- Computer Weekly, "Met pushes ahead with major facial recognition expansion," Jun 24, 2026. — [Free full text](https://computerweekly.com/news/366645018/Met-pushes-ahead-with-major-facial-recognition-expansion); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r060). <!-- reading-access -->
+:::answer Answer
+Any three of these: an evaluator independent of the police; comparison areas without cameras; data on all stops after alerts, not only arrests; demographic breakdowns of alerts and false alerts; data on whether crime moved elsewhere.
+:::
+
+## Your Turn: Week 2 Debate Preparation
+
+The resolution for the Week 2 debate in A1 is: *Police should be permitted to use live facial recognition in public spaces under a statutory framework.* Your side is assigned on the course site.
+
+Prepare three things: your opening post of up to 300 words with at least two sources; a short statement of the strongest argument the other side will make; and a "what would change my mind" statement of up to 100 words. Label each factual claim as measured, estimated or expected.
+
+## Key Terms
+
+- **Live facial recognition:** Real-time scanning of faces in camera feeds against a watchlist.
+- **Watchlist:** The list of people a live facial recognition system is trying to find.
+- **Remote biometric identification:** The EU's term for identifying people at a distance without their active involvement.
+- **Mission creep:** The gradual expansion of a tool beyond its original purpose.
+
+## Sources
+
+- **Core:** Computer Weekly, "Met pushes ahead with major facial recognition expansion," Jun 24, 2026. — [Free full text](https://computerweekly.com/news/366645018/Met-pushes-ahead-with-major-facial-recognition-expansion); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r060). <!-- reading-access -->
 - UK Home Office, consultation on a legal framework for police facial recognition (Dec 2025). — [Free full text](https://www.gov.uk/government/consultations/legal-framework-for-using-facial-recognition-in-law-enforcement); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r061). <!-- reading-access -->
 - *R (Bridges) v. Chief Constable of South Wales Police* [2020] EWCA Civ 1058. — [Free full text](https://www.judiciary.uk/wp-content/uploads/2022/07/R-Bridges-v-CC-South-Wales-ors-Judgment-1.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r062). <!-- reading-access -->
 - EU AI Act, Art. 5(1)(h) and 5(2)–(7). — [Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r063). <!-- reading-access -->

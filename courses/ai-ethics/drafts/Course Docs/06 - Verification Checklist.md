@@ -246,3 +246,12 @@ New claims in the rewritten Module 1 lessons that were written from general know
 - ⚠ 01-01, AlphaFold: accuracy close to laboratory methods in 2020; predicted structures for more than 200 million proteins released free in 2022; used in work on malaria vaccines, antibiotic resistance and plastic-degrading enzymes; two of its creators shared the 2024 Nobel Prize in Chemistry. Check against the Nobel press release and the AlphaFold database announcement, and confirm the press release link.
 - ⚠ 01-03: the "200 alerts, one false" figure is labeled in the text as invented for illustration. Replace it with the real Croydon alert count if one is published.
 - ⚠ 01-08: the medical imaging example is generic and has no source. Add one or keep it clearly hypothetical.
+
+
+## Added with the Module 2 rewrite (2026-11-15)
+
+Module 2 now follows the planned outline: 02-07 merges the v1 always-on assistants and smart glasses lessons, and 02-08 is new. The v1 checklist rows for "02-08 - Smart Glasses and Bystander Privacy.md" now refer to material in 02-07.
+
+- ⚠ 02-08 is new and written largely from general knowledge. Verify: Seeing AI (about 2017); Be My Eyes founded 2015, AI assistant added 2023, available on camera glasses from 2024; phone live captioning; WHO figures (at least 2.2 billion with vision impairment, World Report on Vision 2019; about 1.5 billion with some hearing loss, World Report on Hearing 2021). Confirm the four source links, and add access-register entries for them.
+- ⚠ 02-03: the claim that eyewitnesses are unreliable and people checking faces tire and make mistakes needs a source.
+- ⚠ 02-07: the claim that memory aids could help people with memory problems live independently longer is general; add a source or soften.

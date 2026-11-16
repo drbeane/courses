@@ -2,7 +2,7 @@
 
 This file shows where each topic is taught, so coverage gaps and overlaps are easy to see.
 
-**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
+**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Module 2, which follows the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
 
 ---
 
@@ -18,7 +18,7 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 | **Labor displacement** | 05-01, 05-02, 05-03, 05-09 | 01-01, 06-06 |
 | **AI worker monitoring** | 05-04, 05-05, 05-06 | 02-02, 05-09 |
 | **Environmental costs of large models** | 06-01 to 06-05, 06-08 | 06-07, 07-02 |
-| **Data privacy with always-on AI assistants** | 02-07, 02-08 | 02-01, 02-09, 02-10, 07-05 |
+| **Data privacy with always-on AI assistants** | 02-07 | 02-01, 02-09, 02-10, 07-05 |
 | **Closed-weight vs. open-weight models** | 07-01, 07-02, 07-03, 07-04 | 07-07, 07-09, 06-06 |
 
 ## 2. Topics from prior discussion
@@ -110,12 +110,13 @@ These threads run through the course. Each lesson's "Connections" section points
 | Provenance and watermarking | 04-07 |
 | Rawls, veil of ignorance | 01-06 |
 | Reverse engineering | 07-08 |
-| Smart glasses | 02-08 |
+| Smart glasses | 02-07, 02-08 |
 | Stakeholder mapping | 01-08 |
 | TAKE IT DOWN Act | 04-05 |
 | Tenant screening | 03-06 |
 | Utilitarianism | 01-03 |
 | Verification | 04-02, 04-10 |
 | Voice assistants | 02-07 |
+| Assistive technology (vision, captioning) | 02-08 |
 | Water use | 06-03 |
 | Worker voice and unions | 05-09 |
