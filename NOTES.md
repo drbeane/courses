@@ -249,3 +249,10 @@ Engine (all three courses):
 - Fenced code blocks are one shaded box (`.prose pre`), instead of shading each line.
 - Applied AI 02-06 (Voice Mode and Dictation): removed the "interface, not a surface" section and
   slide. 14-02: split the combined FERPA/HIPAA key term so HIPAA has its own glossary entry.
+
+## 2026-11-15: Interactive widgets folded by default
+
+- Engine: every `{{widget ...}}` in a lesson is wrapped in a fold (`details.wfold`), closed by
+  default. The fold's label is the title and subtitle from the widget's own header, and that
+  header is hidden inside the fold. Folds open when the page is printed. Applies to all 26 Applied
+  AI widgets; the other courses have none.

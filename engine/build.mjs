@@ -129,7 +129,7 @@ function buildCourse(base) {
       foot: `${[course.code, course.school, course.term].filter(Boolean).map(esc).join(', ')} <a class="all" href="@ROOT@">All courses</a>${appendix.length ? `<a class="all" href="/appendix/">Appendix</a>` : ''}`,
       body,
       mainClass,
-      scripts: `<script>addEventListener('beforeprint', () => document.querySelectorAll('details.callout').forEach((d) => { d.open = true; }));</script>\n${diagramScript(body)}`,
+      scripts: `<script>addEventListener('beforeprint', () => document.querySelectorAll('details.callout, details.wfold').forEach((d) => { d.open = true; }));</script>\n${diagramScript(body)}`,
     });
   }
 
@@ -211,7 +211,18 @@ function buildCourse(base) {
   // Interactive widgets inside a lesson. A line reading {{widget next-token}}, on its own with a
   // blank line above and below, is replaced by content/widgets/next-token.html. A widget is a
   // fragment (its own style, markup and script) with styles scoped to ".wx".
-  const widgets = (html) => html.replace(/<p>\{\{widget ([a-z0-9-]+)\}\}<\/p>/g, (_, name) => read(`content/widgets/${name}.html`));
+  // Every widget is folded until the reader opens it. The fold is labeled with the title and
+  // subtitle from the widget's own header (<div class="wx-head"><b>Title</b><span>Subtitle</span>),
+  // and that header is hidden inside the fold so it isn't shown twice.
+  const widgets = (html) => html.replace(/<p>\{\{widget ([a-z0-9-]+)\}\}<\/p>/g, (_, name) => {
+    const frag = read(`content/widgets/${name}.html`);
+    const head = frag.match(/<div class="wx-head"><b>([^<]*)<\/b>(?:<span>([^<]*)<\/span>)?/);
+    const title = head ? head[1] : T('Try It', 'Try it');
+    return `<details class="wfold">
+<summary><span class="wf-text"><span class="wf-title">${title}</span>${head && head[2] ? `<span class="wf-sub">${head[2]}</span>` : ''}</span><span class="hint">Open</span></summary>
+${frag}
+</details>`;
+  });
 
   // Markdown to HTML, with ids on h2 headings, scrollable tables, diagrams, collapsible callouts,
   // math, widgets, and links for lesson and assessment numbers.

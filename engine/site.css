@@ -193,6 +193,24 @@ main.reading { max-width: 86rem; }
 .prose details.callout > summary + * { margin-top: 1rem; }
 .prose details.callout > :last-child:not(summary) { margin-bottom: 1rem; }
 @media (prefers-reduced-motion: reduce) { .prose details.callout > summary::before { transition: none; } }
+
+/* Interactive widgets, folded until opened. The fold is the widget's frame; the widget's own
+   frame and header are turned off inside it. */
+.prose details.wfold { margin: 1.75rem 0 2rem; border: 1px solid var(--rule); border-left: 4px solid var(--c); border-radius: 6px; background: var(--paper); }
+.prose details.wfold > summary { display: flex; align-items: center; gap: 0.8rem; padding: 0.75rem 1rem; cursor: pointer; list-style: none; background: var(--wash); border-radius: 0 5px 5px 0; font-family: var(--display); }
+.prose details.wfold > summary::-webkit-details-marker { display: none; }
+.prose details.wfold > summary::before { content: ""; flex: none; width: 0.5rem; height: 0.5rem; border-right: 2px solid var(--c); border-bottom: 2px solid var(--c); transform: rotate(-45deg); transition: transform 0.15s; }
+.prose details.wfold[open] > summary::before { transform: rotate(45deg); }
+.prose details.wfold[open] > summary { border-bottom: 1px solid var(--rule); border-radius: 0 5px 0 0; }
+.prose details.wfold > summary:hover .wf-title { color: var(--c); }
+.prose .wf-text { display: grid; gap: 0.1rem; }
+.prose .wf-title { font-weight: 700; font-size: 1rem; line-height: 1.3; }
+.prose .wf-sub { color: var(--muted); font-size: 0.88rem; line-height: 1.35; }
+.prose details.wfold > summary .hint { margin-left: auto; flex: none; padding: 0.2rem 0.7rem; border: 1px solid var(--c); border-radius: 999px; color: var(--c); font-size: 0.82rem; font-weight: 600; }
+.prose details.wfold[open] > summary .hint { display: none; }
+.prose details.wfold > .wx { margin: 0; border: 0; border-radius: 0 0 6px 0; }
+.prose details.wfold .wx .wx-head { display: none; }
+@media (prefers-reduced-motion: reduce) { .prose details.wfold > summary::before { transition: none; } }
 .scroll { overflow-x: auto; margin: 0 0 1.5rem; }
 .prose table { border-collapse: collapse; width: 100%; font: 400 0.95rem/1.4 var(--display); }
 .prose th { text-align: left; font-weight: 700; border-bottom: 2px solid var(--ink); padding: 0.5rem 1rem 0.5rem 0; }
