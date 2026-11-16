@@ -3,114 +3,138 @@
 **Module:** 3 — Algorithmic Bias in Consequential Decisions
 **Estimated time:** 35 minutes
 
-## Learning objectives
+**In this lesson:** An algorithm can discriminate without ever being told anyone's race or sex. This lesson traces where bias enters a machine learning system, from the world it learns from to the way it is used, and shows why the same tracing is also how bias gets found and fixed.
 
-By the end of this lesson, you will be able to:
+## Cost Is Not Need
 
-1. Identify the main sources of bias across the ML lifecycle.
-2. Explain how a "neutral" algorithm can produce discriminatory outcomes through proxies and label choices.
-3. Analyze a real case to locate where in the pipeline bias entered.
+In 2019 Ziad Obermeyer and colleagues published a study in *Science* of a commercial algorithm that U.S. health systems used to decide which patients should get extra support from care-management programs. These programs assign nurses and coordinators to patients with complex illnesses, and they can keep people out of hospital. The algorithm was applied to millions of patients a year.
 
-## Opening case: cost is not need
+It did not use race. It predicted each patient's future health-care costs and used that as a stand-in for how sick they were. The reasoning seemed sensible: sicker patients cost more.
 
-In 2019, Obermeyer and colleagues published a study in *Science* of a widely used commercial algorithm that U.S. health systems used to decide which patients should get extra care-management support. The algorithm didn't use race. It predicted **future health-care costs** as a stand-in for **health need**.
+But less money had historically been spent on Black patients than on white patients who were equally ill, for reasons that include unequal access to care, distrust of the medical system and discrimination. So the algorithm learned that Black patients were "cheaper," and treated cheaper as healthier. At any given risk score, Black patients were considerably sicker than white patients with the same score. The authors estimated that fixing the problem would raise the share of Black patients flagged for extra help from about 18 percent to about 47 percent.
 
-Because less money had historically been spent on Black patients with the same level of illness (for reasons including access, trust and discrimination), the algorithm concluded they were "healthier." At a given risk score, Black patients were considerably sicker than white patients. The authors estimated that correcting the bias would have more than doubled the share of Black patients flagged for extra help, from about 18% to about 47%.
+Nothing in the code mentioned race. The bias came from one decision: what the model was asked to predict.
 
-Nothing in the code mentioned race. The bias was in the **choice of label**.
+The ending of the story matters too. The researchers worked with the developer, the problem was confirmed, and the developer began work to reduce the bias. When the label was changed to measure health directly, the algorithm became both fairer and better at its real job. Bias that is found can often be fixed. The hard part is finding it.
 
-## Core ideas
+## Seven Places Bias Gets In
 
-### A lifecycle view (Suresh & Guttag, 2021)
+Harini Suresh and John Guttag described how bias can enter at each stage of building and using a model. Their framework is the most useful map for this module.
 
-| Stage | Bias type | Description | Example |
+| Stage | Kind of bias | What happens | Example |
 |---|---|---|---|
-| World | **Historical bias** | The world itself reflects past injustice | Hiring data from a company that rarely hired women for engineering roles |
-| Data collection | **Representation bias** | Some groups are underrepresented in the data | Face datasets dominated by lighter-skinned men (02-03) |
-| Defining variables | **Measurement bias** | Features or labels are poor or uneven proxies | Cost as a proxy for need; arrests as a proxy for crime |
-| Model building | **Aggregation bias** | One model for groups whose relationships differ | A diabetes model ignoring differences across ethnic groups in HbA1c |
-| Model building | **Learning bias** | Optimization choices amplify disparities | Optimizing overall accuracy at the expense of small groups |
-| Evaluation | **Evaluation bias** | Benchmarks don't represent deployment populations | Testing on high-quality photos, deploying on CCTV |
-| Deployment | **Deployment bias** | The system is used differently than intended | A risk tool meant for treatment decisions used for sentencing (03-07) |
+| The world | **Historical bias** | The world itself reflects past injustice | Hiring records from a company that rarely hired women as engineers |
+| Collecting data | **Representation bias** | Some groups are under-represented in the data | Face datasets dominated by lighter-skinned men |
+| Defining variables | **Measurement bias** | A feature or label is a poor or uneven stand-in for what matters | Cost as a stand-in for need; arrests as a stand-in for crime |
+| Building the model | **Aggregation bias** | One model is used for groups whose patterns differ | A diabetes model that ignores group differences in a key blood test |
+| Building the model | **Learning bias** | Training choices widen gaps | Maximizing overall accuracy at the expense of small groups |
+| Testing | **Evaluation bias** | The test data do not look like the people the system will be used on | Testing on studio photos, using on security footage |
+| Use | **Deployment bias** | The system is used for something other than what it was built for | A tool built to guide treatment used to set sentences |
 
-### Proxies and redundant encoding
+Two things stand out. Only a few of the seven are about the data in the narrow sense. And several are decisions people make, such as what to predict, how to test and where to deploy, which means people can make them differently.
 
-Removing protected attributes like race, sex or age from inputs ("fairness through unawareness") rarely works. Other variables encode them:
+## Removing Race Does Not Remove Race
 
-- ZIP code ↔ race (due to residential segregation)
-- name ↔ ethnicity and gender
-- graduation year ↔ age
-- gaps in employment ↔ caregiving, disability or incarceration
-- "women's chess club" ↔ gender (the Amazon recruiting tool, 03-03)
+The most common first response to algorithmic bias is to delete the sensitive variables. If the model never sees race, sex or age, how can it discriminate? This approach is called fairness through unawareness, and it rarely works.
 
-With enough features, models can reconstruct protected attributes almost perfectly. This is called **redundant encoding**.
+The reason is that other variables carry the same information. ZIP code tracks race closely in segregated cities. A first name suggests ethnicity and gender. Graduation year reveals age. A gap in employment can signal caregiving, disability or a prison sentence. Membership in a "women's chess club" reveals sex, as Amazon found when a recruiting model it was building learned to penalize résumés containing the word "women's." Lesson 03-03 tells that story.
 
-### Labels are choices
+With enough of these variables, a model can effectively reconstruct the attribute that was removed. This is called **redundant encoding**, and the resulting harm is **proxy discrimination**: discrimination carried out through variables that stand in for a protected trait.
 
-What a model predicts is a human decision:
+Removing the attribute also has a hidden cost. If race is not in the data, nobody can check whether outcomes differ by race. Many fairness audits need exactly the information that unawareness throws away.
 
-| Instead of predicting… | Systems often predict… | The gap |
+## Labels Are Choices
+
+The Obermeyer case points to the deepest source of bias. What a model predicts is a human decision, and the thing that can be measured is often not the thing that matters.
+
+| What people care about | What systems often predict | Why they differ |
 |---|---|---|
-| Health need | Future cost | Unequal access |
-| Criminal behavior | Re-arrest | Unequal policing (03-08) |
-| Job performance | Past hiring or manager ratings | Past discrimination; biased ratings |
-| Creditworthiness | Repayment within a lender's historical customer base | Who was approved before |
-| Child maltreatment | Referral to child services | Unequal reporting (Eubanks, *Automating Inequality*) |
+| Health need | Future cost | Unequal access to care |
+| Criminal behavior | Re-arrest | Unequal policing |
+| Job performance | Who was hired before, or manager ratings | Past discrimination; biased ratings |
+| Ability to repay | Repayment among a lender's past customers | Who was approved before |
+| Child maltreatment | Referral to child services | Unequal reporting |
 
-Jacobs and Wallach (2021) call this the gap between a **construct** (what you care about) and its **operationalization** (what you can measure).
+Abigail Jacobs and Hanna Wallach describe this as the gap between a **construct**, the thing you actually care about, and its **operationalization**, the thing you can measure. Every predictive system sits on some such gap. The question is how wide it is and whom it hurts.
 
-### Feedback loops
+## When Predictions Make Their Own Data
 
-When predictions shape the future data they're trained on, bias can compound:
+Some systems shape the data they will later learn from, and then bias can grow on its own. This is a **feedback loop**.
 
-- Police patrol where the model predicts crime → more arrests there → the model predicts more crime there (03-08).
-- A lender denies credit to a group → no repayment history for that group → the model stays uncertain about them.
-- A recommender shows certain jobs mostly to men → more men apply → the system learns those jobs are for men.
+If police patrol where a model predicts crime, they record more crime there, which the model then takes as confirmation; Lesson 03-07 works through the arithmetic. If a lender never lends to a group, it never learns how that group repays, so the model stays uncertain about them and keeps declining them. If a job site shows engineering ads mostly to men, more men apply, and the system learns that engineering jobs are for men.
 
-### Bias isn't only in data
+In each case nobody intends the outcome, and the system appears to be confirmed by the evidence it has helped create.
 
-- **Problem formulation:** Is "predict who will default" even the right question, or should we ask "what loan terms would help this person repay"?
-- **Deployment context:** Who reviews the output? Do reviewers override for some groups more than others?
-- **Power:** Who decided to automate this decision, and who can contest it?
+## Not Only in the Data
 
-## Applying the frameworks
+Some bias lives outside the model altogether.
 
-- **Justice:** Historical injustice embedded in data is "structural injustice" (Young, 01-06). No individual intended it, but the system perpetuates it.
-- **Explicability:** Without knowing what the label was, you can't evaluate the system.
-- **Consequences:** In Obermeyer's case, fixing the label improved outcomes for the sickest patients. Ethics and accuracy aligned once the right construct was chosen.
+It can be in the problem. "Predict who will default" is one way to frame a lending decision. "Find loan terms this person can repay" is another, and it leads to a different system.
 
-## Discussion questions
+It can be in the deployment. Who reviews the output, and do they override it more often for some groups than others?
 
-1. If historical data reflects discrimination, should models be trained to reproduce the past (it's "accurate") or to correct it? Who should decide?
-2. The health algorithm's developer, Optum, worked with the researchers to reduce the bias. What does that suggest about the value of external audits?
-3. Name a decision in your own field where the convenient label differs from the construct that matters.
-4. Is "fairness through unawareness" ever the right approach?
+And it can be in power. Who decided to automate this decision, and can the people affected contest it?
 
-## Activity: locate the bias (15 minutes)
+## Why the Map Matters
 
-For each case, identify which lifecycle stage(s) introduced bias:
+It would be easy to read this lesson as a list of reasons not to use algorithms. That is not its point.
 
-1. The UK 2020 A-level algorithm adjusted teacher-predicted grades based on each school's historical results, downgrading high achievers at historically lower-performing schools.
-2. A speech-recognition system has a word error rate nearly twice as high for Black speakers as for white speakers (Koenecke et al., *PNAS* 2020).
-3. A tenant-screening model flags applicants with eviction *filings*, even when the case was dismissed.
+People make biased decisions too, and their bias is usually harder to find. A hiring manager's preferences are not written down anywhere, and you cannot run them on a thousand test cases. A model's are, and you can. The economist Sendhil Mullainathan, who worked on both the health study and earlier research showing that human recruiters discriminate by name, has argued that biased algorithms are easier to fix than biased people for exactly this reason. Lesson 03-08 takes up that comparison.
 
-## Key terms
+The map in this lesson is what makes fixing possible. If you know where bias can enter, you know where to look: at the label, at who is missing from the data, at what the test set looks like, at how the system is actually used. The health algorithm was fixed because researchers looked at the label.
 
-- **Historical / representation / measurement / aggregation / evaluation / deployment bias:** See the table.
-- **Proxy discrimination:** Discrimination through variables correlated with protected attributes.
-- **Redundant encoding:** Protected attributes recoverable from other features.
-- **Construct vs. operationalization:** What you mean vs. what you measure.
-- **Feedback loop:** Predictions that influence future training data.
+There is also a limit to fixing. Some bias comes from the world itself, as historical bias. A model trained on an unjust past will reproduce that past unless someone decides it should not. Whether a model should reflect the world as it is or as it ought to be is not a technical question. It is the question of justice from Lesson 01-06, and someone has to answer it on purpose.
 
-## Connections
+## Check Your Understanding
 
-- Metrics → 03-02 · Hiring → 03-03 · Predictive policing feedback → 03-08
-- A2 fairness critique
+**1. Why did the health algorithm underestimate how sick Black patients were?**
 
-## Sources and further reading
+:::answer Answer
+It predicted future health-care costs as a stand-in for health need. Less had historically been spent on Black patients with the same level of illness, so the model treated them as healthier than they were.
+:::
 
-- Obermeyer, Z. et al. "Dissecting racial bias in an algorithm used to manage the health of populations," *Science* 366 (2019). — [Free manuscript](https://escholarship.org/uc/item/6h92v832); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r094). <!-- reading-access -->
+**2. Why does removing race from a model's inputs usually fail to prevent racial bias?**
+
+:::answer Answer
+Other variables, such as ZIP code, name or employment history, carry the same information, so the model can effectively reconstruct race. Removing it also makes it harder to audit outcomes by race.
+:::
+
+**3. What is the difference between a construct and its operationalization?**
+
+:::answer Answer
+The construct is what you actually care about, such as job performance. The operationalization is what you can measure and predict, such as past hiring decisions. Bias often lives in the gap between them.
+:::
+
+**4. Why might biased algorithms be easier to fix than biased people?**
+
+:::answer Answer
+A model's behavior can be tested systematically on many cases and its inputs inspected and changed. A person's biases are hidden and inconsistent.
+:::
+
+## Your Turn
+
+For each case, name the stage or stages from the table where bias entered, and suggest one change that would help.
+
+1. In 2020 the UK used an algorithm to award school grades when exams were cancelled. It adjusted teachers' predicted grades using each school's past results, which pulled down high achievers at schools that had historically done less well.
+2. A 2020 study found that leading speech-recognition systems made nearly twice as many errors for Black speakers as for white speakers.
+3. A tenant-screening model counts eviction *filings* against applicants, even when the case was dismissed.
+
+## Key Terms
+
+- **Historical bias:** Bias that comes from past injustice reflected in the world and therefore in data.
+- **Representation bias:** Bias from some groups being under-represented in the data.
+- **Measurement bias:** Bias from a feature or label being a poor or uneven stand-in for what matters.
+- **Proxy discrimination:** Discrimination through variables correlated with a protected attribute.
+- **Redundant encoding:** The recoverability of a protected attribute from other features.
+- **Construct:** The quality a system is really meant to capture.
+- **Operationalization:** The measurable quantity used in place of a construct.
+- **Feedback loop:** A cycle in which a system's predictions shape the data it later learns from.
+
+## Sources
+
+- **Core:** Obermeyer, Z. et al. "Dissecting racial bias in an algorithm used to manage the health of populations," *Science* 366 (2019). — [Free manuscript](https://escholarship.org/uc/item/6h92v832); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r094). <!-- reading-access -->
 - Suresh, H. & Guttag, J. "A Framework for Understanding Sources of Harm throughout the Machine Learning Life Cycle," *EAAMO 2021*. — [Free manuscript](https://arxiv.org/abs/1901.10002); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r095). <!-- reading-access -->
 - Jacobs, A. & Wallach, H. "Measurement and Fairness," *FAccT 2021*. — [Free manuscript](https://arxiv.org/abs/1912.05511); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r096). <!-- reading-access -->
 - Koenecke, A. et al. "Racial disparities in automated speech recognition," *PNAS* 117 (2020). — [Free full text](https://doi.org/10.1073%2Fpnas.1915768117); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r097). <!-- reading-access -->
 - Barocas, S. & Selbst, A. "Big Data's Disparate Impact," *California Law Review* 104 (2016). — [Free manuscript](https://doi.org/10.2139/ssrn.2477899); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r098). <!-- reading-access -->
+- Mullainathan, S. "Biased Algorithms Are Easier to Fix Than Biased People," *New York Times*, Dec 6, 2019. ⚠ — [Paid / library](https://www.nytimes.com/2019/12/06/business/algorithm-bias-fix.html)

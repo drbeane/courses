@@ -255,3 +255,13 @@ Module 2 now follows the planned outline: 02-07 merges the v1 always-on assistan
 - ⚠ 02-08 is new and written largely from general knowledge. Verify: Seeing AI (about 2017); Be My Eyes founded 2015, AI assistant added 2023, available on camera glasses from 2024; phone live captioning; WHO figures (at least 2.2 billion with vision impairment, World Report on Vision 2019; about 1.5 billion with some hearing loss, World Report on Hearing 2021). Confirm the four source links, and add access-register entries for them.
 - ⚠ 02-03: the claim that eyewitnesses are unreliable and people checking faces tire and make mistakes needs a source.
 - ⚠ 02-07: the claim that memory aids could help people with memory problems live independently longer is general; add a source or soften.
+
+## Added with the Module 3 rewrite (2026-11-15)
+
+Module 3 now follows the planned outline. The v1 rows above for 03-05 (lending) and 03-06 (insurance, housing) now refer to material in the merged 03-05; v1 03-07 (criminal justice) is now 03-06; v1 03-08 (predictive policing) is now 03-07; 03-08 is new.
+
+- ⚠ 03-08 is new and written largely from general knowledge. Verify the MASAI trial details (about 80,000 women; about 20 percent more cancers detected; no increase in false positives; about 44 percent less reading workload; *Lancet Oncology*, 2023) and consider citing the later full results. Verify Meehl (1954), Grove et al. (2000, 136 studies) and Dietvorst et al. (2015, algorithm aversion), and confirm all source links.
+- ⚠ 03-03: Bertrand and Mullainathan (2004), about 50 percent more callbacks for white-sounding names. Confirm the NBER link.
+- ⚠ 03-06: Loomis details added from general knowledge: charges in 2013 in La Crosse; guilty pleas to attempting to flee a traffic officer and operating a vehicle without the owner's consent. Also New Jersey's 2017 bail reform reducing the pretrial jail population "without a corresponding rise in crime."
+- ⚠ 03-07: hot-spots policing evidence (Braga et al., Campbell review, 2019) and the claim that crime is concentrated in a small share of street blocks. Confirm the link.
+- ⚠ 03-01: Mullainathan, "Biased Algorithms Are Easier to Fix Than Biased People" (NYT, Dec 2019); confirm the date and link.

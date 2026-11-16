@@ -75,10 +75,10 @@
         { "title": "Measuring Fairness: Metrics and Trade-offs" },
         { "title": "Hiring Algorithms: From Résumé Screens to Mobley v. Workday" },
         { "title": "AI Interviews, Personality Inference, and Disability", "optional": true },
-        { "title": "Lending and Credit: Fair Lending Law Meets Machine Learning", "optional": true },
-        { "title": "Insurance, Housing, and Tenant Screening", "optional": true },
+        { "title": "Credit, Insurance, and Housing", "optional": true },
         { "title": "Criminal Justice: Pretrial and Sentencing Risk Assessment" },
         { "title": "Predictive Policing and Feedback Loops", "optional": true },
+        { "title": "Compared to What? When Algorithms Outperform Human Judgment" },
         { "title": "Explanation, Contestability, and Appeal" },
         { "title": "Consequential Decision Review", "lab": true, "assess": [ "A2" ] }
       ]

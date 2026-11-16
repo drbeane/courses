@@ -1,0 +1,109 @@
+# 03-08 — Compared to What? When Algorithms Outperform Human Judgment
+
+**Module:** 3 — Algorithmic Bias in Consequential Decisions
+**Estimated time:** 35 minutes
+
+**In this lesson:** Most of this module has been about how algorithms go wrong. This lesson asks the question every one of those cases left open: wrong compared to what? It looks at evidence that algorithms can decide some things better than people, what "better" has to mean, and why refusing to use a system that works also harms someone.
+
+## A Second Reader for Every Mammogram
+
+In most of Europe, a screening mammogram is read independently by two radiologists, because a single reader misses too many cancers. That doubles the work, and many countries have too few radiologists to keep up.
+
+In 2021 Sweden began a large randomized trial called MASAI. About 80,000 women were assigned by chance to one of two groups. In one, their mammograms were read the usual way, by two radiologists. In the other, an AI system first sorted each scan by risk. Low-risk scans were read by one radiologist and high-risk scans by two, with the AI marking areas it found suspicious. The first results, published in 2023, found that the AI-supported approach detected about 20 percent more cancers, did not increase the rate of false alarms, and cut the radiologists' reading workload by about 44 percent.
+
+Consider what the comparison means. If the results hold, then for every few thousand women screened, some had their cancers found earlier because an algorithm was involved, and would not have under the usual method. A hospital that decided against the AI, perhaps out of caution about automated systems, would have been choosing, without seeing it, to miss those cancers. Not deploying a system that works is also a decision, and it has victims too, though nobody can name them.
+
+*The trial details should be checked against the published results before teaching.*
+
+## An Old Finding
+
+The idea that a formula can beat expert judgment is not new. In 1954 the psychologist Paul Meehl reviewed studies that compared clinicians' predictions with simple statistical rules, on questions such as which patients would respond to treatment or which parolees would reoffend. The rules did as well as the experts or better in nearly every study. Many later reviews have found the same. A 2000 analysis of 136 studies found that mechanical prediction was about as accurate as clinical judgment or more accurate in the great majority of them.
+
+The reasons are well understood. People are inconsistent: the same expert judges the same case differently on different days. People are influenced by irrelevant details, such as appearance or the order in which cases arrive. And people weigh evidence badly, giving too much weight to vivid details and too little to base rates, the error Lesson 01-03 described.
+
+## Evidence From This Module
+
+You have already seen several examples of the comparison in this module, and it is worth collecting them.
+
+In hiring, as Lesson 03-03 described, identical résumés with names common among white Americans got about 50 percent more callbacks than those with names common among Black Americans. That is the human baseline an automated screen is measured against.
+
+In bail, as Lesson 03-06 described, Jon Kleinberg and colleagues estimated that following an algorithm's recommendations in New York City could have cut the number of people jailed before trial by up to about 40 percent with no rise in crime, or cut crime by up to about 25 percent with no rise in jailing, while reducing racial disparities in who was detained. The people who would benefit most are those held in jail who did not need to be.
+
+In health care, the Obermeyer study in Lesson 03-01 found a biased algorithm. It also showed something else: once the bias was found, it could be measured and corrected in a way that the scattered judgments of thousands of individual clinicians cannot.
+
+## What "Better" Has to Mean
+
+These findings are powerful, and they are also easy to misuse. Claiming that an algorithm is better than people requires answering four questions carefully.
+
+**Better at what?** An algorithm optimizes the outcome it was given. If the label is a poor stand-in for what matters, as with re-arrest instead of crime or cost instead of health need, a system can be better at predicting the label and worse at the real goal. The comparison is only meaningful if both are judged on what actually matters.
+
+**Better than whom?** The fair comparison is with the alternative that would really be used. In the mammography trial, the alternative was two trained radiologists. In many hiring settings, the alternative is a recruiter skimming résumés for a few seconds each, or not reading most of them at all. Comparing an algorithm with an idealized careful human makes almost any algorithm look bad, and comparing it with an unusually poor human makes almost any algorithm look good.
+
+**Better where?** Results in a study are not results in use. Systems that perform well in tests can perform worse in a different hospital, with different equipment and different patients, as the portability trap in Lesson 01-08 warned. The MASAI trial is unusually strong evidence because it was a randomized trial in real screening practice. Most claims rest on much less.
+
+**Better for whom?** A system can be better on average and worse for a particular group. Whether that is acceptable is the question of justice from Lesson 01-06. An algorithm that reduces errors overall but concentrates its remaining errors on one community has not simply improved on human judgment. It has made a different distribution of harm.
+
+## Algorithms and People Together
+
+In practice the choice is rarely between an algorithm alone and a person alone. Most systems give a recommendation that a person can follow or override, and the combination can be better or worse than either part.
+
+It can be worse. Lesson 03-06 described judges in Kentucky who departed from a risk tool in ways that undid much of its benefit. People may follow an algorithm when it is wrong and override it when it is right.
+
+It can be better. In the mammography trial, the AI did not replace radiologists. It decided how much human attention each scan received, and pointed to areas worth a closer look.
+
+There is also a human tendency that works against good systems. Researchers have found that people are quicker to lose trust in an algorithm after seeing it make a mistake than in a person who makes the same mistake. This **algorithm aversion** can lead organizations to abandon systems that, overall, make fewer errors than the people they replaced.
+
+## Where People Disagree
+
+Some people hold that the comparison settles most questions. If a system makes fewer and less unequal errors than the realistic alternative, it should be used, and refusing it is a choice to accept more harm. On this view much of the criticism of algorithms holds them to a standard that no human process meets.
+
+Others hold that the comparison leaves important things out. A decision made by a person can be questioned, explained and appealed in ways a statistical prediction often cannot. Being judged by a formula about people like you is a different kind of treatment from being judged by a person who considers your case, even if the formula is more accurate. And a system deployed at scale can fail at scale, in ways a single human decision-maker never could.
+
+A middle view holds that the comparison is necessary but not sufficient. Any argument about whether to use a system should state the baseline honestly, both for and against. But the comparison does not answer questions about rights, explanation and accountability, which Lesson 03-09 takes up.
+
+## Check Your Understanding
+
+**1. What did the first results of the MASAI trial find?**
+
+:::answer Answer
+AI-supported screening detected about 20 percent more cancers than standard double reading, without more false alarms, and cut radiologists' reading workload by about 44 percent.
+:::
+
+**2. What did Paul Meehl's 1954 review find?**
+
+:::answer Answer
+Simple statistical rules predicted outcomes as well as expert clinicians or better in nearly every study he reviewed.
+:::
+
+**3. Why is it misleading to compare an algorithm with an idealized careful human?**
+
+:::answer Answer
+The fair comparison is with the alternative that would actually be used, which may be rushed, inconsistent or biased human judgment, or no review at all.
+:::
+
+**4. What is algorithm aversion?**
+
+:::answer Answer
+The tendency to lose trust in an algorithm more quickly after it makes a mistake than in a person who makes the same mistake.
+:::
+
+## Your Turn
+
+Choose one system from this module: a résumé screen, a credit model, a tenant screen, a pretrial risk tool or predictive policing. Describe the realistic alternative if the system were not used, as specifically as you can. Then answer the four questions: better at what, than whom, where, and for whom? Finish with one sentence on who would lose if the system were not used.
+
+This comparison is required in the A5 dossier, which asks for a comparison with a non-AI or lower-automation alternative.
+
+## Key Terms
+
+- **Baseline:** The realistic alternative a system is compared with.
+- **Clinical versus statistical prediction:** The comparison between expert judgment and formal rules or models.
+- **Algorithm aversion:** The tendency to lose trust in an algorithm after seeing it err more readily than in a person who errs the same way.
+- **Cost of not deploying:** The harm that results from choosing not to use a system that would have helped.
+
+## Sources
+
+- **Core:** Lång, K. et al. "Artificial intelligence-supported screen reading versus standard double reading in the Mammography Screening with Artificial Intelligence trial (MASAI)," *The Lancet Oncology* 24(8), 2023. ⚠ — [Free full text](https://doi.org/10.1016/S1470-2045(23)00298-X)
+- Kleinberg, J. et al. "Human Decisions and Machine Predictions," *Quarterly Journal of Economics* 133(1), 2018. — [Free manuscript](https://www.nber.org/system/files/working_papers/w23180/w23180.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r127). <!-- reading-access -->
+- Grove, W. et al. "Clinical versus mechanical prediction: A meta-analysis," *Psychological Assessment* 12(1), 2000. ⚠ — [Paid / library](https://doi.org/10.1037/1040-3590.12.1.19)
+- Dietvorst, B., Simmons, J. & Massey, C. "Algorithm aversion: People erroneously avoid algorithms after seeing them err," *Journal of Experimental Psychology: General* 144(1), 2015. ⚠ — [Paid / library](https://doi.org/10.1037/xge0000033)
+- Mullainathan, S. "Biased Algorithms Are Easier to Fix Than Biased People," *New York Times*, Dec 6, 2019. ⚠ — [Paid / library](https://www.nytimes.com/2019/12/06/business/algorithm-bias-fix.html)

@@ -16,7 +16,7 @@
 | [Virginia Eubanks, *Automating Inequality* (2018)](https://us.macmillan.com/books/9781250215789/automatinginequality/) | Public-benefits algorithms | 03-01, 03-09 | Paid / library |
 | [Kate Crawford, *Atlas of AI* (2021)](https://yalebooks.yale.edu/book/9780300252392/atlas-of-ai/) | Material and labor footprint | 06-01, 05-07 | Paid / library |
 | [Barocas, Hardt & Narayanan, *Fairness and Machine Learning* (free online)](https://fairmlbook.org/) | Fairness metrics | 03-02 | Free full text |
-| [Narayanan & Kapoor, *AI Snake Oil* (2024)](https://www.jstor.org/stable/jj.29895259) | Evaluating predictive claims | 03-07, 04-01 | Paid / library |
+| [Narayanan & Kapoor, *AI Snake Oil* (2024)](https://www.jstor.org/stable/jj.29895259) | Evaluating predictive claims | 03-06, 04-01 | Paid / library |
 
 ## Governance and standards
 

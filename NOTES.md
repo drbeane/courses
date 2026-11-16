@@ -92,3 +92,17 @@ merge on 15 November 2026. Their history was not carried over, so this log start
   users of the same sensing technology and what privacy rules would cost them.
 - The lesson count is unchanged (10), so no other lesson numbers moved. `course.json` and the
   Topics index are updated. New claims to verify are at the end of `06 - Verification Checklist.md`.
+
+## 2026-11-15: AI Ethics Module 3 rewritten
+
+- All ten Module 3 lessons are rewritten in the new lesson structure, and Module 3 now follows the
+  planned outline.
+- 03-05 is now "Credit, Insurance, and Housing," which merges the v1 lessons on lending and on
+  insurance, housing and tenant screening.
+- Criminal justice moves from 03-07 to 03-06, and predictive policing from 03-08 to 03-07.
+- 03-08 is new: "Compared to What? When Algorithms Outperform Human Judgment," on the human
+  baseline (mammography screening, bail, hiring) and the cost of not deploying.
+- The 03-10 lab now asks for the cost of the alternative; its answer key stays in an instructor
+  section that the sync removes.
+- `course.json`, the Topics index, Resources and lesson references in 05-08, 08-07 and 08-08 are
+  updated for the new numbers. New claims to verify are at the end of `06 - Verification Checklist.md`.

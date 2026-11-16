@@ -34,7 +34,7 @@ The case shows:
 - **Data drift:** Input distributions change (new populations, new behaviors).
 - **Concept drift:** The relationship between inputs and outcomes changes.
 - **Model updates:** Vendors update models, sometimes silently (08-07).
-- **Feedback loops:** Deployment changes the world the system measures (03-08).
+- **Feedback loops:** Deployment changes the world the system measures (03-07).
 - **Emergent misuse:** People find unanticipated uses and abuses (Grok, 04-04).
 - **Disparate degradation:** Performance may fall faster for some groups.
 

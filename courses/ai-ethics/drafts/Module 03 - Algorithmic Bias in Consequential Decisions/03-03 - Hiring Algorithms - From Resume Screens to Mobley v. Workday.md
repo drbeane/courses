@@ -3,121 +3,127 @@
 **Module:** 3 — Algorithmic Bias in Consequential Decisions
 **Estimated time:** 40 minutes
 
-## Learning objectives
+**In this lesson:** Most large employers now use software to sort job applicants before a person reads anything. This lesson looks at why, at a lawsuit that may make software vendors answer for discrimination, and at what happened when New York City tried to regulate these tools through audits. It prepares you for the Week 3 debate.
 
-By the end of this lesson, you will be able to:
+## Rejected at Midnight
 
-1. Describe how AI is used across the hiring funnel and where discrimination can enter.
-2. Explain the legal theories in *Mobley v. Workday*, including disparate impact and vendor-as-agent liability.
-3. Evaluate disclosure-and-audit regulation, using NYC Local Law 144 as a case.
+Derek Mobley is a Black man over 40 who lives with anxiety and depression. He has a degree in finance. Over several years he applied for more than 100 jobs at companies that used the same applicant-screening platform, made by the software company Workday. He says he was rejected every time. Some of the rejections arrived within an hour of applying, in the middle of the night, which suggested to him that no person had read his application.
 
-## Opening case: *Mobley v. Workday* (N.D. Cal., filed 2023)
+In 2023 he sued. He did not sue the employers. He sued Workday.
 
-Derek Mobley, a Black man over 40 with anxiety and depression, holds a degree in finance and applied for more than 100 jobs at companies that used Workday's applicant-screening platform. He alleges he was rejected every time, sometimes within an hour, at night, suggesting automation rather than human review.
+In July 2024 a federal court in California allowed his main claims to go forward on a new theory: that Workday may act as an **agent** of the employers, carrying out part of their hiring for them, and so may be responsible under federal anti-discrimination law in the same way an employer would be. In May 2025 the court allowed a nationwide group of applicants aged 40 and over, who were rejected through Workday's AI recommendation features, to join the age-discrimination claim as a **collective action**. As of late 2026 the case continues, with disputes over which employers used which features.
 
-Instead of suing the employers, Mobley sued **Workday**, the software vendor. Key developments:
+Workday denies wrongdoing. It says its tools do not make hiring decisions, that its customers control their own processes, and that its tools assess job-related qualifications, not protected traits. The allegations have not been proven. The case matters because of its theory. If it succeeds, the companies that build hiring software, not only the companies that use it, may answer for what it does.
 
-- **July 2024:** The court allowed claims to proceed on the theory that Workday may act as an **agent** of employers, delegated a hiring function and therefore potentially liable under federal anti-discrimination law. It rejected the theory that Workday is an "employment agency."
-- **May 2025:** The court conditionally certified a nationwide **collective action** for age-discrimination claims (ADEA) on behalf of applicants aged 40 and over who were rejected through Workday's AI recommendation features.
-- **2026:** Litigation continues, including disputes over which employers used the AI features. A class-certification hearing on broader claims is reported for March 2027 ⚠.
+*Case status is as of October 2026 and should be checked before relying on it.*
 
-Workday denies wrongdoing. It says its tools don't make hiring decisions, that customers control their processes, and that its tools assess job-related qualifications, not protected traits. Reuters reports Workday is used by about two-thirds of Fortune 500 companies.
+## Why Employers Use These Tools
 
-*The allegations have not been proven. The case is significant for its legal theory: AI vendors may be directly liable for discriminatory outcomes.*
+The reasons for automated screening are serious, and they are not only about saving money.
 
-## Core ideas
+The first is volume. Online applications have made it easy to apply for a job and therefore common for a single posting to draw hundreds or thousands of applicants. No recruiter can read them all carefully. In practice, without software, many applications are never read at all, or are skimmed for a few seconds each. A screen that reads every application at least considers everyone.
 
-### AI across the hiring funnel
+The second is consistency. Software applies the same criteria to every applicant, at any hour, without fatigue or mood.
 
-| Stage | AI use | Risk |
+The third is that human screening has a well-documented bias problem of its own. In a famous 2004 experiment, Marianne Bertrand and Sendhil Mullainathan sent thousands of fictitious résumés to real job ads in Boston and Chicago. The résumés were identical except for the name. Those with names common among white Americans received about 50 percent more callbacks than those with names common among Black Americans. Studies in many countries since have found similar gaps. A well-designed tool that ignores names and focuses on job-related skills could, in principle, do better than that.
+
+So the honest comparison is not between an algorithm and a fair, careful human. It is between an algorithm and the screening that would actually happen without it.
+
+## Where It Can Go Wrong
+
+Software touches nearly every step of hiring now, and each step has its own risk.
+
+| Stage | How AI is used | What can go wrong |
 |---|---|---|
-| Sourcing | Targeted job ads; candidate search | Ads shown unequally by gender or age (Facebook settlements, 2019 and 2022) |
-| Screening | Résumé parsing, ranking, knockout questions | Proxy discrimination; disability screening-out |
-| Assessment | Games, personality tests, video and voice analysis | Weak validity; disability (03-04) |
-| Interview | AI interviewers; transcription and scoring | Accent, speech and neurodivergence bias |
-| Selection | Ranking final candidates | Automation bias |
-| Post-hire | Performance prediction; attrition risk | Workplace surveillance (05-04) |
+| Finding candidates | Targeted job ads; searching profiles | Ads shown unequally by age or sex |
+| Screening | Reading, ranking and filtering résumés | Proxy discrimination; screening out disabled applicants |
+| Assessment | Games, personality tests, video and voice analysis | Weak evidence that it measures anything useful (Lesson 03-04) |
+| Interviews | AI interviewers; scoring transcripts | Bias against accents, speech differences and neurodivergent people |
+| Selection | Ranking finalists | People trusting the ranking too much |
 
-### The Amazon lesson (2018)
+The best-known failure came from Amazon. Around 2014, the company began building a model to rank résumés, trained on ten years of its own past applications, most of which came from men. Reuters reported in 2018 that the model had learned to penalize résumés containing the word "women's," as in "captain of the women's chess club," and to mark down graduates of two all-women colleges. Engineers removed those terms, but could not be sure the model would not find other proxies, and Amazon abandoned the project. The lesson is the one from Lesson 03-01: a model trained on past hiring learns past hiring's preferences.
 
-Reuters reported that Amazon built an experimental résumé-ranking model trained on 10 years of résumés, mostly from men. The model learned to downgrade résumés containing "women's" (as in "women's chess club captain") and graduates of two all-women's colleges. Engineers edited out those terms but couldn't guarantee the model wouldn't find other proxies. Amazon abandoned the tool.
+Language models have brought the same problem back in a new form. When employers use general-purpose AI to rank résumés, studies have found differences by name. A 2024 Bloomberg analysis found that one widely used model ranked otherwise identical résumés differently depending on names associated with race and sex. A University of Washington study the same year found that three language models favored names associated with white people in 85 percent of comparisons. Results vary by model and by how the request is worded, which is the main reason to test the exact configuration an employer actually uses.
 
-**Lesson:** Historical hiring data encodes historical hiring bias (03-01).
+There is also a risk that comes from scale. If many employers use the same tool, an applicant it misjudges may be rejected everywhere at once. Researchers call this **algorithmic monoculture**. A biased human recruiter affects one company's hiring. A flawed model used by hundreds of employers can shut someone out of a whole field.
 
-### LLM-based screening (2024–2026)
+## The Law
 
-As employers use LLMs to rank résumés, new studies show name-based disparities:
+In the United States, as of October 2026, the main federal laws are Title VII of the Civil Rights Act, the Age Discrimination in Employment Act and the Americans with Disabilities Act. They forbid two kinds of discrimination. **Disparate treatment** is treating someone differently because of a protected trait. **Disparate impact** is using a practice that looks neutral but falls more heavily on a protected group, unless the practice is job-related and necessary to the business and no less discriminatory alternative would serve as well. These laws apply whether a person or an algorithm does the screening, and the employer remains responsible.
 
-- Bloomberg (2024) found GPT-3.5 ranked otherwise-identical résumés differently by name-associated race and gender.
-- Wilson & Caliskan (University of Washington, 2024) found three LLMs favored white-associated names in 85% of comparisons and never favored Black male-associated names over white male-associated names.
+Federal enforcement has changed. In early 2025 the Equal Employment Opportunity Commission removed its 2023 guidance on AI and hiring from its website, and a 2025 executive order told federal agencies to give less priority to disparate-impact cases. The laws themselves, and the right of individuals to sue under them, remain.
 
-Results vary by model and prompt, which is exactly why **local testing** of the deployed configuration matters.
+States and cities have added their own rules. New York City's Local Law 144, enforced since July 2023, requires employers using an **automated employment decision tool** to commission an independent bias audit every year, publish a summary of selection rates by sex and race, and notify candidates. Illinois amended its human rights law, effective January 2026, to prohibit using AI in ways that result in discrimination and to require notice. Colorado's replacement AI law, effective January 2027, requires employers using automated decision tools to give notice, explain adverse decisions and offer human review where commercially reasonable. California's civil rights regulations on automated decision systems in employment took effect in October 2025.
 
-### Legal framework (U.S., as of October 2026 ⚠)
+## Did the Audits Work?
 
-- **Title VII, ADEA, ADA:** These prohibit disparate treatment and disparate impact. They apply whether a human or an algorithm screens, and the employer remains liable.
-- **Disparate impact:** A neutral practice with an adverse effect on a protected group is unlawful unless it is job-related and consistent with business necessity, *and* no less discriminatory alternative exists.
-- **Federal enforcement posture:** The EEOC's 2023 technical guidance on AI and Title VII was removed from its website in early 2025, and a 2025 executive order directed agencies to deprioritize disparate-impact enforcement. **The statutes and private rights of action remain.**
-- **State and local laws:**
-  - **NYC Local Law 144** (enforced from July 2023): Employers using automated employment decision tools (AEDTs) must commission an annual independent **bias audit** (selection rates and impact ratios by sex and race/ethnicity), publish a summary and notify candidates.
-  - **Illinois:** The AI Video Interview Act (2020). HB 3773 (effective Jan 1, 2026) amends the Human Rights Act to prohibit AI use that results in discrimination and to require notice.
-  - **Colorado:** Its 2024 AI Act was repealed before taking effect. The replacement (SB 26-189, effective Jan 1, 2027) requires employers using automated decision-making technology in hiring and other employment decisions to give notice, explain adverse decisions within 30 days, and offer human review where commercially reasonable (see 08-02).
-  - **California:** Civil Rights Council regulations on automated decision systems in employment took effect Oct 1, 2025.
+New York's law was the first of its kind, so its record is worth studying. In December 2025, the New York State Comptroller published an audit of how the city had enforced it.
 
-### Does disclosure-and-audit work? The LL144 record
+The findings were sobering. In two years the city agency responsible had received only two complaints about automated hiring tools. It reviewed 32 companies and found one problem. State auditors who looked at the same companies found at least 17 possible violations. The city agency lacked technical expertise and had not consulted the city's own technology office. And enforcement depended almost entirely on complaints, which applicants could hardly file if they did not know a tool had been used.
 
-A December 2025 audit by the New York State Comptroller found:
+Earlier research had found that few employers posted audits at all. The law let each employer decide whether its tool "substantially assisted" hiring decisions, and many decided that it did not, so the law did not apply to them.
 
-- Over two years, the city's Department of Consumer and Worker Protection (DCWP) received only **two** complaints about AEDTs.
-- DCWP reviewed 32 companies and found one issue. State auditors reviewing the same companies found at least **17** potential instances of non-compliance.
-- DCWP lacked technical expertise and didn't consult the city's technology office.
-- Enforcement relied almost entirely on complaints, which candidates can't file if they don't know an AEDT was used.
+The lesson is broader than New York. Rules that rely on transparency have little effect without people who can enforce them, the technical skill to check what companies say, and a way for the people harmed to find out that they were harmed.
 
-Earlier research (Wright et al., 2024) found few employers posted audits. The law also lets employers decide whether their tool "substantially assists" decisions, so many concluded it didn't apply to them.
+## Where People Disagree
 
-**Lesson:** Transparency rules without enforcement capacity, technical expertise or an obvious way for affected people to know they were harmed have limited effect.
+The Week 3 debate resolution is: *Employers should be prohibited from using AI to screen out job applicants without human review of every rejection.*
 
-## Applying the frameworks
+Supporters argue that rejection is a consequential decision about a person's livelihood, that people rejected by software rarely know why or how to contest it, and that the scale of monoculture means one tool's errors can follow someone across an entire industry. Requiring a person to review each rejection keeps a human responsible for the decision.
 
-- **Justice (procedural):** Applicants rejected by AI rarely know why or how to contest it.
-- **Accountability (08-05):** *Mobley*'s agent theory spreads responsibility to vendors, who design the systems used by thousands of employers.
-- **Consequences:** Efficient screening of huge applicant pools is a real benefit, but errors replicate at scale across many employers at once ("algorithmic monoculture").
-- **Decency:** Mass rejection without explanation, sometimes within minutes, treats applicants as inputs rather than people.
+Opponents argue that the requirement would bring back the problems automation was meant to solve. Reviewing thousands of rejections would take enormous time, and Lesson 03-09 shows that rushed human review often adds little except a rubber stamp. Employers might respond by reading fewer applications in the first place. They argue that better rules would require testing and auditing tools, notifying applicants and offering an appeal, rather than a review of every case.
 
-## Discussion questions
+A second disagreement concerns the vendors. Should the companies that build these tools share legal responsibility, as the *Mobley* theory proposes? Holding vendors responsible puts pressure on the party that designs the system and could fix it for thousands of employers at once. Critics reply that vendors cannot control how each employer configures and uses their tools.
 
-1. Should AI vendors be liable for discrimination by their tools, or only the employers who use them? Consider both fairness and incentives.
-2. If many employers use the same vendor, one applicant may be rejected everywhere by the same model. What are the ethical implications of this "monoculture"?
-3. NYC LL144 requires audits but doesn't require passing them. Is that a design flaw or a reasonable first step?
-4. Prepare for the Week 3 debate: *Employers should be prohibited from using AI to screen out job applicants without human review of every rejection.* What are the strongest arguments on each side?
+## Check Your Understanding
 
-## Activity: read a bias audit (15 minutes)
+**1. What legal theory let the *Mobley* case proceed against Workday?**
 
-Find one publicly posted NYC LL144 bias audit summary (search "AEDT bias audit summary" plus an employer name), or use the fictional teaching sample in `_Instructor/03 - Sample Bias Audit Summary (Fictional).md`. Record:
+:::answer Answer
+That Workday may act as an agent of the employers, carrying out part of their hiring, and so may be liable under federal anti-discrimination law as an employer would be.
+:::
 
-1. the impact ratios reported,
-2. whether any fall below 0.8,
-3. what the audit does **not** tell you (intersectional groups, disability, age), and
-4. whether a rejected applicant could use this information.
+**2. What did the 2004 Bertrand and Mullainathan experiment find, and why is it relevant?**
 
-## Key terms
+:::answer Answer
+Identical résumés with names common among white Americans received about 50 percent more callbacks than those with names common among Black Americans. It shows that the alternative to algorithmic screening, human screening, is also biased.
+:::
 
-- **AEDT:** Automated employment decision tool (NYC term).
-- **Disparate treatment / disparate impact:** Intentional differential treatment / a neutral practice with discriminatory effect.
-- **Agent liability:** Holding a vendor liable as the employer's delegated agent.
-- **Collective action:** A group lawsuit (here under the ADEA) where members opt in.
-- **Algorithmic monoculture:** Many decision-makers relying on the same model, so its errors are correlated.
+**3. What is algorithmic monoculture?**
 
-## Connections
+:::answer Answer
+Many decision-makers relying on the same model, so that its errors are shared across all of them and one applicant can be rejected everywhere at once.
+:::
 
-- Bias sources → 03-01 · Metrics → 03-02 · Disability → 03-04 · Lab → 03-10 · Accountability → 08-05 · Procurement → 08-07
-- A1 Week 3 debate; A2 scenario 2
+**4. Why did New York City's audit law have little effect, according to the State Comptroller?**
 
-## Sources and further reading
+:::answer Answer
+The city agency lacked technical expertise, relied on complaints that applicants could not easily make, and found far fewer problems than state auditors did. Employers could also decide for themselves that the law did not apply.
+:::
 
+## Your Turn: Week 3 Debate Preparation
+
+Your side of the Week 3 debate is assigned on the course site. Prepare an opening post of up to 300 words with at least two sources, a short statement of the strongest argument the other side will make, and a "what would change my mind" statement of up to 100 words.
+
+Then find one publicly posted New York City bias audit summary (search for "AEDT bias audit summary" and an employer's name). Note the impact ratios it reports, whether any fall below 0.8, and what it does not tell you, such as results for disability, age or intersectional groups. Would a rejected applicant be able to use it?
+
+The résumé-screening scenario in A2 builds on this lesson.
+
+## Key Terms
+
+- **Automated employment decision tool:** New York City's term for software that substantially assists hiring or promotion decisions.
+- **Disparate treatment:** Treating someone differently because of a protected trait.
+- **Disparate impact:** A neutral-looking practice that falls more heavily on a protected group.
+- **Agent liability:** Holding a vendor responsible as an employer's delegated agent.
+- **Collective action:** A group lawsuit, here under the federal age discrimination law, that members choose to join.
+- **Algorithmic monoculture:** Many decision-makers relying on the same model, so that its errors are shared.
+
+## Sources
+
+- **Core:** NYS Office of the State Comptroller, *Enforcement of Local Law 144 — Automated Employment Decision Tools*, Report 2024-N-6 (Dec 2, 2025). — [Free full text](https://www.osc.ny.gov/state-agencies/audits/2025/12/02/enforcement-local-law-144-automated-employment-decision-tools); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r107). <!-- reading-access -->
 - *Mobley v. Workday, Inc.*, No. 3:23-cv-00770 (N.D. Cal.): order on motion to dismiss (July 12, 2024); order on collective certification (May 16, 2025). — [Free full text](https://clearinghouse.net/case/44074/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r104). <!-- reading-access -->
 - TheGrio, "Black workers challenge AI hiring platform…," Sep 24, 2026. ⚠ — [Free full text](https://thegrio.com/2026/09/24/workday-ai-hiring-discrimination-lawsuit/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r105). <!-- reading-access -->
 - Dastin, J. "Amazon scraps secret AI recruiting tool that showed bias against women," Reuters, Oct 10, 2018. — [Free full text](https://www.investing.com/news/stock-market-news/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-1637988); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r106). <!-- reading-access -->
-- NYS Office of the State Comptroller, *Enforcement of Local Law 144 — Automated Employment Decision Tools*, Report 2024-N-6 (Dec 2, 2025). — [Free full text](https://www.osc.ny.gov/state-agencies/audits/2025/12/02/enforcement-local-law-144-automated-employment-decision-tools); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r107). <!-- reading-access -->
 - Wilson, K. & Caliskan, A. "Gender, Race, and Intersectional Bias in Resume Screening via Language Model Retrieval," *AIES 2024*. — [Free manuscript](https://arxiv.org/abs/2407.20371); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r108). <!-- reading-access -->
+- Bertrand, M. & Mullainathan, S. "Are Emily and Greg More Employable than Lakisha and Jamal?" *American Economic Review* 94(4), 2004. ⚠ — [Free manuscript](https://www.nber.org/papers/w9873)
 - Raghavan, M. et al. "Mitigating Bias in Algorithmic Hiring," *FAT\* 2020*. — [Free manuscript](https://arxiv.org/abs/1906.09208); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r109). <!-- reading-access -->

@@ -40,7 +40,7 @@ The study illustrates **automation bias**: people tend to defer to automated sug
 |---|---|
 | **Aviation** | Air France 447 (2009): Pilots, unpracticed in manual flying, mishandled an autopilot disconnect. Boeing 737 MAX (2018–2019): MCAS automation and inadequate pilot training contributed to two crashes. |
 | **Medicine** | Radiology AI studies (above); sepsis-prediction tools generating alert fatigue (Epic Sepsis Model validation, Wong et al., *JAMA IM* 2021) |
-| **Law** | Fabricated citations (04-01); judges and risk scores (03-07) |
+| **Law** | Fabricated citations (04-01); judges and risk scores (03-06) |
 | **Policing** | Facial recognition matches treated as proof (02-04) |
 | **Software** | Developers accepting AI-generated code with security vulnerabilities. Studies found users with AI assistants wrote less secure code while believing it was more secure (Perry et al., 2023). |
 | **Navigation** | Drivers following GPS into lakes or closed roads ("death by GPS") |
@@ -106,7 +106,7 @@ Choose a professional workflow with AI support (radiology reads, code review, lo
 
 ## Connections
 
-- Wrongful arrests → 02-04 · Risk scores → 03-07 · Hallucination → 04-01 · Entry-level skills → 05-02 · Human oversight → 03-09
+- Wrongful arrests → 02-04 · Risk scores → 03-06 · Hallucination → 04-01 · Entry-level skills → 05-02 · Human oversight → 03-09
 
 ## Sources and further reading
 

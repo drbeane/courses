@@ -29,7 +29,7 @@ The Fargo Police Department reportedly had no facial recognition policy when it 
 ### Policy anchors
 
 - **U.S. federal:** OMB Memo M-24-10 (2024) required risk management for "rights-impacting" and "safety-impacting" AI. It was replaced in 2025 by **M-25-21** (use) and **M-25-22** (acquisition), which retain minimum practices for "high-impact AI" while emphasizing innovation and American-made AI ⚠.
-- **Cities:** Amsterdam and Helsinki AI registers; New York City's AI governance policies; Community Control Over Police Surveillance (CCOPS) ordinances requiring council approval (03-08).
+- **Cities:** Amsterdam and Helsinki AI registers; New York City's AI governance policies; Community Control Over Police Surveillance (CCOPS) ordinances requiring council approval (03-07).
 - **Model clauses:** The EU's model contractual clauses for public procurement of AI (2023, updated 2025); the UK's *Guidelines for AI procurement* (2020); the World Economic Forum's AI procurement guidelines.
 
 ### A due-diligence questionnaire

@@ -2,7 +2,7 @@
 
 This file shows where each topic is taught, so coverage gaps and overlaps are easy to see.
 
-**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Module 2, which follows the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
+**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 and 3, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
 
 ---
 
@@ -10,11 +10,11 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 
 | Topic | Primary lessons | Also appears in |
 |---|---|---|
-| **Surveillance and facial recognition** | 02-03, 02-04, 02-05, 02-06 | 01-01, 03-08, 05-05, 08-01 (prohibited practices) |
+| **Surveillance and facial recognition** | 02-03, 02-04, 02-05, 02-06 | 01-01, 03-07, 05-05, 08-01 (prohibited practices) |
 | **Deepfakes and non-consensual imagery** | 04-03, 04-04, 04-05, 04-06, 04-07 | 01-01, 08-01 (EU nudifier ban) |
 | **Algorithmic bias in hiring** | 03-03, 03-04, 03-10 | 03-01, 03-02, 08-02, 08-07 |
-| **Algorithmic bias in lending** | 03-05, 03-06 | 03-02, 08-02 |
-| **Algorithmic bias in criminal justice** | 03-07, 03-08 | 02-04, 03-02 |
+| **Algorithmic bias in lending** | 03-05 | 03-02, 08-02 |
+| **Algorithmic bias in criminal justice** | 03-06, 03-07 | 02-04, 03-02 |
 | **Labor displacement** | 05-01, 05-02, 05-03, 05-09 | 01-01, 06-06 |
 | **AI worker monitoring** | 05-04, 05-05, 05-06 | 02-02, 05-09 |
 | **Environmental costs of large models** | 06-01 to 06-05, 06-08 | 06-07, 07-02 |
@@ -47,7 +47,7 @@ These threads run through the course. Each lesson's "Connections" section points
 4. **Who bears the error?** Every system makes mistakes; ethics asks who absorbs them (02-03, 03-02, 04-01).
 5. **Power and concentration:** who builds, who decides, who can refuse (01-06, 05-03, 06-06, 07-02).
 6. **Evidence discipline:** separate measurement, estimate, forecast and speculation (04-02, 05-01, 06-04, 07-09).
-7. **Compared to what?** Judge a system against the human or non-AI baseline it replaces, and count the cost of not deploying. Each of Modules 2–7 has one planned lesson on a system that clearly helps (assistive sensing, algorithms that outperform human judgment, helpful synthetic media, AI assistance for workers, AI for climate and science, AI for defenders), and 08-09 makes the cost of not deploying part of the decision.
+7. **Compared to what?** Judge a system against the human or non-AI baseline it replaces, and count the cost of not deploying. Each of Modules 2–7 has one planned lesson on a system that clearly helps (assistive sensing, algorithms that outperform human judgment, helpful synthetic media, AI assistance for workers, AI for climate and science, AI for defenders), and 08-09 makes the cost of not deploying part of the decision. 03-08 sets out the comparison in detail.
 
 ## 4. Alphabetical topic index
 
@@ -62,10 +62,10 @@ These threads run through the course. Each lesson's "Connections" section points
 | Biometric privacy law (BIPA) | 02-06 |
 | Bossware | 05-04, 05-05 |
 | C2PA / content credentials | 04-07 |
-| Calibration (fairness metric) | 03-02, 03-07 |
+| Calibration (fairness metric) | 03-02, 03-06 |
 | Clearview AI | 02-06 |
 | Colorado AI Act | 08-02 |
-| COMPAS | 03-07 |
+| COMPAS | 03-06 |
 | Companion chatbots | 04-08 |
 | Compute concentration | 06-06 |
 | Content moderators | 05-07 |
@@ -88,6 +88,7 @@ These threads run through the course. Each lesson's "Connections" section points
 | Fair lending (ECOA) | 03-05 |
 | Gig work | 05-06 |
 | Hallucination | 04-01, 04-10 |
+| Human versus algorithmic judgment | 03-08 |
 | Hugging Face breach | 07-07 |
 | Impact assessments (DPIA, FRIA) | 02-10, 08-06 |
 | Impossibility theorems (fairness) | 03-02 |
@@ -103,7 +104,7 @@ These threads run through the course. Each lesson's "Connections" section points
 | Non-human interests | 06-07 |
 | NYC Local Law 144 | 03-03 |
 | Open-weight models | 07-01 to 07-04 |
-| Predictive policing | 03-08 |
+| Predictive policing | 03-07 |
 | Preemption (state vs. federal) | 08-02 |
 | Procurement | 08-07 |
 | Prompt injection | 07-06 |
@@ -113,7 +114,7 @@ These threads run through the course. Each lesson's "Connections" section points
 | Smart glasses | 02-07, 02-08 |
 | Stakeholder mapping | 01-08 |
 | TAKE IT DOWN Act | 04-05 |
-| Tenant screening | 03-06 |
+| Tenant screening | 03-05 |
 | Utilitarianism | 01-03 |
 | Verification | 04-02, 04-10 |
 | Voice assistants | 02-07 |

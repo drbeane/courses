@@ -1,0 +1,122 @@
+# 03-06 — Criminal Justice: Pretrial and Sentencing Risk Assessment
+
+**Module:** 3 — Algorithmic Bias in Consequential Decisions
+**Estimated time:** 40 minutes
+
+**In this lesson:** Courts in many U.S. states use risk scores to help decide who is released before trial and how long people are sentenced. This lesson looks at a landmark challenge to one of those scores, the evidence that such tools could reduce jailing, and the reasons many people think they should not be used at all.
+
+## *State v. Loomis*
+
+In 2013 Eric Loomis was charged in connection with a drive-by shooting in La Crosse, Wisconsin. He pleaded guilty to two lesser charges, attempting to flee a traffic officer and operating a vehicle without the owner's consent. At sentencing, the judge had a report that included a COMPAS risk assessment, the same tool ProPublica analyzed in Lesson 03-02. It classified Loomis as high risk. The judge sentenced him to six years in prison, mentioning the assessment.
+
+Loomis appealed. He argued that using COMPAS violated his right to due process for three reasons. The tool's method was a trade secret, so he could not challenge how it worked. It was based on data about groups, which he argued violated his right to be sentenced as an individual. And it took his sex into account.
+
+In 2016 the Wisconsin Supreme Court upheld his sentence. Judges may consider COMPAS, it held, but it may not be the deciding factor, and reports that include it must carry written warnings: that it is proprietary, that it is based on group data, and that it had not been validated on a Wisconsin population. In 2017 the U.S. Supreme Court declined to hear the case.
+
+*Loomis* settled very little. It allowed the tool, with warnings, and left open whether warnings do anything.
+
+## What These Tools Are
+
+A **risk assessment instrument** estimates the likelihood of a future event, usually failing to appear in court or being arrested again. Such instruments are used at several points.
+
+| Stage | Decision | Examples |
+|---|---|---|
+| Before trial | Release, bail or detention | The Public Safety Assessment, used in many states |
+| Sentencing | Length and type of sentence | COMPAS; the LSI-R |
+| Prison | Programs and security level | Various |
+| Parole | Release from prison | PATTERN, used in the federal system |
+
+Most of these are not complex machine learning. Many are checklists that add up points, or simple statistical formulas using a handful of factors such as age, prior convictions and past failures to appear. The ethical questions do not depend on how sophisticated the model is.
+
+## The Case for Risk Assessment
+
+The argument for these tools starts with the decisions they inform, which are already being made, by people, badly.
+
+Judges deciding on release and sentencing are inconsistent. Two judges in the same courthouse can treat similar defendants very differently, and studies have found disparities by race in bail and sentencing decisions made without any algorithm. A transparent, consistent tool could reduce that arbitrariness.
+
+The tools have been used to reduce jailing. In 2017 New Jersey largely eliminated cash bail and began using the Public Safety Assessment to guide release decisions. Its pretrial jail population fell substantially in the following years, without a corresponding rise in crime.
+
+And there is evidence that algorithms could do much better than judges. In a major 2018 study, Jon Kleinberg and colleagues used data on hundreds of thousands of New York City arrests to compare judges' release decisions with what an algorithm would have recommended. They estimated that following the algorithm could have reduced crime by up to about 25 percent with no change in the number of people jailed, or reduced the number jailed by up to about 40 percent with no increase in crime. It could also have reduced racial disparities in who was detained. Lesson 03-08 returns to this study.
+
+For the people held in jail before trial, who have not been convicted of anything and who often lose jobs, housing and custody of children while they wait, those numbers matter enormously.
+
+## The Case Against
+
+The arguments against are just as serious.
+
+The labels reflect policing. These tools predict re-arrest, not reoffending, because arrest is what gets recorded. Communities that are policed more heavily produce more arrests, so their residents look riskier, a problem Lesson 03-01 described and Lesson 03-07 shows in action.
+
+Error rates differ by group. As ProPublica found, Black defendants who were not re-arrested were labeled high risk more often than white defendants who were not re-arrested. The impossibility results in Lesson 03-02 show that some such difference is unavoidable when base rates differ, which means someone must choose which errors to accept.
+
+Prediction based on groups conflicts with justice for individuals. Punishing someone more because of what statistically similar people did offends the principle, central to Lesson 01-04, that people should be judged for their own acts.
+
+Trade secrecy prevents challenge. A defendant cannot examine a proprietary tool used against them, which is the heart of Loomis's complaint.
+
+Judges may use the tools selectively. A study of Kentucky's pretrial reform by Megan Stevenson found that judges often departed from the tool's recommendations, and that the reform delivered much less than hoped. Judges may follow high-risk scores and override low-risk ones, which produces more detention, not less.
+
+And there is a question of legitimacy. Who decided that decisions about liberty would be informed by an algorithm, and through what democratic process?
+
+## How Accurate Are They?
+
+Most risk tools are only moderately accurate. A common measure, the area under the curve, ranges from 0.5 for a coin flip to 1.0 for perfect prediction, and many widely used tools score around 0.65 to 0.72.
+
+A 2018 study by Julia Dressel and Hany Farid made the point vividly. People recruited online, with no expertise in criminal justice, predicted re-arrest about as accurately as COMPAS. A simple formula using only two facts, age and number of prior convictions, did just as well. The tool's apparent sophistication added little.
+
+This cuts both ways. It suggests COMPAS was no better than simple alternatives. It also suggests that simple, transparent tools can match proprietary ones, which removes much of the argument for secrecy.
+
+## Where People Disagree
+
+The deepest disagreement is whether these tools should be used at all.
+
+One side holds that they should not. Liberty should not depend on statistical predictions about people like you, the labels are contaminated by unequal policing, and warnings do not overcome the authority a number carries. On this view the answer is to release more people without prediction, through reforms such as ending cash bail for most offenses.
+
+Another side holds that they should be used carefully. The alternative is not freedom from prediction but unstructured human prediction, which is less consistent, less transparent and, the evidence suggests, often more biased. On this view the right tools are simple, open to inspection, validated locally, monitored for disparities and limited to particular decisions.
+
+Many people draw a line between stages. Using a tool to decide who can safely be released before trial, with a presumption toward release, is different from using it to lengthen a sentence after conviction. The first can reduce jailing. The second adds punishment for predicted behavior.
+
+## Check Your Understanding
+
+**1. What did the Wisconsin Supreme Court decide in *Loomis*?**
+
+:::answer Answer
+Judges may consider COMPAS at sentencing, but not as the deciding factor, and reports including it must warn that it is proprietary, based on group data and not validated on a Wisconsin population.
+:::
+
+**2. What did Kleinberg and colleagues estimate an algorithm could achieve in New York City?**
+
+:::answer Answer
+Up to about a 25 percent reduction in crime with no change in jailing, or up to about a 40 percent reduction in jailing with no increase in crime, while also reducing racial disparities.
+:::
+
+**3. Why do risk tools predict re-arrest instead of reoffending, and why does that matter?**
+
+:::answer Answer
+Arrests are what gets recorded. Because some communities are policed more heavily, their residents are arrested more for the same behavior, so the tool rates them as riskier.
+:::
+
+**4. What did Dressel and Farid find?**
+
+:::answer Answer
+People with no expertise, and a simple formula using only age and prior convictions, predicted re-arrest about as accurately as COMPAS.
+:::
+
+## Your Turn
+
+A county is considering adopting a pretrial risk tool. Write a one-page policy that states what the tool may and may not be used for, which outcome it predicts and why, which fairness measure from Lesson 03-02 the county will monitor, what will be disclosed to defendants, and how judges' departures from the tool's recommendations will be tracked.
+
+## Key Terms
+
+- **Risk assessment instrument:** A tool that estimates the likelihood of a future event such as failing to appear or re-arrest.
+- **Pretrial detention:** Holding a person in jail before trial.
+- **Area under the curve:** A measure of a classifier's accuracy, where 0.5 is chance and 1.0 is perfect.
+- **Override:** A judge's decision contrary to the tool's recommendation.
+- **Individualized sentencing:** The principle that a sentence should reflect the individual case.
+
+## Sources
+
+- **Core:** Kleinberg, J. et al. "Human Decisions and Machine Predictions," *Quarterly Journal of Economics* 133(1), 2018, introduction and conclusion. — [Free manuscript](https://www.nber.org/system/files/working_papers/w23180/w23180.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r127). <!-- reading-access -->
+- *State v. Loomis*, 881 N.W.2d 749 (Wis. 2016). — [Free full text](https://www.wicourts.gov/sc/opinion/DisplayDocument.pdf?content=pdf&seqNo=171690); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r126). <!-- reading-access -->
+- Dressel, J. & Farid, H. "The accuracy, fairness, and limits of predicting recidivism," *Science Advances* 4(1), 2018. — [Free full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC5777393/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r128). <!-- reading-access -->
+- Stevenson, M. "Assessing Risk Assessment in Action," *Minnesota Law Review* 103 (2018). — [Free full text](https://scholarship.law.umn.edu/mlr/58/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r129). <!-- reading-access -->
+- Partnership on AI, *Report on Algorithmic Risk Assessment Tools in the U.S. Criminal Justice System* (2019). — [Free full text](https://old.partnershiponai.org/wp-content/uploads/2019/04/Report-on-Algorithmic-Risk-Assessment-Tools.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r130). <!-- reading-access -->
+- ABA Criminal Justice, "AI in Criminal Courts: Balancing Innovation and Justice," Spring 2026. ⚠ — [Free full text](https://www.americanbar.org/groups/criminal_justice/resources/magazine/2026-spring/ai-criminal-courts-balancing-innovation-justice/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r131). <!-- reading-access -->
