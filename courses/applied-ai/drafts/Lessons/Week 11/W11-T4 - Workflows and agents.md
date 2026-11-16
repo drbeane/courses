@@ -108,7 +108,7 @@ Many real products use workflows where they can and agents where they must. Reac
 
 Whichever you choose, the supervision questions from earlier weeks still apply. What can it touch? How would you know that a run went badly? Where does a person check the result? A workflow that forwards uncertain cases to a person, as the routing example does, has that check built in.
 
-For your capstone, ask which of the three your task needs. A weekly report that always follows the same steps is a workflow, even if you build it with an agent tool, and describing it accurately is part of your design justification.
+For your final project, ask which of the three your task needs. A weekly report that always follows the same steps is a workflow, even if you build it with an agent tool, and describing it accurately is part of your design justification.
 
 ## Key Terms
 

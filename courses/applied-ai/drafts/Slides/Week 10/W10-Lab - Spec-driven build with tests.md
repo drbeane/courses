@@ -47,7 +47,7 @@ Submit: repository, test results at each step, review log of 5+ AI-proposed chan
 
 - **500 extension:** a mid-project requirement change; document how the assistant handled existing tests
 - About 4–5 hours
-- **Also due: capstone proposal**
+- **Also due: final project proposal**
 
 ---
 

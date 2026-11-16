@@ -1,4 +1,4 @@
-# Week 15: Capstone Presentations
+# Week 15: Final Project Presentations
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: All four
 

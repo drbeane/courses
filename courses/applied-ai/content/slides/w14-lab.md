@@ -1,4 +1,4 @@
-# Capstone Draft and Peer Review
+# Final Project Draft and Peer Review
 ### Week 14 · Lab and Assignment
 COSC-300/500 Applied AI Essentials
 
@@ -39,9 +39,9 @@ COSC-300/500 Applied AI Essentials
 
 ---
 
-## Assignment: Capstone Draft and Peer Review
+## Assignment: Final Project Draft and Peer Review
 
-Submit: full capstone draft, written peer feedback on two drafts, 1-page draft AI-use policy
+Submit: full final project draft, written peer feedback on two drafts, 1-page draft AI-use policy
 
 - **500 extension:** ground the risk and governance section in 3+ published sources (regulation, NIST AI RMF, research)
 - About 5 hours
@@ -50,6 +50,6 @@ Submit: full capstone draft, written peer feedback on two drafts, 1-page draft A
 
 ## Before Next Week
 
-- Final capstone materials ready
+- Final project materials ready
 - All required Claude Academy badges submitted
 - Rehearse your 8 minutes

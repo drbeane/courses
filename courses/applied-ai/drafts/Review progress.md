@@ -79,7 +79,7 @@ Statuses: **to do**, **expanded** (lesson and deck rewritten longer), **fine** (
 | W10-T1 Specifications and tests | expanded | Added what a spec contains, testable requirements, a readable test and its output, regressions |
 | W10-T2 Reviewing AI-written code | expanded | Added a review routine, a diff of a silent test edit, questions per pattern, a sample review log |
 | W10-T3 Debugging, changing code, and sub-agents | expanded | Added symptom vs cause, a good bug report, changing requirements, sub-agent trade-offs |
-| W10-T4 The capstone project | expanded | Added choosing and sizing a task, measurable success, a short example proposal |
+| W10-T4 The final project | expanded | Added choosing and sizing a task, measurable success, a short example proposal |
 | W10-Lab Spec-driven build with tests | fine |  |
 | W11-T1 From chat to API | expanded | Added what an API is, chat app vs API, the parts of a response |
 | W11-T2 A first API program and what it costs | expanded | Added a readable first program, system prompt examples, the conversation loop, a worked cost example, key safety |
@@ -98,10 +98,10 @@ Statuses: **to do**, **expanded** (lesson and deck rewritten longer), **fine** (
 | W14-T2 Data governance and local models | expanded | Added what governance is, data levels, shadow AI, cloud vs local table |
 | W14-T3 Bias, reliability, and accountability | expanded | Was 253 words. Added sections on bias, reliability at scale, accountability, oversight arrangements, automation bias |
 | W14-T4 Workforce effects and AI-use policy | expanded | Added tasks vs jobs table, advice for early career, sample policy wording, testing a draft |
-| W14-Lab Capstone draft and peer review | fine |  |
-| W15-T1 Capstone presentations | expanded | Added a plan for the eight minutes, demo precautions, answering questions, listening with the four Ds |
+| W14-Lab Final project draft and peer review | fine |  |
+| W15-T1 Final project presentations | expanded | Added a plan for the eight minutes, demo precautions, answering questions, listening with the four Ds |
 | W15-T2 Course synthesis | expanded | Added the seven stages, the shared mechanism, a 4D progression table, questions for a new tool, a closing section |
-| W15-Lab Capstone final | fine |  |
+| W15-Lab Final project submission | fine |  |
 | W01-T1 About this course | fine | Course overview, grading and policy. No change |
 | W01-T2 What a large language model is | expanded | Added a prediction example, where knowledge lives, what an LLM is not, where to expect reliability |
 | W01-T3 The surfaces map | fine |  |

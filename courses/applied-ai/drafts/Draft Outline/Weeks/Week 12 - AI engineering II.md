@@ -24,7 +24,7 @@ Students will be able to:
 - 40 min: Lab: choose a track and start.
 - 15 min: MCP from the inside. Defining a tool and a resource; testing with the inspector; adding it to Claude Code or Cowork.
 - 45 min: Lab.
-- 15 min: Capstone checkpoint: 3-minute status updates.
+- 15 min: Final project checkpoint: 3-minute status updates.
 
 ## Assignment: Mini RAG app or MCP server, with an eval (choose one track)
 - **Track A (RAG):** a question-answering program over 10–30 documents of your choice that cites its sources.
@@ -33,7 +33,7 @@ Students will be able to:
 - All tracks: a test set of at least 15 cases, results, and a 400-word discussion of failures.
 - **500 extension:** both model-based and code-based grading, with a check of the model grader's agreement with your own judgment on a sample.
 - Estimated time: 4–5 hours.
-- **Also due: capstone checkpoint.**
+- **Also due: final project checkpoint.**
 
 ## Responsible use
 Grounding does not guarantee accuracy; evaluation as an accountability tool.

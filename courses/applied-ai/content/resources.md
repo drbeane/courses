@@ -116,8 +116,8 @@
 ## Week 14: AI in Organizations
 | Resource | Type | Length | Why |
 |---|---|---|---|
-| [NIST AI 600-1: Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) and [AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | Framework | 1–2 hr | The standard US reference for capstone governance sections |
-| [MIT AI Risk Repository](https://airisk.mit.edu/) | Database | browse | A taxonomy of AI risks for the capstone |
+| [NIST AI 600-1: Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) and [AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | Framework | 1–2 hr | The standard US reference for the final project governance sections |
+| [MIT AI Risk Repository](https://airisk.mit.edu/) | Database | browse | A taxonomy of AI risks for the final project |
 | [Stanford AI Index](https://hai.stanford.edu/ai-index) (2026 report) | Report | selected chapters | Data on adoption, cost, and the workforce |
 | *AI Snake Oil* (Narayanan and Kapoor, 2024) | Book (paid) | selected chapters | Critical view of AI claims; balances vendor sources |
 | [Ethics of AI](https://ethics-of-ai.mooc.fi/) (University of Helsinki) | MOOC | ~10 hr | Free, self-paced ethics course; optional depth |

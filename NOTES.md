@@ -256,3 +256,17 @@ Engine (all three courses):
   default. The fold's label is the title and subtitle from the widget's own header, and that
   header is hidden inside the fold. Folds open when the page is printed. Applies to all 26 Applied
   AI widgets; the other courses have none.
+
+## 2026-11-16: Applied AI corrections, Week 1 and "Final project"
+
+- 01-01 About This Course: the course is "loosely" ordered by autonomy; weekly assignments no
+  longer drop the lowest score; new "What Claude Academy Is" subsection (the list of required
+  courses and how to submit them is still to be filled in); "In many courses, AI use might be
+  restricted"; the journal's four questions are now delegate, tools or skills used, check, and
+  results. Slides and the draft outline match.
+- 01-02 What Is AI?: "A Working Definition of AI"; AI defined as a subfield of computer science;
+  section renamed "From Machine Learning to Large Language Models", with LLMs as a fifth level in
+  the diagram, a definition, and a paragraph on what "AI tools" means in this course. The "LLM"
+  key term (01-02 and 01-03) and glossary entry are now "Large language model (LLM)".
+- Renamed "capstone" to "final project" everywhere in Applied AI: lessons, slides, course.json
+  titles, the RAG demo, two widgets, resources, and the draft file names.

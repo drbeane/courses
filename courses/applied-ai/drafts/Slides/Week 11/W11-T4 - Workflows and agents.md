@@ -97,4 +97,4 @@ Each call concentrates on one thing.
 
 Workflows where you can, agents where you must.
 
-<!-- Ask students which of the three their capstone task needs. -->
+<!-- Ask students which of the three their final project task needs. -->

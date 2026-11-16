@@ -61,5 +61,5 @@ Run a low-stakes task over 3–5 days.
 
 - Claude Academy: **Deploying Claude Enterprise with confidence** (selected lessons, to be posted).
 - One field course that fits your interests: **AI Fluency for** small businesses, nonprofits, educators, or creative work.
-- **Bring your capstone draft.**
+- **Bring your final project draft.**
 - Journal entry.

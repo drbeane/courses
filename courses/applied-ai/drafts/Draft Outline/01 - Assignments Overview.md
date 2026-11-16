@@ -2,7 +2,7 @@
 
 _All assignments in one place. Details, including the COSC-500 extension for each, are in the weekly outlines. Times are rough estimates of out-of-class work for COSC-300._
 
-## Weekly assignments (40%, 12 assignments, lowest dropped)
+## Weekly assignments (40%, 12 assignments)
 
 | Week | Assignment | What students submit | 500 extension | Est. time |
 |---|---|---|---|---|
@@ -23,13 +23,13 @@ _All assignments in one place. Details, including the COSC-500 extension for eac
 | Week | Project | Weight |
 |---|---|---|
 | 8 | **Midterm: agent workflow.** Skills, a connector or browser step, and a scheduled run; 2-page design and risk report | 15% |
-| 10 | Capstone proposal (1 page) | part of capstone |
-| 12 | Capstone checkpoint (status update) | part of capstone |
-| 14 | Capstone draft, peer reviews of two classmates, draft AI-use policy | part of capstone |
-| 15 | **Capstone final.** Report and presentation | 25% total for capstone |
+| 10 | Final project proposal (1 page) | part of the final project |
+| 12 | Final project checkpoint (status update) | part of the final project |
+| 14 | Final project draft, peer reviews of two classmates, draft AI-use policy | part of the final project |
+| 15 | **Final project submission.** Report and presentation | 25% total for the final project |
 
 ## Ongoing
-- **AI use journal (10%, with reflections).** A short weekly entry: what you delegated, what you checked, what went wrong, what you would do differently. Final 600-word reflection in week 15.
+- **AI use journal (10%, with reflections).** A short weekly entry: what you delegated, which tools or skills covered in the course so far you used, what you checked, and what the results were (what worked well, and what didn't). Final 600-word reflection in week 15.
 - **Claude Academy courses (10%).** Completion badges for the required courses in the Resource Map, due by the week listed.
 
 ## Design notes

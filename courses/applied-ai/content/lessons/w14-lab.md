@@ -1,12 +1,12 @@
-# Week 14 Lab and Assignment: Capstone Draft and Peer Review
+# Week 14 Lab and Assignment: Final Project Draft and Peer Review
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Diligence
 
 ## What You Will Be Able to Do
 
-- Give useful written feedback on a classmate's capstone.
+- Give useful written feedback on a classmate's final project.
 
-## Capstone Peer Review
+## Final Project Peer Review
 
 You'll work in groups of three. Read each draft against the rubric and give written feedback to **two** classmates. Plan for about 15 minutes per draft.
 
@@ -32,12 +32,12 @@ You'll work in groups of three. Read each draft against the rubric and give writ
 - The presentation order will be posted by Friday.
 - The audience completes a short feedback form for each talk.
 
-## Assignment: Capstone Draft and Peer Review
+## Assignment: Final Project Draft and Peer Review
 
 **Submit:**
-- A complete capstone draft.
+- A complete final project draft.
 - Written peer feedback on two classmates' drafts, using the rubric.
-- A one-page draft AI-use policy for the organization in your capstone, included in the draft.
+- A one-page draft AI-use policy for the organization in your final project, included in the draft.
 
 **500 extension:** ground your risk and governance section in at least three published sources, such as regulation, standards like the NIST AI Risk Management Framework, or peer-reviewed research.
 
@@ -45,7 +45,7 @@ You'll work in groups of three. Read each draft against the rubric and give writ
 
 ## Before Next Week
 
-- Finish your capstone materials.
+- Finish your final project materials.
 - Submit all required Claude Academy badges.
 - Rehearse your 8-minute presentation.
 - Journal entry.

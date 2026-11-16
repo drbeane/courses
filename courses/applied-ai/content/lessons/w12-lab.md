@@ -5,7 +5,7 @@
 ## What You Will Be Able to Do
 
 - Choose a track for this week's assignment and start it.
-- Give a concise status update on your capstone.
+- Give a concise status update on your final project.
 
 ## This Week's Assignment: Choose a Track
 
@@ -31,7 +31,7 @@ Continue your track. By the end of the lab you should have run your test set at 
 - **Evaluation is an accountability tool.** It's how you show, rather than claim, that a system works.
 - An MCP server you build can be called by an agent you don't fully control. Give it only the access it needs, and think about what an injected instruction (week 8) could make it do.
 
-## Capstone Checkpoint
+## Final Project Checkpoint
 
 Each student gives a **3-minute** update:
 
@@ -52,7 +52,7 @@ Choose one track:
 
 **500 extension:** use both model-based and code-based grading, and check the model grader's agreement with your own judgment on a sample.
 
-**Also due: capstone checkpoint.**
+**Also due: final project checkpoint.**
 
 **Estimated time:** 4–5 hours.
 

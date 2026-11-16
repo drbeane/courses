@@ -53,6 +53,6 @@ Different interfaces, same surface: chat in a browser, on a phone, or by voice.
 - **Weeks 9–10:** coding assistants
 - **Weeks 11–12:** building with APIs
 - **Week 13:** always-on agents
-- **Weeks 14–15:** organizations and the capstone
+- **Weeks 14–15:** organizations and the final project
 
 <!-- 2-minute live demo of each surface that's available today. Keep it brisk. -->

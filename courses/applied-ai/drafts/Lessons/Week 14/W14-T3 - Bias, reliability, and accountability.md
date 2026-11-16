@@ -93,7 +93,7 @@ For oversight to mean something, the reviewer needs:
 
 If those are absent, the organization has automation with a person's name attached. It's better to place serious review at the few points that matter than to place token review everywhere.
 
-For your capstone's risk section, name the points in your workflow where a person checks the output, what they check, and what would happen if they stopped.
+For your final project's risk section, name the points in your workflow where a person checks the output, what they check, and what would happen if they stopped.
 
 > **Instructor note.** Run the gallery discussion in small groups for 15 minutes, then 15 minutes whole class. Ask each group to pick one failure and propose where oversight would have caught it.
 

@@ -2,7 +2,7 @@
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Discernment
 
-> **Instructor note: preparation.** Prepare two example capstone proposals, one strong and one too vague, to show. Prepare the mid-project requirement change for the 500 extension. Timing: 10 min debugging, 10 min capstone briefing, 45 min lab, 10 min share-out.
+> **Instructor note: preparation.** Prepare two example final project proposals, one strong and one too vague, to show. Prepare the mid-project requirement change for the 500 extension. Timing: 10 min debugging, 10 min final project briefing, 45 min lab, 10 min share-out.
 
 ## What You Will Be Able to Do
 

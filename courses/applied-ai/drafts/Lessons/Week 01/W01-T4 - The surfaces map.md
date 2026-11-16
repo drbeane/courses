@@ -49,7 +49,7 @@ Use the tool below to put any two surfaces side by side. Start with a chat assis
 
 {{widget surface-explorer}}
 
-The course walks this map in order. Weeks 1–5 are mostly chat. Weeks 6–8 cover local agents and the surfaces that build on them. Weeks 9–10 are coding assistants. Weeks 11–12 build small programs on an API. Week 13 is always-on agents. Weeks 14–15 look at organizations and bring everything together in your capstone.
+The course walks this map in order. Weeks 1–5 are mostly chat. Weeks 6–8 cover local agents and the surfaces that build on them. Weeks 9–10 are coding assistants. Weeks 11–12 build small programs on an API. Week 13 is always-on agents. Weeks 14–15 look at organizations and bring everything together in your final project.
 
 > **Instructor note.** Keep the tour to about two minutes per surface: the goal is a mental map, not instruction. If a surface isn't available to demo, describe it and say which week it arrives. Students often haven't seen a local agent at all; a 30-second glimpse of an agent saving files into a folder makes the rest of the term concrete.
 

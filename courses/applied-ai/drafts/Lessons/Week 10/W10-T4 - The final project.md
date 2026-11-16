@@ -1,14 +1,14 @@
-# Week 10: The Capstone Project
+# Week 10: The Final Project
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Discernment
 
 ## What You Will Be Able to Do
 
-- Describe what the capstone asks for and when each part is due.
-- Choose a capstone task of the right size.
-- Write a capstone proposal with a measurable definition of success.
+- Describe what the final project asks for and when each part is due.
+- Choose a final project task of the right size.
+- Write a final project proposal with a measurable definition of success.
 
-Your capstone runs from now until the end of the term. You'll **design, prototype, and evaluate an AI-supported workflow** for a real or realistic task in your own field. It includes:
+Your final project runs from now until the end of the term. You'll **design, prototype, and evaluate an AI-supported workflow** for a real or realistic task in your own field. It includes:
 
 - your choice of tools and surfaces, with a justification;
 - a working prototype: an agent workflow, a skill set, an app, or an always-on setup;
@@ -24,9 +24,9 @@ Your capstone runs from now until the end of the term. You'll **design, prototyp
 
 ## Choosing a Task
 
-The capstone works best when the task is one you know from the inside: something from your job, another course, a club, or a family business. You can only evaluate a workflow if you can tell a good result from a bad one, which is the Discernment requirement that has run through the whole course.
+The final project works best when the task is one you know from the inside: something from your job, another course, a club, or a family business. You can only evaluate a workflow if you can tell a good result from a bad one, which is the Discernment requirement that has run through the whole course.
 
-A good capstone task:
+A good final project task:
 
 - **Recurs.** It's done weekly or monthly. A one-time job gives you nothing to evaluate.
 - **Has a real user**, even if that's you. Someone does this task now and would notice an improvement.

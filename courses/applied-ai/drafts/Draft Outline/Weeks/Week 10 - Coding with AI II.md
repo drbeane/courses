@@ -19,7 +19,7 @@ Students will be able to:
 1. Specifications and tests
 2. Reviewing AI-written code
 3. Debugging, changing code, and sub-agents
-4. The capstone project
+4. The final project
 - Lab and assignment: Spec-driven build with tests
 
 ## Class time (two 75-minute meetings)
@@ -27,7 +27,7 @@ Students will be able to:
 - 20 min: Reviewing AI-written code. Live review of a deliberately flawed change set.
 - 35 min: Lab: start the spec-driven build (the coding test in the Artifacts folder is the model).
 - 10 min: Debugging with an assistant; changing code you did not write.
-- 10 min: Capstone proposal briefing: expectations and examples.
+- 10 min: Final project proposal briefing: expectations and examples.
 - 45 min: Lab: continue the build.
 - 10 min: Share-out of failure patterns found in review.
 
@@ -35,7 +35,7 @@ Students will be able to:
 Using a provided specification and acceptance test suite, direct the assistant through the steps. Submit the repository, the test results at each step, and a review log of at least five AI-proposed changes you inspected: what it did, whether you accepted it, and why.
 - **500 extension:** add a requirement change midway (provided) and document how the assistant handled the existing tests.
 - Estimated time: 4–5 hours.
-- **Also due: capstone proposal** (1 page: problem, users, tools and surfaces, what success looks like).
+- **Also due: final project proposal** (1 page: problem, users, tools and surfaces, what success looks like).
 
 ## Responsible use
 Dependency and supply-chain risk; who is accountable for shipped code.

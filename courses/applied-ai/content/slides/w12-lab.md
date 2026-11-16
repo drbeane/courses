@@ -38,7 +38,7 @@ All tracks: 15+ test cases, results, discussion of failures.
 
 ---
 
-## Capstone Checkpoint
+## Final Project Checkpoint
 
 **3 minutes each:**
 
@@ -55,7 +55,7 @@ All tracks: test set (15+ cases), results, 400-word discussion of failures
 
 - **500 extension:** both code-based and model-based grading, with a check of the model grader against your own judgment on a sample
 - About 4–5 hours
-- **Also due: capstone checkpoint**
+- **Also due: final project checkpoint**
 
 ---
 

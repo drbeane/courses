@@ -122,8 +122,8 @@ _Compiled 2026-10-21. These are resources outside Claude Academy (see 02 for Aca
 ## Week 14: AI in Organizations
 | Resource | Type | Length | Outcomes | Why |
 |---|---|---|---|---|
-| ✓ [NIST AI 600-1: Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) and ✓ [AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | Framework | 1–2 hr | O9 | The standard US reference for capstone governance sections |
-| ✓ [MIT AI Risk Repository](https://airisk.mit.edu/) | Database | browse | O9 | A taxonomy of AI risks for the capstone |
+| ✓ [NIST AI 600-1: Generative AI Profile](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence) and ✓ [AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) | Framework | 1–2 hr | O9 | The standard US reference for the final project governance sections |
+| ✓ [MIT AI Risk Repository](https://airisk.mit.edu/) | Database | browse | O9 | A taxonomy of AI risks for the final project |
 | ◦ [Stanford AI Index](https://hai.stanford.edu/ai-index) (2026 report) | Report | selected chapters | O2, O9 | Data on adoption, cost, and the workforce |
 | ◦ *AI Snake Oil* (Narayanan and Kapoor, 2024) | Book (paid) | selected chapters | O9 | Critical view of AI claims; balances vendor sources |
 | ✓ [Ethics of AI](https://ethics-of-ai.mooc.fi/) (University of Helsinki) | MOOC | ~10 hr | O9 | Free, self-paced ethics course; optional depth |

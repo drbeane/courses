@@ -53,5 +53,5 @@ Using Claude Code to write the code, build a small command-line or notebook prog
 
 - **Building with the Claude API**: watch the sections "Prompt evaluation," "RAG and agentic search," and "Model Context Protocol."
 - Optional (500): **Model Context Protocol: Advanced topics**.
-- Prepare a short capstone status update for the week 12 checkpoint.
+- Prepare a short final project status update for the week 12 checkpoint.
 - Journal entry.

@@ -22,9 +22,9 @@ Product details change quickly. Notes marked "verify" or "check" flag slides wit
 | 7 | Standing instructions; Skills; Plugins and where skills work | Write and test a skill |
 | 8 | Connectors; Browser agents and scheduled tasks; Prompt injection and defenses | Midterm project: agent workflow |
 | 9 | From chat window to coding assistant; The development environment and Claude Code; Comparing coding assistants | First app from a spec |
-| 10 | Specifications and tests; Reviewing AI-written code; Debugging, changing code, and sub-agents; The capstone project | Spec-driven build with tests |
+| 10 | Specifications and tests; Reviewing AI-written code; Debugging, changing code, and sub-agents; The final project | Spec-driven build with tests |
 | 11 | From chat to API; A first API program and what it costs; Tool use; Workflows and agents | First API program with tool use |
 | 12 | Retrieval-augmented generation; Evaluation; MCP from the inside | Mini RAG app or MCP server with an eval |
 | 13 | Always-on agents; Setting up an always-on agent safely; Always-on risks and when it is worth it | Always-on agent field test |
-| 14 | Choosing tools for an organization; Data governance and local models; Bias, reliability, and accountability; Workforce effects and AI-use policy | Capstone draft and peer review |
-| 15 | Capstone presentations; Course synthesis | Capstone final |
+| 14 | Choosing tools for an organization; Data governance and local models; Bias, reliability, and accountability; Workforce effects and AI-use policy | Final project draft and peer review |
+| 15 | Final project presentations; Course synthesis | Final project submission |

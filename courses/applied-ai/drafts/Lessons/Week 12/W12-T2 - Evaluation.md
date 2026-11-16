@@ -24,7 +24,7 @@ You've already built the habit. In Week 2 you tested prompts on five inputs. In 
 
 Evaluation differs from Week 10's tests in one respect. A test of ordinary code passes or fails, and the result is the same on every run. An AI system's output varies, and "correct" often comes in degrees. So an evaluation produces a **score**, such as 17 of 20, where a test suite produces pass or fail. The question it answers is "how well, and where does it fail?"
 
-Evaluation is what lets you make a claim about a system and back it. "It works well" is an opinion. "It answered 17 of 20 test questions correctly, and the three failures were all questions needing two documents" is evidence, and it tells you what to fix. This is what your capstone needs.
+Evaluation is what lets you make a claim about a system and back it. "It works well" is an opinion. "It answered 17 of 20 test questions correctly, and the three failures were all questions needing two documents" is evidence, and it tells you what to fix. This is what your final project needs.
 
 ## Building a Test Set
 

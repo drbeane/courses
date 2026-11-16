@@ -64,5 +64,5 @@ Build a small application from one of the provided specifications.
 - Claude Academy: **Claude Code in action**.
 - **The AI-native SDLC playbook**.
 - Optional: **Introduction to subagents**.
-- Start thinking about your **capstone project**; the proposal is due next week.
+- Start thinking about your **final project**; the proposal is due next week.
 - Journal entry.

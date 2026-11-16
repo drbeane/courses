@@ -73,4 +73,4 @@ Submit: repository link (instruction file, 5+ commits, README) and 300-word refl
 - Claude Academy: **Claude Code in action**
 - **The AI-native SDLC playbook**
 - Optional: **Introduction to subagents**
-- Start thinking about your **capstone**: proposal due week 10
+- Start thinking about your **final project**: proposal due week 10

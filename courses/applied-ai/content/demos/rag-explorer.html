@@ -154,7 +154,7 @@
     <ol>
       <li>At chunk size 1 and top-k 1, "Can I turn something in after the deadline?" retrieves the extension rule, not the penalty. Matching words is not the same as answering the question.</li>
       <li>Keyword search misses paraphrases like "miss" for "absence." Adding meaning fixes some of them, but it also pulls in loosely related chunks, so read what comes back.</li>
-      <li>The question about the capstone's weight and final presentation needs two chunks. Small top-k fails questions that need facts from several places.</li>
+      <li>The question about the final project's weight and final presentation needs two chunks. Small top-k fails questions that need facts from several places.</li>
       <li>Write the test set first, then tune. A setting that fixes your favorite question may lower the overall hit rate.</li>
     </ol>
     <p class="fine">The documents are a made-up sample course handbook, not real Maryville policy. Search is a simple TF-IDF score computed in your browser.</p>
@@ -165,22 +165,22 @@ const DOCS = [
   {name:"late-work.md", text:"Assignments are due at 11:59 pm Central on the listed date. Late submissions lose 10 percent per day. After three days, late submissions receive a zero. The lowest weekly assignment score is dropped. Extensions require an email to the instructor before the deadline."},
   {name:"ai-use.md", text:"You may use AI tools on every assignment unless the instructions say otherwise. Disclose AI use in a short note at the end of each submission. The note names the tool and what you delegated. You are responsible for every claim in your work, including claims an AI wrote. Do not paste other students' work or private data into an AI tool."},
   {name:"attendance.md", text:"Class meets Tuesday and Thursday from 8:00 to 9:15 am. Two absences are allowed without penalty. Each further absence lowers the participation grade by one step. Lab sessions cannot be made up."},
-  {name:"capstone.md", text:"The capstone is worth 25 percent of the final grade. Proposals are due in week 10. The checkpoint is in week 12, and the draft is due in week 14 for peer review. Final presentations happen in week 15. Graduate students must include an evaluation with measured results."},
+  {name:"final-project.md", text:"The final project is worth 25 percent of the final grade. Proposals are due in week 10. The checkpoint is in week 12, and the draft is due in week 14 for peer review. Final presentations happen in week 15. Graduate students must include an evaluation with measured results."},
   {name:"office-hours.md", text:"Office hours are Monday 1 to 3 pm and Wednesday 10 to 11 am. You can also book a video meeting through the course page. Bring your error messages and the prompt you used when asking for help with an agent."}
 ];
 const TESTS = [
   ["What is the penalty for late work?", ["10 percent per day"]],
   ["Can I turn something in after the deadline?", ["10 percent per day"]],
-  ["When is the capstone proposal due?", ["week 10"]],
+  ["When is the final project proposal due?", ["week 10"]],
   ["How many classes can I miss?", ["Two absences"]],
   ["Do I have to say if I used ChatGPT?", ["Disclose AI use"]],
   ["What happens if my work is four days late?", ["receive a zero"]],
-  ["What must graduate students include in the capstone?", ["evaluation with measured results"]],
+  ["What must graduate students include in the final project?", ["evaluation with measured results"]],
   ["When are office hours?", ["Monday 1 to 3 pm"]],
   ["What should I bring when I need help with an agent?", ["error messages"]],
   ["Who is responsible for claims an AI wrote?", ["You are responsible"]],
   ["What time does class start?", ["8:00"]],
-  ["What is the capstone worth, and when are final presentations?", ["25 percent","week 15"]],
+  ["What is the final project worth, and when are final presentations?", ["25 percent","week 15"]],
   ["Is any assignment score dropped?", ["lowest weekly assignment score is dropped"]]
 ];
 const STOP = new Set("a an the is are was were be to of in on at for and or if my i me you your can do does what when how many any who must which with by it this that from have has as so not into about there their they after".split(" "));

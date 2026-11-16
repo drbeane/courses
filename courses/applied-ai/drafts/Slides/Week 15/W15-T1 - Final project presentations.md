@@ -1,10 +1,10 @@
 ---
 marp: true
-title: "Week 15: Capstone Presentations"
+title: "Week 15: Final Project Presentations"
 paginate: true
 ---
 
-# Capstone Presentations
+# Final Project Presentations
 ### Week 15
 COSC-300/500 Applied AI Essentials
 

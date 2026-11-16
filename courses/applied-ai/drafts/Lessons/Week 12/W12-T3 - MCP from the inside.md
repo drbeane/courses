@@ -2,7 +2,7 @@
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Discernment
 
-> **Instructor note: preparation.** Prepare a minimal MCP server with one tool and one resource, using the current MCP SDK syntax (the outline below is illustrative; check it). Have the MCP Inspector installed and know how to add a local server to Claude Code. Note for Track B students: Claude's custom remote connectors connect from Anthropic's cloud, so a server running on a laptop won't be reachable that way without a tunnel; adding it to Claude Code as a local server is the simpler route. Timing: 15 min MCP, 45 min lab, 15 min capstone checkpoint.
+> **Instructor note: preparation.** Prepare a minimal MCP server with one tool and one resource, using the current MCP SDK syntax (the outline below is illustrative; check it). Have the MCP Inspector installed and know how to add a local server to Claude Code. Note for Track B students: Claude's custom remote connectors connect from Anthropic's cloud, so a server running on a laptop won't be reachable that way without a tunnel; adding it to Claude Code as a local server is the simpler route. Timing: 15 min MCP, 45 min lab, 15 min final project checkpoint.
 
 ## What You Will Be Able to Do
 

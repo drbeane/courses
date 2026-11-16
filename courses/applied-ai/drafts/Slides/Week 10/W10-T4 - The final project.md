@@ -1,16 +1,16 @@
 ---
 marp: true
-title: "Week 10: The Capstone Project"
+title: "Week 10: The Final Project"
 paginate: true
 ---
 
-# The Capstone Project
+# The Final Project
 ### Week 10
 COSC-300/500 Applied AI Essentials
 
 ---
 
-## Capstone: The Big Picture
+## Final Project: The Big Picture
 
 Design, prototype, and evaluate an **AI-supported workflow** for a real or realistic task in your field.
 
@@ -21,7 +21,7 @@ Design, prototype, and evaluate an **AI-supported workflow** for a real or reali
 
 ---
 
-## Capstone Milestones
+## Final Project Milestones
 
 | Week | Milestone |
 |---|---|

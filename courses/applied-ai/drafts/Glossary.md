@@ -8,7 +8,7 @@ A term without an entry here shows only its short definition.
 
 ## Artificial intelligence (AI)
 
-The field of building computer systems that handle tasks we would call intelligent if a person did them, such as understanding language, recognizing images, predicting, and planning.
+A subfield of computer science that is interested in building computer systems that handle tasks we would call intelligent if a person did them, such as understanding language, recognizing images, predicting, and planning.
 
 The boundary keeps moving. Once a task becomes routine for computers, people tend to stop calling it AI: chess programs, spam filters, and route planners have all made that trip. Today the word covers everything from simple learned filters to the large language models behind chat assistants, so on a product label it says little about what the product actually does.
 
@@ -80,9 +80,9 @@ In English a token averages about three-quarters of a word, so 1,000 words is ro
 
 - [Large Language Models explained briefly](https://3blue1brown.substack.com/p/large-language-models-explained-briefly) (3Blue1Brown)
 
-## LLM
+## Large language model (LLM)
 
-Short for large language model: a neural network trained on a huge amount of text to predict the next token.
+A generative AI system: a neural network trained on a huge amount of text to predict and produce language, one token at a time.
 
 "Large" refers to the number of parameters, which runs to billions. An LLM is trained in two stages: pretraining on text, then tuning to follow instructions and act as an assistant. LLMs are the models inside chat assistants such as Claude, ChatGPT, and Gemini, and inside most of the other AI tools in this course.
 

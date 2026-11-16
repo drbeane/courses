@@ -31,7 +31,7 @@ Using the provided specification and acceptance test suite, direct the assistant
 
 **500 extension:** partway through, apply the provided requirement change and document how the assistant handled the existing tests.
 
-**Also due: capstone proposal** (1 page).
+**Also due: final project proposal** (1 page).
 
 **Estimated time:** 4–5 hours.
 

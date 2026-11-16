@@ -1,4 +1,4 @@
-# Week 15: Capstone presentations and synthesis
+# Week 15: Final project presentations and synthesis
 
 **Surfaces and capabilities:** all · **4D:** all four
 
@@ -9,20 +9,20 @@ Students will be able to:
 - Reflect on how their own use of AI changed over the term.
 
 ## Before class
-- Final capstone materials ready; all assigned Claude Academy badges submitted.
+- Final project materials ready; all assigned Claude Academy badges submitted.
 
 ## Topics
-1. Capstone presentations
+1. Final project presentations
 2. Course synthesis
-- Lab and assignment: Capstone final
+- Lab and assignment: Final project submission
 
 ## Class time (two 75-minute meetings)
-- Capstone presentations: 8 minutes plus 3 for questions. Audience completes a short feedback form for each.
+- Final project presentations: 8 minutes plus 3 for questions. Audience completes a short feedback form for each.
 - 50 min: Remaining presentations.
 - 15 min: Synthesis. Revisit the surfaces map and the 4D framework from week 1. What changed in the tools during the term? How do you keep up?
 - 10 min: Course evaluation.
 
-## Assignment: Capstone final
+## Assignment: Final project submission
 Final report (6–8 pages for 300; 10–12 for 500) and presentation. Required sections: the task and users; tool and surface choice with justification; the prototype (repository, skills, agent configuration, or app); evaluation plan and results; risk, privacy, and governance; reflection on what you delegated and what you kept.
 - **500 extension:** quantitative evaluation results and a short literature-grounded discussion.
 - Final AI use journal entry: a 600-word reflection on how your use of AI changed.

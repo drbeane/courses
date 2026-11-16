@@ -67,4 +67,4 @@ Submit: setup (permissions granted and refused, with reasons), multi-day log, 50
 
 - Claude Academy: **Deploying Claude Enterprise with confidence** (selected lessons)
 - One field course: **AI Fluency for** small businesses, nonprofits, educators, or creative work
-- **Bring your capstone draft**
+- **Bring your final project draft**

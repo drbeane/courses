@@ -54,4 +54,4 @@ A program that uses a system prompt, returns JSON, and calls one tool you define
 
 - **Building with the Claude API**: "Prompt evaluation", "RAG and agentic search", "Model Context Protocol" (watch)
 - Optional (500): **Model Context Protocol: Advanced topics**
-- Capstone checkpoint next week
+- Final project checkpoint next week

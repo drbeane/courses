@@ -94,7 +94,7 @@ Fluency is not accuracy, and confidence is not accuracy. A model sounds just as 
 ## Key Terms
 
 - **Token**: a piece of a word; the unit models read, write, and are billed in.
-- **LLM**: large language model.
+- **Large language model (LLM)**: a generative AI system trained on huge amounts of text to predict and produce language.
 - **Knowledge cutoff**: the date after which a model's training data stops.
 - **Sampling**: choosing the next token from a probability distribution rather than always the top choice.
 - **Parameters**: the numbers inside a model that training adjusts; also called weights.

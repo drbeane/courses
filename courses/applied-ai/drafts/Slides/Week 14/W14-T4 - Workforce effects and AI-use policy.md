@@ -85,10 +85,10 @@ Read it as:
 - someone **in a hurry** with a client file open
 - someone **looking for a loophole**
 
-Then try it on two real cases from your capstone organization.
+Then try it on two real cases from your final project organization.
 
 ---
 
-## Your Capstone Includes a Policy
+## Your Final Project Includes a Policy
 
-1-page **draft AI-use policy** for the organization in your capstone.
+1-page **draft AI-use policy** for the organization in your final project.

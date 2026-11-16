@@ -22,7 +22,7 @@ By the end of the course, students will be able to:
 ## Organizing framework
 Two ideas give the course its shape.
 
-**Ordered by autonomy.** The course moves from talking to an AI (chat), to grounding it in sources and files, to letting it act on a computer, to having it build software, to building with it directly, and finally to agents that act unattended. Supervision skills grow with the autonomy granted.
+**Loosely ordered by autonomy.** The course moves from talking to an AI (chat), to grounding it in sources and files, to letting it act on a computer, to having it build software, to building with it directly, and finally to agents that act unattended. Supervision skills grow with the autonomy granted.
 
 **The 4D framework from Anthropic's AI Fluency course** (the [AI Fluency Framework](https://aifluencyframework.org/) by Rick Dakan and Joseph Feller) runs through every week: *Delegation* (what to hand to AI), *Description* (how to communicate the task), *Discernment* (evaluating what comes back), and *Diligence* (responsibility for the result). Each weekly outline names the D it emphasizes. Two threads run through every week rather than being held to the end: **output evaluation** and **responsible use**.
 
@@ -49,22 +49,22 @@ Two ideas give the course its shape.
 | 11 | AI engineering I: models as components | API and agent platforms | Model selection and effort levels | Description | First API program with tool use |
 | 12 | AI engineering II: retrieval, evaluation, and MCP | API and agent platforms | MCP connectors | Discernment | Mini RAG app or MCP server with an eval |
 | 13 | Always-on assistants (Meta Muse) | Always-on agent, Cloud and background agents | Plan mode and autonomy controls, MCP connectors | Diligence | Always-on agent field test |
-| 14 | AI in organizations | Embedded copilot, all | review | Diligence | Capstone draft and peer review |
-| 15 | Capstone presentations and synthesis | all | all | all | Capstone final |
+| 14 | AI in organizations | Embedded copilot, all | review | Diligence | Final project draft and peer review |
+| 15 | Final project presentations and synthesis | all | all | all | Final project submission |
 
 ## Assessment (suggested)
 
 | Component | Weight | Notes |
 |---|---|---|
-| Weekly assignments (12: weeks 1–7 and 9–13) | 40% | Lowest one dropped |
+| Weekly assignments (12: weeks 1–7 and 9–13) | 40% | All twelve count |
 | Midterm project (week 8) | 15% | An agent workflow built on skills and a connector |
-| Capstone project (weeks 10–15) | 25% | Proposal week 10, checkpoint week 12, draft week 14, final week 15 |
-| AI use journal and reflections | 10% | Short weekly entry: what was delegated, what was checked, what went wrong |
+| Final project (weeks 10–15) | 25% | Proposal week 10, checkpoint week 12, draft week 14, final week 15 |
+| AI use journal and reflections | 10% | Short weekly entry: what was delegated, which course tools or skills were used, what was checked, and what the results were |
 | Claude Academy courses | 10% | Completion certificates or badges for the assigned courses (see the Resource Map) |
 
-**COSC-500 expectations.** Graduate students complete a "500 extension" on most assignments (listed in each weekly outline): typically a larger scope, a written critical analysis drawing on published sources, or a short teaching demo for the class. The graduate capstone includes an evaluation with measured results and a short literature-grounded discussion.
+**COSC-500 expectations.** Graduate students complete a "500 extension" on most assignments (listed in each weekly outline): typically a larger scope, a written critical analysis drawing on published sources, or a short teaching demo for the class. The graduate final project includes an evaluation with measured results and a short literature-grounded discussion.
 
-## Capstone
+## Final project
 Students design, prototype, and evaluate an AI-supported workflow for a real or realistic task in their own field: tool and surface choice with justification, a working prototype (agent workflow, skill set, app, or always-on setup), an evaluation plan with results, and a risk and governance section. Milestones: proposal (week 10), checkpoint (week 12), draft and peer review (week 14), presentation and final report (week 15).
 
 ## Coverage check
@@ -77,14 +77,14 @@ Every item on the Evidence master list is placed.
 - Output evaluation gets its own week (3) in addition to the thread.
 - **AI engineering added as two hands-on weeks (11–12).** These replace the single API demo in the old Module 8. Students build with AI assistance, so no prior coding is required, but the focus is understanding how AI products are put together.
 - **Always-on assistants moved near the end (13), using Meta Muse**, after agent security and connectors are understood.
-- AI in organizations (old Module 8) is week 14; the capstone takes week 15.
+- AI in organizations (old Module 8) is week 14; the final project takes week 15.
 
 ## Open decisions 🔴
 1. **API access for weeks 11–12 (on hold).** Claude Pro does not include API usage. Likely approach: a combination of the department's Bedrock account and local open models. Details to be settled later.
 2. **Muse access.** US adults 18+, payment card at signup (third-party reports, Evidence 19). Plan an instructor demo for students who cannot or will not sign up, and require a throwaway setup with no sensitive accounts connected.
 3. **Engineering weeks for non-programmers.** Students can complete them by directing Claude Code, but the weeks may feel steep for some majors. Option: make week 12 a choice between a build track and an analysis track.
 4. **Claude Academy as graded work.** Confirm students can earn completion badges on free Academy accounts and how they submit them.
-5. **Spring calendar.** Week numbers ignore spring break and the final exam slot; capstone presentations could move to the exam period.
+5. **Spring calendar.** Week numbers ignore spring break and the final exam slot; final project presentations could move to the exam period.
 
 ## Files in this folder
 - `00 - Course Outline.md` (this file)

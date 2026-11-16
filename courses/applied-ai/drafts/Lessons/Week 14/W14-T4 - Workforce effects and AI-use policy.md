@@ -2,7 +2,7 @@
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Diligence
 
-> **Instructor note: preparation.** Prepare the capstone peer-review rubric and the presentation feedback form. Form groups of three in advance, mixing majors where possible. Post the presentation order by Friday. Timing: 15 min workforce and policy, 50 min peer review, 10 min logistics.
+> **Instructor note: preparation.** Prepare the final project peer-review rubric and the presentation feedback form. Form groups of three in advance, mixing majors where possible. Post the presentation order by Friday. Timing: 15 min workforce and policy, 50 min peer review, 10 min logistics.
 
 ## What You Will Be Able to Do
 
@@ -89,9 +89,9 @@ Read your draft policy as three people would:
 - **Someone in a hurry**, with a deadline and a client file. Does the policy answer their question in under a minute?
 - **Someone looking for a loophole.** What does the policy fail to cover?
 
-Then try it on two cases from your capstone organization. "Can I paste this customer's complaint into the assistant to draft a reply?" "Can I use it to summarize the board minutes?" If the policy doesn't give a clear answer, revise it.
+Then try it on two cases from your final project organization. "Can I paste this customer's complaint into the assistant to draft a reply?" "Can I use it to summarize the board minutes?" If the policy doesn't give a clear answer, revise it.
 
-Your capstone includes a **one-page draft AI-use policy** for the organization in your project.
+Your final project includes a **one-page draft AI-use policy** for the organization in your project.
 
 ## Key Terms
 

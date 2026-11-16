@@ -13,14 +13,14 @@ Students will be able to:
 ## Before class
 - Claude Academy: **Deploying Claude Enterprise with confidence: the five decisions that shape your rollout** (selected lessons).
 - Claude Academy: one field course by interest: **AI Fluency for small businesses**, **for nonprofits**, **for educators**, or **for creative work**.
-- Bring your capstone draft.
+- Bring your final project draft.
 
 ## Topics
 1. Choosing tools for an organization
 2. Data governance and local models
 3. Bias, reliability, and accountability
 4. Workforce effects and AI-use policy
-- Lab and assignment: Capstone draft and peer review
+- Lab and assignment: Final project draft and peer review
 
 ## Class time (two 75-minute meetings)
 - 20 min: Choosing tools for an organization. The landscape students have used all term; what an IT office weighs; Copilot in Microsoft 365 as the way most graduates will meet AI at work.
@@ -28,11 +28,11 @@ Students will be able to:
 - 10 min: Local models demo: a small open model running on a laptop.
 - 30 min: Bias, reliability, and accountability, using the class failure gallery from week 3.
 - 15 min: Workforce effects and organizational AI policy: what good policies contain.
-- 50 min: Capstone peer review in groups of three, with a structured rubric.
+- 50 min: Final project peer review in groups of three, with a structured rubric.
 - 10 min: Presentation logistics.
 
-## Assignment: Capstone draft and peer review
-Submit a complete capstone draft. Give written peer feedback on two classmates' drafts using the rubric. Include a 1-page draft AI-use policy for the organization in your capstone.
+## Assignment: Final project draft and peer review
+Submit a complete final project draft. Give written peer feedback on two classmates' drafts using the rubric. Include a 1-page draft AI-use policy for the organization in your final project.
 - **500 extension:** ground the risk and governance section in at least three published sources (regulation, standards such as NIST AI RMF, or peer-reviewed research).
 - Estimated time: 5 hours.
 

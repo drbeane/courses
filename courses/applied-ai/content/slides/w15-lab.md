@@ -1,4 +1,4 @@
-# Capstone Final
+# Final Project Submission
 ### Week 15 · Lab and Assignment
 COSC-300/500 Applied AI Essentials
 
@@ -14,7 +14,7 @@ COSC-300/500 Applied AI Essentials
 
 ---
 
-## Capstone Final
+## Final Project Submission
 
 - Report: 6–8 pages (300), 10–12 pages (500)
 - Sections: task and users; tool and surface choice; prototype; evaluation; risk, privacy, governance; reflection

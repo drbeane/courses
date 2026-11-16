@@ -10,9 +10,9 @@ COSC-300/500 Applied AI Essentials
 
 ---
 
-## A Working Definition
+## A Working Definition of AI
 
-**Artificial intelligence**: computer systems that do tasks we would call intelligent if a person did them.
+**Artificial intelligence**: a subfield of computer science that is interested in building computer systems that do tasks we would call intelligent if a person did them.
 
 - Understanding language, recognizing images, predicting, planning
 - The boundary keeps moving: once a task is routine, people stop calling it AI
@@ -37,8 +37,11 @@ COSC-300/500 Applied AI Essentials
   - **Machine learning**: learns from data
     - **Deep learning**: large neural networks
       - **Generative AI**: creates new text, images, audio, code
+        - **Large language models**: generate text from language
 
 A spam filter *classifies*. A chat assistant *creates*.
+
+In this course, "AI tools" means applications built on large language models.
 
 ---
 

@@ -1,4 +1,4 @@
-# Week 15 Lab and Assignment: Capstone Final
+# Week 15 Lab and Assignment: Final Project Submission
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: All four
 
@@ -14,7 +14,7 @@ Write a 600-word reflection:
 - What do you delegate now that you didn't in week 1?
 - What will you never delegate, and why?
 
-## Capstone Final
+## Final Project Submission
 
 **Submit:**
 - A final report: 6–8 pages for COSC-300, 10–12 pages for COSC-500.
