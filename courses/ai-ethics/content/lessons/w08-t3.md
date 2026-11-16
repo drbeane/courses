@@ -71,7 +71,7 @@ The same technology, such as content labeling, can serve different ends. China's
 
 **Reasons for skepticism:**
 
-- U.S.–China strategic competition (export controls, 07-04).
+- U.S.–China strategic competition (export controls, 07-03).
 - Divergent values (rights vs. control vs. innovation).
 - AI is diffuse and dual-use, which makes verification hard. Compute governance has been proposed as a verifiable chokepoint.
 - Political volatility: commitments made at Bletchley were weakened by Paris.
@@ -107,7 +107,7 @@ Pick one issue (deepfake labeling, facial recognition or frontier model safety).
 
 ## Connections
 
-- EU → 08-01 · U.S. → 08-02 · Geopolitics → 07-04 · Global divides → 06-06 · Frontier risk → 07-09
+- EU → 08-01 · U.S. → 08-02 · Geopolitics → 07-03 · Global divides → 06-06 · Frontier risk → 07-08
 
 ## Sources and further reading
 

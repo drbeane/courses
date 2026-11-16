@@ -16,7 +16,7 @@ By the end of this lesson, you will be able to:
 When frontier labs release major models, they increasingly publish **system cards** documenting:
 
 - capabilities,
-- safety evaluations (including dangerous-capability tests, 07-09),
+- safety evaluations (including dangerous-capability tests, 07-08),
 - known limitations, and
 - mitigations.
 

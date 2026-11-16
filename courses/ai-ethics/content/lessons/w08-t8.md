@@ -46,7 +46,7 @@ The case shows:
 | Fairness | Disaggregated error and selection rates (03-02) |
 | Human oversight | Override rates; time spent reviewing; patterns in overrides |
 | Complaints and appeals | Volume, categories, outcomes, time to resolution |
-| Security | Injection attempts; anomalous agent actions (07-06) |
+| Security | Injection attempts; anomalous agent actions (07-05) |
 | Misuse | Policy-violation reports; abuse patterns |
 | Environmental | Energy and compute per task (06-02) |
 | Downstream outcomes | Whether people helped or harmed by decisions fare as expected |
@@ -80,7 +80,7 @@ The case shows:
 
 - Fear of liability discourages reporting.
 - Definitions of "incident" vary.
-- Self-reported accounts may conflict, as in the Hugging Face case (07-07).
+- Self-reported accounts may conflict, as in the Hugging Face case (07-06).
 
 ### Redress
 
@@ -131,7 +131,7 @@ For your A5 system, write:
 
 ## Connections
 
-- Contestability → 03-09 · Hugging Face incident → 07-07 · Sycophancy → 04-08 · Procurement change notification → 08-07
+- Contestability → 03-09 · Hugging Face incident → 07-06 · Sycophancy → 04-08 · Procurement change notification → 08-07
 - **A5 dossier:** monitoring triggers and redress path
 
 ## Sources and further reading

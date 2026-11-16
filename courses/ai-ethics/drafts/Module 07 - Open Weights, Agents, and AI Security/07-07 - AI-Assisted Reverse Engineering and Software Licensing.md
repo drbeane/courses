@@ -1,0 +1,106 @@
+# 07-07 — AI-Assisted Reverse Engineering and Software Licensing
+
+**Module:** 7 — Open Weights, Agents, and AI Security
+**Estimated time:** 35 minutes
+
+**In this lesson:** AI can now read, explain and rewrite software that once took experts months to understand or reproduce. This lesson looks at what that makes possible, a 2026 dispute over rewriting an open-source library, the law around reverse engineering, and where the ethical lines might fall. It discusses the issues at a conceptual and legal level and does not describe how to bypass software protections.
+
+## chardet 7.0
+
+`chardet` is a widely used Python library that detects how text is encoded. It was originally written by Mark Pilgrim as a port of code from Mozilla, and released under the **LGPL**, a "copyleft" license, meaning that modified versions must stay under the same license so the code remains free for everyone.
+
+In early March 2026, the project's longtime maintainer, Dan Blanchard, released chardet 7.0: a ground-up rewrite produced largely with the help of AI. It kept the same name and the same interface, claimed to be up to 41 times faster, and switched to the permissive MIT license, under which anyone may use the code in proprietary products without sharing their changes.
+
+Pilgrim objected publicly. He argued that the maintainers had no right to change the license; that calling it a "complete rewrite" was beside the point, since the people involved had extensive exposure to the original code; and that using an AI code generator does not grant anyone additional rights. He asked that the project return to its original license.
+
+Lawyers who specialize in open-source licensing were divided. Heather Meeker analyzed the dispute as a test of whether AI can produce a "clean-room" reimplementation that escapes copyleft. She agreed with another lawyer, Richard Fontana, that the LGPL claim might have no basis in copyright law if no protected expression carried over into the new code, but noted that much of the controversy was about the community's expectations, not the law. Others argued that AI would effectively end software licensing as a means of control. The discussion on the project's page was locked, similar concerns surfaced among Linux kernel developers, and no legal resolution followed.
+
+## What AI Makes Possible
+
+AI has changed several activities that once required rare expertise.
+
+**Decompilation**, turning compiled software back into readable code, was slow and produced output that was hard to read. Language models now turn that output into readable, commented code. **Reimplementation** of a library's functions, once months of engineering, can take hours or days. Analyzing how a program communicates or how a file format is structured has become much faster. And finding vulnerabilities in code, once the work of skilled researchers, is increasingly done by AI agents, as Lessons 07-06 and 07-09 describe.
+
+## What It Is Good For
+
+Much of this is valuable, and some of it is badly needed.
+
+**Preservation.** Enormous amounts of software, from old games to scientific tools to government systems, belong to companies that no longer exist, run on hardware nobody makes, or come without source code. AI-assisted decompilation can keep that software usable and the history it records accessible.
+
+**Interoperability.** Making new software work with old formats and systems frees people from being locked into one vendor.
+
+**Security research.** Understanding how software works is how researchers find flaws before attackers do.
+
+**Repair and accessibility.** People who own devices increasingly need to understand their software to repair them, and people with disabilities often need tools that interact with programs never designed for them.
+
+**Productivity.** Rewriting slow or outdated libraries, as the chardet rewrite did, can make software faster and safer for everyone who uses it.
+
+## The Law
+
+U.S. law here is complex and, as of 2026, unsettled in important ways.
+
+Copyright protects expression, not ideas or functions. Reimplementing what a program does, without copying its expression, can be lawful. In *Google v. Oracle* in 2021, the Supreme Court held that Google's copying of part of the Java programming interface for a new implementation was fair use.
+
+**Clean-room design** is the traditional way to reimplement software lawfully. One team studies the original and writes a specification; a separate team, never exposed to the original code, builds from the specification. Compaq famously did this with the IBM PC's basic software in 1982. The question AI raises is whether a model that was trained on the original, or shown it, can serve as a clean room.
+
+Reverse engineering for interoperability is often fair use, as a court held in *Sega v. Accolade* in 1992. But software licenses frequently forbid reverse engineering, and courts often enforce those terms. A federal law, Section 1201 of the Digital Millennium Copyright Act, forbids circumventing technical protections on software, with limited exemptions, for security research, interoperability and some repair, renewed every three years.
+
+Copyleft licenses depend on copyright. If an AI rewrite carries no protected expression from the original, copyleft may not reach it. And code written entirely by AI may not be copyrightable at all without human authorship, as Lesson 04-09 described, which raises the question of what license, if any, such code can carry.
+
+*Legal status is as of October 2026 and should be checked before teaching.*
+
+## Where People Disagree
+
+Was the chardet relicensing ethical? Separating the legal question from the ethical one helps. Legally, it may have been permissible. Ethically, Pilgrim chose copyleft so his work would stay free, and the rewrite set that choice aside. On the other side, a maintainer who has cared for a project for years may reasonably ask why its original author should control it forever, a question Meeker raised.
+
+Is circumventing a creator's chosen terms wrong even when it is legal? Many in the open-source community think so. Others think software freedom is better served by permissive licenses anyway.
+
+Using AI to reimplement or unlock paid commercial software deprives its developers of income, raising the same ethical issue as piracy with a lower barrier. But using AI to preserve abandoned software, or to build an accessibility tool, seems very different.
+
+And who benefits? Large companies with AI resources could reimplement open-source projects without contributing back, weakening the shared body of free software that AI itself depends on.
+
+## Check Your Understanding
+
+**1. What is copyleft?**
+
+:::answer Answer
+A kind of license, such as the GPL or LGPL, requiring that modified versions remain under the same license, so the code stays free.
+:::
+
+**2. What is clean-room design, and what question does AI raise about it?**
+
+:::answer Answer
+Reimplementing software through a team that never sees the original code, working from a specification written by another team. AI raises the question of whether a model trained on or shown the original can serve as a clean room.
+:::
+
+**3. Give two valuable uses of AI-assisted reverse engineering.**
+
+:::answer Answer
+Any two of these: preserving abandoned software; interoperability; security research; repair and accessibility; rewriting outdated libraries.
+:::
+
+**4. Why might copyleft not reach an AI rewrite?**
+
+:::answer Answer
+Copyleft depends on copyright. If no protected expression from the original carries over, there may be nothing for copyright, and so copyleft, to apply to.
+:::
+
+## Your Turn
+
+Rank these six uses of AI from most to least ethically acceptable, and justify your top and bottom choices: writing an open-source replacement for an abandoned proprietary file-format reader; rewriting a GPL library under the MIT license so your company can use it in proprietary products; analyzing how a commercial app communicates in order to build an accessibility tool; removing the license check from paid software you did not buy; finding vulnerabilities in commercial software and reporting them to the vendor; and reimplementing a competitor's online service from its public documentation.
+
+## Key Terms
+
+- **Reverse engineering:** Analyzing a system to understand how it works.
+- **Decompilation:** Converting compiled software back into readable, source-like code.
+- **Clean-room design:** Reimplementation by a team not exposed to the original code.
+- **Copyleft:** Licenses requiring modified versions to keep the same license.
+- **Anti-circumvention law:** Law forbidding the bypassing of technical protections on software, in the U.S. Section 1201 of the Digital Millennium Copyright Act.
+
+## Sources
+
+- **Core:** Meeker, H. "The Chardet Controversy: Open Source and the AI Clean Room," heathermeeker.com (2026). — [Free full text](https://heathermeeker.com/2026/04/09/the-chardet-controversy-open-source-and-the-ai-clean-room/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r328). <!-- reading-access -->
+- Phoronix, "LLM-Driven Large Code Rewrites With Relicensing Are The Latest AI Concern," Mar 8, 2026. — [Free full text](https://phoronix.com/news/Chardet-LLM-Rewrite-Relicense); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r327). <!-- reading-access -->
+- LWN.net, coverage in the Weekly Edition, Mar 12, 2026. — [Free full text](https://lwn.net/Articles/1061534/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r329). <!-- reading-access -->
+- TechSpot, "AI can clone open source software in minutes, and that's a problem," 2026. — [Free full text](https://www.techspot.com/news/111904-ai-can-clone-open-source-software-minutes-problem.html); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r330). <!-- reading-access -->
+- *Google LLC v. Oracle America, Inc.*, 593 U.S. 1 (2021); *Sega Enterprises v. Accolade*, 977 F.2d 1510 (9th Cir. 1992). — [Google v. Oracle — Free official text](https://www.supremecourt.gov/opinions/20pdf/18-956_d18f.pdf); [Sega v. Accolade — Free full text](https://law.justia.com/cases/federal/appellate-courts/ca9/92-15655/92-15655.html); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r333). <!-- reading-access -->

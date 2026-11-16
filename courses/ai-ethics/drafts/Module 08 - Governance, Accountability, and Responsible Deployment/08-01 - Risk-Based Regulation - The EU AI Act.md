@@ -55,7 +55,7 @@ From **Aug 2, 2025**, GPAI providers must:
 
 The **GPAI Code of Practice** (July 2025) offers a way to demonstrate compliance. Most major U.S. labs signed it. Meta declined, and xAI signed only the safety chapter ⚠.
 
-**Open-source exemption:** Free and open-source GPAI models are exempt from some documentation duties, but **not** if they have systemic risk (07-04).
+**Open-source exemption:** Free and open-source GPAI models are exempt from some documentation duties, but **not** if they have systemic risk (07-03).
 
 ### Enforcement
 

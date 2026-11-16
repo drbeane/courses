@@ -20,7 +20,7 @@ Recall five cases from this course:
 | Lipps wrongful arrest (02-04) | Angela Lipps | FR vendor, analyst, state intel center, detective, department, prosecutor, judge, jail |
 | *Mobley v. Workday* (03-03) | Rejected applicants (alleged) | Workday, employers, model developers, HR staff |
 | Grok NCII (04-04) | Women and girls depicted | Users, xAI, X, app stores, regulators |
-| Hugging Face breach (07-07) | Hugging Face and possibly its partners | OpenAI evaluators and leadership, the proxy vendor, "the model" |
+| Hugging Face breach (07-06) | Hugging Face and possibly its partners | OpenAI evaluators and leadership, the proxy vendor, "the model" |
 | Robodebt (03-09) | About 470,000 welfare recipients | Ministers, agency officials, system designers, lawyers who advised |
 
 In each, harm emerged from **many people's decisions**, none of whom alone caused it, and some of whom were following rules or instructions. Who is accountable?
@@ -39,7 +39,7 @@ Dennis Thompson (1980) described the "problem of many hands": when many people c
 AI adds:
 
 5. **Opacity:** No one can fully explain the model's behavior.
-6. **Autonomy:** Agents take actions no human specifically chose (07-05, 07-07).
+6. **Autonomy:** Agents take actions no human specifically chose (07-04, 07-06).
 7. **Learning:** Behavior changes after deployment.
 
 Andreas Matthias (2004) called this the **"responsibility gap"**: if no human could foresee or control the machine's action, traditional responsibility conditions (knowledge, control) seem unmet.

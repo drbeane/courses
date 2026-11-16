@@ -294,3 +294,12 @@ Module 6 now follows the planned outline. The rebound material from v1 06-05 is 
 - ⚠ 06-05 is new. Verify: GraphCast's Hurricane Lee forecast (about nine days ahead, about three days earlier than traditional systems, per Google DeepMind); GraphCast beating the leading system on about 90 percent of measures; ECMWF making its AI system operational in February 2025, and confirm the link; Google Flood Hub coverage and the Nearing et al. (2024) paper; Google's data-center cooling energy cut of up to 40 percent; GNoME's 2.2 million structures and 380,000 predicted stable, and add a source for the published critique; the BCG/Google 2023 estimate of 5 to 10 percent.
 - ⚠ 06-03: the benefits listed for host communities (waste heat, company-funded infrastructure) are general and need examples or sources.
 - ⚠ 06-06: the steep fall in prices for using AI needs a source.
+
+
+## Added with the Module 7 rewrite (2026-11-15)
+
+Module 7 now follows the planned outline. v1 07-02 and 07-03 are merged into 07-02; v1 07-04 to 07-09 are now 07-03 to 07-08; 07-09 is new. The v1 rows above refer to the old numbers.
+
+- ⚠ 07-09 is new. Verify: Big Sleep's SQLite finding (late 2024; fixed the same day, before release) and later findings; Google's 2025 system that proposes fixes (CodeMender), and add a source; the DARPA AI Cyber Challenge final results (August 2025), including real previously unknown flaws found and teams releasing their systems as open source; the curl maintainer's complaints about AI-generated reports, and replace the general blog link with the specific post.
+- ⚠ 07-08: Anthropic's tiered access (a restricted version for trusted organizations and a public version with added safeguards) carried over from v1; confirm current arrangements.
+- ⚠ 07-04: the claim that agents matter most to people with least time or familiarity with bureaucracy is general.

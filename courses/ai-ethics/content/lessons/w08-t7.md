@@ -41,7 +41,7 @@ The Fargo Police Department reportedly had no facial recognition policy when it 
 | **Training data** | Sources? Consent and licensing? Known gaps? Personal data? Copyrighted data? |
 | **Fairness** | Disparate-impact testing? Which metrics? Less discriminatory alternatives considered (03-02)? |
 | **Explainability** | Can individual outputs be explained to affected people? Adverse-action support (03-05)? |
-| **Security** | Prompt-injection defenses (07-06)? Data isolation? Penetration testing? Incident history? |
+| **Security** | Prompt-injection defenses (07-05)? Data isolation? Penetration testing? Incident history? |
 | **Privacy** | Data retention? Use of our data for training? Subprocessors? Data location? |
 | **Human oversight** | Designed for human review? Override logging? |
 | **Documentation** | Model card, system card, datasheet (08-06)? |

@@ -2,7 +2,7 @@
 
 This file shows where each topic is taught, so coverage gaps and overlaps are easy to see.
 
-**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 6, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
+**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 7, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
 
 ---
 
@@ -18,19 +18,20 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 | **Labor displacement** | 05-01, 05-02, 05-03, 05-04, 05-09 | 01-01, 06-06 |
 | **AI worker monitoring** | 05-05, 05-06 | 02-02, 05-09 |
 | **Environmental costs of large models** | 06-01 to 06-04, 06-08 | 06-07, 07-02 |
-| **Data privacy with always-on AI assistants** | 02-07 | 02-01, 02-09, 02-10, 07-05 |
-| **Closed-weight vs. open-weight models** | 07-01, 07-02, 07-03, 07-04 | 07-07, 07-09, 06-06 |
+| **Data privacy with always-on AI assistants** | 02-07 | 02-01, 02-09, 02-10, 07-04 |
+| **Closed-weight vs. open-weight models** | 07-01, 07-02, 07-03 | 07-06, 07-08, 06-06 |
 
 ## 2. Topics from prior discussion
 
 | Topic | Source | Lessons |
 |---|---|---|
-| Hugging Face hack (July 2026) | Your Oct 14 meeting note | 01-01, 07-07, 07-09 |
-| AI-driven reverse engineering of paid software | Your Oct 14 meeting note | 07-08 |
+| Hugging Face hack (July 2026) | Your Oct 14 meeting note | 01-01, 07-06, 07-08 |
+| AI-driven reverse engineering of paid software | Your Oct 14 meeting note | 07-07 |
 | Confidently false generated information | COSC-643 redesign report, gap #2 | 04-01, 04-02, 04-10 |
 | Synthetic-media harms and verification | Redesign report | 04-02 to 04-06 |
-| Tool-using agents and delegated authority | Redesign report | 07-05, 07-06, 07-10 |
-| Concrete AI security failures | Redesign report | 07-06, 07-07, 07-08 |
+| Tool-using agents and delegated authority | Redesign report | 07-04, 07-05, 07-10 |
+| Concrete AI security failures | Redesign report | 07-05, 07-06, 07-07 |
+| AI for cyber defense | Planned outline | 07-09 |
 | Contemporary risk-management practice (NIST AI RMF) | Redesign report | 08-04, 08-06, 08-08 |
 | Vulnerable users: companions and minors | Redesign report, Module 6 blueprint | 04-08 |
 | Copyright and creative rights | Retained from COSC-643 M5 | 04-09 |
@@ -46,7 +47,7 @@ These threads run through the course. Each lesson's "Connections" section points
 3. **Law ≠ ethics:** legal status is dated and jurisdiction-specific (01-09, every module's law lesson).
 4. **Who bears the error?** Every system makes mistakes; ethics asks who absorbs them (02-03, 03-02, 04-01).
 5. **Power and concentration:** who builds, who decides, who can refuse (01-06, 05-04, 06-06, 07-02).
-6. **Evidence discipline:** separate measurement, estimate, forecast and speculation (04-02, 05-01, 06-04, 07-09).
+6. **Evidence discipline:** separate measurement, estimate, forecast and speculation (04-02, 05-01, 06-04, 07-08).
 7. **Compared to what?** Judge a system against the human or non-AI baseline it replaces, and count the cost of not deploying. Each of Modules 2–7 has one planned lesson on a system that clearly helps (assistive sensing, algorithms that outperform human judgment, helpful synthetic media, AI assistance for workers, AI for climate and science, AI for defenders), and 08-09 makes the cost of not deploying part of the decision. 03-08 sets out the comparison in detail.
 
 ## 4. Alphabetical topic index
@@ -56,7 +57,7 @@ These threads run through the course. Each lesson's "Connections" section points
 | Accountability, "many hands" | 08-05 |
 | Adverse action notices | 03-05 |
 | Age assurance | 04-08 |
-| Agents, delegated authority | 07-05, 07-10 |
+| Agents, delegated authority | 07-04, 07-10 |
 | Algorithmic management | 05-05, 05-06 |
 | AI assistance and worker productivity | 05-03 |
 | Automation bias | 05-08, 02-04 |
@@ -79,18 +80,19 @@ These threads run through the course. Each lesson's "Connections" section points
 | Decency (Todd May) | 01-05 |
 | Deepfakes | 04-03 to 04-05 |
 | Deontology | 01-04 |
-| Distillation | 07-04 |
-| Dual use | 07-09 |
+| Distillation | 07-03 |
+| Dual use | 07-08, 07-09 |
+| Defensive security and vulnerability finding | 07-09 |
 | Entry-level jobs | 05-02 |
 | EU AI Act | 08-01, 04-04, 04-06 |
 | Explainability | 03-09 |
-| Export controls | 07-04 |
+| Export controls | 07-03 |
 | Facial recognition | 02-03 to 02-06 |
 | Fair lending (ECOA) | 03-05 |
 | Gig work | 05-06 |
 | Hallucination | 04-01, 04-10 |
 | Human versus algorithmic judgment | 03-08 |
-| Hugging Face breach | 07-07 |
+| Hugging Face breach | 07-06 |
 | Impact assessments (DPIA, FRIA) | 02-10, 08-06 |
 | Impossibility theorems (fairness) | 03-02 |
 | Incident reporting | 08-08 |
@@ -105,14 +107,14 @@ These threads run through the course. Each lesson's "Connections" section points
 | Non-consensual intimate imagery | 04-04 |
 | Non-human interests | 06-07 |
 | NYC Local Law 144 | 03-03 |
-| Open-weight models | 07-01 to 07-04 |
+| Open-weight models | 07-01 to 07-03 |
 | Predictive policing | 03-07 |
 | Preemption (state vs. federal) | 08-02 |
 | Procurement | 08-07 |
-| Prompt injection | 07-06 |
+| Prompt injection | 07-05 |
 | Provenance and watermarking | 04-06 |
 | Rawls, veil of ignorance | 01-06 |
-| Reverse engineering | 07-08 |
+| Reverse engineering | 07-07 |
 | Smart glasses | 02-07, 02-08 |
 | Stakeholder mapping | 01-08 |
 | TAKE IT DOWN Act | 04-04 |

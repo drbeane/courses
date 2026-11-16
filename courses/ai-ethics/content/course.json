@@ -137,14 +137,14 @@
       "topic": "Open Weights, Agents, and AI Security",
       "topics": [
         { "title": "What \"Open\" Means: Weights, Code, Data, and Licenses" },
-        { "title": "The Case for Open-Weight Models" },
-        { "title": "The Case for Closed Weights and Staged Access" },
+        { "title": "The Cases for Open and Closed Weights" },
         { "title": "Open vs. Closed in Practice: Policy, Geopolitics, and Distillation", "optional": true },
         { "title": "Agents and Delegated Authority" },
         { "title": "Prompt Injection and Agent Security" },
         { "title": "Case Study: The Hugging Face Breach", "optional": true },
         { "title": "AI-Assisted Reverse Engineering and Software Licensing", "optional": true },
         { "title": "Dual Use, Cyber Capability, and Frontier Risk" },
+        { "title": "AI for Defenders: Finding and Fixing Vulnerabilities" },
         { "title": "Agent Authority Exercise", "lab": true, "assess": [ "A4" ] }
       ]
     },

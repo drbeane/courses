@@ -147,3 +147,16 @@ merge on 15 November 2026. Their history was not carried over, so this log start
   stay in a section the sync removes.
 - `course.json` and the Topics index are updated. New claims to verify are at the end of
   `06 - Verification Checklist.md`.
+
+## 2026-11-15: AI Ethics Module 7 rewritten
+
+- All ten Module 7 lessons are rewritten in the new lesson structure, and Module 7 now follows the
+  planned outline.
+- 07-02 is now "The Cases for Open and Closed Weights," which merges the v1 lessons on each side.
+- The v1 lessons 07-04 to 07-09 move up one place, to 07-03 to 07-08.
+- 07-09 is new: "AI for Defenders: Finding and Fixing Vulnerabilities," on AI finding and fixing
+  software flaws, who gains first, and the cost to open-source maintainers.
+- The 07-10 lab no longer points to an instructor file; its notes stay in a section the sync removes.
+- `course.json`, the Topics index, Resources, the design notes and lesson references in 01-01 and
+  08-01 to 08-08 are updated for the new numbers. New claims to verify are at the end of
+  `06 - Verification Checklist.md`.

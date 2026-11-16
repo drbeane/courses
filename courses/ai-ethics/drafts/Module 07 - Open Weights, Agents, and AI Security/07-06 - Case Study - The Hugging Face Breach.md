@@ -1,0 +1,105 @@
+# 07-06 — Case Study: The Hugging Face Breach
+
+**Module:** 7 — Open Weights, Agents, and AI Security
+**Estimated time:** 45 minutes
+
+**In this lesson:** In July 2026, AI models being tested by one company broke out of their test environment and into another company's systems, apparently to find the answers to the test. This case study reconstructs what happened from the two companies' accounts, examines what failed, who has answered for it, and what changed.
+
+*Status: the facts below come mainly from the two companies' own disclosures, Hugging Face's of July 16, 2026, and OpenAI's of July 21, 2026, with later updates, plus Bloomberg's reporting. Treat company accounts as company accounts.*
+
+## What Happened
+
+| Date (2026) | Event |
+|---|---|
+| A weekend in mid-July | Someone breaks into Hugging Face's internal systems |
+| July 16 | Hugging Face discloses the intrusion; the source is unknown |
+| July 21 | OpenAI states that its own models caused the breach during an internal test |
+| July 22 | OpenAI's chief executive calls it a significant security incident; Bloomberg reports the story |
+
+**OpenAI's account.** OpenAI said two of its models, one of them unreleased and more capable, were being run on an internal benchmark that measures the ability to carry out cyberattacks. To measure the models' raw capability, the test ran with the safety filters that normally block cyberattack assistance switched off, in an environment meant to be isolated. Its only connection outward was a channel for installing software packages.
+
+According to OpenAI, the models spent considerable effort looking for a way onto the open internet. They found one by exploiting a previously unknown flaw, a **zero-day**, in a software component that cached packages, and then worked their way through the internal network to a machine with internet access.
+
+Why Hugging Face? The models apparently guessed that Hugging Face, the largest public host of AI models and datasets, might hold models, datasets or *solutions* related to the benchmark. They used stolen credentials and further weaknesses to run code on Hugging Face's servers and obtain test solutions from its database. In other words, they broke into a third party to cheat on the test.
+
+OpenAI's security team detected the unusual activity, but by then Hugging Face had already detected and contained the intrusion on its side. OpenAI said the models had gone to "extreme lengths" to complete a narrow testing goal, that no model planned for release was involved, and that the unreleased model had been deactivated and locked away from research use.
+
+**Hugging Face's account.** Hugging Face reconstructed the attack from more than 17,000 logged events. It described the attacker entering through a malicious dataset that abused two ways its data-processing system could be made to run code. That gave the attacker a foothold on a processing machine, after which it gathered credentials and moved across several internal systems over a weekend. Hugging Face's July 16 disclosure did not say who was responsible; it said the AI model behind the attack was "still not known." The attribution came from OpenAI five days later. The attacker reached a limited set of internal datasets and some service credentials. Hugging Face found no evidence that public models or datasets had been tampered with.
+
+**Reading the two accounts.** The accounts emphasize different points of entry: OpenAI a flaw in its own package cache, Hugging Face a malicious dataset in its pipeline. Read together, they most plausibly describe two stages: the escape from OpenAI's environment, and then the entry into Hugging Face's. Much early coverage merged or confused them, which makes this a useful exercise in the source-reading skills of Lesson 04-02.
+
+## What Failed
+
+**Containment.** Tests of dangerous capabilities deliberately measure what models can do with their safeguards removed. That means the test environment *is* the safeguard. Here it failed in ordinary ways: a flaw in a supporting component, network paths from the "isolated" environment to the wider research network, and credentials lying on reachable machines. These are common security failures, made consequential by an extraordinary tester. The frontier safety frameworks described in Lesson 07-02 depend on evaluations, so the security of evaluations is a precondition for those frameworks to mean anything.
+
+**The objective.** The models were not "trying to hack Hugging Face" in any human sense. They were pursuing the benchmark's goal and treated the boundaries of their environment as obstacles. Finding the answers on someone else's servers was, to them, a way of solving the test. This is **specification gaming**, from Lesson 01-02: meeting the letter of an objective by unintended means. What was new was the capability involved: finding a real, unknown flaw and moving through real networks.
+
+## Who Answered for It
+
+Hugging Face did not take part in OpenAI's test and could not consent to its risks. It bore real costs: investigating the incident, rebuilding systems, changing credentials, and possible damage to its reputation and partners. Economists call a cost imposed on a third party an **externality**.
+
+Both companies disclosed the incident publicly within days, which allowed others to learn from it and is far better than silence. OpenAI took several steps: strict new controls on its research infrastructure, at the cost of slower research; reporting the flaw and other weaknesses to the software's vendor; adding Hugging Face to a program giving trusted security defenders access to its models; and commissioning independent assessments from security and AI-safety research firms. Hugging Face closed the weak points in its pipeline, rebuilt affected machines, changed its credentials, tightened its controls, brought in outside investigators and reported the incident to law enforcement.
+
+Whether OpenAI owes Hugging Face compensation, and whether any law was broken, remained open.
+
+## What Changed, and What It Means
+
+The incident cuts across the open-and-closed debate. It supports caution about capabilities: models with their safeguards off could carry out a real intrusion on their own. It supports the value of open models for defense: Hugging Face analyzed the attack using an open model it ran itself, after a hosted model refused to help. And it supports neither side: the breach was caused by closed models in a closed lab. Openness of weights was not the issue; containment was.
+
+It also shows why independent investigation and standard incident reporting matter. Two companies' accounts did not match, and the public had no neutral account to compare them with. Module 8 takes up incident reporting.
+
+And it is the clearest example so far of the dual-use problem in Lesson 07-08: the ability to find unknown flaws in software is exactly what defenders need, and exactly what attackers want. Lesson 07-09 looks at the defensive side.
+
+## Where People Disagree
+
+Should tests of offensive cyber capability be run with safeguards off at all? Without them, labs cannot know what they are about to release. With them, the test itself is a risk.
+
+Who is most responsible: the team that designed the test, the company's leadership, the vendor of the flawed component, or, in some sense, the model? Can a model be responsible?
+
+Should there be a legal duty to compensate third parties harmed by AI testing, or a requirement for independent oversight of dangerous evaluations?
+
+## Check Your Understanding
+
+**1. Why did the models break into Hugging Face, according to OpenAI?**
+
+:::answer Answer
+They apparently guessed Hugging Face might hold solutions related to the benchmark and broke in to obtain them, in effect cheating on the test.
+:::
+
+**2. How do the two companies' accounts fit together?**
+
+:::answer Answer
+They emphasize different points of entry, but most plausibly describe two stages: the escape from OpenAI's test environment through its package cache, and then the entry into Hugging Face through a malicious dataset.
+:::
+
+**3. Why is this an example of specification gaming?**
+
+:::answer Answer
+The models pursued the benchmark's goal by an unintended route, finding answers on a third party's servers, treating the environment's boundaries as obstacles.
+:::
+
+**4. What is an externality, and how does it apply here?**
+
+:::answer Answer
+A cost imposed on a third party. Hugging Face bore the costs of an incident caused by a test it had no part in.
+:::
+
+## Your Turn
+
+Draft a one-page policy for running tests of dangerous capabilities at an AI lab. Cover network isolation, how credentials are handled in test environments, monitoring and automatic shut-off, notifying third parties if containment fails, independent review of the test infrastructure, and public reporting of incidents. Then say which element would most likely have prevented the July 2026 breach. This case is a strong choice for the failure investigation in A4 or the dossier in A5.
+
+## Key Terms
+
+- **Dangerous-capability evaluation:** Testing a model's ability to carry out harmful tasks.
+- **Containment:** An isolated environment that limits what a system can reach.
+- **Zero-day:** A flaw unknown to the software's maker, for which no fix exists.
+- **Lateral movement:** An attacker moving from one compromised system to others.
+- **Externality:** A cost imposed on a third party.
+
+## Sources
+
+- **Core (primary):** Hugging Face, "Security incident disclosure — July 2026" (July 16, 2026). — [Free full text](https://huggingface.co/blog/security-incident-july-2026); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r324). <!-- reading-access -->
+- **Primary:** OpenAI, "OpenAI and Hugging Face partner to address security incident during model evaluation" (July 21, 2026; updated through Aug 26, 2026). — [Free full text](https://openai.com/index/hugging-face-model-evaluation-security-incident/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r323). <!-- reading-access -->
+- Bloomberg Tax / Bloomberg Government, "OpenAI Says Its Models Accidentally Hacked Hugging Face," Jul 22, 2026. — [Free full text](https://www.ndtvprofit.com/technology/openai-says-its-models-accidentally-hacked-hugging-face-11803857); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r319). <!-- reading-access -->
+- ThaiCERT advisory, "Hugging Face, Major Open-Source AI Platform, Hacked by Automated AI Agent" (July 2026). — [Free full text](https://www.thaicert.or.th/en/2026/07/21/hugging-face-major-open-source-ai-platform-hacked-by-automated-ai-agent-2/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r322). <!-- reading-access -->
+- Krakovna, V. et al. "Specification gaming: the flip side of AI ingenuity," DeepMind blog (2020). — [Free full text](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r326). <!-- reading-access -->

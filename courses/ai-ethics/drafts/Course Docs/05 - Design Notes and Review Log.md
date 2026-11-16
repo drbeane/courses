@@ -41,7 +41,7 @@
 
 - **Todd May characterization (01-05):** Check the summary of *A Decent Life* against the text. The list of "decent person" traits is a paraphrase.
 - **Secondary sources:** Several 2026 items rely on vendor blogs or aggregators (HAQQ, Elephas, CSA note). Replace them with primary sources where possible.
-- ~~**Hugging Face's own post-mortem**~~ Done Oct 20: added to 07-07, 07-02 and the research notes.
+- ~~**Hugging Face's own post-mortem**~~ Done Oct 20: added to 07-06, 07-02 and the research notes.
 - **Reading load:** Each lesson lists 4–7 readings. Mark one "Core" and the rest "Optional" before building Canvas pages.
 - ~~**Instructor materials**~~ Done Oct 20: `_Instructor/` now holds the verification key, the Kindred companion record, a sample bias audit, the debate guide and a simulated inbox.
 - **Assessment balance:** The A1 debate weeks (2, 3, 5, 7) cluster with the A2 (Week 3) and A3 (Week 6) deadlines. Check the workload in a pilot.
