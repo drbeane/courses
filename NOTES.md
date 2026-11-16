@@ -160,3 +160,11 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - `course.json`, the Topics index, Resources, the design notes and lesson references in 01-01 and
   08-01 to 08-08 are updated for the new numbers. New claims to verify are at the end of
   `06 - Verification Checklist.md`.
+
+## 2026-11-15: AI Ethics Module 8 rewritten; course rewrite complete
+
+- All ten Module 8 lessons are rewritten in the new lesson structure. No lessons were renumbered.
+- 08-09 now asks for the cost of not deploying alongside the risks of deploying, drawing on the
+  "system that helps" lessons in Modules 2 to 7. 08-10's synthesis is updated to match.
+- All 76 lessons now follow the new lesson structure, and the outline and Topics notes say so.
+- New claims to verify are at the end of `06 - Verification Checklist.md`, grouped by module.

@@ -3,140 +3,117 @@
 **Module:** 8 — Governance, Accountability, and Responsible Deployment
 **Estimated time:** 40 minutes
 
-## Learning objectives
+**In this lesson:** Much of what organizations actually do about AI risk is shaped not by law but by voluntary frameworks and standards. This lesson explains the two most important, the U.S. NIST AI Risk Management Framework and the international standard ISO/IEC 42001, how they work in practice, and what they cannot do.
 
-By the end of this lesson, you will be able to:
+## Governance for a Small Team
 
-1. Describe the NIST AI Risk Management Framework's four functions and the characteristics of trustworthy AI.
-2. Explain how ISO/IEC 42001 creates an auditable AI management system.
-3. Apply the RMF to a deployment and identify the limits of voluntary frameworks.
+Imagine a health-technology startup with 40 employees. It has built a tool that uses a language model to draft the summaries clinicians give patients after a visit, saving doctors time they can spend with patients. No AI law requires the startup to do anything in particular. But its largest hospital customer sends a purchasing questionnaire that asks: "Do you follow the NIST AI RMF?" "Are you ISO/IEC 42001 certified?" "Describe your process for identifying and reducing the risk of inaccurate outputs."
 
-## Opening case: governance for a small team
+This is how voluntary frameworks often work. They become requirements in practice through purchasing, insurance, the risk of lawsuits and customers' expectations.
 
-A 40-person health-tech startup (fictional) is deploying an LLM-based tool that drafts after-visit summaries for clinicians. There's no AI law requiring it to do anything specific. Its largest hospital customer, however, asks in its procurement questionnaire:
+## The NIST AI Risk Management Framework
 
-- "Do you follow the NIST AI RMF?"
-- "Are you ISO/IEC 42001 certified?"
-- "Describe your process for identifying and mitigating risks of inaccurate outputs."
+The U.S. National Institute of Standards and Technology published its **AI Risk Management Framework** in January 2023, after public consultation. It is voluntary, applies to any sector and any use, and describes seven characteristics of trustworthy AI: valid and reliable; safe; secure and resilient; accountable and transparent; explainable and interpretable; privacy-enhanced; and fair, with harmful bias managed.
 
-Voluntary frameworks often become **de facto requirements** through procurement, insurance, litigation risk and customer demand.
-
-## Core ideas
-
-### The NIST AI Risk Management Framework (AI RMF 1.0, January 2023)
-
-The RMF was developed by the U.S. National Institute of Standards and Technology through public consultation. It is **voluntary**, **non-sector-specific** and **use-case agnostic**.
-
-**Characteristics of trustworthy AI:**
-
-1. valid and reliable,
-2. safe,
-3. secure and resilient,
-4. accountable and transparent,
-5. explainable and interpretable,
-6. privacy-enhanced, and
-7. fair, with harmful bias managed.
-
-**Four core functions:**
+Its core is four functions.
 
 | Function | Purpose | Example activities |
 |---|---|---|
-| **GOVERN** | Cultivate a risk-management culture; policies, roles and accountability | AI policy; assigned risk owners; training; incident-response plans; third-party risk policies |
-| **MAP** | Establish context; identify risks | Intended use and users; stakeholders (01-08); foreseeable misuse; legal requirements; system categorization |
-| **MEASURE** | Analyze, assess and track risks | Testing; bias evaluation (03-02); red-teaming; monitoring metrics; documenting uncertainty |
-| **MANAGE** | Prioritize and act on risks | Mitigations; go/no-go decisions; residual-risk acceptance; post-deployment monitoring; decommissioning |
+| **Govern** | Build a culture of managing risk, with policies, roles and accountability | An AI policy; named owners for each risk; training; plans for responding to incidents; rules for risks from suppliers |
+| **Map** | Understand the context and identify risks | Intended use and users; stakeholders (Lesson 01-08); foreseeable misuse; legal requirements |
+| **Measure** | Analyze and track risks | Testing; evaluating bias (Lesson 03-02); deliberate attempts to break the system; monitoring; documenting uncertainty |
+| **Manage** | Decide what to do about risks, and do it | Safeguards; go or no-go decisions; accepting remaining risk; monitoring after release; retiring the system |
 
-GOVERN is cross-cutting. MAP → MEASURE → MANAGE is iterative.
+Govern runs throughout. Map, Measure and Manage repeat as a cycle.
 
-**Companion resources:**
+NIST also publishes a playbook of suggested actions and "profiles" for particular contexts, including a 2024 profile for generative AI that identifies twelve risks, among them fabrication, threats to information integrity, privacy, harmful bias, intellectual property and dangerous content. In 2025 the administration directed NIST to revise the framework to remove references to misinformation, diversity and climate; the status of that revision should be checked.
 
-- the **AI RMF Playbook** (suggested actions),
-- **profiles** for specific contexts, including **NIST AI 600-1, the Generative AI Profile** (July 2024), which identifies 12 GenAI risks such as confabulation, information integrity, data privacy, harmful bias, IP and dangerous content, and
-- crosswalks to other standards.
+## ISO/IEC 42001
 
-*Note: In 2025, the administration directed NIST to revise the RMF to remove references to misinformation, DEI and climate ⚠ (check revision status).*
+**ISO/IEC 42001**, published in 2023, is an international standard that an organization can be certified against. Like the well-known standard for information security, it specifies requirements for an organization's **AI management system**: the scope of its AI use; leadership commitment and an AI policy; processes for assessing and treating risk; impact assessments for AI systems; a set of controls covering data, the life cycle of systems, suppliers and transparency; monitoring, internal audit and review by management; and continual improvement.
 
-### ISO/IEC 42001:2023: AI management system (AIMS)
+Certification by an accredited third party gives outside assurance that the system exists and works. Several major cloud and AI providers obtained certification in 2024 and 2025. Related standards cover AI risk management and AI impact assessment.
 
-ISO/IEC 42001 is an **international, certifiable** standard. Like ISO 27001 for information security, it specifies requirements for an organization's **management system** for AI:
-
-- context and scope of the organization's AI use,
-- leadership commitment and AI policy,
-- risk assessment and treatment processes,
-- AI system impact assessment,
-- controls (Annex A), covering data, lifecycle, third parties and transparency,
-- monitoring, internal audit and management review, and
-- continual improvement.
-
-**Certification** by accredited third parties provides external assurance. Major cloud and AI providers obtained 42001 certification in 2024–2025, including AWS, Microsoft and Anthropic ⚠ (verify the list).
-
-**Related standards:**
-
-- ISO/IEC 23894 (AI risk-management guidance),
-- ISO/IEC 42005 (AI system impact assessment, 2025), and
-- IEEE 7000-series standards (ethically aligned design).
-
-### RMF vs. 42001 vs. law
+## How They Compare With Law
 
 | | NIST AI RMF | ISO/IEC 42001 | EU AI Act |
 |---|---|---|---|
-| Binding? | Voluntary | Voluntary (certifiable) | Legally binding |
-| Focus | Risk-management process | Organizational management system | Product and system requirements; prohibitions |
-| Assurance | Self-attestation | Third-party certification | Conformity assessment; enforcement |
-| Scope | Any AI | Any organization | EU market |
+| Binding? | Voluntary | Voluntary, but certifiable | Legally binding |
+| Focus | A process for managing risk | An organization's management system | Requirements for products and systems; prohibitions |
+| Assurance | The organization's own statement | Certification by a third party | Conformity assessment and enforcement |
+| Scope | Any AI | Any organization | The EU market |
 
-EU harmonized standards under development by CEN-CENELEC JTC 21 will give presumption of conformity with the AI Act, drawing on ISO work ⚠.
+European standards bodies are writing technical standards that, once published, will let organizations show they comply with the AI Act, drawing heavily on this international work.
 
-### Limits of voluntary frameworks
+## Why Frameworks Persuade
 
-- **No enforcement:** Organizations can claim alignment selectively.
-- **Process, not outcomes:** You can follow every step and still deploy a harmful system. Frameworks don't say what risk is *acceptable*.
-- **Capture:** Standards bodies are dominated by industry participants.
-- **Cost:** Certification can be expensive for small organizations.
-- **Political revision:** Content can change with administrations.
+Frameworks are valuable even though nobody is required to use them. They structure diligence, turning "be responsible" into a set of concrete questions and activities. They create a record of decisions, which protects organizations and helps auditors. They give builders, buyers and auditors a shared vocabulary. And they institutionalize good habits, the organizational character Lesson 01-05 described, so that care does not depend on any one person.
 
-They remain valuable for **structuring diligence**, **documenting decisions** and **creating shared vocabulary** between builders, buyers and auditors.
+## Where They Break
 
-## Applying the frameworks
+They also have real limits.
 
-- **Virtue (institutional):** Frameworks institutionalize habits of care and humility.
-- **Accountability:** GOVERN assigns responsibility (08-05).
-- **Law ≠ ethics:** Following a framework is evidence of diligence, not proof of ethical adequacy.
+No one enforces them, so organizations can claim to follow them selectively.
 
-## Discussion questions
+They govern process, not outcomes. An organization can follow every step and still deploy a harmful system, because the frameworks do not say how much risk is acceptable.
 
-1. If following NIST AI RMF doesn't guarantee safe outcomes, what is its value?
-2. Should ISO/IEC 42001 certification be required for vendors selling AI to public agencies?
-3. How should a 10-person startup implement the RMF without drowning in process?
-4. Is it a problem that politically driven revisions can change "voluntary" technical frameworks?
+Industry dominates the bodies that write them.
 
-## Activity: RMF lite (20 minutes)
+Certification costs money that small organizations may not have.
 
-For the opening case (an LLM drafting after-visit summaries), write one or two concrete actions under each function:
+And voluntary frameworks can be revised for political reasons, as the 2025 directive to NIST shows.
 
-- **GOVERN:** Who owns the risk? What policy?
-- **MAP:** Intended use, users, affected patients, foreseeable misuse, applicable law (HIPAA; FDA clinical-decision-support guidance ⚠).
-- **MEASURE:** How will you test for confabulation (04-01)? For bias? What metrics?
-- **MANAGE:** Safeguards (clinician review required?), monitoring, incident process, conditions for pausing.
+Following a framework is evidence of diligence. It is not proof that a system is ethical.
 
-Then use your RMF lite as a template for your A5 dossier.
+## Where People Disagree
 
-## Key terms
+If following the NIST framework does not guarantee safe outcomes, what is it worth?
 
-- **AI RMF:** NIST's AI Risk Management Framework.
-- **GOVERN / MAP / MEASURE / MANAGE:** The RMF's four functions.
-- **AIMS:** AI management system (ISO/IEC 42001).
-- **Profile:** A tailored RMF application for a context.
-- **Harmonized standard:** An EU standard conferring presumption of conformity.
+Should ISO/IEC 42001 certification be required of vendors selling AI to public agencies? It would raise standards. It would also shut out small vendors who cannot afford it.
 
-## Connections
+And is it a problem that a "voluntary technical" framework can be changed by each administration?
 
-- Documentation → 08-06 · Procurement → 08-07 · Monitoring → 08-08
-- **A5 dossier:** The RMF functions map to dossier sections.
+## Check Your Understanding
 
-## Sources and further reading
+**1. What are the four functions of the NIST AI Risk Management Framework?**
 
-- NIST, *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*, NIST AI 100-1 (Jan 2023), and the AI RMF Playbook. — [Free full text](https://www.nist.gov/itl/ai-risk-management-framework); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r359). <!-- reading-access -->
+:::answer Answer
+Govern, Map, Measure and Manage.
+:::
+
+**2. How does ISO/IEC 42001 differ from the NIST framework?**
+
+:::answer Answer
+It is an international standard specifying an organization's AI management system, and organizations can be certified against it by third parties. The NIST framework is a voluntary process with no certification.
+:::
+
+**3. How do voluntary frameworks become requirements in practice?**
+
+:::answer Answer
+Through purchasing questionnaires, insurance, the risk of lawsuits and customers' expectations.
+:::
+
+**4. What is the main limitation of process frameworks?**
+
+:::answer Answer
+They govern process, not outcomes, and do not say what level of risk is acceptable, so an organization can follow every step and still deploy a harmful system.
+:::
+
+## Your Turn
+
+For the startup's after-visit summary tool, write one or two concrete actions under each function. Under Govern: who owns the risk, and what policy applies? Under Map: what are the intended uses, who are the users and the affected patients, what misuse is foreseeable, and which laws apply? Under Measure: how will you test for fabricated content and for bias, and with what measures? Under Manage: what safeguards, such as review by a clinician, what monitoring, and when would you pause the tool? Then use this as a template for your A5 dossier.
+
+## Key Terms
+
+- **AI Risk Management Framework:** NIST's voluntary framework for managing AI risk.
+- **Govern, Map, Measure, Manage:** The framework's four functions.
+- **ISO/IEC 42001:** The certifiable international standard for an AI management system.
+- **AI management system:** The policies, processes and controls an organization uses to manage its AI.
+- **Profile:** A version of the NIST framework tailored to a particular context.
+
+## Sources
+
+- **Core:** NIST, *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*, NIST AI 100-1 (Jan 2023), and the AI RMF Playbook. — [Free full text](https://www.nist.gov/itl/ai-risk-management-framework); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r359). <!-- reading-access -->
 - NIST, *AI 600-1: Generative Artificial Intelligence Profile* (July 2024). — [Free full text](https://doi.org/10.6028/NIST.AI.600-1); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r360). <!-- reading-access -->
 - ISO/IEC 42001:2023, *Information technology — Artificial intelligence — Management system*. — [Paid / library](https://www.iso.org/standard/42001); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r361). <!-- reading-access -->
 - ISO/IEC 42005:2025, *AI system impact assessment*. — [Paid / library](https://www.iso.org/standard/42005); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r362). <!-- reading-access -->

@@ -303,3 +303,11 @@ Module 7 now follows the planned outline. v1 07-02 and 07-03 are merged into 07-
 - ⚠ 07-09 is new. Verify: Big Sleep's SQLite finding (late 2024; fixed the same day, before release) and later findings; Google's 2025 system that proposes fixes (CodeMender), and add a source; the DARPA AI Cyber Challenge final results (August 2025), including real previously unknown flaws found and teams releasing their systems as open source; the curl maintainer's complaints about AI-generated reports, and replace the general blog link with the specific post.
 - ⚠ 07-08: Anthropic's tiered access (a restricted version for trusted organizations and a public version with added safeguards) carried over from v1; confirm current arrangements.
 - ⚠ 07-04: the claim that agents matter most to people with least time or familiarity with bureaucracy is general.
+
+
+## Added with the Module 8 rewrite (2026-11-15)
+
+Module 8 has no renumbering. Its lessons were rewritten from the v1 text and sources, so the v1 rows above still apply. New in the rewrite:
+
+- ⚠ 08-09 now names the cost of not deploying, drawing on the "system that helps" lessons in Modules 2 to 7; no new factual claims.
+- ⚠ 08-08: the Dutch childcare-benefits scandal is described briefly; add a source.

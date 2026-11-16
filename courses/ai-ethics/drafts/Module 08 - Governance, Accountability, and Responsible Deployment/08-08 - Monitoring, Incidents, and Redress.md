@@ -3,141 +3,119 @@
 **Module:** 8 — Governance, Accountability, and Responsible Deployment
 **Estimated time:** 35 minutes
 
-## Learning objectives
+**In this lesson:** An AI system's behavior can change after it is launched, and testing before launch cannot catch everything. This lesson covers how to watch a system once it is running, how incidents are reported and learned from, and how people harmed by a system can get it put right.
 
-By the end of this lesson, you will be able to:
+## The Update That Changed Everything
 
-1. Design post-deployment monitoring for an AI system, including drift and disparate performance.
-2. Explain AI incident reporting regimes and databases.
-3. Design accessible redress mechanisms for people harmed by AI.
+In April 2025, OpenAI released an update to the model behind ChatGPT. Within days, users noticed that it had become excessively agreeable: flattering them, endorsing bad ideas and validating harmful decisions. OpenAI rolled the update back and published two explanations of what had gone wrong. The change had given too much weight to short-term signals of user approval. The company's tests before release had not caught the problem. And some expert testers had said the model "felt off," but their impressions were overridden by positive numbers.
 
-## Opening case: the update that changed everything
+OpenAI said it would treat problems with a model's behavior as reasons to block a launch and would add tests for this kind of flattery.
 
-In April 2025, OpenAI rolled out an update to GPT-4o in ChatGPT. Within days, users reported the model had become excessively **sycophantic**: flattering, agreeing with bad ideas, and validating harmful decisions. OpenAI rolled back the update and published two post-mortems explaining that:
+The case shows three things. AI systems change after deployment, through updates, shifts in data and new kinds of use. Testing before deployment can miss problems that appear in the real world. And watching systems after launch, responding to incidents and explaining failures openly all matter.
 
-- the change had overweighted short-term user feedback signals,
-- offline evaluations and A/B tests hadn't caught the problem, and
-- some expert testers had flagged that the model "felt off," but this qualitative signal was overridden by positive metrics.
+## Why Monitoring Is Necessary
 
-OpenAI committed to treating behavior issues as launch-blocking and to adding sycophancy evaluations.
+A system that worked at launch can stop working for several reasons. The people or data it sees can change, which is called **data drift**. The relationship between what it sees and what happens can change, called **concept drift**. Vendors update models, sometimes without telling customers (Lesson 08-07). Deployment can change the world the system measures, the feedback loops of Lesson 03-07. People find uses and abuses nobody anticipated, as in the Grok case. And performance can degrade faster for some groups than for others.
 
-The case shows:
+## What to Watch
 
-- AI systems change after deployment, through updates, drift and new usage,
-- pre-deployment testing can miss real-world problems, and
-- monitoring, incident response and transparent post-mortems matter.
-
-## Core ideas
-
-### Why monitoring is necessary
-
-- **Data drift:** Input distributions change (new populations, new behaviors).
-- **Concept drift:** The relationship between inputs and outcomes changes.
-- **Model updates:** Vendors update models, sometimes silently (08-07).
-- **Feedback loops:** Deployment changes the world the system measures (03-07).
-- **Emergent misuse:** People find unanticipated uses and abuses (Grok, 04-04).
-- **Disparate degradation:** Performance may fall faster for some groups.
-
-### What to monitor
-
-| Dimension | Example metrics |
+| Dimension | Example measures |
 |---|---|
-| Performance | Accuracy, error rates, calibration over time |
-| Fairness | Disaggregated error and selection rates (03-02) |
-| Human oversight | Override rates; time spent reviewing; patterns in overrides |
-| Complaints and appeals | Volume, categories, outcomes, time to resolution |
-| Security | Injection attempts; anomalous agent actions (07-05) |
-| Misuse | Policy-violation reports; abuse patterns |
-| Environmental | Energy and compute per task (06-02) |
-| Downstream outcomes | Whether people helped or harmed by decisions fare as expected |
+| Performance | Accuracy, error rates and calibration over time |
+| Fairness | Error and selection rates by group (Lesson 03-02) |
+| Human oversight | How often people override the system; how long they spend reviewing; patterns in overrides |
+| Complaints and appeals | Number, kinds, outcomes and time to resolve |
+| Security | Attempts at prompt injection; unusual agent actions (Lesson 07-05) |
+| Misuse | Reports of policy violations; patterns of abuse |
+| Environment | Energy and computing per task (Lesson 06-02) |
+| Downstream outcomes | Whether people affected by decisions fare as expected |
 
-**Monitoring triggers** (required in A5): Predefined thresholds at which the system is paused, reviewed or rolled back. For example: "If the selection-rate impact ratio for any group falls below 0.8 for two consecutive months, suspend auto-advancement and review."
+The most important tool is a **monitoring trigger**: a threshold, set in advance, at which the system is paused, reviewed or rolled back. For example: "If the impact ratio for any group falls below 0.8 for two months in a row, stop automatically advancing applicants and review the system." Your A5 dossier must include triggers like this.
 
-### Incident reporting
+## Reporting Incidents
 
-**Mandatory regimes (as of October 2026 ⚠):**
+As of October 2026, some incident reporting is required by law. Under the EU AI Act, providers of high-risk systems must report serious incidents to national authorities, and providers of the most capable general-purpose models must report serious incidents to the EU's AI Office. California's SB 53 requires large developers of frontier models to report "critical safety incidents" to the state. And some sectors have their own rules, such as reporting adverse events from medical devices and disclosing major cybersecurity incidents.
 
-- **EU AI Act:**
-  - providers of high-risk systems must report **serious incidents** to market-surveillance authorities (Art. 73), and
-  - GPAI providers with systemic risk must report serious incidents to the AI Office.
-- **California SB 53:** Large frontier developers must report "critical safety incidents" to the Office of Emergency Services.
-- **Sectoral:** FDA adverse-event reporting for medical devices; financial regulators; cybersecurity incident rules (e.g., SEC 8-K material cybersecurity incidents; CIRCIA, pending).
+Voluntary databases collect incidents too, including the AI Incident Database, the OECD's AI Incidents Monitor, the AIAAIC Repository and MITRE's catalog of attacks on AI systems.
 
-**Voluntary databases:**
+Incident reporting matters for three reasons. Aviation became dramatically safer partly through a system, run by NASA, in which pilots report errors and near misses without fear of punishment. Individual incidents reveal patterns when they are collected together. And public reporting creates pressure to fix problems.
 
-- AI Incident Database (incidentdatabase.ai),
-- OECD.AI AI Incidents Monitor,
-- AIAAIC Repository, and
-- MITRE ATLAS (adversarial ML case studies).
+There are tensions. Fear of liability discourages reporting. Definitions of an "incident" vary. And companies' own accounts may conflict, as they did in the Hugging Face case (Lesson 07-06).
 
-**Why incident reporting matters:**
+## Redress
 
-- **Learning:** Aviation safety improved dramatically through no-blame incident reporting (NASA's Aviation Safety Reporting System).
-- **Pattern detection:** Individual incidents reveal systemic risks when aggregated.
-- **Accountability:** Public reporting creates pressure to fix problems.
+**Redress** means that people harmed by a system can get the harm acknowledged, corrected and compensated, and its recurrence prevented. It builds on the contestability of Lesson 03-09. A redress process can be judged on seven things.
 
-**Tensions:**
-
-- Fear of liability discourages reporting.
-- Definitions of "incident" vary.
-- Self-reported accounts may conflict, as in the Hugging Face case (07-06).
-
-### Redress
-
-Redress means harmed people can obtain **acknowledgment, correction, compensation and prevention**. Building on contestability (03-09):
-
-| Element | Questions |
+| Element | The question |
 |---|---|
-| **Accessibility** | Can affected people find and use it? Is it free? Available in their language? Accessible for disabilities? |
-| **Speed** | Is there a timeline? Interim relief (e.g., pay during a gig-work deactivation appeal)? |
-| **Authority** | Can the reviewer actually change outcomes? |
-| **Correction** | Are data and models corrected, not just the individual case? |
-| **Compensation** | Is there a path to compensation for harm? |
-| **Learning** | Do complaints feed back into monitoring and design? |
-| **Independence** | Is there escalation beyond the organization (ombudsperson, regulator, court)? |
+| Accessibility | Can affected people find it and use it? Is it free, in their language and accessible to people with disabilities? |
+| Speed | Is there a timeline? Is there interim relief, such as pay while a gig worker's deactivation is appealed? |
+| Authority | Can the reviewer actually change the outcome? |
+| Correction | Are the data and the system fixed, not just the individual case? |
+| Compensation | Is there a way to be compensated for harm? |
+| Learning | Do complaints feed back into monitoring and design? |
+| Independence | Can people escalate beyond the organization, to an ombudsperson, a regulator or a court? |
 
-Robodebt (03-09) and the Dutch childcare benefits scandal show the consequences of systems where the burden falls on victims and redress is inaccessible.
+Robodebt in Australia and a similar scandal in the Netherlands, in which an algorithm wrongly flagged thousands of families for childcare-benefit fraud, show what happens when the burden falls on the people harmed and redress is out of reach.
 
-## Applying the frameworks
+## Why It Persuades
 
-- **Corrective justice:** Redress is how wrongs are made right.
-- **Virtue:** Institutional humility. Expect failure and plan for it.
-- **Consequences:** Monitoring reduces the duration and scale of harm.
-- **Explicability:** Post-mortems explain what went wrong.
+Monitoring, reporting and redress rest on a simple point: every system will fail sometimes, so the question is how quickly failures are found, how widely the lessons are shared, and whether the people harmed are made whole. This is the institutional humility of Lesson 01-05, expecting failure and planning for it, and the corrective justice of Lesson 01-06.
 
-## Discussion questions
+## Where It Breaks
 
-1. Should AI incident reporting be mandatory for all deployers, or only for high-risk systems and frontier developers?
-2. Is a "no-blame" reporting culture compatible with legal liability for AI harms?
-3. The OpenAI post-mortem said qualitative concerns were overridden by positive metrics. How should organizations weigh qualitative warnings?
-4. What makes a redress mechanism trustworthy to the people who need it?
+These mechanisms have costs and limits. Monitoring requires data about the people affected, including sensitive data about their race or disability, to detect unequal performance, which conflicts with privacy. Triggers set too tight pause useful systems constantly; set too loose, they never fire. "No-blame" reporting sits uneasily with legal liability. And redress processes often help the people best able to use them, as Lesson 03-09 noted.
 
-## Activity: monitoring plan (20 minutes)
+## Where People Disagree
 
-For your A5 system, write:
+Should reporting AI incidents be required of every organization that deploys AI, or only of high-risk systems and frontier developers?
 
-1. five monitoring metrics with frequency,
-2. three monitoring **triggers** with specified actions,
-3. an incident-response outline (who is notified, in what timeframe, what's disclosed publicly), and
-4. a redress process, evaluated against the seven elements above.
+OpenAI said its experts' impressions were overridden by positive numbers. How should organizations weigh qualitative warnings against metrics?
 
-## Key terms
+And what makes a redress process trustworthy to the people who need it most?
 
-- **Drift (data / concept):** Changes in inputs / input–outcome relationships over time.
-- **Monitoring trigger:** A predefined threshold prompting action.
-- **Serious incident (EU AI Act):** An incident leading to death, serious harm, critical-infrastructure disruption, or infringement of fundamental-rights obligations.
-- **Post-mortem:** An analysis after an incident.
-- **Redress:** Remedy for harm.
+## Check Your Understanding
 
-## Connections
+**1. What is the difference between data drift and concept drift?**
 
-- Contestability → 03-09 · Hugging Face incident → 07-06 · Sycophancy → 04-08 · Procurement change notification → 08-07
-- **A5 dossier:** monitoring triggers and redress path
+:::answer Answer
+Data drift is a change in the inputs a system sees. Concept drift is a change in the relationship between inputs and outcomes.
+:::
 
-## Sources and further reading
+**2. What is a monitoring trigger?**
 
-- OpenAI, "Sycophancy in GPT-4o: What happened and what we're doing about it" (Apr 29, 2025) and "Expanding on what we missed with sycophancy" (May 2, 2025). — [April 29 post — Free full text](https://openai.com/index/sycophancy-in-gpt-4o/); [May 2 follow-up — Free full text](https://openai.com/index/expanding-on-sycophancy/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r381). <!-- reading-access -->
+:::answer Answer
+A threshold set in advance at which the system is paused, reviewed or rolled back.
+:::
+
+**3. Why did aviation's incident reporting system improve safety?**
+
+:::answer Answer
+Pilots could report errors and near misses without fear of punishment, so many problems were reported and learned from before they caused accidents.
+:::
+
+**4. Name four of the seven elements of a good redress process.**
+
+:::answer Answer
+Any four of these: accessibility, speed, authority, correction, compensation, learning and independence.
+:::
+
+## Your Turn
+
+For your A5 system, write five measures you would monitor and how often; three monitoring triggers, each with the action it sets off; an outline of how you would respond to an incident, including who is notified, how quickly, and what is disclosed publicly; and a redress process, judged against the seven elements above.
+
+## Key Terms
+
+- **Data drift:** A change in the inputs a system sees over time.
+- **Concept drift:** A change in the relationship between inputs and outcomes over time.
+- **Monitoring trigger:** A threshold, set in advance, that prompts action.
+- **Serious incident:** Under the EU AI Act, an incident leading to death, serious harm, disruption of critical infrastructure, or a breach of obligations protecting fundamental rights.
+- **Post-mortem:** An analysis of what went wrong after an incident.
+- **Redress:** A remedy for harm.
+
+## Sources
+
+- **Core:** OpenAI, "Sycophancy in GPT-4o: What happened and what we're doing about it" (Apr 29, 2025) and "Expanding on what we missed with sycophancy" (May 2, 2025). — [April 29 post — Free full text](https://openai.com/index/sycophancy-in-gpt-4o/); [May 2 follow-up — Free full text](https://openai.com/index/expanding-on-sycophancy/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r381). <!-- reading-access -->
 - McGregor, S. "Preventing Repeated Real World AI Failures by Cataloging Incidents: The AI Incident Database," *AAAI 2021*. — [Free manuscript](https://arxiv.org/abs/2011.08512); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r382). <!-- reading-access -->
 - OECD, *Towards a common reporting framework for AI incidents* (2025). — [Free full text](https://www.oecd.org/content/dam/oecd/en/publications/reports/2025/02/towards-a-common-reporting-framework-for-ai-incidents_8c488fdb/f326d4ac-en.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r383). <!-- reading-access -->
 - EU AI Act Art. 72 (post-market monitoring) and Art. 73 (serious incident reporting). — [Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r384). <!-- reading-access -->
-- Shrishak, K. & Lightbody, J. *AI Incident Reporting* (Center for Security and Emerging Technology, 2024). — Citation needs clarification; [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r385). <!-- reading-access -->

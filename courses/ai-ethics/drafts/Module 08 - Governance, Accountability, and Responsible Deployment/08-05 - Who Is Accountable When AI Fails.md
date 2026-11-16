@@ -3,123 +3,120 @@
 **Module:** 8 — Governance, Accountability, and Responsible Deployment
 **Estimated time:** 40 minutes
 
-## Learning objectives
+**In this lesson:** When an AI system causes harm, responsibility is usually spread across many people, none of whom caused the harm alone. This lesson explains why that makes accountability so hard, separates the different things "responsible" can mean, and sets out the ways to close the gaps.
 
-By the end of this lesson, you will be able to:
+## Five Failures, Many Hands
 
-1. Explain the "problem of many hands" and responsibility gaps in AI systems.
-2. Distinguish moral responsibility, legal liability and accountability.
-3. Apply a structured responsibility analysis to course cases.
+Look back at five cases from this course.
 
-## Opening case: five failures, many hands
-
-Recall five cases from this course:
-
-| Case | Who was harmed | Parties involved |
+| Case | Who was harmed | Who was involved |
 |---|---|---|
-| Lipps wrongful arrest (02-04) | Angela Lipps | FR vendor, analyst, state intel center, detective, department, prosecutor, judge, jail |
-| *Mobley v. Workday* (03-03) | Rejected applicants (alleged) | Workday, employers, model developers, HR staff |
-| Grok NCII (04-04) | Women and girls depicted | Users, xAI, X, app stores, regulators |
-| Hugging Face breach (07-06) | Hugging Face and possibly its partners | OpenAI evaluators and leadership, the proxy vendor, "the model" |
-| Robodebt (03-09) | About 470,000 welfare recipients | Ministers, agency officials, system designers, lawyers who advised |
+| The Lipps wrongful arrest (Lesson 02-04) | Angela Lipps | The software vendor, an analyst, a state intelligence center, a detective, a police department, a prosecutor, a judge, a jail |
+| *Mobley v. Workday* (Lesson 03-03) | Rejected applicants, allegedly | The software company, employers, model developers, HR staff |
+| Grok (Lesson 04-04) | Women and girls depicted | Users, xAI, X, app stores, regulators |
+| The Hugging Face breach (Lesson 07-06) | Hugging Face and possibly its partners | OpenAI's test team and leadership, the vendor of a flawed component, "the model" |
+| Robodebt (Lesson 03-09) | About 470,000 welfare recipients | Ministers, agency officials, system designers, the lawyers who advised them |
 
-In each, harm emerged from **many people's decisions**, none of whom alone caused it, and some of whom were following rules or instructions. Who is accountable?
+In each, the harm came from many people's decisions. None of them alone caused it, and some were following rules or instructions. So who is accountable?
 
-## Core ideas
+## The Idea: The Problem of Many Hands
 
-### The problem of many hands
+In 1980 the political theorist Dennis Thompson described what he called the **problem of many hands**: when many people contribute to an outcome, it becomes hard to hold anyone responsible for it. In 1996 the philosopher Helen Nissenbaum applied the idea to computing and identified four barriers to accountability. Many hands spread contributions thin. Software always has bugs, which becomes an excuse. The computer becomes a scapegoat: "the system did it." And vendors own their products while disclaiming responsibility for them in their licenses.
 
-Dennis Thompson (1980) described the "problem of many hands": when many people contribute to an outcome, it becomes hard to hold anyone responsible. Helen Nissenbaum (1996) applied it to computing, identifying four barriers to accountability:
+AI adds three more barriers. Its behavior can be opaque even to its makers. Agents take actions no person specifically chose, as Lessons 07-04 and 07-06 showed. And systems can change after they are deployed.
 
-1. **Many hands:** Diffuse contributions.
-2. **Bugs:** "Software always has bugs" becomes an excuse.
-3. **The computer as scapegoat:** "The system did it."
-4. **Ownership without liability:** Vendors disclaim responsibility in licenses.
+The philosopher Andreas Matthias called the result a **responsibility gap**. Traditionally, we hold people responsible when they knew what would happen and could control it. If nobody could foresee or control what a learning system did, those conditions seem to fail, and nobody seems responsible.
 
-AI adds:
+## Four Meanings of "Responsible"
 
-5. **Opacity:** No one can fully explain the model's behavior.
-6. **Autonomy:** Agents take actions no human specifically chose (07-04, 07-06).
-7. **Learning:** Behavior changes after deployment.
+Part of the confusion comes from using one word for several ideas.
 
-Andreas Matthias (2004) called this the **"responsibility gap"**: if no human could foresee or control the machine's action, traditional responsibility conditions (knowledge, control) seem unmet.
-
-### Responsibility, liability, accountability
-
-| Concept | Question | Example |
+| Concept | The question | Example |
 |---|---|---|
 | **Moral responsibility** | Who deserves blame or praise? | Was the detective blameworthy? |
 | **Legal liability** | Who must pay or face sanctions? | Is the city liable for damages? |
-| **Accountability** | Who must **explain and answer** for the outcome, and to whom? | Must the police chief explain to the city council? |
-| **Remedial responsibility** | Who must **fix** it, regardless of fault? | Who should compensate Lipps and change policy? |
+| **Accountability** | Who must explain and answer for the outcome, and to whom? | Must the police chief explain to the city council? |
+| **Remedial responsibility** | Who must put things right, whatever their fault? | Who should compensate Lipps and change the policy? |
 
-These can come apart. A company may be legally liable without anyone being morally blameworthy, or the reverse.
+These can come apart. A company can be legally liable when no one in it is morally to blame, and a person can be morally to blame without any legal consequence.
 
-### Closing responsibility gaps
+## Why the Gap Is Often Manufactured
 
-Critics argue the gap is often **manufactured**. Someone chose to deploy an unpredictable system, and that choice carries responsibility. Approaches:
+Many critics argue that the responsibility gap is less real than it looks. Someone chose to deploy a system whose behavior they could not fully predict, and that choice carries responsibility. The gap appears only if we look for responsibility at the moment of harm, instead of at the decisions that made the harm possible.
 
-| Approach | Mechanism | Example |
+Several approaches close the gap.
+
+| Approach | How it works | Example |
 |---|---|---|
-| **Role-based duties** | Assign obligations by role (developer, deployer, user) | EU AI Act provider and deployer duties (08-01) |
-| **Agency theories** | Treat vendors as agents of those who delegate to them | *Mobley v. Workday* (03-03) |
-| **Deployer liability** | The organization using AI answers for its outputs | *Moffatt v. Air Canada*: the airline is responsible for its chatbot (04-01) |
-| **Product liability** | Defective products create liability regardless of negligence | AI-as-product claims (e.g., Character.AI litigation, where a court in 2025 declined to dismiss product-liability claims ⚠) |
-| **Strict liability for high-risk activities** | Liability without fault for inherently dangerous uses | Proposed for frontier AI; the EU's revised Product Liability Directive (2024) covers software and AI |
-| **Professional responsibility** | Professionals remain accountable for tools they use | ABA Op. 512; medical duty (05-08) |
-| **Institutional accountability** | Leaders answer for systems and culture | Robodebt Royal Commission referrals (2023) |
-| **Insurance and compensation funds** | Ensure victims are compensated | Proposed for AI harms |
-| **Whistleblower protections** | Enable insiders to raise concerns | California SB 53 (2025) |
+| Duties by role | Assign obligations to developers, deployers and users | The EU AI Act's duties for providers and deployers (Lesson 08-01) |
+| Agency | Treat vendors as agents of the organizations that use them | *Mobley v. Workday* |
+| Deployer liability | The organization that uses AI answers for what it does | *Moffatt v. Air Canada* (Lesson 04-01) |
+| Product liability | Defective products create liability without proof of negligence | Lawsuits treating chatbots as products; the EU's revised product liability law of 2024 covers software and AI |
+| **Strict liability** | Liability without fault for inherently dangerous activities | Proposed for the most advanced AI |
+| Professional responsibility | Professionals answer for the tools they use | Lesson 05-08 |
+| Institutional accountability | Leaders answer for systems and culture | The Robodebt Royal Commission's referrals |
+| Insurance and compensation funds | Make sure victims are compensated | Proposed for AI harms |
+| Whistleblower protection | Let insiders raise concerns safely | California's 2025 frontier AI law |
 
-### A structured responsibility analysis
+## A Way to Analyze Any Case
 
-For any AI harm, ask of each party:
+For any AI harm, six questions help assess each party. What did they do or fail to do? What did they know, or what should they have known? What could they have done differently? What duties came with their role? Did they benefit from the system? And can they compensate, fix the problem or prevent it happening again?
 
-1. **Causal contribution:** What did they do or fail to do?
-2. **Knowledge:** What did they know, or should they have known?
-3. **Control:** What could they have done differently?
-4. **Role obligations:** What duties did their role carry?
-5. **Benefit:** Did they profit from the system?
-6. **Capacity to remedy:** Can they compensate, fix or prevent recurrence?
+One point matters most. Responsibility is not a fixed amount to be divided up. Many parties can each be fully responsible for their own failures. The detective's failure does not reduce the department's, and the department's does not reduce the vendor's.
 
-Responsibility is **not a fixed quantity to divide**. Many parties can each be fully responsible for their own failures.
+## Where It Breaks
 
-## Applying the frameworks
+The many-hands framing has its own risks. Spreading responsibility widely can make it feel weightless, so that everyone shares a little and no one acts. Stretching legal liability too far can deter useful innovation, or simply push it to places with weaker rules. And treating the model itself as the responsible party, which some have proposed, can let the humans who built and deployed it off the hook.
 
-- **Virtue:** Owning one's role rather than hiding behind the system.
-- **Justice (corrective):** Victims deserve remedy, whoever is "to blame."
-- **Structural injustice (Young):** Responsibility for structures is shared and forward-looking.
+## Where People Disagree
 
-## Discussion questions
+Can an AI system itself be morally responsible? Most philosophers say no, since it lacks the understanding and intentions that responsibility requires. Some say the question matters less than making sure some person or organization answers.
 
-1. Can an AI system itself be morally responsible? Does it matter for accountability?
-2. In the Hugging Face case, should OpenAI be liable to Hugging Face even if no one at OpenAI was negligent?
-3. Should AI developers be strictly liable for harms from their general-purpose models? How would that change incentives?
-4. Which of Nissenbaum's barriers appears most often in the course's cases?
+In the Hugging Face case, should OpenAI be liable to Hugging Face even if no one at OpenAI was negligent?
 
-## Activity: responsibility matrix (20 minutes)
+And should developers of general-purpose AI be strictly liable for harms their models cause? It would give them strong reasons to be careful. It would also make them answerable for uses they could not foresee or control.
 
-Choose one case from the table above. For each party, complete the six-question analysis. Then answer:
+## Check Your Understanding
 
-1. Who should compensate the victim?
-2. Who should change practices, and how?
-3. Which party has been held least accountable relative to its contribution?
+**1. What is the problem of many hands?**
 
-## Key terms
+:::answer Answer
+When many people contribute to an outcome, it becomes hard to hold any one of them responsible.
+:::
 
-- **Problem of many hands:** Difficulty assigning responsibility when many contribute.
-- **Responsibility gap:** Apparent absence of a responsible party for autonomous system actions.
+**2. What is the difference between legal liability and remedial responsibility?**
+
+:::answer Answer
+Legal liability is who must pay or face sanctions under the law. Remedial responsibility is who must put things right, whatever their fault.
+:::
+
+**3. Why do critics say the responsibility gap is often manufactured?**
+
+:::answer Answer
+Someone chose to deploy a system whose behavior they could not fully predict, and that choice carries responsibility. The gap appears only if we look solely at the moment of harm.
+:::
+
+**4. Why is responsibility not a fixed amount to be divided?**
+
+:::answer Answer
+Many parties can each be fully responsible for their own failures; one party's failure does not reduce another's.
+:::
+
+## Your Turn
+
+Choose one case from the table. For each party, answer the six questions. Then answer three more: Who should compensate the people harmed? Who should change their practices, and how? And which party has been held least accountable compared with what it contributed?
+
+## Key Terms
+
+- **Problem of many hands:** The difficulty of assigning responsibility when many people contribute to an outcome.
+- **Responsibility gap:** The apparent absence of anyone responsible for an autonomous system's actions.
+- **Accountability:** The obligation to explain and answer for an outcome.
 - **Strict liability:** Liability without proof of fault.
-- **Remedial responsibility:** Duty to remedy, regardless of blame.
+- **Remedial responsibility:** The duty to put things right, whatever one's fault.
 
-## Connections
+## Sources
 
-- Stakeholder chains → 01-08 · Cases in Modules 2–7 · Procurement contracts → 08-07 · Redress → 08-08
-- **A5 dossier:** "safeguards tied to risks, with owners."
-
-## Sources and further reading
-
-- Nissenbaum, H. "Accountability in a Computerized Society," *Science and Engineering Ethics* 2(1), 1996. — [Free manuscript](https://nissenbaum.tech.cornell.edu/papers/accountability.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r364). <!-- reading-access -->
+- **Core:** Nissenbaum, H. "Accountability in a Computerized Society," *Science and Engineering Ethics* 2(1), 1996. — [Free manuscript](https://nissenbaum.tech.cornell.edu/papers/accountability.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r364). <!-- reading-access -->
 - Thompson, D. "Moral Responsibility of Public Officials: The Problem of Many Hands," *American Political Science Review* 74(4), 1980. — [Abstract / record](https://dft.scholars.harvard.edu/publications/moral-responsibility-public-officials-problem-many-hands); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r365). <!-- reading-access -->
 - Matthias, A. "The responsibility gap," *Ethics and Information Technology* 6 (2004). — [Free full text](https://eclass.uoa.gr/modules/document/file.php/PHILOSOPHY875/%CE%9C%CE%A0%CE%9F%CE%A5%CE%A4%CE%9B%CE%91%CE%A3%20%CE%9F%CE%A0%CE%9B%CE%91%20%CE%9C%CE%91%CE%96%CE%99%CE%9A%CE%97%CE%A3%20%CE%9A%CE%91%CE%A4%CE%91%CE%A3%CE%A4%CE%A1%CE%9F%CE%A6%CE%97%CE%A3%20DRONES/The%20responsibility%20gap%20Ascribing%20responsibility%20for%20the%20actions%20of%20learning%20matthias2004.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r366). <!-- reading-access -->
 - Santoni de Sio, F. & Mecacci, G. "Four Responsibility Gaps with Artificial Intelligence," *Philosophy & Technology* 34 (2021). — [Free manuscript](https://pure.tudelft.nl/ws/portalfiles/portal/105353731/SantoniDeSio_Mecacci2021_Article_FourResponsibilityGapsWithArti.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r367). <!-- reading-access -->

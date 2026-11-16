@@ -2,7 +2,7 @@
 
 76 lessons in 8 modules. The week numbers assume an 8-week term.
 
-**Planned outline (2026-11-15).** This outline adds one lesson per module where the system clearly helps, paid for by merging overlapping lessons, so the count stays at 76. Rows marked **New** or **Merged** are not written yet. The lesson files and the site still follow the v1 numbering until the lessons are rewritten; "v1" notes give the old number where it changed.
+**Outline (rewritten 2026-11-15).** This outline adds one lesson per module where the system clearly helps, paid for by merging overlapping lessons, so the count stays at 76. All lessons, including those marked **New** or **Merged**, are written in the new lesson structure and posted. "v1" notes give the old number where a lesson moved.
 
 Stages: Foundations (Week 1), AI and the Individual (Weeks 2–4), AI and Society (Weeks 5–6), Power and Governance (Weeks 7–8). Lesson files are named `MM-LL - Title.md` inside each module folder.
 
