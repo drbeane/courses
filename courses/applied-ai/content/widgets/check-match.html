@@ -1,0 +1,106 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .qz-count{margin:0;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .qz-item{margin:0.3rem 0 0.8rem;padding:0.7rem 0.85rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.08rem/1.5 var(--text)}
+.wx .qz-answers button{font-weight:600;padding:0.5rem 1rem}
+.wx .qz-answers button[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.wx .qz-answers button.qz-ans{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c)}
+.wx .qz-answers button.qz-ans::after{content:" ✓"}
+.wx .qz-fb{margin:0.8rem 0 0;min-height:2.9em}
+.wx .qz-fb.qz-ok,.wx .qz-fb.qz-no{padding-left:0.7rem;border-left:3px solid var(--c)}
+.wx .qz-fb.qz-no{border-left-color:#b3261e}
+.wx .qz-next{margin-top:0.6rem}
+.wx .qz-score{margin:0 0 0.6rem;font-size:1.05rem;font-weight:700}
+@media print{.wx .qz-answers,.wx .qz-next{display:none}}
+</style>
+<div class="wx" data-widget="check-match">
+  <div class="wx-head"><b>Try It: Match the Check</b><span>Read what you are worried about, then pick the check that settles it fastest.</span></div>
+  <div class="wx-body">
+    <div class="qz-play">
+      <p class="qz-count" aria-live="polite"></p>
+      <p class="qz-item"></p>
+      <div class="wx-row qz-answers" role="group" aria-label="Your answer"></div>
+      <p class="qz-fb" aria-live="polite"></p>
+      <button type="button" class="wx-primary qz-next" hidden>Next</button>
+    </div>
+    <div class="qz-done" hidden>
+      <p class="qz-score" aria-live="polite"></p>
+      <button type="button" class="qz-again">Try again</button>
+    </div>
+    <p class="wx-fine">Several checks can help with most worries. The answer given is the most useful first check, following the table above.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const LABELS = ["Trace the source","Find a current source","Recompute","Follow the steps","Compare with your prompt","Ask again, neutrally, in a new chat"];
+  // Each item is [the request, the index of the right label, why].
+  const ITEMS = [
+    ["The answer quotes a line from a court ruling to support its point.",0,"Open the ruling and find the sentence. Quotations and citations are where invented content hides."],
+    ["The answer names the current CEO of a company you are writing about.",1,"Job titles change. Check a current source and look at its date."],
+    ["A plan concludes, after a chain of steps about prerequisites, that you can finish your degree in three semesters.",3,"A reasoning error hides in one step. Read each one, and check each assumption against the course catalog."],
+    ["A table of club expenses ends with a total.",2,"Put the column in a spreadsheet and let it add. Totals are a common place for arithmetic slips."],
+    ["You asked \"My essay's argument holds up, doesn't it?\" and got enthusiastic agreement.",5,"You asked a leading question. Ask again in a new chat, in neutral words, and compare."],
+    ["The answer gives a statistic and credits it to a 2021 report by a research center.",0,"Find the report and search it for the number. The report may exist and still not say that."],
+    ["You asked for five discussion questions, each under 20 words and none answerable with yes or no.",4,"Go through your constraints one at a time and check each question against them."],
+    ["The answer states your state's minimum wage.",1,"Wages change by law, often yearly. An official, dated source settles it."],
+  ];
+  const $ = (c) => root.querySelector(c);
+  $('.qz-answers').innerHTML = LABELS.map((l, i) => `<button type="button" data-i="${i}">${l.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</button>`).join('');
+  const btns = [...root.querySelectorAll('.qz-answers button')];
+  let at = 0, right = 0, answered = false;
+
+  function show() {
+    const done = at >= ITEMS.length;
+    $('.qz-play').hidden = done;
+    $('.qz-done').hidden = !done;
+    if (done) { $('.qz-score').textContent = `You got ${right} of ${ITEMS.length}.`; return; }
+    answered = false;
+    $('.qz-count').textContent = `${at + 1} of ${ITEMS.length}`;
+    $('.qz-item').textContent = ITEMS[at][0];
+    $('.qz-fb').textContent = '';
+    $('.qz-fb').className = 'qz-fb';
+    btns.forEach((b) => { b.disabled = false; b.removeAttribute('aria-pressed'); b.classList.remove('qz-ans'); });
+    $('.qz-next').hidden = true;
+  }
+
+  function answer(i) {
+    if (answered) return;
+    answered = true;
+    const [, ans, why] = ITEMS[at];
+    const ok = i === ans;
+    if (ok) right++;
+    btns.forEach((b, j) => { b.disabled = true; if (j === ans) b.classList.add('qz-ans'); if (j === i) b.setAttribute('aria-pressed', 'true'); });
+    $('.qz-fb').textContent = `${ok ? 'Right.' : `Not quite. The answer is "${LABELS[ans]}".`} ${why}`;
+    $('.qz-fb').classList.add(ok ? 'qz-ok' : 'qz-no');
+    $('.qz-next').textContent = at === ITEMS.length - 1 ? 'See your score' : 'Next';
+    $('.qz-next').hidden = false;
+    $('.qz-next').focus();
+  }
+
+  btns.forEach((b, i) => { b.onclick = () => answer(i); });
+  $('.qz-next').onclick = () => { at++; show(); if (at < ITEMS.length) btns[0].focus(); else $('.qz-again').focus(); };
+  $('.qz-again').onclick = () => { at = 0; right = 0; show(); btns[0].focus(); };
+  show();
+})();
+</script>

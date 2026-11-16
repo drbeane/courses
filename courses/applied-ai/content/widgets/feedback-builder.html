@@ -1,0 +1,90 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .fb-draft{margin:0;padding:0.6rem 0.8rem;border:1px dashed var(--rule);border-radius:6px;font:400 1rem/1.55 var(--text)}
+.wx .fb-draft mark{background:color-mix(in srgb,#b3261e 12%,#fff);color:inherit;border-radius:3px;padding:0 0.1em}
+.wx .fb-msg{margin:0;padding:0.7rem 0.9rem;border:1px solid var(--rule);border-radius:12px 12px 12px 3px;background:var(--wash);font:400 1.02rem/1.55 var(--text)}
+.wx .fb-parts{display:grid;gap:0.25rem;margin:0;padding:0;list-style:none}
+.wx .fb-parts li{margin:0;display:flex;gap:0.5rem;align-items:baseline;font-size:0.9rem}
+.wx .fb-parts li i{font-style:normal;font-weight:700;width:1rem}
+.wx .fb-parts li.fb-yes i{color:var(--c)}
+.wx .fb-parts li.fb-no{color:var(--muted)}
+.wx .fb-parts li.fb-no i{color:#b3261e}
+</style>
+<div class="wx" data-widget="feedback-builder">
+  <div class="wx-head"><b>Try It: Write Better Feedback</b><span>Build a correction from its three parts and see what the model can do with it.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">The first draft says</p>
+      <p class="fb-draft">"All employees receive <mark>12 weeks</mark> of paid parental leave after a qualifying event."</p>
+    </div>
+    <div>
+      <p class="wx-label">Include in your reply</p>
+      <div class="wx-row fb-toggles" role="group" aria-label="Parts of the feedback"></div>
+    </div>
+    <div>
+      <p class="wx-label">Your reply</p>
+      <p class="fb-msg" aria-live="polite"></p>
+    </div>
+    <ul class="fb-parts" aria-live="polite"></ul>
+    <p class="wx-out fb-out" aria-live="polite"></p>
+    <p class="wx-fine">The policy in this example gives 12 weeks after one year of service and 6 weeks before that, in section 3. What the model does next is described in general terms; a real reply could go better or worse.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const PARTS = ['What was wrong', 'Where the right information is', 'What to do'];
+  // Feedback text and the likely result for each combination, keyed by which parts are on (bits: what, where, do).
+  const R = {
+    0: ['That\'s wrong, try again.', 'The model has to guess what was wrong. It may rewrite parts that were right and leave the error in place.', 0],
+    1: ['The leave length is wrong.', 'The model knows which number to change, but not what it should be. It may replace one wrong number with another.', 1],
+    2: ['Look at section 3 of the policy.', 'The model rereads section 3, but doesn\'t know what to look for or what to change.', 1],
+    3: ['The leave length is wrong. Section 3 gives 6 weeks to employees with under a year of service.', 'The model can fix this error from the source. It may not look for others like it.', 2],
+    4: ['Check the eligibility rules against the policy and fix any that don\'t match.', 'A sensible request, but the model has to find the error itself, and may decide everything matches.', 1],
+    5: ['The leave length is wrong. Correct it, and check the other eligibility rules.', 'The model knows what to fix and to look further, but must find the right number itself, and may guess.', 1],
+    6: ['Using section 3 of the policy, check the eligibility rules and correct any that don\'t match.', 'Close. The model has a source and a task, and will likely find the error, though you haven\'t told it which one you saw.', 2],
+    7: ['The summary says everyone gets 12 weeks, but section 3 gives 6 weeks to employees with under a year of service. Correct that and check the other eligibility rules against the policy.', 'The model can fix the error using the source, and look for others like it. This is the feedback from the lesson.', 3],
+  };
+  const HEAD = ['Likely to make things worse', 'Partly helpful', 'Helpful', 'Fixes the error, and looks for more'];
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const on = [false, false, false];
+
+  $('.fb-toggles').innerHTML = PARTS.map((p, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(p)}</button>`).join('');
+  const chips = [...root.querySelectorAll('.fb-toggles button')];
+
+  function show() {
+    const key = on.reduce((k, v, i) => k + (v ? 1 << i : 0), 0);
+    const [msg, result, grade] = R[key];
+    chips.forEach((b, i) => b.setAttribute('aria-pressed', on[i] ? 'true' : 'false'));
+    $('.fb-msg').textContent = `"${msg}"`;
+    $('.fb-parts').innerHTML = PARTS.map((p, i) => `<li class="${on[i] ? 'fb-yes' : 'fb-no'}"><i>${on[i] ? '✓' : '✗'}</i>${on[i] ? 'Says' : 'Doesn\'t say'} ${esc(p.toLowerCase())}</li>`).join('');
+    const out = $('.fb-out');
+    out.className = 'wx-out fb-out' + (grade === 0 ? ' wx-stop' : '');
+    out.innerHTML = `<b>${HEAD[grade]}</b>${esc(result)}`;
+  }
+
+  chips.forEach((b, i) => { b.onclick = () => { on[i] = !on[i]; show(); }; });
+  show();
+})();
+</script>

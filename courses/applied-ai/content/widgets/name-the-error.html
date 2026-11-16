@@ -1,0 +1,106 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .qz-count{margin:0;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .qz-item{margin:0.3rem 0 0.8rem;padding:0.7rem 0.85rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.08rem/1.5 var(--text)}
+.wx .qz-answers button{font-weight:600;padding:0.5rem 1rem}
+.wx .qz-answers button[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.wx .qz-answers button.qz-ans{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c)}
+.wx .qz-answers button.qz-ans::after{content:" ✓"}
+.wx .qz-fb{margin:0.8rem 0 0;min-height:2.9em}
+.wx .qz-fb.qz-ok,.wx .qz-fb.qz-no{padding-left:0.7rem;border-left:3px solid var(--c)}
+.wx .qz-fb.qz-no{border-left-color:#b3261e}
+.wx .qz-next{margin-top:0.6rem}
+.wx .qz-score{margin:0 0 0.6rem;font-size:1.05rem;font-weight:700}
+@media print{.wx .qz-answers,.wx .qz-next{display:none}}
+</style>
+<div class="wx" data-widget="name-the-error">
+  <div class="wx-head"><b>Try It: Name the Error</b><span>Read what went wrong, then pick which of the six error types it is.</span></div>
+  <div class="wx-body">
+    <div class="qz-play">
+      <p class="qz-count" aria-live="polite"></p>
+      <p class="qz-item"></p>
+      <div class="wx-row qz-answers" role="group" aria-label="Your answer"></div>
+      <p class="qz-fb" aria-live="polite"></p>
+      <button type="button" class="wx-primary qz-next" hidden>Next</button>
+    </div>
+    <div class="qz-done" hidden>
+      <p class="qz-score" aria-live="polite"></p>
+      <button type="button" class="qz-again">Try again</button>
+    </div>
+    <p class="wx-fine">The types overlap, and a real failure can be more than one. Each answer here is the type that best explains what happened, and so tells you which check to use.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const LABELS = ["Hallucination","Outdated knowledge","Arithmetic slip","Reasoning error","Misread instructions","Sycophancy"];
+  // Each item is [the request, the index of the right label, why].
+  const ITEMS = [
+    ["You asked for three peer-reviewed sources on sleep and memory. One of them, \"Carver and Lindqvist (2017)\", does not turn up in any database or search.",0,"A real-looking citation with nothing behind it is the classic hallucination. Citations are one of the details most at risk."],
+    ["A trip budget lists lodging $640, food $310 and transport $185, and gives a total of $1,235.",2,"The lines add up to $1,135. Each line is fine and the total is off, which is the typical shape of an arithmetic slip."],
+    ["You wrote \"The Treaty of Versailles was signed in 1918, right?\" and the model agreed. Asked neutrally in a new chat, it says 1919.",5,"The model went along with the answer you suggested. The neutral question got the right answer."],
+    ["You asked for a bio of 150 words or fewer. The bio is excellent, and it is 260 words long.",4,"A good answer that drops a constraint is a misread instruction. You catch it by rereading your prompt, not the output."],
+    ["Asked to schedule six exams over three days so that no student has two at once, the model assumes at the start that Biology and Chemistry share no students. Your list shows they do. The timetable it builds on that assumption is neat and impossible.",3,"One wrong step early carried through to a confident conclusion. Only following the steps reveals it."],
+    ["With no web search, the model names a phone operating system version as \"the current release\". That version came out two years ago.",1,"The answer was right when the training data ended. Anything described as \"the latest\" is at risk after the knowledge cutoff."],
+    ["You asked for a summary of an article that quotes the author once. The quotation is close to a sentence in the article but is not what it says, word for word.",0,"Models recall the gist better than the wording, and produce a confident \"quote\" that is really a paraphrase. That is invented content."],
+    ["You asked for only the weaknesses of your argument, and got a balanced review that opens with three strengths.",4,"The answer would be a good response to a different request. Compare the output with what you asked for."],
+  ];
+  const $ = (c) => root.querySelector(c);
+  $('.qz-answers').innerHTML = LABELS.map((l, i) => `<button type="button" data-i="${i}">${l.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</button>`).join('');
+  const btns = [...root.querySelectorAll('.qz-answers button')];
+  let at = 0, right = 0, answered = false;
+
+  function show() {
+    const done = at >= ITEMS.length;
+    $('.qz-play').hidden = done;
+    $('.qz-done').hidden = !done;
+    if (done) { $('.qz-score').textContent = `You got ${right} of ${ITEMS.length}.`; return; }
+    answered = false;
+    $('.qz-count').textContent = `${at + 1} of ${ITEMS.length}`;
+    $('.qz-item').textContent = ITEMS[at][0];
+    $('.qz-fb').textContent = '';
+    $('.qz-fb').className = 'qz-fb';
+    btns.forEach((b) => { b.disabled = false; b.removeAttribute('aria-pressed'); b.classList.remove('qz-ans'); });
+    $('.qz-next').hidden = true;
+  }
+
+  function answer(i) {
+    if (answered) return;
+    answered = true;
+    const [, ans, why] = ITEMS[at];
+    const ok = i === ans;
+    if (ok) right++;
+    btns.forEach((b, j) => { b.disabled = true; if (j === ans) b.classList.add('qz-ans'); if (j === i) b.setAttribute('aria-pressed', 'true'); });
+    $('.qz-fb').textContent = `${ok ? 'Right.' : `Not quite. The answer is "${LABELS[ans]}".`} ${why}`;
+    $('.qz-fb').classList.add(ok ? 'qz-ok' : 'qz-no');
+    $('.qz-next').textContent = at === ITEMS.length - 1 ? 'See your score' : 'Next';
+    $('.qz-next').hidden = false;
+    $('.qz-next').focus();
+  }
+
+  btns.forEach((b, i) => { b.onclick = () => answer(i); });
+  $('.qz-next').onclick = () => { at++; show(); if (at < ITEMS.length) btns[0].focus(); else $('.qz-again').focus(); };
+  $('.qz-again').onclick = () => { at = 0; right = 0; show(); btns[0].focus(); };
+  show();
+})();
+</script>

@@ -1,0 +1,141 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .ef-case{margin:0;padding:0.7rem 0.85rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.02rem/1.55 var(--text)}
+.wx .ef-case em{display:block;font:700 0.75rem/1.4 var(--display);letter-spacing:0.06em;text-transform:uppercase;font-style:normal;color:var(--muted);margin-bottom:0.2rem}
+.wx .ef-fixes{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:0.4rem}
+.wx .ef-fixes button{text-align:left;display:flex;justify-content:space-between;gap:0.5rem;align-items:center}
+.wx .ef-fixes button i{font-style:normal;font-weight:700}
+.wx .ef-fixes button.ef-g2{border-color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff)}
+.wx .ef-fixes button.ef-g2 i{color:var(--c)}
+.wx .ef-fixes button.ef-g0 i{color:#b3261e}
+.wx .ef-fixes button.ef-g1 i{color:#a86b00}
+.wx .ef-fixes button[aria-pressed=true]{box-shadow:inset 0 0 0 1px var(--ink);border-color:var(--ink)}
+.wx .ef-out.ef-part{border-left-color:#d08a00}
+</style>
+<div class="wx" data-widget="effort-fix">
+  <div class="wx-head"><b>Try It: Will More Effort Fix It?</b><span>Pick a failure, then try fixes and see which ones work.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Failure</p>
+      <div class="wx-row ef-cases" role="group" aria-label="Failure"></div>
+    </div>
+    <p class="ef-case" aria-live="polite"></p>
+    <div>
+      <p class="wx-label">Try a fix</p>
+      <div class="ef-fixes" role="group" aria-label="Fixes"></div>
+    </div>
+    <p class="wx-out ef-out wx-wait" aria-live="polite"></p>
+    <p class="wx-fine">✓ fixes it, ~ helps somewhat, ✗ doesn't help. The judgments follow the table above. Whatever you change, check the new answer: a fix makes a right answer more likely, not certain.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const FIXES = ['Turn up the effort', 'Switch to a larger model', 'Turn on web search or paste in the source', 'Have it calculate in code', 'Rewrite the prompt', 'Ask again, neutrally, in a new chat'];
+  const CHANGES_MODEL = [true, true, false, false, false, false];
+  // Each case: [error type, what happened, and for each fix [grade 0-2, why]].
+  const CASES = [
+    ['Hallucination', 'You asked for three sources on a niche topic in your field. One citation doesn\'t exist.', [
+      [0, 'Thinking longer can\'t produce a source the model never saw. It may produce a more elaborate fake.'],
+      [1, 'Larger models invent less often, but they still do.'],
+      [2, 'With search on, or the real sources pasted in, the model can draw on what exists. Still open each one.'],
+      [0, 'There is nothing to calculate.'],
+      [1, 'Asking for "only sources you\'re sure of, or say you found none" helps a little. It doesn\'t give the model the knowledge it lacks.'],
+      [0, 'A new chat may invent a different citation.'],
+    ]],
+    ['Outdated knowledge', 'You asked for this year\'s tuition at your university and got last year\'s figure.', [
+      [0, 'No amount of thinking reveals what happened after the knowledge cutoff.'],
+      [0, 'A larger model has the same cutoff, or close to it.'],
+      [2, 'Search, or the current page pasted in, supplies the new figure. Check the date on the source.'],
+      [0, 'There is nothing wrong with the arithmetic.'],
+      [0, 'No wording can supply information the model doesn\'t have.'],
+      [0, 'A new chat has the same cutoff.'],
+    ]],
+    ['Arithmetic slip', 'A trip budget lists three costs correctly, and the total is $100 too high.', [
+      [1, 'Working step by step reduces slips but doesn\'t remove them.'],
+      [1, 'Larger models slip less often.'],
+      [0, 'No source is missing. The numbers were right in front of it.'],
+      [2, 'Code does the arithmetic exactly. Ask to see the calculation, or add the column in a spreadsheet yourself.'],
+      [0, 'Telling it to "be careful with the math" does little.'],
+      [0, 'A new chat may give a different wrong total.'],
+    ]],
+    ['Reasoning error', 'An exam timetable rests on a wrong assumption in its first step, and everything after it follows.', [
+      [2, 'This is where effort helps most: working through the problem catches the bad step. Ask for the steps so you can follow them.'],
+      [2, 'Larger models handle long chains of reasoning better.'],
+      [0, 'Nothing is missing. The problem is in the reasoning.'],
+      [1, 'Code can test a timetable against every constraint, if you think to ask for that.'],
+      [1, 'Stating the constraints plainly helps the model notice the one it missed.'],
+      [1, 'A fresh attempt may avoid the mistake, and if the two answers disagree, you know where to look.'],
+    ]],
+    ['Misread instructions', 'You asked for a 150-word bio and got 260 words.', [
+      [1, 'Sometimes. More effort may catch the constraint, or may not.'],
+      [1, 'Sometimes. Larger models drop fewer constraints.'],
+      [0, 'Nothing is missing. The model had what it needed.'],
+      [0, 'There is nothing to calculate.'],
+      [2, 'State the limit plainly, where it can\'t be missed, and ask the model to count. Or cut it yourself.'],
+      [0, 'The same prompt in a new chat carries the same risk.'],
+    ]],
+    ['Sycophancy', 'You wrote "The Treaty of Versailles was 1918, right?" and the model agreed.', [
+      [0, 'Not reliably. It may reason its way to agreeing with you.'],
+      [0, 'Not reliably. Larger models push back more often, but they still give in.'],
+      [1, 'A source settles the date, if you read it yourself.'],
+      [0, 'There is nothing to calculate.'],
+      [1, 'Taking your guess out of the question helps, but in the same chat your earlier hint is still in the context.'],
+      [2, '"When was the Treaty of Versailles signed?" in a fresh chat removes the pull toward your answer.'],
+    ]],
+  ];
+  const MARK = ['✗', '~', '✓'];
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  let at = 0, tried = new Set(), last = -1;
+
+  $('.ef-cases').innerHTML = CASES.map((c, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(c[0])}</button>`).join('');
+  $('.ef-fixes').innerHTML = FIXES.map((f, i) => `<button type="button" data-i="${i}"><span>${esc(f)}</span><i></i></button>`).join('');
+  const cases = [...root.querySelectorAll('.ef-cases button')];
+  const fixes = [...root.querySelectorAll('.ef-fixes button')];
+
+  function show() {
+    const [type, what, g] = CASES[at];
+    cases.forEach((b, i) => b.setAttribute('aria-pressed', i === at ? 'true' : 'false'));
+    $('.ef-case').innerHTML = `<em>${esc(type)}</em>${esc(what)}`;
+    fixes.forEach((b, i) => {
+      const t = tried.has(i);
+      b.className = t ? `ef-g${g[i][0]}` : '';
+      b.querySelector('i').textContent = t ? MARK[g[i][0]] : '';
+      b.setAttribute('aria-pressed', i === last ? 'true' : 'false');
+      b.setAttribute('aria-label', FIXES[i] + (t ? ['. Doesn\'t help', '. Helps somewhat', '. Fixes it'][g[i][0]] : ''));
+    });
+    const out = $('.ef-out');
+    if (last < 0) { out.className = 'wx-out ef-out wx-wait'; out.textContent = 'Choose a fix to see whether it would work.'; return; }
+    const [grade, why] = g[last];
+    const best = g.findIndex((x) => x[0] === 2);
+    out.className = 'wx-out ef-out' + (grade === 0 ? ' wx-stop' : grade === 1 ? ' ef-part' : '');
+    out.innerHTML = `<b>${['Doesn\'t help', 'Helps somewhat', 'Fixes it'][grade]}</b>${esc(why)}` +
+      (grade === 2 ? ` <br>This fix ${CHANGES_MODEL[last] ? 'changes the model' : 'changes what the model has to work with, not the model'}.` : tried.size >= 3 && !tried.has(best) ? ' <br>Keep going: one fix works better than any you\'ve tried.' : '');
+  }
+
+  cases.forEach((b, i) => { b.onclick = () => { at = i; tried = new Set(); last = -1; show(); }; });
+  fixes.forEach((b, i) => { b.onclick = () => { tried.add(i); last = i; show(); }; });
+  show();
+})();
+</script>

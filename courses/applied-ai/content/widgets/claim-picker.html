@@ -1,0 +1,164 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .tp-ask{margin:0;font-style:italic;color:var(--muted)}
+.wx .tp-text{margin:0;padding:0.75rem 0.9rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.05rem/1.75 var(--text)}
+.wx .tp-seg{cursor:pointer;border-radius:3px;padding:0.05em 0.1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.wx .tp-seg:hover{background:var(--wash)}
+.wx .tp-seg:focus-visible{outline:2px solid var(--c);outline-offset:1px}
+.wx .tp-seg[aria-pressed=true]{background:color-mix(in srgb,var(--c) 16%,#fff);box-shadow:inset 0 -2px 0 var(--c)}
+.wx .tp-checked .tp-seg.tp-hit{background:color-mix(in srgb,var(--c) 16%,#fff);box-shadow:inset 0 -2px 0 var(--c)}
+.wx .tp-checked .tp-seg.tp-miss{background:color-mix(in srgb,#b3261e 9%,#fff);box-shadow:inset 0 -2px 0 #b3261e}
+.wx .tp-checked .tp-seg.tp-extra{background:var(--wash);box-shadow:inset 0 -2px 0 var(--muted);text-decoration:line-through dotted var(--muted)}
+.wx .tp-checked .tp-seg.tp-at{outline:2px solid var(--ink);outline-offset:1px}
+.wx .tp-key{margin:0;color:var(--muted);font-size:0.84rem}
+</style>
+<div class="wx" data-widget="claim-picker">
+  <div class="wx-head"><b>Try It: Pull Out the Checkable Claims</b><span>Mark every part of this paragraph that states a fact someone could check.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">The request</p>
+      <p class="tp-ask">Write a paragraph about later school start times.</p>
+    </div>
+    <div>
+      <p class="wx-label">The paragraph</p>
+      <p class="tp-text"></p>
+    </div>
+    <div class="wx-row"><button type="button" class="wx-primary tp-check">Check my marks</button><button type="button" class="tp-reset">Start over</button></div>
+    <p class="tp-key" hidden>Highlighted: you found it. Red: you missed it. Struck through: you marked it, but it isn't one.</p>
+    <p class="wx-out tp-out wx-wait" aria-live="polite">Select a part of the text to mark it. Select it again to unmark it.</p>
+    <p class="wx-fine">Checkable claims include names, numbers, dates, quotations, citations and statements that one thing causes another. The rest is framing, opinion or hedging: it can be unconvincing, but it can't be wrong in a way you could look up.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // Each part is [text, 1 if it is one of the parts to find, why].
+  const SEGS = [
+    [
+      "Later school start times are an idea that sounds simple but touches almost every part of a community.",
+      0,
+      "Framing. There is nothing specific to look up."
+    ],
+    [
+      "In 2019, California became the first state to require most high schools to start no earlier than 8:30 a.m.",
+      1,
+      "A date, a place, a \"first\" and a time: four things to check."
+    ],
+    [
+      "Teenagers' sleep cycles shift later during puberty,",
+      1,
+      "A scientific claim about cause and effect. A health source can confirm it."
+    ],
+    [
+      "so an early bell asks them to learn at what is, for their bodies, the middle of the night.",
+      0,
+      "A vivid way of putting the claim before it. The checkable part is the sleep-cycle claim."
+    ],
+    [
+      "The American Academy of Pediatrics recommends that middle and high schools start at 8:30 a.m. or later.",
+      1,
+      "A named organization and an exact time. Find the recommendation on its site."
+    ],
+    [
+      "Districts that have made the change often report better attendance,",
+      1,
+      "A claim about results. Look for studies or district reports."
+    ],
+    [
+      "though the effect varies from place to place.",
+      0,
+      "A hedge. It is too vague to check on its own."
+    ],
+    [
+      "As one superintendent put it, \"We changed the clock, and the kids changed with it.\"",
+      1,
+      "A quotation with no name. Find who said it, or treat it as unverified."
+    ],
+    [
+      "Of course, every community has to weigh costs such as bus schedules and after-school jobs,",
+      0,
+      "Opinion and framing. It names concerns but states no fact."
+    ],
+    [
+      "and in the end the decision is a balancing act.",
+      0,
+      "A closing line with nothing to check."
+    ]
+  ];
+  const T = {
+    found: (n, of) => `You found ${n} of ${of} checkable claims`,
+    extra: (n) => `You also marked ${n} part${n > 1 ? 's' : ''} that ${n > 1 ? 'aren\'t claims' : 'isn\'t a claim'} you could check.`,
+    none: "You didn't mark any filler.",
+    after: "Select any part of the paragraph to see why it is or isn't a checkable claim.",
+    tag: ["Not checkable","Checkable"],
+  };
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const marked = SEGS.map(() => false);
+  let checked = false;
+
+  $('.tp-text').innerHTML = SEGS.map((s, i) => `<span class="tp-seg" role="button" tabindex="0" aria-pressed="false" data-i="${i}">${esc(s[0])}</span>`).join(' ');
+  const segs = [...root.querySelectorAll('.tp-seg')];
+  const goal = SEGS.filter((s) => s[1]).length;
+
+  function summary() {
+    const hit = SEGS.filter((s, i) => s[1] && marked[i]).length;
+    const extra = SEGS.filter((s, i) => !s[1] && marked[i]).length;
+    return `<b>${esc(T.found(hit, goal))}.</b>${esc(extra ? T.extra(extra) : T.none)} ${esc(T.after)}`;
+  }
+
+  function show(at = -1) {
+    $('.tp-text').classList.toggle('tp-checked', checked);
+    $('.tp-key').hidden = !checked;
+    $('.tp-check').hidden = checked;
+    segs.forEach((el, i) => {
+      el.setAttribute('aria-pressed', marked[i] ? 'true' : 'false');
+      el.classList.toggle('tp-hit', checked && SEGS[i][1] && marked[i]);
+      el.classList.toggle('tp-miss', checked && SEGS[i][1] && !marked[i]);
+      el.classList.toggle('tp-extra', checked && !SEGS[i][1] && marked[i]);
+      el.classList.toggle('tp-at', checked && i === at);
+    });
+    const out = $('.tp-out');
+    if (!checked) {
+      const n = marked.filter(Boolean).length;
+      out.className = 'wx-out tp-out wx-wait';
+      out.textContent = n ? `You have marked ${n}. Check your marks when you're done.` : 'Select a part of the text to mark it. Select it again to unmark it.';
+    } else if (at >= 0) {
+      out.className = 'wx-out tp-out' + (SEGS[at][1] && !marked[at] ? ' wx-stop' : '');
+      out.innerHTML = `<b>${esc(T.tag[SEGS[at][1]])}</b>${esc(SEGS[at][2])}`;
+    } else {
+      out.className = 'wx-out tp-out';
+      out.innerHTML = summary();
+    }
+  }
+
+  const pick = (i) => { if (checked) show(i); else { marked[i] = !marked[i]; show(); } };
+  segs.forEach((el, i) => {
+    el.onclick = () => pick(i);
+    el.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i); } };
+  });
+  $('.tp-check').onclick = () => { checked = true; show(); $('.tp-reset').focus(); };
+  $('.tp-reset').onclick = () => { checked = false; marked.fill(false); show(); segs[0].focus(); };
+  show();
+})();
+</script>

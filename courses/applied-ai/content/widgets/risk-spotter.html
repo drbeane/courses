@@ -1,0 +1,154 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .tp-ask{margin:0;font-style:italic;color:var(--muted)}
+.wx .tp-text{margin:0;padding:0.75rem 0.9rem;border:1px dashed var(--rule);border-radius:6px;font:400 1.05rem/1.75 var(--text)}
+.wx .tp-seg{cursor:pointer;border-radius:3px;padding:0.05em 0.1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.wx .tp-seg:hover{background:var(--wash)}
+.wx .tp-seg:focus-visible{outline:2px solid var(--c);outline-offset:1px}
+.wx .tp-seg[aria-pressed=true]{background:color-mix(in srgb,var(--c) 16%,#fff);box-shadow:inset 0 -2px 0 var(--c)}
+.wx .tp-checked .tp-seg.tp-hit{background:color-mix(in srgb,var(--c) 16%,#fff);box-shadow:inset 0 -2px 0 var(--c)}
+.wx .tp-checked .tp-seg.tp-miss{background:color-mix(in srgb,#b3261e 9%,#fff);box-shadow:inset 0 -2px 0 #b3261e}
+.wx .tp-checked .tp-seg.tp-extra{background:var(--wash);box-shadow:inset 0 -2px 0 var(--muted);text-decoration:line-through dotted var(--muted)}
+.wx .tp-checked .tp-seg.tp-at{outline:2px solid var(--ink);outline-offset:1px}
+.wx .tp-key{margin:0;color:var(--muted);font-size:0.84rem}
+</style>
+<div class="wx" data-widget="risk-spotter">
+  <div class="wx-head"><b>Try It: Where Would You Check First?</b><span>Mark the claims in this answer that are most likely to be wrong.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">The request</p>
+      <p class="tp-ask">How do I start a community garden on a vacant lot in my town?</p>
+    </div>
+    <div>
+      <p class="wx-label">The answer</p>
+      <p class="tp-text"></p>
+    </div>
+    <div class="wx-row"><button type="button" class="wx-primary tp-check">Check my marks</button><button type="button" class="tp-reset">Start over</button></div>
+    <p class="tp-key" hidden>Highlighted: you found it. Red: you missed it. Struck through: you marked it, but it isn't one.</p>
+    <p class="wx-out tp-out wx-wait" aria-live="polite">Select a part of the text to mark it. Select it again to unmark it.</p>
+    <p class="wx-fine">The answer is invented for this exercise. The ordinance, the grant and the study do not exist, and that is the point: they look exactly like real ones.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // Each part is [text, 1 if it is one of the parts to find, why].
+  const SEGS = [
+    [
+      "Community gardens are a great way to grow food and meet your neighbors.",
+      0,
+      "A general statement. Nothing specific could be wrong."
+    ],
+    [
+      "Most vegetables need six to eight hours of direct sun a day, so look for a lot that isn't shaded by tall buildings.",
+      0,
+      "Widely written-about gardening advice, consistent across sources."
+    ],
+    [
+      "Under your city's ordinance 14-203, residents may build raised beds on vacant lots without a permit.",
+      1,
+      "Local and exact: a specific ordinance number in your particular town. This is where models invent details."
+    ],
+    [
+      "Contact the lot's owner first; your county's property records list owners by parcel.",
+      0,
+      "General advice that is true in most places. Your county's site will confirm the details."
+    ],
+    [
+      "The city's Green Spaces grant, which opened last month, offers up to $2,500 per garden.",
+      1,
+      "Recent, local and an exact figure, three risk factors at once. \"Last month\" is probably after the knowledge cutoff."
+    ],
+    [
+      "A 2019 study by Hartwell and Ng in the Journal of Urban Agriculture found that gardens raise nearby property values by 9.4%.",
+      1,
+      "A citation with an exact figure. Look the study up before you repeat the number."
+    ],
+    [
+      "Test the soil for lead before planting, since the soil on vacant urban lots is often contaminated.",
+      0,
+      "Standard, widely published advice from extension services and health agencies."
+    ],
+    [
+      "Plan for a water source early; hauling water is the most common reason new gardens fail.",
+      1,
+      "A confident ranking (\"the most common reason\") with no source. Superlatives like this are easy to invent."
+    ]
+  ];
+  const T = {
+    found: (n, of) => `You found ${n} of ${of} high-risk claims`,
+    extra: (n) => `You also marked ${n} lower-risk claim${n > 1 ? 's' : ''}. Checking ${n > 1 ? 'them' : 'it'} isn't wrong, but it isn't where errors concentrate.`,
+    none: "You didn't mark anything lower-risk.",
+    after: "Select any part of the answer to see why it is high- or lower-risk.",
+    tag: ["Lower risk","High risk"],
+  };
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const marked = SEGS.map(() => false);
+  let checked = false;
+
+  $('.tp-text').innerHTML = SEGS.map((s, i) => `<span class="tp-seg" role="button" tabindex="0" aria-pressed="false" data-i="${i}">${esc(s[0])}</span>`).join(' ');
+  const segs = [...root.querySelectorAll('.tp-seg')];
+  const goal = SEGS.filter((s) => s[1]).length;
+
+  function summary() {
+    const hit = SEGS.filter((s, i) => s[1] && marked[i]).length;
+    const extra = SEGS.filter((s, i) => !s[1] && marked[i]).length;
+    return `<b>${esc(T.found(hit, goal))}.</b>${esc(extra ? T.extra(extra) : T.none)} ${esc(T.after)}`;
+  }
+
+  function show(at = -1) {
+    $('.tp-text').classList.toggle('tp-checked', checked);
+    $('.tp-key').hidden = !checked;
+    $('.tp-check').hidden = checked;
+    segs.forEach((el, i) => {
+      el.setAttribute('aria-pressed', marked[i] ? 'true' : 'false');
+      el.classList.toggle('tp-hit', checked && SEGS[i][1] && marked[i]);
+      el.classList.toggle('tp-miss', checked && SEGS[i][1] && !marked[i]);
+      el.classList.toggle('tp-extra', checked && !SEGS[i][1] && marked[i]);
+      el.classList.toggle('tp-at', checked && i === at);
+    });
+    const out = $('.tp-out');
+    if (!checked) {
+      const n = marked.filter(Boolean).length;
+      out.className = 'wx-out tp-out wx-wait';
+      out.textContent = n ? `You have marked ${n}. Check your marks when you're done.` : 'Select a part of the text to mark it. Select it again to unmark it.';
+    } else if (at >= 0) {
+      out.className = 'wx-out tp-out' + (SEGS[at][1] && !marked[at] ? ' wx-stop' : '');
+      out.innerHTML = `<b>${esc(T.tag[SEGS[at][1]])}</b>${esc(SEGS[at][2])}`;
+    } else {
+      out.className = 'wx-out tp-out';
+      out.innerHTML = summary();
+    }
+  }
+
+  const pick = (i) => { if (checked) show(i); else { marked[i] = !marked[i]; show(); } };
+  segs.forEach((el, i) => {
+    el.onclick = () => pick(i);
+    el.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(i); } };
+  });
+  $('.tp-check').onclick = () => { checked = true; show(); $('.tp-reset').focus(); };
+  $('.tp-reset').onclick = () => { checked = false; marked.fill(false); show(); segs[0].focus(); };
+  show();
+})();
+</script>

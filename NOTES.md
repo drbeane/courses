@@ -72,6 +72,19 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 - The planned outline now has a Type column for all 76 lessons.
 - New claims that need sources are listed at the end of `06 - Verification Checklist.md`.
 
+## 2026-11-15: Week 3 widgets for Applied AI
+
+- Eight new widgets in `courses/applied-ai/content/widgets/`, placed in the Week 3 lessons:
+  `name-the-error`, `leading-or-neutral` and `risk-spotter` (T1); `check-level`, `claim-picker`
+  and `check-match` (T2); `effort-fix` and `feedback-builder` (T3).
+- Each placement adds one lead-in sentence and one `{{widget ...}}` line, in the draft and in `content/`.
+- `name-the-error`, `leading-or-neutral` and `check-match` reuse the quiz script of `reliability-sort`.
+  `risk-spotter` and `claim-picker` share one script: the reader marks parts of a passage, then checks.
+- The garden answer in `risk-spotter` is invented, including its ordinance, grant and study, and
+  the widget says so. The facts in the `claim-picker` paragraph are real but were not rechecked;
+  its superintendent quotation is invented and unattributed on purpose.
+- The verdicts in `effort-fix` follow the lesson's "Match the Fix to the Error" table.
+
 ## 2026-11-15: Week 2 widgets for Applied AI
 
 - Nine new widgets in `courses/applied-ai/content/widgets/`, placed in the Week 2 lessons:

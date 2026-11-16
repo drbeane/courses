@@ -1,0 +1,110 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible,.wx select:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{cursor:default}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-status{margin:0;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .wx-out b{display:block;font-size:1.05rem;margin-bottom:0.15rem}
+.wx .wx-out.wx-stop{border-left-color:#b3261e}
+.wx .wx-out.wx-wait{border-left-color:var(--rule);color:var(--muted)}
+.wx .cl-qs{display:grid;gap:0.7rem}
+.wx .cl-q{display:grid;gap:0.35rem}
+.wx .cl-q p{margin:0;font-weight:600}
+.wx .cl-scale{margin:0;padding:0;list-style:none;display:grid;gap:0.25rem}
+.wx .cl-scale li{margin:0;display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:0.3rem 0.8rem;padding:0.4rem 0.6rem;border:1px solid var(--rule);border-radius:6px}
+.wx .cl-scale li b{font-weight:600}
+.wx .cl-scale li span{color:var(--muted)}
+.wx .cl-scale li.cl-at{border-color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff)}
+.wx .cl-scale li.cl-at.cl-stop{border-color:#b3261e;background:color-mix(in srgb,#b3261e 7%,#fff)}
+@media (max-width:520px){.wx .cl-scale li{grid-template-columns:1fr}}
+</style>
+<div class="wx" data-widget="check-level">
+  <div class="wx-head"><b>Try It: How Much Should You Check?</b><span>Pick an output, answer two questions, and see how much checking it deserves.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Output</p>
+      <div class="wx-row cl-tasks" role="group" aria-label="Output"></div>
+    </div>
+    <div class="cl-qs"></div>
+    <p class="wx-out cl-out" aria-live="polite"></p>
+    <div>
+      <p class="wx-label">Levels of checking</p>
+      <ol class="cl-scale"></ol>
+    </div>
+    <p class="wx-fine">The examples start with reasonable answers. Change one to see what it does. This follows the table above and is a rule of thumb, not a formula.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const QS = [
+    ['What would a mistake cost?', ['Nothing much', 'Some embarrassment or rework', 'A grade, money, or someone\'s trust', 'Health, legal, money or safety harm']],
+    ['How likely is a mistake?', ['Low: a general, well-known topic', 'Medium', 'High: niche, recent, exact details, or long reasoning']],
+  ];
+  const TASKS = [
+    ['Gift ideas for a friend', [0, 0]],
+    ['A study guide for Friday\'s quiz', [1, 1]],
+    ['An email to a colleague with meeting times', [1, 2]],
+    ['Citations for a paper you\'ll submit', [2, 2]],
+    ['How much of a medicine to give a child', [3, 1]],
+    ['Something of your own', null],
+  ];
+  const SCALE = [
+    ['Read it over', 'Look for anything obviously off, then use it.'],
+    ['Spot-check the facts', 'Check the specific facts, and anything that surprises you.'],
+    ['Verify what the work depends on', 'Check every claim, figure and citation that matters.'],
+    ['Ask a qualified person', 'Treat the output as the start of a conversation with an expert or an official source.'],
+  ];
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  let ans = [null, null];
+
+  // Cost sets the starting level; a high chance of error moves it up one.
+  const level = ([cost, risk]) => cost === 3 ? 3 : Math.min(2, cost + (risk === 2 ? 1 : 0));
+  const WHY = [
+    'A mistake would cost little, so a read-through is enough.',
+    'A mistake would be awkward, so check the specific facts.',
+    'Someone will rely on this, so check everything the work depends on.',
+    'An error could do real harm. AI output is a starting point here, not an answer.',
+  ];
+
+  $('.cl-tasks').innerHTML = TASKS.map((t, i) => `<button type="button" class="wx-chip" data-i="${i}">${esc(t[0])}</button>`).join('');
+  $('.cl-qs').innerHTML = QS.map(([q, opts], i) =>
+    `<div class="cl-q"><p>${i + 1}. ${esc(q)}</p><div class="wx-row" role="group" aria-label="${esc(q)}">${opts.map((o, j) => `<button type="button" class="wx-chip cl-a" data-q="${i}" data-a="${j}">${esc(o)}</button>`).join('')}</div></div>`).join('');
+  const tasks = [...root.querySelectorAll('.cl-tasks button')];
+  const opts = [...root.querySelectorAll('.cl-a')];
+
+  function show() {
+    opts.forEach((b) => b.setAttribute('aria-pressed', ans[+b.dataset.q] === +b.dataset.a ? 'true' : 'false'));
+    const ready = ans.every((a) => a !== null);
+    const lv = ready ? level(ans) : -1;
+    const out = $('.cl-out');
+    out.className = 'wx-out cl-out' + (!ready ? ' wx-wait' : lv === 3 ? ' wx-stop' : '');
+    out.innerHTML = ready
+      ? `<b>${esc(SCALE[lv][0])}</b>${esc(WHY[lv])}${ans[1] === 2 && ans[0] < 3 ? ' A mistake is also more likely than usual, which moves it up a level.' : ''}`
+      : 'Answer both questions to see a suggestion.';
+    $('.cl-scale').innerHTML = SCALE.map(([n, d], i) => `<li class="${i === lv ? `cl-at${i === 3 ? ' cl-stop' : ''}` : ''}"><b>${esc(n)}</b><span>${esc(d)}</span></li>`).join('');
+  }
+
+  tasks.forEach((b, i) => { b.onclick = () => {
+    tasks.forEach((t) => t.setAttribute('aria-pressed', t === b ? 'true' : 'false'));
+    ans = TASKS[i][1] ? [...TASKS[i][1]] : [null, null];
+    show();
+  }; });
+  opts.forEach((b) => { b.onclick = () => { ans[+b.dataset.q] = +b.dataset.a; show(); }; });
+  tasks[0].click();
+})();
+</script>

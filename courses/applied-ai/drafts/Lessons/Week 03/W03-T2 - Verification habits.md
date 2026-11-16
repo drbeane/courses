@@ -23,7 +23,15 @@ Checking everything in every answer would cancel out the time the tool saved you
 | A paper you'll submit; numbers in a report; advice you'll act on | Verify every factual claim, figure, and citation that the work depends on. |
 | Medical, legal, financial, or safety decisions | Treat the output as a starting point for a conversation with a qualified person or an authoritative source. |
 
+Try it below. Pick an output, or describe your own with the two questions, and see where it lands in the table.
+
+{{widget check-level}}
+
 Before you check, **pull out the checkable claims**. A page of AI prose mixes facts, opinions, and filler. Go through and mark each name, number, date, quotation, citation, and causal claim ("X caused Y"). Those are the things that can be wrong in a way that matters, and the list is usually shorter than the text makes it seem.
+
+Practice on the paragraph below. Mark every checkable claim, then check your marks.
+
+{{widget claim-picker}}
 
 ## Five Habits
 
@@ -79,6 +87,10 @@ This often surfaces the weak points, and it costs one message. Treat the reply a
 | Reasoning errors | Follow the steps one at a time. Cross-check in a new chat. |
 | Misread instructions | Reread your prompt and compare it to the output, constraint by constraint |
 | Sycophancy | Ask again in a new chat, in neutral words |
+
+Practice matching worries to checks below.
+
+{{widget check-match}}
 
 ## Self-Critique Is Useful but Limited
 

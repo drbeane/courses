@@ -36,6 +36,10 @@ So you can't judge AI output by how it reads. You have to judge it by checking i
 
 These overlap. A model that misreads your question may also hallucinate details to support its answer. The labels are still worth learning, because each type calls for a different check, and you'll use them to label failures in this week's lab.
 
+Practice the labels below. Each case describes a failure; pick the type that best explains it.
+
+{{widget name-the-error}}
+
 ### Why Hallucinations Happen
 
 Recall from Week 1 that a model predicts plausible text. When it knows the answer, the plausible continuation is usually the true one. When it doesn't, a fluent guess is often still the most likely continuation, and nothing in the basic mechanism stops it from writing one. The model has no separate step where it looks a fact up and confirms it, unless a tool such as web search provides one.
@@ -81,6 +85,10 @@ How you ask changes what you get:
 
 A related habit: don't tell the model which answer you hope for, and don't say the work is yours when you want honest criticism.
 
+Test yourself below. Decide whether each question leads the model, and see a neutral rewrite of the ones that do.
+
+{{widget leading-or-neutral}}
+
 > **Instructor note: live example.** Ask a question the model gets right, then push back with confident but wrong information. Whether or not it caves, discuss what happened. Current models resist more than older ones, so it may take a fairly leading push.
 
 ## Where Errors Are Most Likely
@@ -93,6 +101,10 @@ You can't check everything, so check where the risk is highest:
 - **Long multi-step reasoning**: plans, proofs, anything with many dependent steps.
 - **Topics you can't check yourself**: you'll miss errors in a field you don't know, which is when you're most tempted to rely on the answer.
 - **Questions you asked in a leading way.**
+
+Try it on an answer below. Mark the claims you would check first, then see where the risk really is.
+
+{{widget risk-spotter}}
 
 The stakes matter too. A wrong detail in a brainstormed list of party themes costs nothing. The same error rate in a dosage, a legal deadline, or a number in a financial report is a serious problem. Match how much you check to what a mistake would cost.
 
