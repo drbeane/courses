@@ -26,8 +26,6 @@ No prior coding experience is assumed. Some weeks involve developing software, b
 
 > **Instructor note: TODO.** List the required Academy courses (see the Claude Academy Resource Map in the draft outline) and say how students submit and you verify completion, then replace the last sentence of the paragraph above.
 
-COSC-500 students complete a "500 extension" on most assignments: usually a larger scope, a written analysis that draws on published sources, or a short teaching demo.
-
 ## The Course AI-Use Policy
 
 In many courses, AI use might be restricted. In this one, it is expected. That makes honesty about how you used it more important, not less.
