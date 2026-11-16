@@ -11,13 +11,9 @@
 - Judge when speaking is better than typing, and when it isn't.
 - Check a transcript before you rely on it.
 
-## Voice Is an Interface, Not a Surface
-
-In Week 1 you met the surfaces where AI is delivered: chat assistants, coding assistants, agents, and others. Voice is not one of them. It is a different way to give input and receive output **inside** a surface you already use. When you talk to Claude on your phone, you are still using the chat assistant, with the same model, the same memory, and the same limits. Only the way in and the way out have changed.
-
-That's why the habits from this week still apply. A spoken prompt needs a goal, context, and constraints just as a typed one does. Speech simply makes it easier to give a lot of context quickly.
-
 ## Two Ways to Use Your Voice
+
+Talking to an AI tool doesn't change what makes a good prompt. A spoken prompt needs a goal, context, and constraints just as a typed one does. Speech simply makes it easier to give a lot of context quickly. There are two ways to use it.
 
 | | Voice mode | Dictation |
 |---|---|---|

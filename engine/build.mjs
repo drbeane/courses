@@ -437,14 +437,17 @@ ${goes.length ? `<p class="goes s${wk.stage}">Goes with ${goes.map((s) => `<a hr
     return [...terms.values()].sort((a, b) => a.term.localeCompare(b.term, 'en', { sensitivity: 'base', numeric: true }));
   }
 
-  // A course can add a longer description of any term in content/glossary.md, under a "## Term"
-  // heading that matches the term as the lesson writes it. Text before the first heading is a note
-  // for whoever edits the file, and is not shown.
-  const fullDescriptions = new Map();
+  // A course can give any term a detailed entry in content/glossary.md, under a "## Term" heading
+  // that matches the term as the lesson writes it: a few paragraphs, then optionally a
+  // "### Resources" heading over a list of links. On the Glossary page, a term with an entry opens
+  // it in a pop-up, along with links to the lessons that use the term. Text before the first
+  // heading is a note for whoever edits the file, and is not shown.
+  const details = new Map();
   if (has('content/glossary.md')) {
     for (const part of read('content/glossary.md').split(/^## /m).slice(1)) {
       const nl = part.indexOf('\n');
-      fullDescriptions.set(part.slice(0, nl).trim().toLowerCase(), part.slice(nl + 1).trim());
+      const [body, links = ''] = part.slice(nl + 1).split(/^### Resources[ \t]*$/m);
+      details.set(part.slice(0, nl).trim().toLowerCase(), { body: body.trim(), links: links.trim() });
     }
   }
   const glossTerms = glossaryTerms();
@@ -452,18 +455,36 @@ ${goes.length ? `<p class="goes s${wk.stage}">Goes with ${goes.map((s) => `<a hr
 
   function glossary() {
     const terms = glossTerms;
+    const lessonName = (s) => course.lessonNumbers ? `${s.num}: ${esc(s.title)}` : `Week ${s.wk.n}, ${s.label}: ${esc(s.title)}`;
     const list = terms.map((t) => {
+      const id = slug(t.term);
       const from = t.from.map((s) => `<a href="/lessons/${s.id}/">${course.lessonNumbers ? s.num : `Week ${s.wk.n}`}: ${esc(s.title)}</a>`).join(', ');
       const def = marked.parseInline(t.def.replace(/^[a-z]/, (c) => c.toUpperCase()));
-      const full = fullDescriptions.get(t.term.toLowerCase());
-      return `<div class="term" id="${slug(t.term)}"><dt>${marked.parseInline(t.term)}</dt><dd><p class="def">${def}</p>${full ? `<div class="full">${mdToHtml(full, `glossary ${t.term}`)}</div>` : ''}<span class="from">${from}</span></dd></div>`;
+      const d = details.get(t.term.toLowerCase());
+      const name = marked.parseInline(t.term);
+      if (!d) return `<div class="term" id="${id}"><dt>${name}</dt><dd>${def} <span class="from">${from}</span></dd></div>`;
+      const ext = (html) => html.replace(/<a href="http/g, '<a rel="noopener" href="http');
+      const more = `<h2 id="gm-title">${name}</h2>
+<div class="gm-text">${ext(mdToHtml(d.body, `glossary ${t.term}`))}</div>
+<h3>${T('In the Lessons', 'In the lessons')}</h3>
+<ul class="gm-links">${t.from.map((s) => `<li><a href="/lessons/${s.id}/">${lessonName(s)}</a></li>`).join('')}</ul>${d.links ? `
+<h3>${T('Resources', 'Resources')}</h3>
+<div class="gm-res">${ext(mdToHtml(d.links, `glossary ${t.term}`))}</div>` : ''}`;
+      return `<div class="term has-more" id="${id}"><dt><button type="button" class="gt" aria-haspopup="dialog">${name}</button></dt><dd>${def} <span class="from">${from}</span></dd><template>${more}</template></div>`;
     }).join('\n');
     return page({
       title: 'Glossary',
       section: 'glossary',
       body: `<div class="head"><h1>Glossary</h1>
-<p>The key terms from each posted lesson, in alphabetical order.${fullDescriptions.size ? ' Many have a longer description under the short definition.' : ''} Each term links to the lesson that introduces it.</p></div>
-${terms.length ? `<dl class="gloss">\n${list}\n</dl>` : '<p class="empty">No terms yet. They appear here as lessons are posted.</p>'}`,
+<p>The key terms from each posted lesson, in alphabetical order.${details.size ? ' Select a term to open a fuller explanation, with the lessons that use it and resources for further reading.' : ' Each term links to the lesson that introduces it.'}</p></div>
+${terms.length ? `<div class="gfilter">
+  <label class="vh" for="gq">${T('Filter Terms', 'Filter terms')}</label>
+  <input id="gq" type="search" placeholder="Filter terms" autocomplete="off" spellcheck="false">
+  <span class="gcount" aria-live="polite">${terms.length} terms</span>
+</div>
+<dl class="gloss">\n${list}\n</dl>
+<p class="gnone" hidden>No terms match.</p>
+<dialog class="gmodal" aria-labelledby="gm-title"><button type="button" class="gm-x" aria-label="Close">×</button><div class="gm-body"></div></dialog>` : '<p class="empty">No terms yet. They appear here as lessons are posted.</p>'}`,
     });
   }
 
@@ -580,9 +601,9 @@ ${terms.length ? `<dl class="gloss">\n${list}\n</dl>` : '<p class="empty">No ter
     if (has(src)) out(`demos/${d.slug}/index.html`, demoPage(d, read(src)));
   }
   if (mathErrors.length) console.warn(`${base}: ${mathErrors.length} equations could not be read:\n  ${mathErrors.join('\n  ')}`);
-  const unmatched = [...fullDescriptions.keys()].filter((k) => !glossTerms.some((t) => t.term.toLowerCase() === k));
+  const unmatched = [...details.keys()].filter((k) => !glossTerms.some((t) => t.term.toLowerCase() === k));
   if (unmatched.length) console.warn(`${base}: content/glossary.md has descriptions for terms no lesson defines: ${unmatched.join(', ')}`);
-  const extra = [[projects.length, 'project'], [appendix.length, 'appendix page'], [fullDescriptions.size, 'glossary description']].filter(([n]) => n).map(([n, w]) => `, ${n} ${w}${n === 1 ? '' : 's'}`).join('');
+  const extra = [[projects.length, 'project'], [appendix.length, 'appendix page'], [details.size, 'detailed glossary term']].filter(([n]) => n).map(([n, w]) => `, ${n} ${w}${n === 1 ? '' : 's'}`).join('');
   console.log(`${base}: Built ${items.filter((s) => s.lesson).length} lessons and ${items.filter((s) => s.slides).length} decks${extra}.`);
   return course;
 }

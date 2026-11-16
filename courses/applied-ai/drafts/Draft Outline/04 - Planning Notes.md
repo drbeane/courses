@@ -12,8 +12,7 @@ entry when a decision is made, and mark each item's status.
   save usage, writing Markdown files, and using Markdown files to hand work from one chat or session
   to the next. **Done:** Week 2, Topic 3, "Markdown and Handoffs." Week 5, Topic 1 keeps a short recap.
 - **2026-11-15: Voice gets its own lesson.** Memory and custom instructions belong together as standing
-  context. Voice is about the interface, not the context. Voice is not its own surface: it is a way of
-  giving input and hearing output inside the surfaces students already use. **Done:** Week 2, Topic 5
+  context. Voice is about the interface, not the context. **Done:** Week 2, Topic 5
   is now "Memory and Custom Instructions," and Week 2, Topic 6 is "Voice Mode and Dictation." The voice
   lesson covers voice conversations, the dictation built into AI apps, operating system dictation
   (Windows and macOS), and dictation services such as Wispr Flow.
@@ -27,11 +26,11 @@ entry when a decision is made, and mark each item's status.
   "The History of AI," linked from the What is AI? lesson.
 - **2026-11-15: Projects.** A new site section. **Done:** the section and a draft page for the first
   project. See Projects below for what is still open.
-- **2026-11-15: Glossary full descriptions.** Each glossary term can have a longer description on the
-  Glossary page, written in `drafts/Glossary.md` and published to `content/glossary.md`. The terms in
-  each lesson's Key Terms section now link to the glossary. This works for all three courses.
-  **Done** for the Week 1 and Week 2 terms. The other weeks' terms still show only the short
-  definition.
+- **2026-11-15: Glossary pop-ups and filter.** The glossary list looks as it did before. Selecting a
+  term opens a pop-up with a detailed definition, links to the lessons that use the term, and links
+  to resources. A filter box above the list narrows it as you type. Entries are written in
+  `drafts/Glossary.md`. Terms in each lesson's Key Terms section link to the glossary and open
+  their pop-up. Works for all three courses. **Done** for all 219 Applied AI terms.
 - **2026-11-15: Site layout, for all three courses.** **Done** in `engine/site.css`.
   - The lesson text column is about 15% wider.
   - Lesson content is centered on the page, not counting the contents list.
@@ -47,8 +46,9 @@ entry when a decision is made, and mark each item's status.
 ## Content to develop
 
 - [x] A lesson on what AI is.
-- [x] Glossary full descriptions (mechanism, and Weeks 1 and 2).
-- [ ] Glossary full descriptions for Weeks 3 to 15.
+- [x] Glossary pop-ups with detailed definitions, lesson links and resources (all Applied AI terms).
+- [x] Glossary filter.
+- [ ] Glossary entries for AI Ethics, if wanted.
 - [ ] Thoroughly review Week 1. Skipped for now.
 - [x] Search for all three courses.
 - [x] A lesson on managing usage limits.

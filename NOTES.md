@@ -234,3 +234,18 @@ Engine (all three courses):
 - `course.json` settings: `projects` and `appendix` (slug, name, about, optional weeks and tag),
   with pages in `content/projects/` and `content/appendix/`, synced from `drafts/Projects/` and
   `drafts/Appendix/`. New tag value: `"draft"`.
+
+## 2026-11-15: Glossary pop-ups and filter; title alignment; code blocks; voice lesson
+
+- Glossary (engine, all courses): the list is back to term, short definition and lessons. A term
+  with an entry in `content/glossary.md` is a button that opens a pop-up with a detailed
+  definition, links to the lessons that use it, and resources (a `### Resources` list under the
+  term's `##` heading). A filter box above the list matches terms and definitions. A link to
+  `/glossary/#term` opens that term's pop-up, so Key Terms links in lessons open it directly.
+- Applied AI: detailed entries and resource links for all 219 glossary terms. Every link was
+  checked; the few that refuse automated checks are already on the Resources page.
+- Lesson pages: the title block starts at the contents list's left edge again, while the reading
+  column stays centered. Project and appendix pages match.
+- Fenced code blocks are one shaded box (`.prose pre`), instead of shading each line.
+- Applied AI 02-06 (Voice Mode and Dictation): removed the "interface, not a surface" section and
+  slide. 14-02: split the combined FERPA/HIPAA key term so HIPAA has its own glossary entry.

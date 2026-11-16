@@ -22,6 +22,60 @@
   });
   mark();
 
+  // ---------- Glossary ----------
+  // A filter box above the list, and a pop-up with the full entry for terms that have one.
+  const gloss = document.querySelector('.gloss');
+  if (gloss) {
+    const terms = [...gloss.querySelectorAll('.term')];
+    // Match on the term and its definition, not on the names of the lessons listed under it.
+    const words = terms.map((t) => `${t.querySelector('dt').textContent} ${t.querySelector('dd').textContent.replace(t.querySelector('.from')?.textContent || '', '')}`.toLowerCase());
+    const gq = document.getElementById('gq');
+    const count = document.querySelector('.gcount');
+    const none = document.querySelector('.gnone');
+    const total = terms.length;
+    gq.addEventListener('input', () => {
+      const q = gq.value.trim().toLowerCase();
+      let shown = 0;
+      terms.forEach((t, i) => {
+        const ok = !q || words[i].includes(q);
+        t.hidden = !ok;
+        if (ok) shown++;
+      });
+      count.textContent = q ? `${shown} of ${total} terms` : `${total} terms`;
+      none.hidden = shown > 0;
+    });
+
+    const dlg = document.querySelector('.gmodal');
+    const body = dlg.querySelector('.gm-body');
+    let opener = null;
+    const open = (term, fromButton) => {
+      body.innerHTML = term.querySelector('template').innerHTML;
+      opener = fromButton || null;
+      history.replaceState(null, '', `#${term.id}`);
+      dlg.showModal();
+      body.scrollTop = 0;
+      dlg.querySelector('.gm-x').focus();
+    };
+    gloss.addEventListener('click', (e) => {
+      const b = e.target.closest('button.gt');
+      if (b) open(b.closest('.term'), b);
+    });
+    dlg.querySelector('.gm-x').addEventListener('click', () => dlg.close());
+    // A click on the dimmed area outside the box closes it.
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => {
+      history.replaceState(null, '', location.pathname + location.search);
+      if (opener) opener.focus();
+    });
+    // A link to /glossary/#term, such as one from a lesson's Key Terms, opens that term.
+    const fromHash = () => {
+      const t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (t && t.classList.contains('has-more')) { t.scrollIntoView({ block: 'center' }); open(t, t.querySelector('button.gt')); }
+    };
+    fromHash();
+    addEventListener('hashchange', fromHash);
+  }
+
   // ---------- Search ----------
   const wrap = document.querySelector('.search');
   if (!wrap) return;

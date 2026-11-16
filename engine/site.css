@@ -154,7 +154,8 @@ main { max-width: 63rem; margin: 0 auto; padding: 0 1.5rem 5rem; }
 main.reading { max-width: 86rem; }
 .lesson { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 48.5rem) minmax(0, 1fr); column-gap: 2.5rem; }
 .lesson > .cols { display: contents; }
-.lesson > .lhead { grid-column: 2; grid-row: 1; }
+/* The title block starts at the contents list's left edge, as the reading column is centered. */
+.lesson > .lhead { grid-column: 1 / 3; grid-row: 1; justify-self: end; width: min(100%, 65rem); }
 .lesson .toc { grid-column: 1; grid-row: 2; justify-self: end; align-self: start; width: 100%; max-width: 14rem; margin-top: 2.5rem; }
 .lesson .prose { grid-column: 2; grid-row: 2; margin-top: 2.5rem; }
 .lesson > .pager { grid-column: 2; grid-row: 3; margin-left: 0; max-width: none; }
@@ -167,6 +168,9 @@ main.reading { max-width: 86rem; }
 .prose a { color: var(--c); }
 .prose blockquote { margin: 1.5rem 0; padding: 0.1rem 0 0.1rem 1.25rem; border-left: 3px solid var(--rule); color: var(--muted); }
 .prose code { font-size: 0.88em; background: var(--wash); padding: 0.1em 0.35em; border-radius: 3px; }
+/* A fenced code block is one shaded box. The inline-code shading above is turned off inside it. */
+.prose pre { margin: 0 0 1.25rem; padding: 0.9rem 1.1rem; background: var(--wash); border: 1px solid var(--rule); border-radius: 6px; overflow-x: auto; font: 400 0.9rem/1.55 ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; }
+.prose pre code { font-size: inherit; background: none; padding: 0; border-radius: 0; white-space: pre; }
 .prose img { display: block; max-width: 100%; height: auto; margin: 1.75rem auto; }
 .prose img.inline { display: inline; max-height: 1.5em; margin: 0 0.1em; vertical-align: middle; }
 .prose .video { aspect-ratio: 16 / 9; margin: 1.75rem 0 0.75rem; }
@@ -202,11 +206,31 @@ main.reading { max-width: 86rem; }
 .term { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 0.25rem 2rem; padding: 0.9rem 0; border-bottom: 1px solid var(--rule); }
 .term dt { font-weight: 700; font-size: 1.1rem; }
 .term dd { margin: 0; font: 400 1.1rem/1.55 var(--text); }
-.term .def { margin: 0; }
-.term .full { margin-top: 0.5rem; font-size: 1rem; line-height: 1.6; color: #2c3242; }
-.term .full p { margin: 0 0 0.6rem; }
-.term .full > :last-child { margin-bottom: 0; }
-.term .full code { font-size: 0.88em; background: var(--wash); padding: 0.1em 0.35em; border-radius: 3px; }
+/* Glossary filter, and the pop-up with a term's full entry */
+.gfilter { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; max-width: 56rem; margin: 0 0 1.25rem; }
+.gfilter input { flex: 0 1 22rem; font: 400 1rem/1.2 var(--display); color: var(--ink); padding: 0.6rem 0.9rem 0.6rem 2.2rem; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23586074' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2 3h12M4 8h8M6 13h4'/%3E%3C/svg%3E") no-repeat 0.8rem 50% / 0.9rem; }
+.gfilter input:focus { outline: none; border-color: var(--s3); box-shadow: 0 0 0 3px color-mix(in srgb, var(--s3) 20%, transparent); }
+.gcount { color: var(--muted); font-size: 0.9rem; }
+.gnone { color: var(--muted); max-width: 56rem; }
+.term[hidden] { display: none; }
+.term .gt { all: unset; cursor: pointer; font-weight: 700; color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule); text-decoration-thickness: 2px; text-underline-offset: 0.22em; }
+.term .gt:hover { text-decoration-color: currentColor; }
+.term .gt:focus-visible { outline: 3px solid var(--s3); outline-offset: 3px; border-radius: 2px; }
+.gmodal { width: min(40rem, calc(100vw - 2rem)); max-height: min(85vh, 48rem); padding: 0; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper); color: var(--ink); box-shadow: 0 24px 60px rgba(23, 27, 38, 0.25); }
+.gmodal::backdrop { background: rgba(23, 27, 38, 0.45); }
+.gmodal[open] { display: flex; flex-direction: column; }
+.gm-x { position: absolute; top: 0.6rem; right: 0.6rem; width: 2.25rem; height: 2.25rem; border: 0; border-radius: 999px; background: var(--wash); color: var(--ink); font: 400 1.5rem/1 var(--display); cursor: pointer; }
+.gm-x:hover { background: var(--rule); }
+.gm-body { overflow: auto; padding: 1.75rem 2rem 1.75rem; }
+.gm-body h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; margin: 0 2.5rem 1rem 0; padding-bottom: 0.9rem; border-bottom: 1px solid var(--rule); }
+.gm-text { font: 400 1.04rem/1.65 var(--text); }
+.gm-text p { margin: 0 0 0.85rem; }
+.gm-text code, .gm-res code { font-size: 0.88em; background: var(--wash); padding: 0.1em 0.35em; border-radius: 3px; }
+.gm-body h3 { margin: 1.4rem 0 0.5rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.gm-links, .gm-res ul { margin: 0; padding: 0; list-style: none; }
+.gm-links li, .gm-res li { margin: 0 0 0.4rem; font-size: 0.97rem; line-height: 1.4; }
+.gm-links a, .gm-res a { color: var(--s2); font-weight: 600; }
+.gm-res p { margin: 0; }
 .term .from { display: block; margin-top: 0.2rem; font: 400 0.9rem/1.4 var(--display); color: var(--muted); }
 .term:target { background: var(--wash); }
 
@@ -222,6 +246,7 @@ main.reading { max-width: 86rem; }
   .pager { margin-left: 0; }
   .lesson { grid-template-columns: minmax(0, 1fr); }
   .lesson > .lhead, .lesson .toc, .lesson .prose, .lesson > .pager { grid-column: 1; }
+  .lesson > .lhead { width: auto; justify-self: stretch; }
   .lesson .toc { max-width: none; margin-top: 2rem; }
   .lesson .prose { grid-row: 3; margin-top: 2rem; }
   .lesson > .pager { grid-row: 4; }
