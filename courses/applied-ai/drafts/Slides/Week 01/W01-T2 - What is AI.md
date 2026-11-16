@@ -21,13 +21,11 @@ COSC-300/500 Applied AI Essentials
 
 ---
 
-## Two Ways to Build It
+## Rules, Then Data
 
-| Rules written by people | Learned from data |
-|---|---|
-| Predictable, easy to audit | Handles messy input: speech, photos, writing |
-| Brittle when something new comes up | Needs lots of data, harder to explain |
-| Tax software, fraud rules | Speech recognition, recommendations, chat assistants |
+- AI is a broad field: expert systems, search algorithms, genetic algorithms, learned models
+- First decades: rules written by people. Brittle and slow to build
+- Since about 2010: learning from data. More robust, sometimes better
 
 ---
 
@@ -39,7 +37,7 @@ COSC-300/500 Applied AI Essentials
       - **Generative AI**: creates new text, images, audio, code
         - **Large language models**: generate text from language
 
-A spam filter *classifies*. A chat assistant *creates*.
+This course covers one narrow slice of AI: the part that matters most today.
 
 In this course, "AI tools" means applications built on large language models.
 
@@ -53,7 +51,7 @@ In this course, "AI tools" means applications built on large language models.
 - Speech recognition and captions
 - Fraud alerts and autocomplete
 
-Most of it is narrow. Chat assistants are unusually general.
+Most of it is narrow: one job each. A spam filter *classifies*. A chat assistant *creates*, across a wide range of tasks.
 
 ---
 
