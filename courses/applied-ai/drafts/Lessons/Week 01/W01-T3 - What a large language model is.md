@@ -1,4 +1,4 @@
-# Week 1: What a Large Language Model Is
+# Week 1: Large Language Models
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Delegation
 
