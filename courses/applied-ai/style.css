@@ -1,0 +1,6 @@
+/* The only item in an Applied AI lesson's fact list is the "4D focus" line, so the list is hidden. */
+.lesson .facts { display: none; }
+/* Tighter space under the lesson header, below the "Open the slides" button. */
+.lhead { padding-bottom: 0.25rem; }
+.lhead > p:last-child { margin-bottom: 0; }
+.lesson .toc, .lesson .prose { margin-top: 1.25rem; }
