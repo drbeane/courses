@@ -20,7 +20,7 @@ No prior coding experience is assumed. Some weeks involve developing software, b
 | AI use journal and reflections | 10% |
 | Claude Academy courses | 10% |
 
-### What Claude Academy Is
+### Claude Academy
 
 [Claude Academy](https://academy.claude.com) (formerly Anthropic Academy) is Anthropic's free online training platform for Claude. Its self-paced courses range from everyday use of Claude to building with the API, and most award a completion certificate or badge when you finish. The Academy component of your grade is made up of a set of these courses, spread across the term. The list of required courses, and how to submit your certificates, will be posted here.
 
