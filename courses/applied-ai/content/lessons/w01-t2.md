@@ -1,4 +1,4 @@
-# Week 1: What Is AI?
+# Week 1: Introduction to AI
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Delegation
 
