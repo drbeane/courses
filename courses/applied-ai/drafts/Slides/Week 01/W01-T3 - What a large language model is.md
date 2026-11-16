@@ -1,10 +1,10 @@
 ---
 marp: true
-title: "Week 1: What a Large Language Model Is"
+title: "Week 1: Large Language Models"
 paginate: true
 ---
 
-# What a Large Language Model Is
+# Large Language Models
 ### Week 1
 COSC-300/500 Applied AI Essentials
 

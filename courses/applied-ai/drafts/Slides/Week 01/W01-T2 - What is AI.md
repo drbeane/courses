@@ -1,10 +1,10 @@
 ---
 marp: true
-title: "Week 1: What Is AI?"
+title: "Week 1: Introduction to AI"
 paginate: true
 ---
 
-# What Is AI?
+# Introduction to AI
 ### Week 1
 COSC-300/500 Applied AI Essentials
 
