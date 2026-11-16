@@ -15,7 +15,7 @@ By February 2025, the European Centre for Medium-Range Weather Forecasts, which 
 
 Three extra days of warning before a hurricane means more time to evacuate, to move equipment out of harm's way and to prepare hospitals. Better forecasts help farmers decide when to plant and harvest, and help grid operators plan for the wind and sun.
 
-*Details in this lesson's examples should be checked against current sources before teaching.*
+
 
 ## Where the Evidence Is Strongest
 
@@ -24,7 +24,7 @@ AI's uses for the climate and environment differ greatly in how well the benefit
 | Use | What it does | How strong is the evidence? |
 |---|---|---|
 | Weather forecasting | Faster and often more accurate forecasts | Strong; now in operational use |
-| Flood forecasting | Warnings of river floods days ahead, including in places with few river gauges | Strong and growing; Google's Flood Hub covers dozens of countries |
+| Flood forecasting | Warnings of river floods days ahead, including in places with few river gauges | Strong and growing; by late 2024 Google's Flood Hub covered more than 100 countries and about 700 million people |
 | Methane detection | Finding large methane leaks from oil, gas and landfills using satellite images | Strong |
 | Deforestation monitoring | Spotting forest loss in near real time from satellite images | Strong; used by Global Forest Watch |
 | Grid management | Forecasting wind and solar output and electricity demand, so more renewable power can be used | Moderate to strong |
@@ -36,7 +36,7 @@ Three features run through the strongest cases. They address problems with clear
 
 ## Discovery, With Caution
 
-Materials discovery shows both the promise and the need for care. In 2023 Google DeepMind reported that its GNoME system had predicted about 2.2 million new crystal structures, of which about 380,000 were predicted to be stable, potentially a vast library of candidates for better batteries and other technologies. Other scientists then examined a sample and argued that many of the predicted materials were not truly new or not likely to be useful. A prediction is not a discovery until someone makes the material in a laboratory and it works.
+Materials discovery shows both the promise and the need for care. In 2023 Google DeepMind reported that its GNoME system had predicted about 2.2 million new crystal structures, of which about 380,000 were predicted to be stable, potentially a vast library of candidates for better batteries and other technologies. In 2024 the chemists Anthony Cheetham and Ram Seshadri examined a sample and reported finding no strikingly novel compounds; many were simple variants of known materials, and none had been shown to be useful. A prediction is not a discovery until someone makes the material in a laboratory and it works.
 
 This is the evidence discipline from Lesson 05-01 applied to science: a forecast of benefit is not a measured benefit.
 
@@ -115,6 +115,8 @@ Find one claim, from a company, consultancy or government, that AI will reduce e
 - **Core:** Rolnick, D. et al. "Tackling Climate Change with Machine Learning," *ACM Computing Surveys* 55(2), 2022. — [Free manuscript](https://arxiv.org/abs/1906.05433); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r270). <!-- reading-access -->
 - Lam, R. et al. "Learning skillful medium-range global weather forecasting," *Science* 382 (2023) (GraphCast). — [Free manuscript](https://arxiv.org/abs/2212.12794); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r271). <!-- reading-access -->
 - IEA, *Energy and AI* (2025), chapters on AI for energy. — [Free full text](https://www.iea.org/reports/energy-and-ai); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r272). <!-- reading-access -->
-- Nearing, G. et al. "Global prediction of extreme floods in ungauged watersheds," *Nature* 627 (2024). ⚠ — [Free full text](https://doi.org/10.1038/s41586-024-07145-1)
-- Merchant, A. et al. "Scaling deep learning for materials discovery," *Nature* 624 (2023) (GNoME), and published critiques. ⚠ — [Free full text](https://doi.org/10.1038/s41586-023-06735-9)
-- ECMWF, announcement that its AI forecasting system became operational (Feb 2025). ⚠ — [Free full text](https://www.ecmwf.int/)
+- Nearing, G. et al. "Global prediction of extreme floods in ungauged watersheds," *Nature* 627 (2024). — [Free full text](https://doi.org/10.1038/s41586-024-07145-1)
+- Merchant, A. et al. "Scaling deep learning for materials discovery," *Nature* 624 (2023) (GNoME). — [Free full text](https://doi.org/10.1038/s41586-023-06735-9)
+- Cheetham, A. & Seshadri, R. "Artificial Intelligence Driving Materials Discovery? Perspective on the Article: Scaling Deep Learning for Materials Discovery," *Chemistry of Materials* 36 (2024). — [Free full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC11044265)
+- Google DeepMind, "GraphCast: AI model for faster and more accurate global weather forecasting," Nov 14, 2023 (includes the Hurricane Lee example). — [Free full text](https://deepmind.google/discover/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/)
+- ECMWF, announcement that its AI forecasting system became operational (Feb 2025). — [Free full text](https://www.ecmwf.int/)

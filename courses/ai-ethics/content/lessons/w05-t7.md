@@ -32,7 +32,7 @@ The researchers Mary Gray and Siddharth Suri call this **ghost work**: labor hid
 
 This work is not only exploitation, and the people who do it describe real benefits.
 
-It brings income to places with few good jobs. In Kenya, the Philippines and elsewhere, data work pays in dollars, can be done from home, and requires a computer and an internet connection more than formal credentials. For many young graduates in countries with high youth unemployment, it is one of the few ways into the digital economy. Some data-work companies have presented themselves as offering "impact sourcing," jobs that lift people out of poverty.
+It brings income to places with few good jobs. In Kenya, the Philippines and elsewhere, data work pays in dollars, can be done from home, and requires a computer and an internet connection more than formal credentials. For many young graduates in countries with high youth unemployment, it is one of the few ways into the digital economy. Some data-work companies have presented themselves as ethical businesses that lift people out of poverty; Sama, according to *TIME*, described itself as an "ethical AI" company that had helped lift more than 50,000 people out of poverty.
 
 It is also flexible, like gig work in Lesson 05-06, and it can build skills that lead to better jobs.
 

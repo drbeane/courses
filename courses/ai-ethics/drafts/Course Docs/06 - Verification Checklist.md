@@ -228,86 +228,51 @@ Check each item, update the lesson, then remove the ⚠ or record the date it wa
 | 01 - Current Cases and News (2025-2026).md | 317 | Sources:** Contemporary coverage (The Register, Fortune), July 2025. ⚠ Add the primary posts. | ☐ |
 
 
-## Added with the 02-04 rewrite (2026-11-15)
+## Claims added in the 2026-11-15 rewrite
 
-These claims in the rewritten 02-04 were written from general knowledge and have no source in the lesson yet. Find a source for each, or cut it.
+These claims were added during the rewrite, mostly from general knowledge. They were checked on 2026-11-15. ✅ means confirmed and sourced, ✏ means corrected in the lesson, and ⚠ means still open.
 
-- ⚠ NIST testing: the best algorithms miss the right person in well under 1 percent of searches on good-quality mugshots. Add the NIST report.
-- ⚠ Police agencies credit the tool with identifying suspects in violent crimes and victims in child-exploitation cases. Add an independent source.
-- ⚠ Boston banned police use in 2020.
-- ⚠ Elizabethton, Tennessee, is about a thousand miles from Fargo.
-- ⚠ Eyewitness identification has a long record of wrongful convictions. Add a source (for example, Innocence Project figures).
+### Module 1
+- ✏ 01-01, AlphaFold: 200 million structures (July 2022) and the 2024 Nobel Prize are confirmed. "Antibiotic resistance" was removed; the malaria vaccine work (Oxford) and the plastic enzyme work (Portsmouth) are now named, and a source was added.
+- ⚠ 01-03: the "200 alerts, one false" figure is labeled as invented. Replace it if a real Croydon alert count is published.
+- ⚠ 01-08: the medical imaging example is generic. Keep it clearly hypothetical, or add a source.
 
+### Module 2
+- ✏ 02-04: the NIST figure is now "about 0.1 percent missed in a 12-million-portrait database" (NISTIR 8271), and the source is added. The police claims are now attributed to the agencies. The eyewitness figure (about 69 percent of DNA exonerations, Innocence Project) is added with its source.
+- ✅ 02-04: Boston ban (June 2020). Elizabethton is about 1,000 miles from Fargo in a straight line.
+- ✏ 02-03: the eyewitness claim now has the Innocence Project figure and source.
+- ✏ 02-07: the memory-aid claim is softened to "in principle," and the lesson notes it has not been well studied.
+- ✏ 02-08: the camera glasses carry the Be My Eyes volunteer service (Ray-Ban Meta, November 2024), not the AI assistant. The lesson is corrected and the source replaced. The WHO figures (2.2 billion and 1.5 billion) are confirmed.
 
-## Added with the Module 1 rewrite (2026-11-15)
+### Module 3
+- ✏ 03-08: the MASAI figures (80,033 women, 20 percent more cancers, 44 percent less reading workload) are confirmed. The later results are added: 29 percent more cancers (2025) and about 12 percent fewer interval cancers (*The Lancet*, 2026). ✅ Grove et al. (136 studies).
+- ✅ 03-01 and 03-08: Mullainathan, *NYT*, Dec 6, 2019.
+- ✅ 03-03: Bertrand and Mullainathan (2004).
+- ✅ 03-06: the Loomis details are confirmed. ✏ New Jersey bail reform now gives the courts' figure (about 44 percent drop, 2015–2018, no rise in pretrial crime) and the 2024 gun-violence study, with sources.
+- ✏ 03-07: the hot-spots claim now states the Braga et al. (2019) review of 65 studies.
 
-New claims in the rewritten Module 1 lessons that were written from general knowledge. Everything else in those lessons comes from the v1 text and its sources.
+### Module 4
+- ✏ 04-07: Wexton (July 25, 2024, ElevenLabs) is confirmed, with details and an NPR source added. Apple Personal Voice (May 16, 2023, 15 minutes, on-device) is confirmed. James Earl Jones and Respeecher (2022) are confirmed, with a source added. The SAG-AFTRA video game strike (ended July 2025, 95 percent ratification) is confirmed, with a source added.
+- ✅ 04-01: Moffatt (2022). 04-03: Arup (15 transfers); the Baltimore-area athletic director was charged (April 2024). 04-05: India (BJP, Bhashini translation); Costello et al. (about 20 percent, two months, 2,190 participants).
 
-- ⚠ 01-01, AlphaFold: accuracy close to laboratory methods in 2020; predicted structures for more than 200 million proteins released free in 2022; used in work on malaria vaccines, antibiotic resistance and plastic-degrading enzymes; two of its creators shared the 2024 Nobel Prize in Chemistry. Check against the Nobel press release and the AlphaFold database announcement, and confirm the press release link.
-- ⚠ 01-03: the "200 alerts, one false" figure is labeled in the text as invented for illustration. Replace it with the real Croydon alert count if one is published.
-- ⚠ 01-08: the medical imaging example is generic and has no source. Add one or keep it clearly hypothetical.
+### Module 5
+- ✅ 05-03: Brynjolfsson, Li and Raymond; Noy and Zhang; Peng et al.; Dell'Acqua et al.; METR are consistent with the published papers. ✏ Bastani et al. is now cited as *PNAS* (2025).
+- ✏ 05-06: the "flexibility" claim now cites Pew (2021).
+- ✏ 05-07: "impact sourcing" is replaced with Sama's own "ethical AI" claim, as reported by *TIME*.
+- ✅ 05-09: the 2025 video game agreement.
 
+### Module 6
+- ✏ 06-05: GraphCast and Hurricane Lee (about nine days ahead) and the 90 percent of measures are confirmed, and the DeepMind source is added. Flood Hub is now "more than 100 countries, about 700 million people." The GNoME critique now names Cheetham and Seshadri (2024), with a source added. ✅ The 40 percent cooling cut (DeepMind, 2016), the GNoME figures, and BCG 5–10 percent.
+- ✏ 06-03: the waste-heat claim now names Meta's Odense data center.
+- ✏ 06-06: the price fall is now "roughly a factor of ten a year," citing a16z (2024).
 
-## Added with the Module 2 rewrite (2026-11-15)
+### Module 7
+- ✏ 07-09: Big Sleep and SQLite are confirmed. CodeMender (October 2025, 72 fixes) replaces the vague 2025 claim. AIxCC now says that 18 real flaws were found and only some patched, names the Georgia Tech-led winner ($4 million), and drops the unconfirmed open-source claim. The curl post is now the specific post (Jan 2, 2024).
+- ⚠ 07-08: Anthropic's tiered access (carried over from v1) still needs a check against current arrangements.
+- ✏ 07-04: the "matters most" claim is softened to "could matter most."
 
-Module 2 now follows the planned outline: 02-07 merges the v1 always-on assistants and smart glasses lessons, and 02-08 is new. The v1 checklist rows for "02-08 - Smart Glasses and Bystander Privacy.md" now refer to material in 02-07.
+### Module 8
+- ✅ 08-09: no new factual claims.
+- ✏ 08-08: the Dutch childcare-benefits scandal now cites Amnesty International (2021).
 
-- ⚠ 02-08 is new and written largely from general knowledge. Verify: Seeing AI (about 2017); Be My Eyes founded 2015, AI assistant added 2023, available on camera glasses from 2024; phone live captioning; WHO figures (at least 2.2 billion with vision impairment, World Report on Vision 2019; about 1.5 billion with some hearing loss, World Report on Hearing 2021). Confirm the four source links, and add access-register entries for them.
-- ⚠ 02-03: the claim that eyewitnesses are unreliable and people checking faces tire and make mistakes needs a source.
-- ⚠ 02-07: the claim that memory aids could help people with memory problems live independently longer is general; add a source or soften.
-
-## Added with the Module 3 rewrite (2026-11-15)
-
-Module 3 now follows the planned outline. The v1 rows above for 03-05 (lending) and 03-06 (insurance, housing) now refer to material in the merged 03-05; v1 03-07 (criminal justice) is now 03-06; v1 03-08 (predictive policing) is now 03-07; 03-08 is new.
-
-- ⚠ 03-08 is new and written largely from general knowledge. Verify the MASAI trial details (about 80,000 women; about 20 percent more cancers detected; no increase in false positives; about 44 percent less reading workload; *Lancet Oncology*, 2023) and consider citing the later full results. Verify Meehl (1954), Grove et al. (2000, 136 studies) and Dietvorst et al. (2015, algorithm aversion), and confirm all source links.
-- ⚠ 03-03: Bertrand and Mullainathan (2004), about 50 percent more callbacks for white-sounding names. Confirm the NBER link.
-- ⚠ 03-06: Loomis details added from general knowledge: charges in 2013 in La Crosse; guilty pleas to attempting to flee a traffic officer and operating a vehicle without the owner's consent. Also New Jersey's 2017 bail reform reducing the pretrial jail population "without a corresponding rise in crime."
-- ⚠ 03-07: hot-spots policing evidence (Braga et al., Campbell review, 2019) and the claim that crime is concentrated in a small share of street blocks. Confirm the link.
-- ⚠ 03-01: Mullainathan, "Biased Algorithms Are Easier to Fix Than Biased People" (NYT, Dec 2019); confirm the date and link.
-
-
-## Added with the Module 4 rewrite (2026-11-15)
-
-Module 4 now follows the planned outline. The v1 rows above for 04-04 (Grok) and 04-05 (law and platform duties) now refer to material in the merged 04-04; v1 04-06 (elections) is now 04-05; v1 04-07 (provenance) is now 04-06; 04-07 is new.
-
-- ⚠ 04-07 is new and written largely from general knowledge. Verify: Rep. Jennifer Wexton's July 2024 House floor speech in an AI-rebuilt voice (and add a source); Apple Personal Voice (2023, about 15 minutes of recordings, on-device), and confirm the Apple newsroom link; AI voice companies offering free voice services to people with ALS; James Earl Jones's agreement to recreate his Darth Vader voice; the 2024–2025 SAG-AFTRA video game strike over AI voice replicas, and add a specific source.
-- ⚠ 04-01: Moffatt asked the chatbot in 2022 (added detail).
-- ⚠ 04-03: the Arup employee made fifteen transfers; the Baltimore-area athletic director was charged (v1 said "created").
-- ⚠ 04-05: AI translation of campaign speeches in India; Costello et al. effect size (about 20 percent reduction in belief, lasting at least two months).
-
-
-## Added with the Module 5 rewrite (2026-11-15)
-
-Module 5 now follows the planned outline. 05-03 is new; v1 05-03 (who captures the gains) is now 05-04; v1 05-04 (algorithmic management) and 05-05 (monitoring) are merged into 05-05. The v1 rows above for those files now refer to the new numbers.
-
-- ⚠ 05-03 is new. Verify: Brynjolfsson, Li and Raymond (more than 5,000 agents; 14 percent average and 34 percent for novices; new agents with the tool matching six-month agents after two months; customers more polite; lower quitting; gains partly retained during outages). Noy and Zhang (about 40 percent less time, about 18 percent higher quality). Peng et al. (about 56 percent faster) and confirm the link. Dell'Acqua et al. (gains largest for weaker consultants; worse performance outside the frontier). METR (about 19 percent slower). Bastani et al. (Turkish high school students; worse exam results after an unrestricted tutor; a hint-based tutor avoided most of the harm) and confirm the link.
-- ⚠ 05-06: the claim that surveys consistently find flexibility is what gig workers value most needs a source.
-- ⚠ 05-07: the claim that some data-work companies described their work as "impact sourcing" needs a source.
-- ⚠ 05-09: the video game performers' 2025 agreement.
-
-
-## Added with the Module 6 rewrite (2026-11-15)
-
-Module 6 now follows the planned outline. The rebound material from v1 06-05 is now in 06-02, and 06-05 is a new lesson on AI for climate and science. The v1 rows above for "06-05 - Efficiency, Rebound, and AI for Climate.md" refer to material now split between 06-02 and 06-05.
-
-- ⚠ 06-05 is new. Verify: GraphCast's Hurricane Lee forecast (about nine days ahead, about three days earlier than traditional systems, per Google DeepMind); GraphCast beating the leading system on about 90 percent of measures; ECMWF making its AI system operational in February 2025, and confirm the link; Google Flood Hub coverage and the Nearing et al. (2024) paper; Google's data-center cooling energy cut of up to 40 percent; GNoME's 2.2 million structures and 380,000 predicted stable, and add a source for the published critique; the BCG/Google 2023 estimate of 5 to 10 percent.
-- ⚠ 06-03: the benefits listed for host communities (waste heat, company-funded infrastructure) are general and need examples or sources.
-- ⚠ 06-06: the steep fall in prices for using AI needs a source.
-
-
-## Added with the Module 7 rewrite (2026-11-15)
-
-Module 7 now follows the planned outline. v1 07-02 and 07-03 are merged into 07-02; v1 07-04 to 07-09 are now 07-03 to 07-08; 07-09 is new. The v1 rows above refer to the old numbers.
-
-- ⚠ 07-09 is new. Verify: Big Sleep's SQLite finding (late 2024; fixed the same day, before release) and later findings; Google's 2025 system that proposes fixes (CodeMender), and add a source; the DARPA AI Cyber Challenge final results (August 2025), including real previously unknown flaws found and teams releasing their systems as open source; the curl maintainer's complaints about AI-generated reports, and replace the general blog link with the specific post.
-- ⚠ 07-08: Anthropic's tiered access (a restricted version for trusted organizations and a public version with added safeguards) carried over from v1; confirm current arrangements.
-- ⚠ 07-04: the claim that agents matter most to people with least time or familiarity with bureaucracy is general.
-
-
-## Added with the Module 8 rewrite (2026-11-15)
-
-Module 8 has no renumbering. Its lessons were rewritten from the v1 text and sources, so the v1 rows above still apply. New in the rewrite:
-
-- ⚠ 08-09 now names the cost of not deploying, drawing on the "system that helps" lessons in Modules 2 to 7; no new factual claims.
-- ⚠ 08-08: the Dutch childcare-benefits scandal is described briefly; add a source.
+Lessons still carrying ⚠ marks on v1-era sources are covered by the rows above this section.

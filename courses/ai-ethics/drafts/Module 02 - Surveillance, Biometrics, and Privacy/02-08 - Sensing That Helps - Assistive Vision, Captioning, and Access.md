@@ -9,11 +9,11 @@
 
 Picture a blind woman standing in a supermarket aisle. Twenty years ago her options were to ask a stranger, wait for a staff member, or memorize where things were and hope nothing had moved. Today she holds up her phone, or simply looks at the shelf through a pair of camera glasses, and asks: "Which of these is the low-sodium soup?" A voice in her ear reads the labels and tells her it is the can on the left. On the way out it reads the expiry date on a carton of milk, the total on the card reader, and a handwritten sign saying the side door is closed.
 
-None of this is futuristic. Since about 2017, a series of tools has made it ordinary. Microsoft's Seeing AI app reads text and describes scenes from a phone camera. Be My Eyes, which began in 2015 by connecting blind users with sighted volunteers over video, added an AI assistant in 2023 that describes photos in detail and answers questions about them. Since 2024 the same service has been available through camera glasses, so a user can keep both hands free for a cane or a guide dog. Similar tools exist for people who are deaf or hard of hearing. Phones now caption speech in real time, and some glasses display captions of the conversation in front of the wearer.
+None of this is futuristic. Since about 2017, a series of tools has made it ordinary. Microsoft's Seeing AI app reads text and describes scenes from a phone camera. Be My Eyes, which began in 2015 by connecting blind users with sighted volunteers over video, added an AI assistant in 2023 that describes photos in detail and answers questions about them. Since November 2024, users have been able to call a Be My Eyes volunteer hands-free through Ray-Ban Meta camera glasses, keeping both hands free for a cane or a guide dog. Similar tools exist for people who are deaf or hard of hearing. Phones now caption speech in real time, and some glasses display captions of the conversation in front of the wearer.
 
 The technology is the same technology this module has been worried about: cameras that are always ready, microphones that are always listening, images sent to a company's servers, and AI that describes whatever it sees, including other people.
 
-*Some details in this lesson, including product launch dates, should be checked against current sources before teaching.*
+*Product features change often; check current details before teaching.*
 
 ## Who Gains
 
@@ -106,8 +106,8 @@ Return to the campus policy you wrote in Lesson 02-07. Read it as a blind studen
 
 ## Sources
 
-- **Core:** Be My Eyes, "Be My AI" overview and announcements (2023–2024). ⚠ Verify dates and current features. — [Free full text](https://www.bemyeyes.com/)
-- World Health Organization, *World Report on Vision* (2019). ⚠ — [Free full text](https://www.who.int/publications/i/item/9789241516570)
-- World Health Organization, *World Report on Hearing* (2021). ⚠ — [Free full text](https://www.who.int/publications/i/item/9789240020481)
-- Microsoft, Seeing AI. ⚠ — [Free full text](https://www.seeingai.com/)
+- **Core:** Be My Eyes, "Be My Eyes is rolling out on Ray-Ban Meta glasses starting today!" (Nov 2024), and the Be My AI announcements (2023). — [Free full text](https://bemyeyes.com/blog/be-my-eyes-on-ray-ban-meta)
+- World Health Organization, *World Report on Vision* (2019). — [Free full text](https://www.who.int/publications/i/item/9789241516570)
+- World Health Organization, *World Report on Hearing* (2021). — [Free full text](https://www.who.int/publications/i/item/9789240020481)
+- Microsoft, Seeing AI. — [Free full text](https://www.seeingai.com/)
 - Denning, T. et al. "In Situ with Bystanders of Augmented Reality Glasses," *CHI 2014*. — [Free manuscript](https://tamaradenning.net/files/papers/denning-chi2014-pn2112.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r082). <!-- reading-access -->

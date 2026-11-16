@@ -19,7 +19,7 @@ These are allegations made by advocacy groups in legal notices. xAI's responses,
 
 Before turning to the conflicts, it is fair to say why many places compete to host data centers.
 
-They bring very large capital investment, often billions of dollars, and with it property tax revenue that can fund schools and services, sometimes in places with few other sources of growth. Construction employs hundreds or thousands of workers for several years. Some companies pay for local infrastructure, such as grid upgrades or water treatment, that the community could not otherwise afford. Some heat nearby buildings with their waste heat. And the services that run in these buildings, from hospital systems to the search engines and maps residents use every day, have to run somewhere.
+They bring very large capital investment, often billions of dollars, and with it property tax revenue that can fund schools and services, sometimes in places with few other sources of growth. Construction employs hundreds or thousands of workers for several years. Some companies pay for local infrastructure, such as grid upgrades or water treatment, that the community could not otherwise afford. Some heat nearby buildings with their waste heat, as Meta's data center in Odense, Denmark, does for the town's district heating system. And the services that run in these buildings, from hospital systems to the search engines and maps residents use every day, have to run somewhere.
 
 For a county with a shrinking tax base, a data center can look like the best economic news in decades. The question is whether the terms are fair.
 

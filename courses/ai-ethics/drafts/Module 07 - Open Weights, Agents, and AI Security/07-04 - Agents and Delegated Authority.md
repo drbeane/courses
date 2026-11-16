@@ -19,7 +19,7 @@ Agents exist because delegation is valuable, and the value is large.
 
 An **agent** is an AI system that takes actions through tools. By 2025 and 2026, agents were being given access to code repositories and servers, to web browsers that fill in forms and make purchases, to email and calendars, to companies' customer databases and ticketing systems, and to security tools that scan and test networks. Some systems have agents that hand tasks to other agents.
 
-What people gain is time and reach. A coding agent can make routine changes across a large codebase in minutes. An email agent can handle the routine messages that consume a manager's morning. An agent can fill in the forms, compare the prices and book the appointments that make modern life tedious, which matters most to people with the least time or the least familiarity with bureaucracy. For a small business that cannot afford staff, an agent that answers customers at any hour may be the difference between being reachable and not.
+What people gain is time and reach. A coding agent can make routine changes across a large codebase in minutes. An email agent can handle the routine messages that consume a manager's morning. An agent can fill in the forms, compare the prices and book the appointments that make modern life tedious, which could matter most to people with the least time or the least familiarity with bureaucracy. For a small business that cannot afford staff, an agent that answers customers at any hour may be the difference between being reachable and not.
 
 The question is how to get those gains without the risks that come with them.
 

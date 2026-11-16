@@ -168,3 +168,7 @@ merge on 15 November 2026. Their history was not carried over, so this log start
   "system that helps" lessons in Modules 2 to 7. 08-10's synthesis is updated to match.
 - All 76 lessons now follow the new lesson structure, and the outline and Topics notes say so.
 - New claims to verify are at the end of `06 - Verification Checklist.md`, grouped by module.
+
+## 2026-11-15 — AI Ethics: verification pass on rewrite claims
+- Checked the claims added in the rewrite. Corrected 01-01, 02-04, 02-08, 03-06, 03-07, 03-08, 04-07, 05-06, 05-07, 06-03, 06-05, 06-06, 07-04 and 07-09; added sources across Modules 1-8.
+- Verification Checklist: the rewrite sections are replaced by one status list. Still open: 01-03, 01-08 and 07-08.

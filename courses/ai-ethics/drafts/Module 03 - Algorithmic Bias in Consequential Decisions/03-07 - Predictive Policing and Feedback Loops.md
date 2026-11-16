@@ -21,7 +21,7 @@ The concerns differ. Place-based prediction risks concentrating police in partic
 
 ## The Case for It
 
-The idea behind place-based prediction has a solid foundation. Crime is highly concentrated. In many cities, a small share of street blocks accounts for a large share of crime, and those places stay much the same from year to year. Police have long concentrated patrols in such "hot spots." Randomized experiments and systematic reviews of hot-spots policing have found that it reduces crime modestly in the targeted places, and that crime does not simply move around the corner.
+The idea behind place-based prediction has a solid foundation. Crime is highly concentrated. In many cities, a small share of street blocks accounts for a large share of crime, and those places stay much the same from year to year. Police have long concentrated patrols in such "hot spots." A 2019 systematic review of 65 studies found that most hot-spots interventions produced noteworthy reductions in crime and disorder, and that crime did not simply move around the corner; nearby areas often benefited too.
 
 If a model can identify those places more accurately than officers' experience, or update them more quickly, it could prevent crimes, and the people who would have been victims are disproportionately residents of the same neighborhoods. Chicago's list also had a protective idea at its core: identifying people at high risk of being shot so that someone could intervene.
 
@@ -121,4 +121,4 @@ From Month 2, Neighborhood A gets all the patrols and records 20 incidents a mon
 - Ensign, D. et al. "Runaway Feedback Loops in Predictive Policing," *FAT\* 2018*. — [Free manuscript](https://arxiv.org/abs/1706.09847); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r133). <!-- reading-access -->
 - Lum, K. & Isaac, W. "To predict and serve?" *Significance* 13(5), 2016. — [Free full text](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.1740-9713.2016.00960.x); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r134). <!-- reading-access -->
 - Sankin, A. & Mattu, S. "Predictive Policing Software Terrible at Predicting Crimes," *The Markup* / *Wired*, Oct 2023. — [Free full text](https://themarkup.org/prediction-bias/2023/10/02/predictive-policing-software-terrible-at-predicting-crimes); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r136). <!-- reading-access -->
-- Braga, A. et al. "Hot spots policing of small geographic areas effects on crime," *Campbell Systematic Reviews* (2019). ⚠ — [Free full text](https://doi.org/10.1002/cl2.1046)
+- Braga, A. et al. "Hot spots policing of small geographic areas effects on crime," *Campbell Systematic Reviews* 15(3), 2019. — [Free full text](https://doi.org/10.1002/cl2.1046)
