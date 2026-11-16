@@ -2,7 +2,7 @@
 
 This file shows where each topic is taught, so coverage gaps and overlaps are easy to see.
 
-**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 5, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
+**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 6, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
 
 ---
 
@@ -17,7 +17,7 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 | **Algorithmic bias in criminal justice** | 03-06, 03-07 | 02-04, 03-02 |
 | **Labor displacement** | 05-01, 05-02, 05-03, 05-04, 05-09 | 01-01, 06-06 |
 | **AI worker monitoring** | 05-05, 05-06 | 02-02, 05-09 |
-| **Environmental costs of large models** | 06-01 to 06-05, 06-08 | 06-07, 07-02 |
+| **Environmental costs of large models** | 06-01 to 06-04, 06-08 | 06-07, 07-02 |
 | **Data privacy with always-on AI assistants** | 02-07 | 02-01, 02-09, 02-10, 07-05 |
 | **Closed-weight vs. open-weight models** | 07-01, 07-02, 07-03, 07-04 | 07-07, 07-09, 06-06 |
 
@@ -95,7 +95,8 @@ These threads run through the course. Each lesson's "Connections" section points
 | Impossibility theorems (fairness) | 03-02 |
 | Incident reporting | 08-08 |
 | ISO/IEC 42001 | 08-04 |
-| Jevons paradox / rebound | 06-05 |
+| Jevons paradox / rebound | 06-02 |
+| AI for climate and science | 06-05 |
 | Liar's dividend | 04-05 |
 | Live facial recognition | 02-05 |
 | Mobley v. Workday | 03-03 |

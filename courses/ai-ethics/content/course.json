@@ -125,7 +125,7 @@
         { "title": "Energy and Emissions: Training, Inference, and Scale" },
         { "title": "Water, Land, and Local Communities" },
         { "title": "Measuring and Disclosing Environmental Costs", "optional": true },
-        { "title": "Efficiency, Rebound, and AI for Climate" },
+        { "title": "AI for Climate and Science: Forecasting, Grids, and Discovery" },
         { "title": "Compute Concentration and Global Divides", "optional": true },
         { "title": "Non-Human Interests and the World Lens", "optional": true },
         { "title": "Case Workshop: The Data Center Next Door", "lab": true, "assess": [ "A3" ] }

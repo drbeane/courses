@@ -1,0 +1,120 @@
+# 06-05 — AI for Climate and Science: Forecasting, Grids, and Discovery
+
+**Module:** 6 — Environmental Costs and Global Access
+**Estimated time:** 35 minutes
+
+**In this lesson:** AI uses energy and water, and it can also help protect the climate and the natural world. This lesson looks at the uses with the strongest evidence, such as weather forecasting, managing power grids and monitoring forests, and at why claims that AI will pay for its own footprint deserve careful scrutiny.
+
+## A Hurricane Seen Nine Days Out
+
+In September 2023, Hurricane Lee was moving north through the Atlantic. Forecasters needed to know where it would come ashore. According to Google DeepMind, its AI weather model, GraphCast, predicted about nine days in advance that Lee would make landfall in Nova Scotia, roughly three days earlier than traditional forecasting systems settled on the same answer. Lee did come ashore in Nova Scotia.
+
+GraphCast had been described in *Science* a few months later. Trained on decades of historical weather data, it produced ten-day global forecasts that were more accurate than the leading traditional system on about 90 percent of the measures the researchers tested. And it did so in under a minute on a single machine, where traditional forecasts take hours on a supercomputer.
+
+By February 2025, the European Centre for Medium-Range Weather Forecasts, which runs one of the world's most respected forecasting systems, had put its own AI forecasting model into operational use. AI weather prediction had moved from research to everyday practice in under three years.
+
+Three extra days of warning before a hurricane means more time to evacuate, to move equipment out of harm's way and to prepare hospitals. Better forecasts help farmers decide when to plant and harvest, and help grid operators plan for the wind and sun.
+
+*Details in this lesson's examples should be checked against current sources before teaching.*
+
+## Where the Evidence Is Strongest
+
+AI's uses for the climate and environment differ greatly in how well the benefits have been shown.
+
+| Use | What it does | How strong is the evidence? |
+|---|---|---|
+| Weather forecasting | Faster and often more accurate forecasts | Strong; now in operational use |
+| Flood forecasting | Warnings of river floods days ahead, including in places with few river gauges | Strong and growing; Google's Flood Hub covers dozens of countries |
+| Methane detection | Finding large methane leaks from oil, gas and landfills using satellite images | Strong |
+| Deforestation monitoring | Spotting forest loss in near real time from satellite images | Strong; used by Global Forest Watch |
+| Grid management | Forecasting wind and solar output and electricity demand, so more renewable power can be used | Moderate to strong |
+| Building energy | Running cooling and heating more efficiently | Moderate; Google reported cutting the energy used to cool some data centers by up to 40 percent |
+| Materials discovery | Proposing new materials for batteries, solar cells and catalysts | Promising but early |
+| Climate modeling | Fast AI versions of climate models | Emerging |
+
+Three features run through the strongest cases. They address problems with clear, measurable outcomes: whether it rained, whether the forest is still there. They have been checked against reality, often by organizations other than the developers. And they usually rely on specialized models far smaller than the general chatbots that drive most of AI's energy use.
+
+## Discovery, With Caution
+
+Materials discovery shows both the promise and the need for care. In 2023 Google DeepMind reported that its GNoME system had predicted about 2.2 million new crystal structures, of which about 380,000 were predicted to be stable, potentially a vast library of candidates for better batteries and other technologies. Other scientists then examined a sample and argued that many of the predicted materials were not truly new or not likely to be useful. A prediction is not a discovery until someone makes the material in a laboratory and it works.
+
+This is the evidence discipline from Lesson 05-01 applied to science: a forecast of benefit is not a measured benefit.
+
+## Why the Claims Need Scrutiny
+
+Claims about AI's climate benefits face five serious criticisms.
+
+Many of the largest figures are forecasts made by interested parties. A 2023 report by the consultancy BCG, commissioned by Google, estimated that AI could help reduce global emissions by 5 to 10 percent by 2030. That is a forecast, produced for a company that sells AI.
+
+AI also serves fossil fuels. Oil and gas companies use AI to find and extract more oil and gas, sometimes with the same cloud companies that advertise AI's climate benefits. Employees and investors have criticized Microsoft and others for this.
+
+Most AI investment goes elsewhere. The great bulk of spending on AI is for consumer and business products, not climate applications.
+
+The accounting is lopsided. The emissions from running AI are certain and present. The emissions avoided by AI's uses are hypothetical and in the future, measured against a world without AI that no one can observe. **Avoided emissions** are notoriously hard to verify.
+
+And the best climate uses do not need the biggest models. Forecasting and monitoring depend on specialized models that use a small fraction of the energy of the general systems driving data-center growth. Their success is not an argument for building more of the large ones.
+
+## A Balanced Position
+
+Putting the evidence together suggests four points.
+
+AI's direct footprint is real and growing, though it remains a modest share of global emissions. The UN researchers in Lesson 06-01 estimated that data centers accounted for about half a percent of global carbon dioxide emissions in 2025, with AI a part of that.
+
+Some uses of AI deliver real, measured benefits for the climate and the environment, and they should be supported.
+
+Neither fact cancels the other. The benefits of flood forecasting do not justify the emissions of an unnecessary AI feature, and the emissions of data centers are not an argument against flood forecasting. Each use should be judged on its own costs and benefits.
+
+And claims that AI will produce a net climate benefit should be labeled as forecasts and examined like any other environmental marketing claim. Misleading environmental claims are called **greenwashing**.
+
+## Where People Disagree
+
+Should public research funding favor AI aimed at climate and science over general-purpose models? Supporters point to the strong evidence for specialized uses. Others argue that general models will turn out to drive scientific progress too.
+
+Is it ethical for cloud companies to sell AI to oil and gas exploration while marketing AI's climate benefits? Some call it hypocrisy. Others say the oil and gas will be produced anyway and should be produced efficiently.
+
+And should AI companies' climate claims be subject to the same rules as other environmental advertising? Several jurisdictions already police greenwashing; the question is whether they should apply those rules to claims about AI.
+
+## Check Your Understanding
+
+**1. What did GraphCast achieve, according to the 2023 study?**
+
+:::answer Answer
+Ten-day global weather forecasts more accurate than the leading traditional system on about 90 percent of the measures tested, produced in under a minute on a single machine.
+:::
+
+**2. What features do the best-evidenced climate uses of AI share?**
+
+:::answer Answer
+They address problems with clear, measurable outcomes, they have been checked against reality, often independently, and they usually use specialized models much smaller than general chatbots.
+:::
+
+**3. Why are avoided emissions hard to verify?**
+
+:::answer Answer
+They are measured against a world without the AI use, which cannot be observed, so they are hypothetical, while AI's own emissions are certain and present.
+:::
+
+**4. Why does the success of AI weather forecasting not justify building more large general models?**
+
+:::answer Answer
+Forecasting relies on specialized models that use a small fraction of the energy of the large general systems driving data-center growth.
+:::
+
+## Your Turn
+
+Find one claim, from a company, consultancy or government, that AI will reduce emissions by a specific amount. Identify who made it and what interest they have; whether it is measured, estimated or a forecast; what assumptions it depends on; and whether it accounts for the rebound effect from Lesson 06-02. Then find one climate use of AI with measured results, and compare the strength of the two claims.
+
+## Key Terms
+
+- **Avoided emissions:** Emissions prevented compared with a hypothetical alternative, which are hard to verify.
+- **Greenwashing:** Misleading claims about environmental benefits.
+- **Ensemble forecast:** A set of forecasts run with slightly different starting conditions, which shows the range of likely outcomes.
+
+## Sources
+
+- **Core:** Rolnick, D. et al. "Tackling Climate Change with Machine Learning," *ACM Computing Surveys* 55(2), 2022. — [Free manuscript](https://arxiv.org/abs/1906.05433); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r270). <!-- reading-access -->
+- Lam, R. et al. "Learning skillful medium-range global weather forecasting," *Science* 382 (2023) (GraphCast). — [Free manuscript](https://arxiv.org/abs/2212.12794); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r271). <!-- reading-access -->
+- IEA, *Energy and AI* (2025), chapters on AI for energy. — [Free full text](https://www.iea.org/reports/energy-and-ai); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r272). <!-- reading-access -->
+- Nearing, G. et al. "Global prediction of extreme floods in ungauged watersheds," *Nature* 627 (2024). ⚠ — [Free full text](https://doi.org/10.1038/s41586-024-07145-1)
+- Merchant, A. et al. "Scaling deep learning for materials discovery," *Nature* 624 (2023) (GNoME), and published critiques. ⚠ — [Free full text](https://doi.org/10.1038/s41586-023-06735-9)
+- ECMWF, announcement that its AI forecasting system became operational (Feb 2025). ⚠ — [Free full text](https://www.ecmwf.int/)

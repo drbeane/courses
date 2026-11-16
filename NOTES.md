@@ -133,3 +133,17 @@ merge on 15 November 2026. Their history was not carried over, so this log start
   algorithmic management and on monitoring, and holds the Week 5 debate preparation.
 - `course.json`, the Topics index and lesson references in 06-06, 07-01 and 07-02 are updated for
   the new numbers. New claims to verify are at the end of `06 - Verification Checklist.md`.
+
+## 2026-11-15: AI Ethics Module 6 rewritten
+
+- All eight Module 6 lessons are rewritten in the new lesson structure, and Module 6 now follows
+  the planned outline. No lessons were renumbered.
+- The rebound effect (Jevons paradox) moves into 06-02.
+- 06-05 is new: "AI for Climate and Science: Forecasting, Grids, and Discovery," replacing
+  "Efficiency, Rebound, and AI for Climate." It covers the best-evidenced uses (weather and flood
+  forecasting, methane and deforestation monitoring, grid management) and why claims of net climate
+  benefit need scrutiny.
+- The 06-08 workshop now asks what the county gives up by its recommendation; its instructor notes
+  stay in a section the sync removes.
+- `course.json` and the Topics index are updated. New claims to verify are at the end of
+  `06 - Verification Checklist.md`.

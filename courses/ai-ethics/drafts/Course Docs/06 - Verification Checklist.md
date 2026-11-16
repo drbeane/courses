@@ -285,3 +285,12 @@ Module 5 now follows the planned outline. 05-03 is new; v1 05-03 (who captures t
 - ⚠ 05-06: the claim that surveys consistently find flexibility is what gig workers value most needs a source.
 - ⚠ 05-07: the claim that some data-work companies described their work as "impact sourcing" needs a source.
 - ⚠ 05-09: the video game performers' 2025 agreement.
+
+
+## Added with the Module 6 rewrite (2026-11-15)
+
+Module 6 now follows the planned outline. The rebound material from v1 06-05 is now in 06-02, and 06-05 is a new lesson on AI for climate and science. The v1 rows above for "06-05 - Efficiency, Rebound, and AI for Climate.md" refer to material now split between 06-02 and 06-05.
+
+- ⚠ 06-05 is new. Verify: GraphCast's Hurricane Lee forecast (about nine days ahead, about three days earlier than traditional systems, per Google DeepMind); GraphCast beating the leading system on about 90 percent of measures; ECMWF making its AI system operational in February 2025, and confirm the link; Google Flood Hub coverage and the Nearing et al. (2024) paper; Google's data-center cooling energy cut of up to 40 percent; GNoME's 2.2 million structures and 380,000 predicted stable, and add a source for the published critique; the BCG/Google 2023 estimate of 5 to 10 percent.
+- ⚠ 06-03: the benefits listed for host communities (waste heat, company-funded infrastructure) are general and need examples or sources.
+- ⚠ 06-06: the steep fall in prices for using AI needs a source.
