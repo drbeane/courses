@@ -37,7 +37,7 @@ AI is dual use **in general**, because a general reasoning and coding ability se
 | **Cyber** | Vulnerability discovery, exploitation, autonomous intrusion | Strong evidence of significant and growing capability (07-07; DARPA AIxCC; lab system cards) |
 | **Biological and chemical** | Uplift toward weapons by non-experts | Labs report increasing knowledge capability and have activated heightened safeguards for some models. The degree of real-world uplift is debated. |
 | **Autonomous replication and AI R&D** | Models improving AI or operating independently | Evaluated by labs and AI safety institutes. The "Pacing the Frontier" letter (July 2026) raised concerns about automated AI research. |
-| **Persuasion and manipulation** | Large-scale influence | Mixed evidence (04-06) |
+| **Persuasion and manipulation** | Large-scale influence | Mixed evidence (04-05) |
 | **Loss of control** | Systems pursuing goals contrary to human intent | Specification gaming is documented (07-07). Larger-scale scenarios are speculative but taken seriously by many researchers. |
 
 ### How capabilities are evaluated

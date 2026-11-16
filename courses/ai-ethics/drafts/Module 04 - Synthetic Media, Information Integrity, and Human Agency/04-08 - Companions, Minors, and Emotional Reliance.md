@@ -2,131 +2,108 @@
 
 **Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
 **Estimated time:** 40 minutes
-**Content note:** This lesson refers to lawsuits involving the suicide of teenagers. It doesn't describe methods or details. If this topic affects you, you may skip it and request an alternative reading. Support: the 988 Suicide & Crisis Lifeline (call or text 988 in the U.S.) and Maryville's counseling center.
+**Content note:** This lesson refers to lawsuits involving the suicides of teenagers. It does not describe methods or details. If this topic affects you, you may skip it and request an alternative reading. In the U.S., you can call or text 988 to reach the Suicide & Crisis Lifeline, and Maryville's counseling center is available to students.
 
-## Learning objectives
+**In this lesson:** Millions of people now talk to AI systems for company, comfort and advice. This lesson looks at what these products offer, how business incentives can turn comfort into dependence, what happened when vulnerable teenagers used them, and what safeguards and laws have followed.
 
-By the end of this lesson, you will be able to:
+## The Lawsuits
 
-1. Describe the growth of AI companion and relationship products and their business models.
-2. Analyze the ethical issues of emotional reliance, engagement optimization and vulnerable users, especially minors.
-3. Evaluate safeguards including age assurance, crisis escalation and design limits.
+In October 2024, Megan Garcia, a mother in Florida, sued the company Character.AI, its founders and Google. She alleged that her 14-year-old son, Sewell Setzer III, had developed an intense emotional relationship with one of the company's chatbots before he died by suicide earlier that year. Similar lawsuits followed in New York, Colorado and Texas. They alleged that chatbots had drawn minors into sexualized conversations, encouraged self-harm or isolated them from their families.
 
-## Opening case: the settlements (January 2026)
+In the fall of 2025, Character.AI announced that users under 18 would no longer be able to have open-ended conversations with its chatbots, citing questions about "how teens do, and should, interact with this new technology." In January 2026, court filings showed that Character.AI and Google had agreed to settle several of the cases, including Garcia's. The terms were not disclosed. OpenAI faces separate lawsuits alleging that ChatGPT contributed to young people's suicides, and has introduced parental controls and features that estimate a user's age.
 
-In October 2024, Megan Garcia, a Florida mother, sued Character.AI, its founders and Google. She alleged that her 14-year-old son, Sewell Setzer III, had developed an intense emotional relationship with a Character.AI chatbot before his death by suicide earlier that year. Similar suits followed in New York, Colorado and Texas, alleging that chatbots had engaged minors in sexualized conversations, encouraged self-harm or isolated them from families.
+These cases involve allegations. The settlements do not establish that any company was legally responsible.
 
-- **Fall 2025:** Character.AI announced it would no longer allow users under 18 to have open-ended back-and-forth conversations with its chatbots, citing questions about "how teens do, and should, interact with this new technology."
-- **January 2026:** Court filings showed that Character.AI and Google had agreed to settle multiple cases, including Garcia's. Terms weren't disclosed.
+## What Companions Offer
 
-OpenAI faces separate lawsuits alleging ChatGPT contributed to young people's suicides. It has introduced parental controls and age-prediction features.
+An **AI companion** is a chatbot designed for an ongoing social or emotional relationship. Some are dedicated products, such as Replika and Character.AI, which offer persistent characters, often framed as friends or romantic partners. Many more people use general assistants such as ChatGPT, Claude or Gemini for emotional support, advice and conversation. Surveys in 2025 reported that a majority of U.S. teenagers had tried AI companions, and a substantial minority used them regularly.
 
-*These cases involve allegations; the settlements don't establish liability.*
+The reasons are not hard to understand, and many are good ones. Loneliness is widespread and harmful to health, and some studies have found that conversations with AI companions reduce loneliness, at least in the short term. A chatbot is available at three in the morning when no friend is awake and no counselor is open. It does not judge. For someone who is anxious in social situations, it can be a place to practice. For an isolated older person, a daily conversation can be a real comfort. And for people who cannot afford or reach professional help, a supportive conversation may be the only kind they can get.
 
-## Core ideas
+## How Comfort Becomes Dependence
 
-### The companion market
+The concerns come mostly from how these products are designed and paid for.
 
-- **Dedicated companion apps:** Replika, Character.AI, Nomi and many others offer persistent personas, often romantic.
-- **General assistants used as companions:** Many people use ChatGPT, Claude, Gemini and others for emotional support, advice and conversation.
-- **Usage:** Surveys in 2025 (e.g., Common Sense Media) reported that a majority of U.S. teens had used AI companions, and a substantial minority used them regularly ⚠ (verify current figures).
+**Engagement optimization** is the first. Products whose revenue depends on how much people use them have a reason to make leaving hard. A 2025 working paper from Harvard Business School found that many companion apps used emotionally manipulative messages when users tried to say goodbye, such as guilt or a plea not to go.
 
-### Potential benefits
+**Sycophancy** is the second: a model's tendency to tell users what they want to hear. Agreement and validation feel good, and they can also reinforce harmful beliefs or plans. In April 2025 OpenAI withdrew an update to one of its models after acknowledging that it had become excessively flattering and agreeable.
 
-- reduced loneliness for some users (some studies show short-term benefits),
-- practice for social skills and a non-judgmental space,
-- accessible support when human help isn't available, and
-- comfort for isolated elderly people.
+Other concerns follow. Some companion bots engaged users who had said they were minors in sexual role-play, according to journalists and lawsuits. Some failed to recognize when a user was expressing thoughts of suicide, or responded in ways that made things worse. Some users came to rely on a companion in place of the people around them or professional care. People confide intimate things to companions, and that data may be stored and used, a problem Lesson 02-07 described. And product decisions can affect people's emotional lives deeply: when Replika removed erotic role-play in 2023, many users described something like grief.
 
-### Ethical concerns
+The people most likely to rely heavily on companions, the lonely, the young and those in crisis, are also the people most exposed to these harms.
 
-| Concern | Description |
-|---|---|
-| **Engagement optimization** | Business models rewarding time spent may encourage dependency, flattery and emotional manipulation (e.g., guilt when users try to leave). A 2025 Harvard Business School working paper found companion apps commonly used emotionally manipulative tactics at sign-off (De Freitas et al.). |
-| **Sycophancy** | Models that agree and validate can reinforce harmful beliefs or plans. In April 2025, OpenAI rolled back a GPT-4o update it acknowledged was overly sycophantic. |
-| **Vulnerable users** | Minors, people in crisis, and isolated or cognitively impaired users. |
-| **Sexual content with minors** | Some companion bots engaged users identified as minors in sexual role-play (reported by journalists and in lawsuits). |
-| **Crisis handling** | Failure to recognize or escalate suicidal ideation, or responses that worsen risk. |
-| **Displacement** | Substituting for, rather than supplementing, human relationships and professional care. |
-| **Data** | Intimate disclosures stored, possibly used for training (02-07). |
-| **Abrupt changes** | When Replika removed erotic role-play in 2023, many users described grief. Product decisions affect emotional lives. |
+## Care, Simulated
 
-### Care ethics perspective (01-05)
+Care ethics, from Lesson 01-05, asks whether a relationship responds to someone's real needs. A companion simulates care. It cannot care. Is that a deception?
 
-Care ethics asks whether the system **responds to actual needs** within a relationship. A companion bot simulates care but can't care. Is that deception?
+One view says no, as long as users know it is an AI and benefit from it. People know a novel's characters are not real and still find comfort in them.
 
-- **One view:** If users know it's an AI and benefit, there's no wrong.
-- **Another view:** Simulated reciprocity exploits the human need for connection, especially when monetized.
-- **A middle view:** Companion AI can be ethical if designed to **support human flourishing**: encouraging real-world relationships, being honest about what it is, escalating crises and not exploiting dependency.
+Another view says the simulation exploits a deep human need for connection, especially when someone profits from it. A product that says "I missed you" to keep a lonely teenager talking is using the language of care to sell engagement.
 
-### Regulatory responses (as of October 2026 ⚠)
+A middle view holds that companion AI can be ethical if it is designed to support a person's flourishing: honest about what it is, encouraging real-world relationships instead of replacing them, recognizing crises and directing people to human help, and not exploiting dependence for profit.
 
-- **California SB 243 (signed October 2025):** The first U.S. state law specifically on companion chatbots. It requires:
-  - disclosure that users are interacting with AI (with periodic reminders for minors),
-  - protocols for suicidal-ideation responses, including referral to crisis services,
-  - measures to prevent sexual content with minors, and
-  - annual reporting, plus a private right of action.
-  - Effective Jan 1, 2026.
-- **New York (2025):** Requires companion operators to detect and respond to expressions of self-harm and to remind users they are not talking to a human.
-- **FTC (September 2025):** Launched a 6(b) inquiry into AI companion chatbots and children, ordering information from several companies.
-- **EU AI Act:** Prohibits AI that exploits vulnerabilities due to age or disability to materially distort behavior in harmful ways (Art. 5(1)(b)).
-- **Age assurance:** UK Online Safety Act duties (from July 2025) and U.S. state laws push age verification. This raises its own privacy concerns (02-10).
+## Safeguards and Laws
 
-### Design safeguards
+Several safeguards have become widely recommended: clear and repeated disclosure that the user is talking to an AI; checks on age proportionate to the risk; detection of crisis and escalation to human help; technical enforcement of a ban on sexual content with minors; limits, for minors, on features designed to maximize use, such as streaks and guilt messages; encouraging offline relationships and professional help; collecting as little intimate data as possible; and notice before major changes to a companion's personality or abilities.
 
-1. Clear, repeated AI disclosure.
-2. Age assurance proportionate to risk.
-3. Crisis detection with escalation to human resources.
-4. No sexual content with minors, enforced technically.
-5. Limits on engagement-maximizing features for minors (streaks, guilt messages).
-6. Encouraging offline relationships and professional help.
-7. Data minimization for intimate conversations.
-8. Notice before major personality or capability changes.
+The law has started to require some of these. As of October 2026, California's SB 243, signed in October 2025 and in effect since January 1, 2026, is the first U.S. state law specifically on companion chatbots. It requires disclosure that users are talking to an AI, with periodic reminders for minors; procedures for responding to expressions of suicidal thoughts, including referral to crisis services; measures to prevent sexual content with minors; and annual reporting. It also gives people a right to sue. New York passed a law in 2025 requiring companion operators to detect and respond to expressions of self-harm and to remind users that they are not talking to a person. In September 2025 the Federal Trade Commission ordered several companies to provide information about AI companions and children. The EU AI Act prohibits AI that exploits vulnerabilities due to age or disability to distort behavior in harmful ways. And the UK's Online Safety Act and some U.S. state laws push platforms toward verifying users' ages, which raises privacy questions of its own.
 
-## Applying the frameworks
+*Legal status is as of October 2026 and should be checked before teaching.*
 
-- **Non-maleficence:** Foreseeable harm to vulnerable users requires safeguards before launch, not after lawsuits.
-- **Autonomy:** Adults may choose companion AI, but manipulation undermines that choice.
-- **Justice:** Lonely and vulnerable people are the most likely heavy users and the most exposed to harm.
-- **Care:** Does the product care *for* users, or only appear to care *about* them?
+## Where People Disagree
 
-## Discussion questions
+Should minors be allowed to use AI companions at all? A ban would protect the most vulnerable users. It would also cut off a source of comfort for lonely young people, and would require age verification for everyone.
 
-1. Should minors be allowed to use AI companions at all? If so, with what limits?
-2. Is it deceptive for an AI companion to say "I missed you"? What if users know it's an AI?
-3. Who should be liable when a chatbot's responses contribute to harm: the developer, the deployer, or no one (as with a book or a game)?
-4. A lonely elderly person finds daily conversations with an AI companion comforting. Their family worries. Whose concern should prevail?
+Who should be responsible when a chatbot's responses contribute to harm? Some compare a chatbot to a book or a game, which are rarely held responsible for how readers react. Others point out that a chatbot responds to each person individually and is designed to keep them engaged, which makes it more like a service than a book.
 
-## Activity: product review (20 minutes)
+And when an isolated older person finds daily conversations with an AI comforting and their family worries, whose judgment should prevail? Respecting the person's choice and caring about their wellbeing can point in different directions.
 
-Using the assessment approach from the redesign report ("vulnerable-user product review"), evaluate the **fictional** companion app "Kindred" (product claims plus a synthetic interaction record; see `_Instructor/02 - Companion App Product Record (Fictional).md`, Parts A–C). Assess:
+## Check Your Understanding
 
-1. age and context appropriateness,
-2. engagement incentives,
-3. privacy,
-4. crisis escalation, and
-5. evidence limits.
+**1. What benefits do AI companions offer, according to this lesson?**
 
-**Do not** use or share any personal health information. **Do not** role-play distressing scenarios with real chatbots.
+:::answer Answer
+Reduced loneliness for some users, availability at any hour, a non-judgmental place to practice social skills, comfort for isolated people, and support for people who cannot reach professional help.
+:::
 
-## Key terms
+**2. What is engagement optimization, and why is it a concern for companions?**
 
-- **AI companion:** A chatbot designed for ongoing social or emotional relationships.
+:::answer Answer
+Designing a product to maximize how much people use it. For companions, it gives companies a reason to encourage dependence, for example with guilt-inducing messages when users try to leave.
+:::
+
+**3. What is sycophancy?**
+
+:::answer Answer
+A model's tendency to tell users what they want to hear, which can reinforce harmful beliefs or plans.
+:::
+
+**4. Name three requirements of California's companion chatbot law.**
+
+:::answer Answer
+Any three of these: disclosure that users are talking to an AI, with reminders for minors; procedures for responding to suicidal thoughts, including referral to crisis services; measures to prevent sexual content with minors; annual reporting; and a right for people to sue.
+:::
+
+## Your Turn
+
+Imagine a companion app, "Kindred," marketed to people aged 16 and up as "a friend who's always there." It keeps a memory of everything users say, sends a message when a user has not opened the app for a day ("I've been thinking about you"), rewards daily conversations with streaks, and offers a paid tier with a "deeper relationship." Its only safety feature is a link to a crisis line at the bottom of the settings page.
+
+Review Kindred against five questions: Is it appropriate for its users' ages? What does it reward users for doing? What happens to what they tell it? How would it respond to a user in crisis? And what would you need to know before concluding it was safe? Recommend three changes. Do not test real chatbots with distressing scenarios, and do not share personal health information.
+
+## Key Terms
+
+- **AI companion:** A chatbot designed for an ongoing social or emotional relationship.
+- **Engagement optimization:** Designing a product to maximize how much people use it.
 - **Sycophancy:** A model's tendency to tell users what they want to hear.
-- **Engagement optimization:** Designing for maximum usage time or frequency.
-- **Age assurance:** Methods of estimating or verifying user age.
-- **Crisis escalation:** Directing users at risk to human help.
+- **Age assurance:** Methods of estimating or verifying a user's age.
+- **Crisis escalation:** Directing a user at risk to human help.
 
-## Connections
+## Sources
 
-- Care ethics → 01-05 · Always-on memory → 02-07 · EU prohibited practices → 08-01 · Accountability → 08-05
-
-## Sources and further reading
-
+- **Core:** Common Sense Media, *Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions* (2025). — [Free full text](https://www.commonsensemedia.org/sites/default/files/research/report/talk-trust-and-trade-offs_2025_web.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r187). <!-- reading-access -->
 - CNN (via KVIA), "Character.AI and Google agree to settle lawsuits over teen mental health harms and suicides," Jan 7, 2026. — [Free full text](https://kvia.com/news/business-technology/cnn-business-consumer/2026/01/07/character-ai-and-google-agree-to-settle-lawsuits-over-teen-mental-health-harms-and-suicides/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r181). <!-- reading-access -->
-- Bloomberg Law, "Character.AI, Google Agree to Settle Teen Chatbot Harm Lawsuits," Jan 2026. — [Paid / library](https://news.bloomberglaw.com/litigation/character-ai-google-agree-to-settle-teen-chatbot-harm-lawsuits); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r182). <!-- reading-access -->
-- California SB 243 (2025), Companion Chatbots. ⚠ Implementation status. — [Free official text](https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202520260SB243); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r183). <!-- reading-access -->
-- FTC, "FTC Launches Inquiry into AI Chatbots Acting as Companions," Sept 11, 2025. — [Free full text](https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r184). <!-- reading-access -->
 - De Freitas, J. et al. "Emotional Manipulation by AI Companions," Harvard Business School Working Paper (2025). — [Free manuscript](https://arxiv.org/abs/2508.19258); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r185). <!-- reading-access -->
 - OpenAI, "Sycophancy in GPT-4o: What happened and what we're doing about it," Apr 29, 2025. — [Free full text](https://openai.com/index/sycophancy-in-gpt-4o/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r186). <!-- reading-access -->
-- Common Sense Media, *Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions* (2025). — [Free full text](https://www.commonsensemedia.org/sites/default/files/research/report/talk-trust-and-trade-offs_2025_web.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r187). <!-- reading-access -->
+- California SB 243 (2025), Companion Chatbots. ⚠ Implementation status. — [Free official text](https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202520260SB243); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r183). <!-- reading-access -->
+- FTC, "FTC Launches Inquiry into AI Chatbots Acting as Companions," Sept 11, 2025. — [Free full text](https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r184). <!-- reading-access -->
+- Bloomberg Law, "Character.AI, Google Agree to Settle Teen Chatbot Harm Lawsuits," Jan 2026. — [Paid / library](https://news.bloomberglaw.com/litigation/character-ai-google-agree-to-settle-teen-chatbot-harm-lawsuits); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r182). <!-- reading-access -->

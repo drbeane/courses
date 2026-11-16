@@ -2,7 +2,7 @@
 
 This file shows where each topic is taught, so coverage gaps and overlaps are easy to see.
 
-**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 and 3, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
+**Numbering note (2026-11-15):** lesson numbers in this file follow the v1 lessons as written, except Modules 2 to 4, which follow the planned outline. The planned outline in `01 - Course Outline.md` renumbers some lessons in Modules 2–5 and 7; update this index when the lessons are rewritten.
 
 ---
 
@@ -11,7 +11,7 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 | Topic | Primary lessons | Also appears in |
 |---|---|---|
 | **Surveillance and facial recognition** | 02-03, 02-04, 02-05, 02-06 | 01-01, 03-07, 05-05, 08-01 (prohibited practices) |
-| **Deepfakes and non-consensual imagery** | 04-03, 04-04, 04-05, 04-06, 04-07 | 01-01, 08-01 (EU nudifier ban) |
+| **Deepfakes and non-consensual imagery** | 04-03, 04-04, 04-05, 04-06 | 01-01, 08-01 (EU nudifier ban) |
 | **Algorithmic bias in hiring** | 03-03, 03-04, 03-10 | 03-01, 03-02, 08-02, 08-07 |
 | **Algorithmic bias in lending** | 03-05 | 03-02, 08-02 |
 | **Algorithmic bias in criminal justice** | 03-06, 03-07 | 02-04, 03-02 |
@@ -28,7 +28,7 @@ This file shows where each topic is taught, so coverage gaps and overlaps are ea
 | Hugging Face hack (July 2026) | Your Oct 14 meeting note | 01-01, 07-07, 07-09 |
 | AI-driven reverse engineering of paid software | Your Oct 14 meeting note | 07-08 |
 | Confidently false generated information | COSC-643 redesign report, gap #2 | 04-01, 04-02, 04-10 |
-| Synthetic-media harms and verification | Redesign report | 04-02 to 04-07 |
+| Synthetic-media harms and verification | Redesign report | 04-02 to 04-06 |
 | Tool-using agents and delegated authority | Redesign report | 07-05, 07-06, 07-10 |
 | Concrete AI security failures | Redesign report | 07-06, 07-07, 07-08 |
 | Contemporary risk-management practice (NIST AI RMF) | Redesign report | 08-04, 08-06, 08-08 |
@@ -61,7 +61,7 @@ These threads run through the course. Each lesson's "Connections" section points
 | Automation bias | 05-08, 02-04 |
 | Biometric privacy law (BIPA) | 02-06 |
 | Bossware | 05-04, 05-05 |
-| C2PA / content credentials | 04-07 |
+| C2PA / content credentials | 04-06 |
 | Calibration (fairness metric) | 03-02, 03-06 |
 | Clearview AI | 02-06 |
 | Colorado AI Act | 08-02 |
@@ -76,12 +76,12 @@ These threads run through the course. Each lesson's "Connections" section points
 | Data center siting | 06-03, 06-08 |
 | Datasheets for datasets | 08-06 |
 | Decency (Todd May) | 01-05 |
-| Deepfakes | 04-03 to 04-06 |
+| Deepfakes | 04-03 to 04-05 |
 | Deontology | 01-04 |
 | Distillation | 07-04 |
 | Dual use | 07-09 |
 | Entry-level jobs | 05-02 |
-| EU AI Act | 08-01, 04-05, 04-07 |
+| EU AI Act | 08-01, 04-04, 04-06 |
 | Explainability | 03-09 |
 | Export controls | 07-04 |
 | Facial recognition | 02-03 to 02-06 |
@@ -95,12 +95,12 @@ These threads run through the course. Each lesson's "Connections" section points
 | Incident reporting | 08-08 |
 | ISO/IEC 42001 | 08-04 |
 | Jevons paradox / rebound | 06-05 |
-| Liar's dividend | 04-06 |
+| Liar's dividend | 04-05 |
 | Live facial recognition | 02-05 |
 | Mobley v. Workday | 03-03 |
 | Model cards | 08-06 |
 | NIST AI RMF | 08-04 |
-| Non-consensual intimate imagery | 04-04, 04-05 |
+| Non-consensual intimate imagery | 04-04 |
 | Non-human interests | 06-07 |
 | NYC Local Law 144 | 03-03 |
 | Open-weight models | 07-01 to 07-04 |
@@ -108,16 +108,17 @@ These threads run through the course. Each lesson's "Connections" section points
 | Preemption (state vs. federal) | 08-02 |
 | Procurement | 08-07 |
 | Prompt injection | 07-06 |
-| Provenance and watermarking | 04-07 |
+| Provenance and watermarking | 04-06 |
 | Rawls, veil of ignorance | 01-06 |
 | Reverse engineering | 07-08 |
 | Smart glasses | 02-07, 02-08 |
 | Stakeholder mapping | 01-08 |
-| TAKE IT DOWN Act | 04-05 |
+| TAKE IT DOWN Act | 04-04 |
 | Tenant screening | 03-05 |
 | Utilitarianism | 01-03 |
 | Verification | 04-02, 04-10 |
 | Voice assistants | 02-07 |
-| Assistive technology (vision, captioning) | 02-08 |
+| Voice banking and AI translation | 04-07 |
+| Assistive technology (vision, captioning) | 02-08, 04-07 |
 | Water use | 06-03 |
 | Worker voice and unions | 05-09 |

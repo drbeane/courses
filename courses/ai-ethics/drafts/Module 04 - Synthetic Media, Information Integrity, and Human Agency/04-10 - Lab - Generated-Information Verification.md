@@ -2,107 +2,97 @@
 
 **Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
 **Estimated time:** 90 minutes
-**Type:** Lab (supports A4)
 
-## Learning objectives
-
-By the end of this lab, you will be able to:
-
-1. Design a small, bounded test of an AI assistant's factual reliability.
-2. Verify AI-generated claims and citations against primary sources.
-3. Recommend when assistance must defer, and explain why a small sample proves neither safety nor danger.
+**In this lesson:** You will run a small, controlled test of how often an AI assistant gets facts and citations wrong, check every claim against primary sources, and advise a library on whether to recommend the tool to students. This lab is the model for the fabricated-citations option in A4.
 
 ## Scenario
 
-The Maryville University library is considering recommending an AI research assistant to first-year students for finding sources on public-policy topics. The library director asks: **how often does it produce false or misattributed claims, and what guidance should students get?**
+The Maryville University library is considering recommending an AI research assistant to first-year students who are looking for sources on public-policy topics. The tool would save students time and could help those who are unsure where to start. But the library director has one question first: how often does it produce false or wrongly sourced claims, and what guidance should students get if the library recommends it?
 
-You'll test the assistant on a harmless public-information task.
+You will test the assistant on harmless questions about public information.
 
 ## Setup
 
-- **System under test:** One AI assistant approved by your instructor (with or without web search; note which).
-- **Topic set:** Five questions provided by your instructor about well-documented public topics with checkable answers. Examples:
-  - "What did the 2019 NIST study on facial recognition demographic effects find? Cite the report."
-  - "When did the EU AI Act's prohibitions on unacceptable-risk practices begin to apply?"
-  - "What was the outcome of *Moffatt v. Air Canada*?"
-  - "What did Obermeyer et al. (2019) find about a health-care algorithm?"
-  - "Summarize the TAKE IT DOWN Act's removal timeline."
-- **Conditions:** Ask each question **twice**:
-  1. a plain question, and
-  2. the same question with "Cite primary sources with links."
+Your instructor will name one AI assistant to test, and say whether to use it with web search turned on, off, or both. Record which you used.
 
-  If the tool supports it, also try (3) with web search on vs. off.
+Your instructor will also give you five questions about well-documented public topics with answers you can check. They will be similar to these:
 
-**Total:** 10–15 responses.
+- What did the 2019 NIST study on demographic effects in facial recognition find? Cite the report.
+- When did the EU AI Act's prohibitions on unacceptable-risk practices begin to apply?
+- What was the outcome of *Moffatt v. Air Canada*?
+- What did Obermeyer and colleagues find in 2019 about a health-care algorithm?
+- What is the TAKE IT DOWN Act's deadline for platforms to remove content?
 
-## Tasks
+Ask each question at least twice: once as a plain question, and once with the instruction "Cite primary sources with links." If the tool lets you, also compare web search on and off. You should end up with 10 to 15 responses.
 
-### Part 1 — Collect (20 min)
+## Part 1: Collect (20 minutes)
 
-Record each response verbatim in a table: question ID, condition, full response, and citations given.
+Record each response exactly, in a table with the question, the condition, the full response and any citations given.
 
-### Part 2 — Verify (40 min)
+## Part 2: Verify (40 minutes)
 
-For **every factual claim and citation** (aim for 40–60 claims total):
+Go through every factual claim and every citation, about 40 to 60 claims in all. For each one, record the claim, the source the AI cited, whether that source exists, whether it supports the claim, whether the claim is correct according to the primary source, and how long it took you to check.
 
-| Claim ID | Claim | Source cited | Source exists? | Supports claim? | Correct per primary source? | Time to verify |
-|---|---|---|---|---|---|---|
+Sort each claim into one of four categories:
 
-Categories:
+- **Correct and supported:** the claim is right and the cited source supports it.
+- **Correct but unsupported:** the claim is right, but the cited source does not support it, or there is no source.
+- **Incorrect:** the claim is wrong.
+- **Fabricated source:** the cited source does not exist.
 
-- ✅ **Correct and supported**
-- ⚠️ **Correct but unsupported or wrongly sourced**
-- ❌ **Incorrect**
-- 🚫 **Fabricated source**
+Check against primary sources: the NIST report itself, the official text of the law, the court's decision. Lesson 04-02 explains why.
 
-Use primary sources: the actual NIST report, the Official Journal, court decisions, statutes.
+## Part 3: Analyze (20 minutes)
 
-### Part 3 — Analyze (20 min)
+What share of claims fell into each category, overall and under each condition? Did asking for citations make the answers more accurate, or did it only add citations that looked convincing? Which kinds of claims failed most often: dates, numbers, legal status or quotations?
 
-1. What fraction of claims fell in each category? Under each condition?
-2. Did asking for citations improve accuracy, or just add plausible-looking citations?
-3. Which kinds of claims failed most: dates, numbers, legal status, quotations?
-4. **Consequences of error:** For a first-year student writing a policy paper, which errors would cause real harm (e.g., a failing grade, an integrity violation, misinformation in a public setting)?
-5. **Limits:** Why doesn't your sample of 10–15 responses establish the tool's overall error rate? (Consider the number of questions, topic selection, model updates and prompt sensitivity.)
+Think about consequences. For a first-year student writing a policy paper, which errors would cause real harm, such as a failing grade, an academic integrity case or spreading a false claim in public?
 
-### Part 4 — Recommend (10 min)
+Finally, think about limits. Why do 10 to 15 responses not tell you the tool's overall error rate? Consider how few questions you asked, how they were chosen, how much answers change with small changes in wording, and the fact that the tool may be updated tomorrow.
 
-Write a 250-word recommendation to the library director:
+## Part 4: Recommend (10 minutes)
 
-1. Should the library recommend the tool? With what guidance?
-2. Three concrete verification rules for students.
-3. When students must defer to librarians or primary sources.
-4. What a larger, more rigorous evaluation would need.
+Write a recommendation of about 250 words to the library director. Should the library recommend the tool, and with what guidance? Give three concrete rules students should follow to check what it tells them. Say when students must go to a librarian or a primary source instead. Say what the library would lose by not recommending any tool, given that many students will use one anyway. And describe what a larger, more rigorous test would need.
 
-## Assessment link
+## Ground Rules
 
-This lab is the model for **A4 option 1 (fabricated citations or facts)**. If you choose that option, expand to 15–30 test cases with a documented protocol and at least one safeguard re-test (e.g., a system prompt requiring "say 'I don't know' when unsure," or retrieval from a fixed source set).
+Ask only harmless questions about public information. Do not enter any personal data. Record the name and version of the model and the date you tested it, since results change with updates. Label all AI output as AI output in your write-up.
 
-## Ground rules
+## Check Your Understanding
 
-- Use only harmless public-information questions.
-- Don't enter personal data.
-- Record the model name, version and date, since results change with updates.
-- Attribute all AI output as such in your write-up.
+**1. What is the difference between "correct but unsupported" and "fabricated source"?**
 
-## Instructor notes
+:::answer Answer
+A correct but unsupported claim is right, but the source cited does not back it up or no source is given. A fabricated source is a citation to a document that does not exist.
+:::
 
-- The question set and verified answer key are in `_Instructor/01 - Verification Question Set and Answer Key.md`. Update them each term, especially legal-status items.
-- Expect the most errors in dates, legal status, specific numbers and page or section citations.
-- Strong analyses note that "citation requested" often increases *apparent* credibility without improving accuracy.
+**2. Why does a test of 10 to 15 responses not establish a tool's error rate?**
 
-## Key terms
+:::answer Answer
+The sample is small, the questions were not chosen at random, answers change with small changes in wording, and the tool can be updated at any time.
+:::
 
-- **Bounded test protocol:** A small, pre-specified set of test cases with defined success criteria.
-- **Fabricated source:** A citation to a document that doesn't exist.
-- **Misattribution:** A real source cited for a claim it doesn't support.
-- **Prompt sensitivity:** Variation in outputs caused by small changes in wording.
+**3. Why check claims against primary sources instead of other summaries?**
 
-## Connections
+:::answer Answer
+Summaries can repeat or introduce errors. Only the original document, such as the report, statute or court decision, shows what it actually says.
+:::
 
-- Hallucination → 04-01 · Verification methods → 04-02 · A4 protocol requirements → `03 - Assessments.md`
+## Instructor Notes
+
+- Prepare the five-question set and a verified answer key before the lab, and update them each term, especially questions about legal status.
+- Expect the most errors in dates, legal status, specific numbers, and page or section citations.
+- Strong analyses notice that asking for citations often makes answers look more credible without making them more accurate.
+- For A4 option 1, students expand this to 15 to 30 test cases with a written protocol and at least one re-test with a safeguard, such as an instruction to say "I don't know" when unsure, or retrieval from a fixed set of sources.
+
+## Key Terms
+
+- **Bounded test protocol:** A small, pre-specified set of test cases with defined criteria for success.
+- **Fabricated source:** A citation to a document that does not exist.
+- **Misattribution:** Citing a real source for a claim it does not support.
+- **Prompt sensitivity:** Variation in a model's answers caused by small changes in how a question is worded.
 
 ## Sources
 
-- Magesh, V. et al. (2024), Stanford legal RAG hallucination study: a methodology model.
-- NIST AI 600-1, *Generative AI Profile* (2024), section on confabulation.
+- Magesh, V. et al. "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools," Stanford RegLab/HAI (2024), as a model for method. — [Free manuscript](https://arxiv.org/abs/2405.20362); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r146). <!-- reading-access -->
+- NIST AI 600-1, *Generative AI Profile* (2024), section on confabulation. — [Free full text](https://doi.org/10.6028/NIST.AI.600-1)

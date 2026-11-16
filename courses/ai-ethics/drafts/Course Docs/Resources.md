@@ -64,4 +64,4 @@ These are stable references for lesson readings. Check each link and version eac
 | [*Another Body* (2023, documentary)](https://www.modernfilms.com/anotherbody) | Deepfake NCII victim experience (Module 4; content note) | [Paid / library](04%20-%20Reading%20Access%20Register.md#r430) |
 | [*The Social Dilemma* (2020) — use critically](https://www.netflix.com/title/81254224) | Engagement incentives (Module 4) | [Paid / library](04%20-%20Reading%20Access%20Register.md#r431) |
 | [NIST FRVT reports](https://pages.nist.gov/frvt/) | Facial recognition accuracy by algorithm and demographic group | [Free full text](04%20-%20Reading%20Access%20Register.md#r432) |
-| [C2PA Content Credentials verify tool (contentcredentials.org/verify)](https://verify.contentauthenticity.org/) | Provenance lab (04-07) | [Free online tool](04%20-%20Reading%20Access%20Register.md#r433) |
+| [C2PA Content Credentials verify tool (contentcredentials.org/verify)](https://verify.contentauthenticity.org/) | Provenance lab (04-06) | [Free online tool](04%20-%20Reading%20Access%20Register.md#r433) |

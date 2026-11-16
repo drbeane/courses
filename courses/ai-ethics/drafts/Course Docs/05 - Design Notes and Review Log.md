@@ -2,7 +2,7 @@
 
 ## Key design decisions
 
-1. **Governance comes last, but law appears in every module.** The redesign report's blueprint put governance in Module 2. This draft moves the systematic governance treatment to Module 8, where it sets up the final portfolio. To avoid a gap, Lesson 01-09 introduces the law/policy/standards/ethics distinction, and each topical module has its own law lesson (02-06, 03-05, 04-05, 05-09, 08-01 to 08-03). *Alternative:* swap Modules 2 and 8 if faculty prefer governance up front.
+1. **Governance comes last, but law appears in every module.** The redesign report's blueprint put governance in Module 2. This draft moves the systematic governance treatment to Module 8, where it sets up the final portfolio. To avoid a gap, Lesson 01-09 introduces the law/policy/standards/ethics distinction, and each topical module has its own law lesson (02-06, 03-05, 04-04, 05-09, 08-01 to 08-03). *Alternative:* swap Modules 2 and 8 if faculty prefer governance up front.
 2. **The ten requested topics each get at least two primary lessons.** See `02 - Topics.md`.
 3. **Vulnerable users are folded into Module 4** (Lesson 04-08) rather than given their own module, because the requested topics needed the space. The health and professional-duty material sits in 05-08.
 4. **Environment gets its own module (8 lessons).** In COSC-643, environmental content was spread across the "non-humans" and "world" modules. It is now a measured-impact module with the non-human lens retained (06-07).

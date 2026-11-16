@@ -265,3 +265,13 @@ Module 3 now follows the planned outline. The v1 rows above for 03-05 (lending) 
 - ⚠ 03-06: Loomis details added from general knowledge: charges in 2013 in La Crosse; guilty pleas to attempting to flee a traffic officer and operating a vehicle without the owner's consent. Also New Jersey's 2017 bail reform reducing the pretrial jail population "without a corresponding rise in crime."
 - ⚠ 03-07: hot-spots policing evidence (Braga et al., Campbell review, 2019) and the claim that crime is concentrated in a small share of street blocks. Confirm the link.
 - ⚠ 03-01: Mullainathan, "Biased Algorithms Are Easier to Fix Than Biased People" (NYT, Dec 2019); confirm the date and link.
+
+
+## Added with the Module 4 rewrite (2026-11-15)
+
+Module 4 now follows the planned outline. The v1 rows above for 04-04 (Grok) and 04-05 (law and platform duties) now refer to material in the merged 04-04; v1 04-06 (elections) is now 04-05; v1 04-07 (provenance) is now 04-06; 04-07 is new.
+
+- ⚠ 04-07 is new and written largely from general knowledge. Verify: Rep. Jennifer Wexton's July 2024 House floor speech in an AI-rebuilt voice (and add a source); Apple Personal Voice (2023, about 15 minutes of recordings, on-device), and confirm the Apple newsroom link; AI voice companies offering free voice services to people with ALS; James Earl Jones's agreement to recreate his Darth Vader voice; the 2024–2025 SAG-AFTRA video game strike over AI voice replicas, and add a specific source.
+- ⚠ 04-01: Moffatt asked the chatbot in 2022 (added detail).
+- ⚠ 04-03: the Arup employee made fifteen transfers; the Baltimore-area athletic director was charged (v1 said "created").
+- ⚠ 04-05: AI translation of campaign speeches in India; Costello et al. effect size (about 20 percent reduction in belief, lasting at least two months).

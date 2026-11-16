@@ -38,12 +38,12 @@ The U.S. has no comprehensive federal AI statute, but many existing laws apply r
 | Area | Laws | AI relevance |
 |---|---|---|
 | Civil rights | Title VII, ADEA, ADA, Fair Housing Act, ECOA | Hiring, housing, lending (Module 3) |
-| Consumer protection | FTC Act §5 (unfair or deceptive practices) | Deceptive AI claims; unfair data practices; TAKE IT DOWN enforcement (04-05) |
+| Consumer protection | FTC Act §5 (unfair or deceptive practices) | Deceptive AI claims; unfair data practices; TAKE IT DOWN enforcement (04-04) |
 | Credit | FCRA, ECOA/Reg B | Adverse action notices (03-05) |
 | Privacy | COPPA, HIPAA, state privacy laws, BIPA | Children's data; health; biometrics (Module 2) |
 | Product liability | State tort law | Defective AI products (litigation emerging) |
 | Copyright | Copyright Act | Training and outputs (04-09) |
-| Communications | TCPA | AI voice robocalls (04-06) |
+| Communications | TCPA | AI voice robocalls (04-05) |
 
 ### Federal enforcement: shifting priorities
 
@@ -66,7 +66,7 @@ States passed hundreds of AI-related laws. Notable categories:
 | Comprehensive or high-risk | Colorado (replaced 2026); Texas TRAIGA (effective Jan 1, 2026; narrower, mostly government use and prohibited intents) |
 | Frontier model transparency | **California SB 53** (Transparency in Frontier AI Act, effective Jan 1, 2026): large developers publish safety frameworks, report critical incidents, and protect whistleblowers. New York RAISE Act (2025) ⚠ |
 | Employment | NYC Local Law 144; Illinois HB 3773; California CRD regulations (03-03) |
-| Deepfakes and elections | Most states (04-05, 04-06) |
+| Deepfakes and elections | Most states (04-04, 04-05) |
 | Companion chatbots | California SB 243; New York (04-08) |
 | Privacy (including ADMT) | California CCPA regulations; about 20 state comprehensive privacy laws |
 
@@ -129,7 +129,7 @@ Date every entry and cite sources. Mark items whose status is uncertain.
 
 ## Connections
 
-- Colorado → 01-09 · Hiring law → 03-03 · Deepfake law → 04-05 · NIST RMF → 08-04 · Global comparison → 08-03
+- Colorado → 01-09 · Hiring law → 03-03 · Deepfake law → 04-04 · NIST RMF → 08-04 · Global comparison → 08-03
 
 ## Sources and further reading
 

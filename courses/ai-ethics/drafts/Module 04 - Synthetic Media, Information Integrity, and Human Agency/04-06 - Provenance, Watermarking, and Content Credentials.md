@@ -1,0 +1,130 @@
+# 04-06 — Provenance, Watermarking, and Content Credentials
+
+**Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
+**Estimated time:** 35 minutes
+
+**In this lesson:** If anyone can fake a photo, how can anyone trust one? This lesson explains the three technical answers, detecting fakes, marking generated content and proving where real content came from, how each works, why each falls short on its own, and what new EU rules require.
+
+## The Label That Fell Off
+
+On August 2, 2026, new transparency rules in the EU AI Act took effect. Companies providing generative AI systems must now mark what their systems produce in a way that machines can read and detect, and people who publish deepfakes must disclose them. Systems already on the market were given until December 2, 2026 to comply with the marking requirement.
+
+Many AI-generated images already carry provenance information. Adobe, OpenAI and others attach signed records, called content credentials, that state an image was made by AI. But when someone takes a screenshot of an image, or uploads it to many social platforms that re-compress files, that information is often removed. This is **metadata stripping**, and it means the label frequently falls off the first time the image is shared.
+
+A rule that requires labels is only as good as the labels' ability to survive the trip from the generator to the viewer.
+
+## Three Approaches
+
+There are three technical approaches to synthetic media, and they work very differently.
+
+| Approach | How it works | Examples |
+|---|---|---|
+| **Detection** | A classifier examines content and estimates whether it is synthetic | Academic and commercial deepfake detectors |
+| **Watermarking** | An invisible signal is embedded in the content when it is generated | Google DeepMind's SynthID, for images, audio, video and text |
+| **Provenance** | Signed metadata records where content came from and how it was edited | The C2PA standard and its "Content Credentials" |
+
+## Detection: Always a Step Behind
+
+A **detector** is a model trained to tell synthetic content from real content, usually by learning subtle patterns that generation methods leave behind.
+
+Detectors have three weaknesses. They are trained on content from known generators and work much less well on content from new ones. Generators can be deliberately tuned to evade them. And they make mistakes in the other direction too, labeling real content as fake.
+
+That last weakness has already hurt people. Detectors that claim to identify AI-written text are especially unreliable. OpenAI withdrew its own text classifier in 2023 because it was not accurate enough. A 2023 study found that several popular detectors wrongly flagged essays by non-native English speakers as AI-written far more often than essays by native speakers, because simpler vocabulary and sentence structure look "machine-like" to them. Students have been accused of cheating on the basis of such tools.
+
+Detection can help an investigator decide what to look at more closely. It should not be the only basis for a decision that matters to someone.
+
+## Watermarking: Useful but Partial
+
+A **watermark** is a signal hidden in content at the moment it is generated, invisible to people but detectable by software. Because it is added deliberately, it does not depend on guessing.
+
+Good watermarks survive common changes such as compression and cropping. They have real limits, though. They only work for content from providers who cooperate; a model whose weights are openly released, as Module 7 discusses, can be run without any watermark. Determined people can remove or forge them, as researchers have repeatedly shown. Watermarks in text fade when the text is paraphrased. And there is no universal checker: each company's watermark needs that company's tool to detect it.
+
+## Provenance: Proving What Is Real
+
+**Provenance** reverses the question. Instead of trying to prove that content is fake, it lets creators prove that content is real.
+
+The leading standard comes from the Coalition for Content Provenance and Authenticity, known as **C2PA**, whose members include Adobe, Microsoft, Google, OpenAI, the BBC and Sony. A C2PA-compatible camera, which some models from Leica, Sony and Nikon are, signs a photo cryptographically at the moment it is taken. Editing software records each change. The result is a verifiable history: this image was taken by this device at this time and was cropped and color-corrected in these ways.
+
+Provenance has clear strengths. It supports trust in journalism and in evidence. It is an open standard that anyone can use. And it records the whole editing history, not just a yes-or-no verdict.
+
+It also has limits. Metadata stripping removes it. Most content has no credentials at all, and the absence of credentials proves nothing about whether something is real. Credentials can reveal sensitive information, such as who took a photo and where, so they need privacy-protecting options. And someone has to decide whose signatures to trust.
+
+## Why These Tools Matter
+
+It is easy to dwell on the limits, so it is worth stating plainly what these tools offer.
+
+For journalism, provenance offers a way to show readers that a photo from a war zone is what it claims to be, at a time when the liar's dividend from Lesson 04-05 lets anyone dismiss inconvenient images. For courts, it offers a way to authenticate evidence. For ordinary people, labels on AI-generated content, even imperfect ones, help them decide how much to trust what they see. For artists and photographers, credentials can record their authorship. None of this is complete. All of it is better than nothing.
+
+## The Rules
+
+As of October 2026, rules differ widely.
+
+The EU AI Act's transparency article requires providers to mark synthetic outputs in a machine-readable, detectable way. People who publish deepfakes, or AI-generated text meant to inform the public, must disclose that it is AI-generated, with lighter requirements for clearly artistic or satirical work. People must be told when they are interacting with an AI. A code of practice on marking and labeling is being developed.
+
+China's rules on labeling AI-generated content took effect on September 1, 2025, requiring both visible labels and hidden ones.
+
+The United States has no federal requirement. California's AI Transparency Act of 2024 requires large AI providers to offer free detection tools and to embed hidden disclosures in generated content, though its start date was delayed.
+
+Major platforms, including Meta, YouTube and TikTok, label content as AI-generated based on credentials, watermarks or creators' own disclosures, but coverage is inconsistent.
+
+*Legal status is as of October 2026 and should be checked before teaching.*
+
+## Layers, Not a Single Fix
+
+Since no tool works alone, a realistic strategy uses several together: provenance at the moment of capture for content that matters most, such as news and evidence; watermarking by the major generators; platforms that keep credentials intact and display them; detection as an aid to investigation, never a verdict; verification habits of the kind Lesson 04-02 described; and laws aimed at harmful uses, such as those in Lesson 04-04, instead of reliance on labels alone.
+
+## Where People Disagree
+
+Should platforms be required by law to preserve and display content credentials? It would make provenance far more useful. It would also impose costs on every platform, and could favor large ones.
+
+Is it fair to use AI-text detectors in academic misconduct cases? Given their error rates, and their bias against non-native speakers, many argue they should never be the main evidence.
+
+Could a world where authentic content must be signed disadvantage citizen journalists, activists or people in authoritarian countries, who may not have the right equipment or may not want their identity attached to their images? Provenance could protect journalism, or it could become a gate that decides whose evidence counts.
+
+And since open models cannot be forced to watermark, are watermarking requirements pointless? Supporters say they cover most content, since most comes from a few large providers. Critics say they cover least the content made by those most determined to deceive.
+
+## Check Your Understanding
+
+**1. What is the difference between watermarking and provenance?**
+
+:::answer Answer
+Watermarking embeds a hidden signal in generated content to mark it as synthetic. Provenance attaches signed records of where content came from and how it was edited, which can prove that content is authentic.
+:::
+
+**2. Why should AI-text detectors not be the sole basis for accusing a student of cheating?**
+
+:::answer Answer
+They are unreliable, and studies have found them biased against non-native English writers, whose writing they wrongly flag as AI-generated more often.
+:::
+
+**3. What is metadata stripping, and why does it matter?**
+
+:::answer Answer
+The removal of embedded information when content is screenshotted, re-saved or uploaded. It means provenance labels often disappear the first time content is shared.
+:::
+
+**4. Why can't watermarking requirements cover all synthetic content?**
+
+:::answer Answer
+They only work for cooperating providers. Models with openly released weights can be run without watermarks, and watermarks can be removed or forged.
+:::
+
+## Your Turn
+
+Find an image from a news organization that uses content credentials, or one from an AI generator that attaches them. Check it with the free verification tool at contentcredentials.org/verify. Then take a screenshot of the same image and check that. If you can, upload it to a social platform, download it again, and check once more. Record what survives at each step, and write two sentences on what this means for the EU's labeling rules.
+
+## Key Terms
+
+- **Detector:** A classifier that estimates whether content is synthetic.
+- **Watermark:** A hidden signal embedded in content when it is generated, identifying it as synthetic.
+- **Provenance:** A verifiable record of where content came from and how it has been changed.
+- **C2PA:** An open standard for signed provenance records, known to users as Content Credentials.
+- **Metadata stripping:** The removal of embedded information when content is re-saved or uploaded.
+
+## Sources
+
+- **Core:** Partnership on AI, *Responsible Practices for Synthetic Media* (2023). — [Free full text](https://partnershiponai.org/wp-content/uploads/2023/02/PAI_synthetic_media_framework.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r180). <!-- reading-access -->
+- C2PA Technical Specification (current version, c2pa.org). — [Free full text](https://spec.c2pa.org/specifications/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r176). <!-- reading-access -->
+- Google DeepMind, "SynthID" documentation; Dathathri, S. et al. "Scalable watermarking for identifying large language model outputs," *Nature* 634 (2024). — [SynthID documentation — Free full text](https://deepmind.google/models/synthid/); [Dathathri et al. paper — Free full text](https://www.nature.com/articles/s41586-024-08025-4); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r177). <!-- reading-access -->
+- Liang, W. et al. "GPT detectors are biased against non-native English writers," *Patterns* 4(7), 2023. — [Free manuscript](https://arxiv.org/abs/2304.02819); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r178). <!-- reading-access -->
+- EU AI Act Art. 50; Gibson Dunn on Omnibus timing (May 2026). ⚠ — [AI Act Article 50 — Free official text](https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng); [Gibson Dunn timing commentary — Free full text](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r179). <!-- reading-access -->

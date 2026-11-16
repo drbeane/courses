@@ -91,10 +91,10 @@
         { "title": "Confidently Wrong: Hallucination and Its Consequences" },
         { "title": "Verification as an Ethical Practice" },
         { "title": "Deepfakes: Capabilities and Harms" },
-        { "title": "Non-Consensual Intimate Imagery and the Grok Case" },
-        { "title": "Law and Platform Duties for Synthetic Sexual Imagery" },
+        { "title": "Non-Consensual Intimate Imagery: The Grok Case and the Legal Response" },
         { "title": "Elections, Fraud, and the Liar's Dividend", "optional": true },
         { "title": "Provenance, Watermarking, and Content Credentials", "optional": true },
+        { "title": "Synthetic Media That Helps: Translation, Access, and Restored Voices" },
         { "title": "Companions, Minors, and Emotional Reliance" },
         { "title": "Creative Rights, Copyright, and Training Data", "optional": true },
         { "title": "Generated-Information Verification", "lab": true, "assess": [ "A4" ] }

@@ -106,3 +106,17 @@ merge on 15 November 2026. Their history was not carried over, so this log start
   section that the sync removes.
 - `course.json`, the Topics index, Resources and lesson references in 05-08, 08-07 and 08-08 are
   updated for the new numbers. New claims to verify are at the end of `06 - Verification Checklist.md`.
+
+## 2026-11-15: AI Ethics Module 4 rewritten
+
+- All ten Module 4 lessons are rewritten in the new lesson structure, and Module 4 now follows the
+  planned outline.
+- 04-04 is now a case study, "Non-Consensual Intimate Imagery: The Grok Case and the Legal
+  Response," which merges the v1 Grok lesson with the lesson on law and platform duties.
+- Elections moves from 04-06 to 04-05, and provenance from 04-07 to 04-06.
+- 04-07 is new: "Synthetic Media That Helps: Translation, Access, and Restored Voices," on voice
+  banking, AI translation and audio description, and consent as the line between help and harm.
+- 04-08 and 04-10 no longer point to instructor files; 04-08 now describes its fictional app inline.
+- `course.json`, the Topics index, Resources, the design notes and lesson references in 07-09 and
+  08-01 to 08-03 are updated for the new numbers. New claims to verify are at the end of
+  `06 - Verification Checklist.md`.

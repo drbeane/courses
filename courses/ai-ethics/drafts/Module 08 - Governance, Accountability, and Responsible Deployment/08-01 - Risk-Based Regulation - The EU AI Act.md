@@ -22,7 +22,7 @@ On **May 6, 2026**, the Parliament and Council reached a political agreement. Th
 - **Annex III high-risk obligations** (e.g., recruitment, credit scoring, education, essential services) moved from **Aug 2, 2026 to Dec 2, 2027**.
 - **Annex I high-risk obligations** (AI in regulated products, like medical devices and machinery) moved to **Aug 2, 2028**.
 - **Article 50 transparency obligations** stayed on schedule for **Aug 2, 2026**, with a grace period for watermarking by existing systems until **Dec 2, 2026**.
-- A **new prohibition** on AI systems generating non-consensual intimate imagery or CSAM was added (04-05).
+- A **new prohibition** on AI systems generating non-consensual intimate imagery or CSAM was added (04-04).
 
 *Deadlines above are from law-firm summaries of the adopted text (July 2026). Check the Official Journal for authoritative wording.*
 
@@ -34,7 +34,7 @@ On **May 6, 2026**, the Parliament and Council reached a political agreement. Th
 |---|---|---|
 | **Prohibited (Art. 5)** | Social scoring; manipulative or exploitative AI causing significant harm; untargeted facial-image scraping (02-06); emotion recognition at work and school (05-05); biometric categorization to infer sensitive traits; real-time remote biometric identification for policing, with narrow exceptions (02-05); individual predictive policing based solely on profiling; **(new) NCII/CSAM generation** | Banned (from Feb 2, 2025; the new NCII ban has a transition to Dec 2, 2026) |
 | **High-risk (Art. 6, Annexes I & III)** | Biometrics; critical infrastructure; education; **employment**; essential services, including **credit and insurance**; law enforcement; migration; justice and democratic processes; safety components of regulated products | Risk management; data governance; documentation; logging; transparency to deployers; human oversight; accuracy, robustness and cybersecurity; conformity assessment; registration; post-market monitoring. Deployers have duties including human oversight and, for some, a **fundamental rights impact assessment** (08-06). |
-| **Transparency (Art. 50)** | Chatbots; deepfakes; AI-generated text on public-interest matters; emotion recognition and biometric categorization where permitted | Disclosure to users; machine-readable marking of synthetic content (04-07) |
+| **Transparency (Art. 50)** | Chatbots; deepfakes; AI-generated text on public-interest matters; emotion recognition and biometric categorization where permitted | Disclosure to users; machine-readable marking of synthetic content (04-06) |
 | **Minimal risk** | Spam filters; video games | No new obligations (voluntary codes) |
 
 ### General-purpose AI (GPAI) models
@@ -128,7 +128,7 @@ Note which classifications changed or were delayed under the 2026 Omnibus.
 
 ## Connections
 
-- Prohibited practices → 02-05, 02-06, 05-05, 04-05 · FRIA → 08-06 · Global comparison → 08-03
+- Prohibited practices → 02-05, 02-06, 05-05, 04-04 · FRIA → 08-06 · Global comparison → 08-03
 
 ## Sources and further reading
 

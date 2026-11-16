@@ -1,0 +1,143 @@
+# 04-04 — Non-Consensual Intimate Imagery: The Grok Case and the Legal Response
+
+**Module:** 4 — Synthetic Media, Information Integrity, and Human Agency
+**Estimated time:** 45 minutes
+**Content note:** This lesson discusses sexual image abuse, including of minors. No images are shown and nothing is described graphically. You may request an alternative case for any assessment.
+
+**In this lesson:** In early 2026 a chatbot built into a major social platform produced sexualized images of real women and girls on request and posted them publicly. This case study follows what happened, what failed, who has answered for it, and the laws that changed in response.
+
+## What Happened
+
+**August 2025.** xAI, the AI company founded by Elon Musk, launched a paid "Spicy Mode" for its Grok image and video generator, marketed as less restricted than competitors.
+
+**Late December 2025 into January 2026.** Users of X, the social platform owned by the same group, discovered that they could reply to a photo posted by a woman, or in some reported cases a girl, and ask Grok to show her in revealing clothing or a sexualized pose. Grok generated the image and posted it publicly in the reply thread, often in front of the person's own followers. An analysis by the firm Copyleaks reported thousands of such incidents. Reporting described images of women being humiliated or harmed, and sexualized images of minors.
+
+**January 2026: responses.** Grok posted an apology for generating sexualized images of young girls. X restricted image generation and editing to paying subscribers, and then added further limits. Indonesia and Malaysia blocked Grok. In the UK, the regulator Ofcom opened a formal investigation under the Online Safety Act, and the government said it would support any action Ofcom took, including blocking X. Three U.S. senators asked Apple and Google to remove the X and Grok apps from their app stores.
+
+**Afterward.** Later reporting said Grok could still produce non-consensual sexualized images despite the new limits. As of October 2026, Ofcom's investigation was continuing.
+
+*Details and the status of investigations are as of October 2026 and should be checked before teaching.*
+
+## Why This Case Stands Out
+
+Grok was not the first tool used to "nudify" people. Dedicated websites and apps had done it for years, advertised on mainstream platforms and paid through mainstream payment systems. Several things made this case different.
+
+The tool was built into one of the world's largest social platforms, not hidden on a fringe website. The images were posted publicly, in reply to the person depicted, so the humiliation was immediate and visible. And the misuse was foreseeable. Nudification had been a well-documented misuse of image models since at least 2023, and the product had been marketed as less restricted.
+
+## What Victims Experience
+
+Research on image-based sexual abuse, and the testimony of people it has happened to, describe harms that are real even though the images are synthetic.
+
+People describe it as a sexual violation. They lose control: images spread and resurface, and victims cannot know who has seen them. Employers, schools and families may see them. Women journalists, politicians and streamers have withdrawn from public life because of it. And for minors, the harm is gravest of all: sexualized images of minors are **child sexual abuse material** under U.S. federal law, and many jurisdictions now explicitly include AI-generated depictions. Schools around the world have faced cases of students creating such images of classmates, including a widely reported case in Almendralejo, Spain, in 2023 and a number of U.S. high schools since.
+
+The defense that "it's fake" fails, for the reason Lesson 01-04 gave. The harm does not depend on anyone believing the image is real. It comes from the sexual use of a real person's identity without their consent.
+
+## What Failed
+
+**Design.** By 2025, responsible image tools commonly used several safeguards: detecting when an uploaded photo shows a real person and blocking sexualized edits of it, refusing to edit photos of real people at all, and estimating age. A tool marketed as "spicy," and connected to a platform where users reply to other people's photos, created an obvious path to abuse.
+
+**Foresight.** The key question is what xAI knew and what it should have known. Nudification was a well-known misuse. A company releasing a less restricted image editor into a social platform had every reason to anticipate it. **Foreseeable misuse** is misuse that a reasonable developer should anticipate, and here it was hard to miss.
+
+**Response.** Restricting the feature to paying subscribers was criticized as monetizing the harm, not preventing it. Later reports that the abuse continued suggested the fixes were incomplete.
+
+## Who Answered for It
+
+Responsibility in a case like this is spread across several parties.
+
+| Party | What it could be responsible for |
+|---|---|
+| The user who asked for the image | The primary moral wrong, and increasingly a crime |
+| xAI, the developer | Design, safeguards, marketing, and anticipating misuse |
+| X, the platform | Publishing the images, how quickly they were removed, and its duties under laws such as the UK's Online Safety Act |
+| App stores | Distributing the apps under their own content rules |
+| Payment processors and advertisers | Funding the services |
+| Regulators | How fast and how effectively they enforce |
+
+So far, accountability has come mostly through regulators outside the United States, through countries blocking access, and through public pressure. Whether any party faces penalties remains open.
+
+## What Changed: The Legal Response
+
+The Grok case arrived just as several new laws took effect, and it became their first major test.
+
+**The United States.** The TAKE IT DOWN Act, signed on May 19, 2025, after passing the House 409 to 2, does two things. It makes it a federal crime to knowingly publish intimate images of an identifiable adult without consent, where publication is intended to cause harm or does cause harm; this covers both real images and "digital forgeries," with stricter rules for depictions of minors, and it also criminalizes threats to publish. And it requires platforms that host user content to provide a way for victims to request removal, and to remove the content, and make reasonable efforts to remove copies, **within 48 hours** of a valid request. The Federal Trade Commission began enforcing the platform rules on May 19, 2026, and sent warning letters to at least 15 companies. By 2026 nearly every U.S. state also had its own law on sexual deepfakes, and many had updated their child-abuse laws to cover AI-generated images.
+
+The Act has critics, including the Electronic Frontier Foundation and the Center for Democracy and Technology. They point out that it does not require platforms to check whether a removal request is legitimate, offers no way for the person who posted content to object, and imposes no penalty for false requests, so it could be used to remove lawful material such as journalism or political speech. They worry it could pressure encrypted services. And it gives victims no right to sue platforms; a separate bill that would, the DEFIANCE Act, had passed the Senate but not become law by mid-2026.
+
+**The European Union.** The EU took a different approach: it targets the tools as well as the users. Amendments to the AI Act that came into force on July 27, 2026, **prohibit** AI systems that generate non-consensual intimate imagery or child sexual abuse material. The ban covers general-purpose tools where such output is "reasonably foreseeable and reproducible" without adequate safeguards, which is exactly the situation in the Grok case, and applies from December 2, 2026. Separately, the Digital Services Act requires the largest platforms to assess and reduce systemic risks, including gender-based violence, with fines of up to 6 percent of global turnover. A 2024 directive on violence against women requires member states to criminalize sharing intimate images without consent, including deepfakes, by June 2027.
+
+**The United Kingdom.** The Online Safety Act 2023 made sharing intimate images without consent, including deepfakes, a criminal offense from January 2024, and gave Ofcom power to enforce platforms' duties regarding illegal content. A 2025 law made creating sexually explicit deepfakes an offense as well.
+
+## Comparing the Approaches
+
+Each kind of response has strengths and weaknesses.
+
+| Approach | Example | Strength | Weakness |
+|---|---|---|---|
+| Criminal penalties for users | TAKE IT DOWN; state laws; UK | Deterrence and moral clarity | Anonymous users are hard to find; the harm is already done |
+| Notice and removal | TAKE IT DOWN's platform rules | Fast relief for victims | Reactive; victims must find the content; open to abuse |
+| Platform risk duties | EU Digital Services Act; UK Online Safety Act | Systemic and preventive | Demanding to enforce; vague standards |
+| Product prohibitions | EU AI Act | Stops creation at the source | Hard lines for general-purpose tools |
+| Civil remedies | State laws; the proposed DEFIANCE Act | Compensation for victims | Costly lawsuits; defendants may have no money |
+| Hash matching | StopNCII.org for adults; NCMEC's Take It Down for minors | Victims can block uploads without sharing the image | Works only for known images; defeated by alterations |
+
+**Hash matching** deserves a word of explanation. A victim's device computes a digital fingerprint of the image, and participating platforms block anything with the same fingerprint. The victim never has to send the image itself to anyone.
+
+## Where People Disagree
+
+Should the law target the tool makers, as the EU does, or the users and platforms, as the U.S. mostly does? Targeting tools prevents images from being made at all, but it is hard to define what makes a general-purpose image editor illegal. Targeting users and platforms respects the legitimate uses of the tools but acts only after the harm.
+
+Is a 48-hour removal deadline with no verification a fair trade-off? For a victim, two days is a long time; for a journalist whose lawful story is removed by a false request, the lack of any appeal is a serious problem.
+
+And should general-purpose image tools be allowed to edit photos of real, identifiable people at all? A ban would prevent abuse, and it would also block many ordinary uses, from fixing family photos to making birthday cards.
+
+## Check Your Understanding
+
+**1. What three features made the Grok case different from earlier nudification tools?**
+
+:::answer Answer
+It was built into a major social platform, its images were posted publicly in reply to the person depicted, and the misuse was foreseeable given the known history of nudification and the product's "less restricted" marketing.
+:::
+
+**2. What must platforms do under the TAKE IT DOWN Act?**
+
+:::answer Answer
+Provide a way for victims to request removal, and remove the content, making reasonable efforts to remove copies, within 48 hours of a valid request.
+:::
+
+**3. How does the EU's 2026 prohibition apply to general-purpose image tools?**
+
+:::answer Answer
+It bans AI systems that generate non-consensual intimate imagery or child sexual abuse material, including general-purpose tools where such output is reasonably foreseeable and reproducible without adequate safeguards.
+:::
+
+**4. Why does "the image was fake" not excuse the harm?**
+
+:::answer Answer
+The harm does not depend on anyone believing the image is real. It comes from the sexual use of a real person's identity without their consent.
+:::
+
+## Your Turn
+
+You are the head of trust and safety for a new AI photo-editing feature on a social platform. List five safeguards you would require before launch. For each, say what it prevents, how it could be evaded, and what it costs ordinary users. Then name the safeguard Grok most clearly lacked, and say which law from this lesson would apply if your platform failed to have it.
+
+## Key Terms
+
+- **Nudification:** Using software to generate fake nude or sexualized images from clothed photos.
+- **Child sexual abuse material:** Sexual depictions of minors, which under many laws include AI-generated images.
+- **Foreseeable misuse:** Misuse that a reasonable developer should anticipate.
+- **Safety by design:** Building safeguards into a product before it is released.
+- **Notice and removal:** Removing content when a valid request is received; also called notice and takedown.
+- **Hash matching:** Identifying copies of a known image by its digital fingerprint.
+
+## Sources
+
+- **Core:** Ofcom, investigation notice regarding X and Grok (Jan 2026). — [Free full text](https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r160). <!-- reading-access -->
+- Malwarebytes, "Regulators around the world are scrutinizing Grok over sexual deepfakes," Jan 12, 2026. — [Free full text](https://www.malwarebytes.com/blog/news/2026/01/regulators-around-the-world-are-scrutinizing-grok-over-sexual-deepfakes); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r158). <!-- reading-access -->
+- NPR (via WFAE), "Elon Musk's X faces bans and investigations over nonconsensual bikini images," Jan 12, 2026. — [Free full text](https://www.wfae.org/world/2026-01-12/elon-musks-x-faces-bans-and-investigations-over-nonconsensual-bikini-images); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r159). <!-- reading-access -->
+- TAKE IT DOWN Act, Pub. L. 119-12 (May 19, 2025). ⚠ Confirm the citation. — [Free full text](https://www.govinfo.gov/content/pkg/PLAW-119publ12/pdf/PLAW-119publ12.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r164). <!-- reading-access -->
+- U.S. Senate Commerce Committee, "Cruz, Klobuchar Mark One Year of TAKE IT DOWN Act as FTC Enforcement Begins," May 2026. — [Free full text](https://www.commerce.senate.gov/press/rep/release/cruz-klobuchar-mark-one-year-of-take-it-down-act-as-ftc-enforcement-begins/); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r166). <!-- reading-access -->
+- Electronic Frontier Foundation, critiques of TAKE IT DOWN (2025). — [Free full text](https://www.eff.org/files/2025/04/18/take_it_down_act_one_pager_final.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r167). <!-- reading-access -->
+- Gibson Dunn, Addleshaw Goddard and Hunton on the EU AI Omnibus (May–July 2026). — [Gibson Dunn — Free full text](https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/); [Addleshaw Goddard — Free full text](https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/technology/eu-ai-act-ai-omnibus-formally-adopted/); [Hunton — Free full text](https://www.hunton.com/privacy-and-cybersecurity-law-blog/eu-digital-omnibus-on-ai-enters-into-force); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r168). <!-- reading-access -->
+- Directive (EU) 2024/1385 on combating violence against women. — [Free official text](https://eur-lex.europa.eu/eli/dir/2024/1385/oj/eng); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r169). <!-- reading-access -->
+- Henry, N., Flynn, A. & Powell, A. *Image-Based Sexual Abuse* (Routledge, 2020), Introduction. — [Paid / library](https://www.routledge.com/Image-based-sexual-abuse-A-study-on-the-causes-and-consequences-of-non-consensual/Henry-Flynn-Powell-Mcglynn-Johnson-Scott/p/book/9780815353836); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r162). <!-- reading-access -->
+- Thorn & All Tech Is Human, *Safety by Design for Generative AI: Preventing Child Sexual Abuse* (2024). — [Free full text](https://info.thorn.org/hubfs/thorn-safety-by-design-for-generative-AI.pdf); [access notes](../_Research/04%20-%20Reading%20Access%20Register.md#r163). <!-- reading-access -->
