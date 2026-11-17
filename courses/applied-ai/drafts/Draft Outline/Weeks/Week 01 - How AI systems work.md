@@ -16,7 +16,7 @@ Students will be able to:
 1. About this course
 2. What is AI?
 3. What a large language model is
-4. The surfaces map
+4. AI surfaces
 5. The 4D framework
 6. Vendors, models, and effort
 7. Privacy settings

@@ -2,46 +2,78 @@
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Delegation
 
-> **Instructor note: preparation.** Recheck the model pickers in Claude, Copilot Chat, and one free tool this week; they change often. The Claude menu steps and model names below were checked against Anthropic's help center on 2026-11-13, and the OpenAI model names against OpenAI's developer models page the same day. Recheck the tiers table before class. On 2026-10-03 the Maryville Copilot account showed only GPT 5.6 Sol with Quick response, Think deeper, and Auto; a student account may differ. Have the privacy settings pages for Claude and Copilot ready to show. Timing: 15 min vendors and models, 40 min lab, 10 min privacy, 10 min share-out.
+> **Instructor note: preparation.** Recheck the model pickers in Claude, Copilot Chat, and one free tool this week; they change often. The Claude menu steps and model names below were checked against Anthropic's help center on 2026-11-13, and the OpenAI model names against OpenAI's developer models page the same day. Recheck the tiers table before class. On 2026-10-03 the Maryville Copilot account showed only GPT 5.6 Sol with Quick response, Think deeper, and Auto; a student account may differ. The vendor, Cursor, and open-weight details were checked on 2026-11-16: xAI is part of SpaceX (its AI division has been called SpaceXAI and now SpaceXSI), SpaceX bought Cursor in August 2026, OpenAI announced the same month that it would stop supplying its models to Cursor, and Meta's Muse models are closed-weight. Have the privacy settings pages for Claude and Copilot ready to show. Timing: 15 min vendors and models, 40 min lab, 10 min privacy, 10 min share-out.
 
 ## What You Will Be Able to Do
 
 - Tell apart the company, the model, and the product when someone names an AI tool.
 - Identify the major AI vendors and the tiers of models they offer.
-- Explain why a reasoning model, or a higher effort setting, behaves differently from a fast model.
+- Explain the difference between open-weight and closed-weight models.
+- Describe how a reasoning model works through a problem, and why a higher effort setting changes the result.
 - Choose a model and an effort level for a task, and say what the choice costs.
 - Find out which model a tool is using, and find a model's system card.
+- Read a model's price and benchmark scores with a critical eye.
 
 ## Company, Model, and Product
 
-People say "I asked ChatGPT" or "I used Claude" as if each were one thing. Three different things hide behind those names, and it helps to keep them apart.
+Names like ChatGPT and Claude can mean a company, a model, or an app, depending on who is talking. Keeping the three apart helps when you compare tools or work out why an answer went wrong.
 
 | | What it is | Examples |
 |---|---|---|
-| **Company** | The vendor that builds and sells the technology | Anthropic, OpenAI, Google, Microsoft, Meta |
-| **Model** | The trained system that reads your text and writes the reply | Claude Sonnet, Claude Opus, Gemini |
-| **Product** | The software you open, which sends your words to a model | The Claude app, ChatGPT, Copilot, Claude Code |
+| **Company** | The vendor that builds and sells the technology | Anthropic, OpenAI, Google, Microsoft, Meta, xAI (now part of SpaceX) |
+| **Model** | The trained system that reads your request and writes the reply | Claude Opus, Claude Sonnet, GPT Sol, GPT Terra, Gemini, Grok |
+| **Product** | The software you open, which sends your words to a model | The Claude app, Claude Code, ChatGPT, Codex, Gemini, NotebookLM, Copilot, Cursor, Grok |
 
-The three don't line up one to one:
+### The Model and the Product Do Different Jobs
 
-- **One product can use several models.** The Claude app lets you pick from a menu. ChatGPT is a product; the models behind it have their own names.
-- **One model can sit inside several products.** The same Claude model answers you in the Claude app, in Claude Code, and inside other companies' tools.
-- **A product can use another company's models.** Microsoft's Copilot runs on models from OpenAI and, in some configurations, Anthropic.
+The **product** is everything around the model: the window you type in, the buttons and menus, file upload, web search, memory, and any connections to your files or other apps. The **model** is the part that reads your request, decides what to do, and writes the reply.
 
-So when an answer is poor, ask which **model** produced it. When a feature is missing, such as file upload or web search, that is usually the **product**. The surfaces map in the previous topic is a map of products. This topic is about the models inside them.
+The two work together. When you ask a question that needs current information, the model decides a web search would help and chooses what to search for. The product runs the search and hands the results back, and the model reads them and writes the answer.
+
+Companies split this work in different ways. Some, such as Anthropic, OpenAI, and Google, build both models and products. Others build products on models made by someone else. Cursor started that way, as a coding tool built on Anthropic's and OpenAI's models. And some models, especially open-weight ones, end up inside products their makers had nothing to do with.
+
+A product is also not quite the same as a surface. In the AI Surfaces lesson, a surface is a kind of tool, such as a chat app or a coding assistant. A product is one specific tool of that kind: ChatGPT is a chat app, and Cursor is a coding assistant.
+
+### Models and Products Don't Line Up One to One
+
+- **One product can use several models.** Many products let you choose. The Claude app offers Claude models at each size, from Haiku to Fable. ChatGPT offers several of OpenAI's GPT models, and which ones you see depends on your plan. Both of these offer only their own company's models. Other products, described below, offer models from several companies.
+- **One model can sit inside several products.** The same Claude model answers you in the Claude app, in Claude Code, and inside other companies' tools, such as Microsoft's Copilot.
+- **A product can use another company's models.** Microsoft's Copilot runs on models from OpenAI and, in some configurations, Anthropic. Cursor, a coding assistant, offers models from Anthropic, Google, and SpaceX, along with its own Composer model. It also offered OpenAI's models until SpaceX bought Cursor in 2026; OpenAI then announced it would stop supplying them. The models a product offers can change for business reasons that have nothing to do with how good the models are.
+
+So when an answer is poor, ask which **model** produced it. When a feature is missing, such as file upload or web search, that is usually the **product**. The AI Surfaces lesson was about products and the kinds of tools they are. This lesson is about the models inside them.
 
 ## Who Makes the Models
 
 A handful of companies build most of the AI models you will meet:
 
-- **Anthropic** makes Claude, the main tool in this course.
-- **OpenAI** makes ChatGPT and the Codex coding agent.
-- **Google** makes Gemini and NotebookLM.
+- **Anthropic** makes the Claude models, the Claude app, and Claude Code. Claude is the main tool in this course.
+- **OpenAI** makes the GPT models, ChatGPT, and the Codex coding agent.
+- **Google** makes the Gemini models, the Gemini app, and NotebookLM.
 - **Microsoft** makes Copilot, which runs on models from OpenAI and, in some configurations, Anthropic.
 - **Meta** makes the Muse personal agent and the Llama family of models.
-- **Open-weight models** are released for anyone to download and run on their own hardware.
+- **SpaceX** makes the Grok models and the Grok app. Its AI division began as xAI, a separate company, and became part of SpaceX in 2026. It also owns Cursor.
 
-This matters because the same task can go very differently on different vendors' tools, and because the tool your employer gives you may not be the one you'd choose.
+This matters because the same task can go very differently on different vendors' tools, and because the tool your employer gives you may not be the one you'd choose. Company lines also move: in one year, xAI was bought by SpaceX, SpaceX bought Cursor, and Meta moved its newest models from open to closed weights.
+
+## Open and Closed Weights
+
+A model's **weights** are the billions of numbers it learned in training. They are what makes it that model. Vendors handle them in one of two ways:
+
+- **Closed-weight models** stay on the vendor's computers. You use them through the vendor's products, or a developer pays to send requests to them. Claude, GPT, Gemini, Grok, and Meta's Muse models are closed.
+- **Open-weight models** are released for anyone to download, run on their own hardware, and adapt.
+
+Companies known for open-weight models include:
+
+- **DeepSeek**, in China, which makes the DeepSeek models.
+- **Alibaba**, in China, which makes the Qwen models.
+- **Moonshot AI**, in China, which makes the Kimi models.
+- **Z.ai**, in China, which makes the GLM models.
+- **Mistral**, in France, which makes the Mistral models.
+- **Meta**, in the United States, which makes the Llama models.
+
+Some closed-weight vendors also release smaller open models, such as Google's Gemma and OpenAI's gpt-oss.
+
+Open weights matter most for privacy and control. An organization can run an open model on its own computers, so its data never leaves the building, and it doesn't pay per message. The trade-offs are that the largest open models need expensive hardware to run well, and the strongest closed models are usually somewhat ahead. Open weights are also not the same as open source: you get the trained model, but usually not the data or code used to train it, and the license may limit how you can use it.
 
 ## Model Tiers
 
@@ -54,7 +86,7 @@ Most vendors offer a family of models at different sizes. Anthropic's and OpenAI
 | Middle | A balance of capability, speed, and cost | Sonnet | Terra |
 | Small | Fast and cheap | Haiku | Luna |
 
-The two columns are matched by where each model sits in its own family. A model is not equal to the one beside it, and on a given task either vendor's model may do better. Each name also carries a version number, such as Sonnet 5.5 or GPT-6.1 Sol, which rises with each release.
+The two columns are matched by where each model sits in its own family. A model is not equal to the one beside it, and on a given task either vendor's model may do better. Each name also carries a version number, such as Sonnet 5.5 or GPT-6.1 Sol, which rises with each release. Google and SpaceX also sell their models at more than one size.
 
 Families change. Vendors release new versions several times a year, and they add and rename tiers. These names were current in November 2026 and will be different by the time you graduate. The pattern of a few sizes, from most capable to fastest, has held for years.
 
@@ -62,7 +94,23 @@ Bigger is not always better. For a quick rewrite or a simple classification, a s
 
 ## Effort and "Thinking"
 
-Many current models can **reason** before answering: they work through the problem internally, sometimes at length, before writing the response. Tools expose this as an effort setting or a "think deeper" option. Claude has effort levels from Low to Max. Copilot Chat offers Quick response and Think deeper.
+Many current models can **reason** before answering: they work through the problem, sometimes at length, before writing the response. Tools expose this as an effort setting or a "think deeper" option. Claude has effort levels from Low to Max. Copilot Chat offers Quick response and Think deeper.
+
+### How Reasoning Works
+
+A model writes one token at a time, and every token it writes becomes part of what it reads next. You saw this in the large language models lesson. Without reasoning, the first words of the reply are the start of the answer, so the model commits to an answer before it has worked anything out.
+
+A reasoning model writes a stretch of thinking first. It restates the problem, makes a plan, tries a step, checks it, and sometimes notices a mistake and goes back. All of it is ordinary text, produced the same way as any other reply, and the model reads it as it goes. Writing down an intermediate result gives the model something to check, and a mistake caught in the thinking never reaches the answer.
+
+Nothing separate is bolted onto the model to make it think. Vendors train reasoning models on large numbers of problems with checkable answers, such as math and code, and reward the attempts that end in a correct answer. Over many rounds, the model picks up habits that tend to get there: breaking a problem into steps, checking its work, and trying another route when one fails.
+
+The effort setting controls how much thinking the model may do. More effort allows a longer stretch of thinking, which means more chances to catch an error, and also more time and more of your usage.
+
+Two cautions. Some tools show a summary of the thinking rather than all of it. And the thinking is not a guaranteed record of how the model reached its answer: models sometimes write reasons that don't match what actually drove the result. Read it as a working draft, not a proof.
+
+Step through one problem below, first without thinking and then with it.
+
+{{widget reasoning-trace}}
 
 More thinking helps most on problems with several steps where an early mistake ruins the result: math, logic, planning, careful analysis. On simple tasks it's usually wasted.
 
@@ -135,13 +183,40 @@ Cards can run to a hundred pages or more. Read the summary, then go to the secti
 - Anthropic lists its cards at [anthropic.com/system-cards](https://www.anthropic.com/system-cards).
 - For another vendor, search for the model's name with "model card" or "system card".
 
+## Comparing Models: Price and Benchmarks
+
+Two more numbers come up whenever people compare models: what a model costs and how it scores on tests.
+
+### Price
+
+Companies and developers who build on a model pay for each **token** it reads and writes. Prices are quoted per million tokens, with one price for **input**, what you send, and a higher one for **output**, what the model writes. A model's thinking counts as output. Each vendor lists its prices on its website.
+
+Within one family, the top tier can cost several times as much as the small tier. You don't see these prices on a subscription, but they explain your usage limits: a model that costs the vendor more per token uses up your allowance faster.
+
+### Benchmarks
+
+A **benchmark** is a fixed set of test problems used to score models, such as graduate-level science questions or real coding tasks. Vendors report scores in their announcements and system cards, and independent sites collect scores from many models into leaderboards.
+
+Scores are useful for a rough comparison. Read them with a few cautions:
+
+- **A benchmark measures one kind of task.** A high score on competition math says little about how well a model drafts a cover letter.
+- **Vendors choose what to report.** A company tends to show the tests its model does well on, and it may run them under its own conditions. Compare scores from the same independent source when you can.
+- **Models may have seen the test.** Questions from popular benchmarks can end up in training data, which inflates the score.
+- **Small gaps rarely matter.** At the top, models are often a few points apart, which won't show up in everyday work.
+
+The most useful benchmark is your own work. Give two models the same real task and compare the results, as you will in this week's lab.
+
 ## Key Terms
 
 - **Vendor**: a company that builds and sells AI models or products.
-- **Model**: the trained system that reads your text and writes the reply.
+- **Model**: the trained system that reads your request and writes the reply.
 - **Product**: the software you open, which sends your words to a model.
+- **Weights**: the numbers a model learned in training, which make it that model.
+- **Open-weight model**: a model whose weights are released for anyone to download and run.
+- **Closed-weight model**: a model whose weights stay with the vendor, used only through its products or paid access.
 - **Model tier**: a size class within a model family.
-- **Reasoning model**: a model that works through a problem before answering.
+- **Reasoning model**: a model that works through a problem in writing before answering.
 - **Effort setting**: a control over how much a model reasons.
 - **Usage limit**: the amount of work a subscription allows in a period of time.
 - **Model card / system card**: a vendor's published description of a model's capabilities, testing, and limits.
+- **Benchmark**: a fixed set of test problems used to score and compare models.

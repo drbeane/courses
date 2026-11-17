@@ -14,27 +14,60 @@ COSC-300/500 Applied AI Essentials
 
 | | What it is | Examples |
 |---|---|---|
-| **Company** | Builds and sells the technology | Anthropic, OpenAI, Google |
-| **Model** | Reads your text, writes the reply | Claude Sonnet, Gemini |
-| **Product** | The software you open | Claude app, ChatGPT, Copilot |
-
-- One product can use several models
-- One model can sit inside several products
+| **Company** | Builds and sells the technology | Anthropic, OpenAI, Google, xAI |
+| **Model** | Reads your request, writes the reply | Claude Sonnet, GPT Sol, Gemini, Grok |
+| **Product** | The software you open | Claude app, ChatGPT, Copilot, Cursor |
 
 <!-- Ask: when someone says "I asked ChatGPT", which of the three do they mean? -->
+
+---
+
+## The Model and the Product
+
+- **Product**: the window, menus, file upload, web search, memory, connections
+- **Model**: reads the request, decides what to do, writes the reply
+- Web search: the model decides to search; the product runs it
+- Some companies make both; some build products on others' models
+
+<!-- A product is one specific tool on a surface: ChatGPT is a chat app, Cursor is a coding assistant. -->
+
+---
+
+## Not One to One
+
+- **One product, several models**: Claude app (Haiku to Fable), ChatGPT (depends on plan)
+- **One model, several products**: Claude in the Claude app, Claude Code, Copilot
+- **A product, other companies' models**: Copilot (OpenAI, Anthropic); Cursor (Anthropic, Google, SpaceX, its own Composer)
+
+Poor answer? Ask about the **model**. Missing feature? That's the **product**.
+
+<!-- Cursor lost OpenAI's models after SpaceX bought it in 2026: model lineups change for business reasons. Checked 2026-11-16. -->
 
 ---
 
 ## Who Makes the Models
 
 - **Anthropic**: Claude
-- **OpenAI**: ChatGPT, Codex
-- **Google**: Gemini
+- **OpenAI**: GPT, ChatGPT, Codex
+- **Google**: Gemini, NotebookLM
 - **Microsoft**: Copilot (built largely on OpenAI models, and now some Anthropic models)
 - **Meta**: Muse, Llama
-- **Open-weight models**: download and run them yourself
+- **SpaceX** (formerly xAI): Grok; also owns Cursor
 
 <!-- Verify the current Copilot model mix before class. Our Maryville account showed only GPT 5.6 Sol on 2026-10-03. -->
+
+---
+
+## Open and Closed Weights
+
+- **Weights**: the numbers a model learned in training
+- **Closed**: stay with the vendor (Claude, GPT, Gemini, Grok, Muse)
+- **Open**: download and run them yourself
+  - DeepSeek · Alibaba (Qwen) · Moonshot (Kimi) · Z.ai (GLM) · Mistral · Meta (Llama)
+- Why it matters: data stays in-house, no per-message cost
+- Open weights ≠ open source
+
+<!-- Google's Gemma and OpenAI's gpt-oss are smaller open models from closed-weight vendors. -->
 
 ---
 
@@ -63,6 +96,20 @@ Bigger isn't always better: pick for the task.
 - Often wasted on simple tasks
 
 **Choosing a model and an effort level** is a skill you'll use all term.
+
+---
+
+## How Reasoning Works
+
+- The thinking is ordinary text, written one token at a time
+- Everything written becomes input for the next step
+- A written-down guess can be **checked**, and a caught mistake never reaches the answer
+- Trained on checkable problems; attempts that end correctly are rewarded
+- More effort = room to plan, check, and fix
+
+The thinking is a working draft, not a proof.
+
+<!-- Demo the "Watch a Model Think" widget from the lesson: run the same problem with no thinking, a small budget, and a large budget. -->
 
 ---
 
@@ -126,3 +173,16 @@ Check yours: **Settings**, then **Usage**
 - Best single source for a model's cutoff date and test results
 - Written by the seller, so read it that way
 - Anthropic's: anthropic.com/system-cards
+
+---
+
+## Price and Benchmarks
+
+- **Price**: per million tokens; output (including thinking) costs more than input
+- Higher tiers cost more, which is why they use your allowance faster
+- **Benchmarks**: fixed test sets used to score models
+  - Each measures one kind of task
+  - Vendors choose what to report
+  - Models may have seen the test
+  - Small gaps rarely matter
+- The best test is your own task, on two models

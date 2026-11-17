@@ -17,7 +17,7 @@
 | [Large Language Models explained briefly](https://3blue1brown.substack.com/p/large-language-models-explained-briefly) (3Blue1Brown) | Video | 8 min | Best short visual introduction; assign before session 1 |
 | [Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) (Andrej Karpathy) | Video | 1 hr | Clear general-audience talk; the "LLM OS" framing previews agents |
 | [Deep Dive into LLMs like ChatGPT](https://www.youtube.com/watch?v=7xTGNNLPyMI) (Karpathy) | Video | 3.5 hr | Optional depth for 500 students: pretraining, tuning, hallucination |
-| [How I use LLMs](https://www.youtube.com/watch?v=EWvNQjAaOHw) (Karpathy) | Video | 2 hr | A practitioner's tour of tools and features; pairs with the surfaces map |
+| [How I use LLMs](https://www.youtube.com/watch?v=EWvNQjAaOHw) (Karpathy) | Video | 2 hr | A practitioner's tour of tools and features; pairs with the AI Surfaces lesson |
 | [Neural networks series](https://www.3blue1brown.com/topics/neural-networks) (3Blue1Brown) | Video series | 2–3 hr | Transformers and attention, for curious students; beyond what the course requires |
 | [Elements of AI](https://www.elementsofai.com/) (University of Helsinki) | MOOC | ~30 hr | Non-technical background for students from other majors |
 

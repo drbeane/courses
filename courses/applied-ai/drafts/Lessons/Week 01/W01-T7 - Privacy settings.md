@@ -86,6 +86,8 @@ Both tools offer a mode for a single conversation you don't want kept:
 - **Claude: Incognito chat.** It is not saved to your history and is not used for training, whatever your training setting is.
 - **ChatGPT: Temporary chat.** It does not appear in your history, does not create memories, and is not used for training. OpenAI may keep it for up to 30 days for safety purposes. If you save a temporary chat, it becomes a regular chat and follows your account settings.
 
+> **Instructor note: screenshots pending.** Add a screenshot of starting an incognito chat in Claude and one of starting a temporary chat in ChatGPT here, saved in `content/images/`.
+
 These modes are useful for a one-off question. They don't suit work you need to come back to, since the conversation is gone afterward.
 
 ## Delete What You Don't Need

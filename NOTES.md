@@ -270,3 +270,17 @@ Engine (all three courses):
   key term (01-02 and 01-03) and glossary entry are now "Large language model (LLM)".
 - Renamed "capstone" to "final project" everywhere in Applied AI: lessons, slides, course.json
   titles, the RAG demo, two widgets, resources, and the draft file names.
+
+## 2026-11-16: Applied AI Week 1 revisions from toolbar comments
+
+- Lesson 6 (Vendors, Models, and Effort): new opening line; xAI/SpaceX, more models and products
+  in the table; new sections on what the model and the product each do, open and closed weights,
+  how reasoning works, and price and benchmarks; Cursor added as a product that uses other
+  companies' models. Matching slides added. Vendor facts checked 2026-11-16.
+- New widget `widgets/reasoning-trace.html` ("Watch a Model Think"): one problem with no
+  thinking, a small budget, and a large budget, step by step.
+- Lesson 5 (The 4D Framework): removed the Delegation Check widget and deleted its file.
+- Lesson 7 (Privacy Settings): instructor note marks the Claude incognito and ChatGPT temporary
+  chat screenshots as pending.
+- Renamed the Lesson 4 drafts to "W01-T4 - AI surfaces" and updated the "surfaces map" references
+  in the resources page, the slides README, and the Week 1 outline.

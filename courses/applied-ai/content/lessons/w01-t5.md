@@ -67,10 +67,6 @@ Moving down the table, you hand over more of the work and take on more of the ch
 
 A good default for anything you'll put your name on is to stay near the top of the table until you know how the tool performs on that kind of task.
 
-Try it yourself below. Pick a task, answer the questions, and see how far down the table it makes sense to go. Then change one answer and watch the suggestion move.
-
-{{widget delegation-check}}
-
 ## Why a Framework
 
 Tools change every few months. By the time you graduate, the products in this course will have new names, new features, and competitors that don't exist yet. A framework gives you something that carries over. Faced with a tool you've never seen, you can still ask the four questions: what should I hand to it, how do I tell it what I want, how will I know the result is good, and what am I responsible for?

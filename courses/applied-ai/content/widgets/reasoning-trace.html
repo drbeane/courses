@@ -1,0 +1,176 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button:disabled{opacity:0.45;cursor:not-allowed}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-q{margin:0;padding:0.7rem 0.85rem;background:var(--wash);border-radius:6px;font:400 1.05rem/1.5 var(--text)}
+.wx .wx-think{border:1px dashed var(--rule);border-radius:6px;padding:0.6rem 0.75rem;display:grid;gap:0.45rem;min-height:2.6rem}
+.wx .wx-think-head{display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;font-size:0.8rem;color:var(--muted)}
+.wx .wx-think-head b{font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase}
+.wx .wx-tokens{font-variant-numeric:tabular-nums}
+.wx .wx-empty{margin:0;color:var(--muted);font-style:italic;font-size:0.9rem}
+.wx .wx-step{display:grid;grid-template-columns:6.6rem minmax(0,1fr);gap:0.6rem;align-items:baseline}
+.wx .wx-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:0.15rem 0.45rem;border-radius:3px;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c);text-align:center}
+.wx .wx-tag.wx-bad{background:#f8e3df;color:#9a3a26}
+.wx .wx-tag.wx-good{background:#e1efe4;color:#2f6b3d}
+.wx .wx-say{margin:0;font:400 1rem/1.5 var(--text)}
+.wx .wx-step.wx-new .wx-say{box-shadow:inset 0 -2px 0 color-mix(in srgb,var(--c) 45%,#fff)}
+.wx .wx-cut{margin:0;padding-top:0.4rem;border-top:1px solid var(--rule);font-size:0.85rem;color:#9a3a26;font-weight:600}
+.wx .wx-why{margin:0;padding:0.6rem 0.8rem;border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 6%,#fff);border-radius:0 6px 6px 0;font-size:0.92rem}
+.wx .wx-why b{display:block;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--c);margin-bottom:0.15rem}
+.wx .wx-answer{margin:0;padding:0.65rem 0.85rem;border-radius:6px;border:1px solid var(--rule);font:400 1.02rem/1.5 var(--text)}
+.wx .wx-answer.wx-right{border-color:#8fbf9a;background:#f1f8f2}
+.wx .wx-answer.wx-wrong{border-color:#e0aa9c;background:#fcf1ee}
+.wx .wx-answer em{display:block;font:600 0.8rem var(--display);font-style:normal;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.15rem}
+.wx .wx-answer.wx-right em{color:#2f6b3d}
+.wx .wx-answer.wx-wrong em{color:#9a3a26}
+.wx .wx-status{margin:0;min-height:1.4em;color:var(--muted);font-size:0.9rem}
+.wx .wx-fine{margin:0;padding-top:0.8rem;border-top:1px solid var(--rule);color:var(--muted);font-size:0.84rem}
+@media (max-width:520px){.wx .wx-step{grid-template-columns:minmax(0,1fr);gap:0.2rem}.wx .wx-tag{justify-self:start}}
+@media print{.wx .wx-row,.wx .wx-status{display:none}}
+</style>
+<div class="wx" data-widget="reasoning-trace">
+  <div class="wx-head"><b>Try It: Watch a Model Think</b><span>Step through one problem with no thinking, a little, and a lot.</span></div>
+  <div class="wx-body">
+    <div>
+      <p class="wx-label">Problem</p>
+      <div class="wx-row wx-probs" role="group" aria-label="Problem"></div>
+    </div>
+    <p class="wx-q"></p>
+    <div>
+      <p class="wx-label">Thinking allowed</p>
+      <div class="wx-row wx-modes" role="group" aria-label="Thinking allowed"></div>
+    </div>
+    <div class="wx-think" aria-live="polite">
+      <div class="wx-think-head"><b>Thinking</b><span class="wx-tokens"></span></div>
+      <div class="wx-steps"></div>
+    </div>
+    <p class="wx-why" hidden></p>
+    <p class="wx-answer" hidden aria-live="polite"></p>
+    <div class="wx-row">
+      <button type="button" class="wx-primary wx-next">Next step</button>
+      <button type="button" class="wx-all">Run to the end</button>
+      <button type="button" class="wx-reset">Start over</button>
+    </div>
+    <p class="wx-status" aria-live="polite"></p>
+    <p class="wx-fine">These thinking steps were written for teaching. Real thinking is longer and messier, a real model doesn't label its steps, and some tools show only a summary. The token counts are rough. What carries over is the pattern: everything the model writes while thinking becomes text it reads before its next step, so a guess that has been written down can be checked.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // Each step: [tag, text, why it matters, rough tokens, kind]. kind 'bad' marks the wrong turn, 'good' a passed check.
+  // cut is how many steps the small budget allows before the model has to answer.
+  const PROBLEMS = [
+    { name: 'Two discounts',
+      q: 'A $40 shirt is marked 25% off. At the register you get another 20% off the sale price. What do you pay?',
+      fast: '45% off $40 is $18 off, so you pay $22.',
+      fastWhy: 'With no room to think, the reply starts with the answer. The quick shortcut, adding the two discounts, came out first, and every word after it just explains that shortcut.',
+      cut: 2,
+      lowAnswer: 'You pay $22.',
+      lowWhy: 'The model got as far as a guess, but its budget ran out before it could check it. Thinking that stops before the check step doesn\'t help.',
+      steps: [
+        ['Plan', 'Two discounts, one after the other. The second one applies to the sale price, not the original price.', 'The model restates the problem. Writing "applies to the sale price" now puts that detail in front of it for every later step.', 24],
+        ['Try', 'Quick idea: 25% + 20% = 45% off. 45% of $40 is $18, so $22.', 'This is the same shortcut the no-thinking answer used. The difference is that here it is only a draft, written where the model can look at it again.', 26, 'bad'],
+        ['Check', 'Wait. The 20% is taken from the sale price, which is less than $40. So adding the percentages can\'t be right.', 'The guess is on the page, and so is the plan from the first step. Reading both together, the model spots the conflict. It could not have checked an answer it hadn\'t written down.', 27],
+        ['Fix', 'Do it in order. 25% off $40 is $10 off, so the sale price is $30.', 'Having found the mistake, the model tries another route: one discount at a time.', 20],
+        ['Fix', '20% of $30 is $6. $30 − $6 = $24.', 'Each small step is easy to get right, and each result is written down for the next step to use.', 14],
+        ['Check', '$40 × 0.75 × 0.80 = $24. Same answer a second way.', 'A second method that agrees is good evidence. Reasoning models learn this habit because, in training, attempts that check their work end correctly more often.', 18, 'good'],
+      ],
+      answer: 'You pay $24. The sale price is $30, and 20% off that is $6 more.',
+      highWhy: 'The answer comes after the thinking, so it builds on the corrected work. The mistake was made, caught, and fixed in the thinking, and never reached the answer.',
+    },
+    { name: 'Meeting time',
+      q: 'Your teammate in London can meet any time from 9:00 a.m. to 5:00 p.m. London time. You are in St. Louis, 6 hours behind London, and can meet from 9:00 a.m. to 3:00 p.m. your time. What is the latest one-hour meeting that works for both of you, in your time?',
+      fast: 'The latest is 2:00 p.m. your time, since you\'re free until 3:00.',
+      fastWhy: 'The reply started from your own schedule and committed to it. Nothing in the first few words made the model look at London\'s side.',
+      cut: 2,
+      lowAnswer: 'The latest meeting is at 2:00 p.m. your time.',
+      lowWhy: 'The model converted the times but ran out of budget before comparing the two windows. A partial thought leads to the same mistake as no thought.',
+      steps: [
+        ['Plan', 'Put both windows in the same time zone, find where they overlap, then pick the latest one-hour slot in the overlap.', 'A plan in writing gives the model a checklist for the steps that follow.', 26],
+        ['Try', 'My window ends at 3:00 p.m., so the latest start is 2:00 p.m.', 'A first guess, made before step two of the plan is done. The model has not yet looked at London.', 18, 'bad'],
+        ['Check', 'That skips the plan. London is 6 hours ahead, so 2:00 p.m. here is 8:00 p.m. in London, after they stop at 5:00.', 'Because the plan is written above the guess, the model can see that the guess skipped a step, then test it.', 30],
+        ['Fix', 'London\'s 9:00 a.m. to 5:00 p.m. is 3:00 a.m. to 11:00 a.m. my time.', 'Converting one window makes the two directly comparable.', 22],
+        ['Fix', 'Overlap: from 9:00 a.m., when I start, to 11:00 a.m., when they stop. The latest one-hour slot starts at 10:00 a.m.', 'With both windows in one time zone, the overlap is easy to read off.', 30],
+        ['Check', '10:00 a.m. here is 4:00 p.m. in London. The meeting ends 11:00 a.m. here, 5:00 p.m. there. Inside both windows.', 'The model tests the answer against both people\'s limits before committing to it.', 30, 'good'],
+      ],
+      answer: 'The latest meeting starts at 10:00 a.m. your time, which is 4:00 p.m. in London.',
+      highWhy: 'The final answer rests on the checked overlap, not on the first guess. More effort gave the model room for the check that caught the error.',
+    },
+  ];
+  const MODES = [['none', 'No thinking'], ['low', 'Small budget'], ['high', 'Large budget']];
+
+  const $ = (c) => root.querySelector(c);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  let p = 0, mode = 'high', shown = 0, done = false;
+
+  const plan = () => (mode === 'none' ? 0 : mode === 'low' ? PROBLEMS[p].cut : PROBLEMS[p].steps.length);
+
+  function render(status) {
+    const P = PROBLEMS[p], steps = P.steps.slice(0, shown);
+    const tok = steps.reduce((a, s) => a + s[3], 0);
+    $('.wx-q').textContent = P.q;
+    $('.wx-steps').innerHTML = mode === 'none'
+      ? '<p class="wx-empty">None. The model starts writing its answer right away.</p>'
+      : (steps.length ? steps.map((s, i) => `<div class="wx-step${i === shown - 1 && !done ? ' wx-new' : ''}"><span class="wx-tag${s[4] === 'bad' ? ' wx-bad' : s[4] === 'good' ? ' wx-good' : ''}">${s[0]}</span><p class="wx-say">${esc(s[1])}</p></div>`).join('') : '<p class="wx-empty">Press Next step to start.</p>') +
+        (done && mode === 'low' ? '<p class="wx-cut">Thinking budget used up. The model has to answer now.</p>' : '');
+    $('.wx-tokens').textContent = mode === 'none' ? '0 thinking tokens' : `About ${tok} thinking tokens`;
+    const why = $('.wx-why');
+    let w = '';
+    if (done) w = mode === 'none' ? P.fastWhy : mode === 'low' ? P.lowWhy : P.highWhy;
+    else if (shown) w = P.steps[shown - 1][2];
+    why.hidden = !w;
+    why.innerHTML = w ? `<b>${done ? 'Why this answer' : 'What this step does'}</b>${esc(w)}` : '';
+    const ans = $('.wx-answer');
+    ans.hidden = !done;
+    if (done) {
+      const right = mode === 'high';
+      const text = mode === 'none' ? P.fast : mode === 'low' ? P.lowAnswer : P.answer;
+      ans.className = 'wx-answer ' + (right ? 'wx-right' : 'wx-wrong');
+      ans.innerHTML = `<em>Answer: ${right ? 'correct' : 'wrong'}</em>${esc(text)}`;
+    }
+    $('.wx-next').textContent = shown >= plan() && !done ? 'Show the answer' : 'Next step';
+    $('.wx-next').disabled = done;
+    $('.wx-all').disabled = done;
+    $('.wx-status').textContent = status || '';
+  }
+
+  function next() {
+    if (done) return;
+    if (shown < plan()) { shown++; render(`Step ${shown} of ${plan()}.`); }
+    else {
+      done = true;
+      render(mode === 'high' ? 'Now try the small budget, or no thinking, on the same problem.' : 'Now try the large budget on the same problem.');
+    }
+  }
+  function all() { while (!done) next(); }
+  function reset() { shown = 0; done = false; render(''); }
+
+  const chips = (sel, items, cur, set) => {
+    const box = $(sel);
+    box.innerHTML = items.map(([k, label]) => `<button type="button" class="wx-chip" data-k="${k}">${label}</button>`).join('');
+    const bs = [...box.querySelectorAll('button')];
+    const mark = (k) => bs.forEach((b) => b.setAttribute('aria-pressed', b.dataset.k === String(k) ? 'true' : 'false'));
+    bs.forEach((b) => { b.onclick = () => { set(b.dataset.k); mark(b.dataset.k); reset(); }; });
+    mark(cur);
+  };
+  chips('.wx-probs', PROBLEMS.map((x, i) => [i, x.name]), p, (k) => { p = +k; });
+  chips('.wx-modes', MODES, mode, (k) => { mode = k; });
+  $('.wx-next').onclick = next;
+  $('.wx-all').onclick = all;
+  $('.wx-reset').onclick = reset;
+  reset();
+})();
+</script>
