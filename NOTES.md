@@ -4,6 +4,11 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-23: Settings menu, W1 Lesson 3 edits
+
+- New settings button (gear) in the lower right, above the text size control. Its menu has one option, Contents alignment (Left or Right), which moves the contents list to either side of lesson, project and appendix pages. The choice is kept in the reader's browser. On narrow screens the contents list stays above the text. Code is in `engine/page.js`, `engine/site.css` and the head script in `engine/build.mjs`; this affects every course.
+- W1 Lesson 3: about twenty wording edits from the Notion tracker. Added a paragraph on temperature to Why Answers Vary, a Temperature key term, and a longer knowledge cutoff explanation. Tuning now mentions human feedback (RLHF). The reliability widget is retitled "More or Less Reliable?".
+
 ## 2026-11-23: W1 Lesson 2 widget moved
 
 - The "Rules or Learned?" widget moved from "AI You Already Use" to the end of "A Brief History of AI", where rules and learning are introduced, with a new lead-in sentence.

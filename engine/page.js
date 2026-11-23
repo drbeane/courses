@@ -1,5 +1,5 @@
-// Shared page behavior: the text size control in the lower right corner, and the search box in a
-// course's top bar.
+// Shared page behavior: the settings menu and text size control in the lower right corner, and the
+// search box in a course's top bar.
 (() => {
   // ---------- Text size ----------
   // Three sizes. The choice is kept in this browser, and the page head applies it before drawing.
@@ -21,6 +21,41 @@
     mark();
   });
   mark();
+
+  // ---------- Settings ----------
+  // A gear button above the text size control opens a small menu. For now it has one setting: which
+  // side of a lesson page the contents list sits on. The choice is kept in this browser.
+  const SIDES = [['left', 'Left'], ['right', 'Right']];
+  const gear = document.createElement('button');
+  gear.type = 'button';
+  gear.className = 'settings-btn';
+  gear.setAttribute('aria-label', 'Settings');
+  gear.setAttribute('aria-haspopup', 'true');
+  gear.setAttribute('aria-expanded', 'false');
+  gear.setAttribute('aria-controls', 'settings-menu');
+  gear.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>';
+  const menu = document.createElement('div');
+  menu.className = 'settings-menu';
+  menu.id = 'settings-menu';
+  menu.hidden = true;
+  menu.setAttribute('role', 'group');
+  menu.setAttribute('aria-label', 'Settings');
+  menu.innerHTML = `<p class="sm-label" id="sm-toc">Contents alignment</p><div class="sm-seg" role="group" aria-labelledby="sm-toc">${
+    SIDES.map(([v, label]) => `<button type="button" data-side="${v}">${label}</button>`).join('')}</div>`;
+  document.body.append(gear, menu);
+  const markSide = () => menu.querySelectorAll('button').forEach((b) => b.setAttribute('aria-pressed', String((root.dataset.toc || 'left') === b.dataset.side)));
+  const setMenu = (open) => { menu.hidden = !open; gear.setAttribute('aria-expanded', String(open)); };
+  gear.addEventListener('click', () => setMenu(menu.hidden));
+  menu.addEventListener('click', (e) => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.dataset.side === 'right') root.dataset.toc = 'right'; else delete root.dataset.toc;
+    try { if (b.dataset.side === 'right') localStorage.setItem('toc-side', 'right'); else localStorage.removeItem('toc-side'); } catch (err) {}
+    markSide();
+  });
+  document.addEventListener('click', (e) => { if (!menu.hidden && !menu.contains(e.target) && !gear.contains(e.target)) setMenu(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); gear.focus(); } });
+  markSide();
 
   // ---------- Glossary ----------
   // A filter box above the list, and a pop-up with the full entry for terms that have one.

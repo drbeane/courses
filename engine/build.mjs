@@ -31,10 +31,10 @@ function write(base, p, html) {
   fs.writeFileSync(file, html.replaceAll('@ROOT@', '/'));
 }
 
-// The reader's text size (small, standard or large) is set by the control in the lower right
-// corner, which is engine/page.js. It is kept in the browser and applied here, before the page is
-// drawn, so the page doesn't jump.
-const TEXT_SIZE = `<script>try { const t = localStorage.getItem('text-size'); if (t) document.documentElement.dataset.text = t; } catch (e) {}</script>`;
+// The reader's text size (small, standard or large) and the side the contents list sits on (left or
+// right) are set by the controls in the lower right corner, which are in engine/page.js. They are
+// kept in the browser and applied here, before the page is drawn, so the page doesn't jump.
+const TEXT_SIZE = `<script>try { const d = document.documentElement, t = localStorage.getItem('text-size'), c = localStorage.getItem('toc-side'); if (t) d.dataset.text = t; if (c === 'right') d.dataset.toc = c; } catch (e) {}</script>`;
 
 // The frame around every page: top bar, main area, footer. A course's pages also get a search box
 // in the top bar, which searches that course only (engine/page.js and /<course>/search.json).
