@@ -4,6 +4,12 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-23: Tokenization appendix page and demo, W1 edits
+
+- New Appendix page "How Tokenization Works" and a "Tokenizer Explorer" demo (three toy tokenizers and a step-through). Lesson W1 T3 links to both, says a token is not literally a word but can be thought of as one, and has a Demo button.
+- W1 T3 objectives: split the first bullet in two; "Predict" became "Anticipate".
+- Engine: the outer border around Mermaid diagrams was removed (affects all courses that use diagrams).
+
 ## 2026-11-23: Applied AI W1 Lesson 1 wording
 
 - "The topics in this course are loosely ordered by autonomy" and "where you ask questions and it answers", per two Notion edit notes.

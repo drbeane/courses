@@ -1,0 +1,169 @@
+<style>
+.dx{
+  --f-display:var(--display); --f-body:var(--display);
+  --f-mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --bg:var(--wash); --line:var(--rule); --panel:var(--paper); --accent:var(--c);
+  --accent-soft:color-mix(in srgb,var(--c) 11%,#fff);
+  color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;
+}
+.dx .wrap{display:grid;gap:20px}
+.dx [hidden]{display:none!important}
+.dx h2{font-family:var(--f-display);font-weight:600;font-size:19px;margin:0}
+.dx .lede{margin:0;max-width:52rem;font:400 1.15rem/1.5 var(--text);color:var(--ink)}
+.dx .panel{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:6px;padding:18px;display:grid;gap:14px;min-width:0}
+.dx .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.dx button{font:inherit;font-size:14px;font-weight:500;border-radius:7px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 12px;cursor:pointer}
+.dx button:hover{border-color:var(--accent)}
+.dx button:focus-visible,.dx textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.dx button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.dx button.chip{font-size:13px;padding:4px 10px;border-radius:999px}
+.dx button:disabled{opacity:.45;cursor:not-allowed}
+.dx textarea{box-sizing:border-box;width:100%;min-height:5.5rem;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink);font:400 15px/1.5 var(--f-mono);resize:vertical}
+.dx .label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dx .tk{display:grid;gap:6px;padding:12px;border:1px solid var(--line);border-radius:8px}
+.dx .tk-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 14px;align-items:baseline}
+.dx .tk-head b{font-size:15px}
+.dx .tk-head span{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
+.dx .tk-head span strong{color:var(--ink);font-size:18px;font-variant-numeric:tabular-nums}
+.dx .tk-note{margin:0;color:var(--muted);font-size:13px}
+.dx .toks{line-height:2.2;word-break:break-word}
+.dx .t{display:inline-block;font-family:var(--f-mono);font-size:13.5px;border-radius:4px;padding:1px 4px;margin:0 2px 2px 0;white-space:pre}
+.dx .t i{font-style:normal;color:var(--muted);opacity:.8}
+.dx .c0{background:#dbe7ff}.dx .c1{background:#ffe3c2}.dx .c2{background:#d8f0dd}.dx .c3{background:#f6d9ec}.dx .c4{background:#fff1b8}
+.dx .steps{display:grid;gap:10px}
+.dx .stepbox{font-family:var(--f-mono);font-size:14px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);overflow-wrap:anywhere}
+.dx .stepbox b{font-family:var(--f-body);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:2px}
+.dx .stepbox mark{background:#ffe08a;border-radius:3px;padding:0 1px;white-space:pre}
+.dx .stepbox .gone{color:var(--muted);opacity:.7;white-space:pre}
+.dx .stepbox .rest{white-space:pre-wrap}
+.dx .fine{margin:0;font-size:12.5px;color:var(--muted);max-width:80ch}
+.dx ol.notice{margin:0;padding-left:20px;display:grid;gap:6px;max-width:75ch}
+</style>
+<div class="wrap">
+  <p class="lede">A tokenizer cuts text into pieces taken from a fixed list, its vocabulary. Type some text and see how three small tokenizers split it. They split the same text differently, as different models do.</p>
+
+  <section class="panel" aria-labelledby="h-in">
+    <h2 id="h-in">Your Text</h2>
+    <div class="row" role="group" aria-label="Samples" id="samples"></div>
+    <label class="label" for="txt">Text to split</label>
+    <textarea id="txt" spellcheck="false"></textarea>
+  </section>
+
+  <section class="panel" aria-labelledby="h-res">
+    <h2 id="h-res">Three Ways to Split It</h2>
+    <div id="results" aria-live="polite"></div>
+    <p class="fine">Each colored box is one token. A dot (·) marks a space at the front of a token. Real tokenizers usually attach the space to the word that follows it.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="h-step">
+    <h2 id="h-step">How the Large Vocabulary Tokenizer Chooses Pieces</h2>
+    <div class="steps">
+      <div class="stepbox" id="stepText"></div>
+      <div class="stepbox" id="stepWhy"></div>
+    </div>
+    <div class="row">
+      <button class="primary" id="btnNext">Take the next piece</button>
+      <button id="btnAll">Finish</button>
+      <button id="btnRestart">Start over</button>
+    </div>
+    <p class="fine">At each step the tokenizer looks at the text that is left and takes the longest piece from its vocabulary that matches the start. If nothing matches, it takes a single character.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="h-not">
+    <h2 id="h-not">What to Notice</h2>
+    <ol class="notice">
+      <li>Common words are usually one token in the large vocabulary and several in the small one. The count changes with the tokenizer even though the text does not.</li>
+      <li>Rare words, names, and typos break into many small pieces. Try "Supercalifragilistic" or a misspelled word.</li>
+      <li>Numbers, code, and text in other languages usually take more tokens than plain English of the same length.</li>
+      <li>The model never sees the letters inside a token, only its ID. That is why questions about spelling and letter counts are hard for it.</li>
+    </ol>
+    <p class="fine">These are teaching tokenizers with short hand-made vocabularies. Real tokenizers have tens of thousands to hundreds of thousands of pieces, and no real model will split text exactly as shown here.</p>
+  </section>
+</div>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+  // Small vocabulary: short pieces and common endings.
+  const SMALL = (" t, a, s, w, o, c, i, p, d, m, b, f, h, l, th, he, in, er, an, re, on, at, en, nd, ti, es, or, te, of, ed, is, it, al, ar, st, to, nt, ng, se, ha, as, ou, io, le, ve, co, me, de, hi, ri, ro, ic, ne, ea, ra, ce, li, ch, ll, be, ma, si, om, ur, ing, ion, the, and, ent, tion, her, for, ere, ter, you, ou, ed, ay, ge, un, de, pr, ex")
+    .split(",").map((x) => x.replace(/^ /, "")).filter(Boolean);
+  const SMALL_VOCAB = new Set(SMALL.concat(SMALL.map((x) => " " + x), ["a", " a", "I", " I", ".", ",", "?", "!", " ", "-", "'", "\"", "(", ")", ":", ";", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]));
+
+  // Large vocabulary: all of the above plus many whole words and longer pieces.
+  const WORDS = "the of and to a in is that it for was on are as with his they at be this from have or by one had not but what all were when we there can an your which their said if do will each about how up out them then she many some so these would other into has more her two like him see time could no make than first been its who now people my made over did down only way find use may water long little very after words called just where most know get through back much before go good new write our me man too any day same right look think also around another came come work three word must because does part even place well such here take why help put different away again off went old number great tell men say small every found still between name should home big give air line set own under read last never us left end along while might next sound below saw something thought both few those always looked show large often together asked house don world going want school important until form food keep children feet land side without boy once animals life enough took sometimes four head above kind began almost live page got earth need far hand high year mother light country father let night picture being study second soon story since white ever paper hard near sentence better best across during today however sure knew try told young sun thing whole hear example heard several change answer room sea against top turned learn point city play toward five using himself usually model models language token tokens large computer computers learning machine data text AI answer prompt system rules question questions".split(" ");
+  const PIECES = "ing ed er ly tion ation ment ness able ful less est ize ous ive al ies ing's un re pre dis over under super token iz ation ify ure ity ence ance ical ology sion".split(" ");
+  const BIG = new Set(SMALL_VOCAB);
+  WORDS.concat(PIECES).forEach((w) => { BIG.add(w); BIG.add(" " + w); const c = w[0].toUpperCase() + w.slice(1); BIG.add(c); BIG.add(" " + c); });
+  ["...", "\n", "  ", "http", "://", "www", ".com", "def ", "return", "print(", "()", "):", "==", "->", "{", "}", "[", "]", "$", "%", "&", "*", "/", "+", "=", "_", "#", "@", "20", "19", "12", "10", "00", "100", "000", "123", "202"].forEach((x) => BIG.add(x));
+
+  const maxLen = (set) => Math.max(...[...set].map((x) => x.length));
+  const MAXL = { small: maxLen(SMALL_VOCAB), big: maxLen(BIG) };
+
+  function matchAt(text, i, vocab, max) {
+    for (let n = Math.min(max, text.length - i); n > 0; n--) {
+      const piece = text.slice(i, i + n);
+      if (vocab.has(piece)) return piece;
+    }
+    return [...text.slice(i)][0]; // one character (or emoji) when nothing matches
+  }
+  function split(text, vocab, max) {
+    const out = []; let i = 0;
+    while (i < text.length) { const p = matchAt(text, i, vocab, max); out.push(p); i += p.length; }
+    return out;
+  }
+  const chars = (text) => [...text];
+
+  const TOKENIZERS = [
+    { key: "chars", name: "Characters only", note: "Every character is its own token. Always works, but makes very long sequences.", run: chars },
+    { key: "small", name: "Small vocabulary", note: "A few short pieces such as \"th\", \"ing\", and \"the\". Most words are cut into several tokens.", run: (t) => split(t, SMALL_VOCAB, MAXL.small) },
+    { key: "big", name: "Large vocabulary", note: "Hundreds of whole words and word endings. Common words are one token and rare words are still cut up.", run: (t) => split(t, BIG, MAXL.big) },
+  ];
+
+  const show = (p) => esc(p).replace(/^ /, "<i>·</i>").replace(/\n/g, "<i>↵</i>");
+  const chips = (toks) => toks.map((p, i) => `<span class="t c${i % 5}">${show(p)}</span>`).join("");
+
+  const SAMPLES = [
+    ["A plain sentence", "The model reads the text one token at a time."],
+    ["A rare word", "Supercalifragilisticexpialidocious"],
+    ["Numbers", "In 2026 the price rose from 1234567 to 7654321 dollars."],
+    ["Code", "def add(a, b):\n    return a + b"],
+    ["Another language", "Bonjour tout le monde, comment allez-vous aujourd'hui?"],
+    ["A typo", "Tokenizaton is hlepful for undrestanding models."],
+  ];
+  $("samples").innerHTML = SAMPLES.map((s, i) => `<button class="chip" data-i="${i}">${s[0]}</button>`).join("");
+  $("samples").onclick = (e) => { const b = e.target.closest("button"); if (b) { $("txt").value = SAMPLES[+b.dataset.i][1]; update(); } };
+
+  function renderResults() {
+    const text = $("txt").value;
+    const words = (text.match(/\S+/g) || []).length;
+    $("results").innerHTML = TOKENIZERS.map((k) => {
+      const toks = k.run(text);
+      const per = words ? (toks.length / words).toFixed(1) : "0.0";
+      return `<div class="tk"><div class="tk-head"><b>${k.name}</b><span><strong>${toks.length}</strong> tokens · ${per} per word</span></div>
+        <p class="tk-note">${k.note}</p><div class="toks">${chips(toks) || '<span class="tk-note">Type some text above.</span>'}</div></div>`;
+    }).join("");
+  }
+
+  // Step-through for the large vocabulary tokenizer.
+  let pos = 0;
+  function renderStep() {
+    const text = $("txt").value, done = pos >= text.length;
+    const next = done ? "" : matchAt(text, pos, BIG, MAXL.big);
+    const taken = split(text.slice(0, pos), BIG, MAXL.big); // pieces already chosen (cut points match by construction)
+    $("stepText").innerHTML = `<b>Text</b>${taken.length ? `<span class="gone">${esc(text.slice(0, pos))}</span>` : ""}${done ? "" : `<mark>${esc(next)}</mark>`}<span class="rest">${esc(text.slice(pos + next.length))}</span>`;
+    $("stepWhy").innerHTML = `<b>Tokens so far (${taken.length})</b>${chips(taken) || "none yet"}` +
+      (done ? `<br><b style="margin-top:8px">Finished</b>The text is now ${taken.length} tokens.`
+            : `<br><b style="margin-top:8px">Next piece</b>The longest match for the text that is left is <span class="t c${taken.length % 5}">${show(next)}</span>${next.length === 1 && !BIG.has(next) ? " (no longer piece matches, so it takes one character)" : ""}.`);
+    $("btnNext").disabled = done; $("btnAll").disabled = done;
+  }
+  $("btnNext").onclick = () => { const t = $("txt").value; if (pos < t.length) pos += matchAt(t, pos, BIG, MAXL.big).length; renderStep(); };
+  $("btnAll").onclick = () => { pos = $("txt").value.length; renderStep(); };
+  $("btnRestart").onclick = () => { pos = 0; renderStep(); };
+
+  function update() { pos = 0; renderResults(); renderStep(); }
+  $("txt").oninput = update;
+  $("txt").value = SAMPLES[0][1];
+  update();
+})();
+</script>

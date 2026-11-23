@@ -46,9 +46,11 @@
     { "slug": "personal-assistant", "name": "Build a Personal Assistant", "weeks": [4, 8], "tag": "draft", "about": "Set up a Claude project that knows how you work and can reach your task list and notes through connectors such as Todoist and Notion." }
   ],
   "appendix": [
+    { "slug": "tokenization", "name": "How Tokenization Works", "about": "How text is split into tokens, how a tokenizer is built, and why different models count the same text differently." },
     { "slug": "history-of-ai", "name": "The History of AI", "about": "From the first ideas about thinking machines to today's large language models: the main approaches, the booms and winters, and the breakthroughs behind modern AI." }
   ],
   "demos": [
+    { "slug": "tokenizer", "name": "Tokenizer Explorer", "weeks": [1], "lessons": ["w01-t3"], "about": "Split any text with three small tokenizers and step through how one of them chooses its pieces." },
     { "slug": "next-token-sampler", "name": "Next-Token Sampler", "weeks": [1], "about": "Watch a model pick one token at a time, and see why the same prompt gives different answers on different runs." },
     { "slug": "context-window", "name": "Context Window Budget", "weeks": [2, 9], "about": "Fill a context window with instructions, files, and conversation, and see what gets crowded out." },
     { "slug": "prompt-injection", "name": "Prompt Injection Sandbox", "weeks": [8], "about": "Hide instructions in a document and see when an agent follows them and which safeguards stop it." },

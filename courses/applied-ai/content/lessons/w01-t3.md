@@ -4,16 +4,17 @@
 
 ## What You Will Be Able to Do
 
-- Explain a large language model (LLM) as a next-token predictor trained in two stages, and say what a knowledge cutoff means.
+- Explain a large language model (LLM) as a next-token predictor trained in two stages.
+- Say what a knowledge cutoff means.
 - Explain why the same prompt can give different answers.
 - Say how an LLM differs from a search engine, a database, and a calculator.
-- Predict where a model is likely to be reliable and where it isn't.
+- Anticipate where a model is likely to be reliable and where it isn't.
 
 The AI systems in this course are built on **large language models**, or LLMs. Understanding roughly how they work will help you predict where they succeed and where they fail.
 
 ## A Next-Token Predictor
 
-An LLM reads and writes text as **tokens**, which are pieces of words. In English a token is about three-quarters of a word on average. Given the text so far, the model calculates a probability for every possible next token, picks one, adds it to the text, and repeats. A full answer is thousands of these predictions in a row.
+An LLM reads and writes text as **tokens**, which are small pieces of text. A token is not literally a word, but for our purposes it is fine to think of tokens as words and pieces of punctuation. Long or unusual words are split into several tokens, and in English a token averages about three-quarters of a word. Different models split text into tokens in different ways. The [Tokenization](/appendix/tokenization/) page in the Appendix explains how, and its [Tokenizer Explorer](/demos/tokenizer/) demo shows the process. Given the text so far, the model calculates a probability for every possible next token, picks one, adds it to the text, and repeats. A full answer is thousands of these predictions in a row.
 
 If you give a model "The capital of France is", the token "Paris" is very likely, and the model will almost always produce it. For an open question with many reasonable answers, the probabilities are spread out, and the model's choice could go many ways.
 

@@ -284,7 +284,7 @@ main.reading { max-width: 86rem; }
 }
 
 /* Diagrams drawn by diagrams.js. Until the script runs, the block shows its Mermaid source. */
-.prose pre.mermaid { margin: 0 0 1.5rem; padding: 0; background: none; overflow-x: auto; text-align: center; font-size: 0.8rem; }
+.prose pre.mermaid { margin: 0 0 1.5rem; padding: 0; background: none; border: 0; overflow-x: auto; text-align: center; font-size: 0.8rem; }
 .prose pre.mermaid svg { height: auto; }
 
 .foot .all { float: right; margin-left: 1.5rem; color: var(--ink); }
