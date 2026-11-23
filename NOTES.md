@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-23: Applied AI W1 Lesson 1 wording
+
+- "The topics in this course are loosely ordered by autonomy" and "where you ask questions and it answers", per two Notion edit notes.
+
 ## 2026-11-23: Applied AI home page shows lesson counts
 
 - Added the `homeLessonCounts` course setting. When set, the home page shows each week's number of lessons instead of its assignment name. Applied AI uses it, as the notes in Notion asked; Math for AI still shows its lab names.
