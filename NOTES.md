@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-23: W1 Lesson 2 widget moved
+
+- The "Rules or Learned?" widget moved from "AI You Already Use" to the end of "A Brief History of AI", where rules and learning are introduced, with a new lead-in sentence.
+
 ## 2026-11-23: Tokenization appendix page and demo, W1 edits
 
 - New Appendix page "How Tokenization Works" and a "Tokenizer Explorer" demo (three toy tokenizers and a step-through). Lesson W1 T3 links to both, says a token is not literally a word but can be thought of as one, and has a Demo button.
