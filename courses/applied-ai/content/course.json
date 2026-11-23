@@ -4,6 +4,7 @@
   "term": "Spring 2027",
   "school": "Maryville University",
   "topicLabel": "Lesson",
+  "homeLessonCounts": true,
   "meets": "Tuesdays and Thursdays, 8:00 to 9:15",
   "description": "Learn to use modern AI tools for real work: research, writing, analysis, coding, and automation.",
   "stagesNote": "The weeks are grouped by how much the AI does on its own, from chat to agents that work while you are away.",

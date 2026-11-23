@@ -42,6 +42,7 @@ Live site: https://drbeane.vercel.app/
 | `colors` | Stage colors. Without it, the shared seven colors are used. |
 | `optional` (on a topic) | Marks the lesson "Optional" in the lesson list and on its page. |
 | `tag` (on a topic or a demo) | `"new"` or `"updated"` shows that label in the lesson or demo list, and on the lesson's page. |
+| `homeLessonCounts` | The home page shows each week's number of lessons instead of its assignment name. |
 | `topicLabel` | The word before a topic's number. The default is "Topic". |
 | `lessonNumbers` | Numbers lessons `NN-LL` and links those numbers, and "A1" style assessment numbers, in text. |
 | `math` | Turns `$...$` and `$$...$$` into typeset math. |

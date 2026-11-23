@@ -250,7 +250,7 @@ ${frag}
   function home() {
     const steps = course.stages.map((st) => {
       const weeks = course.weeks.filter((w) => w.stage === st.n).map((w) =>
-        `<li><a href="/lessons/#w${pad(w.n)}"><span class="wk">Week ${w.n}</span><span class="tp">${esc(w.topic)}</span><span class="as">${w.assignment ? esc(w.assignment) : `${w.topics.length} lessons`}</span></a></li>`
+        `<li><a href="/lessons/#w${pad(w.n)}"><span class="wk">Week ${w.n}</span><span class="tp">${esc(w.topic)}</span><span class="as">${w.assignment && !course.homeLessonCounts ? esc(w.assignment) : `${w.topics.length} ${w.topics.length === 1 ? 'lesson' : 'lessons'}`}</span></a></li>`
       ).join('');
       return `<section class="step s${st.n}"><h2>${esc(st.name)}</h2><ol>${weeks}</ol></section>`;
     }).join('\n');
