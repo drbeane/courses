@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-23: Icon on interactive widgets
+
+- Every widget heading ("Try It: ...") now has a pointer-click icon before the title, in the lesson's color. One rule in `engine/site.css`. Demos are unchanged.
+
 ## 2026-11-23: Settings menu, W1 Lesson 3 edits
 
 - New settings button (gear) in the lower right, above the text size control. Its menu has one option, Contents alignment (Left or Right), which moves the contents list to either side of lesson, project and appendix pages. The choice is kept in the reader's browser. On narrow screens the contents list stays above the text. Code is in `engine/page.js`, `engine/site.css` and the head script in `engine/build.mjs`; this affects every course.
