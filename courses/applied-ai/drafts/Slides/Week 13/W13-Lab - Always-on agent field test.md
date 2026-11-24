@@ -12,10 +12,10 @@ COSC-300/500 Applied AI Essentials
 
 ## Guided Setup
 
-1. Throwaway account only
-2. One low-risk connection, read-only if possible
-3. Approvals on for anything that sends or buys
-4. Write down every permission you grant **and why**
+1. Use a throwaway account only, with nothing in it you'd miss.
+2. Add one low-risk connection, read-only if possible.
+3. Turn approvals on for anything that sends or buys.
+4. Write down every permission you grant **and why**, and every one you refuse.
 
 ---
 
@@ -27,14 +27,16 @@ A **low-stakes** task over 3–5 days:
 - Track a price **without buying**
 - Keep a running list from messages you forward
 
+Write the brief before you start: goal, scope, check-ins, limits, and an end date.
+
 ---
 
 ## Monitoring Plan
 
-- When will you check in each day?
-- What does a bad run look like?
-- What will you log?
-- When would you **shut it off**?
+- When will you check in each day, and what will you look at?
+- What does a bad run look like for this task?
+- What will you log after each check-in?
+- When would you **shut it off**? Decide now, before it's running.
 
 ---
 
@@ -44,13 +46,16 @@ A **low-stakes** task over 3–5 days:
 |---|---|---|---|---|
 | | | | | |
 
+Fill it in every day, even when nothing happened. "No check-in today" is a result too.
+
 ---
 
 ## Responsible Use
 
-- **Throwaway accounts only**
-- No school, work, or financial accounts connected
-- Nothing that sends or buys without approval
+- **Throwaway accounts only.** Never your real email, social, or messaging accounts.
+- No school, work, or financial accounts connected, even read-only.
+- Nothing that sends or buys without your approval.
+- When the test ends, shut it down completely: stop, disconnect, revoke, delete.
 
 ---
 

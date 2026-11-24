@@ -12,10 +12,10 @@ COSC-300/500 Applied AI Essentials
 
 ## Guided Practice
 
-1. Load your dataset
-2. Get a cleaning plan; approve or change it
-3. Run two analyses
-4. Start your verification log
+1. Load your dataset and ask for a first look: rows, columns, missing values, and problems.
+2. Get a cleaning plan, then approve or change each step before it runs.
+3. Run two analyses that answer specific questions about the data.
+4. Start your verification log by recomputing one number yourself.
 
 ---
 
@@ -25,6 +25,8 @@ COSC-300/500 Applied AI Essentials
 2. **Deck**: 5 slides
 3. **One generated image or diagram**, labeled as AI-generated
 4. **Verification log**: 3 numbers recomputed, 1 error caught
+
+Open every file in its real application before you call it done.
 
 ---
 
@@ -39,8 +41,8 @@ COSC-300/500 Applied AI Essentials
 
 ## Looking Ahead: The Big Shift
 
-Next week we stop **chatting** and start **delegating**.
+Next week we stop **chatting** and start **delegating**: an agent that works on files on your computer.
 
 - Claude Academy: **Introduction to Claude Cowork**, lessons 1–5
 - **AI Fluency**, lessons 6–7
-- **Make a backup** of the practice folder you'll use
+- **Make a backup** of the practice folder you'll use. An agent can change and delete files.

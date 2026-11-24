@@ -12,10 +12,10 @@ COSC-300/500 Applied AI Essentials
 
 ## Demo: Muse, Set Up Safely
 
-- **Throwaway account**
-- **One** connection
-- **Approvals on**
-- A task that runs over several days
+- A **throwaway account**, created just for this, with nothing in it you'd miss
+- **One** connection, the one the task needs
+- **Approvals on** for anything that sends, posts, or buys
+- A task that runs over several days, so you see how it behaves unwatched
 
 <!-- Show the demo account: one connection, the permission screen, approvals on, and one check-in asking for approval. -->
 
@@ -49,22 +49,22 @@ Record the refusals too.
 
 ## A Brief for a Multi-Day Task
 
-- **Goal**: what, and how often
-- **Scope**: which sites, and nothing else
-- **Check-ins**: when, and what to say when there's nothing new
+- **Goal**: what to do, and how often
+- **Scope**: which sites or sources, and nothing else
+- **Check-ins**: when to report, and what to say when there's nothing new
 - **Limits**: never send, post, or buy
 - **End**: stop after five days
 
-Give it an end date.
+Give it an end date. A task with no end keeps its access until you remember to take it away.
 
 ---
 
 ## Settings Walk-Through
 
-- **Training opt-out**: training on your interactions is on by default
-- **Permissions**: read vs send
-- **Purchase approvals**
-- What Meta can access to operate the service
+- **Training opt-out**: training on your interactions is on by default, so turn it off first.
+- **Permissions**: check which connections can only read and which can send.
+- **Purchase approvals**: make sure nothing can be bought without your yes.
+- **Vendor access**: read what Meta can access to operate the service.
 
 ---
 
@@ -76,7 +76,7 @@ Give it an end date.
 4. Delete stored data
 5. Close the throwaway account
 
-Know how to stop it before you start it.
+Know how to stop it before you start it. Disconnecting in the agent's app doesn't always remove the access it was granted on the other service.
 
 ---
 
@@ -85,4 +85,4 @@ Know how to stop it before you start it.
 - US adults **18+**
 - Payment card required at signup, even for the free tier
 
-Can't or won't sign up? Pair with the **instructor demo account**.
+Can't or won't sign up? Pair with the **instructor demo account**. You'll do the same planning, logging, and assessment.

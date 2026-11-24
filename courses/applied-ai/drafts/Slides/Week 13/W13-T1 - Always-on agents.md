@@ -19,14 +19,16 @@ COSC-300/500 Applied AI Essentials
 5. Building with models
 6. **Working while you're away** ← this week
 
+Each step gave the AI more room to act without you. This one gives it the most: it decides when to act, not just how.
+
 ---
 
 ## What Makes an Agent "Always-On"
 
-- Its **own cloud computer** with a browser
-- Keeps working after you close the app
-- Acts across **your accounts**
-- **Checks in** when it needs approval
+- It has its **own cloud computer** with a browser, so it doesn't need your laptop to be on.
+- It keeps working after you close the app, for days at a time.
+- It acts across **your accounts**: email, calendar, shopping, messaging.
+- It **checks in** with you when it needs an answer or an approval.
 
 ---
 
@@ -37,6 +39,8 @@ COSC-300/500 Applied AI Essentials
 | Runs | When you start it | On a timetable | Continuously |
 | Where | Your computer | Vendor's cloud | Vendor's cloud |
 | Decides when to act | No | No | **Yes** |
+
+The last row is the new part. Everything before this week acted only when you or a clock told it to.
 
 ---
 
@@ -54,10 +58,10 @@ Check-ins arrive in a messaging app: easy to answer, easy to approve without rea
 
 ## What They're Good For
 
-- **Watching**: prices, postings, news, page changes
-- **Triage**: what needs your attention?
-- **Event-driven routines**
-- **Long-running errands** with waiting built in
+- **Watching**: prices, job postings, news, and pages that change
+- **Triage**: deciding what in a stream of messages needs your attention
+- **Event-driven routines**: "when the grade posts, add it to my tracker"
+- **Long-running errands** with waiting built in, such as following up if no one replies
 
 The timing is set by the world, not by you.
 
@@ -82,5 +86,7 @@ You have to create the moments.
 - **OpenAI dots**: on ChatGPT Pro ($100+) plans
 - **OpenClaw**: open source, self-hosted
 - **Claude**: scheduled and handed-off tasks, for comparison
+
+This week's demo and lab use Muse. The supervision questions are the same for all of them.
 
 <!-- Verify current Muse tiers, limits, and eligibility on Meta's own pages before class. -->

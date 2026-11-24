@@ -18,15 +18,17 @@ Have the model answer from **source material**, not from memory.
 - A research agent grounds them in web pages
 - A grounded notebook is the strictest form
 
-With the source in context, the model reads the figure off the page.
+With the source in context, the model reads the figure off the page instead of recalling it, so specific details are far more reliable.
 
 ---
 
 ## Grounded Notebooks
 
-- Answer **only** from sources you add
-- Closed-book: no outside web
+- A notebook answers **only** from the sources you add to it.
+- It works closed-book: it doesn't search the web or fill gaps from what the model learned in training.
 - Examples: **NotebookLM** (free), **Copilot Notebooks** (up to 50 sources on Maryville accounts)
+
+Useful when the sources are the authority: a textbook, a policy, a set of readings.
 
 <!-- Check NotebookLM's current product name; Google's docs have started calling it Gemini Notebook. -->
 
@@ -34,9 +36,11 @@ With the source in context, the model reads the figure off the page.
 
 ## What a Notebook Gives You
 
-- Citations to the **passage**, one click away
-- "Your sources don't cover that"
-- Study materials: summaries, guides, practice questions
+- Citations to the exact **passage**, one click away, so checking takes seconds.
+- "Your sources don't cover that," instead of a confident guess.
+- Study materials built from your sources: summaries, guides, and practice questions.
+
+The refusal is a feature. It tells you where your sources end.
 
 <!-- Demo: one question the sources answer, one they don't. Repeat both in a plain chat. -->
 
@@ -56,9 +60,9 @@ With the source in context, the model reads the figure off the page.
 
 A notebook can still:
 
-- misread a passage
-- merge two sources
-- miss the relevant passage
+- misread a passage, or drop a qualifier like "in some cases"
+- merge two sources into a claim neither one makes
+- miss the relevant passage and answer from a weaker one
 - faithfully repeat a mistaken source
 
 The citations make checking fast. You still do it.
@@ -84,15 +88,19 @@ Upload a 300-page handbook, ask a question:
 
 the model may see **five passages**.
 
-It has not read the whole document the way you would.
+- It has not read the whole document the way you would.
+- It answers from whichever passages were retrieved, and can't know what it missed.
+- Questions about the whole document, like "what's the overall argument?", are the hardest for it.
 
 ---
 
 ## Matching by Meaning
 
-- Each chunk becomes a list of numbers: an **embedding**
-- Similar meaning → similar numbers
-- "time off after having a baby" finds "Parental leave"
+- Each chunk becomes a list of numbers, called an **embedding**.
+- Text with similar meaning gets similar numbers, even with no words in common.
+- So "time off after having a baby" finds a section titled "Parental leave."
+
+That's why retrieval beats keyword search for most questions, and why it sometimes matches the wrong passage that merely sounds related.
 
 ---
 
@@ -110,8 +118,8 @@ Sign: "your sources don't cover that", when you know they do.
 
 ## What to Do
 
-- Rephrase in the document's own terms
-- Ask narrower questions
+- Rephrase the question in the document's own terms.
+- Ask narrower questions, one part at a time.
 - Point to the place: "In chapter 4…"
-- Reduce the sources
-- For whole-document questions, give the model the whole document
+- Reduce the sources, so the right passage has less competition.
+- For whole-document questions, give the model the whole document, in a chat where it fits in context.

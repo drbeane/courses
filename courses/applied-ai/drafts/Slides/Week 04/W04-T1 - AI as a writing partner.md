@@ -14,7 +14,10 @@ COSC-300/500 Applied AI Essentials
 
 Weeks 1–3: the model answers from what it learned in training.
 
-Weeks 4–5: the model works from **your sources and files**.
+Weeks 4–5: the model works from **your sources and files**: your drafts, your readings, your data.
+
+- Answers get more specific and easier to check, because the material is in front of it.
+- The work also gets closer to your own, so authorship questions get sharper.
 
 The question for this stage: which parts of the work are yours?
 
@@ -22,11 +25,11 @@ The question for this stage: which parts of the work are yours?
 
 ## AI at Each Stage of Writing
 
-- **Planning**: find and test an angle
-- **Drafting**: get past the blank page
-- **Revising**: gaps, order, what a reader would miss
-- **Editing**: tighten, fix, change tone
-- **Summarizing**: long documents into what matters to you
+- **Planning**: find an angle, then test it against objections
+- **Drafting**: get past the blank page with a rough start you'll rewrite
+- **Revising**: spot gaps, fix the order, find what a reader would miss
+- **Editing**: tighten sentences, fix errors, change the tone
+- **Summarizing**: turn long documents into what matters to you
 
 The more of your own material it has, the more the draft is yours.
 
@@ -40,6 +43,8 @@ The more of your own material it has, the more the draft is yours.
 | "Shorten this to 200 words" | "Add some citations" |
 | "What would a skeptic ask?" | "Summarize this paper I haven't read" |
 
+The left column makes your work better. The right column produces work you can't vouch for.
+
 <!-- The right column isn't forbidden; it's risky. Ask students what the specific risk of each one is. -->
 
 ---
@@ -51,6 +56,10 @@ When the piece is done:
 > Could you explain and defend every claim in it without the tool open?
 
 If you could, the thinking is yours.
+
+- If a classmate, instructor, or manager asked "why did you say this?", would you have an answer?
+- Could you say where each fact came from?
+- If not, that's the part to go back and work through yourself.
 
 ---
 
@@ -82,10 +91,10 @@ Instead:
 
 ## Responsible Use
 
-- **Authorship**: whose ideas and words are these?
-- **Disclosure**: say how AI was used
-- **Plagiarism**: AI text can echo sources closely
-- **Copyright**: what you upload, and what you publish
+- **Authorship**: whose ideas and words are these? You should be able to say which parts came from you.
+- **Disclosure**: say how AI was used, specifically enough that a reader could judge it.
+- **Plagiarism**: AI text can echo its sources closely, without quotation marks or credit.
+- **Copyright**: be careful about what you upload, and about what you publish as your own.
 
 ---
 

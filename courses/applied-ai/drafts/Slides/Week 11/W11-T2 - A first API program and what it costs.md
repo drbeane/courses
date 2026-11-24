@@ -34,11 +34,11 @@ Same parts as the request: model, limit, system prompt, messages.
 
 ## Live Build
 
-1. A first call
-2. Add a system prompt
-3. Change the temperature: same prompt, different runs
-4. A multi-turn loop
-5. Ask for **structured JSON** output
+1. Make a first call and print the reply.
+2. Add a system prompt, and watch the same question get a different answer.
+3. Change the temperature: same prompt, several runs, more or less variety.
+4. Turn it into a multi-turn loop that keeps the conversation.
+5. Ask for **structured JSON** output that another program could use.
 
 ---
 
@@ -61,7 +61,7 @@ Many products are a system prompt, some tools, and an interface.
 3. Add the reply to the list
 4. Repeat
 
-Your program, not the model, decides what a conversation remembers.
+Your program, not the model, decides what a conversation remembers. That's how chat apps implement memory, summaries, and "start a new chat."
 
 ---
 
@@ -83,9 +83,9 @@ Your program, not the model, decides what a conversation remembers.
 
 ## Cost and Tokens
 
-- The response reports **input** and **output** tokens
-- Price = tokens × rate (output usually costs more)
-- Estimate: calls per day × tokens per call × price
+- Every response reports how many **input** and **output** tokens it used.
+- Price = tokens × rate, and output tokens usually cost several times more than input.
+- To estimate a monthly bill: calls per day × tokens per call × price × days.
 
 > Your Claude Pro subscription does **not** include API usage. It's billed separately.
 
@@ -109,11 +109,11 @@ Example rates: $3 per million in, $15 per million out.
 
 ## What Drives the Cost
 
-- Long conversations: history is resent every turn
-- Big system prompts and many tools
-- Long outputs
-- A bigger model than the task needs
-- Agent loops
+- Long conversations: the whole history is resent every turn.
+- Big system prompts and many tool definitions, sent with every call.
+- Long outputs, which cost the most per token.
+- A bigger model than the task needs.
+- Agent loops, where one request becomes many calls.
 
 A subscription has a ceiling. The API doesn't, unless you set one.
 
@@ -121,8 +121,8 @@ A subscription has a ceiling. The API doesn't, unless you set one.
 
 ## Keeping the Key Safe
 
-- Never in your code
-- Never committed
-- Never pasted into a chat
-- Leaked? **Revoke it**
-- Set a **spending limit**
+- Never put the key in your code. Load it from the environment instead.
+- Never commit it to a repository, even a private one.
+- Never paste it into a chat.
+- If it leaks, **revoke it** right away and make a new one.
+- Set a **spending limit** in the console, so a mistake can't run up a large bill.

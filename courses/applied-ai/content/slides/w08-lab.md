@@ -18,9 +18,9 @@ Plus a 2-page design and risk report.
 
 ## Workshop: Plan and Get Approval
 
-- What's the task? Who benefits?
-- Which skill, which connector?
-- What will the agent be allowed to touch?
+- What's the task, and who benefits from automating it?
+- Which skill and which connector will it use?
+- What will the agent be allowed to touch, and what will it be kept away from?
 - How will you know a run went badly?
 
 Get your plan signed off before you leave.
@@ -29,15 +29,16 @@ Get your plan signed off before you leave.
 
 ## Midterm Lab
 
-- Build and test your workflow
-- Capture **two runs**: outputs and screenshots
-- Note anything unexpected
+- Build your workflow, then test each piece on its own before running it end to end.
+- Capture **two runs**: the outputs and screenshots of what the agent did.
+- Note anything unexpected, including runs that went fine for the wrong reason.
+- Check each run against your plan: did it touch only what you allowed?
 
 ---
 
 ## Risk-Note Checklist
 
-- What can the agent touch, and why?
+- What can the agent touch, and why does the task need it?
 - How would you **detect** a bad run?
 - One **prompt-injection risk** and its mitigation
 - What's connected that doesn't need to be?
@@ -46,9 +47,9 @@ Get your plan signed off before you leave.
 
 ## Responsible Use
 
-- Connect only accounts **you own**
-- Secrets never in prompts or files
-- Least privilege by default
+- Connect only accounts **you own**. Never a classmate's, a shared login, or an employer's without permission.
+- Keep secrets out of prompts and files: no passwords, API keys, or account numbers.
+- Start from least privilege, and add access only when the task proves it needs it.
 
 ---
 

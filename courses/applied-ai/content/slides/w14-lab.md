@@ -6,9 +6,10 @@ COSC-300/500 Applied AI Essentials
 
 ## Peer Review: Groups of Three
 
-- Read each draft against the **rubric**
-- Written feedback for **two** classmates
-- About 15 minutes per draft
+- Read each draft against the **rubric**, not against your own project.
+- Write feedback for **two** classmates, the other two members of your group.
+- Spend about 15 minutes per draft, and write as you read.
+- The author has a week to revise, so aim for feedback they can act on.
 
 ---
 
@@ -24,10 +25,10 @@ COSC-300/500 Applied AI Essentials
 
 ## Good Feedback
 
-- Specific: point to the section
-- One strength, two improvements
-- Suggest, don't rewrite
-- Ask the question a skeptical manager would
+- Be specific: point to the section, the sentence, or the result you mean.
+- Give one strength and two improvements, so the author knows what to keep and what to fix.
+- Suggest, don't rewrite. The project is theirs.
+- Ask the question a skeptical manager would: "How do you know it works?"
 
 ---
 
@@ -36,6 +37,8 @@ COSC-300/500 Applied AI Essentials
 - **8 minutes** plus 3 for questions
 - Order posted by Friday
 - Audience completes a feedback form for each talk
+
+Eight minutes goes fast. Plan for the task, the prototype in action, the evaluation results, and one key risk.
 
 ---
 

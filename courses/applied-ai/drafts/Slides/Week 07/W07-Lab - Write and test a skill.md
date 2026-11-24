@@ -18,55 +18,57 @@ Write instructions for your **week 6 working folder**:
 - Conventions (names, formats)
 - What the agent must never do
 
-Run a task and see whether it follows them.
+Run a task and see whether it follows them. Then change one rule and run it again.
 
 ---
 
 ## Pick a Task You Do Repeatedly
 
-- Formatting a lab report
-- Lecture notes → flashcards
+- Formatting a lab report to your instructor's requirements
+- Turning lecture notes into flashcards
 - Triaging a downloads folder
-- A weekly status update
-- Your own idea
+- Writing a weekly status update for a job or club
+- Your own idea: anything you've explained to an AI more than twice
 
 ---
 
 ## Write It
 
-1. **Description**: when should it be used?
+1. **Description**: what does it do, and when should it be used?
 2. **Steps**: what to do, in order
-3. **Output**: format and location
-4. **Rules**: what never to do
-5. Supporting files if needed (template, example)
+3. **Output**: the format, and where to save it
+4. **Rules**: what never to do, and what to do when something's unclear
+5. Supporting files if needed, such as a template or an example
 
 ---
 
 ## Test It
 
-- Run on **three different inputs**
-- Did it trigger when it should?
+- Run it on **three different inputs**, including one awkward one.
+- Did it trigger when it should, and only then?
 - Did it follow every step?
-- What broke?
+- What broke, and which part of the skill caused it?
 
-**Revise at least once.** Keep a change log.
+**Revise at least once.** Keep a change log: what you changed, and why.
 
 ---
 
 ## Share-Out
 
 - Put your skill in the **class skill library**
-- One thing that surprised you
-- The class library feeds the **midterm project**
+- Share one thing that surprised you while testing
+- The class library feeds the **midterm project**, so write it for others to use
+
+Before you post it, read your description as a stranger would. Would they know what the skill does and when to use it?
 
 ---
 
 ## Responsible Use
 
-- Skills are **code-like instructions**
-- Read before installing anyone else's
-- A skill can tell an agent to do things you didn't intend
-- Validate before sharing
+- Skills are **code-like instructions**: an agent follows them with your files and permissions.
+- Read any skill before installing it, especially one from someone you don't know.
+- A skill can tell an agent to do things you didn't intend, such as send data somewhere.
+- Validate your own skill before sharing it: test it, and remove anything personal.
 
 ---
 

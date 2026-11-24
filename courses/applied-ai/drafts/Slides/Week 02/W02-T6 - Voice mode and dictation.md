@@ -18,6 +18,10 @@ COSC-300/500 Applied AI Essentials
 | Replies read aloud | You read and send it yourself |
 | Mainly on phones | Almost everywhere |
 
+Voice mode replaces the chat with a conversation. Dictation keeps the chat and replaces your keyboard.
+
+Both get your words in faster. Only dictation lets you check them before the model sees them.
+
 ---
 
 ## Voice Mode
@@ -43,7 +47,7 @@ COSC-300/500 Applied AI Essentials
 - **In your operating system**: Windows key + H, or Fn twice on a Mac
 - **Dictation services** such as Wispr Flow: AI cleanup in any app
 
-Speaking is three to four times faster than typing, so detailed prompts get easier.
+Speaking is three to four times faster than typing, so long, detailed prompts stop feeling like a chore.
 
 <!-- Services send your audio to their servers. Mention the privacy point. -->
 
@@ -51,14 +55,17 @@ Speaking is three to four times faster than typing, so detailed prompts get easi
 
 ## Check the Transcript
 
-- Names, terms, and numbers go wrong: "sixty" becomes "sixteen"
-- AI cleanup makes mistakes look finished
-- Type anything that has to be exact
+- Names, technical terms, and numbers go wrong most often: "sixty" becomes "sixteen."
+- AI cleanup removes the ums and fixes grammar, which makes a mistake look finished.
+- Read the transcript before you send it, especially the parts that matter.
+- Type anything that has to be exact, such as a dose, a citation, or a line of code.
 
 ---
 
 ## Talk First, Type Second
 
-1. Describe a messy idea out loud for five minutes
-2. Ask for a written summary of what you said
-3. Continue in text
+1. Describe a messy idea out loud for five minutes, without worrying about order.
+2. Ask the AI for a written summary of what you said, organized by topic.
+3. Correct the summary, then continue the work in text.
+
+Speech is good for getting ideas out. Text is better for getting them exactly right.

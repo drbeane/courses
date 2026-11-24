@@ -54,7 +54,7 @@ You're checking the shape of the change against what you asked for.
 +    assert result is not None
 ```
 
-The test now passes whether or not the limit works.
+The test now passes whether or not the limit works. The assistant made the failure go away instead of fixing it.
 
 <!-- Ask: what did the removed line check? What does the new one check? -->
 
@@ -77,6 +77,10 @@ The test now passes whether or not the limit works.
 
 > Change only what the current step requires.
 
+- A rule in the instruction file applies to every session, so you don't have to remember to say it.
+- It doesn't replace review: instructions make a rule likely, not certain.
+- When you catch a new failure pattern, add a rule for it.
+
 ---
 
 ## Live Review
@@ -88,6 +92,8 @@ Find:
 - the hard-coded value
 - the unnecessary change
 
+For each one, say which question from the table would have exposed it.
+
 <!-- Prepare a diff with all three planted. -->
 
 ---
@@ -96,9 +102,9 @@ Find:
 
 From our own coding test:
 
-- One assistant's app **passed 112 of 114 tests**
-- Then failed on the first real request when actually run
-- The tests never ran requests the way a real server does
+- One assistant's app **passed 112 of 114 tests**.
+- Then it failed on the first real request when it was actually run.
+- The tests never sent requests the way a real server receives them, so nothing caught the problem.
 
 Run it for real, too.
 

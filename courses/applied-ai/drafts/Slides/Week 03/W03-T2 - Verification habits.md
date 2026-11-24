@@ -28,25 +28,25 @@ Two questions:
 
 ## First: Pull Out the Checkable Claims
 
-Mark every:
+Before you check anything, mark every:
 
-- name
+- name of a person, place, or organization
 - number and date
 - quotation
 - citation
-- "X caused Y"
+- causal claim: "X caused Y"
 
-The list is shorter than the text makes it seem.
+The list is shorter than the text makes it seem. Most sentences connect the claims; only the claims need checking.
 
 ---
 
 ## Five Habits
 
-- **Trace sources**: open the link, find the claim
-- **Recompute**: redo the numbers yourself or in code
-- **Test**: run the code, follow the steps
-- **Cross-check**: a new chat, a second model, a non-AI source
-- **Ask about uncertainty**: "Which claims are you least sure of?"
+- **Trace sources**: open the link and find the claim on the page.
+- **Recompute**: redo the numbers yourself, in a spreadsheet, or in code.
+- **Test**: run the code, follow the steps, try the formula.
+- **Cross-check**: ask in a new chat, try a second model, or find a non-AI source.
+- **Ask about uncertainty**: "Which claims are you least sure of?" points you to where to look first.
 
 ---
 
@@ -58,7 +58,7 @@ The list is shorter than the text makes it seem.
 
 A link that exists is not a link that supports the claim.
 
-Use Ctrl+F on the page.
+Use Ctrl+F on the page to find the number, name, or phrase the answer relied on.
 
 <!-- Number 2 is the most common with web-search tools. Show one live if you have an example. -->
 
@@ -66,22 +66,22 @@ Use Ctrl+F on the page.
 
 ## Recompute and Test
 
-- Is the answer the right **size**? A ten-second estimate catches a lot
-- Let a spreadsheet add the column
-- Ask the model to calculate **in code**
-- Run code on more than the example shown
-- Follow the steps: menus change
+- Is the answer the right **size**? A ten-second estimate catches many errors.
+- Let a spreadsheet add the column instead of trusting the total in the text.
+- Ask the model to calculate **in code**, where the arithmetic is done by the computer.
+- Run code on more than the example shown, including an edge case.
+- Follow the steps yourself: menus and settings change after training.
 
 ---
 
 ## Cross-Check
 
-- Same model, **new chat**
-- A different model
-- A source that isn't AI
+- Ask the same model again in a **new chat**, without the earlier answer in view.
+- Ask a different model, from a different company.
+- Find a source that isn't AI: a textbook, an official site, a person who knows.
 
-**Agreement** is weak evidence: models share mistakes.
-**Disagreement** tells you where to dig.
+**Agreement** is weak evidence: models learned from similar text and share mistakes.
+**Disagreement** tells you exactly where to dig.
 
 ---
 
@@ -100,17 +100,17 @@ Use Ctrl+F on the page.
 
 ## Self-Critique: Useful, but Limited
 
-- Asking "check your answer" sometimes catches errors
-- It also invents new problems or confirms old ones
-- Same chat, same context, same pull
-- It is **not** a substitute for an outside check
+- Asking "check your answer" sometimes catches real errors, especially arithmetic and dropped constraints.
+- It can also invent new problems to seem helpful, or confirm the old ones.
+- In the same chat, it has the same context and the same pull toward its first answer.
+- It is **not** a substitute for an outside check against a source or a recomputation.
 
 ---
 
 ## When You Can't Verify It
 
-- Leave it out
-- Say that it's unverified
-- Ask someone who would know
+- Leave it out, if the work doesn't depend on it.
+- Say that it's unverified, and say what you couldn't confirm.
+- Ask someone who would know, such as an instructor, librarian, or expert.
 
-Don't present it as established. You're responsible for what you send.
+Don't present it as established. You're responsible for what you send, whoever drafted it.

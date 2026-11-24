@@ -47,7 +47,7 @@ Each stage: **more autonomy** for the tool, **more oversight** from you.
 - **Instructions** that persist
 - **Retrieval**
 
-Every product is an arrangement of these five.
+Every product is an arrangement of these five. When a new one appears, ask which pieces it uses and how they're arranged.
 
 ---
 
@@ -58,7 +58,7 @@ Every product is an arrangement of these five.
 - **Discernment**: fact-checks → citation audits → code review → evaluation sets
 - **Diligence**: privacy → permissions → injection → policy
 
-None of the early forms was replaced.
+None of the early forms was replaced. A good spec still needs the prompt-writing habits from week 2, and an evaluation set still needs week 3's fact-checking.
 
 ---
 
@@ -75,9 +75,11 @@ None of the early forms was replaced.
 
 ## What Changed in the Tools This Term?
 
-- New models?
-- New features, new limits, new prices?
-- Anything we taught that's already out of date?
+- Which new models were released, and which ones did your tools quietly switch to?
+- Which features, limits, or prices changed since week 1?
+- Is anything we taught already out of date? How would you have found out?
+
+In fifteen weeks, the products changed. Did any of the habits need to?
 
 <!-- Prepare a short list of real changes from the semester. -->
 
@@ -85,10 +87,10 @@ None of the early forms was replaced.
 
 ## How Do You Keep Up?
 
-- Watch **surfaces and capabilities**, not product names
-- Keep a **test set** for the work you care about; rerun it on new tools
-- Read vendor changelogs, not just headlines
-- Keep the habits: **brief, review, verify, limit access**
+- Watch **surfaces and capabilities**, not product names. Names change; what a tool can see and do is what matters.
+- Keep a **test set** for the work you care about, and rerun it whenever a tool or model changes.
+- Read vendor changelogs and documentation, not just headlines.
+- Keep the habits: **brief, review, verify, limit access**.
 
 ---
 
@@ -108,9 +110,9 @@ Then run your own test set.
 
 ## What Stays Yours
 
-What the tools **can** do keeps growing.
+What the tools **can** do keeps growing, and will keep growing after this course ends.
 
-What you **want** them to do is still your decision.
+What you **want** them to do is still your decision: which work to hand over, which to keep, and what you're willing to put your name to.
 
 That's Delegation: the first skill in the course, and the one you'll use most.
 

@@ -6,18 +6,19 @@ COSC-300/500 Applied AI Essentials
 
 ## Lab: Start the Spec-Driven Build
 
-- Provided: a specification and acceptance test suite
-- Modeled on the library lending system from our coding test
-- Reduced scope for this class
-- Run the tests after every step; log the results
+- You're given a specification and an acceptance test suite.
+- They're modeled on the library lending system from our coding test, with the scope reduced for this class.
+- Read the spec and run the tests before you ask for any code, so you know where you're starting from.
+- Run the tests after every step, and log the results.
 
 ---
 
 ## Lab: Continue the Build
 
-- Next steps of the spec
-- Tests after every step
-- Review log: at least **five** AI-proposed changes
+- Work through the next steps of the spec, one at a time.
+- Run the whole test suite after every step, not just the new tests.
+- Keep a review log of at least **five** AI-proposed changes: what it proposed, what you checked, and what you decided.
+- Commit each step that passes before starting the next.
 
 ---
 
@@ -25,13 +26,18 @@ COSC-300/500 Applied AI Essentials
 
 What failure patterns did you catch in review?
 
+- Did the assistant edit a test, hard-code a value, or change files it didn't need to?
+- Did it ever say "done" before the tests passed?
+- Which question or check caught it?
+- Was there anything you only caught by running the program yourself?
+
 ---
 
 ## Responsible Use
 
-- **Dependencies**: every package is someone else's code
-- **Supply-chain risk**: unknown or misspelled packages
-- **Accountability**: who answers for shipped code? You.
+- **Dependencies**: every package the assistant installs is someone else's code, running in your project.
+- **Supply-chain risk**: an unknown or misspelled package name can install malicious code. Check any package you don't recognize.
+- **Accountability**: who answers for shipped code? You, not the assistant.
 
 ---
 

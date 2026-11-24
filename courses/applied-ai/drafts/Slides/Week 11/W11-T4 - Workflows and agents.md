@@ -14,10 +14,12 @@ COSC-300/500 Applied AI Essentials
 
 Weeks 6–8, from the inside:
 
-- Cowork reading a file = a tool call
-- A connector = a set of tools over MCP
-- An approval prompt = the harness pausing before a tool runs
-- The agent loop = this round trip, repeated
+- When Cowork reads a file, that's a tool call.
+- A connector is a set of tools, offered over MCP.
+- An approval prompt is the harness pausing before a tool runs.
+- The agent loop is this week's round trip, repeated until the task is done.
+
+Nothing new is happening in an agent. It's the same request and response, many times over.
 
 ---
 
@@ -54,7 +56,7 @@ flowchart LR
   N -->|Notes| C3
 ```
 
-Each call does one job. You can check between steps.
+Each call does one job, with a prompt written for that job. You can check the output between steps.
 
 ---
 
@@ -68,7 +70,7 @@ flowchart LR
   C1 -->|Anything else| P["Forward to a person"]
 ```
 
-Easy cases to a small model, hard ones to a larger one.
+A first call sorts the input. Easy cases can go to a small model, hard ones to a larger one or a person.
 
 ---
 
@@ -91,10 +93,10 @@ Each call concentrates on one thing.
 
 ## Choose the Simplest Thing That Works
 
-1. **One good call**
+1. **One good call**, when a single well-written prompt does the job
 2. **A workflow**, when the steps are always the same
-3. **An agent**, when the steps depend on what turns up
+3. **An agent**, when the steps depend on what turns up along the way
 
-Workflows where you can, agents where you must.
+Workflows where you can, agents where you must. Each step up adds cost and makes testing harder.
 
 <!-- Ask students which of the three their final project task needs. -->

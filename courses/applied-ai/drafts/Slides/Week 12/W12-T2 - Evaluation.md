@@ -26,11 +26,12 @@ Weeks 2 and 3, made systematic:
 
 ## A Demo Isn't Evidence
 
-A demo shows the system **can** succeed on an input the builder chose.
+A demo shows the system **can** succeed on an input the builder chose, often after a few tries.
 
-Opinion: "It works well."
+- Opinion: "It works well."
+- Evidence: "17 of 20 correct. The three failures all needed two documents."
 
-Evidence: "17 of 20 correct. The three failures all needed two documents."
+The evidence version tells you how often it works, and where to look next. That's what a user, a manager, or a grader needs before trusting it.
 
 ---
 
@@ -48,11 +49,11 @@ Evidence: "17 of 20 correct. The three failures all needed two documents."
 
 ## Building One
 
-- Write it **before** you build
-- 15 to 20 cases that differ from each other
-- Realistic wording
-- Decide the expected answers **yourself**
-- Add every real failure you meet
+- Write it **before** you build, so it describes the task rather than what you built.
+- Use 15 to 20 cases that differ from each other: typical, messy, tricky, and out of scope.
+- Use realistic wording, typos and all, the way real users ask.
+- Decide the expected answers **yourself**, from the source, not from the system's output.
+- Add every real failure you meet, so it can't come back unnoticed.
 
 ---
 
@@ -80,11 +81,11 @@ Not: "Is this answer good?"
 
 ## Check the Grader
 
-A model grader is an AI system too.
+A model grader is an AI system too, with the same failure modes as the system it grades.
 
-1. Grade 10 to 20 cases yourself
-2. Compare with the grader
-3. Count how often you agree
+1. Grade 10 to 20 cases yourself, before you look at the grader's verdicts.
+2. Compare your grades with the grader's.
+3. Count how often you agree, and read the cases where you don't.
 
 Poor agreement → fix the rubric before trusting the score.
 
@@ -92,9 +93,9 @@ Poor agreement → fix the rubric before trusting the score.
 
 ## Read the Failures
 
-- Look for **patterns**: all two-source questions? That's retrieval.
-- Read the **outputs**: nearly right, or dangerously wrong?
-- Change **one thing**, then run the **whole set** again
+- Look for **patterns**. If every failure is a two-source question, the problem is retrieval, not the prompt.
+- Read the **outputs** themselves. Is a failure nearly right, or dangerously wrong? A score treats them the same.
+- Change **one thing**, then run the **whole set** again, so you can see what the change fixed and what it broke.
 
 ---
 

@@ -18,7 +18,7 @@ Delegate a small folder task:
 - Review the plan before approving
 - Check the index against the folder
 
-**Work on a copy.**
+**Work on a copy.** If anything goes wrong, you can delete the copy and start again.
 
 ---
 
@@ -35,19 +35,22 @@ Standard practice folder available if you need one.
 
 ## What to Capture as You Go
 
-- Your **task brief**
-- The agent's **plan**, with your changes
-- **Approvals** you gave or refused
-- The **outputs**
-- Notes on anything that went wrong
+- Your **task brief**, as you first wrote it
+- The agent's **plan**, with the changes you made before approving
+- **Approvals** you gave or refused, and why
+- The **outputs** it produced
+- Notes on anything that went wrong, and how you noticed
+
+It's much easier to record these as you work than to reconstruct them afterward.
 
 ---
 
 ## Share-Out
 
-- Where did the agent go wrong?
-- How did you notice?
-- What would you change in your brief?
+- Where did the agent go wrong, or decide something differently than you would have?
+- How did you notice: the plan, an approval request, or your review?
+- What would you change in your brief if you ran it again?
+- Was delegating faster than doing it yourself?
 
 ---
 
@@ -64,4 +67,4 @@ Submit: brief, plan with edits, approvals log, outputs, 400-word review memo aga
 
 - Claude Academy: **Introduction to agent skills**
 - **Introduction to Claude Cowork**, lessons 6–8
-- Keep your week 6 working folder
+- Keep your week 6 working folder. You'll build on it next week.

@@ -12,8 +12,9 @@ COSC-300/500 Applied AI Essentials
 
 ## Browser and Computer-Use Agents
 
-- The agent **operates a browser**: clicks, types, reads pages
-- Useful for sites with no connector
+- The agent **operates a browser** the way you would: it clicks, types, scrolls, and reads pages.
+- That makes it useful for sites that have no connector, such as an old portal or a booking form.
+- Computer-use agents go further and operate other apps on your desktop.
 - Example: Claude in Chrome
 
 <!-- Demo: a research or form-filling task on a test site. -->
@@ -39,7 +40,7 @@ Every click is a full step of the loop. Thirty seconds for you is minutes for th
 | Reliability | High | Lower |
 | Works where | Where one exists | Almost any site |
 
-Use a connector when one exists.
+Use a connector when one exists. A browser agent is the fallback for everything else.
 
 ---
 
@@ -57,41 +58,41 @@ Watch it the first few times.
 
 ## Supervising a Browser Agent
 
-- Keep approvals on for submit, send, pay
-- Enter passwords and payment details **yourself**
-- Limit the sites it can visit
-- Brief it: "stop before submitting so I can check"
+- Keep approvals on for any step that submits, sends, or pays.
+- Enter passwords and payment details **yourself**, never through the agent.
+- Limit the sites it can visit to the ones the task needs.
+- Put the stopping point in the brief: "stop before submitting so I can check."
 
 ---
 
 ## Background and Scheduled Tasks
 
-- **Hand off** a task and walk away
-- **Schedule** a task to run every morning or week
-- Review what it did when you return
+- **Hand off** a task and walk away: it keeps running while you do something else.
+- **Schedule** a task to run on its own, every morning or every week.
+- When you return, review what it did before you rely on it.
 
-Delegation now includes **time**.
+Delegation now includes **time**: the agent works when you're not there.
 
 ---
 
 ## What You Lose
 
-You can't:
+When a task runs while you're away, you can't:
 
 - read the plan before each run
 - approve actions as they come up
-- interrupt
+- interrupt when it heads the wrong way
 
-So the brief has to carry more.
+So the brief has to carry more of the supervision.
 
 ---
 
 ## A Brief for a Run You Won't See
 
-- Say what to do when something is **missing**
-- Keep it to **reading and saving**
-- Ask for a **log** at the end of each run
-- **Date** the output
+- Say what to do when something is **missing**, such as a file that isn't there.
+- Keep it to **reading and saving**: no sending, deleting, or buying.
+- Ask for a **log** at the end of each run: what it did, what it skipped, what failed.
+- **Date** the output, so you can tell today's run from yesterday's.
 
 Run it by hand twice before you schedule it.
 

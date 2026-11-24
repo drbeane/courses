@@ -8,19 +8,19 @@ COSC-300/500 Applied AI Essentials
 
 Build a project for **your research topic**:
 
-- Instructions: your question, audience, citation style
-- Upload your 5–10 sources
-- Ask it to map what the sources agree and disagree on
-- Check one claim against the source yourself
+- Write instructions that state your question, your audience, and your citation style.
+- Upload the 5–10 sources you brought.
+- Ask it to map what the sources agree and disagree on, citing a file for each point.
+- Check one claim against the source yourself. Did the project get it right?
 
 ---
 
 ## Run a Research Agent on Your Topic
 
-1. Open your project from the guided practice
-2. Run a research request on your question
-3. Save the report
-4. Start the audit: open each citation
+1. Open your project from the guided practice.
+2. Run a research request on your question, using the request checklist: question, purpose, scope, sources, output.
+3. Save the report, including every citation.
+4. Start the audit: open each citation and find the passage it relies on.
 
 
 ---
@@ -33,7 +33,7 @@ Build a project for **your research topic**:
 | 2 | | |
 | … | | |
 
-Audit at least **10**.
+Audit at least **10**. Start with the claims your brief depends on most.
 
 ---
 

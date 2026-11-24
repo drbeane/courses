@@ -20,21 +20,25 @@ An always-on agent reads:
 
 Every one is untrusted input. Meta itself says prompt injection is **unresolved**.
 
+And unlike a chat, nobody is watching when the injected instruction arrives.
+
 ---
 
 ## Risk 2: Vendor Data Access
 
-- The agent holds credentials to your accounts
-- The vendor may access data to run and secure the service
-- Training on your interactions unless you opt out
+- The agent holds credentials to your accounts, so it can sign in as you.
+- The vendor may access your data to run and secure the service.
+- Your interactions are used for training unless you opt out.
+
+Read the vendor's terms the way you'd read a permission screen: what can they see, and for how long?
 
 ---
 
 ## Risk 3: Mistakes While You're Not Watching
 
-- No plan review before each action
-- Errors compound over days
-- You find out late, or not at all
+- There's no plan review before each action. It decides and acts on its own.
+- Errors compound over days: one wrong assumption on Monday shapes everything through Friday.
+- You find out late, or not at all.
 
 **Week 8's dangerous combination, running 24/7.**
 
@@ -42,11 +46,11 @@ Every one is untrusted input. Meta itself says prompt injection is **unresolved*
 
 ## Risk 4: You Stop Paying Attention
 
-- Check-ins arrive among everything else
-- After a week you approve without reading
-- After a month you stop opening them
+- Check-ins arrive among everything else on your phone.
+- After a week, you approve without reading.
+- After a month, you stop opening them.
 
-A reliable agent gives you less reason to look.
+A reliable agent gives you less reason to look, which is exactly when a mistake gets through.
 
 ---
 
@@ -81,11 +85,11 @@ Compare with a **scheduled Cowork task** for the same job:
 
 ## Five Questions
 
-1. Does the timing depend on **events**?
-2. What **access** does it need?
+1. Does the timing depend on **events**, or would a schedule do?
+2. What **access** does it need, and could it do the job with less?
 3. What's the **worst** it could do with that access?
-4. Would I **notice**?
-5. What does it **save** me?
+4. Would I **notice** if it did, and how soon?
+5. What does it **save** me, compared with doing it myself?
 
 ---
 

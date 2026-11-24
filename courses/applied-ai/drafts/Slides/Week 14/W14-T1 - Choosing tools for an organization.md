@@ -16,16 +16,20 @@ Chat · embedded copilots · local agents · scheduled and browser agents · cod
 
 Now: **how does an organization choose?**
 
+- An individual picks a tool for one task. An organization picks for hundreds of people and thousands of tasks.
+- The choice comes with contracts, training, data agreements, and support.
+- And it's hard to undo once everyone's work depends on it.
+
 ---
 
 ## What an IT Office Weighs
 
-- **Capability**: what surfaces and features
-- **Cost**: per seat, per task, per token
-- **Usage limits**: will people run out?
-- **Data terms**: training, retention, location
-- **Support and admin**: SSO, controls, audit logs
-- **Fit** and **lock-in**
+- **Capability**: which surfaces and features the tool offers
+- **Cost**: per seat, per task, or per token, and how predictable it is
+- **Usage limits**: will people run out in the middle of real work?
+- **Data terms**: training, retention, and where the data is stored
+- **Support and admin**: single sign-on, controls, audit logs
+- **Fit** with existing systems, and **lock-in** if it needs to change later
 
 ---
 
@@ -33,19 +37,19 @@ Now: **how does an organization choose?**
 
 No tool wins on every factor.
 
-- A small nonprofit may put **cost** first
-- A hospital puts **data terms** first
+- A small nonprofit may put **cost** first, because the budget decides everything else.
+- A hospital puts **data terms** first, because patient records can only go where agreements allow.
 
-Set the priorities before anyone looks at a product.
+Set the priorities before anyone looks at a product. Otherwise the most impressive demo sets them for you.
 
 ---
 
 ## The Limits of Benchmarks
 
-- Benchmarks measure **someone else's** task
-- Scores change monthly
-- Vendors pick the benchmarks they win
-- **Your own test set** (week 12) beats a leaderboard
+- Benchmarks measure **someone else's** task, which may look nothing like yours.
+- Scores change monthly, as new models are released.
+- Vendors pick the benchmarks they win.
+- **Your own test set** (week 12) beats a leaderboard, because it's built from your work.
 
 They narrow the field. They can't make the decision.
 
@@ -67,16 +71,18 @@ A few weeks is cheaper than a year's contract for the wrong tool.
 
 ## Copilot in Microsoft 365
 
-- How most graduates will **first** meet AI at work
-- Strong where the work already lives: email, documents, meetings
-- What it can do depends heavily on **which license** the organization buys
+- It's how most graduates will **first** meet AI at work, because so many organizations already use Microsoft 365.
+- It's strong where the work already lives: email, documents, spreadsheets, and meetings.
+- What it can do depends heavily on **which license** the organization buys, so two employers' "Copilot" can be very different tools.
 
 ---
 
 ## Questions for Your First Week at a Job
 
-- Which AI tools are **approved**?
-- What **data** may I put into them?
-- Which **license** do we have?
-- Do I need to **say** when I've used AI?
-- **Who do I ask?**
+- Which AI tools are **approved**, and on which accounts?
+- What **data** may I put into them, and what's off limits?
+- Which **license** do we have, and what does it include?
+- Do I need to **say** when I've used AI, and how?
+- **Who do I ask** when I'm not sure?
+
+Asking these early shows judgment. Guessing wrong can put the organization's data, and your reputation, at risk.

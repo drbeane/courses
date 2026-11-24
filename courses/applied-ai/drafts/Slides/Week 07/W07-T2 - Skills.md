@@ -54,9 +54,11 @@ A long skill costs nothing on tasks that don't use it.
 
 ## How the Agent Picks a Skill
 
-- It sees every skill's **name and description**
-- When your request matches, it loads the full instructions
-- **The description is the trigger**: write it carefully
+- The agent always sees every installed skill's **name and description**, and nothing more.
+- When your request matches a description, it loads that skill's full instructions.
+- So **the description is the trigger**. If it's vague, the skill won't load when you need it, or will load when you don't.
+
+Write the description last, after you know exactly what the skill does.
 
 ---
 
@@ -87,25 +89,27 @@ Not "format it properly". Say what proper means.
 
 ## Which One?
 
-- Same **fact about the folder** twice → instruction file
-- Same **procedure** twice → skill
-- One-time job → brief
+- You've stated the same **fact about the folder** twice → put it in the instruction file.
+- You've explained the same **procedure** twice → write a skill.
+- It's a one-time job → write a brief, and don't save it.
+
+Each one keeps the others short: the skill doesn't need to repeat the folder's layout, and the brief doesn't need the procedure.
 
 ---
 
 ## Testing a Skill
 
-- Does it **trigger**? And stay out when it shouldn't?
-- Does it follow **every step**?
-- Does it hold up on **awkward input**?
-- Revise, then rerun everything
+- Does it **trigger** when it should? And stay out of the way when it shouldn't?
+- Does it follow **every step**, or skip the ones it finds unimportant?
+- Does it hold up on **awkward input**: an empty folder, an odd file, a long week?
+- After each revision, rerun every test, not just the one that failed.
 
 ---
 
 ## Live Demo: Writing a Skill
 
-1. Pick a task I do every week
-2. Write the description
-3. Write the steps
-4. Run it on a real input
-5. Fix what went wrong
+1. Pick a task I do every week.
+2. Write the description: what it does and when to use it.
+3. Write the steps, the output, and the rules.
+4. Run it on a real input.
+5. Fix what went wrong, and run it again.

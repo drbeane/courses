@@ -4,6 +4,11 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-24: Denser Applied AI slides
+
+- All 72 Applied AI decks reviewed. Fragment bullets became full sentences (for example, "Fluent ≠ correct" is now "A fluent, well-written answer is not necessarily a correct one."), and sparse slides gained a sentence of explanation or an example. Facts, tables, assignment requirements and speaker notes are unchanged. Edited in the drafts, then copied to `content/slides/`.
+- `engine/deck.css`: slide text is 30px (was 34px) so sentence bullets fit. Code blocks are now 0.7em monospace in a shaded box, and inline code is monospace; before, code had no styling and two code slides ran off the bottom. Only Applied AI has decks.
+
 ## 2026-11-23: Icon on interactive widgets
 
 - Every widget heading ("Try It: ...") now has a pointer-click icon before the title, in the lesson's color. One rule in `engine/site.css`. Demos are unchanged.

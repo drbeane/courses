@@ -14,27 +14,31 @@ COSC-300/500 Applied AI Essentials
 
 > Judging what comes back: is it accurate, sourced, and fit for purpose?
 
-The most important skill in this course.
+It's the most important skill in this course, and it gets harder as the tools get better.
+
+- **Accurate**: are the facts, numbers, and reasoning right?
+- **Sourced**: can you trace each claim to something you trust?
+- **Fit for purpose**: does it do the job you actually need, for the reader you have?
 
 ---
 
 ## Mostly Right Is the Hard Case
 
-- Wrong half the time → you'd check everything
-- Right 19 times in 20 → you stop checking
-- The 20th answer goes into your paper
+- If a tool were wrong half the time, you'd check everything it gave you.
+- When it's right 19 times in 20, you stop checking.
+- The 20th answer goes into your paper, your report, or your email.
 
-The errors that hurt are rare, fluent, and mixed in with correct material.
+The errors that hurt are rare, fluent, and mixed in with correct material, so they don't stand out.
 
 ---
 
 ## Fluent Is Not the Same as Correct
 
-- In human writing, polish suggests someone did the work
-- A model writes polished, confident prose **every time**
-- An invented statistic has the same tone as a real one
+- In human writing, polish suggests someone did the work. We learn to trust well-written text.
+- A model writes polished, confident prose **every time**, whether or not it knows the answer.
+- An invented statistic has the same tone, detail, and formatting as a real one.
 
-Judge by checking, not by how it reads.
+Judge an answer by checking it, not by how it reads.
 
 ---
 
@@ -53,20 +57,20 @@ Judge by checking, not by how it reads.
 
 ## Why Hallucinations Happen
 
-- The model predicts **plausible** text, not **verified** text
-- When it doesn't know, a fluent guess is often the likeliest continuation
-- Specific details are most at risk: names, numbers, dates, citations
+- The model predicts **plausible** text, not **verified** text. Nothing in the process checks a fact.
+- When it doesn't know, a fluent guess is often the likeliest continuation, so that's what it writes.
+- Specific details are most at risk: names, numbers, dates, and citations.
 
-A made-up citation looks the same as a real one.
+A made-up citation looks the same as a real one: plausible authors, a real journal, the right year.
 
 ---
 
 ## When Hallucination Is More Likely
 
-- The topic is thin in the training data
-- You ask for more than exists ("give me ten studies")
-- The question assumes something false
-- You ask for an exact quotation
+- The topic is thin in the training data, such as a small town or a niche field.
+- You ask for more than exists: "give me ten studies" when there are three.
+- The question assumes something false, and the model plays along.
+- You ask for an exact quotation instead of the gist.
 
 Newer models say "I don't know" more often. The rate is lower, not zero.
 
@@ -75,10 +79,10 @@ Newer models say "I don't know" more often. The rate is lower, not zero.
 ## The Quiet Errors
 
 **Reasoning errors**
-Every step looks sound. The flaw is one assumption near the top.
+Every step looks sound, and the conclusion follows from them. The flaw is one assumption near the top that nothing later questions.
 
 **Misread instructions**
-A good answer to a question you didn't ask.
+You get a good answer to a question you didn't ask: the wrong audience, a dropped constraint, a different scope.
 Reread your prompt and compare, constraint by constraint.
 
 ---
@@ -88,9 +92,9 @@ Reread your prompt and compare, constraint by constraint.
 > **You:** "Isn't it true that X?"
 > **AI:** "Yes, you're right…"
 
-- Leading questions get agreement
-- Pushback can flip a correct answer to a wrong one
-- It affects feedback too: "I worked hard on this, what do you think?"
+- Leading questions get agreement, because agreeing is a likely reply.
+- Pushback can flip a correct answer to a wrong one, even when you're the one who's mistaken.
+- It affects feedback too: "I worked hard on this, what do you think?" gets gentler, less useful criticism.
 
 ---
 
@@ -101,7 +105,7 @@ Reread your prompt and compare, constraint by constraint.
 | "This is a strong thesis, right?" | "What are its three weakest points?" |
 | "Are you sure? I think it's 1848." | "What's your source for that date?" |
 
-Don't say which answer you hope for.
+Don't say which answer you hope for. When you want criticism, ask for it directly and ask for specifics.
 
 <!-- Live example: push back on a correct answer with confident wrong information. Discuss whether it caves. -->
 

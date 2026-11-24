@@ -12,9 +12,10 @@ COSC-300/500 Applied AI Essentials
 
 ## Why There Are Limits
 
-- A flat monthly price, but every message costs computing time
-- The limit is a budget of **tokens**, not a count of messages
-- A late message in a long chat costs far more than an early one
+- You pay a flat monthly price, but every message costs the vendor computing time.
+- The limit is a budget of **tokens**, not a count of messages.
+- Because the model rereads the whole chat each turn, a late message in a long chat costs far more than an early one.
+- Two people sending the same number of messages can use very different amounts.
 
 ---
 
@@ -25,7 +26,7 @@ COSC-300/500 Applied AI Essentials
 | **Session** | About five hours from your first message |
 | **Weekly** | A total for the week, across all models |
 
-Chat, the desktop app, your phone, and agent tools share one allowance.
+Chat, the desktop app, your phone, and agent tools share one allowance. Heavy agent work on Monday leaves less for chat on Thursday.
 
 <!-- Recheck against the Help Center the week you teach. -->
 
@@ -35,28 +36,30 @@ Chat, the desktop app, your phone, and agent tools share one allowance.
 
 **Settings → Usage**
 
-Watch it for a few weeks. Ordinary chat rarely hits the limit. Long research, big files, and agents do.
+- The page shows how much of the session and weekly limits you've used, and when each one resets.
+- Watch it for a few weeks to learn what your own habits cost.
+- Ordinary chat rarely hits the limit. Long research, big files, and agents do.
 
 ---
 
 ## What Uses It Up
 
-- Long chats
-- Large files, reread every turn
-- Research and web search
+- Long chats, where every turn rereads everything before it
+- Large files, which are reread every turn as well
+- Research and web search, which pull many pages into the context
 - Bigger models and more thinking
-- Agent work
-- Rework from vague prompts
+- Agent work, which runs many steps for a single request
+- Rework from vague prompts that have to be asked again
 
 ---
 
 ## Make It Go Further
 
-- Start new chats, with a handoff file
-- Attach only what the task needs
-- Match the model to the task
-- Edit instead of arguing
-- Ask for several things at once
-- Turn off tools you don't need
+- Start new chats when a task is done, carrying over a handoff file.
+- Attach only what the task needs, not the whole folder.
+- Match the model and effort to the task.
+- Edit your message instead of arguing with a bad reply.
+- Ask for several things in one message instead of one at a time.
+- Turn off tools you don't need, such as web search.
 
-Never share an account to get more usage.
+Never share an account to get more usage. It breaks the terms and mixes your data with someone else's.

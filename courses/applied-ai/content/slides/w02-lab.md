@@ -8,22 +8,22 @@ COSC-300/500 Applied AI Essentials
 
 In pairs:
 
-1. Rewrite each prompt using the anatomy
-2. Run the original and your version
-3. Swap with another pair and critique
+1. Rewrite each prompt using the anatomy: goal, context, constraints, audience, and format.
+2. Run the original and your version, and compare the outputs side by side.
+3. Swap with another pair and critique: what would the new coworker still have to guess?
 
 
 ---
 
 ## The Lab
 
-1. Pick a recurring task
+1. Pick a recurring task you'd actually reuse a prompt for:
    - meeting notes → summary
    - cover letter draft
    - a concept at two reading levels
-2. Write 5 test inputs
-3. Write prompt v1, run all 5
-4. Revise three times; record what you changed and why
+2. Write 5 test inputs and 3–5 checks for a good output.
+3. Write prompt v1, and run it on all 5 inputs.
+4. Revise three times, one change each time. Record what you changed and why.
 
 ---
 
@@ -36,13 +36,16 @@ In pairs:
 | v3 | | | |
 | v4 | | | |
 
+The "Why" column should point to something you saw in the outputs, not a hunch.
+
 ---
 
 ## Share-Out
 
-- Which change made the biggest difference?
-- Did any change make things worse?
-- Which input was hardest?
+- Which change made the biggest difference, and why do you think it worked?
+- Did any change make things worse on an input that used to pass?
+- Which input was hardest, and what made it hard?
+- Is your final prompt one you'd actually reuse?
 
 ---
 
@@ -60,4 +63,4 @@ In pairs:
 
 - Claude Academy: **AI Fluency**, lessons 10–11
 - Start **AI capabilities and limitations** (finish by week 5)
-- Journal entry
+- Journal entry: what you delegated, what you checked, and how it went

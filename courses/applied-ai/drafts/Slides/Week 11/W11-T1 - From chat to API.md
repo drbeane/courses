@@ -12,9 +12,10 @@ COSC-300/500 Applied AI Essentials
 
 ## An Exploratory Week
 
-- You'll **build** a small AI program
-- Claude Code writes the code; you specify, run, and inspect
-- The goal is **understanding** how AI products are put together, not engineering fluency
+- You'll **build** a small AI program that talks to a model directly.
+- Claude Code writes the code. You specify what it should do, run it, and inspect what goes back and forth.
+- The goal is **understanding** how AI products are put together, not engineering fluency.
+- By the end of the week, the chat apps, copilots, and agents from earlier weeks should look a lot less mysterious.
 
 ---
 
@@ -92,6 +93,7 @@ Same model. The app is a product built on the API.
 
 ## The Model Remembers Nothing
 
-- Each call is **independent**
-- A "conversation" = you resend the whole history every time
-- That's why long chats cost more and degrade
+- Each API call is **independent**. The model keeps nothing from one call to the next.
+- A "conversation" is your program resending the whole history every time.
+- That's why long chats cost more and degrade, as you saw in week 2.
+- It also means your program decides what the model remembers: it can trim, summarize, or add to the history.

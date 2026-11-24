@@ -12,9 +12,13 @@ COSC-300/500 Applied AI Essentials
 
 ## Recall Week 8
 
-You **used** connectors.
+In week 8 you **used** connectors: you signed in, read the permission screen, and let an agent act on a service.
 
 Now you see **how one is built**.
+
+- A connector is a small program, an MCP server, that offers tools and data to an AI app.
+- Building one shows exactly what an agent can see and do through it.
+- It also puts you on the other side of least privilege: you decide what to expose.
 
 ---
 
@@ -52,6 +56,8 @@ def next_class(course: str) -> str:
 
 The **docstring** is what the agent reads to decide when to call it.
 
+The function name becomes the tool's name, and the typed input (`course: str`) becomes its input schema. The SDK builds the tool definition from the code.
+
 <!-- Use the current MCP Python SDK syntax; check before class. -->
 
 ---
@@ -82,7 +88,7 @@ Least privilege, and now you're the one deciding.
 
 ## Which Half Failed?
 
-- Wrong result **in the Inspector** → the bug is in your code
-- Works there, but the agent doesn't use it → the **description**
+- Wrong result **in the Inspector** → the bug is in your code. The agent isn't involved yet.
+- Works there, but the agent doesn't use it, or uses it wrongly → the problem is the **description**.
 
-Then write questions that should trigger each tool, and some that should trigger none.
+Then write questions that should trigger each tool, and some that should trigger none. That's a test set for the server, the same way you'd test a skill.

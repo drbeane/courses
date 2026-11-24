@@ -26,10 +26,13 @@ Minutes of work instead of seconds; much broader coverage.
 
 ## Your First Agent
 
-An **agent** chooses its own next actions.
+An **agent** chooses its own next actions, instead of answering in a single step.
 
-You see the question and the finished report.
-You don't see most of the decisions in between.
+- You see the question you asked and the finished report.
+- You don't see most of the decisions in between: which searches it ran, which pages it skipped, what it decided not to include.
+- That's the trade: more work done for you, less of it visible.
+
+The rest of the course is about supervising tools like this one.
 
 <!-- Agents are the second half of the course. Plant the idea here. -->
 
@@ -44,19 +47,21 @@ You don't see most of the decisions in between.
 | Output | Short answer | Long cited report |
 | Usage | Small | Large |
 
+Use web search for a quick, current fact. Use a research agent when you need a survey of what's out there.
+
 ---
 
 ## Writing a Research Request
 
 State:
 
-- The **question**
-- The **purpose** and reader
-- The **scope**: dates, places, what to leave out
-- The **sources** you want
-- The **output**, and how to handle disagreement
+- The **question**, as specifically as you can
+- The **purpose** and reader: what decision or paper is it for?
+- The **scope**: dates, places, and what to leave out
+- The **sources** you want, such as peer-reviewed studies or government data
+- The **output**, and how to handle disagreement between sources
 
-You can't steer a run once it starts.
+You can't steer a run once it starts, so the request has to carry everything.
 
 ---
 
@@ -65,6 +70,8 @@ You can't steer a run once it starts.
 > Research remote work.
 
 > Research what studies since 2020 have found about remote and hybrid work and the productivity and retention of employees in their first three years. Prefer peer-reviewed studies and large surveys. Where studies disagree, say so. End with what the research doesn't yet answer.
+
+The strong version sets a time range, a population, two outcomes, a source preference, and what to do with conflict.
 
 ---
 
@@ -84,8 +91,10 @@ A cited report still needs auditing.
 
 ## Two Limits on Coverage
 
-- **Paywalls**: the agent may read an abstract or a news story, not the study
-- **Popularity**: it reads what its searches turn up
+- **Paywalls**: the agent may read an abstract or a news story about a study, not the study itself. Its summary can be secondhand.
+- **Popularity**: it reads what its searches turn up, which favors widely linked pages over the best sources.
+
+So a report can look thorough and still miss the key paper. Your own library search fills that gap.
 
 ---
 
@@ -108,3 +117,5 @@ A cited report still needs auditing.
 | **Partly supports** | Related, but weaker or narrower |
 | **Does not support** | Real source, no such claim |
 | **Fabricated or inaccessible** | Can't be found or opened |
+
+"Partly supports" is the most common problem: "may be linked to" in the source becomes "causes" in the report.

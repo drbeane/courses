@@ -26,15 +26,15 @@ COSC-300/500 Applied AI Essentials
 - Flashcard app
 - Course-planner web page
 
-One-page spec provided for each.
+One-page spec provided for each. Read it before you open Claude Code, and mark anything that's unclear to you.
 
 ---
 
 ## Requirements
 
-- An **instruction file** (`CLAUDE.md` or `AGENTS.md`)
-- **Five or more commits** with meaningful messages
-- A short **README**
+- An **instruction file** (`CLAUDE.md` or `AGENTS.md`) that describes the project and its rules
+- **Five or more commits**, each with a message that says what changed and why
+- A short **README** that tells someone else what the app does and how to run it
 
 ---
 
@@ -51,17 +51,18 @@ One-page spec provided for each.
 
 ## Share-Out
 
-- What did the plan get wrong?
-- What did you accept **without understanding**?
-- Did a commit save you?
+- What did the plan get wrong, and did you catch it before or after the build?
+- What did you accept **without understanding**? Why did you accept it?
+- Did a commit save you? What would have happened without it?
+- What would you put in the instruction file if you started again?
 
 ---
 
 ## Responsible Use
 
-- **Secrets** (API keys, passwords) never in code or chat
-- **Licenses**: AI-suggested code may resemble licensed code
-- You're accountable for what you ship
+- **Secrets**, such as API keys and passwords, never go in code or chat. Code gets shared and pushed.
+- **Licenses**: AI-suggested code may closely resemble licensed code from its training data.
+- You're accountable for what you ship, whoever wrote each line.
 
 ---
 

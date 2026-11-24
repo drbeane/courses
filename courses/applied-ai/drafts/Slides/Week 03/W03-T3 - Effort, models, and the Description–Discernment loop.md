@@ -20,16 +20,18 @@ Live test: problems where the fast model fails.
 | Same model, more effort | | | |
 | Larger model | | | |
 
+Predict each row before we run it. Is it the model that fails, or the information it was given?
+
 <!-- Use a multi-step word problem and a logic puzzle with a trap. -->
 
 ---
 
 ## What to Expect
 
-- More effort helps most on **multi-step reasoning**
-- It helps little with **missing knowledge**
-- It doesn't fix **missing sources**: you still need a tool or a document
-- It costs more usage
+- More effort helps most on **multi-step reasoning**, where the model can check its work along the way.
+- It helps little with **missing knowledge**: thinking longer doesn't teach a fact it never learned.
+- It doesn't fix **missing sources**: you still need a tool or a document.
+- It costs more time and more usage, so use it where it pays off.
 
 ---
 
@@ -50,12 +52,12 @@ Live test: problems where the fast model fails.
 
 ## The Description–Discernment Loop
 
-1. **Describe** the task
-2. **Discern**: check the output
-3. Feed what you found back into the description
-4. Repeat
+1. **Describe** the task: goal, context, constraints, audience, format.
+2. **Discern**: check the output against what you needed.
+3. Feed what you found back into the description, as specifically as you can.
+4. Repeat until the result is good enough for its purpose.
 
-Don't accept the first answer.
+Don't accept the first answer. The first pass shows you what the prompt left out.
 
 ---
 
@@ -63,8 +65,8 @@ Don't accept the first answer.
 
 - **Describe**: "Summarize the leave policy for new employees."
 - **Discern**: it says 12 weeks for everyone. The policy says 6 weeks in the first year.
-- **Describe again**: name the error, point to section 3, ask it to check the other rules
-- **Discern again**: the numbers now match
+- **Describe again**: name the error, point to section 3, and ask it to check the other rules too.
+- **Discern again**: the numbers now match the policy, section by section.
 
 ---
 
@@ -82,6 +84,6 @@ Say **what** was wrong, **where** the right information is, and **what to do**.
 
 ## When to Stop
 
-- Good enough for its purpose
-- Same problem twice → **start a new chat** with a better prompt
-- One sentence left to fix → **edit it yourself**
+- Stop when the result is good enough for its purpose. Perfect is rarely the goal.
+- If the same problem comes back twice, **start a new chat** with a better prompt. The old chat carries the mistake.
+- If one sentence is left to fix, **edit it yourself**. It's faster than another round.

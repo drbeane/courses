@@ -16,25 +16,28 @@ All tracks: 15+ test cases, results, discussion of failures.
 
 ## Lab: Choose and Start
 
-1. Pick your track
-2. Draft your test set **first**
-3. Start building (or set up the tool you'll evaluate)
+1. Pick your track. Choose the one where you'll learn the most, not the one that looks easiest.
+2. Draft your test set **first**, with the expected answer or behavior for each case.
+3. Start building, or set up the tool you'll evaluate.
+
+Writing the test set first keeps you honest: it describes the task, not what you happened to build.
 
 ---
 
 ## Lab
 
-- Continue your track
-- Run your test set
-- Record results and failures
+- Continue your track, building in small steps you can test.
+- Run your full test set, not just the cases you expect to pass.
+- Record the results and every failure, with the output that failed.
+- For RAG, print the retrieved chunks, so you can tell retrieval failures from generation failures.
 
 ---
 
 ## Responsible Use
 
-- **Grounding does not guarantee accuracy**
-- Evaluation is an **accountability tool**: it's how you show a system works
-- An MCP server you build can be called by an agent you don't fully control
+- **Grounding does not guarantee accuracy.** A cited answer can still misread or miss its source.
+- Evaluation is an **accountability tool**: it's how you show a system works, and where it doesn't.
+- An MCP server you build can be called by an agent you don't fully control, so design it for least privilege.
 
 ---
 

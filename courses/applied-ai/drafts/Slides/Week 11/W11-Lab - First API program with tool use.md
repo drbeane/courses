@@ -14,9 +14,11 @@ COSC-300/500 Applied AI Essentials
 
 Everyone leaves with a **working first program**:
 
-- System prompt for a specific job
-- Returns JSON
-- Prints the token usage
+- A system prompt written for one specific job
+- Output returned as JSON, so another program could use it
+- The token usage printed after every call
+
+Use Claude Code to write it. Read each part until you can say what it does.
 
 ---
 
@@ -28,22 +30,26 @@ Pick one:
 - Lookup in a CSV file
 - Date calculator
 
-Use Claude Code to write it. You define what it should do.
+Use Claude Code to write it. You define what it should do: the tool's name, its description, and its inputs.
+
+Then print the messages, and trace one full round trip.
 
 ---
 
 ## Share-Out
 
 - What did the model do when your tool returned an error?
-- Did it ever call the tool when it shouldn't have?
+- Did it ever call the tool when it shouldn't have, or skip it when it should have?
+- What did you change in the description to fix it?
+- How much did your runs cost, in tokens and in dollars?
 
 ---
 
 ## Responsible Use
 
-- **API keys are secrets**: never in code you share
-- Set **spend limits**
-- Know what data the API provider **retains**
+- **API keys are secrets**: never put them in code you share or commit.
+- Set **spend limits** before you start, so a runaway loop can't run up a bill.
+- Know what data the API provider **retains**, and for how long, before you send anything sensitive.
 
 ---
 
