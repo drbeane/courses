@@ -50,6 +50,10 @@ Not every prompt needs all five. A quick question may need only the goal.
 
 ---
 
+{{widget prompt-builder}}
+
+---
+
 ## Say Why
 
 > Shorten this email.
@@ -82,6 +86,10 @@ A reason also helps with cases you didn't think to mention, because the model ca
 - **Role and audience**: "You are reviewing this as…"
 - **Ask for uncertainty**: "Say what you're unsure about"
 - **Ask for questions first**: let the model interview you before it starts
+
+---
+
+{{widget fix-output}}
 
 ---
 
@@ -136,3 +144,7 @@ Cautions: it copies your examples' flaws, and one example can be copied too clos
 Most of these came from tests on older models. Clear content beats clever wording.
 
 <!-- Ask which of these students have seen online. Most came from tests on older models. -->
+
+---
+
+{{widget advice-sort}}

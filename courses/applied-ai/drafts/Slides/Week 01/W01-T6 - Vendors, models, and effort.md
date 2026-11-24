@@ -115,6 +115,10 @@ The thinking is a working draft, not a proof.
 
 ---
 
+{{widget reasoning-trace}}
+
+---
+
 ## What It Costs
 
 - **Time**: a large model at high effort can take a minute or more to answer.
@@ -145,6 +149,10 @@ Check yours: **Settings**, then **Usage**. It shows how much of each limit you'v
 The first is quick and easy to check. The last needs careful, multi-step reasoning, and a missed error is costly.
 
 <!-- Ask the class to place two tasks of their own before showing the lab. -->
+
+---
+
+{{widget model-picker}}
 
 ---
 

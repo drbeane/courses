@@ -11,10 +11,12 @@
     stage.style.transform = 'scale(' + scale + ')';
   }
 
-  // Shrink the text on a slide that holds more than fits.
+  // Shrink the text on a slide that holds more than fits. A widget slide is skipped: the widget
+  // is sized in rem and scrolls inside itself instead.
   function shrink(slide) {
-    var size = 34;
     slide.style.fontSize = '';
+    if (slide.classList.contains('widget')) return;
+    var size = parseFloat(getComputedStyle(slide).fontSize);
     while (slide.scrollHeight > slide.clientHeight && size > 20) {
       size -= 1;
       slide.style.fontSize = size + 'px';
@@ -45,6 +47,13 @@
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var k = e.key;
+    // Keys typed into a widget belong to it: text boxes, lists and sliders use the arrows and
+    // Space, and Space or Enter presses a focused button.
+    var t = e.target;
+    if (t.closest && t.closest('.wx')) {
+      if (t.matches('textarea, select, [contenteditable], input:not([type=button]):not([type=checkbox]):not([type=radio])')) return;
+      if ((k === ' ' || k === 'Enter') && t.matches('button, [role=button], input, summary')) return;
+    }
     if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(at + 1); }
     else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(at - 1); }
     else if (k === 'Home') show(0);

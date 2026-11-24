@@ -31,6 +31,10 @@ COSC-300/500 Applied AI Essentials
 
 ---
 
+{{widget what-is-ai}}
+
+---
+
 ## Nested Terms
 
 - **AI**: the whole field

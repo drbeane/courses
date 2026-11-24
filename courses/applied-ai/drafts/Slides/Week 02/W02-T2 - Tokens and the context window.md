@@ -32,6 +32,10 @@ Code, tables, and other languages often take more tokens per word, because they 
 
 ---
 
+{{widget token-estimator}}
+
+---
+
 ## The Context Window
 
 The model's **working memory** for one conversation.
@@ -55,6 +59,10 @@ The model's **working memory** for one conversation.
 What isn't in the context doesn't exist for the model.
 
 <!-- This surprises students. It explains why long chats with big files burn through usage limits. -->
+
+---
+
+{{widget conversation-growth}}
 
 ---
 

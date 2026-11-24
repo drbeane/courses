@@ -4,6 +4,12 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-24: Lesson widgets on slides
+
+- A slide whose only content is `{{widget name}}` now shows that lesson widget, working, titled from the widget's own header (built in `engine/build.mjs`, `deck()`). All 26 Applied AI widgets (weeks 1–3) are in their decks, each right after the slide on the same idea.
+- `engine/deck.css`: decks set the root size to 21px so widgets (sized in rem) are readable in a room, and supply the variables widgets use. A widget taller than the slide scrolls inside itself. The slide's list, table and code rules no longer reach inside widgets. The bar's spacing is now in px so the root size doesn't change it.
+- `engine/deck.js`: typing in a widget's text box, list or slider no longer changes slides, and Space or Enter on a widget button presses the button. The arrow keys still change slides after a button click. Also fixed the overflow shrink, which still started from the old 34px slide size.
+
 ## 2026-11-24: Denser Applied AI slides
 
 - All 72 Applied AI decks reviewed. Fragment bullets became full sentences (for example, "Fluent ≠ correct" is now "A fluent, well-written answer is not necessarily a correct one."), and sparse slides gained a sentence of explanation or an example. Facts, tables, assignment requirements and speaker notes are unchanged. Edited in the drafts, then copied to `content/slides/`.

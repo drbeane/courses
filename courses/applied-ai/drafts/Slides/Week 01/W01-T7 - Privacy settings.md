@@ -60,6 +60,10 @@ Opting out limits later use. It does not make the text private.
 
 ---
 
+{{widget opt-out-check}}
+
+---
+
 ## Chats That Leave No History
 
 - **Claude: Incognito chat**. Not saved to your history and not used for training.

@@ -50,6 +50,10 @@ Predict each row before we run it. Is it the model that fails, or the informatio
 
 ---
 
+{{widget effort-fix}}
+
+---
+
 ## The Description–Discernment Loop
 
 1. **Describe** the task: goal, context, constraints, audience, format.
@@ -79,6 +83,10 @@ Don't accept the first answer. The first pass shows you what the prompt left out
 | "Section 3 gives 6 weeks under a year. Fix that and check the other rules." | It fixes this and looks for more |
 
 Say **what** was wrong, **where** the right information is, and **what to do**.
+
+---
+
+{{widget feedback-builder}}
 
 ---
 

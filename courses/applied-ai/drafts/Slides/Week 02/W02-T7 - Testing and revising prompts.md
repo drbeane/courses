@@ -48,6 +48,10 @@ Two people should agree on whether an output passes.
 
 ---
 
+{{widget check-sort}}
+
+---
+
 ## The Revision Loop
 
 1. Run all the test inputs
@@ -81,6 +85,10 @@ Both steps feel slow. Both are faster than chasing a problem you can't explain.
 | v4 | "Report only the final outcome" | All five pass |
 
 <!-- Each row: one change, a reason from the outputs, a result on all five inputs. This is what the lab log should look like. -->
+
+---
+
+{{widget revision-loop}}
 
 ---
 

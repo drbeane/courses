@@ -41,6 +41,10 @@ The five in bold are the course's main surfaces.
 
 ---
 
+{{widget surface-explorer}}
+
+---
+
 ## Surface vs Interface
 
 - **Interface**: what you look at and operate, such as a message box, buttons, or a microphone

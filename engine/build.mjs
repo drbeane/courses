@@ -342,8 +342,16 @@ ${blocks}
       if (line === '---' && !fence) parts.push('');
       else parts[parts.length - 1] += line + '\n';
     }
+    // A slide holding only {{widget name}} shows that lesson widget, titled from the widget's own
+    // header, with the header itself hidden (see "Widgets on slides" in deck.css).
     const slides = parts.map((part) => {
       const html = mdToHtml(part.trim(), `slides ${s.id}`);
+      const w = html.trim().match(/^<p>\{\{widget ([a-z0-9-]+)\}\}<\/p>$/);
+      if (w) {
+        const frag = read(`content/widgets/${w[1]}.html`);
+        const head = frag.match(/<div class="wx-head"><b>([^<]*)<\/b>(?:<span>([^<]*)<\/span>)?/);
+        return `<section class="slide widget"><h2>${head ? head[1] : 'Try It'}</h2>${head && head[2] ? `<p class="wsub">${head[2]}</p>` : ''}\n${frag}\n</section>`;
+      }
       return `<section class="slide${/^\s*<h1/.test(html) ? ' lead' : ''}">${html}</section>`;
     }).join('\n');
     return `<!DOCTYPE html>

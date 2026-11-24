@@ -26,6 +26,10 @@ Two questions:
 
 ---
 
+{{widget check-level}}
+
+---
+
 ## First: Pull Out the Checkable Claims
 
 Before you check anything, mark every:
@@ -37,6 +41,10 @@ Before you check anything, mark every:
 - causal claim: "X caused Y"
 
 The list is shorter than the text makes it seem. Most sentences connect the claims; only the claims need checking.
+
+---
+
+{{widget claim-picker}}
 
 ---
 
@@ -95,6 +103,10 @@ Use Ctrl+F on the page to find the number, name, or phrase the answer relied on.
 | Reasoning | Follow the steps; new chat |
 | Misread instructions | Compare to your prompt |
 | Sycophancy | Ask again, neutrally |
+
+---
+
+{{widget check-match}}
 
 ---
 

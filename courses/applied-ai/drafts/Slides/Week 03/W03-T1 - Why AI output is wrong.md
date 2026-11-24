@@ -55,6 +55,10 @@ Judge an answer by checking it, not by how it reads.
 
 ---
 
+{{widget name-the-error}}
+
+---
+
 ## Why Hallucinations Happen
 
 - The model predicts **plausible** text, not **verified** text. Nothing in the process checks a fact.
@@ -111,6 +115,10 @@ Don't say which answer you hope for. When you want criticism, ask for it directl
 
 ---
 
+{{widget leading-or-neutral}}
+
+---
+
 ## Where Errors Are Most Likely
 
 - Niche or local topics
@@ -121,3 +129,7 @@ Don't say which answer you hope for. When you want criticism, ask for it directl
 - Questions you asked in a leading way
 
 Match how much you check to what a mistake would cost.
+
+---
+
+{{widget risk-spotter}}
