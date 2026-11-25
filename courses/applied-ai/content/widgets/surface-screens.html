@@ -1,0 +1,149 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .ss-win{border:1px solid var(--rule);border-radius:10px;overflow:hidden;background:#fffdf8;color:#1b1a17;font-size:0.82rem;line-height:1.35}
+.wx .ss-bar{display:flex;align-items:center;gap:5px;padding:0.4rem 0.7rem;background:#efeae0;border-bottom:1px solid #d3ccba;color:#5c574d}
+.wx .ss-bar i{width:9px;height:9px;border-radius:50%;background:#d9776a}
+.wx .ss-bar i+i{background:#e3b24f}
+.wx .ss-bar i+i+i{background:#7bb27f}
+.wx .ss-bar span{margin-left:0.5rem}
+.wx .ss-main{display:flex;flex-wrap:wrap;align-items:stretch;min-height:17rem}
+.wx .ss-col{flex:1 1 15rem;display:flex;flex-direction:column;gap:0.55rem;padding:0.8rem;min-width:0}
+.wx .ss-rail{flex:0 1 10rem;display:flex;flex-direction:column;gap:0.35rem;padding:0.8rem 0.6rem;background:#f4efe4;border-right:1px solid #d3ccba}
+.wx .ss-panel{flex:1 1 12rem;max-width:100%;display:flex;flex-direction:column;gap:0.5rem;padding:0.8rem;background:#f4efe4;border-left:1px solid #d3ccba}
+.wx .ss-dark{background:#17191e;color:#e4e7ee}
+.wx .ss-dark .ss-bar{background:#1f232a;border-color:#2c3038;color:#a7b0be}
+.wx .ss-dark .ss-panel{background:#1f232a;border-color:#2c3038}
+.wx .ss-grow{flex:1}
+.wx .ss-h{font-weight:700;font-size:0.95rem}
+.wx .ss-k{font-weight:700;font-size:0.7rem;letter-spacing:0.07em;color:#a83f28}
+.wx .ss-sub{color:#6b665b;font-size:0.76rem}
+.wx .ss-me{align-self:flex-end;max-width:90%;background:#a83f28;color:#fff;border-radius:12px;padding:0.4rem 0.7rem}
+.wx .ss-ai{align-self:flex-start;max-width:95%;background:#f1ece0;color:#1b1a17;border-radius:12px;padding:0.45rem 0.7rem}
+.wx .ss-btn{display:inline-block;border-radius:7px;padding:0.2rem 0.65rem;background:#efeae0;color:#1b1a17;font-weight:700;font-size:0.76rem;white-space:nowrap}
+.wx .ss-btn.ss-go{background:#a83f28;color:#fff}
+.wx .ss-tag{display:inline-block;border-radius:999px;padding:0.05rem 0.55rem;background:#1d6b73;color:#fff;font-size:0.72rem;font-weight:700;white-space:nowrap}
+.wx .ss-tag.ss-ok{background:#d5ebdc;color:#1f5a33}
+.wx .ss-tag.ss-wait{background:#e6e0d0;color:#4a463d}
+.wx .ss-line{display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem}
+.wx .ss-card{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;border:1px solid #d3ccba;border-radius:8px;padding:0.4rem 0.65rem;background:#fffdf8}
+.wx .ss-on{background:#e3eef0;border-color:#1d6b73}
+.wx .ss-need{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:0.5rem;border:2px solid #a83f28;border-radius:8px;padding:0.45rem 0.65rem;background:#fbebe5;color:#1b1a17}
+.wx .ss-input{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;border:1px solid #d3ccba;border-radius:999px;padding:0.3rem 0.35rem 0.3rem 0.8rem;background:#fffdf8;color:#6b665b}
+.wx .ss-note{background:#2c3038;color:#f4f1ea;border-radius:8px;padding:0.4rem 0.65rem}
+.wx .ss-code{margin:0;padding:0.6rem 0;font:400 0.76rem/1.7 ui-monospace,Consolas,monospace;overflow-x:auto}
+.wx .ss-code div{white-space:pre;padding:0 0.8rem}
+.wx .ss-add{background:#143d2b;color:#bdf2d2}
+.wx .ss-del{background:#4a1d22;color:#f7bcc2}
+.wx .ss-pre{margin:0;padding:0.55rem 0.7rem;border:1px solid #2c3038;border-radius:8px;background:#1f232a;color:#e4e7ee;font:400 0.76rem/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap}
+.wx .ss-facts{display:grid;grid-template-columns:8.5rem 1fr;gap:0.4rem 0.8rem;margin:0}
+.wx .ss-facts dt{margin:0;font-size:0.8rem;font-weight:700;color:var(--muted)}
+.wx .ss-facts dd{margin:0}
+.wx .ss-fine{margin:0;font-size:0.8rem;color:var(--muted)}
+@media (max-width:520px){.wx .ss-facts{grid-template-columns:1fr;gap:0.15rem}.wx .ss-facts dd{margin-bottom:0.45rem}.wx .ss-rail{flex-basis:100%;border-right:0;border-bottom:1px solid #d3ccba}}
+@media print{.wx .ss-picks{display:none}}
+.wx .wx-view{display:grid;gap:0.75rem;min-width:0}
+/* On a slide the facts sit beside a smaller screen so the whole view fits. */
+section.slide .wx[data-widget=surface-screens] .wx-body{padding:0.5rem 0.7rem;gap:0.4rem}
+section.slide .wx[data-widget=surface-screens] .ss-picks{gap:0.25rem}
+section.slide .wx[data-widget=surface-screens] .wx-chip{font-size:0.65rem;padding:0.15rem 0.5rem}
+section.slide .wx[data-widget=surface-screens] .wx-view:not([hidden]){grid-template-columns:minmax(0,1fr) 12rem;align-items:start}
+section.slide .wx[data-widget=surface-screens] .wx-out,section.slide .wx[data-widget=surface-screens] .ss-fine{display:none}
+section.slide .wx[data-widget=surface-screens] .ss-win{font-size:0.7rem;line-height:1.25}
+section.slide .wx[data-widget=surface-screens] .ss-win :is(.ss-h,.ss-k,.ss-sub,.ss-btn,.ss-tag,.ss-pre,.ss-code){font-size:inherit}
+section.slide .wx[data-widget=surface-screens] .ss-main{min-height:0}
+section.slide .wx[data-widget=surface-screens] :is(.ss-col,.ss-panel,.ss-rail){gap:0.25rem;padding:0.45rem}
+section.slide .wx[data-widget=surface-screens] .ss-card{padding:0.15rem 0.5rem}
+section.slide .wx[data-widget=surface-screens] .ss-code{line-height:1.45}
+section.slide .wx[data-widget=surface-screens] .ss-pre{line-height:1.35;padding:0.35rem 0.5rem}
+section.slide .wx[data-widget=surface-screens] .ss-facts{grid-template-columns:1fr;gap:0.1rem;font-size:0.8rem}
+section.slide .wx[data-widget=surface-screens] .ss-facts dd{margin-bottom:0.5rem}
+</style>
+<div class="wx" data-widget="surface-screens">
+  <div class="wx-head"><b>Explore: What Each Surface Looks Like</b><span>Step through a simplified screen for each of the eight surfaces.</span></div>
+  <div class="wx-body">
+    <div class="ss-picks wx-row"></div>
+<div class="ss-view wx-view" data-name="Chat assistant">
+<p class="wx-out" style="margin:0">You hold a conversation, asking and then steering with each reply.</p>
+<div role="img" aria-label="Simplified screen of: Chat assistant"><div class="ss-win"><div class="ss-bar"><i></i><i></i><i></i><span>Assistant</span></div><div class="ss-main"><div class="ss-rail"><span class="ss-btn ss-go">+ New chat</span><div class="ss-card ss-on">Trip to Lisbon</div><div class="ss-sub">Fix my r&eacute;sum&eacute;</div><div class="ss-sub">Explain Python</div></div><div class="ss-col"><div class="ss-me">Can you plan a 3-day trip to Lisbon?</div><div class="ss-ai">Happily! Here is a simple outline:<br>Day 1: Alfama and the castle<br>Day 2: Bel&eacute;m and the river<br>Day 3: Sintra day trip</div><div class="ss-line"><span class="ss-btn">Add food spots</span><span class="ss-btn">Make it cheaper</span></div><div class="ss-grow"></div><div class="ss-input"><span>Message the assistant&hellip;</span><span class="ss-btn ss-go">Send</span></div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives in a chat window in a browser or app.</dd><dt>When it acts</dt><dd>It acts when you send a message.</dd><dt>What it can reach</dt><dd>It sees what you type or attach, and it answers in the window.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="Embedded copilot" hidden>
+<p class="wx-out" style="margin:0">The AI is built into an application you already use, often as a side panel next to your work.</p>
+<div role="img" aria-label="Simplified screen of: Embedded copilot"><div class="ss-win"><div class="ss-bar"><i></i><i></i><i></i><span>Inbox &ndash; Mail</span></div><div class="ss-main"><div class="ss-col"><div class="ss-card ss-on"><div><b>Maria Chen</b><div class="ss-sub">Q3 budget draft</div></div><span class="ss-tag">In summary</span></div><div class="ss-card ss-on"><div><b>Dev Patel</b><div class="ss-sub">Re: Q3 budget questions</div></div><span class="ss-tag">In summary</span></div><div class="ss-card ss-on"><div><b>Finance Team</b><div class="ss-sub">Q3 budget approved</div></div><span class="ss-tag">In summary</span></div><div class="ss-card"><div><b>Sam Ortiz</b><div class="ss-sub">Lunch on Friday?</div></div></div><div class="ss-card"><div><b>City Library</b><div class="ss-sub">Your book is due soon</div></div></div></div><div class="ss-panel"><div class="ss-k">ASSISTANT</div><div class="ss-me">Summarize my emails about the Q3 budget</div><div class="ss-ai">There are 3 emails in the thread:<br>Maria sent the first draft.<br>Dev asked about the travel line.<br>Finance approved it.</div><div class="ss-grow"></div><div class="ss-input"><span>Ask about mail&hellip;</span><span class="ss-btn ss-go">Send</span></div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives inside another application, such as email or a document editor.</dd><dt>When it acts</dt><dd>It acts when you ask in the side panel.</dd><dt>What it can reach</dt><dd>It can use what the application holds, which in this example is your mailbox.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="Local agent" hidden>
+<p class="wx-out" style="margin:0">The agent works through a task on your computer and can ask before a risky step.</p>
+<div role="img" aria-label="Simplified screen of: Local agent"><div class="ss-win"><div class="ss-bar"><i></i><i></i><i></i><span>Agent &ndash; Desktop</span></div><div class="ss-main"><div class="ss-col"><div class="ss-me">Organize my Downloads folder by file type</div><div class="ss-ai">I&rsquo;ll sort your 214 files into folders.<br>&#10003; Scanned 214 files<br>&#10003; Created 3 folders<br>&#9654; Moving files: 130 of 214</div><div class="ss-need"><b>Delete 12 duplicate files?</b><div class="ss-line"><span class="ss-btn ss-go">Allow</span><span class="ss-btn">Deny</span></div></div><div class="ss-grow"></div><div class="ss-input"><span>Reply to the agent&hellip;</span><span class="ss-btn ss-go">Send</span></div><div class="ss-sub">Access: Downloads folder only &middot; Network: off</div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives on your own computer.</dd><dt>When it acts</dt><dd>It acts when you give it a task.</dd><dt>What it can reach</dt><dd>It can work with the files and apps that you allow it to use.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="Browser agent" hidden>
+<p class="wx-out" style="margin:0">The agent operates a web browser for you by reading pages, clicking, and filling in forms.</p>
+<div role="img" aria-label="Simplified screen of: Browser agent"><div class="ss-win"><div class="ss-bar"><i></i><i></i><i></i><span>airline.example/flights?to=DEN</span></div><div class="ss-main"><div class="ss-col"><div class="ss-h">Flights to Denver</div><div class="ss-sub">Friday &middot; 1 traveler &middot; Nonstop</div><div class="ss-card"><div>9:10 AM &rarr; 11:35 AM</div><div class="ss-line"><b>$212</b><span class="ss-btn">Select</span></div></div><div class="ss-card ss-on"><div>6:05 AM &rarr; 8:40 AM<div><span class="ss-tag">Agent is clicking</span></div></div><div class="ss-line"><b>$189</b><span class="ss-btn ss-go">Select</span></div></div><div class="ss-card"><div>1:20 PM &rarr; 3:50 PM</div><div class="ss-line"><b>$231</b><span class="ss-btn">Select</span></div></div></div><div class="ss-panel"><div class="ss-k">AGENT</div><div class="ss-me">Find the cheapest nonstop flight to Denver on Friday</div><div class="">&#10003; Opened airline.example<br>&#10003; Entered the date<br>&#10003; Sorted by price<br><b>&#9654; Selecting the cheapest flight</b></div><div class="ss-grow"></div><div class="ss-line"><span class="ss-btn">Pause</span><span class="ss-btn">Take over</span></div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives in a web browser.</dd><dt>When it acts</dt><dd>It acts when you give it a goal.</dd><dt>What it can reach</dt><dd>It can use the sites that you can use, including ones you are signed in to.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="Cloud or background agent" hidden>
+<p class="wx-out" style="margin:0">You hand off a task, close your laptop, and come back later to review the result.</p>
+<div role="img" aria-label="Simplified screen of: Cloud or background agent"><div class="ss-win"><div class="ss-bar"><i></i><i></i><i></i><span>Agents &ndash; Dashboard</span></div><div class="ss-main"><div class="ss-col"><div class="ss-line"><div class="ss-h">Tasks</div><span class="ss-tag">2 running</span></div><div class="ss-sub">These run on remote servers, so it is safe to close this tab.</div><div class="ss-card"><div><b>Upgrade database client</b><div class="ss-sub">18 minutes so far</div></div><span class="ss-tag ">Running</span></div><div class="ss-card"><div><b>Write tests for billing</b><div class="ss-sub">6 minutes so far</div></div><span class="ss-tag ">Running</span></div><div class="ss-card"><div><b>Fix flaky login test</b><div class="ss-sub">Pull request ready</div></div><span class="ss-tag ss-ok">Done</span></div><div class="ss-card"><div><b>Summarize support tickets</b><div class="ss-sub">Waiting to start</div></div><span class="ss-tag ss-wait">Queued</span></div><div class="ss-grow"></div><div class="ss-note">&#10003; Fix flaky login test: ready for your review</div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives on remote servers.</dd><dt>When it acts</dt><dd>It acts when you hand off a task or when a schedule starts it.</dd><dt>What it can reach</dt><dd>It can use the code and tools you connected, even while you are away.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="Coding assistant" hidden>
+<p class="wx-out" style="margin:0">The assistant reads your code and proposes edits as changes you can accept or reject.</p>
+<div role="img" aria-label="Simplified screen of: Coding assistant"><div class="ss-win ss-dark"><div class="ss-bar"><i></i><i></i><i></i><span>signup.js</span></div><div class="ss-main"><div class="ss-col"><div class="ss-code"><div class="">10  // Create an account</div><div class="">11  function signup(email) {</div><div class="ss-del">12 -  save(email);</div><div class="ss-add">12 +  if (!isValid(email)) {</div><div class="ss-add">13 +    throw new Error("Bad email");</div><div class="ss-add">14 +  }</div><div class="ss-add">15 +  save(email);</div><div class="">16    return true;</div><div class="">17  }</div></div><div class="ss-grow"></div><div class="ss-line"><span>+4 &minus;1</span><span class="ss-btn ss-go">Accept</span><span class="ss-btn">Reject</span></div></div><div class="ss-panel"><div class="ss-me">Check the email before saving it</div><div class="">I added a check that throws an error when the email is invalid.</div><div class="">&#10003; Ran 3 tests: all pass</div><div class="ss-grow"></div><div class="ss-sub">Ask or edit&hellip;</div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives in your code editor or terminal.</dd><dt>When it acts</dt><dd>It acts when you prompt it.</dd><dt>What it can reach</dt><dd>It can read your codebase and run commands and tests.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="API and agent platforms" hidden>
+<p class="wx-out" style="margin:0">There is no chat window, because your own program sends a request and receives a response.</p>
+<div role="img" aria-label="Simplified screen of: API and agent platforms"><div class="ss-win ss-dark"><div class="ss-bar"><i></i><i></i><i></i><span>Terminal &ndash; your app</span></div><div class="ss-main"><div class="ss-col"><div class="ss-pre">$ python summarize.py</div><div class="ss-k">REQUEST</div><div class="ss-pre">{
+  "model": "assistant-1",
+  "max_tokens": 200,
+  "prompt": "Summarize Q3."
+}</div></div><div class="ss-col"><div class="ss-k">RESPONSE</div><div class="ss-pre">200 OK
+{
+  "text": "Q3 sales rose 8%.",
+  "tokens_in": 12,
+  "tokens_out": 9
+}</div><div>Time: 412 ms &middot; Tokens: 21 &middot; Cost: $0.0004</div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives inside software that you or someone else builds.</dd><dt>When it acts</dt><dd>It acts when the code calls it.</dd><dt>What it can reach</dt><dd>It sees what the code sends and can use the tools the code gives it.</dd></dl>
+</div>
+<div class="ss-view wx-view" data-name="Always-on agent" hidden>
+<p class="wx-out" style="margin:0">The agent keeps working in the background and checks in when it needs a decision or has something to report.</p>
+<div role="img" aria-label="Simplified screen of: Always-on agent"><div class="ss-win"><div class="ss-bar"><i></i><i></i><i></i><span>Agents</span></div><div class="ss-main"><div class="ss-rail"><div class="ss-k">AGENTS</div><div class="ss-card ss-on"><div><b>Inbox</b><div class="ss-sub">Needs you</div></div></div><div class="ss-card"><div><b>Calendar</b><div class="ss-sub">Checked 3 min ago</div></div></div><div class="ss-card"><div><b>Billing</b><div class="ss-sub">Watching invoices</div></div></div><div class="ss-card"><div><b>Research</b><div class="ss-sub">Idle until Monday</div></div></div></div><div class="ss-col"><div class="ss-h">Inbox agent</div><div class="ss-sub">7:02 AM</div><div class="ss-ai">I sorted 38 emails and drafted 3 replies.</div><div class="ss-sub">11:40 AM</div><div class="ss-ai">An invoice is due Friday.</div><div class="ss-sub">1:05 PM</div><div class="ss-need"><b>A $240 renewal is waiting. Approve it?</b><div class="ss-line"><span class="ss-btn ss-go">Approve</span><span class="ss-btn">Skip</span></div></div><div class="ss-grow"></div><div class="ss-input"><span>Message the agent&hellip;</span><span class="ss-btn ss-go">Send</span></div></div></div></div></div>
+<dl class="ss-facts"><dt>Where it lives</dt><dd>It lives on its own cloud computer and keeps running.</dd><dt>When it acts</dt><dd>It acts on events or a schedule, as well as when you message it.</dd><dt>What it can reach</dt><dd>It can use the accounts you connected, such as your inbox and calendar.</dd></dl>
+</div>
+    <p class="ss-fine">The screens are simplified. The names and numbers in them are made up, and real products differ.</p>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  const views = [...root.querySelectorAll('.ss-view')];
+  const picks = root.querySelector('.ss-picks');
+  views.forEach((v, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'wx-chip';
+    b.textContent = v.dataset.name;
+    b.setAttribute('aria-pressed', i === 0);
+    b.onclick = () => {
+      views.forEach((x, j) => x.hidden = j !== i);
+      [...picks.children].forEach((x, j) => x.setAttribute('aria-pressed', j === i));
+    };
+    picks.appendChild(b);
+  });
+})();
+</script>

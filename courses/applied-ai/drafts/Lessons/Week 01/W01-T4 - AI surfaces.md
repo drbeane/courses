@@ -40,6 +40,10 @@ Other surfaces come up along the way, such as AI built into apps you already use
 | API and agent platforms | Building your own programs on top of a model | The Claude, OpenAI, and Gemini APIs | 11–12 |
 | Always-on agent | An agent with its own cloud computer that keeps working and checks in | Meta Muse, OpenAI dots, Claude Duet | 13 |
 
+To get a sense of how these surfaces differ in practice, you can use the widget below to look at a simplified screen for each one in the table.
+
+{{widget surface-screens}}
+
 The tool below gives the same request to four different surfaces. Try each one, and notice what you have to do yourself and when your file actually changes.
 
 {{widget one-request}}

@@ -41,6 +41,10 @@ This course focuses primarily on chat assistants, local agents, coding assistant
 
 ---
 
+{{widget surface-screens}}
+
+---
+
 {{widget one-request}}
 
 ---
