@@ -6,7 +6,7 @@ merge on 15 November 2026. Their history was not carried over, so this log start
 
 ## 2026-11-25: Widget showing each surface's screen
 
-- New widget "What Each Surface Looks Like" (`widgets/surface-screens.html`) in the W1 AI Surfaces lesson and deck, after the surfaces table. It rebuilds the eight screens of the "AI Tool Types" slide artifact in responsive HTML, using the course's surface names.
+- New widget "What Each Surface Looks Like" (`widgets/surface-screens.html`) in the W1 AI Surfaces lesson and deck, after the surfaces table. It rebuilds the eight screens of the "AI Tool Types" slide artifact in responsive HTML, using the course's surface names. A closing disclaimer line was then removed at Robbie's request.
 
 ## 2026-11-25: Surfaces widget replaced, deploying code added
 
