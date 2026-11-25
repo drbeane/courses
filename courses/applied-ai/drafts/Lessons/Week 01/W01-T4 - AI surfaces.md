@@ -9,17 +9,17 @@
 
 ## What a Surface Is
 
-The same model can behave very differently depending on how you reach it. A **surface** is the way you interact with an AI and, just as important, what it can see and change. A model in a chat window can only see what you paste in. The same model working as an agent on your computer can read every file in a folder, run code, and save its work. The surface often matters more than which model is underneath.
+The same model can behave very differently depending on how you reach it. A **surface** is the environment where you interact with an AI, such as a chat app, a terminal, or a browser extension. It largely determines what the AI can see and what it can change. By default, a model in a chat window sees only what you type or attach. The same model working as an agent on your computer can read every file in a folder, run code, and save its work. In terms of capabilities, the surface often matters more than which model is underneath. Even a very strong model in a basic chat window can't edit the files on your computer, while a more modest model working as an agent can.
 
-A surface has three parts:
+Broadly speaking, a surface can be described by three things:
 
-- **How you reach the AI**: a chat window, a panel inside another application, a terminal, a schedule that starts it without you.
-- **What it can see**: only your message, or also your files, your email, a web page, a whole codebase.
-- **What it can change**: nothing outside the conversation, or files on your computer, a calendar, a website, a running program.
+- **How you reach the AI**: You might type into a chat window, use a panel inside another application, work in a terminal, or set a schedule that starts the AI without you.
+- **What it can see**: Some surfaces give the AI only your message, while others also let it read your files, your email, a web page, or a whole codebase.
+- **What it can change**: Some surfaces let the AI change nothing outside the conversation, while others let it change files, a calendar, a website, or a running program.
 
 ## Surfaces in This Course
 
-This course focuses on five surfaces, roughly in the order it covers them:
+This course focuses primarily on five surfaces. They are listed below, roughly in the order in which they are covered.
 
 1. **Chat assistants** are where most people start: a conversation in a browser or app, where the AI sees only what you give it.
 2. **Local agents** work directly on the files and folders on your computer, so they can read, change, and create things on their own.
@@ -55,11 +55,11 @@ An **interface** is the part you look at and operate: the message box, the butto
 Two cases show the difference:
 
 - **Similar interface, different surfaces.** In the Claude desktop app, a chat and a task in Cowork, its local agent, both begin with a box you type into. In the chat, the model sees only what you paste or attach. In Cowork, it can read and write the files in a folder you chose. The screens look alike. What the AI can reach is very different.
-- **Different interfaces, same surface.** You can use a chat assistant by typing in a browser, by typing in a phone app, or by talking to it. The interface changes each time. What the model can see and change stays about the same.
+- **Different interfaces, same surface.** You can use a chat app by typing to it or by talking to it. The interface changes. What the model can see and change stays about the same.
 
 The interface tells you how to talk to the AI. The surface tells you what it can do once you have. That second question is the one that decides how much you can delegate and how closely you need to supervise.
 
 ## Key Terms
 
-- **Surface**: how you reach an AI and what it can see and change.
+- **Surface**: the environment where you interact with an AI, which largely determines what it can see and change.
 - **Interface**: the part of a tool you look at and operate, such as a message box, buttons, or a microphone.

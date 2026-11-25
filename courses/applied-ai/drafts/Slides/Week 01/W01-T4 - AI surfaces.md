@@ -12,7 +12,7 @@ COSC-300/500 Applied AI Essentials
 
 ## Same Model, Different Surfaces
 
-A **surface** is how you reach the AI and what it can see and change.
+A **surface** is the environment where you interact with an AI. It largely determines what the AI can see and change.
 
 - The same model can sit behind a chat window, a writing app, a browser, or a program you write.
 - In a chat, it sees only what you type or upload, and it changes nothing outside the conversation.
@@ -52,7 +52,7 @@ The five in bold are the course's main surfaces.
 
 Similar interface, different surfaces: a chat and a Cowork task both start with a box you type into, but only one can change your files.
 
-Different interfaces, same surface: chat in a browser, on a phone, or by voice all reach the same assistant with the same access.
+Different interfaces, same surface: typing and talking in the same chat app reach the same assistant with the same access.
 
 When you decide how closely to supervise, look at the surface, not the interface.
 

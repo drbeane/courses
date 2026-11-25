@@ -121,6 +121,6 @@ Deciding that, task by task, is Delegation. It was the first skill in this cours
 
 ## Key Terms
 
-- **Surface**: a way of reaching a model, such as a chat app, an embedded copilot, or an agent.
+- **Surface**: the environment where you interact with an AI, such as a chat app, an embedded copilot, or an agent.
 - **Autonomy**: how much a tool does without asking.
 - **Oversight**: the checking a person does of a tool's work.

@@ -133,7 +133,7 @@ Pretraining gives the model its knowledge of language and the world, and it is w
 
 ## Surface
 
-The way you reach an AI system, which also sets what it can see and change.
+The environment where you interact with an AI system, which largely determines what it can see and change.
 
 This course maps eight surfaces: chat assistants, embedded copilots, coding assistants, local agents, cloud and background agents, browser and computer-use agents, always-on agents, and APIs. The same model can sit behind several surfaces and be able to do very different things in each, from answering in a chat window to editing files on your computer.
 

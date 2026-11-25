@@ -4,6 +4,12 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI definition of "surface"
+
+- W1 AI Surfaces: seven Notion edits. A surface is now defined as the environment where you interact with an AI, which largely determines what it can see and change. Fragment bullets became full sentences.
+- Also fixed the claim that a chat model sees only what you paste in, and changed the "same surface" example to typing versus talking in one chat app.
+- The new definition is carried into that deck, the glossary, W1 Vendors, models, and effort, and W15 Course synthesis.
+
 ## 2026-11-24: Lesson widgets on slides
 
 - A slide whose only content is `{{widget name}}` now shows that lesson widget, working, titled from the widget's own header (built in `engine/build.mjs`, `deck()`). All 26 Applied AI widgets (weeks 1–3) are in their decks, each right after the slide on the same idea.
