@@ -1969,3 +1969,19 @@ This course is ordered by autonomy. The more autonomy you grant, the more the br
 The checking a person does of a tool's work: reviewing outputs, approving actions, and auditing what happened.
 
 Oversight should grow with autonomy. Match it to what a mistake would cost, not to how confident the tool seems.
+
+## Deployment
+
+Putting a copy of an app somewhere that other people can use it, usually at a web address.
+
+Deploying changes who can see your work. Before you deploy, check that the app contains no passwords, API keys, or real personal data, and decide whether the code itself may be public.
+
+### Resources
+
+- [What is GitHub Pages?](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages) (GitHub Docs)
+
+## Hosting service
+
+A service that stores an app's files and sends them to the people who visit its web address.
+
+GitHub Pages and Vercel are two examples. A simple page needs only file hosting, while an app with a database or user accounts also needs a server and more care.

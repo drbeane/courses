@@ -26,22 +26,22 @@ The surface often matters more than the model, because it decides what can go wr
 
 | Surface | Example | Weeks |
 |---|---|---|
-| **Chat assistant** | Claude, ChatGPT, Gemini, Copilot Chat | 1–5 |
+| Chat assistant | Claude, ChatGPT, Gemini, Copilot Chat | 1–5 |
 | Embedded copilot | Copilot in Outlook, Gemini in Gmail | 5 |
-| **Local agent** | Claude Cowork, ChatGPT Work | 6–8 |
+| Local agent | Claude Cowork, ChatGPT Work | 6–8 |
 | Browser agent | Claude in Chrome, ChatGPT Atlas, Comet | 8 |
 | Cloud / background agent | Scheduled tasks, Codex cloud tasks | 8 |
-| **Coding assistant** | Claude Code, Codex, Cursor, Antigravity | 9–10 |
-| **API and agent platforms** | The Claude, OpenAI, and Gemini APIs | 11–12 |
-| **Always-on agent** | Meta Muse, OpenAI dots, Claude Duet | 13 |
+| Coding assistant | Claude Code, Codex, Cursor, Antigravity | 9–10 |
+| API and agent platforms | The Claude, OpenAI, and Gemini APIs | 11–12 |
+| Always-on agent | Meta Muse, OpenAI dots, Claude Duet | 13 |
 
-The five in bold are the course's main surfaces.
+This course focuses primarily on chat assistants, local agents, coding assistants, the API, and always-on agents.
 
 <!-- 2-minute live demo of each surface that's available today. Keep it brisk. -->
 
 ---
 
-{{widget surface-explorer}}
+{{widget one-request}}
 
 ---
 

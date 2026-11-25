@@ -124,3 +124,26 @@ Week 2's context window, made visible.
 6. **Commit**
 
 Then the next feature. The rhythm feels slow at first, and it's much faster than untangling five features at once.
+
+---
+
+## Deploying Your App
+
+**Deploying** means putting a copy of your app where other people can reach it.
+
+1. Check that the app works on your computer.
+2. Commit your changes and push them to GitHub.
+3. Connect the repository to a hosting service, such as GitHub Pages or Vercel.
+4. Visit the web address and test the app again.
+
+Not every project needs to be deployed.
+
+---
+
+## Before You Deploy
+
+- Treat the deployed page as public, even if you haven't shared its address.
+- Never put API keys or passwords in code that a browser receives.
+- GitHub Pages on a free account requires a public repository, so anyone can see its history.
+- Replace real names, grades, and expenses with made-up examples.
+- Data saved in a browser's local storage stays in that browser.

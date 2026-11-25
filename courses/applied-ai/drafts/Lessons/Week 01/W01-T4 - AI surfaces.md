@@ -21,28 +21,28 @@ Broadly speaking, a surface can be described by three things:
 
 This course focuses primarily on five surfaces. They are listed below, roughly in the order in which they are covered.
 
-1. **Chat assistants** are where most people start: a conversation in a browser or app, where the AI sees only what you give it.
+1. **Chat assistants** are where most people start. You hold a conversation in a browser or app, and by default the AI sees only what you give it.
 2. **Local agents** work directly on the files and folders on your computer, so they can read, change, and create things on their own.
-3. **Coding assistants** work inside a development environment, where they can write code, run it, and test it.
+3. **Coding assistants** work inside a development environment, where they can write code, run it, and test it. They can often help you deploy it as well, so that other people can use what you built.
 4. **The API** lets you build your own programs on top of a model, deciding what it sees and what it can do.
-5. **Always-on agents** run on their own cloud computer, keep working while you are away, and check in with you.
+5. **Always-on agents** run on their own cloud computer, keep working while you are away, and check in with you when they need your input or have something to report.
 
-Other surfaces come up along the way, such as AI built into apps you already use and agents that operate a web browser. The table lists them all.
+Other surfaces come up along the way, such as AI built into apps you already use and agents that operate a web browser. The table below shows the surfaces touched upon in this course and the weeks in which they appear. It is not a complete list, and new surfaces continue to appear.
 
 | Surface | What it is | Example | Weeks |
 |---|---|---|---|
-| **Chat assistant** | A conversation in a browser or app | Claude, ChatGPT, Gemini, Copilot Chat | 1–5 |
+| Chat assistant | A conversation in a browser or app | Claude, ChatGPT, Gemini, Copilot Chat | 1–5 |
 | Embedded copilot | AI inside an application you already use | Copilot in Outlook, Gemini in Gmail and Docs | 5 |
-| **Local agent** | AI that works directly on the files and folders on your computer | Claude Cowork, ChatGPT Work | 6–8 |
+| Local agent | AI that works directly on the files and folders on your computer | Claude Cowork, ChatGPT Work | 6–8 |
 | Browser or computer-use agent | AI that operates a browser: clicks, types, reads pages | Claude in Chrome, ChatGPT Atlas, Perplexity Comet | 8 |
 | Cloud or background agent | Work you hand off or schedule; it runs while you're away | Scheduled tasks, Codex cloud tasks, Claude Code on the web | 8 |
-| **Coding assistant** | AI inside a development environment, with access to code, terminal, and tests | Claude Code, Codex, Cursor, Google Antigravity | 9–10 |
-| **API and agent platforms** | Building your own programs on top of a model | The Claude, OpenAI, and Gemini APIs | 11–12 |
-| **Always-on agent** | An agent with its own cloud computer that keeps working and checks in | Meta Muse, OpenAI dots, Claude Duet | 13 |
+| Coding assistant | AI inside a development environment, with access to code, terminal, and tests | Claude Code, Codex, Cursor, Google Antigravity | 9–10 |
+| API and agent platforms | Building your own programs on top of a model | The Claude, OpenAI, and Gemini APIs | 11–12 |
+| Always-on agent | An agent with its own cloud computer that keeps working and checks in | Meta Muse, OpenAI dots, Claude Duet | 13 |
 
-Use the tool below to put any two surfaces side by side. Start with a chat assistant and a local agent.
+The tool below gives the same request to four different surfaces. Try each one, and notice what you have to do yourself and when your file actually changes.
 
-{{widget surface-explorer}}
+{{widget one-request}}
 
 > **Instructor note.** Keep the tour to about two minutes per surface: the goal is a mental map, not instruction. If a surface isn't available to demo, describe it and say which week it arrives. Students often haven't seen a local agent at all; a 30-second glimpse of an agent saving files into a folder makes the rest of the term concrete.
 

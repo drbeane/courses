@@ -1,0 +1,116 @@
+<style>
+.wx{margin:1.75rem 0 2rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--paper);font:400 0.95rem/1.45 var(--display);color:var(--ink)}
+.wx [hidden]{display:none!important}
+.wx .wx-head{padding:0.7rem 1rem;background:var(--wash);border-bottom:1px solid var(--rule);border-radius:0 5px 0 0}
+.wx .wx-head b{display:block;font-size:1rem}
+.wx .wx-head span{color:var(--muted);font-size:0.88rem}
+.wx .wx-body{padding:1rem;display:grid;gap:0.9rem}
+.wx .wx-label{margin:0 0 0.35rem;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.wx .wx-row{display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center}
+.wx button{font:500 0.9rem/1.2 var(--display);color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:0.45rem 0.8rem;cursor:pointer}
+.wx button:hover{border-color:var(--c)}
+.wx button:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.wx button.wx-primary{background:var(--c);border-color:var(--c);color:#fff;font-weight:600}
+.wx button.wx-chip{border-radius:999px;padding:0.3rem 0.8rem;font-size:0.85rem;text-align:left}
+.wx button.wx-chip[aria-pressed=true]{background:color-mix(in srgb,var(--c) 11%,#fff);border-color:var(--c);color:var(--c);font-weight:600}
+.wx .wx-out{margin:0;padding:0.7rem 0.85rem;border:1px solid var(--rule);border-left:4px solid var(--c);border-radius:6px;background:var(--wash)}
+.wx .or-ask{margin:0;font-size:1.02rem}
+.wx .or-cols{display:flex;flex-wrap:wrap;gap:0.9rem;align-items:flex-start}
+.wx .or-cols>.or-facts{flex:1 1 20rem}
+.wx .or-side{flex:1 1 14rem;display:grid;gap:0.6rem}
+.wx .or-file{border:1px solid var(--rule);border-radius:6px;padding:0.6rem 0.8rem}
+.wx .or-file table{width:100%;border-collapse:collapse;margin:0;font:400 0.9rem/1.35 var(--display)}
+.wx .or-file th,.wx .or-file td{padding:0.2rem 0;border:0;background:none;text-align:left;font-weight:400}
+.wx .or-file td{text-align:right}
+.wx .or-file tr.or-total th,.wx .or-file tr.or-total td{border-top:1px solid var(--rule);font-weight:700}
+.wx .or-state{margin:0.4rem 0 0;font-size:0.86rem;font-weight:600;color:#b3261e}
+.wx .or-state.or-ok{color:var(--c)}
+.wx .or-facts{display:grid;grid-template-columns:8.5rem 1fr;gap:0.45rem 0.8rem;margin:0}
+.wx .or-facts dt{margin:0;font-size:0.8rem;font-weight:700;color:var(--muted)}
+.wx .or-facts dd{margin:0}
+@media (max-width:520px){.wx .or-facts{grid-template-columns:1fr;gap:0.15rem}.wx .or-facts dd{margin-bottom:0.45rem}}
+@media print{.wx .or-picks,.wx .or-act{display:none}}
+</style>
+<div class="wx" data-widget="one-request">
+  <div class="wx-head"><b>Try It: One Request, Different Surfaces</b><span>Give the same request to four surfaces and see what changes.</span></div>
+  <div class="wx-body">
+    <p class="or-ask">Your request: <b>&ldquo;Fix the total in my club budget spreadsheet.&rdquo;</b></p>
+    <div class="or-picks">
+      <p class="wx-label">Send it to</p>
+      <div class="wx-row or-chips"></div>
+    </div>
+    <div class="or-cols">
+    <dl class="or-facts" aria-live="polite"></dl>
+    <div class="or-side">
+    <div class="or-file">
+      <p class="wx-label">Your spreadsheet right now</p>
+      <table>
+        <tr><th>Snacks</th><td>$120</td></tr>
+        <tr><th>Room rental</th><td>$200</td></tr>
+        <tr><th>Printing</th><td>$95</td></tr>
+        <tr class="or-total"><th>Total</th><td class="or-sum"></td></tr>
+      </table>
+      <p class="or-state" aria-live="polite"></p>
+    </div>
+    <div class="wx-row or-act"><button type="button" class="wx-primary or-go"></button></div>
+    </div>
+    </div>
+  </div>
+</div>
+<script>
+(() => {
+  const root = document.currentScript.previousElementSibling;
+  // "waits" marks surfaces where the file stays wrong until you do something.
+  const SURFACES = [
+    { name: 'Chat assistant', waits: true, button: 'Make the edit yourself',
+      hand: 'You upload or paste the budget, then copy the corrected formula back into your file.',
+      see: 'Only the copy you gave it.',
+      change: 'Nothing in your file. It explains that the total skips the Printing row and gives you a new formula.',
+      check: 'That you pasted the formula into the right cell, and that the new total matches your own sum.' },
+    { name: 'Embedded copilot', waits: true, button: 'Accept the suggestion',
+      hand: 'You open the spreadsheet, ask in the side panel, and decide whether to accept.',
+      see: 'The spreadsheet you have open.',
+      change: 'The total cell, once you accept its suggested formula.',
+      check: 'That the suggested range covers every expense row before you accept it.' },
+    { name: 'Local agent', waits: false,
+      hand: 'You choose the folder, describe the task, and approve actions if it asks.',
+      see: 'The files in the folder you chose, including receipts if you keep them there.',
+      change: 'It edits and saves the spreadsheet itself.',
+      check: 'Which files it touched, and whether anything besides the total changed.' },
+    { name: 'Always-on agent', waits: false,
+      hand: 'You connect the account that holds the budget and send a message.',
+      see: 'The accounts and files you connected to it.',
+      change: 'It fixes the shared spreadsheet and, if you ask, keeps checking it as new expenses arrive.',
+      check: 'What it did while you were away, and who else saw the change.' },
+  ];
+  const ROWS = [['hand', 'What you do'], ['see', 'What the AI can see'], ['change', 'What it changes'], ['check', 'What to check']];
+
+  const $ = (c) => root.querySelector(c);
+  const chips = $('.or-chips'), go = $('.or-go');
+  let at = 0, done = false;
+
+  function show() {
+    const s = SURFACES[at], fixed = !s.waits || done;
+    [...chips.children].forEach((b, i) => b.setAttribute('aria-pressed', i === at));
+    $('.or-facts').innerHTML = ROWS.map(([k, label]) => `<dt>${label}</dt><dd>${s[k]}</dd>`).join('');
+    $('.or-sum').textContent = fixed ? '$415' : '$320';
+    const state = $('.or-state');
+    state.className = 'or-state' + (fixed ? ' or-ok' : '');
+    state.textContent = !fixed ? 'Still wrong. The AI has answered, but your file has not changed.'
+      : s.waits ? 'Fixed, after you acted.' : 'Fixed. The AI changed the file itself.';
+    $('.or-act').hidden = !s.waits;
+    if (s.waits) go.textContent = done ? 'Start over' : s.button;
+  }
+
+  SURFACES.forEach((s, i) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'wx-chip';
+    b.textContent = s.name;
+    b.onclick = () => { at = i; done = false; show(); };
+    chips.appendChild(b);
+  });
+  go.onclick = () => { done = !done; show(); };
+  show();
+})();
+</script>

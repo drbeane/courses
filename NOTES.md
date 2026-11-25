@@ -4,6 +4,12 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Surfaces widget replaced, deploying code added
+
+- W1 AI Surfaces: four more Notion edits (full sentences, deployment, check-ins, a qualified table lead-in) and no more bold in the surfaces table, in the lesson and the deck.
+- New widget "One Request, Different Surfaces" (`widgets/one-request.html`) replaces "Compare Two Surfaces", which is deleted.
+- W9 development environment: new section Deploying Your App, with an objective, two key terms, glossary entries and two slides. The W9 lab has an optional, ungraded deploy step.
+
 ## 2026-11-25: Applied AI definition of "surface"
 
 - W1 AI Surfaces: seven Notion edits. A surface is now defined as the environment where you interact with an AI, which largely determines what it can see and change. Fragment bullets became full sentences.

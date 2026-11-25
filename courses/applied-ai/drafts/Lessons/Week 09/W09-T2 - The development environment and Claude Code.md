@@ -8,6 +8,7 @@
 - Read a diff.
 - Commit work in small steps and roll back a bad change.
 - Use plan mode, permission settings, an instruction file, and the context and usage commands.
+- Deploy a simple web app, and say what becomes public when you do.
 
 ## A Tour of the Environment
 
@@ -145,6 +146,35 @@ Put together, the tools give you a routine for each feature:
 
 Then start the next feature. If step 4 fails and a quick fix doesn't work, go back to the last commit. You'll follow this routine in the lab.
 
+## Deploying Your App
+
+So far, your app runs only on your own computer. **Deploying** it means putting a copy somewhere that other people can reach, usually at a web address. Not every project needs this step. A script that renames your own files has no reason to be online, while a flashcard app that you want classmates to try does.
+
+A simple web app, built from plain HTML, CSS, and JavaScript like the budget tracker above, is among the easiest things to deploy. A **hosting service** keeps a copy of your files and sends them to anyone who visits the address. Two common choices are GitHub Pages, which is built into GitHub, and Vercel, which can connect to a GitHub repository. Both have offered free options for small personal projects, but plans change, so check the current terms before you rely on them.
+
+Broadly speaking, deploying a simple app involves the following steps:
+
+1. **Check the app on your computer.** Try the main features, and fix what is broken before anyone else sees it.
+2. **Commit and push your work.** The hosting service publishes what is in your repository on GitHub, so changes that you haven't pushed will not appear.
+3. **Connect the repository to a hosting service.** With GitHub Pages, you open the repository's settings, choose Pages, and select the branch to publish. The service looks for a file named `index.html` to use as the starting page.
+4. **Visit the address and test the app.** Try the main features again in the deployed version, ideally on a second device such as your phone.
+
+A coding assistant can help with each of these steps. For example, you might ask:
+
+> I want to publish this app with GitHub Pages. Before changing anything, tell me what needs to change, what will become public, and which steps I have to do myself.
+
+Deploying changes who can see your work, so it deserves more care than an ordinary change. Keep the following points in mind before you deploy:
+
+- **Anyone may be able to visit.** You should treat a deployed page as public, even if you haven't shared the address.
+- **The code can be read.** Anything sent to a visitor's browser can be inspected, so never put API keys or passwords in it.
+- **Your repository may need to be public.** On a free GitHub account, GitHub Pages publishes only from public repositories, which means that anyone can see the files and their history.
+- **Real data should be removed.** Use made-up examples in place of real names, grades, or expenses. Remember that earlier commits keep what you deleted later.
+- **Saved data does not follow the app.** An app that saves to the browser's local storage keeps each visitor's data in that visitor's browser. The deployed version starts empty and does not share data between people or devices.
+
+After the first deployment, many hosting services publish again each time you push. This is convenient, but it also means that a broken commit can reach your users. Run the app before you push. If something breaks, revert the change and push again.
+
+An app that needs a server, a database, or user accounts takes more work to deploy and to keep secure. Get help from someone with experience before you put one online with other people's data.
+
 ## Key Terms
 
 - **Editor**: a program for viewing and changing a project's files.
@@ -154,4 +184,6 @@ Then start the next feature. If step 4 fails and a quick fix doesn't work, go ba
 - **Diff**: a line-by-line view of what changed.
 - **Revert**: undo a change by returning to an earlier state.
 - **Push**: send commits to an online repository.
+- **Deployment**: putting a copy of an app somewhere that other people can use it.
+- **Hosting service**: a service that stores an app's files and sends them to visitors.
 - **Plan mode**: a mode in which the assistant proposes a plan and changes nothing until it's approved.

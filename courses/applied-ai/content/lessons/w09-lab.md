@@ -33,6 +33,10 @@ Choose one of three one-page specifications: a personal **budget tracker**, a **
 5. **Read the diff**, then commit.
 6. If a change breaks things, **revert** it rather than piling fixes on top.
 
+## Optional: Put It Online
+
+If your app works and you have time, you can deploy it by following the steps under Deploying Your App in this week's lesson on the development environment. Before you do, check that the repository holds no secrets and no real personal data. This step is optional and is not part of the assignment.
+
 ## Share-Out
 
 What did the plan get wrong? What did you accept **without understanding it**? Did a commit save you from a bad change?

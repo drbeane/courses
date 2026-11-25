@@ -37,6 +37,10 @@ Choose one of three one-page specifications: a personal **budget tracker**, a **
 
 > **Instructor note.** Many students will let the assistant build everything in one go. Ask them to stop after the first feature, run it, and commit. The one-feature-at-a-time rhythm is the skill.
 
+## Optional: Put It Online
+
+If your app works and you have time, you can deploy it by following the steps under Deploying Your App in this week's lesson on the development environment. Before you do, check that the repository holds no secrets and no real personal data. This step is optional and is not part of the assignment.
+
 ## Share-Out
 
 What did the plan get wrong? What did you accept **without understanding it**? Did a commit save you from a bad change?
