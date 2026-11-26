@@ -29,6 +29,7 @@ One-page spec provided for each. Read it before you open Claude Code, and mark a
 - An **instruction file** (`CLAUDE.md` or `AGENTS.md`) that describes the project and its rules
 - **Five or more commits**, each with a message that says what changed and why
 - A short **README** that tells someone else what the app does and how to run it
+- A **deployed copy** that works at its web address, with made-up data only
 
 ---
 
@@ -40,6 +41,7 @@ One-page spec provided for each. Read it before you open Claude Code, and mark a
 4. Run it after every change
 5. Read the diff, then commit
 6. Bad change? **Revert**
+7. When it works, **deploy** it and test it again
 
 ---
 
@@ -62,7 +64,7 @@ One-page spec provided for each. Read it before you open Claude Code, and mark a
 
 ## Assignment: First App From a Spec
 
-Submit: repository link (instruction file, 5+ commits, README) and 300-word reflection on what you reviewed and what you accepted without understanding
+Submit: repository link (instruction file, 5+ commits, README), a link to the deployed app, and 300-word reflection on what you reviewed and what you accepted without understanding
 
 - **500 extension:** build the same feature with GitHub Copilot Student; compare process, quality, usage
 - About 3–4 hours

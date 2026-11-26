@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI Week 9 lab requires deployment
+
+- The W9 assignment now requires a deployed copy of the app and its link, replacing the optional step. Updated the lab, deck, week outline and assignments overview.
+
 ## 2026-11-25: Widget showing each surface's screen
 
 - New widget "What Each Surface Looks Like" (`widgets/surface-screens.html`) in the W1 AI Surfaces lesson and deck, after the surfaces table. It rebuilds the eight screens of the "AI Tool Types" slide artifact in responsive HTML, using the course's surface names. A closing disclaimer line was then removed at Robbie's request.

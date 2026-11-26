@@ -13,7 +13,7 @@ _All assignments in one place. Details, including the COSC-500 extension for eac
 | 5 | Data-to-deliverable package | Report with charts, 5-slide deck, labeled generated image, verification log | Methods appendix | 4 h |
 | 6 | Folder-scale delegation task | Task brief, plan with edits, approvals log, outputs, review memo | Minimal vs detailed brief comparison | 4 h |
 | 7 | Write and test a skill | Skill files, 3 test runs, change log | Classmate usability test and revision | 3–4 h |
-| 9 | First app from a spec | Repository with instruction file, 5+ commits, README, reflection | Same feature with GitHub Copilot Student, compared | 3–4 h |
+| 9 | First app from a spec | Repository with instruction file, 5+ commits, README; deployed app link; reflection | Same feature with GitHub Copilot Student, compared | 3–4 h |
 | 10 | Spec-driven build with tests | Repository, test results per step, review log of 5+ changes | Mid-project requirement change | 4–5 h |
 | 11 | First API program with tool use | Code, 3 runs with token usage and cost, explanation of a tool-use round trip | Second vendor or local model | 3–4 h |
 | 12 | Mini RAG app, MCP server, or tool evaluation (choose a track) | Build or evaluation, 15+ case test set, results, failure discussion | Model and code grading with agreement check | 4–5 h |

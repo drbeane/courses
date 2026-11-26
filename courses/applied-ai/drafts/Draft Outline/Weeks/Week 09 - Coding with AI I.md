@@ -10,6 +10,7 @@ Students will be able to:
 - Explain why a coding assistant with access to the repository, terminal, and tests beats copying code from a chat window.
 - Use plan mode, permission settings, an AGENTS.md or CLAUDE.md file, and context and usage commands in a repository.
 - Commit work in small steps and roll back a bad change.
+- Deploy a simple web app and say what becomes public.
 
 ## Before class
 - Claude Academy: **Claude Code 101**.
@@ -31,7 +32,7 @@ Students will be able to:
 - 10 min: Share-out. What did the plan get wrong?
 
 ## Assignment: First app from a spec
-Build a small application from a one-page specification (for example, a personal budget tracker, a flashcard app, or a course-planner web page). Requirements: an instruction file, at least five commits with meaningful messages, and a short README. Submit the repository link and a 300-word reflection on what you reviewed and what you accepted without understanding.
+Build a small application from a one-page specification (for example, a personal budget tracker, a flashcard app, or a course-planner web page). Requirements: an instruction file, at least five commits with meaningful messages, a short README, and a deployed copy of the app. Submit the repository link, a link to the deployed app, and a 300-word reflection on what you reviewed and what you accepted without understanding.
 - **500 extension:** build the same feature with GitHub Copilot Student and compare process, quality, and usage consumed.
 - Estimated time: 3–4 hours.
 

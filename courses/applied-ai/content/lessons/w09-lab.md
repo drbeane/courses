@@ -5,6 +5,7 @@
 ## What You Will Be Able to Do
 
 - Build a small application from a written specification using an instruction file, plan mode, and small commits.
+- Deploy the application and check that it works at its web address.
 
 ## Setup Clinic
 
@@ -33,9 +34,11 @@ Choose one of three one-page specifications: a personal **budget tracker**, a **
 5. **Read the diff**, then commit.
 6. If a change breaks things, **revert** it rather than piling fixes on top.
 
-## Optional: Put It Online
+## Put It Online
 
-If your app works and you have time, you can deploy it by following the steps under Deploying Your App in this week's lesson on the development environment. Before you do, check that the repository holds no secrets and no real personal data. This step is optional and is not part of the assignment.
+Once your app works on your computer, deploy it so that other people can use it. Deployment is part of the assignment. Follow the steps under Deploying Your App in this week's lesson on the development environment, and then open the web address and test the app again.
+
+Before you deploy, check that the repository holds no secrets and no real personal data, and use made-up examples in the app. A deployed page should be treated as public. If you have a reason not to publish your work publicly, talk with your instructor before you deploy.
 
 ## Share-Out
 
@@ -53,6 +56,7 @@ Build a small application from one of the provided specifications.
 
 **Submit:**
 - A link to the repository, which must include an instruction file, at least five commits with meaningful messages, and a README.
+- A link to the deployed app.
 - A 300-word reflection on what you reviewed and what you accepted without understanding.
 
 **500 extension:** build the same feature with GitHub Copilot Student and compare process, quality, and usage consumed.
