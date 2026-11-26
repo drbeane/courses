@@ -53,11 +53,11 @@ Poor answer? Ask about the **model**. Missing feature? That's the **product**.
 
 | Company | Models | Products |
 |---|---|---|
-| Anthropic | Claude | Claude app (including Cowork), Claude Code |
-| OpenAI | GPT, gpt-oss | ChatGPT, Codex |
-| Google | Gemini, Gemma | Gemini app, Gemini Notebook (formerly NotebookLM), Antigravity |
-| Microsoft | MAI | Copilot |
-| Meta | Muse, Llama | Muse personal agent |
+| Anthropic | Claude (Haiku, Sonnet, Opus, Fable) | Claude app (including Cowork), Claude Code |
+| OpenAI | GPT (Luna, Terra, Sol, Astra), gpt-oss | ChatGPT, Codex |
+| Google | Gemini (Flash, Pro), Gemma | Gemini app, Gemini Notebook (formerly NotebookLM), Antigravity |
+| Microsoft | MAI (MAI Code, MAI Image) | Copilot |
+| Meta | Muse (Muse Spark), Llama | Muse personal agent |
 | SpaceX | Grok, Composer | Grok app, Cursor |
 
 As of November 2026. Copilot also runs on OpenAI and Anthropic models.
