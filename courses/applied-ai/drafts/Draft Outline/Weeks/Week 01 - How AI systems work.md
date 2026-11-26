@@ -18,8 +18,9 @@ Students will be able to:
 3. What a large language model is
 4. AI surfaces
 5. The 4D framework
-6. Vendors, models, and effort
-7. Privacy settings
+6. Companies, models, and products
+7. Reasoning and choosing a model
+8. Privacy settings
 - Lab and assignment: Three-vendor comparison
 
 ## Class time (two 75-minute meetings)
@@ -28,7 +29,7 @@ Students will be able to:
 - 25 min: How an LLM works. Next-token prediction, sampling, training in brief, why answers vary. Live demo: same prompt run three times.
 - 20 min: The surfaces map. A tour of all eight surfaces with a 2-minute demo of each that is available, showing where the course will go.
 - 10 min: The 4D framework. Delegation as the first decision: what should you hand to AI at all?
-- 15 min: Vendors and models. Anthropic, OpenAI, Google, Microsoft, Meta, open-weight models. Model tiers and effort or "thinking" settings.
+- 15 min: Companies and models. Anthropic, OpenAI, Google, Microsoft, Meta, open-weight models. Model tiers and effort or "thinking" settings.
 - 40 min: Lab. One realistic task run on three vendors' chat tools (Claude, Copilot Chat, one free tool) and on two Claude models or effort levels.
 - 10 min: Privacy settings walk-through: training opt-outs, memory, chat history, what not to paste.
 - 10 min: Share-out. Where did the tools differ, and why?

@@ -13,7 +13,7 @@ Product details change quickly. Notes marked "verify" or "check" flag slides wit
 ## Decks
 | Week | Topics | Lab and assignment |
 |---|---|---|
-| 1 | About this course; What is AI?; What a large language model is; AI surfaces; The 4D framework; Vendors, models, and effort; Privacy settings | Three-vendor comparison |
+| 1 | About this course; What is AI?; What a large language model is; AI surfaces; The 4D framework; Companies, models, and products; Reasoning and choosing a model; Privacy settings | Three-vendor comparison |
 | 2 | Writing strong prompts; Tokens and the context window; Markdown and handoffs; Managing usage limits; Memory and custom instructions; Voice mode and dictation; Testing and revising prompts | Prompt revision log |
 | 3 | Why AI output is wrong; Verification habits; Effort, models, and the Description–Discernment loop | Fact-check and failure report |
 | 4 | AI as a writing partner; Projects; Research agents; Grounded notebooks and how tools find sources | Research brief with citation audit |

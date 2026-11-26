@@ -4,6 +4,11 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI W1 Lesson 6 split in two
+
+- "Vendors, Models, and Effort" is now "Companies, Models, and Products" (Lesson 6) and "Reasoning and Choosing a Model" (Lesson 7), with matching decks. Privacy Settings moves to Lesson 8.
+- The companies table follows Open and Closed Weights and includes open-weight providers. The paragraphs under it are cut to one.
+
 ## 2026-11-25: Applied AI W1 vendors lesson, model names and frontier labs
 
 - The companies table and its slide list model names in parentheses. "AI labs" is now "frontier labs".

@@ -26,7 +26,7 @@
     { "n": 7, "name": "Put It All Together" }
   ],
   "weeks": [
-    { "n": 1, "stage": 1, "topic": "How AI Systems Work", "focus": "Delegation", "assignment": "Three-Vendor Comparison", "topics": ["About This Course", "Introduction to AI", "Large Language Models", "AI Surfaces", "The 4D Framework", "Vendors, Models, and Effort", "Privacy Settings"] },
+    { "n": 1, "stage": 1, "topic": "How AI Systems Work", "focus": "Delegation", "assignment": "Three-Vendor Comparison", "topics": ["About This Course", "Introduction to AI", "Large Language Models", "AI Surfaces", "The 4D Framework", "Companies, Models, and Products", "Reasoning and Choosing a Model", "Privacy Settings"] },
     { "n": 2, "stage": 1, "topic": "Prompting and Context", "focus": "Description", "assignment": "Prompt Revision Log", "topics": ["Writing Strong Prompts", "Tokens and the Context Window", "Markdown and Handoffs", "Managing Usage Limits", "Memory and Custom Instructions", "Voice Mode and Dictation", "Testing and Revising Prompts"] },
     { "n": 3, "stage": 1, "topic": "Evaluating AI Output", "focus": "Discernment", "assignment": "Fact-Check and Failure Report", "topics": ["Why AI Output Is Wrong", "Verification Habits", "Effort, Models, and the Description–Discernment Loop"] },
     { "n": 4, "stage": 2, "topic": "Research and Grounded Knowledge Work", "focus": "Discernment", "assignment": "Research Brief With Citation Audit", "topics": ["AI as a Writing Partner", "Projects", "Research Agents", "Grounded Notebooks and How Tools Find Sources"] },
