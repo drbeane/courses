@@ -44,8 +44,8 @@ So when an answer is poor, ask which **model** produced it. When a feature is mi
 
 A model's **weights** are the billions of numbers it learned in training. They are what makes it that model. Vendors handle them in one of two ways:
 
-- **Closed-weight models** stay on the vendor's computers. You use them through the vendor's products, or a developer pays to send requests to them. Claude, GPT, Gemini, Grok, and Meta's Muse models are closed.
-- **Open-weight models** are released for anyone to download, run on their own hardware, and adapt.
+- **Closed-weight models** stay on the vendor's computers. You use them through the vendor's products, or through API access. Claude, GPT, Gemini, Grok, and Meta's Muse models are closed.
+- **Open-weight models** are released publicly for anyone to download, run on their own hardware, and modify.
 
 Companies known for open-weight models include DeepSeek, Alibaba, Moonshot AI, Z.ai, Mistral, and Meta. They appear in the table in the next section.
 
@@ -61,7 +61,7 @@ A handful of companies build most of the AI models and products you will meet. T
 |---|---|---|
 | Anthropic | Claude (Haiku, Sonnet, Opus, Fable) | Claude app (including Cowork), Claude Code |
 | OpenAI | GPT (Luna, Terra, Sol, Astra), gpt-oss | ChatGPT, Codex |
-| Google | Gemini (Flash, Pro), Gemma | Gemini app, Gemini Notebook (formerly NotebookLM), Antigravity |
+| Google | Gemini (Flash, Pro), Gemma | Gemini app, Gemini Notebook, Antigravity |
 | Microsoft | MAI (MAI Code, MAI Image) | Copilot |
 | Meta | Muse (Muse Spark), Llama | Muse personal agent |
 | SpaceX | Grok, Composer | Grok app, Cursor |
@@ -75,7 +75,7 @@ DeepSeek, Alibaba, Moonshot AI, and Z.ai are based in China, and Mistral is base
 
 ## Model Tiers
 
-Most vendors offer a family of models at different sizes. Anthropic's and OpenAI's families each have four:
+Most vendors offer a family of models at different sizes. Anthropic's and OpenAI's families each have four (at the time of this writing):
 
 | Tier | Trade-off | Claude (Anthropic) | GPT (OpenAI) |
 |---|---|---|---|
