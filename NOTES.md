@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI W1 Lesson 6, how weights are used
+
+- Open and Closed Weights now says formulas use the weights to set next-token probabilities, and introduces the two release approaches by company.
+
 ## 2026-11-25: Applied AI W1 Lesson 6 wording
 
 - Closed weights: "through API access". Open weights: "released publicly" and "modify". Tiers: "at the time of this writing".

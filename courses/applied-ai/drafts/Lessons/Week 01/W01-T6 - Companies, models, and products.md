@@ -42,7 +42,7 @@ So when an answer is poor, ask which **model** produced it. When a feature is mi
 
 ## Open and Closed Weights
 
-A model's **weights** are the billions of numbers it learned in training. They are what makes it that model. Vendors handle them in one of two ways:
+A model's **weights** are the billions of numbers it learned in training. When the model processes text, formulas that use these weights determine the probability it assigns to each possible next token. The weights are what make it that model. Companies take one of two approaches toward releasing them:
 
 - **Closed-weight models** stay on the vendor's computers. You use them through the vendor's products, or through API access. Claude, GPT, Gemini, Grok, and Meta's Muse models are closed.
 - **Open-weight models** are released publicly for anyone to download, run on their own hardware, and modify.
