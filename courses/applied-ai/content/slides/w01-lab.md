@@ -7,7 +7,7 @@ COSC-300/500 Applied AI Essentials
 ## Before the Lab
 
 - Complete Claude Academy: **AI Fluency: Framework and foundations**, lessons 1–5.
-- Set up your tools: **Claude Pro**, Maryville **Copilot Chat**, and free **NotebookLM**.
+- Set up your tools: **Claude Pro**, Maryville **Copilot Chat**, and free **Gemini Notebook**.
 - Install the **Claude desktop app**. You'll need it from week 6 on.
 - Pick a task from your own coursework or job to bring to the lab.
 

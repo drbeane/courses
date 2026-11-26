@@ -41,7 +41,7 @@ Audit at least **10**. Start with the claims your brief depends on most.
 
 - 2-page brief using your project and a research run
 - Audit table: 10+ citations, classified
-- Short note: project vs NotebookLM on the same sources
+- Short note: project vs Gemini Notebook on the same sources
 - **500 extension:** 1 page on citation reliability, drawing on 2+ published studies
 - About 4 hours
 

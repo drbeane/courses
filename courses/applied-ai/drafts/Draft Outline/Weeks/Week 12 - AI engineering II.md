@@ -29,7 +29,7 @@ Students will be able to:
 ## Assignment: Mini RAG app or MCP server, with an eval (choose one track)
 - **Track A (RAG):** a question-answering program over 10–30 documents of your choice that cites its sources.
 - **Track B (MCP):** a small MCP server exposing two tools or resources (for example, your course schedule or a local dataset), connected to Claude.
-- **Track C (analysis, for students who prefer not to build):** design and run an evaluation of an existing tool (a Claude project, NotebookLM, or your week 7 skill) on a 20-item test set.
+- **Track C (analysis, for students who prefer not to build):** design and run an evaluation of an existing tool (a Claude project, Gemini Notebook, or your week 7 skill) on a 20-item test set.
 - All tracks: a test set of at least 15 cases, results, and a 400-word discussion of failures.
 - **500 extension:** both model-based and code-based grading, with a check of the model grader's agreement with your own judgment on a sample.
 - Estimated time: 4–5 hours.

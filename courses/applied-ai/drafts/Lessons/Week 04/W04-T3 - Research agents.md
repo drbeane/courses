@@ -2,7 +2,7 @@
 
 **COSC-300/500 Applied AI Essentials** · 4D focus: Discernment
 
-> **Instructor note: preparation.** Run a research request yourself the day before on a topic you know, and find at least one citation that doesn't support its claim; it makes a strong example. Set up a NotebookLM notebook with three or four sources. Check NotebookLM's current name: Google's documentation has begun calling it Gemini Notebook. This lab uses Claude Pro's Research feature; Copilot Chat (Basic) and Claude Free have no research agent. Timing: 15 min research agents, 10 min notebooks, 10 min retrieval concept, 40 min lab.
+> **Instructor note: preparation.** Run a research request yourself the day before on a topic you know, and find at least one citation that doesn't support its claim; it makes a strong example. Set up a notebook in Gemini Notebook with three or four sources. This lab uses Claude Pro's Research feature; Copilot Chat (Basic) and Claude Free have no research agent. Timing: 15 min research agents, 10 min notebooks, 10 min retrieval concept, 40 min lab.
 
 ## What You Will Be Able to Do
 

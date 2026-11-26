@@ -39,7 +39,7 @@
 ## Week 4: Research and Grounded Knowledge Work
 | Resource | Type | Length | Why |
 |---|---|---|---|
-| [NotebookLM help](https://support.google.com/notebooklm/) | Vendor docs | 30 min | Setup and source limits for the grounded-notebook comparison |
+| [Gemini Notebook help](https://support.google.com/gemininotebook/) | Vendor docs | 30 min | Setup and source limits for the grounded-notebook comparison |
 | Tow Center study, original in the [Columbia Journalism Review](https://www.cjr.org/tow_center/) | Article | 20 min | Method details for the citation audit; 500 extension source |
 | [Claude support: projects and research](https://support.claude.com/) | Vendor docs | 20 min | How projects, project memory, and research work on Pro |
 

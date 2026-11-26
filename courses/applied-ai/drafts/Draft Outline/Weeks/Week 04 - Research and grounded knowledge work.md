@@ -25,12 +25,12 @@ Students will be able to:
 - 20 min: Projects. Instructions, knowledge files, project memory. Demo: a project for a course you are taking.
 - 35 min: Guided practice. Students build a project for their research topic.
 - 15 min: Research agents. How a multi-step research run works; what the report includes; where it goes wrong.
-- 10 min: Grounded notebooks. NotebookLM and Copilot Notebooks: closed-book answers from your sources. Compare with projects.
+- 10 min: Grounded notebooks. Gemini Notebook and Copilot Notebooks: closed-book answers from your sources. Compare with projects.
 - 10 min: Concept: retrieval and grounding (no building yet; that comes in week 12).
 - 40 min: Lab. Run a research agent on your topic; start tracing its citations.
 
 ## Assignment: Research brief with citation audit
-Produce a 2-page research brief on your topic using a project and a research run. Then audit the research report: check at least 10 citations and classify each (supports the claim, partly supports, does not support, fabricated or inaccessible). Submit the brief, the audit table, and a short note comparing the project with NotebookLM on the same sources.
+Produce a 2-page research brief on your topic using a project and a research run. Then audit the research report: check at least 10 citations and classify each (supports the claim, partly supports, does not support, fabricated or inaccessible). Submit the brief, the audit table, and a short note comparing the project with Gemini Notebook on the same sources.
 - **500 extension:** a 1-page discussion of citation reliability, drawing on at least two published studies of AI citation accuracy.
 - Estimated time: 4 hours.
 
@@ -39,7 +39,7 @@ Authorship, disclosure, plagiarism, and copyright in AI-assisted writing.
 
 ## Other resources
 From `03 - Supplementary Resources` (links there):
-- NotebookLM help
+- Gemini Notebook help
 - Tow Center study (original, CJR), for the 500 extension
 
 ## Instructor notes

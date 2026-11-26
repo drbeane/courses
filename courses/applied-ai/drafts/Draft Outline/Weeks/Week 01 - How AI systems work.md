@@ -10,7 +10,7 @@ Students will be able to:
 
 ## Before class
 - Claude Academy: **AI Fluency: Framework and foundations**, lessons 1–5 (introduction, the 4D framework, generative AI fundamentals, capabilities and limitations).
-- Set up accounts: Claude Pro, Maryville Copilot Chat, a free NotebookLM account. Install the Claude desktop app.
+- Set up accounts: Claude Pro, Maryville Copilot Chat, a free Gemini Notebook account. Install the Claude desktop app.
 
 ## Topics
 1. About this course

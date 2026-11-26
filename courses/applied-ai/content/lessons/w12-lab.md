@@ -11,7 +11,7 @@
 
 - **Track A, RAG.** A question-answering program over 10–30 documents of your choice that cites its sources.
 - **Track B, MCP.** A small MCP server exposing two tools or resources (for example, your course schedule or a local dataset), connected to Claude.
-- **Track C, analysis.** For students who prefer not to build: design and run an evaluation of an existing tool, such as a Claude project, NotebookLM, or your week 7 skill, on a 20-item test set.
+- **Track C, analysis.** For students who prefer not to build: design and run an evaluation of an existing tool, such as a Claude project, Gemini Notebook, or your week 7 skill, on a 20-item test set.
 
 Every track requires a test set of at least 15 cases, your results, and a discussion of failures.
 

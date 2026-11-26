@@ -35,7 +35,7 @@ Produce a 2-page research brief on your topic using your project and a research 
 **Submit:**
 - The brief.
 - An audit table of at least 10 citations, each classified as above.
-- A short note comparing your project with NotebookLM on the same sources: what each did well and badly.
+- A short note comparing your project with Gemini Notebook on the same sources: what each did well and badly.
 
 **500 extension:** a 1-page discussion of citation reliability in AI research tools, drawing on at least two published studies of AI citation accuracy.
 

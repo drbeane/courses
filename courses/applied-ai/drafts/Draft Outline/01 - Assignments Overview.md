@@ -9,7 +9,7 @@ _All assignments in one place. Details, including the COSC-500 extension for eac
 | 1 | Three-vendor comparison | Comparison table, prompts, 400-word evaluation | Relate findings to a published model or system card | 3 h |
 | 2 | Prompt revision log | 5 test inputs, 4 prompt versions with outputs, reflection | Rubric scoring of each version | 3 h |
 | 3 | Fact-check and failure report | Annotated explainer with sources; two documented failures | Test whether more effort or another model fixes each failure | 3 h |
-| 4 | Research brief with citation audit | 2-page brief, 10-citation audit, project vs NotebookLM note | Literature-based discussion of citation reliability | 4 h |
+| 4 | Research brief with citation audit | 2-page brief, 10-citation audit, project vs Gemini Notebook note | Literature-based discussion of citation reliability | 4 h |
 | 5 | Data-to-deliverable package | Report with charts, 5-slide deck, labeled generated image, verification log | Methods appendix | 4 h |
 | 6 | Folder-scale delegation task | Task brief, plan with edits, approvals log, outputs, review memo | Minimal vs detailed brief comparison | 4 h |
 | 7 | Write and test a skill | Skill files, 3 test runs, change log | Classmate usability test and revision | 3–4 h |

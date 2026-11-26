@@ -22,7 +22,7 @@ Items the lesson review left open, because they depend on a product, a price or 
 |---|---|---|---|---|
 | 1 | Memory, custom instructions and temporary chat: the lesson describes them without menu paths, and the steps callout is generic. Check against the current Claude and ChatGPT settings, and decide whether to add exact steps. | W02-T5 lesson and deck | open | |
 | 2 | Context window sizes ("hundreds of thousands of tokens, and for some models a million or more"). Check against the vendors' model pages. | W02-T2 lesson and deck | open | |
-| 3 | Notebook features (citations to passages, refusals, study materials) and the NotebookLM product name. Check against the current product. | W04-T4 lesson and deck | open | |
+| 3 | Notebook features (citations to passages, refusals, study materials). Check against the current product. | W04-T4 lesson and deck | open | |
 | 4 | The claim that published tests found a meaningful share of AI citations unsupported. It names no study. Add a source or reword. | W04-T3 lesson | open | |
 | 5 | Generative media: the statement that Claude does not generate raster images, and the note on U.S. copyright for AI-generated work. | W05-T3 lesson and deck | open | |
 | 6 | Hand-off wording: whether a handed-off task runs on the vendor's servers or needs the computer left on, for the tools used in class. | W08-T2 lesson | open | |

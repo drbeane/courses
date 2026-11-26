@@ -17,7 +17,7 @@ Everything in this week is a form of grounding. A project grounds answers in you
 
 ## Grounded Notebooks
 
-A **grounded notebook** answers only from the sources you add to it. It doesn't search the open web, and it's designed to stay faithful to your documents. Examples are **NotebookLM**, which is free, and **Copilot Notebooks**, which on Maryville accounts allow up to 50 sources.
+A **grounded notebook** answers only from the sources you add to it. It doesn't search the open web, and it's designed to stay faithful to your documents. Examples are **Gemini Notebook** (formerly NotebookLM), which is free, and **Copilot Notebooks**, which on Maryville accounts allow up to 50 sources.
 
 What a notebook typically gives you:
 

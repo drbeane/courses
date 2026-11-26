@@ -9,7 +9,7 @@
 ## Before the Lab
 
 - Claude Academy: **AI Fluency: Framework and foundations**, lessons 1–5.
-- Set up your accounts: **Claude Pro**, your Maryville **Copilot Chat**, and a free **NotebookLM** account.
+- Set up your accounts: **Claude Pro**, your Maryville **Copilot Chat**, and a free **Gemini Notebook** account.
 - Install the **Claude desktop app**.
 - Choose a realistic task from your own coursework or job to use in the lab.
 

@@ -8,7 +8,7 @@ COSC-300/500 Applied AI Essentials
 
 - **A · RAG**: Q&A over 10–30 of your documents, with citations
 - **B · MCP**: a small MCP server with two tools or resources, connected to Claude
-- **C · Analysis**: evaluate an existing tool (a project, NotebookLM, or your week 7 skill) on a 20-item test set
+- **C · Analysis**: evaluate an existing tool (a project, Gemini Notebook, or your week 7 skill) on a 20-item test set
 
 All tracks: 15+ test cases, results, discussion of failures.
 

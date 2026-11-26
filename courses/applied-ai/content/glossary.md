@@ -711,13 +711,13 @@ Research tools often can't read paywalled sources, so their reports lean on what
 
 ## Grounded notebook
 
-A tool, such as NotebookLM, that answers only from sources you supply and links each answer to the passage it came from.
+A tool, such as Gemini Notebook (formerly NotebookLM), that answers only from sources you supply and links each answer to the passage it came from.
 
 Because answers point back to your sources, they are easy to check, and the tool is less likely to invent outside facts. It can still misread a passage or miss relevant material, and it can't tell you what your sources leave out.
 
 ### Resources
 
-- [NotebookLM help](https://support.google.com/notebooklm/)
+- [Gemini Notebook help](https://support.google.com/gemininotebook/)
 
 ## Retrieval
 
