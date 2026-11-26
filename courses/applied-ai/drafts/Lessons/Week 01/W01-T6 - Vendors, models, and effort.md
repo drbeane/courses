@@ -16,29 +16,31 @@
 
 ## Company, Model, and Product
 
-Names like ChatGPT and Claude can mean a company, a model, or an app, depending on who is talking. Keeping the three apart helps when you compare tools or work out why an answer went wrong.
+Names like ChatGPT and Claude can mean a company, a model, or an app, depending on who is talking. Keeping the three apart helps you compare tools and understand what you are actually choosing.
 
 | | What it is | Examples |
 |---|---|---|
-| **Company** | The vendor that builds and sells the technology | Anthropic, OpenAI, Google, Microsoft, Meta, xAI (now part of SpaceX) |
-| **Model** | The trained system that reads your request and writes the reply | Claude Opus, Claude Sonnet, GPT Sol, GPT Terra, Gemini, Grok |
+| **Company** | The business that builds and sells the technology | Anthropic, OpenAI, Google, Microsoft, Meta, xAI (now part of SpaceX) |
+| **Model** | A large language model (LLM), the trained system that reads your request and writes the reply | Claude Opus, Claude Sonnet, GPT Sol, GPT Terra, Gemini, Grok |
 | **Product** | The software you open, which you use to send prompts to a model | The Claude app, Claude Code, ChatGPT, Codex, Gemini, NotebookLM, Copilot, Cursor, Grok |
+
+You will also see these companies called vendors, and the ones that train leading models are often called AI labs.
 
 ### The Model and the Product Do Different Jobs
 
-The **product** is everything around the model: the window you type in, the buttons and menus, file upload, web search, memory, and any connections to your files or other apps. The **model** is the part that reads your request, decides what to do, and writes the reply.
+The **product** is everything around the model: the window you type in, the buttons and menus, file upload, web search, memory, and any connections to your files or other apps. The **model**, which in this course means a large language model (LLM), reads your request, decides what to do, and writes the reply.
 
 The two work together. When you ask a question that needs current information, the model might decide a web search would help and choose what to search for. The product runs the search and hands the results back, and the model reads them and writes the answer.
 
-Companies split this work in different ways. Some, such as Anthropic, OpenAI, and Google, build both models and products. Others build products on models made by someone else. Cursor started that way, as a coding tool built on Anthropic's and OpenAI's models. And some models, especially open-weight ones, end up inside products their makers had nothing to do with.
+Companies split this work in different ways. Some, such as Anthropic, OpenAI, and Google, build both models and products. Others build products on models made by someone else. Cursor started that way, as a coding tool built on Anthropic's and OpenAI's models. It later began training its own model, Composer, and in 2026 SpaceX, which makes Grok, bought it. Cursor now belongs to a company that builds both models and products, and Cursor and SpaceX have developed Grok models together. And some models, especially open-weight ones, end up inside products their makers had nothing to do with.
 
-A product is also not quite the same as a surface. In the AI Surfaces lesson, a surface is the environment where you interact with an AI, such as a chat app or a coding assistant. A product is one specific tool that provides such an environment: ChatGPT is a chat app, and Cursor is a coding assistant.
+A product is also not quite the same as a surface. A surface is a kind of environment where you interact with an AI, while a product is a particular piece of software that provides one or more of them. For example, ChatGPT provides a chat assistant, and the Claude app provides both a chat assistant and Cowork, a local agent.
 
 ### Models and Products Don't Line Up One to One
 
 - **One product can use several models.** Many products let you choose. The Claude app offers Claude models at each size, from Haiku to Fable. ChatGPT offers several of OpenAI's GPT models, and which ones you see depends on your plan. Both of these offer only their own company's models. Other products, described below, offer models from several companies.
 - **One model can sit inside several products.** The same Claude model answers you in the Claude app, in Claude Code, and inside other companies' tools, such as Microsoft's Copilot.
-- **A product can use another company's models.** Microsoft's Copilot runs on models from OpenAI and, in some configurations, Anthropic. Cursor, a coding assistant, offers models from Anthropic, Google, and SpaceX, along with its own Composer model. It also offered OpenAI's models until SpaceX bought Cursor in 2026; OpenAI then announced it would stop supplying them. The models a product offers can change for business reasons that have nothing to do with how good the models are.
+- **A product can use another company's models.** Microsoft's Copilot runs on models from OpenAI and, in some configurations, Anthropic. Cursor, a coding assistant, offers models from Anthropic, Google, and SpaceX, along with its own Composer model. After SpaceX bought Cursor, OpenAI announced that it would stop supplying its models to it. The models a product offers can change for business reasons that have nothing to do with how good the models are.
 
 So when an answer is poor, ask which **model** produced it. When a feature is missing, such as file upload or web search, that is usually the **product**. The AI Surfaces lesson was about products and the kinds of tools they are. This lesson is about the models inside them.
 

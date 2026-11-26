@@ -12,6 +12,7 @@ COSC-300/500 Applied AI Essentials
 
 ## A Next-Token Predictor
 
+- In this course, "model" means a **large language model (LLM)** unless we say otherwise.
 - Text is split into **tokens**, which are words or pieces of words.
 - The model predicts **the next token**, adds it to the text, then predicts the next, and the next.
 - Each prediction is a probability spread over every token the model knows.

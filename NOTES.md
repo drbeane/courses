@@ -4,6 +4,11 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI W1 vendors and LLM edits
+
+- Vendors lesson: new intro reason, company defined first with "vendor" and "AI lab" noted, LLM named for "model", Cursor and Grok history added, product versus surface rewritten, repeated Cursor purchase line trimmed.
+- Large language models lesson, both decks and the glossary: "model" means a large language model unless stated.
+
 ## 2026-11-25: Applied AI W1 vendors lesson, small wording fixes
 
 - Product is now "the software you open, which you use to send prompts to a model" (table, key term, glossary). In the web search example, the model "might decide" to search.

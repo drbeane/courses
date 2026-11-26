@@ -15,7 +15,7 @@ COSC-300/500 Applied AI Essentials
 | | What it is | Examples |
 |---|---|---|
 | **Company** | Builds and sells the technology | Anthropic, OpenAI, Google, xAI |
-| **Model** | Reads your request, writes the reply | Claude Sonnet, GPT Sol, Gemini, Grok |
+| **Model** | A large language model (LLM): reads your request, writes the reply | Claude Sonnet, GPT Sol, Gemini, Grok |
 | **Product** | The software you open | Claude app, ChatGPT, Copilot, Cursor |
 
 "I asked ChatGPT" names a product. The answer came from whichever model that product was using at the time.

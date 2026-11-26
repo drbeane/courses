@@ -12,6 +12,8 @@
 
 The AI systems in this course are built on **large language models**, or LLMs. Understanding roughly how they work will help you predict where they succeed and where they fail.
 
+There are other kinds of models, such as ones that generate images or turn speech into text. In this course, "model" means a large language model unless we say otherwise.
+
 ## A Next-Token Predictor
 
 An LLM reads and writes text as **tokens**, which are small pieces of text. Long or unusual words are split into several tokens, and in English a token averages about three-quarters of a word. Although a token is not typically a single word, for our purposes it is fine to think of tokens as words and pieces of punctuation. Different models split text into tokens in different ways. The [Tokenization](/appendix/tokenization/) page in the Appendix provides more information about tokenization, and includes a [Tokenizer Explorer](/demos/tokenizer/) demo.

@@ -222,6 +222,8 @@ Vendors differ in their models, their products, their prices, and their policies
 
 The trained system that reads your text and writes the reply, such as a particular version of Claude or GPT.
 
+There are other kinds of models, such as ones that generate images or turn speech into text. In this course, "model" means a large language model unless we say otherwise.
+
 A model is separate from the product you use to reach it. When an answer is poor, the model is often the cause; when a feature is missing, such as file upload or web search, the product usually is. Vendors release new model versions often, and a product may let you choose among several.
 
 ### Resources
