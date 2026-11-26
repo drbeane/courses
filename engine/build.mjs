@@ -372,7 +372,8 @@ ${slides}
   ${s.lesson ? `<a href="/lessons/${s.id}/">Read the lesson</a>` : ''}
   <span class="grow"></span>
   <button id="prev" aria-label="Previous slide">Back</button>
-  <span id="count" aria-live="polite"></span>
+  <button id="pick" aria-expanded="false" aria-controls="menu" title="Choose a slide (G)"><span id="count" aria-live="polite"></span> <span aria-hidden="true">&#9652;</span></button>
+  <ol id="menu" aria-label="Slides" hidden></ol>
   <button id="next" aria-label="Next slide">Next</button>
   <button id="full">Full screen</button>
 </div>

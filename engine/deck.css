@@ -10,7 +10,9 @@
 .s5 { --c: var(--s5); } .s6 { --c: var(--s6); } .s7 { --c: var(--s7); }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
-body { margin: 0; background: #0e1118; overflow: hidden; font-family: var(--display); color: var(--ink); }
+/* body clips the 1280px stage, which would otherwise widen the page on a phone. */
+html { overflow: hidden; }
+body { position: relative; margin: 0; background: #0e1118; overflow: hidden; font-family: var(--display); color: var(--ink); }
 
 .stage { position: absolute; left: 50%; top: calc(50% - 22px); width: 1280px; height: 720px; margin: -360px 0 0 -640px; transform-origin: center; }
 .slide { display: none; position: absolute; inset: 0; padding: 64px 88px 56px 104px; background: #fff; border-left: 16px solid var(--c); font-size: 30px; line-height: 1.38; overflow: hidden; flex-direction: column; justify-content: center; }
@@ -47,13 +49,30 @@ body { margin: 0; background: #0e1118; overflow: hidden; font-family: var(--disp
 .bar button { font: inherit; color: inherit; background: none; border: 1px solid #3a4152; border-radius: 4px; padding: 4px 12px; cursor: pointer; }
 .bar button:hover { color: #fff; border-color: #8089a0; }
 .bar a:focus-visible, .bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
-#count { min-width: 4.5em; text-align: center; font-variant-numeric: tabular-nums; }
+#count { display: inline-block; min-width: 4.5em; text-align: center; font-variant-numeric: tabular-nums; }
+/* The slide menu, opened from the slide count. */
+#menu { position: fixed; right: 16px; bottom: 48px; width: 360px; max-width: calc(100vw - 32px); max-height: calc(100vh - 64px); overflow: auto; margin: 0; padding: 6px; list-style: none; background: #181c26; border: 1px solid #3a4152; border-radius: 6px; box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5); z-index: 1; }
+#menu[hidden] { display: none; }
+.bar #menu button { display: flex; gap: 10px; width: 100%; padding: 6px 8px; border: 0; text-align: left; line-height: 1.35; }
+.bar #menu button:hover, .bar #menu button:focus-visible { background: #2a3040; color: #fff; }
+.bar #menu button:focus-visible { outline-offset: -2px; }
+.bar #menu button[aria-current] { background: #3a4357; color: #fff; font-weight: 700; }
+#menu span { flex: none; width: 1.8em; text-align: right; font-variant-numeric: tabular-nums; opacity: 0.65; }
+/* Phones: keep the bar on one screen width. Full screen is left to the F key there. */
+@media (max-width: 480px) {
+  .bar { gap: 6px; padding: 0 8px; font-size: 12px; white-space: nowrap; }
+  .bar button { padding: 4px 8px; }
+  #count { min-width: 0; }
+  #full { display: none; }
+  #menu { right: 8px; max-width: calc(100vw - 16px); }
+}
 :fullscreen .bar { opacity: 0; transition: opacity 0.2s; }
 :fullscreen .bar:hover, :fullscreen .bar:focus-within { opacity: 1; }
 :fullscreen .stage { top: 50%; }
 
 @media print {
   @page { size: 1280px 720px; margin: 0; }
+  html { overflow: visible; }
   body { overflow: visible; background: #fff; }
   .bar { display: none; }
   .stage { position: static; margin: 0; transform: none !important; height: auto; }
