@@ -212,11 +212,11 @@ It is broader than knowing how to write prompts. It includes deciding when to us
 - [AI Fluency: Framework & Foundations](https://academy.claude.com/courses/ai-fluency-framework-foundations) (Claude Academy)
 - [AI Fluency for Students](https://academy.claude.com/courses/ai-fluency-for-students) (Claude Academy)
 
-## Vendor
+## Company
 
-A company that builds or sells AI models or products, such as Anthropic, OpenAI, Google, Microsoft, or Meta.
+A business that builds or sells AI models or products, such as Anthropic, OpenAI, Google, Microsoft, or Meta. Companies of this kind are also called vendors.
 
-Vendors differ in their models, their products, their prices, and their policies on privacy and training, so the choice of vendor matters as well as the choice of model. Some vendors build their own models; others, such as many app makers, build products on another company's models.
+Companies differ in their models, their products, their prices, and their policies on privacy and training, so the choice of company matters as well as the choice of model. Some companies build their own models; others, such as many app makers, build products on another company's models.
 
 ## Model
 
@@ -224,7 +224,7 @@ The trained system that reads your text and writes the reply, such as a particul
 
 There are other kinds of models, such as ones that generate images or turn speech into text. In this course, "model" means a large language model unless we say otherwise.
 
-A model is separate from the product you use to reach it. When an answer is poor, the model is often the cause; when a feature is missing, such as file upload or web search, the product usually is. Vendors release new model versions often, and a product may let you choose among several.
+A model is separate from the product you use to reach it. When an answer is poor, the model is often the cause; when a feature is missing, such as file upload or web search, the product usually is. Companies release new model versions often, and a product may let you choose among several.
 
 ### Resources
 
