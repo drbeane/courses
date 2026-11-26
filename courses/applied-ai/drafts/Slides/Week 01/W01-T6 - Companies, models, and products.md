@@ -30,7 +30,7 @@ Some companies build models, some build products, and many build both.
 
 - The **product** is everything around the model: the window, menus, file upload, web search, memory, and connections to other apps.
 - The **model** reads the request, decides what to do, and writes the reply.
-- They work together. In a web search, the model decides to search and what to search for; the product actually runs the search.
+- They work together. In a web search, the model might decide to search and choose what to search for; the product actually runs the search.
 - Some companies make both. Others build products on another company's models.
 
 <!-- A product is one specific tool on a surface: ChatGPT is a chat app, Cursor is a coding assistant. -->

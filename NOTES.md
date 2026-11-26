@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI W1 Lesson 6, shorter model and product section
+
+- The two subsections are now one of about 180 words. The slide says the model "might decide" to search.
+
 ## 2026-11-25: Slide menu and more keys in the slide view (all courses)
 
 - The slide count in the deck bar is now a button that opens a list of slide titles. G opens it too; the arrows, Home, End, Enter and Esc work inside it.

@@ -24,21 +24,16 @@ Some companies build models, some build products, and many build both. The same 
 
 ### The Model and the Product Do Different Jobs
 
-The **product** is everything around the model: the window you type in, the buttons and menus, file upload, web search, memory, and any connections to your files or other apps. The **model**, which in this course means a large language model (LLM), reads your request, decides what to do, and writes the reply.
+The **product** is the software around the model, including the window you type in, file upload, web search, and memory. The **model**, a large language model (LLM), reads your request and writes the reply. The two work together. For example, the model might decide that a web search would help, and the product then runs the search and returns the results.
 
-The two work together. When you ask a question that needs current information, the model might decide a web search would help and choose what to search for. The product runs the search and hands the results back, and the model reads them and writes the answer.
+A surface is a kind of environment, such as a chat assistant, while a product is a particular piece of software that provides one or more of them.
 
-Companies split this work in different ways. Anthropic, OpenAI, and Google, for example, build both. Cursor, by contrast, started as a coding tool built on Anthropic's and OpenAI's models. It later began training its own model, Composer, and in 2026 SpaceX, which makes Grok, bought it. Cursor now belongs to a company that builds both models and products, and Cursor and SpaceX have developed Grok models together. And some models, especially open-weight ones, end up inside products their makers had nothing to do with.
+Some companies, such as Anthropic, OpenAI, and Google, build both. Even so, models and products don't line up one to one, in the following two ways:
 
-A product is also not quite the same as a surface. A surface is a kind of environment where you interact with an AI, while a product is a particular piece of software that provides one or more of them. For example, ChatGPT provides a chat assistant, and the Claude app provides both a chat assistant and Cowork, a local agent.
+- One product can offer several models, sometimes from other companies. Cursor, a coding assistant, offers its own Composer model along with models from other companies.
+- One model can appear in several products. Claude models answer you in the Claude app and in Claude Code, and also in some configurations of Microsoft's Copilot.
 
-### Models and Products Don't Line Up One to One
-
-- **One product can use several models.** Many products let you choose. The Claude app offers Claude models at each size, from Haiku to Fable. ChatGPT offers several of OpenAI's GPT models, and which ones you see depends on your plan. Both of these offer only their own company's models. Other products, described below, offer models from several companies.
-- **One model can sit inside several products.** The same Claude model answers you in the Claude app, in Claude Code, and inside other companies' tools, such as Microsoft's Copilot.
-- **A product can use another company's models.** Microsoft's Copilot runs on models from OpenAI and, in some configurations, Anthropic. Cursor, a coding assistant, offers models from Anthropic, Google, and SpaceX, along with its own Composer model. After SpaceX bought Cursor, OpenAI announced that it would stop supplying its models to it. The models a product offers can change for business reasons that have nothing to do with how good the models are.
-
-So when an answer is poor, ask which **model** produced it. When a feature is missing, such as file upload or web search, that is usually the **product**. The AI Surfaces lesson was about products and the kinds of tools they are. This lesson is about the models inside them.
+When an answer is poor, ask which **model** produced it. When a feature such as file upload is missing, the cause is usually the **product**.
 
 ## Open and Closed Weights
 
