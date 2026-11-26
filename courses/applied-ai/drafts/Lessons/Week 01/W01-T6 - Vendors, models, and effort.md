@@ -26,13 +26,15 @@ Names like ChatGPT and Claude can mean a company, a model, or an app, depending 
 
 You will also see these companies called vendors, and the ones that train leading models are often called AI labs.
 
+Some companies build models, some build products, and many build both. The same name can refer to more than one of these: Claude is a family of models, and it is also the name of an app.
+
 ### The Model and the Product Do Different Jobs
 
 The **product** is everything around the model: the window you type in, the buttons and menus, file upload, web search, memory, and any connections to your files or other apps. The **model**, which in this course means a large language model (LLM), reads your request, decides what to do, and writes the reply.
 
 The two work together. When you ask a question that needs current information, the model might decide a web search would help and choose what to search for. The product runs the search and hands the results back, and the model reads them and writes the answer.
 
-Companies split this work in different ways. Some, such as Anthropic, OpenAI, and Google, build both models and products. Others build products on models made by someone else. Cursor started that way, as a coding tool built on Anthropic's and OpenAI's models. It later began training its own model, Composer, and in 2026 SpaceX, which makes Grok, bought it. Cursor now belongs to a company that builds both models and products, and Cursor and SpaceX have developed Grok models together. And some models, especially open-weight ones, end up inside products their makers had nothing to do with.
+Companies split this work in different ways. Anthropic, OpenAI, and Google, for example, build both. Cursor, by contrast, started as a coding tool built on Anthropic's and OpenAI's models. It later began training its own model, Composer, and in 2026 SpaceX, which makes Grok, bought it. Cursor now belongs to a company that builds both models and products, and Cursor and SpaceX have developed Grok models together. And some models, especially open-weight ones, end up inside products their makers had nothing to do with.
 
 A product is also not quite the same as a surface. A surface is a kind of environment where you interact with an AI, while a product is a particular piece of software that provides one or more of them. For example, ChatGPT provides a chat assistant, and the Claude app provides both a chat assistant and Cowork, a local agent.
 
@@ -44,16 +46,20 @@ A product is also not quite the same as a surface. A surface is a kind of enviro
 
 So when an answer is poor, ask which **model** produced it. When a feature is missing, such as file upload or web search, that is usually the **product**. The AI Surfaces lesson was about products and the kinds of tools they are. This lesson is about the models inside them.
 
-## Who Makes the Models
+## Who Makes the Models and Products
 
-A handful of companies build most of the AI models you will meet:
+A handful of companies build most of the AI models and products you will meet. The table below lists several of the major ones as of November 2026, beginning with Anthropic, whose Claude is the main tool in this course.
 
-- **Anthropic** makes the Claude models, the Claude app, and Claude Code. Claude is the main tool in this course.
-- **OpenAI** makes the GPT models, ChatGPT, and the Codex coding agent.
-- **Google** makes the Gemini models, the Gemini app, and NotebookLM.
-- **Microsoft** makes Copilot, which runs on models from OpenAI and, in some configurations, Anthropic.
-- **Meta** makes the Muse personal agent and the Llama family of models.
-- **SpaceX** makes the Grok models and the Grok app. Its AI division began as xAI, a separate company, and became part of SpaceX in 2026. It also owns Cursor.
+| Company | Models | Products |
+|---|---|---|
+| Anthropic | Claude | Claude app (including Cowork), Claude Code |
+| OpenAI | GPT, gpt-oss | ChatGPT, Codex |
+| Google | Gemini, Gemma | Gemini app, Gemini Notebook (formerly NotebookLM), Antigravity |
+| Microsoft | MAI | Copilot |
+| Meta | Muse, Llama | Muse personal agent |
+| SpaceX | Grok, Composer | Grok app, Cursor |
+
+Two rows need a note. Microsoft builds its own MAI models, but its Copilot products also run on models from OpenAI and Anthropic. SpaceX's AI division began as xAI, a separate company, and became part of SpaceX in 2026.
 
 This matters because the same task can go very differently on different vendors' tools, and because the tool your employer gives you may not be the one you'd choose. Company lines also move: in one year, xAI was bought by SpaceX, SpaceX bought Cursor, and Meta moved its newest models from open to closed weights.
 

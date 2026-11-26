@@ -18,6 +18,8 @@ COSC-300/500 Applied AI Essentials
 | **Model** | A large language model (LLM): reads your request, writes the reply | Claude Sonnet, GPT Sol, Gemini, Grok |
 | **Product** | The software you open | Claude app, ChatGPT, Copilot, Cursor |
 
+Some companies build models, some build products, and many build both.
+
 "I asked ChatGPT" names a product. The answer came from whichever model that product was using at the time.
 
 <!-- Ask: when someone says "I asked ChatGPT", which of the three do they mean? -->
@@ -47,14 +49,18 @@ Poor answer? Ask about the **model**. Missing feature? That's the **product**.
 
 ---
 
-## Who Makes the Models
+## Who Makes the Models and Products
 
-- **Anthropic**: Claude
-- **OpenAI**: GPT, ChatGPT, Codex
-- **Google**: Gemini, NotebookLM
-- **Microsoft**: Copilot (built largely on OpenAI models, and now some Anthropic models)
-- **Meta**: Muse, Llama
-- **SpaceX** (formerly xAI): Grok; also owns Cursor
+| Company | Models | Products |
+|---|---|---|
+| Anthropic | Claude | Claude app (including Cowork), Claude Code |
+| OpenAI | GPT, gpt-oss | ChatGPT, Codex |
+| Google | Gemini, Gemma | Gemini app, Gemini Notebook (formerly NotebookLM), Antigravity |
+| Microsoft | MAI | Copilot |
+| Meta | Muse, Llama | Muse personal agent |
+| SpaceX | Grok, Composer | Grok app, Cursor |
+
+As of November 2026. Copilot also runs on OpenAI and Anthropic models.
 
 <!-- Verify the current Copilot model mix before class. Our Maryville account showed only GPT 5.6 Sol on 2026-10-03. -->
 

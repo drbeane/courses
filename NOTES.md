@@ -4,6 +4,10 @@ Log of site edits. Add an entry whenever you change the site. The courses came f
 repos, `drbeane/cosc-300`, `drbeane/math-309` and `drbeane/cosc-443`, which were deleted after the
 merge on 15 November 2026. Their history was not carried over, so this log starts at the merge.
 
+## 2026-11-25: Applied AI table of companies, models, and products
+
+- W1 vendors lesson and deck: companies may build models, products, or both; the "Who Makes the Models" bullets are now a table of models and products.
+
 ## 2026-11-25: Applied AI key term is now Company
 
 - The W1 key term and glossary entry "Vendor" are now "Company", noting that companies are also called vendors.
