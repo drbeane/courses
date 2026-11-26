@@ -230,7 +230,7 @@ A model is separate from the product you use to reach it. When an answer is poor
 
 ## Product
 
-The software you open, such as the Claude app or ChatGPT, which sends your words to a model and shows you the reply.
+The software you open, such as the Claude app or ChatGPT, which you use to send prompts to a model and read its replies.
 
 The product adds features around the model: file upload, web search, memory, projects, voice, connectors, and its own system prompt. That's why the same model can behave differently in two products, and why comparing tools means comparing products, not only models.
 
